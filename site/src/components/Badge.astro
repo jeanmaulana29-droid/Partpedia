@@ -1,0 +1,23 @@
+---
+interface Props {
+  label: string;
+  bg?: string;
+  fg?: string;
+}
+const { label, bg = "#eceff0", fg = "#3d4a52" } = Astro.props;
+---
+
+<span class="badge" style={`background:${bg}; color:${fg};`}>{label}</span>
+
+<style>
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+</style>

@@ -1,0 +1,7 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+pandas==2.2.2
+
+# Opsional — hanya perlu jika RENDER_MODE = "dynamic" (situs JS-heavy).
+# Setelah install, jalankan sekali: playwright install chromium
+# playwright==1.47.0

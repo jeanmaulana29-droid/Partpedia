@@ -1,0 +1,46 @@
+name: Scraper Pipeline - Sparepart
+
+on:
+  schedule:
+    # GANTI jadwal sesuai kebutuhan (format cron, waktu dalam UTC).
+    # Contoh di bawah = setiap hari jam 03:00 WIB (20:00 UTC hari sebelumnya).
+    - cron: "0 20 * * *"
+  workflow_dispatch: {} # supaya bisa dijalankan manual dari tab "Actions" di GitHub
+
+permissions:
+  contents: write # wajib, agar workflow bisa commit & push data.json terbaru
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r scraper/requirements.txt
+
+      # GANTI: uncomment 2 baris di bawah jika RENDER_MODE="dynamic" (Playwright)
+      # - name: Install Playwright browser
+      #   run: pip install playwright && playwright install --with-deps chromium
+
+      - name: Run scraper
+        env:
+          # GANTI/isi di GitHub: Settings > Secrets and variables > Actions
+          # Hanya perlu jika ENABLE_AI_ENRICHMENT=True di scraper_sparepart.py
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scraper/scraper_sparepart.py
+
+      - name: Commit & push data terbaru
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update data sparepart otomatis via scraper"
+          file_pattern: "scraper/data/*.json site/src/data/*.json"
+          commit_user_name: "sparepart-bot"
+          commit_user_email: "actions@github.com"

@@ -1,0 +1,70 @@
+---
+interface Props {
+  partNumber: string;
+  category: string;
+  brand: string;
+  isoStandard?: string;
+}
+const { partNumber, category, brand, isoStandard } = Astro.props;
+---
+
+<div class="part-plate">
+  <span class="rivet rivet--tl"></span>
+  <span class="rivet rivet--tr"></span>
+  <span class="rivet rivet--bl"></span>
+  <span class="rivet rivet--br"></span>
+  <span class="plate-label">KODE PART</span>
+  <span class="plate-value">{partNumber}</span>
+  <span class="plate-sub">{category} · {brand}</span>
+  {isoStandard && <span class="plate-standard">{isoStandard}</span>}
+</div>
+
+<style>
+  .part-plate {
+    position: relative;
+    background: linear-gradient(135deg, #4a5a63, #2f383e);
+    color: #fff;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border: 1px solid #23292d;
+    margin: 1.5rem 0;
+  }
+  .plate-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    color: var(--color-amber);
+  }
+  .plate-value {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .plate-sub {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #c9d1d4;
+  }
+  .plate-standard {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: #8fa0a8;
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+    border-top: 1px dashed #4a5a63;
+  }
+  .rivet {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7d8c94;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4);
+  }
+  .rivet--tl { top: 8px; left: 8px; }
+  .rivet--tr { top: 8px; right: 8px; }
+  .rivet--bl { bottom: 8px; left: 8px; }
+  .rivet--br { bottom: 8px; right: 8px; }
+</style>

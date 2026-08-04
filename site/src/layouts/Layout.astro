@@ -1,0 +1,121 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title, description, jsonLd } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- GANTI: aktifkan setelah situs Anda disetujui Google AdSense. Ganti ca-pub-XXXX dengan Publisher ID Anda. -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <style>
+      :root {
+        --color-bg: #f5f6f4;
+        --color-ink: #1c2226;
+        --color-steel: #3d4a52;
+        --color-steel-light: #6b7a82;
+        --color-amber: #e8a33d;
+        --color-teal: #4c7a6b;
+        --color-line: #d8dcd8;
+        --font-display: "Space Grotesk", sans-serif;
+        --font-body: "Inter", sans-serif;
+        --font-mono: "IBM Plex Mono", monospace;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--color-bg);
+        color: var(--color-ink);
+        font-family: var(--font-body);
+        line-height: 1.55;
+      }
+      h1, h2, h3 { font-family: var(--font-display); margin: 0 0 0.5em; line-height: 1.15; }
+      a { color: var(--color-steel); text-decoration: none; }
+      a:hover { color: var(--color-amber); }
+      a:focus-visible, input:focus-visible, button:focus-visible {
+        outline: 2px solid var(--color-amber);
+        outline-offset: 2px;
+      }
+      .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+      .site-header {
+        border-bottom: 1px solid var(--color-line);
+        padding: 1rem 0;
+      }
+      .site-header .wrap { display: flex; align-items: center; justify-content: space-between; }
+      .brand {
+        font-family: var(--font-mono);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--color-ink);
+      }
+      .brand span { color: var(--color-amber); }
+      .site-footer {
+        border-top: 1px solid var(--color-line);
+        margin-top: 3rem;
+        padding: 1.5rem 0;
+        color: var(--color-steel-light);
+        font-size: 0.85rem;
+      }
+      main { padding: 2rem 0 3rem; }
+      .hazard-strip {
+        height: 5px;
+        background: repeating-linear-gradient(
+          135deg,
+          var(--color-amber),
+          var(--color-amber) 10px,
+          #2f383e 10px,
+          #2f383e 20px
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hazard-strip"></div>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">SparepartBase<span>.</span></a>
+        <nav><a href="/">Direktori</a></nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        Data harga & spesifikasi dikumpulkan dari sumber publik dan diperbarui otomatis.
+        Harga bersifat indikatif — selalu konfirmasi ke supplier sebelum membeli.
+      </div>
+    </footer>
+  </body>
+</html>

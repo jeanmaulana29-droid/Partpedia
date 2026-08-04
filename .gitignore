@@ -1,0 +1,13 @@
+# Node / Astro
+site/node_modules/
+site/dist/
+site/.astro/
+
+# Python
+__pycache__/
+*.pyc
+scraper/.venv/
+
+# Env & secrets — JANGAN pernah commit file ini
+.env
+*.env.local

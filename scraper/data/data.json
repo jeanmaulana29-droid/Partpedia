@@ -1,0 +1,314 @@
+[
+  {
+    "part_name": "Bearing Pillow Block",
+    "part_number": "UCP205",
+    "category": "Bearing",
+    "brand": "Generic/OEM",
+    "specification": "Bore 25mm, OD 52mm",
+    "compatible_equipment": "Conveyor, mesin pertanian",
+    "price_range": "Rp 150.000 - 250.000",
+    "alternative_parts": "UCP205-16, P205",
+    "slug": "bearing-ucp205",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "25mm",
+      "OD": "52mm"
+    },
+    "iso_standard": "ISO 15:2019 (dimensi bantalan bola & rol metrik seri 60/62/63)",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar ISO, tersedia dari berbagai vendor (SKF, NSK, NTN, dll.)",
+    "search_intent": {
+      "harga": "Kisaran harga Bearing Pillow Block (UCP205) dan cara cek ketersediaan stok bearing ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap UCP205: Bore 25mm, OD 52mm.",
+      "aplikasi": "Bearing Pillow Block UCP205 umum dipakai untuk Conveyor, mesin pertanian.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Mengacu standar ISO 15:2019 (dimensi bantalan bola & rol metrik seri 60/62/63)."
+    },
+    "description": "Bearing Pillow Block (UCP205) — Bearing untuk Conveyor, mesin pertanian.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing",
+    "part_number": "6205-2RS",
+    "category": "Bearing",
+    "brand": "Generic/OEM",
+    "specification": "Bore 25mm, OD 52mm, Tebal 15mm",
+    "compatible_equipment": "Motor listrik, pompa air",
+    "price_range": "Rp 35.000 - 65.000",
+    "alternative_parts": "6205ZZ, 6205LLU",
+    "slug": "bearing-6205-2rs",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "25mm",
+      "OD": "52mm",
+      "Tebal": "15mm"
+    },
+    "iso_standard": "ISO 15:2019 (dimensi bantalan bola & rol metrik seri 60/62/63)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6205-2RS1"
+      },
+      {
+        "brand": "NSK",
+        "code": "6205DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6205LLB"
+      },
+      {
+        "brand": "NACHI",
+        "code": "6205-2NSE"
+      },
+      {
+        "brand": "KOYO",
+        "code": "6205-2RS"
+      }
+    ],
+    "vendor_type": "Generic — sesuai standar ISO, tersedia dari berbagai vendor (SKF, NSK, NTN, dll.)",
+    "search_intent": {
+      "harga": "Kisaran harga Deep Groove Ball Bearing (6205-2RS) dan cara cek ketersediaan stok bearing ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap 6205-2RS: Bore 25mm, OD 52mm, Tebal 15mm.",
+      "aplikasi": "Deep Groove Ball Bearing 6205-2RS umum dipakai untuk Motor listrik, pompa air.",
+      "pengganti": "Kode pengganti/setara antar-brand: SKF 6205-2RS1, NSK 6205DDU, NTN 6205LLB, NACHI 6205-2NSE, KOYO 6205-2RS.",
+      "standar": "Mengacu standar ISO 15:2019 (dimensi bantalan bola & rol metrik seri 60/62/63)."
+    },
+    "description": "Deep Groove Ball Bearing (6205-2RS) — Bearing untuk Motor listrik, pompa air.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "V-Belt Industri",
+    "part_number": "A-58",
+    "category": "V-Belt",
+    "brand": "Generic",
+    "specification": "Profil A, panjang 1473mm",
+    "compatible_equipment": "Mesin jahit industri, blower",
+    "price_range": "Rp 45.000 - 75.000",
+    "alternative_parts": "A58, Z-58",
+    "slug": "v-belt-a-58",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Profil A": "",
+      "panjang": "1473mm"
+    },
+    "iso_standard": "ISO 4184 (profil sabuk-V klasik A/B/C/D)",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga V-Belt Industri (A-58) dan cara cek ketersediaan stok v-belt ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap A-58: Profil A, panjang 1473mm.",
+      "aplikasi": "V-Belt Industri A-58 umum dipakai untuk Mesin jahit industri, blower.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Mengacu standar ISO 4184 (profil sabuk-V klasik A/B/C/D)."
+    },
+    "description": "V-Belt Industri (A-58) — V-Belt untuk Mesin jahit industri, blower.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Filter Oli Hidrolik",
+    "part_number": "HF6177",
+    "category": "Filter",
+    "brand": "Generic/Aftermarket",
+    "specification": "Thread 1-1/2in, tinggi 145mm",
+    "compatible_equipment": "Excavator, forklift",
+    "price_range": "Rp 85.000 - 140.000",
+    "alternative_parts": "P550388, HF35062",
+    "slug": "filter-hf6177",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Thread": "1-1/2in",
+      "tinggi": "145mm"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga Filter Oli Hidrolik (HF6177) dan cara cek ketersediaan stok filter ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap HF6177: Thread 1-1/2in, tinggi 145mm.",
+      "aplikasi": "Filter Oli Hidrolik HF6177 umum dipakai untuk Excavator, forklift.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Tidak ada standar dimensi universal yang berlaku umum untuk kategori ini."
+    },
+    "description": "Filter Oli Hidrolik (HF6177) — Filter untuk Excavator, forklift.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Seal Oli Poros",
+    "part_number": "NBR-40x62x8",
+    "category": "Seal",
+    "brand": "Generic",
+    "specification": "ID 40mm, OD 62mm, Tebal 8mm",
+    "compatible_equipment": "Gearbox, pompa hidrolik",
+    "price_range": "Rp 18.000 - 32.000",
+    "alternative_parts": "TC40628, SC40628",
+    "slug": "seal-nbr-40x62x8",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "ID": "40mm",
+      "OD": "62mm",
+      "Tebal": "8mm"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga Seal Oli Poros (NBR-40x62x8) dan cara cek ketersediaan stok seal ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap NBR-40x62x8: ID 40mm, OD 62mm, Tebal 8mm.",
+      "aplikasi": "Seal Oli Poros NBR-40x62x8 umum dipakai untuk Gearbox, pompa hidrolik.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Tidak ada standar dimensi universal yang berlaku umum untuk kategori ini."
+    },
+    "description": "Seal Oli Poros (NBR-40x62x8) — Seal untuk Gearbox, pompa hidrolik.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Motor Listrik 3 Phase",
+    "part_number": "MEZ-1.5KW-4P",
+    "category": "Motor Listrik",
+    "brand": "Generic",
+    "specification": "1.5kW, 4 pole, 1400rpm",
+    "compatible_equipment": "Pompa air, blower industri",
+    "price_range": "Rp 1.850.000 - 2.400.000",
+    "alternative_parts": "Y90L-4, MEZ90L-4",
+    "slug": "motor-listrik-mez-1-5kw-4p",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Nilai": "1400rpm"
+    },
+    "iso_standard": "IEC 60034 (dimensi & rating motor listrik industri)",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga Motor Listrik 3 Phase (MEZ-1.5KW-4P) dan cara cek ketersediaan stok motor listrik ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap MEZ-1.5KW-4P: 1.5kW, 4 pole, 1400rpm.",
+      "aplikasi": "Motor Listrik 3 Phase MEZ-1.5KW-4P umum dipakai untuk Pompa air, blower industri.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Mengacu standar IEC 60034 (dimensi & rating motor listrik industri)."
+    },
+    "description": "Motor Listrik 3 Phase (MEZ-1.5KW-4P) — Motor Listrik untuk Pompa air, blower industri.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Gear Reducer Cacing",
+    "part_number": "NMRV-050-1:30",
+    "category": "Gear Reducer",
+    "brand": "Generic",
+    "specification": "Rasio 1:30, poros 19mm",
+    "compatible_equipment": "Conveyor, mixer industri",
+    "price_range": "Rp 650.000 - 950.000",
+    "alternative_parts": "NMRV050, WPA-050",
+    "slug": "gear-reducer-nmrv-050-1-30",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Rasio": "1:30",
+      "poros": "19mm"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga Gear Reducer Cacing (NMRV-050-1:30) dan cara cek ketersediaan stok gear reducer ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap NMRV-050-1:30: Rasio 1:30, poros 19mm.",
+      "aplikasi": "Gear Reducer Cacing NMRV-050-1:30 umum dipakai untuk Conveyor, mixer industri.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Tidak ada standar dimensi universal yang berlaku umum untuk kategori ini."
+    },
+    "description": "Gear Reducer Cacing (NMRV-050-1:30) — Gear Reducer untuk Conveyor, mixer industri.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Sprocket Rantai Rol",
+    "part_number": "428H-15T",
+    "category": "Sprocket",
+    "brand": "Generic",
+    "specification": "15 gigi, pitch 12.7mm",
+    "compatible_equipment": "Konveyor rantai, mesin cetak",
+    "price_range": "Rp 55.000 - 90.000",
+    "alternative_parts": "428-15T, 08B-15T",
+    "slug": "sprocket-428h-15t",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Nilai": "15 gigi",
+      "pitch": "12.7mm"
+    },
+    "iso_standard": "ASME/ANSI B29.1 (rantai rol & sprocket)",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga Sprocket Rantai Rol (428H-15T) dan cara cek ketersediaan stok sprocket ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap 428H-15T: 15 gigi, pitch 12.7mm.",
+      "aplikasi": "Sprocket Rantai Rol 428H-15T umum dipakai untuk Konveyor rantai, mesin cetak.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Mengacu standar ASME/ANSI B29.1 (rantai rol & sprocket)."
+    },
+    "description": "Sprocket Rantai Rol (428H-15T) — Sprocket untuk Konveyor rantai, mesin cetak.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Selang Hidrolik SAE 100R2",
+    "part_number": "HYD-R2-1/2",
+    "category": "Selang Hidrolik",
+    "brand": "Generic",
+    "specification": "ID 1/2in, tekanan kerja 275 bar",
+    "compatible_equipment": "Excavator, dump truck",
+    "price_range": "Rp 65.000 - 95.000 /meter",
+    "alternative_parts": "R2AT-08, 2SN-08",
+    "slug": "selang-hidrolik-hyd-r2-1-2",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "ID": "1/2in",
+      "tekanan kerja": "275 bar"
+    },
+    "iso_standard": "SAE 100R2 / ISO 1436 (selang hidrolik tekanan tinggi)",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga Selang Hidrolik SAE 100R2 (HYD-R2-1/2) dan cara cek ketersediaan stok selang hidrolik ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap HYD-R2-1/2: ID 1/2in, tekanan kerja 275 bar.",
+      "aplikasi": "Selang Hidrolik SAE 100R2 HYD-R2-1/2 umum dipakai untuk Excavator, dump truck.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Mengacu standar SAE 100R2 / ISO 1436 (selang hidrolik tekanan tinggi)."
+    },
+    "description": "Selang Hidrolik SAE 100R2 (HYD-R2-1/2) — Selang Hidrolik untuk Excavator, dump truck.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  },
+  {
+    "part_name": "Kopling Fleksibel",
+    "part_number": "L-095",
+    "category": "Kopling",
+    "brand": "Generic",
+    "specification": "Bore 5/8in - 1in, torsi 12Nm",
+    "compatible_equipment": "Pompa ke gearbox",
+    "price_range": "Rp 95.000 - 160.000",
+    "alternative_parts": "L095, L100",
+    "slug": "kopling-l-095",
+    "price_note": "Estimasi pasar, bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "5/8in - 1in",
+      "torsi": "12Nm"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Generic — sesuai standar industri, tersedia dari berbagai distributor",
+    "search_intent": {
+      "harga": "Kisaran harga Kopling Fleksibel (L-095) dan cara cek ketersediaan stok kopling ini.",
+      "spesifikasi": "Spesifikasi teknis lengkap L-095: Bore 5/8in - 1in, torsi 12Nm.",
+      "aplikasi": "Kopling Fleksibel L-095 umum dipakai untuk Pompa ke gearbox.",
+      "pengganti": "Belum ada data kode pengganti terverifikasi untuk part ini.",
+      "standar": "Tidak ada standar dimensi universal yang berlaku umum untuk kategori ini."
+    },
+    "description": "Kopling Fleksibel (L-095) — Kopling untuk Pompa ke gearbox.",
+    "source_url": "contoh-data-demo",
+    "last_updated": "2026-08-03"
+  }
+]

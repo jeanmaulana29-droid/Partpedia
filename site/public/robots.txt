@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# GANTI domain sesuai domain final Anda (harus sama dengan `site` di astro.config.mjs)
+Sitemap: https://ganti-domain-anda.vercel.app/sitemap-index.xml

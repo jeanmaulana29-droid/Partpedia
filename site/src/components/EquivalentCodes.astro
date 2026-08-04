@@ -1,0 +1,49 @@
+---
+interface Code {
+  brand: string;
+  code: string;
+}
+interface Props {
+  codes: Code[];
+}
+const { codes } = Astro.props;
+---
+
+{
+  codes && codes.length > 0 && (
+    <div class="eq-grid">
+      {codes.map((c) => (
+        <div class="eq-item">
+          <span class="eq-brand">{c.brand}</span>
+          <span class="eq-code">{c.code}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+<style>
+  .eq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .eq-item {
+    border: 1px solid var(--color-line);
+    background: #fff;
+    padding: 0.65rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .eq-item:hover { border-color: var(--color-amber); transform: translateY(-1px); }
+  .eq-brand {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--color-steel-light);
+  }
+  .eq-code { font-family: var(--font-mono); font-weight: 600; font-size: 0.95rem; }
+</style>

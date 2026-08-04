@@ -1,0 +1,180 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AdSlot from "../../components/AdSlot.astro";
+import PartPlate from "../../components/PartPlate.astro";
+import Badge from "../../components/Badge.astro";
+import EquivalentCodes from "../../components/EquivalentCodes.astro";
+import SpecsTable from "../../components/SpecsTable.astro";
+import data from "../../data/data.json";
+import { getCategoryTheme } from "../../utils/theme.js";
+
+// getStaticPaths membuat satu halaman statis untuk SETIAP baris di data.json.
+// Saat data.json bertambah ribuan baris (dari scraper), Astro otomatis
+// menghasilkan ribuan halaman /sparepart/[slug]/ ini di waktu build.
+export async function getStaticPaths() {
+  return data.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const theme = getCategoryTheme(entry.category);
+
+const relatedEntries = data
+  .filter((d) => d.category === entry.category && d.slug !== entry.slug)
+  .slice(0, 4);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: `${entry.part_name} (${entry.part_number})`,
+  description: entry.description,
+  category: entry.category,
+  brand: { "@type": "Brand", name: entry.brand },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Kode Part", value: entry.part_number },
+    { "@type": "PropertyValue", name: "Aplikasi/Kompatibel", value: entry.compatible_equipment },
+    { "@type": "PropertyValue", name: "Standar Acuan", value: entry.iso_standard || "-" },
+    ...Object.entries(entry.specs_table || {}).map(([name, value]) => ({
+      "@type": "PropertyValue",
+      name,
+      value,
+    })),
+  ],
+  // CATATAN: offers di bawah memakai data sampel/indikatif (lihat price_note).
+  // Sebelum mengandalkan rich snippet harga di Google, pastikan price berasal
+  // dari sumber yang benar-benar diperbarui otomatis.
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "IDR",
+    availability: "https://schema.org/InStock",
+    url: new URL(`/sparepart/${entry.slug}/`, Astro.site).toString(),
+  },
+};
+---
+
+<Layout
+  title={`${entry.part_name} (${entry.part_number}) — Spesifikasi, Harga & Kode Pengganti`}
+  description={entry.description}
+  jsonLd={jsonLd}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Beranda</a> / <span>{entry.category}</span> / <span>{entry.part_number}</span>
+  </nav>
+
+  <div class="detail-layout">
+    <div class="detail-main">
+      <div class="title-row">
+        <Badge label={entry.category} bg={theme.bg} fg={theme.fg} />
+        <Badge label={entry.vendor_type} bg="#eceff0" fg="#3d4a52" />
+      </div>
+      <h1>{entry.part_name} — {entry.part_number}</h1>
+      <p>{entry.description}</p>
+
+      <AdSlot slotId="slot-detail-atas" />
+
+      <h2>Spesifikasi Teknis</h2>
+      <SpecsTable specs={entry.specs_table} />
+      {entry.iso_standard && <p class="standard-note">📐 {entry.search_intent?.standar}</p>}
+
+      <h2>Kode Pengganti / Cross-Reference Antar-Brand</h2>
+      {
+        entry.equivalent_codes && entry.equivalent_codes.length > 0 ? (
+          <EquivalentCodes codes={entry.equivalent_codes} />
+        ) : (
+          <p class="muted">Belum ada data cross-reference terverifikasi untuk kategori ini.</p>
+        )
+      }
+      {entry.alternative_parts && (
+        <p class="muted">Kode alternatif dari sumber data: {entry.alternative_parts}</p>
+      )}
+
+      <div class="price-block">
+        <span class="price-label">Kisaran Harga</span>
+        <span class="price-value">{entry.price_range || "Belum tersedia"}</span>
+        <span class="price-disclaimer">⚠️ {entry.price_note}</span>
+      </div>
+
+      <AdSlot slotId="slot-detail-tengah" />
+
+      <h2>Info Lengkap</h2>
+      <ul class="intent-list">
+        {entry.search_intent?.aplikasi && <li>{entry.search_intent.aplikasi}</li>}
+        {entry.search_intent?.harga && <li>{entry.search_intent.harga}</li>}
+      </ul>
+
+      <p class="source">Sumber data: {entry.source_url} · Diperbarui {entry.last_updated}</p>
+
+      <AdSlot slotId="slot-detail-bawah" />
+
+      {
+        relatedEntries.length > 0 && (
+          <section class="related">
+            <h2>Sparepart Terkait — {entry.category}</h2>
+            <ul>
+              {relatedEntries.map((r) => (
+                <li>
+                  <a href={`/sparepart/${r.slug}/`}>
+                    {r.part_name} ({r.part_number})
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+    </div>
+
+    <aside class="detail-sidebar">
+      <PartPlate
+        partNumber={entry.part_number}
+        category={entry.category}
+        brand={entry.brand}
+        isoStandard={entry.iso_standard}
+      />
+    </aside>
+  </div>
+
+  <style>
+    .breadcrumb { font-size: 0.8rem; color: var(--color-steel-light); margin-bottom: 0.5rem; }
+    .breadcrumb a { color: var(--color-steel-light); }
+
+    .detail-layout { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 800px) {
+      .detail-layout { grid-template-columns: 2fr 1fr; align-items: start; }
+      .detail-sidebar { position: sticky; top: 1.5rem; }
+    }
+
+    .title-row { display: flex; gap: 0.4rem; margin-bottom: 0.6rem; }
+    .detail-main h1 { font-size: clamp(1.4rem, 3.5vw, 2rem); }
+    .detail-main h2 {
+      font-size: 1.05rem;
+      margin-top: 2rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--color-ink);
+      display: inline-block;
+    }
+    .muted { color: var(--color-steel-light); font-size: 0.85rem; }
+    .standard-note { font-size: 0.82rem; color: var(--color-steel); }
+
+    .price-block {
+      background: #fdf1de;
+      border: 1px solid #e8a33d55;
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin: 1.25rem 0;
+    }
+    .price-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; color: #8a5a13; }
+    .price-value { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 600; color: var(--color-ink); }
+    .price-disclaimer { font-size: 0.75rem; color: #8a5a13; }
+
+    .intent-list { padding-left: 1.1rem; display: grid; gap: 0.5rem; font-size: 0.92rem; }
+
+    .source { font-size: 0.8rem; color: var(--color-steel-light); }
+    .related ul { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+    .related li { border: 1px solid var(--color-line); padding: 0.6rem 0.9rem; }
+  </style>
+</Layout>
