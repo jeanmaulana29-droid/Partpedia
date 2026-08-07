@@ -26,7 +26,7 @@
     },
     "description": "Bearing Pillow Block (UCP205) — Bearing untuk Conveyor, mesin pertanian.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Deep Groove Ball Bearing",
@@ -77,7 +77,7 @@
     },
     "description": "Deep Groove Ball Bearing (6205-2RS) — Bearing untuk Motor listrik, pompa air.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "V-Belt Industri",
@@ -106,7 +106,7 @@
     },
     "description": "V-Belt Industri (A-58) — V-Belt untuk Mesin jahit industri, blower.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Filter Oli Hidrolik",
@@ -135,7 +135,7 @@
     },
     "description": "Filter Oli Hidrolik (HF6177) — Filter untuk Excavator, forklift.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Seal Oli Poros",
@@ -165,7 +165,7 @@
     },
     "description": "Seal Oli Poros (NBR-40x62x8) — Seal untuk Gearbox, pompa hidrolik.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Motor Listrik 3 Phase",
@@ -193,7 +193,7 @@
     },
     "description": "Motor Listrik 3 Phase (MEZ-1.5KW-4P) — Motor Listrik untuk Pompa air, blower industri.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Gear Reducer Cacing",
@@ -222,7 +222,7 @@
     },
     "description": "Gear Reducer Cacing (NMRV-050-1:30) — Gear Reducer untuk Conveyor, mixer industri.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Sprocket Rantai Rol",
@@ -251,7 +251,7 @@
     },
     "description": "Sprocket Rantai Rol (428H-15T) — Sprocket untuk Konveyor rantai, mesin cetak.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Selang Hidrolik SAE 100R2",
@@ -280,7 +280,7 @@
     },
     "description": "Selang Hidrolik SAE 100R2 (HYD-R2-1/2) — Selang Hidrolik untuk Excavator, dump truck.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   },
   {
     "part_name": "Kopling Fleksibel",
@@ -309,6 +309,6 @@
     },
     "description": "Kopling Fleksibel (L-095) — Kopling untuk Pompa ke gearbox.",
     "source_url": "contoh-data-demo",
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-07"
   }
 ]
