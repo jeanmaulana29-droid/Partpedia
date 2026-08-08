@@ -1,0 +1,40 @@
+name: Partmatch Sync
+
+# Otomatis tiap hari + tombol manual di tab Actions
+on:
+  schedule:
+    # 21:00 UTC = 04:00 WIB
+    - cron: "0 21 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Partmatch sync
+        env:
+          PARTMATCH_API_KEY: ${{ secrets.PARTMATCH_API_KEY }}
+          PARTMATCH_MAX_REQUESTS: "80"
+          PARTMATCH_DELAY: "0.4"
+        run: python scraper/partmatch_sync.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/src/data/data.json scraper/data/data.json scraper/partmatch_seeds.json || true
+          if git diff --staged --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "chore: sync Partmatch → data.json"
+            git push
+          fi
