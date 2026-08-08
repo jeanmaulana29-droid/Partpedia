@@ -11,22 +11,25 @@ const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.leng
 ---
 
 <Layout
-  title="SparepartBase — Database Harga & Spesifikasi Sparepart Mesin Industri"
-  description="Direktori gratis kode part, spesifikasi, harga indikatif, dan kode pengganti/cross-reference antar-brand untuk bearing, v-belt, filter, seal, motor listrik, dan sparepart industri lainnya."
+  title="Partpedia — Database Harga, Spesifikasi & Kode Pengganti Sparepart Industri"
+  description="Cari kode part, size, fungsi, spesifikasi, harga indikatif, dan cross-reference antar-brand untuk bearing, pelumas, sensor, PLC, VFD, alat ukur, dan komponen industri lainnya."
 >
   <section class="hero">
-    <span class="eyebrow">{total} sparepart terindeks · {totalEquivalents} kode cross-reference</span>
-    <h1>Cari kode part, spesifikasi &amp; kode pengganti sparepart mesin dalam hitungan detik.</h1>
+    <span class="eyebrow">{total} sparepart terindeks · {categories.length} kategori · {totalEquivalents} kode cross-reference</span>
+    <h1>Direktori sparepart industri: harga, spek, size &amp; kode pengganti.</h1>
     <p>
-      Direktori terbuka untuk bearing, v-belt, filter, seal, motor listrik, dan komponen
-      industri lainnya — lengkap dengan cross-reference antar-brand untuk mempercepat pencarian.
+      Dari bearing hingga PLC, sensor, VFD, dan pelumas industri — cari kode part,
+      fungsi, kegunaan, dan kisaran harga dalam satu tempat.
     </p>
-    <input
-      id="search"
-      type="text"
-      placeholder="Cari nama part, kode, atau kategori..."
-      aria-label="Cari sparepart"
-    />
+    <div class="search-wrap">
+      <input
+        id="search"
+        type="search"
+        placeholder="Cari nama, kode part, size, atau kategori..."
+        aria-label="Cari sparepart"
+        autocomplete="off"
+      />
+    </div>
   </section>
 
   <section class="stats" aria-label="Ringkasan direktori">
@@ -40,24 +43,29 @@ const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.leng
     </div>
     <div class="stat">
       <span class="stat-value">{totalEquivalents}</span>
-      <span class="stat-label">Kode Cross-Reference</span>
+      <span class="stat-label">Cross-Reference</span>
     </div>
   </section>
 
   <AdSlot slotId="slot-home-atas" />
 
-  <section class="categories" aria-label="Kategori sparepart">
+  <section class="categories" aria-label="Filter kategori">
     {
       categories.map((c) => {
         const theme = getCategoryTheme(c);
         return (
-          <button class="chip" data-category={c.toLowerCase()} style={`--chip-bg:${theme.bg}; --chip-fg:${theme.fg};`}>
+          <button
+            class="chip"
+            type="button"
+            data-category={c.toLowerCase()}
+            style={`--chip-bg:${theme.bg}; --chip-fg:${theme.fg};`}
+          >
             {c}
           </button>
         );
       })
     }
-    <button class="chip chip--reset" id="reset-filter" hidden>Tampilkan semua</button>
+    <button class="chip chip--reset" type="button" id="reset-filter" hidden>Tampilkan semua</button>
   </section>
 
   <section class="grid" id="results">
@@ -65,27 +73,47 @@ const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.leng
       data.map((item) => {
         const theme = getCategoryTheme(item.category);
         const eqCount = item.equivalent_codes?.length || 0;
+        const searchBlob = [
+          item.part_name,
+          item.part_number,
+          item.category,
+          item.subcategory,
+          item.brand,
+          item.size,
+          item.fungsi,
+          item.kegunaan,
+          item.alternative_parts,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+
         return (
           <a
             class="card"
             href={`/sparepart/${item.slug}/`}
-            data-search={`${item.part_name} ${item.part_number} ${item.category} ${item.brand} ${item.alternative_parts}`.toLowerCase()}
+            data-search={searchBlob}
             data-category={item.category.toLowerCase()}
           >
             <div class="card-top">
               <Badge label={item.category} bg={theme.bg} fg={theme.fg} />
-              {eqCount > 0 && <span class="eq-count">+{eqCount} kode setara</span>}
+              {eqCount > 0 && <span class="eq-count">+{eqCount} setara</span>}
             </div>
             <span class="card-code">{item.part_number}</span>
             <h3>{item.part_name}</h3>
-            <p class="card-price">{item.price_range}</p>
+            {item.size && <p class="card-size">{item.size}</p>}
+            {item.fungsi && <p class="card-fungsi">{item.fungsi}</p>}
+            <div class="card-footer">
+              <span class="card-price">{item.price_range || "Harga menyusul"}</span>
+              {item.unit && <span class="card-unit">/{item.unit}</span>}
+            </div>
           </a>
         );
       })
     }
   </section>
 
-  <p id="empty-state" class="empty-state" hidden>Tidak ada hasil yang cocok. Coba kata kunci lain.</p>
+  <p id="empty-state" class="empty-state" hidden>Tidak ada hasil. Coba kata kunci atau kategori lain.</p>
 
   <script>
     const input = document.getElementById("search") as HTMLInputElement | null;
@@ -127,34 +155,41 @@ const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.leng
   </script>
 
   <style>
-    .hero { padding: 2rem 0 1rem; }
+    .hero { padding: 2.25rem 0 1rem; }
     .eyebrow {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       color: var(--color-teal);
+      text-transform: uppercase;
     }
-    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-top: 0.4rem; }
-    .hero p { color: var(--color-steel); max-width: 55ch; }
+    .hero h1 {
+      font-size: clamp(1.55rem, 4vw, 2.35rem);
+      margin-top: 0.45rem;
+      max-width: 18ch;
+    }
+    .hero p { color: var(--color-steel); max-width: 58ch; margin-top: 0.75rem; }
+    .search-wrap { margin-top: 1.25rem; max-width: 520px; }
     #search {
       width: 100%;
-      max-width: 480px;
-      padding: 0.75rem 1rem;
+      padding: 0.85rem 1.1rem;
       border: 1px solid var(--color-line);
       background: #fff;
       font-family: var(--font-body);
       font-size: 1rem;
-      margin-top: 1rem;
+      border-radius: 2px;
+      box-shadow: 0 1px 0 rgba(28, 34, 38, 0.04);
     }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       border: 1px solid var(--color-line);
-      margin: 1.5rem 0;
+      background: #fff;
+      margin: 1.75rem 0;
     }
     .stat {
-      padding: 1rem;
+      padding: 1.1rem 0.75rem;
       text-align: center;
       border-right: 1px solid var(--color-line);
     }
@@ -162,61 +197,117 @@ const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.leng
     .stat-value {
       display: block;
       font-family: var(--font-mono);
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       font-weight: 600;
       color: var(--color-steel);
     }
     .stat-label {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       letter-spacing: 0.08em;
       color: var(--color-steel-light);
       text-transform: uppercase;
     }
 
-    .categories { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+    .categories { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.5rem; }
     .chip {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
       border: none;
       cursor: pointer;
-      padding: 0.35rem 0.75rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 999px;
       background: var(--chip-bg, #eceff0);
       color: var(--chip-fg, #3d4a52);
-      transition: transform 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .chip:hover { transform: translateY(-1px); }
+    .chip:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(28,34,38,0.08); }
     .chip--reset { background: var(--color-ink); color: #fff; }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1rem;
+      padding-bottom: 2rem;
     }
     .card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       border: 1px solid var(--color-line);
       background: #fff;
-      padding: 1rem 1.1rem;
+      padding: 1.05rem 1.15rem 1.15rem;
       color: var(--color-ink);
       transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      min-height: 210px;
     }
     .card:hover {
       border-color: var(--color-amber);
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(28, 34, 38, 0.08);
+      box-shadow: 0 8px 20px rgba(28, 34, 38, 0.09);
     }
-    .card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
-    .eq-count { font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-teal); }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.55rem;
+    }
+    .eq-count {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: var(--color-teal);
+      white-space: nowrap;
+    }
     .card-code {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--color-steel-light);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
-    .card h3 { font-size: 1.05rem; margin: 0.3rem 0; }
-    .card-price { margin: 0; font-size: 0.85rem; color: var(--color-ink); font-family: var(--font-mono); font-weight: 600; }
-    .empty-state { color: var(--color-steel-light); text-align: center; padding: 2rem 0; }
+    .card h3 {
+      font-size: 1.05rem;
+      margin: 0.25rem 0 0.4rem;
+      line-height: 1.25;
+    }
+    .card-size {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-steel);
+    }
+    .card-fungsi {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--color-steel-light);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+    .card-footer {
+      margin-top: auto;
+      padding-top: 0.85rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      border-top: 1px solid var(--color-line);
+    }
+    .card-price {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-ink);
+    }
+    .card-unit {
+      font-size: 0.72rem;
+      color: var(--color-steel-light);
+    }
+    .empty-state {
+      color: var(--color-steel-light);
+      text-align: center;
+      padding: 2.5rem 0;
+    }
   </style>
 </Layout>
