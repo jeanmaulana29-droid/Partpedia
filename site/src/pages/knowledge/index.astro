@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout
+  title="Knowledge Hub — Partpedia Industrial Insights"
+  description="Panduan merek bearing, end-use industri, sejarah komponen, dan praktik MRO untuk plant maintenance."
+>
+  <article class="article">
+    <p class="kicker">Knowledge Hub</p>
+    <h1>Wawasan sparepart industri untuk riset lebih lama</h1>
+    <p class="lead">
+      Kumpulan bacaan ringkas seputar merek, standar, dan pemakaian di lapangan.
+      Tujuannya membantu visitor memahami konteks sebelum memutuskan part pengganti.
+    </p>
+
+    <section>
+      <h2>10 merek yang sering muncul di lantai pabrik</h2>
+      <ol class="brand-list">
+        <li><strong>SKF</strong> — referensi global bearing & sealing, kuat di dokumentasi teknis.</li>
+        <li><strong>NSK</strong> — presisi tinggi, banyak di otomotif & machine tool.</li>
+        <li><strong>NTN</strong> — portofolio luas untuk industri berat dan umum.</li>
+        <li><strong>Schaeffler (FAG/INA)</strong> — engineering Jerman, aplikasi demanding.</li>
+        <li><strong>Timken</strong> — dikenal kuat di tapered roller & heavy duty.</li>
+        <li><strong>KOYO / JTEKT</strong> — supply luas ke otomotif dan industrial OEM.</li>
+        <li><strong>NACHI</strong> — bearing + hidrolik + tools dalam satu grup.</li>
+        <li><strong>Gates / Optibelt / Conti</strong> — transmisi sabuk industri.</li>
+        <li><strong>Siemens / ABB / Schneider</strong> — otomasi, drive, kontrol.</li>
+        <li><strong>Aftermarket ISO-compliant</strong> — opsi ekonomis saat dimensi standar terpenuhi.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>End-use yang paling sering</h2>
+      <ul>
+        <li><strong>Motor listrik & pompa</strong> — deep groove 62xx/63xx sangat umum.</li>
+        <li><strong>Conveyor & packaging</strong> — bearing unit (UCP/UCF) + V-belt.</li>
+        <li><strong>Gearbox & reducer</strong> — seal, bearing, pelumas EP.</li>
+        <li><strong>HVAC & blower</strong> — belt drive + bearing yang tahan suhu operasional.</li>
+        <li><strong>Otomasi</strong> — proximity sensor, PLC compact, VFD untuk soft-start.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Kenapa dimensi standar penting</h2>
+      <p>
+        Banyak bearing metrik mengikuti keluarga ISO. Itu alasan kode seperti 6205-2RS
+        bisa punya banyak merek setara selama boundary dimension cocok dan rating memadai.
+        Selalu cek seal, clearance, dan beban — bukan hanya nomor yang “mirip”.
+      </p>
+    </section>
+
+    <section>
+      <h2>Praktik RFQ yang lebih rapi</h2>
+      <p>
+        Catat: kode part, size, jam operasi, suhu, kontaminasi, merek existing, dan quantity.
+        Estimasi harga di katalog online membantu budgeting awal, tetapi PO tetap harus
+        mengacu penawaran vendor.
+      </p>
+    </section>
+
+    <p class="back"><a href="/">← Kembali ke katalog</a></p>
+  </article>
+
+  <style>
+    .article { max-width: 720px; padding: 2rem 0 3rem; }
+    .kicker {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.4rem 0 0.75rem; }
+    .lead { color: var(--muted); font-size: 1.05rem; }
+    section { margin-top: 2rem; }
+    h2 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .brand-list, ul { padding-left: 1.1rem; color: var(--ink); }
+    li { margin-bottom: 0.45rem; }
+    .back { margin-top: 2.5rem; }
+  </style>
+</Layout>
