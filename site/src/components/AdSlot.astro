@@ -1,49 +1,24 @@
 ---
-// Slot iklan AdSense. Letakkan komponen ini di titik-titik yang sudah dioptimasi
-// (setelah paragraf intro & di tengah konten) — bukan di atas fold atau berdekatan
-// dengan tombol navigasi, agar sesuai kebijakan "invalid click" AdSense.
-interface Props {
-  slotId: string; // GANTI: data-ad-slot dari dashboard AdSense Anda (per lokasi/unit iklan)
-}
-const { slotId } = Astro.props;
+interface Props { slotId?: string; }
+const { slotId = "ad" } = Astro.props;
 ---
-
-<div class="ad-slot">
-  <span class="ad-slot__label">Iklan</span>
-  <!--
-    GANTI ca-pub-XXXXXXXXXXXXXXXX dengan Publisher ID Anda, dan aktifkan blok ini
-    setelah situs disetujui AdSense (lihat juga <script> loader di Layout.astro).
-  -->
-  <!--
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-    data-ad-slot={slotId}
-    data-ad-format="auto"
-    data-full-width-responsive="true"
-  ></ins>
-  <script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  -->
-  <div class="ad-slot__placeholder">Ruang iklan ({slotId})</div>
-</div>
-
+<aside class="ad-slot" data-ad-slot={slotId} aria-label="Ruang iklan">
+  <span>Ad space · {slotId}</span>
+  <small>Tempat unit AdSense / sponsor — ganti dengan kode iklan Anda</small>
+</aside>
 <style>
-  .ad-slot { margin: 2rem 0; text-align: center; }
-  .ad-slot__label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--color-steel-light);
-    display: block;
-    margin-bottom: 0.35rem;
+  .ad-slot {
+    display: grid; gap: 0.25rem; place-items: center;
+    border: 1px dashed rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.03);
+    color: var(--muted, #8b9aab);
+    text-align: center;
+    padding: 1.4rem 1rem;
+    border-radius: 14px;
+    margin: 1.35rem 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
-  .ad-slot__placeholder {
-    border: 1px dashed var(--color-line);
-    padding: 1.5rem;
-    color: var(--color-steel-light);
-    font-size: 0.8rem;
-  }
+  small { text-transform: none; letter-spacing: 0; opacity: 0.8; font-size: 0.75rem; }
 </style>
