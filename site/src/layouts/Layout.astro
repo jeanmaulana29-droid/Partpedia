@@ -4,11 +4,9 @@ interface Props {
   description: string;
   jsonLd?: Record<string, unknown>;
 }
-
 const { title, description, jsonLd } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
-
 <!doctype html>
 <html lang="id">
   <head>
@@ -17,93 +15,168 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-
+    <meta name="keywords" content="sparepart industri, bearing, V-belt, PLC, sensor industri, kode part, cross reference, harga sparepart, industrial parts, MRO, maintenance repair operations, gearbox, seal, filter hidrolik" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
-
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="index, follow" />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- GANTI: aktifkan setelah situs Anda disetujui Google AdSense. Ganti ca-pub-XXXX dengan Publisher ID Anda. -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <style is:global>
       :root {
-        --color-bg: #f5f6f4;
-        --color-ink: #1c2226;
-        --color-steel: #3d4a52;
-        --color-steel-light: #6b7a82;
-        --color-amber: #e8a33d;
-        --color-teal: #4c7a6b;
-        --color-line: #d8dcd8;
-        --font-display: "Space Grotesk", sans-serif;
-        --font-body: "Inter", sans-serif;
-        --font-mono: "IBM Plex Mono", monospace;
+        --bg: #0b0f14;
+        --bg-elevated: #121820;
+        --bg-card: #161d27;
+        --ink: #eef2f6;
+        --muted: #8b9aab;
+        --line: rgba(255,255,255,0.08);
+        --amber: #f0a43a;
+        --amber-soft: rgba(240,164,58,0.15);
+        --teal: #3dcfb6;
+        --teal-soft: rgba(61,207,182,0.12);
+        --blue: #5b9fd4;
+        --danger: #ff6b6b;
+        --font-display: "Syne", system-ui, sans-serif;
+        --font-body: "DM Sans", system-ui, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+        --radius: 14px;
+        --shadow: 0 20px 50px rgba(0,0,0,0.35);
       }
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        background: var(--color-bg);
-        color: var(--color-ink);
+        background: var(--bg);
+        color: var(--ink);
         font-family: var(--font-body);
-        line-height: 1.55;
+        line-height: 1.6;
+        min-height: 100vh;
       }
-      h1, h2, h3 { font-family: var(--font-display); margin: 0 0 0.5em; line-height: 1.15; }
-      a { color: var(--color-steel); text-decoration: none; }
-      a:hover { color: var(--color-amber); }
-      a:focus-visible, input:focus-visible, button:focus-visible {
-        outline: 2px solid var(--color-amber);
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+        background:
+          radial-gradient(1200px 600px at 10% -10%, rgba(61,207,182,0.12), transparent 55%),
+          radial-gradient(900px 500px at 90% 0%, rgba(240,164,58,0.10), transparent 50%),
+          radial-gradient(800px 400px at 50% 100%, rgba(91,159,212,0.08), transparent 45%);
+      }
+      h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 0 0.5em; }
+      a { color: var(--teal); text-decoration: none; }
+      a:hover { color: var(--amber); }
+      a:focus-visible, button:focus-visible, input:focus-visible {
+        outline: 2px solid var(--amber);
         outline-offset: 2px;
       }
-      .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
       .site-header {
-        border-bottom: 1px solid var(--color-line);
-        padding: 1rem 0;
+        position: sticky; top: 0; z-index: 50;
+        backdrop-filter: blur(14px);
+        background: rgba(11,15,20,0.82);
+        border-bottom: 1px solid var(--line);
       }
-      .site-header .wrap { display: flex; align-items: center; justify-content: space-between; }
+      .site-header .wrap {
+        display: flex; align-items: center; justify-content: space-between;
+        min-height: 64px; gap: 1rem;
+      }
       .brand {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 1.25rem;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      .brand span { color: var(--amber); }
+      .nav { display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap; }
+      .nav a { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
+      .nav a:hover { color: var(--ink); }
+      .lang-btn {
         font-family: var(--font-mono);
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        color: var(--color-ink);
+        font-size: 0.7rem;
+        border: 1px solid var(--line);
+        background: var(--bg-elevated);
+        color: var(--muted);
+        padding: 0.35rem 0.55rem;
+        border-radius: 999px;
+        cursor: pointer;
       }
-      .brand span { color: var(--color-amber); }
       .site-footer {
-        border-top: 1px solid var(--color-line);
-        margin-top: 3rem;
-        padding: 1.5rem 0;
-        color: var(--color-steel-light);
-        font-size: 0.85rem;
+        margin-top: 4rem;
+        border-top: 1px solid var(--line);
+        padding: 2.5rem 0 2rem;
+        color: var(--muted);
+        font-size: 0.88rem;
       }
-      main { padding: 2rem 0 3rem; }
-      .hazard-strip {
-        height: 5px;
-        background: repeating-linear-gradient(
-          135deg,
-          var(--color-amber),
-          var(--color-amber) 10px,
-          #2f383e 10px,
-          #2f383e 20px
-        );
+      .site-footer .wrap { display: grid; gap: 1rem; }
+      .site-footer strong { color: var(--ink); }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+        font-weight: 600; font-size: 0.9rem;
+        padding: 0.7rem 1.15rem; border-radius: 999px;
+        border: none; cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
       }
+      .btn:hover { transform: translateY(-1px); }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--amber), #e08a1a);
+        color: #1a1205;
+        box-shadow: 0 8px 24px rgba(240,164,58,0.25);
+      }
+      .btn-ghost {
+        background: transparent;
+        border: 1px solid var(--line);
+        color: var(--ink);
+      }
+      .ad-slot {
+        border: 1px dashed rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.02);
+        color: var(--muted);
+        text-align: center;
+        padding: 1.25rem;
+        border-radius: var(--radius);
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin: 1.25rem 0;
+      }
+      /* soft first-visit promo — dismissible, not hard interstitial */
+      .welcome-ad {
+        position: fixed; inset: auto 1rem 1rem 1rem; z-index: 100;
+        max-width: 420px; margin: 0 auto; left: 0; right: 0;
+        background: var(--bg-card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1.1rem 1.2rem;
+        box-shadow: var(--shadow);
+        display: none;
+      }
+      .welcome-ad.show { display: block; animation: slideUp 0.35s ease; }
+      @keyframes slideUp {
+        from { transform: translateY(16px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .welcome-ad h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+      .welcome-ad p { margin: 0 0 0.8rem; color: var(--muted); font-size: 0.88rem; }
+      .welcome-ad .row { display: flex; gap: 0.5rem; justify-content: flex-end; }
     </style>
   </head>
   <body>
-    <div class="hazard-strip"></div>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/">SparepartBase<span>.</span></a>
-        <nav><a href="/">Direktori</a></nav>
+        <a class="brand" href="/">Part<span>pedia</span></a>
+        <nav class="nav" aria-label="Menu utama">
+          <a href="/">Katalog</a>
+          <a href="/knowledge/">Knowledge</a>
+          <a href="/#brands">Brands</a>
+          <a href="/#insights">Insights</a>
+          <button type="button" class="lang-btn" id="lang-toggle" aria-label="Ganti bahasa">ID | EN</button>
+        </nav>
       </div>
     </header>
 
@@ -113,9 +186,57 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
     <footer class="site-footer">
       <div class="wrap">
-        Data harga & spesifikasi dikumpulkan dari sumber publik dan diperbarui otomatis.
-        Harga bersifat indikatif — selalu konfirmasi ke supplier sebelum membeli.
+        <div><strong>Partpedia</strong> — direktori spek, kode part & referensi pengganti sparepart industri.</div>
+        <div>Harga bersifat estimasi pasar. Selalu verifikasi ke vendor resmi sebelum membeli.</div>
+        <div>© {new Date().getFullYear()} Partpedia · Built for MRO & plant maintenance research</div>
       </div>
     </footer>
+
+    <div class="welcome-ad" id="welcome-ad" role="dialog" aria-label="Promosi">
+      <h3 data-i18n="welcome_title">Temukan part lebih cepat</h3>
+      <p data-i18n="welcome_body">Jelajahi spek, size & kode setara. Slot sponsor tersedia di area ini setelah AdSense/affiliate aktif.</p>
+      <div class="row">
+        <button type="button" class="btn btn-ghost" id="welcome-close">Tutup</button>
+        <a class="btn btn-primary" href="/#catalog">Lihat katalog</a>
+      </div>
+    </div>
+
+    <script>
+      // Soft welcome (once / 24h) — not a blocking interstitial
+      const wel = document.getElementById("welcome-ad");
+      const key = "partpedia_welcome_v1";
+      try {
+        const last = localStorage.getItem(key);
+        const day = 24 * 60 * 60 * 1000;
+        if (!last || Date.now() - Number(last) > day) {
+          setTimeout(() => wel?.classList.add("show"), 2800);
+        }
+      } catch {}
+      document.getElementById("welcome-close")?.addEventListener("click", () => {
+        wel?.classList.remove("show");
+        try { localStorage.setItem(key, String(Date.now())); } catch {}
+      });
+
+      // Minimal i18n toggle
+      const dict = {
+        en: {
+          welcome_title: "Find parts faster",
+          welcome_body: "Browse specs, sizes & equivalents. Sponsor slots appear here after ads/affiliates are enabled.",
+        },
+        id: {
+          welcome_title: "Temukan part lebih cepat",
+          welcome_body: "Jelajahi spek, size & kode setara. Slot sponsor tersedia di area ini setelah AdSense/affiliate aktif.",
+        },
+      };
+      let lang = "id";
+      document.getElementById("lang-toggle")?.addEventListener("click", () => {
+        lang = lang === "id" ? "en" : "id";
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const k = el.getAttribute("data-i18n");
+          if (k && dict[lang][k]) el.textContent = dict[lang][k];
+        });
+      });
+    </script>
   </body>
 </html>
