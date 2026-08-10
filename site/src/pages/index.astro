@@ -29,15 +29,26 @@ const heroSlides = [
 const brands = ["SKF", "NSK", "NTN", "FAG", "Timken", "KOYO", "NACHI", "Gates", "Optibelt", "Siemens", "Schneider", "ABB"];
 const categoryImage: Record<string, string> = {
   Bearing: "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&w=600&q=70",
-  "V-Belt": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=70",
+  "V-Belt": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=70",
+  Filter: "https://images.unsplash.com/photo-1615900366914-79a2a0a9b13f?auto=format&fit=crop&w=600&q=70",
+  Seal: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Motor Listrik": "https://images.unsplash.com/photo-1565793298595-6a901bc2a8ae?auto=format&fit=crop&w=600&q=70",
+  "Gear Reducer": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=70",
+  Sprocket: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=70",
+  "Selang Hidrolik": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=70",
+  Kopling: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=70",
   "Sensor Industri": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=70",
-  PLC: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=70",
+  PLC: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=70",
   "Inverter / VFD": "https://images.unsplash.com/photo-1558449028-b53a1269d6b3?auto=format&fit=crop&w=600&q=70",
-  "Pelumas Industri": "https://images.unsplash.com/photo-1635785192908-b0a6c1c4a6a1?auto=format&fit=crop&w=600&q=70",
+  "Pelumas Industri": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=70",
+  "Alat Ukur": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
   default: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=70",
 };
-function imgFor(cat: string) {
-  return categoryImage[cat] || categoryImage.default;
+/** Prioritas: image_url di data.json → /products/{slug}.jpg → gambar kategori */
+function imgFor(item: { category: string; slug?: string; image_url?: string }) {
+  if (item.image_url) return item.image_url;
+  if (item.slug) return `/products/${item.slug}.jpg`;
+  return categoryImage[item.category] || categoryImage.default;
 }
 ---
 
@@ -96,7 +107,7 @@ function imgFor(cat: string) {
           const theme = getCategoryTheme(item.category);
           return (
             <a class="feat-card" href={`/sparepart/${item.slug}/`}>
-              <div class="feat-img" style={`background-image:url('${imgFor(item.category)}')`} />
+              <div class="feat-img" style={`background-image:url('${imgFor(item)}')`} />
               <div class="feat-body">
                 <Badge label={item.category} bg={theme.bg} fg={theme.fg} />
                 <h3>{item.part_number}</h3>
@@ -139,7 +150,14 @@ function imgFor(cat: string) {
         const buyUrl = `https://www.amazon.com/s?k=${buyQ}&tag=YOURTAG-20`;
         return (
           <article class="card" data-search={blob} data-category={item.category.toLowerCase()}>
-            <a class="card-media" href={`/sparepart/${item.slug}/`} style={`background-image:url('${imgFor(item.category)}')`} aria-label={item.part_name} />
+            <a class="card-media" href={`/sparepart/${item.slug}/`} aria-label={item.part_name}>
+              <img
+                src={imgFor(item)}
+                alt={item.part_name}
+                loading="lazy"
+                onerror={`this.onerror=null;this.src='${categoryImage[item.category] || categoryImage.default}';`}
+              />
+            </a>
             <div class="card-body">
               <div class="card-top">
                 <Badge label={item.category} bg={theme.bg} fg={theme.fg} />
@@ -410,7 +428,10 @@ function imgFor(cat: string) {
     }
     .card:hover { border-color: rgba(240,164,58,0.45); transform: translateY(-2px); }
     .card-media {
-      display: block; height: 140px; background-size: cover; background-position: center;
+      display: block; height: 140px; overflow: hidden; background: #0e141c;
+    }
+    .card-media img {
+      width: 100%; height: 100%; object-fit: cover;
       filter: saturate(1.05) contrast(1.05);
     }
     .card-body { padding: 0.95rem 1rem 1.1rem; display: flex; flex-direction: column; flex: 1; }
