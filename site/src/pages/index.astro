@@ -147,7 +147,7 @@ function imgFor(item: { category: string; slug?: string; image_url?: string }) {
           .filter(Boolean).join(" ").toLowerCase();
         const buyQ = encodeURIComponent(item.affiliate_query || `${item.part_number} ${item.part_name}`);
         // Placeholder affiliate: user mengganti tag Amazon/Global Industrial setelah daftar
-        const buyUrl = `https://www.amazon.com/s?k=${buyQ}&tag=YOURTAG-20`;
+        const buyUrl = `https://www.amazon.com/s?k=${buyQ}&tag=partpedia29-20`;
         return (
           <article class="card" data-search={blob} data-category={item.category.toLowerCase()}>
             <a class="card-media" href={`/sparepart/${item.slug}/`} aria-label={item.part_name}>
@@ -276,6 +276,7 @@ function imgFor(item: { category: string; slug?: string; image_url?: string }) {
     </div>
   </section>
 
+  <p class="aff-note">Partpedia is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate we may earn from qualifying purchases. “Cek harga beli” may open Amazon search results.</p>
   <AdSlot slotId="home-bottom" />
 
   <script>
@@ -494,5 +495,6 @@ function imgFor(item: { category: string; slug?: string; image_url?: string }) {
     }
     blockquote p { margin: 0 0 0.6rem; font-size: 0.95rem; }
     blockquote footer { color: var(--muted); font-size: 0.8rem; }
+    .aff-note { font-size: 0.75rem; color: var(--muted); margin: 1.5rem 0 0.5rem; max-width: 60ch; }
   </style>
 </Layout>
