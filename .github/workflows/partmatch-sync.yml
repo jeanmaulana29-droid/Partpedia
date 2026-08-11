@@ -23,7 +23,7 @@ jobs:
       - name: Run Partmatch sync
         env:
           PARTMATCH_API_KEY: ${{ secrets.PARTMATCH_API_KEY }}
-          PARTMATCH_MAX_REQUESTS: "80"
+          PARTMATCH_MAX_REQUESTS: "95"
           PARTMATCH_DELAY: "0.4"
         run: python scraper/partmatch_sync.py
 
