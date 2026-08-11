@@ -310,5 +310,950 @@
     "description": "Kopling Fleksibel (L-095) — Kopling untuk Pompa ke gearbox.",
     "source_url": "contoh-data-demo",
     "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6000-2RS1",
+    "part_number": "6000-2RS1",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "SKF",
+    "specification": "Bore 10.0 mm, OD 26.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 4.75 kN, Static load 1.96 kN, Max speed (grease) 40000 rpm, Weight 17 g",
+    "size": "Bore 10.0mm · OD 26.0mm · Width 8.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6000-2RS",
+    "slug": "bearing-skf-6000-2rs1",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "10.0 mm",
+      "OD": "26.0 mm",
+      "Width": "8.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "4.75 kN",
+      "Static load": "1.96 kN",
+      "Max speed (grease)": "40000 rpm",
+      "Weight": "17 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6000-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6000-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6000DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6000LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6000-2RS"
+      }
+    ],
+    "vendor_type": "SKF — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6000-2RS1 (SKF); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6000-2RS1: Bore 10.0 mm, OD 26.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 4.75 kN, Static load 1.96 kN, Max speed (grease) 40000 rpm, Weight 17 g.",
+      "aplikasi": "Bearing 6000-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6000-2RS1 (SKF) — Bore 10.0mm · OD 26.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6000-2RSR",
+    "part_number": "6000-2RSR",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "FAG",
+    "specification": "Bore 10.0 mm, OD 26.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 4.75 kN, Static load 1.96 kN, Max speed (grease) 40000 rpm, Weight 17 g",
+    "size": "Bore 10.0mm · OD 26.0mm · Width 8.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6000-2RS",
+    "slug": "bearing-fag-6000-2rsr",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "10.0 mm",
+      "OD": "26.0 mm",
+      "Width": "8.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "4.75 kN",
+      "Static load": "1.96 kN",
+      "Max speed (grease)": "40000 rpm",
+      "Weight": "17 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6000-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6000-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6000DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6000LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6000-2RS"
+      }
+    ],
+    "vendor_type": "FAG — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6000-2RSR (FAG); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6000-2RSR: Bore 10.0 mm, OD 26.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 4.75 kN, Static load 1.96 kN, Max speed (grease) 40000 rpm, Weight 17 g.",
+      "aplikasi": "Bearing 6000-2RSR umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6000-2RSR (FAG) — Bore 10.0mm · OD 26.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6000DDU",
+    "part_number": "6000DDU",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "NSK",
+    "specification": "Bore 10.0 mm, OD 26.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 4.75 kN, Static load 1.96 kN, Max speed (grease) 40000 rpm, Weight 17 g",
+    "size": "Bore 10.0mm · OD 26.0mm · Width 8.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6000-2RS",
+    "slug": "bearing-nsk-6000ddu",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "10.0 mm",
+      "OD": "26.0 mm",
+      "Width": "8.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "4.75 kN",
+      "Static load": "1.96 kN",
+      "Max speed (grease)": "40000 rpm",
+      "Weight": "17 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6000-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6000-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6000DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6000LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6000-2RS"
+      }
+    ],
+    "vendor_type": "NSK — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6000DDU (NSK); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6000DDU: Bore 10.0 mm, OD 26.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 4.75 kN, Static load 1.96 kN, Max speed (grease) 40000 rpm, Weight 17 g.",
+      "aplikasi": "Bearing 6000DDU umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6000DDU (NSK) — Bore 10.0mm · OD 26.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6001DDU",
+    "part_number": "6001DDU",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "NSK",
+    "specification": "Bore 12.0 mm, OD 28.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 5.4 kN, Static load 2.36 kN, Max speed (grease) 38000 rpm, Weight 19 g",
+    "size": "Bore 12.0mm · OD 28.0mm · Width 8.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6001-2RS",
+    "slug": "bearing-nsk-6001ddu",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "12.0 mm",
+      "OD": "28.0 mm",
+      "Width": "8.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "5.4 kN",
+      "Static load": "2.36 kN",
+      "Max speed (grease)": "38000 rpm",
+      "Weight": "19 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "NSK",
+        "code": "6001DDU"
+      },
+      {
+        "brand": "SKF",
+        "code": "6001-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6001-2RSR"
+      },
+      {
+        "brand": "NTN",
+        "code": "6001LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6001-2RS"
+      }
+    ],
+    "vendor_type": "NSK — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6001DDU (NSK); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6001DDU: Bore 12.0 mm, OD 28.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 5.4 kN, Static load 2.36 kN, Max speed (grease) 38000 rpm, Weight 19 g.",
+      "aplikasi": "Bearing 6001DDU umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6001DDU (NSK) — Bore 12.0mm · OD 28.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6001-2RS1",
+    "part_number": "6001-2RS1",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "SKF",
+    "specification": "Bore 12.0 mm, OD 28.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 5.4 kN, Static load 2.36 kN, Max speed (grease) 38000 rpm, Weight 19 g",
+    "size": "Bore 12.0mm · OD 28.0mm · Width 8.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6001-2RS",
+    "slug": "bearing-skf-6001-2rs1",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "12.0 mm",
+      "OD": "28.0 mm",
+      "Width": "8.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "5.4 kN",
+      "Static load": "2.36 kN",
+      "Max speed (grease)": "38000 rpm",
+      "Weight": "19 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "NSK",
+        "code": "6001DDU"
+      },
+      {
+        "brand": "SKF",
+        "code": "6001-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6001-2RSR"
+      },
+      {
+        "brand": "NTN",
+        "code": "6001LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6001-2RS"
+      }
+    ],
+    "vendor_type": "SKF — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6001-2RS1 (SKF); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6001-2RS1: Bore 12.0 mm, OD 28.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 5.4 kN, Static load 2.36 kN, Max speed (grease) 38000 rpm, Weight 19 g.",
+      "aplikasi": "Bearing 6001-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6001-2RS1 (SKF) — Bore 12.0mm · OD 28.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6001-2RSR",
+    "part_number": "6001-2RSR",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "FAG",
+    "specification": "Bore 12.0 mm, OD 28.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 5.4 kN, Static load 2.36 kN, Max speed (grease) 38000 rpm, Weight 19 g",
+    "size": "Bore 12.0mm · OD 28.0mm · Width 8.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6001-2RS",
+    "slug": "bearing-fag-6001-2rsr",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "12.0 mm",
+      "OD": "28.0 mm",
+      "Width": "8.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "5.4 kN",
+      "Static load": "2.36 kN",
+      "Max speed (grease)": "38000 rpm",
+      "Weight": "19 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "NSK",
+        "code": "6001DDU"
+      },
+      {
+        "brand": "SKF",
+        "code": "6001-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6001-2RSR"
+      },
+      {
+        "brand": "NTN",
+        "code": "6001LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6001-2RS"
+      }
+    ],
+    "vendor_type": "FAG — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6001-2RSR (FAG); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6001-2RSR: Bore 12.0 mm, OD 28.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 5.4 kN, Static load 2.36 kN, Max speed (grease) 38000 rpm, Weight 19 g.",
+      "aplikasi": "Bearing 6001-2RSR umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6001-2RSR (FAG) — Bore 12.0mm · OD 28.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6002-2RS1",
+    "part_number": "6002-2RS1",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "SKF",
+    "specification": "Bore 15.0 mm, OD 32.0 mm, Width 9.0 mm, Seal 2RS, Dynamic load 5.85 kN, Static load 2.85 kN, Max speed (grease) 32000 rpm, Weight 30 g",
+    "size": "Bore 15.0mm · OD 32.0mm · Width 9.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6002-2RS",
+    "slug": "bearing-skf-6002-2rs1",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "15.0 mm",
+      "OD": "32.0 mm",
+      "Width": "9.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "5.85 kN",
+      "Static load": "2.85 kN",
+      "Max speed (grease)": "32000 rpm",
+      "Weight": "30 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6002-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6002-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6002DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6002LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6002-2RS"
+      }
+    ],
+    "vendor_type": "SKF — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6002-2RS1 (SKF); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6002-2RS1: Bore 15.0 mm, OD 32.0 mm, Width 9.0 mm, Seal 2RS, Dynamic load 5.85 kN, Static load 2.85 kN, Max speed (grease) 32000 rpm, Weight 30 g.",
+      "aplikasi": "Bearing 6002-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6002-2RS1 (SKF) — Bore 15.0mm · OD 32.0mm · Width 9.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6002-2RSR",
+    "part_number": "6002-2RSR",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "FAG",
+    "specification": "Bore 15.0 mm, OD 32.0 mm, Width 9.0 mm, Seal 2RS, Dynamic load 5.85 kN, Static load 2.85 kN, Max speed (grease) 32000 rpm, Weight 30 g",
+    "size": "Bore 15.0mm · OD 32.0mm · Width 9.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6002-2RS",
+    "slug": "bearing-fag-6002-2rsr",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "15.0 mm",
+      "OD": "32.0 mm",
+      "Width": "9.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "5.85 kN",
+      "Static load": "2.85 kN",
+      "Max speed (grease)": "32000 rpm",
+      "Weight": "30 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6002-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6002-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6002DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6002LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6002-2RS"
+      }
+    ],
+    "vendor_type": "FAG — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6002-2RSR (FAG); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6002-2RSR: Bore 15.0 mm, OD 32.0 mm, Width 9.0 mm, Seal 2RS, Dynamic load 5.85 kN, Static load 2.85 kN, Max speed (grease) 32000 rpm, Weight 30 g.",
+      "aplikasi": "Bearing 6002-2RSR umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6002-2RSR (FAG) — Bore 15.0mm · OD 32.0mm · Width 9.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6002DDU",
+    "part_number": "6002DDU",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "NSK",
+    "specification": "Bore 15.0 mm, OD 32.0 mm, Width 9.0 mm, Seal 2RS, Dynamic load 5.85 kN, Static load 2.85 kN, Max speed (grease) 32000 rpm, Weight 30 g",
+    "size": "Bore 15.0mm · OD 32.0mm · Width 9.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6002-2RS",
+    "slug": "bearing-nsk-6002ddu",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "15.0 mm",
+      "OD": "32.0 mm",
+      "Width": "9.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "5.85 kN",
+      "Static load": "2.85 kN",
+      "Max speed (grease)": "32000 rpm",
+      "Weight": "30 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6002-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6002-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6002DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6002LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6002-2RS"
+      }
+    ],
+    "vendor_type": "NSK — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6002DDU (NSK); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6002DDU: Bore 15.0 mm, OD 32.0 mm, Width 9.0 mm, Seal 2RS, Dynamic load 5.85 kN, Static load 2.85 kN, Max speed (grease) 32000 rpm, Weight 30 g.",
+      "aplikasi": "Bearing 6002DDU umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6002DDU (NSK) — Bore 15.0mm · OD 32.0mm · Width 9.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6003-2RSR",
+    "part_number": "6003-2RSR",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "FAG",
+    "specification": "Bore 17.0 mm, OD 35.0 mm, Width 10.0 mm, Seal 2RS, Dynamic load 6.37 kN, Static load 3.25 kN, Max speed (grease) 28000 rpm, Weight 37 g",
+    "size": "Bore 17.0mm · OD 35.0mm · Width 10.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6003-2RS",
+    "slug": "bearing-fag-6003-2rsr",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "17.0 mm",
+      "OD": "35.0 mm",
+      "Width": "10.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "6.37 kN",
+      "Static load": "3.25 kN",
+      "Max speed (grease)": "28000 rpm",
+      "Weight": "37 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "FAG",
+        "code": "6003-2RSR"
+      },
+      {
+        "brand": "SKF",
+        "code": "6003-2RS1"
+      },
+      {
+        "brand": "NSK",
+        "code": "6003DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6003LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6003-2RS"
+      }
+    ],
+    "vendor_type": "FAG — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6003-2RSR (FAG); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6003-2RSR: Bore 17.0 mm, OD 35.0 mm, Width 10.0 mm, Seal 2RS, Dynamic load 6.37 kN, Static load 3.25 kN, Max speed (grease) 28000 rpm, Weight 37 g.",
+      "aplikasi": "Bearing 6003-2RSR umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6003-2RSR (FAG) — Bore 17.0mm · OD 35.0mm · Width 10.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6003-2RS1",
+    "part_number": "6003-2RS1",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "SKF",
+    "specification": "Bore 17.0 mm, OD 35.0 mm, Width 10.0 mm, Seal 2RS, Dynamic load 6.37 kN, Static load 3.25 kN, Max speed (grease) 28000 rpm, Weight 37 g",
+    "size": "Bore 17.0mm · OD 35.0mm · Width 10.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6003-2RS",
+    "slug": "bearing-skf-6003-2rs1",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "17.0 mm",
+      "OD": "35.0 mm",
+      "Width": "10.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "6.37 kN",
+      "Static load": "3.25 kN",
+      "Max speed (grease)": "28000 rpm",
+      "Weight": "37 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "FAG",
+        "code": "6003-2RSR"
+      },
+      {
+        "brand": "SKF",
+        "code": "6003-2RS1"
+      },
+      {
+        "brand": "NSK",
+        "code": "6003DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6003LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6003-2RS"
+      }
+    ],
+    "vendor_type": "SKF — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6003-2RS1 (SKF); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6003-2RS1: Bore 17.0 mm, OD 35.0 mm, Width 10.0 mm, Seal 2RS, Dynamic load 6.37 kN, Static load 3.25 kN, Max speed (grease) 28000 rpm, Weight 37 g.",
+      "aplikasi": "Bearing 6003-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6003-2RS1 (SKF) — Bore 17.0mm · OD 35.0mm · Width 10.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6003DDU",
+    "part_number": "6003DDU",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "NSK",
+    "specification": "Bore 17.0 mm, OD 35.0 mm, Width 10.0 mm, Seal 2RS, Dynamic load 6.37 kN, Static load 3.25 kN, Max speed (grease) 28000 rpm, Weight 37 g",
+    "size": "Bore 17.0mm · OD 35.0mm · Width 10.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6003-2RS",
+    "slug": "bearing-nsk-6003ddu",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "17.0 mm",
+      "OD": "35.0 mm",
+      "Width": "10.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "6.37 kN",
+      "Static load": "3.25 kN",
+      "Max speed (grease)": "28000 rpm",
+      "Weight": "37 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "FAG",
+        "code": "6003-2RSR"
+      },
+      {
+        "brand": "SKF",
+        "code": "6003-2RS1"
+      },
+      {
+        "brand": "NSK",
+        "code": "6003DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6003LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6003-2RS"
+      }
+    ],
+    "vendor_type": "NSK — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6003DDU (NSK); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6003DDU: Bore 17.0 mm, OD 35.0 mm, Width 10.0 mm, Seal 2RS, Dynamic load 6.37 kN, Static load 3.25 kN, Max speed (grease) 28000 rpm, Weight 37 g.",
+      "aplikasi": "Bearing 6003DDU umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6003DDU (NSK) — Bore 17.0mm · OD 35.0mm · Width 10.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6004-2RS1",
+    "part_number": "6004-2RS1",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "SKF",
+    "specification": "Bore 20.0 mm, OD 42.0 mm, Width 12.0 mm, Seal 2RS, Dynamic load 9.95 kN, Static load 5.0 kN, Max speed (grease) 24000 rpm, Weight 65 g",
+    "size": "Bore 20.0mm · OD 42.0mm · Width 12.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6004-2RS",
+    "slug": "bearing-skf-6004-2rs1",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "20.0 mm",
+      "OD": "42.0 mm",
+      "Width": "12.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "9.95 kN",
+      "Static load": "5.0 kN",
+      "Max speed (grease)": "24000 rpm",
+      "Weight": "65 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6004-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6004-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6004DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6004LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6004-2RS"
+      }
+    ],
+    "vendor_type": "SKF — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6004-2RS1 (SKF); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6004-2RS1: Bore 20.0 mm, OD 42.0 mm, Width 12.0 mm, Seal 2RS, Dynamic load 9.95 kN, Static load 5.0 kN, Max speed (grease) 24000 rpm, Weight 65 g.",
+      "aplikasi": "Bearing 6004-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6004-2RS1 (SKF) — Bore 20.0mm · OD 42.0mm · Width 12.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6004-2RSR",
+    "part_number": "6004-2RSR",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "FAG",
+    "specification": "Bore 20.0 mm, OD 42.0 mm, Width 12.0 mm, Seal 2RS, Dynamic load 9.95 kN, Static load 5.0 kN, Max speed (grease) 24000 rpm, Weight 65 g",
+    "size": "Bore 20.0mm · OD 42.0mm · Width 12.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6004-2RS",
+    "slug": "bearing-fag-6004-2rsr",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "20.0 mm",
+      "OD": "42.0 mm",
+      "Width": "12.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "9.95 kN",
+      "Static load": "5.0 kN",
+      "Max speed (grease)": "24000 rpm",
+      "Weight": "65 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6004-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6004-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6004DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6004LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6004-2RS"
+      }
+    ],
+    "vendor_type": "FAG — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6004-2RSR (FAG); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6004-2RSR: Bore 20.0 mm, OD 42.0 mm, Width 12.0 mm, Seal 2RS, Dynamic load 9.95 kN, Static load 5.0 kN, Max speed (grease) 24000 rpm, Weight 65 g.",
+      "aplikasi": "Bearing 6004-2RSR umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6004-2RSR (FAG) — Bore 20.0mm · OD 42.0mm · Width 12.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
+  },
+  {
+    "part_name": "Bearing 6004DDU",
+    "part_number": "6004DDU",
+    "category": "Bearing",
+    "subcategory": "Rolling bearing",
+    "brand": "NSK",
+    "specification": "Bore 20.0 mm, OD 42.0 mm, Width 12.0 mm, Seal 2RS, Dynamic load 9.95 kN, Static load 5.0 kN, Max speed (grease) 24000 rpm, Weight 65 g",
+    "size": "Bore 20.0mm · OD 42.0mm · Width 12.0mm",
+    "material": "Chrome steel (typical)",
+    "fungsi": "Menopang poros berputar dan menahan beban radial/aksial sesuai rating.",
+    "kegunaan": "Motor listrik, pompa, gearbox, conveyor, mesin industri umum.",
+    "durability": "Umur pakai bergantung beban, pelumasan, alignment, dan kontaminasi.",
+    "compatible_equipment": "Motor, pompa, gearbox, conveyor",
+    "price_range": "",
+    "unit": "pcs",
+    "alternative_parts": "6004-2RS",
+    "slug": "bearing-nsk-6004ddu",
+    "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Bore": "20.0 mm",
+      "OD": "42.0 mm",
+      "Width": "12.0 mm",
+      "Seal": "2RS",
+      "Dynamic load": "9.95 kN",
+      "Static load": "5.0 kN",
+      "Max speed (grease)": "24000 rpm",
+      "Weight": "65 g"
+    },
+    "iso_standard": "ISO 15 (dimensi bantalan bola metrik — acuan umum)",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6004-2RS1"
+      },
+      {
+        "brand": "FAG",
+        "code": "6004-2RSR"
+      },
+      {
+        "brand": "NSK",
+        "code": "6004DDU"
+      },
+      {
+        "brand": "NTN",
+        "code": "6004LLU"
+      },
+      {
+        "brand": "Timken",
+        "code": "6004-2RS"
+      }
+    ],
+    "vendor_type": "NSK — data cross-reference via Partmatch",
+    "search_intent": {
+      "harga": "Referensi spek 6004DDU (NSK); cek harga ke vendor lokal.",
+      "spesifikasi": "Spesifikasi 6004DDU: Bore 20.0 mm, OD 42.0 mm, Width 12.0 mm, Seal 2RS, Dynamic load 9.95 kN, Static load 5.0 kN, Max speed (grease) 24000 rpm, Weight 65 g.",
+      "aplikasi": "Bearing 6004DDU umum untuk motor, pompa, gearbox, conveyor.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
+      "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
+    },
+    "description": "Bearing 6004DDU (NSK) — Bore 20.0mm · OD 42.0mm · Width 12.0mm. Data spek & ekuivalen dari Partmatch.",
+    "source_url": "https://partmatch.io",
+    "last_updated": "2026-08-11"
   }
 ]
