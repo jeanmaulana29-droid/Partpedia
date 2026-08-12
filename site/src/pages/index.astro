@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import AdSlot from "../components/AdSlot.astro";
 import Badge from "../components/Badge.astro";
 import data from "../data/data.json";
+import shopeeLinks from "../data/shopee-links.json";
 import { getCategoryTheme } from "../utils/theme.js";
 
 const total = data.length;
@@ -148,6 +149,10 @@ function imgFor(item: { category: string; slug?: string; image_url?: string }) {
         const buyQ = encodeURIComponent(item.affiliate_query || `${item.part_number} ${item.part_name}`);
         // Placeholder affiliate: user mengganti tag Amazon/Global Industrial setelah daftar
         const buyUrl = `https://www.amazon.com/s?k=${buyQ}&tag=partpedia29-20`;
+        const shopeeMap = shopeeLinks as Record<string, string>;
+        const shopeeUrl =
+          (item.slug && shopeeMap[item.slug]) ||
+          `https://shopee.co.id/search?keyword=${buyQ}`;
         return (
           <article class="card" data-search={blob} data-category={item.category.toLowerCase()}>
             <a class="card-media" href={`/sparepart/${item.slug}/`} aria-label={item.part_name}>
@@ -173,9 +178,14 @@ function imgFor(item: { category: string; slug?: string; image_url?: string }) {
               {item.fungsi && <p class="fungsi">{item.fungsi}</p>}
               <div class="card-foot">
                 <span class="price">{item.price_range || "Estimasi menyusul"}</span>
-                <a class="buy" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
-                  Cek harga beli →
-                </a>
+                <div class="buy-links">
+                  <a class="buy" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
+                    Cek di Amazon →
+                  </a>
+                  <a class="buy buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow">
+                    Beli di Shopee →
+                  </a>
+                </div>
               </div>
             </div>
           </article>
@@ -452,6 +462,9 @@ function imgFor(item: { category: string; slug?: string; image_url?: string }) {
     }
     .price { font-family: var(--font-mono); font-weight: 600; font-size: 0.88rem; color: var(--amber); }
     .buy { font-size: 0.82rem; font-weight: 600; color: var(--blue); }
+    .buy-links { display: flex; flex-direction: column; gap: 0.28rem; margin-top: 0.15rem; }
+    .buy-shopee { color: #ee4d2d !important; font-weight: 700; }
+    .buy-shopee:hover { color: #c23d22 !important; }
     .buy:hover { color: var(--amber); }
     .empty { text-align: center; color: var(--muted); padding: 2rem; }
 
