@@ -326,7 +326,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6800-2RS",
+    "alternative_parts": "6000-2RS",
     "slug": "bearing-skf-6000-2rs1",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -367,7 +367,7 @@
       "harga": "Referensi spek 6000-2RS1 (SKF); cek harga ke vendor lokal.",
       "spesifikasi": "Spesifikasi 6000-2RS1: Bore 10.0 mm, OD 26.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 4.75 kN, Static load 1.96 kN, Max speed (grease) 40000 rpm, Weight 17 g.",
       "aplikasi": "Bearing 6000-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
-      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
       "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
     },
     "description": "Bearing 6000-2RS1 (SKF) — Bore 10.0mm · OD 26.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
@@ -389,7 +389,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6800-2RS",
+    "alternative_parts": "6000-2RS",
     "slug": "bearing-fag-6000-2rsr",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -452,7 +452,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6800-2RS",
+    "alternative_parts": "6000-2RS",
     "slug": "bearing-nsk-6000ddu",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -515,7 +515,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6801-2RS",
+    "alternative_parts": "6001-2RS",
     "slug": "bearing-nsk-6001ddu",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -578,7 +578,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6801-2RS",
+    "alternative_parts": "6001-2RS",
     "slug": "bearing-skf-6001-2rs1",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -619,7 +619,7 @@
       "harga": "Referensi spek 6001-2RS1 (SKF); cek harga ke vendor lokal.",
       "spesifikasi": "Spesifikasi 6001-2RS1: Bore 12.0 mm, OD 28.0 mm, Width 8.0 mm, Seal 2RS, Dynamic load 5.4 kN, Static load 2.36 kN, Max speed (grease) 38000 rpm, Weight 19 g.",
       "aplikasi": "Bearing 6001-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
-      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
       "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
     },
     "description": "Bearing 6001-2RS1 (SKF) — Bore 12.0mm · OD 28.0mm · Width 8.0mm. Data spek & ekuivalen dari Partmatch.",
@@ -641,7 +641,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6801-2RS",
+    "alternative_parts": "6001-2RS",
     "slug": "bearing-fag-6001-2rsr",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -893,7 +893,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6803-2RS",
+    "alternative_parts": "6003-2RS",
     "slug": "bearing-fag-6003-2rsr",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -956,7 +956,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6803-2RS",
+    "alternative_parts": "6003-2RS",
     "slug": "bearing-skf-6003-2rs1",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -997,7 +997,7 @@
       "harga": "Referensi spek 6003-2RS1 (SKF); cek harga ke vendor lokal.",
       "spesifikasi": "Spesifikasi 6003-2RS1: Bore 17.0 mm, OD 35.0 mm, Width 10.0 mm, Seal 2RS, Dynamic load 6.37 kN, Static load 3.25 kN, Max speed (grease) 28000 rpm, Weight 37 g.",
       "aplikasi": "Bearing 6003-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
-      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
       "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
     },
     "description": "Bearing 6003-2RS1 (SKF) — Bore 17.0mm · OD 35.0mm · Width 10.0mm. Data spek & ekuivalen dari Partmatch.",
@@ -1019,7 +1019,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6803-2RS",
+    "alternative_parts": "6003-2RS",
     "slug": "bearing-nsk-6003ddu",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -1082,7 +1082,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6804-2RS",
+    "alternative_parts": "6004-2RS",
     "slug": "bearing-skf-6004-2rs1",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -1123,7 +1123,7 @@
       "harga": "Referensi spek 6004-2RS1 (SKF); cek harga ke vendor lokal.",
       "spesifikasi": "Spesifikasi 6004-2RS1: Bore 20.0 mm, OD 42.0 mm, Width 12.0 mm, Seal 2RS, Dynamic load 9.95 kN, Static load 5.0 kN, Max speed (grease) 24000 rpm, Weight 65 g.",
       "aplikasi": "Bearing 6004-2RS1 umum untuk motor, pompa, gearbox, conveyor.",
-      "pengganti": "Status ekuivalen Partmatch: probable_equivalent.",
+      "pengganti": "Status ekuivalen Partmatch: verified_equivalent.",
       "keawetan": "Umur pakai bergantung beban, pelumasan, dan alignment."
     },
     "description": "Bearing 6004-2RS1 (SKF) — Bore 20.0mm · OD 42.0mm · Width 12.0mm. Data spek & ekuivalen dari Partmatch.",
@@ -1145,7 +1145,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6804-2RS",
+    "alternative_parts": "6004-2RS",
     "slug": "bearing-fag-6004-2rsr",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
@@ -1208,7 +1208,7 @@
     "compatible_equipment": "Motor, pompa, gearbox, conveyor",
     "price_range": "",
     "unit": "pcs",
-    "alternative_parts": "6804-2RS",
+    "alternative_parts": "6004-2RS",
     "slug": "bearing-nsk-6004ddu",
     "price_note": "Estimasi pasar, bukan harga real-time dari Partmatch — verifikasi ke vendor sebelum membeli",
     "specs_table": {
