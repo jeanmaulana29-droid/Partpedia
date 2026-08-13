@@ -43,6 +43,25 @@ const categoryImage: Record<string, string> = {
   "Inverter / VFD": "https://images.unsplash.com/photo-1558449028-b53a1269d6b3?auto=format&fit=crop&w=600&q=70",
   "Pelumas Industri": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=70",
   "Alat Ukur": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+
+  "Rantai Industri": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=70",
+  "Pulley": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=70",
+  "Baut, Mur, & Washer": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Gasket & Packing": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Valve Industri": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=70",
+  "Pressure Gauge & Transmitter": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+  "Flow Meter": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+  "Pneumatic Cylinder": "https://images.unsplash.com/photo-1565793298595-6a901bc2a8ae?auto=format&fit=crop&w=600&q=70",
+  "Solenoid Valve": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=70",
+  "Hydraulic Pump": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=70",
+  "Fitting & Quick Coupler": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Contactor & Relay": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=70",
+  "MCB / MCCB / Breaker": "https://images.unsplash.com/photo-1558449028-b53a1269d6b3?auto=format&fit=crop&w=600&q=70",
+  "Thermal Overload Relay": "https://images.unsplash.com/photo-1558449028-b53a1269d6b3?auto=format&fit=crop&w=600&q=70",
+  "Linear Guide & Ball Screw": "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=70",
+  "Thermocouple / RTD": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+  "Temperature Controller": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=70",
+  "Rantai Industri": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=70",
   default: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=70",
 };
 /** Prioritas: image_url di data.json → /products/{slug}.jpg → gambar kategori */
@@ -330,34 +349,41 @@ const shopeeMap = shopeeLinks || {};
       }, 3200);
     }
 
-    // Search / filter
+    // Search / filter — category chip = exact data-category (bukan text search)
     const input = document.getElementById("search") as HTMLInputElement | null;
     const cards = Array.from(document.querySelectorAll<HTMLElement>("#results .card"));
     const empty = document.getElementById("empty-state");
     const resetBtn = document.getElementById("reset-filter") as HTMLButtonElement | null;
-    function apply(q: string) {
-      const qq = q.toLowerCase().trim();
+    let activeCategory = "";
+    function applyAll() {
+      const qq = (input?.value || "").toLowerCase().trim();
       let n = 0;
       cards.forEach((c) => {
-        const ok = (c.dataset.search || "").includes(qq);
+        const catOk = !activeCategory || (c.dataset.category || "") === activeCategory;
+        const textOk = !qq || (c.dataset.search || "").includes(qq);
+        const ok = catOk && textOk;
         c.style.display = ok ? "" : "none";
         if (ok) n++;
       });
       if (empty) empty.hidden = n !== 0;
+      if (resetBtn) resetBtn.hidden = !(activeCategory || qq);
     }
-    input?.addEventListener("input", (e) => {
-      apply((e.target as HTMLInputElement).value);
-      if (resetBtn) resetBtn.hidden = !(e.target as HTMLInputElement).value.trim();
-    });
+    input?.addEventListener("input", () => applyAll());
     document.querySelectorAll<HTMLButtonElement>(".chip:not(.chip-reset)").forEach((chip) => {
       chip.addEventListener("click", () => {
-        const cat = chip.dataset.category || "";
-        if (input) input.value = cat;
-        apply(cat);
-        if (resetBtn) resetBtn.hidden = false;
+        const cat = (chip.dataset.category || "").toLowerCase();
+        activeCategory = activeCategory === cat ? "" : cat;
+        document.querySelectorAll<HTMLButtonElement>(".chip:not(.chip-reset)").forEach((x) => x.classList.remove("chip-on"));
+        if (activeCategory) chip.classList.add("chip-on");
+        applyAll();
       });
     });
-    resetBtn?.addEventListener("click", () => { if (input) input.value = ""; apply(""); resetBtn.hidden = true; });
+    resetBtn?.addEventListener("click", () => {
+      activeCategory = "";
+      if (input) input.value = "";
+      document.querySelectorAll<HTMLButtonElement>(".chip:not(.chip-reset)").forEach((x) => x.classList.remove("chip-on"));
+      applyAll();
+    });
   </script>
 
   <style>
@@ -438,6 +464,7 @@ const shopeeMap = shopeeLinks || {};
       background: var(--chip-bg, #243040); color: var(--chip-fg, #d7e0ea);
     }
     .chip-reset { background: var(--ink); color: var(--bg); }
+    .chip-on { outline: 2px solid var(--amber); outline-offset: 2px; }
 
     .grid {
       display: grid;
