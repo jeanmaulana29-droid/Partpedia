@@ -9,6 +9,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 <!doctype html>
 <html lang="id">
+<!-- content bilingual-friendly; toggle sets lang attribute -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -174,12 +175,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/">Part<span>pedia</span></a>
-        <nav class="nav" aria-label="Menu utama">
-          <a href="/">Katalog</a>
-          <a href="/knowledge/">Knowledge</a>
-          <a href="/#brands">Brands</a>
-          <a href="/#insights">Insights</a>
-          <button type="button" class="lang-btn" id="lang-toggle" aria-label="Ganti bahasa">ID | EN</button>
+        <nav class="nav" aria-label="Main menu">
+          <a href="/" data-i18n="nav_catalog">Katalog</a>
+          <a href="/knowledge/" data-i18n="nav_knowledge">Knowledge</a>
+          <a href="/#brands" data-i18n="nav_brands">Brands</a>
+          <a href="/#insights" data-i18n="nav_insights">Insights</a>
+          <button type="button" class="lang-btn" id="lang-toggle" aria-label="Language">EN</button>
         </nav>
       </div>
     </header>
@@ -190,8 +191,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
     <footer class="site-footer">
       <div class="wrap">
-        <div><strong>Partpedia</strong> — direktori spek, kode part & referensi pengganti sparepart industri.</div>
-        <div>Harga bersifat estimasi pasar. Selalu verifikasi ke vendor resmi sebelum membeli.</div>
+        <div><strong>Partpedia</strong> — <span data-i18n="footer_1">direktori spek, kode part & referensi pengganti sparepart industri.</span></div>
+        <div data-i18n="footer_2">Harga bersifat estimasi pasar. Selalu verifikasi ke vendor resmi sebelum membeli.</div>
         <div>© {new Date().getFullYear()} Partpedia · Built for MRO & plant maintenance research</div>
       </div>
     </footer>
@@ -200,8 +201,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       <h3 data-i18n="welcome_title">Temukan part lebih cepat</h3>
       <p data-i18n="welcome_body">Jelajahi spek, size & kode setara. Slot sponsor tersedia di area ini setelah AdSense/affiliate aktif.</p>
       <div class="row">
-        <button type="button" class="btn btn-ghost" id="welcome-close">Tutup</button>
-        <a class="btn btn-primary" href="/#catalog">Lihat katalog</a>
+        <button type="button" class="btn btn-ghost" id="welcome-close" data-i18n="welcome_close">Tutup</button>
+        <a class="btn btn-primary" href="/#catalog" data-i18n="welcome_cta">Lihat katalog</a>
       </div>
     </div>
 
@@ -221,25 +222,86 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         try { localStorage.setItem(key, String(Date.now())); } catch {}
       });
 
-      // Minimal i18n toggle
+      // Site-wide ID/EN toggle (elements with data-i18n)
       const dict = {
         en: {
+          nav_catalog: "Catalog",
+          nav_knowledge: "Knowledge",
+          nav_brands: "Brands",
+          nav_insights: "Insights",
+          footer_1: "directory of specs, part codes & industrial spare-part cross-references.",
+          footer_2: "Prices are market estimates. Always verify with official vendors before buying.",
           welcome_title: "Find parts faster",
           welcome_body: "Browse specs, sizes & equivalents. Sponsor slots appear here after ads/affiliates are enabled.",
+          welcome_close: "Close",
+          welcome_cta: "View catalog",
+          hero_cta1: "Browse catalog",
+          hero_cta2: "Knowledge hub",
+          brands_label: "Cross-brand references often searched in industry",
+          stats_parts: "PARTS INDEXED",
+          stats_cat: "CATEGORIES",
+          stats_eq: "EQUIVALENTS",
+          stats_live: "CATALOG ONLINE",
+          catalog_title: "Full catalog",
+          catalog_sub: "Search by part number, name, size, function — English or Indonesian",
+          search_ph: "Search part number, name, size, brand…",
+          buy_amazon: "Check on Amazon →",
+          buy_shopee: "Buy on Shopee →",
+          empty: "No results.",
+          featured: "Featured cross-reference",
+          featured_sub: "Parts with inter-brand equivalent data",
         },
         id: {
+          nav_catalog: "Katalog",
+          nav_knowledge: "Knowledge",
+          nav_brands: "Brands",
+          nav_insights: "Insights",
+          footer_1: "direktori spek, kode part & referensi pengganti sparepart industri.",
+          footer_2: "Harga bersifat estimasi pasar. Selalu verifikasi ke vendor resmi sebelum membeli.",
           welcome_title: "Temukan part lebih cepat",
           welcome_body: "Jelajahi spek, size & kode setara. Slot sponsor tersedia di area ini setelah AdSense/affiliate aktif.",
+          welcome_close: "Tutup",
+          welcome_cta: "Lihat katalog",
+          hero_cta1: "Jelajahi katalog",
+          hero_cta2: "Knowledge hub",
+          brands_label: "Referensi lintas merek yang sering dicari di industri",
+          stats_parts: "PARTS INDEXED",
+          stats_cat: "CATEGORIES",
+          stats_eq: "EQUIVALENTS",
+          stats_live: "CATALOG ONLINE",
+          catalog_title: "Katalog lengkap",
+          catalog_sub: "Cari kode part, nama, size, fungsi — Inggris atau Indonesia",
+          search_ph: "Cari kode part, nama, size, merek…",
+          buy_amazon: "Cek di Amazon →",
+          buy_shopee: "Beli di Shopee →",
+          empty: "Tidak ada hasil.",
+          featured: "Featured cross-reference",
+          featured_sub: "Part dengan data ekuivalen antar-brand",
         },
       };
-      let lang = "id";
-      document.getElementById("lang-toggle")?.addEventListener("click", () => {
-        lang = lang === "id" ? "en" : "id";
+      function applyLang(lang) {
         document.documentElement.lang = lang;
+        const btn = document.getElementById("lang-toggle");
+        if (btn) btn.textContent = lang === "id" ? "EN" : "ID";
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const k = el.getAttribute("data-i18n");
           if (k && dict[lang][k]) el.textContent = dict[lang][k];
         });
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const k = el.getAttribute("data-i18n-placeholder");
+          if (k && dict[lang][k]) el.setAttribute("placeholder", dict[lang][k]);
+        });
+        try { localStorage.setItem("partpedia_lang", lang); } catch {}
+      }
+      let lang = "id";
+      try {
+        const saved = localStorage.getItem("partpedia_lang");
+        if (saved === "en" || saved === "id") lang = saved;
+      } catch {}
+      applyLang(lang);
+      document.getElementById("lang-toggle")?.addEventListener("click", () => {
+        lang = lang === "id" ? "en" : "id";
+        applyLang(lang);
       });
     </script>
   </body>
