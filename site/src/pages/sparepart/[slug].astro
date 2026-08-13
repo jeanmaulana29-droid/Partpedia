@@ -179,11 +179,16 @@ const jsonLd = {
         <span class="price-disclaimer">⚠️ {entry.price_note}</span>
       </div>
       <div class="buy-links-detail">
-        <a class="buy buy-amazon" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
-          Cek di Amazon →
+        <p class="buy-heading">Beli / cek harga</p>
+        <a class="buy-btn buy-amazon" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
+          <span class="buy-btn-brand">Amazon</span>
+          <span class="buy-btn-action">Cek di Amazon</span>
+          <span class="buy-btn-arrow">→</span>
         </a>
-        <a class="buy buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow">
-          Beli di Shopee →
+        <a class="buy-btn buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow">
+          <span class="buy-btn-brand">Shopee</span>
+          <span class="buy-btn-action">Beli di Shopee</span>
+          <span class="buy-btn-arrow">→</span>
         </a>
       </div>
 
