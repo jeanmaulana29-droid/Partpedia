@@ -178,21 +178,15 @@ const jsonLd = {
         </span>
         <span class="price-disclaimer">⚠️ {entry.price_note}</span>
       </div>
-      <div class="buy-links-detail">
-        <p class="buy-heading">Beli / cek harga</p>
-        <a class="buy-btn buy-amazon" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
-          <span class="buy-btn-brand">Amazon</span>
-          <span class="buy-btn-action">Cek di Amazon</span>
-          <span class="buy-btn-arrow">→</span>
+            <div class="buy-links-detail">
+        <a class="buy buy-amazon" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
+          Cek di Amazon →
         </a>
-        <a class="buy-btn buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow">
-          <span class="buy-btn-brand">Shopee</span>
-          <span class="buy-btn-action">Beli di Shopee</span>
-          <span class="buy-btn-arrow">→</span>
+        <a class="buy buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow">
+          Beli di Shopee →
         </a>
       </div>
-
-      <AdSlot slotId="slot-detail-tengah" />
+<AdSlot slotId="slot-detail-tengah" />
 
       {entry.source_url && !String(entry.source_url).includes("contoh-data-demo") && !String(entry.source_url).includes("demo") && (
         <p class="source">Referensi data · Diperbarui {entry.last_updated}</p>
@@ -280,6 +274,37 @@ const jsonLd = {
     max-height: 320px;
     object-fit: contain;
   }
+
+    .buy-links-detail {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.45rem;
+      margin: 0.85rem 0 1.35rem;
+    }
+    .buy-links-detail .buy {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      line-height: 1.4;
+    }
+    .buy-links-detail .buy-amazon {
+      color: #4da3ff;
+    }
+    .buy-links-detail .buy-amazon:hover {
+      color: #7cbcff;
+      text-decoration: underline;
+    }
+    .buy-links-detail .buy-shopee {
+      color: #ee4d2d;
+    }
+    .buy-links-detail .buy-shopee:hover {
+      color: #ff6b4a;
+      text-decoration: underline;
+    }
+
 </style>
 
 </Layout>
