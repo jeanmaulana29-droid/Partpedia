@@ -8,6 +8,40 @@ import { getCategoryTheme } from "../utils/theme.js";
 
 const total = data.length;
 const categories = [...new Set(data.map((d) => d.category))];
+const categoryIcon = {
+  "Bearing": "⚙️",
+  "V-Belt": "🪢",
+  "Sprocket": "⭕",
+  "Rantai Industri": "🔗",
+  "Pulley": "🌀",
+  "Kopling": "🔧",
+  "Gear Reducer": "🛞",
+  "Baut, Mur, & Washer": "🔩",
+  "Gasket & Packing": "🟤",
+  "Seal": "💍",
+  "Valve Industri": "🚰",
+  "Pressure Gauge & Transmitter": "⏲️",
+  "Flow Meter": "📈",
+  "Selang Hidrolik": "〰️",
+  "Pneumatic Cylinder": "🛢️",
+  "Solenoid Valve": "⚡",
+  "Hydraulic Pump": "💧",
+  "Fitting & Quick Coupler": "🔌",
+  "Filter": "🧺",
+  "Motor Listrik": "🔋",
+  "PLC": "🖥️",
+  "Inverter / VFD": "📶",
+  "Sensor Industri": "📡",
+  "Contactor & Relay": "🔘",
+  "MCB / MCCB / Breaker": "🛡️",
+  "Thermal Overload Relay": "🌡️",
+  "Linear Guide & Ball Screw": "📏",
+  "Thermocouple / RTD": "🔥",
+  "Temperature Controller": "🎛️",
+};
+function iconFor(cat) {
+  return categoryIcon[cat] || "📦";
+}
 const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.length || 0), 0);
 const featured = data.filter((d) => d.equivalent_codes?.length).slice(0, 8);
 const heroSlides = [
@@ -156,16 +190,18 @@ const shopeeMap = shopeeLinks || {};
       <p>Cari nama, kode, size, atau kategori</p>
     </div>
     <input id="search" type="search" placeholder="Cari kode part, nama, size, merek…" data-i18n-placeholder="search_ph" aria-label="Cari" />
-    <div class="categories">
-      {categories.map((c) => {
-        const theme = getCategoryTheme(c);
-        return (
-          <button type="button" class="chip" data-category={c.toLowerCase()} style={`--chip-bg:${theme.bg};--chip-fg:${theme.fg};`}>
-            {c}
-          </button>
-        );
-      })}
-      <button type="button" class="chip chip-reset" id="reset-filter" hidden>Reset</button>
+    <div class="cat-rail-wrap">
+      <div class="cat-rail" id="cat-rail" role="list">
+        {categories.map((c) => {
+          return (
+            <button type="button" class="chip cat-item" data-category={c.toLowerCase()} role="listitem" title={c}>
+              <span class="cat-icon" aria-hidden="true">{iconFor(c)}</span>
+              <span class="cat-label">{c}</span>
+            </button>
+          );
+        })}
+      </div>
+      <button type="button" class="chip chip-reset" id="reset-filter" hidden>Reset filter</button>
     </div>
 
     <div class="grid" id="results">
@@ -457,14 +493,91 @@ const shopeeMap = shopeeLinks || {};
       border: 1px solid var(--line); background: var(--bg-elevated); color: var(--ink);
       font-size: 1rem; margin-bottom: 0.9rem;
     }
-    .categories { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.25rem; }
-    .chip {
-      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
-      border: none; cursor: pointer; padding: 0.4rem 0.8rem; border-radius: 999px;
-      background: var(--chip-bg, #243040); color: var(--chip-fg, #d7e0ea);
+
+    
+    .cat-rail-wrap { margin: 0.75rem 0 1rem; }
+    .cat-rail {
+      display: flex;
+      gap: 0.55rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0.15rem 0.65rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
     }
-    .chip-reset { background: var(--ink); color: var(--bg); }
-    .chip-on { outline: 2px solid var(--amber); outline-offset: 2px; }
+    .cat-rail::-webkit-scrollbar { height: 4px; }
+    .cat-rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+    .cat-item.chip {
+      flex: 0 0 auto;
+      width: 4.6rem;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.25rem 0.4rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elevated);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cat-item.chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--amber);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cat-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(145deg, #1a2330, #0e141c);
+      border: 1px solid rgba(255,255,255,0.06);
+      animation: cat-float 3.2s ease-in-out infinite;
+    }
+    .cat-item:nth-child(2n) .cat-icon { animation-delay: 0.4s; }
+    .cat-item:nth-child(3n) .cat-icon { animation-delay: 0.8s; }
+    @keyframes cat-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    .cat-label {
+      font-size: 0.62rem;
+      line-height: 1.15;
+      text-align: center;
+      max-width: 4.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .chip-on {
+      border-color: var(--amber) !important;
+      box-shadow: 0 0 0 2px rgba(232, 163, 61, 0.35);
+    }
+    .chip-on .cat-label { color: var(--amber); }
+    .chip-reset {
+      margin-top: 0.35rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: var(--ink);
+      color: var(--bg);
+    }
+    @media (min-width: 700px) {
+      .cat-item.chip { width: 5.1rem; }
+      .cat-label { font-size: 0.68rem; max-width: 4.9rem; }
+      .cat-icon { width: 2.85rem; height: 2.85rem; font-size: 1.45rem; }
+    }
 
     .grid {
       display: grid;
@@ -472,10 +585,180 @@ const shopeeMap = shopeeLinks || {};
       gap: 0.65rem;
     }
     @media (min-width: 640px) {
-      .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.85rem; }
+      
+    .cat-rail-wrap { margin: 0.75rem 0 1rem; }
+    .cat-rail {
+      display: flex;
+      gap: 0.55rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0.15rem 0.65rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .cat-rail::-webkit-scrollbar { height: 4px; }
+    .cat-rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+    .cat-item.chip {
+      flex: 0 0 auto;
+      width: 4.6rem;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.25rem 0.4rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elevated);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cat-item.chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--amber);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cat-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(145deg, #1a2330, #0e141c);
+      border: 1px solid rgba(255,255,255,0.06);
+      animation: cat-float 3.2s ease-in-out infinite;
+    }
+    .cat-item:nth-child(2n) .cat-icon { animation-delay: 0.4s; }
+    .cat-item:nth-child(3n) .cat-icon { animation-delay: 0.8s; }
+    @keyframes cat-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    .cat-label {
+      font-size: 0.62rem;
+      line-height: 1.15;
+      text-align: center;
+      max-width: 4.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .chip-on {
+      border-color: var(--amber) !important;
+      box-shadow: 0 0 0 2px rgba(232, 163, 61, 0.35);
+    }
+    .chip-on .cat-label { color: var(--amber); }
+    .chip-reset {
+      margin-top: 0.35rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: var(--ink);
+      color: var(--bg);
+    }
+    @media (min-width: 700px) {
+      .cat-item.chip { width: 5.1rem; }
+      .cat-label { font-size: 0.68rem; max-width: 4.9rem; }
+      .cat-icon { width: 2.85rem; height: 2.85rem; font-size: 1.45rem; }
+    }
+
+    .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.85rem; }
     }
     @media (min-width: 1024px) {
-      .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+      
+    .cat-rail-wrap { margin: 0.75rem 0 1rem; }
+    .cat-rail {
+      display: flex;
+      gap: 0.55rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0.15rem 0.65rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .cat-rail::-webkit-scrollbar { height: 4px; }
+    .cat-rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+    .cat-item.chip {
+      flex: 0 0 auto;
+      width: 4.6rem;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.25rem 0.4rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elevated);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cat-item.chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--amber);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cat-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(145deg, #1a2330, #0e141c);
+      border: 1px solid rgba(255,255,255,0.06);
+      animation: cat-float 3.2s ease-in-out infinite;
+    }
+    .cat-item:nth-child(2n) .cat-icon { animation-delay: 0.4s; }
+    .cat-item:nth-child(3n) .cat-icon { animation-delay: 0.8s; }
+    @keyframes cat-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    .cat-label {
+      font-size: 0.62rem;
+      line-height: 1.15;
+      text-align: center;
+      max-width: 4.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .chip-on {
+      border-color: var(--amber) !important;
+      box-shadow: 0 0 0 2px rgba(232, 163, 61, 0.35);
+    }
+    .chip-on .cat-label { color: var(--amber); }
+    .chip-reset {
+      margin-top: 0.35rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: var(--ink);
+      color: var(--bg);
+    }
+    @media (min-width: 700px) {
+      .cat-item.chip { width: 5.1rem; }
+      .cat-label { font-size: 0.68rem; max-width: 4.9rem; }
+      .cat-icon { width: 2.85rem; height: 2.85rem; font-size: 1.45rem; }
+    }
+
+    .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
     }
     .card {
       background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
