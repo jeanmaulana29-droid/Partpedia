@@ -6,6 +6,7 @@ import Badge from "../../components/Badge.astro";
 import EquivalentCodes from "../../components/EquivalentCodes.astro";
 import SpecsTable from "../../components/SpecsTable.astro";
 import data from "../../data/data.json";
+import shopeeLinks from "../../data/shopee-links.json";
 import { getCategoryTheme } from "../../utils/theme.js";
 
 export async function getStaticPaths() {
@@ -17,6 +18,11 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const theme = getCategoryTheme(entry.category);
+const buyQ = encodeURIComponent(entry.affiliate_query || `${entry.part_number} ${entry.part_name}`);
+const buyUrl = `https://www.amazon.com/s?k=${buyQ}&tag=partpedia29-20`;
+const shopeeMap = shopeeLinks || {};
+const shopeeUrl = (entry.slug && shopeeMap[entry.slug]) || `https://shopee.co.id/search?keyword=${buyQ}`;
+
 
 const relatedEntries = data
   .filter((d) => d.category === entry.category && d.slug !== entry.slug)
@@ -172,10 +178,20 @@ const jsonLd = {
         </span>
         <span class="price-disclaimer">⚠️ {entry.price_note}</span>
       </div>
+      <div class="buy-links-detail">
+        <a class="buy buy-amazon" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
+          Cek di Amazon →
+        </a>
+        <a class="buy buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow">
+          Beli di Shopee →
+        </a>
+      </div>
 
       <AdSlot slotId="slot-detail-tengah" />
 
-      <p class="source">Sumber: {entry.source_url} · Diperbarui {entry.last_updated}</p>
+      {entry.source_url && !String(entry.source_url).includes("contoh-data-demo") && !String(entry.source_url).includes("demo") && (
+        <p class="source">Referensi data · Diperbarui {entry.last_updated}</p>
+      )}
 
       <AdSlot slotId="slot-detail-bawah" />
 
