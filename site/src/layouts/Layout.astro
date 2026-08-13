@@ -14,17 +14,48 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="application-name" content="Partpedia" />
+    <meta name="apple-mobile-web-app-title" content="Partpedia" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="keywords" content="sparepart industri, bearing, V-belt, PLC, sensor industri, kode part, cross reference, harga sparepart, industrial parts, MRO, maintenance repair operations, gearbox, seal, filter hidrolik" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Partpedia" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content={new URL("/og-default.png", Astro.site).toString()} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:image" content={new URL("/icon-192.png", Astro.site).toString()} />
     <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Partpedia",
+      "alternateName": ["Partpedia Industrial Parts", "Partpedia Katalog Sparepart"],
+      "url": "https://partpedia.vercel.app/",
+      "description": description,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Partpedia",
+        "url": "https://partpedia.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://partpedia.vercel.app/icon-512.png"
+        }
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://partpedia.vercel.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    })} />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -95,6 +126,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         letter-spacing: -0.02em;
         color: var(--ink);
       }
+      .brand { display: inline-flex; align-items: center; gap: 0.45rem; }
+      .brand-logo { border-radius: 6px; display: block; }
       .brand span { color: var(--amber); }
       .nav { display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap; }
       .nav a { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
@@ -174,7 +207,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/">Part<span>pedia</span></a>
+        <a class="brand" href="/">
+          <img src="/logo.png" alt="Partpedia" width="28" height="28" class="brand-logo" />
+          Part<span>pedia</span>
+        </a>
         <nav class="nav" aria-label="Main menu">
           <a href="/" data-i18n="nav_catalog">Katalog</a>
           <a href="/knowledge/" data-i18n="nav_knowledge">Knowledge</a>
