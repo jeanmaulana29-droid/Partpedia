@@ -79,6 +79,15 @@ const jsonLd = {
         )}
       </div>
 
+
+      <div class="product-photo">
+        <img
+          src={`/products/${entry.slug}.jpg`}
+          alt={entry.part_name}
+          loading="lazy"
+          onerror={`this.onerror=function(){this.onerror=function(){this.onerror=null;this.style.display='none';};this.src='/products/${entry.slug}.png';};this.src='/products/${entry.slug}.jpeg';`}
+        />
+      </div>
       <h1>{entry.part_name}</h1>
       <p class="lead-code">
         <span class="mono">{entry.part_number}</span>
@@ -234,6 +243,22 @@ const jsonLd = {
     .related li a { display: flex; justify-content: space-between; gap: 1rem; border: 1px solid var(--line); background: var(--bg-card); border-radius: 10px; padding: 0.7rem 0.95rem; color: var(--ink); }
     .rel-code { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
     .buy-cta { display: inline-flex; margin: 0.75rem 0 0; font-weight: 600; color: var(--blue); }
-  </style>
+  
+  .product-photo {
+    margin: 0 0 1.25rem;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #0e141c;
+    max-width: 420px;
+  }
+  .product-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+  }
+</style>
 
 </Layout>
