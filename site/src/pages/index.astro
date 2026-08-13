@@ -68,8 +68,8 @@ const shopeeMap = shopeeLinks || {};
             <h1>{s.title}</h1>
             <p class="hero-sub">{s.sub}</p>
             <div class="hero-cta">
-              <a class="btn btn-primary" href="#catalog">Jelajahi katalog</a>
-              <a class="btn btn-ghost" href="/knowledge/">Knowledge hub</a>
+              <a class="btn btn-primary" href="#catalog" data-i18n="hero_cta1">Jelajahi katalog</a>
+              <a class="btn btn-ghost" href="/knowledge/" data-i18n="hero_cta2">Knowledge hub</a>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ const shopeeMap = shopeeLinks || {};
 
   <!-- BRAND STRIP -->
   <section class="brands" id="brands" aria-label="Brand referensi industri">
-    <p class="brands-label">Referensi lintas merek yang sering dicari di industri</p>
+    <p class="brands-label" data-i18n="brands_label">Referensi lintas merek yang sering dicari di industri</p>
     <div class="brands-track">
       {brands.map((b) => <span class="brand-pill">{b}</span>)}
       {brands.map((b) => <span class="brand-pill" aria-hidden="true">{b}</span>)}
@@ -129,7 +129,7 @@ const shopeeMap = shopeeLinks || {};
       <h2>Katalog sparepart</h2>
       <p>Cari nama, kode, size, atau kategori</p>
     </div>
-    <input id="search" type="search" placeholder="Cari bearing 6205, V-belt, sensor, PLC..." aria-label="Cari" />
+    <input id="search" type="search" placeholder="Cari kode part, nama, size, merek…" data-i18n-placeholder="search_ph" aria-label="Cari" />
     <div class="categories">
       {categories.map((c) => {
         const theme = getCategoryTheme(c);
@@ -145,7 +145,12 @@ const shopeeMap = shopeeLinks || {};
     <div class="grid" id="results">
       {data.map((item) => {
         const theme = getCategoryTheme(item.category);
-        const blob = [item.part_name, item.part_number, item.category, item.size, item.fungsi, item.kegunaan, item.brand]
+        const blob = [
+          item.part_name, item.part_number, item.category, item.subcategory,
+          item.size, item.fungsi, item.kegunaan, item.brand, item.material,
+          item.specification, item.alternative_parts,
+          ...(item.equivalent_codes || []),
+        ]
           .filter(Boolean).join(" ").toLowerCase();
         const buyQ = encodeURIComponent(item.affiliate_query || `${item.part_number} ${item.part_name}`);
         // Placeholder affiliate: user mengganti tag Amazon/Global Industrial setelah daftar
@@ -179,10 +184,10 @@ const shopeeMap = shopeeLinks || {};
               <div class="card-foot">
                 <span class="price">{item.price_range || "Estimasi menyusul"}</span>
                 <div class="buy-links">
-                  <a class="buy" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
+                  <a class="buy" href={buyUrl} target="_blank" rel="noopener sponsored nofollow" data-i18n="buy_amazon">
                     Cek di Amazon →
                   </a>
-                  <a class="buy buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow">
+                  <a class="buy buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow" data-i18n="buy_shopee">
                     Beli di Shopee →
                   </a>
                 </div>
@@ -192,7 +197,7 @@ const shopeeMap = shopeeLinks || {};
         );
       })}
     </div>
-    <p id="empty-state" class="empty" hidden>Tidak ada hasil.</p>
+    <p id="empty-state" class="empty" hidden data-i18n="empty">Tidak ada hasil.</p>
   </section>
 
   <AdSlot slotId="home-mid" />
