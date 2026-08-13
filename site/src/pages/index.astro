@@ -48,8 +48,15 @@ const categoryImage: Record<string, string> = {
 /** Prioritas: image_url di data.json → /products/{slug}.jpg → gambar kategori */
 function imgFor(item) {
   if (item.image_url) return item.image_url;
+  // Prefer .jpg; onerror in template also tries .jpeg then .png then category
   if (item.slug) return `/products/${item.slug}.jpg`;
   return categoryImage[item.category] || categoryImage.default;
+}
+function imgFallback(item) {
+  const cat = categoryImage[item.category] || categoryImage.default;
+  if (!item.slug) return cat;
+  // chain handled in onerror attribute
+  return cat;
 }
 const shopeeMap = shopeeLinks || {};
 ---
@@ -165,7 +172,7 @@ const shopeeMap = shopeeLinks || {};
                 src={imgFor(item)}
                 alt={item.part_name}
                 loading="lazy"
-                onerror={`this.onerror=null;this.src='${categoryImage[item.category] || categoryImage.default}';`}
+                onerror={`this.onerror=function(){this.onerror=function(){this.onerror=null;this.src='${categoryImage[item.category] || categoryImage.default}';};this.src='/products/${item.slug}.png';};this.src='/products/${item.slug}.jpeg';`}
               />
             </a>
             <div class="card-body">
