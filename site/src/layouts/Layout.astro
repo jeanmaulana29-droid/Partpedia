@@ -109,30 +109,64 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         outline-offset: 2px;
       }
       .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+      
       .site-header {
         position: sticky; top: 0; z-index: 50;
         backdrop-filter: blur(14px);
-        background: rgba(11,15,20,0.82);
+        background: rgba(11,15,20,0.92);
         border-bottom: 1px solid var(--line);
       }
       .site-header .wrap {
-        display: flex; align-items: center; justify-content: space-between;
-        min-height: 64px; gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 0.65rem;
+        padding-bottom: 0.55rem;
+        height: auto;
+        min-height: 0;
+      }
+      .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
       }
       .brand {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 1.25rem;
-        letter-spacing: -0.02em;
-        color: var(--ink);
+        font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
+        letter-spacing: -0.02em; color: var(--ink);
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        text-decoration: none;
       }
-      .brand { display: inline-flex; align-items: center; gap: 0.45rem; }
       .brand-logo { border-radius: 6px; display: block; }
       .brand span { color: var(--amber); }
-      .nav { display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap; }
-      .nav a { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
-      .nav a:hover { color: var(--ink); }
+      .nav {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0.45rem 0 0.15rem;
+        margin: 0 -0.15rem;
+      }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav a {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--bg-elevated);
+        white-space: nowrap;
+      }
+      .nav a:hover { color: var(--ink); border-color: var(--amber); }
       .lang-btn {
+
         font-family: var(--font-mono);
         font-size: 0.7rem;
         border: 1px solid var(--line);
@@ -142,6 +176,30 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         border-radius: 999px;
         cursor: pointer;
       }
+      @media (min-width: 768px) {
+        .site-header .wrap {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          height: 64px;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+        .header-row { flex: 1; }
+        .nav {
+          overflow: visible;
+          padding: 0;
+          margin: 0;
+          gap: 0.35rem 0.5rem;
+        }
+        .nav a {
+          border: none;
+          background: transparent;
+          font-size: 0.9rem;
+          padding: 0.25rem 0.45rem;
+        }
+      }
+
       .site-footer {
         margin-top: 4rem;
         border-top: 1px solid var(--line);
@@ -207,16 +265,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/">
-          <img src="/logo.png" alt="Partpedia" width="28" height="28" class="brand-logo" />
-          Part<span>pedia</span>
-        </a>
+        <div class="header-row">
+          <a class="brand" href="/">
+            <img src="/logo.png" alt="Partpedia" width="28" height="28" class="brand-logo" />
+            Part<span>pedia</span>
+          </a>
+          <button type="button" class="lang-btn" id="lang-toggle" aria-label="Language">EN</button>
+        </div>
         <nav class="nav" aria-label="Main menu">
           <a href="/" data-i18n="nav_catalog">Katalog</a>
           <a href="/knowledge/" data-i18n="nav_knowledge">Knowledge</a>
           <a href="/#brands" data-i18n="nav_brands">Brands</a>
           <a href="/#insights" data-i18n="nav_insights">Insights</a>
-          <button type="button" class="lang-btn" id="lang-toggle" aria-label="Language">EN</button>
         </nav>
       </div>
     </header>
