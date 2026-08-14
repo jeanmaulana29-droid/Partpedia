@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import articles from "../../data/articles.json";
+
+export async function getStaticPaths() {
+  return articles.map((a) => ({
+    params: { slug: a.slug },
+    props: { article: a },
+  }));
+}
+
+const { article } = Astro.props;
+const paragraphs = String(article.body || "")
+  .trim()
+  .split(/\n\n+/)
+  .map((p) => p.trim())
+  .filter(Boolean);
+
+function renderInline(text) {
+  // very small markdown: **bold** and line breaks with - lists already in paragraphs
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`([^`]+)`/g, "<code>$1</code>");
+}
+---
+<Layout
+  title={`${article.title} — Partpedia Knowledge`}
+  description={article.excerpt}
+>
+  <article class="article">
+    <p class="kicker">Wawasan Industri</p>
+    <p class="date">{article.date}</p>
+    <h1>{article.title}</h1>
+    {article.image && (
+      <div class="hero-img" style={`background-image:url('${article.image}')`} />
+    )}
+    <p class="lead">{article.excerpt}</p>
+    <div class="body">
+      {paragraphs.map((p) => {
+        if (p.startsWith("- ")) {
+          const items = p.split("\n").filter((l) => l.startsWith("- "));
+          return (
+            <ul>
+              {items.map((li) => (
+                <li set:html={renderInline(li.replace(/^- /, ""))} />
+              ))}
+            </ul>
+          );
+        }
+        if (/^\d+\.\s/.test(p)) {
+          const items = p.split("\n").filter((l) => /^\d+\.\s/.test(l));
+          return (
+            <ol>
+              {items.map((li) => (
+                <li set:html={renderInline(li.replace(/^\d+\.\s/, ""))} />
+              ))}
+            </ol>
+          );
+        }
+        return <p set:html={renderInline(p)} />;
+      })}
+    </div>
+    <p class="back">
+      <a href="/knowledge/">← Semua wawasan</a>
+      ·
+      <a href="/">Katalog</a>
+    </p>
+  </article>
+  <style>
+    .article { max-width: 720px; padding: 2rem 0 3rem; }
+    .kicker {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0;
+    }
+    .date { color: var(--muted); font-size: 0.85rem; margin: 0.35rem 0 0.5rem; }
+    h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.4rem 0 1rem; }
+    .hero-img {
+      height: 200px; border-radius: 14px; background-size: cover; background-position: center;
+      border: 1px solid var(--line); margin-bottom: 1.25rem;
+    }
+    .lead { color: var(--muted); font-size: 1.05rem; }
+    .body p { line-height: 1.65; margin: 0.85rem 0; }
+    .body ul, .body ol { padding-left: 1.2rem; margin: 0.75rem 0; }
+    .body li { margin-bottom: 0.35rem; }
+    .body code {
+      font-family: var(--font-mono); font-size: 0.88em;
+      background: var(--bg-elevated); padding: 0.1em 0.35em; border-radius: 4px;
+    }
+    .back { margin-top: 2.5rem; color: var(--muted); }
+    .back a { color: var(--blue); }
+  </style>
+</Layout>
