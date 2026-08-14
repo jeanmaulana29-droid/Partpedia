@@ -1,95 +1,186 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import articles from "../../data/articles.json";
+import AdSlot from "../../components/AdSlot.astro";
+import { loadAllArticles } from "../../utils/loadArticles.js";
 
+const all = loadAllArticles();
 export async function getStaticPaths() {
-  return articles.map((a) => ({
-    params: { slug: a.slug },
-    props: { article: a },
+  const list = loadAllArticles();
+  return list.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
   }));
 }
 
 const { article } = Astro.props;
-const paragraphs = String(article.body || "")
+const blocks = String(article.body || "")
   .trim()
   .split(/\n\n+/)
-  .map((p) => p.trim())
+  .map((b) => b.trim())
   .filter(Boolean);
 
-function renderInline(text) {
-  // very small markdown: **bold** and line breaks with - lists already in paragraphs
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/`([^`]+)`/g, "<code>$1</code>");
+function isHeading(p) {
+  // short line without period at end often a subheading
+  return p.length < 80 && !p.endsWith(".") && !p.startsWith("-") && !/^\d+\./.test(p) && !p.includes("\n");
 }
 ---
-<Layout
-  title={`${article.title} — Partpedia Knowledge`}
-  description={article.excerpt}
->
-  <article class="article">
-    <p class="kicker">Wawasan Industri</p>
-    <p class="date">{article.date}</p>
-    <h1>{article.title}</h1>
-    {article.image && (
-      <div class="hero-img" style={`background-image:url('${article.image}')`} />
-    )}
-    <p class="lead">{article.excerpt}</p>
-    <div class="body">
-      {paragraphs.map((p) => {
-        if (p.startsWith("- ")) {
-          const items = p.split("\n").filter((l) => l.startsWith("- "));
+<Layout title={`${article.title} — Partpedia`} description={article.excerpt}>
+  <div class="mag">
+    <header class="mag-top">
+      <a class="mag-brand" href="/">
+        <img src="/logo.png" alt="Partpedia" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Part<span class="accent">pedia</span></span>
+      </a>
+      <nav class="mag-nav">
+        <a href="/knowledge/">Wawasan</a>
+        <a href="/">Katalog</a>
+      </nav>
+    </header>
+
+    <p class="mag-kicker">Wawasan Industri</p>
+    <time class="mag-date" datetime={article.date}>{article.date}</time>
+    <h1 class="mag-title">{article.title}</h1>
+    <p class="mag-deck">{article.excerpt}</p>
+
+    <div class="mag-hero">
+      <img
+        src={article.image}
+        alt=""
+        onerror={`this.onerror=null;this.src='${article.imageFallback}'`}
+      />
+    </div>
+
+    <AdSlot slotId="article-top" />
+
+    <div class="mag-body">
+      {blocks.map((p) => {
+        if (p.startsWith("- ") || p.includes("\n- ")) {
+          const items = p.split("\n").filter((l) => l.trim().startsWith("- "));
           return (
             <ul>
-              {items.map((li) => (
-                <li set:html={renderInline(li.replace(/^- /, ""))} />
-              ))}
+              {items.map((li) => <li>{li.replace(/^\s*-\s*/, "")}</li>)}
             </ul>
           );
         }
-        if (/^\d+\.\s/.test(p)) {
-          const items = p.split("\n").filter((l) => /^\d+\.\s/.test(l));
-          return (
-            <ol>
-              {items.map((li) => (
-                <li set:html={renderInline(li.replace(/^\d+\.\s/, ""))} />
-              ))}
-            </ol>
-          );
+        if (isHeading(p)) {
+          return <h2>{p}</h2>;
         }
-        return <p set:html={renderInline(p)} />;
+        return <p>{p}</p>;
       })}
     </div>
-    <p class="back">
+
+    <AdSlot slotId="article-mid" />
+
+    <footer class="mag-foot">
       <a href="/knowledge/">← Semua wawasan</a>
-      ·
-      <a href="/">Katalog</a>
-    </p>
-  </article>
+      <a href="/">Jelajahi katalog →</a>
+    </footer>
+
+    <AdSlot slotId="article-bottom" />
+  </div>
+
   <style>
-    .article { max-width: 720px; padding: 2rem 0 3rem; }
-    .kicker {
-      font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal);
-      letter-spacing: 0.08em; text-transform: uppercase; margin: 0;
+    .mag {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
     }
-    .date { color: var(--muted); font-size: 0.85rem; margin: 0.35rem 0 0.5rem; }
-    h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.4rem 0 1rem; }
-    .hero-img {
-      height: 200px; border-radius: 14px; background-size: cover; background-position: center;
-      border: 1px solid var(--line); margin-bottom: 1.25rem;
+    .mag-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--line);
     }
-    .lead { color: var(--muted); font-size: 1.05rem; }
-    .body p { line-height: 1.65; margin: 0.85rem 0; }
-    .body ul, .body ol { padding-left: 1.2rem; margin: 0.75rem 0; }
-    .body li { margin-bottom: 0.35rem; }
-    .body code {
-      font-family: var(--font-mono); font-size: 0.88em;
-      background: var(--bg-elevated); padding: 0.1em 0.35em; border-radius: 4px;
+    .mag-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
     }
-    .back { margin-top: 2.5rem; color: var(--muted); }
-    .back a { color: var(--blue); }
+    .mag-brand img { border-radius: 8px; }
+    .mag-brand .accent { color: var(--amber); }
+    .mag-nav { display: flex; gap: 1rem; font-size: 0.88rem; }
+    .mag-nav a { color: var(--muted); }
+    .mag-nav a:hover { color: var(--amber); }
+    .mag-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 0 0 0.35rem;
+    }
+    .mag-date {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+    .mag-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4.5vw, 2.45rem);
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .mag-deck {
+      font-size: 1.12rem;
+      line-height: 1.55;
+      color: var(--muted);
+      margin: 0 0 1.35rem;
+    }
+    .mag-hero {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #0e141c;
+      margin-bottom: 1.5rem;
+      aspect-ratio: 16 / 9;
+    }
+    .mag-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mag-body {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #d5dde6;
+    }
+    .mag-body p { margin: 0 0 1.15rem; }
+    .mag-body h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin: 1.75rem 0 0.65rem;
+      color: var(--ink);
+    }
+    .mag-body ul {
+      margin: 0 0 1.15rem;
+      padding-left: 1.2rem;
+    }
+    .mag-body li { margin-bottom: 0.4rem; }
+    .mag-foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      font-weight: 600;
+    }
+    .mag-foot a { color: var(--blue); }
+    @media (max-width: 560px) {
+      .mag { padding: 0.75rem 0 2.5rem; }
+      .mag-body { font-size: 1rem; }
+    }
   </style>
 </Layout>
