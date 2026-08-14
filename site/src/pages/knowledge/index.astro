@@ -25,7 +25,6 @@ const sorted = loadAllArticles();
             <img src={a.image} alt="" onerror={`this.onerror=null;this.src='${a.imageFallback}'`} />
           </div>
           <div>
-            <p class="date">{a.date}</p>
             <h2>{a.title}</h2>
             <p class="ex">{a.excerpt}</p>
           </div>
