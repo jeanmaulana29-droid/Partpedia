@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import AdSlot from "../components/AdSlot.astro";
 import Badge from "../components/Badge.astro";
 import data from "../data/data.json";
-import articles from "../data/articles.json";
+import { loadAllArticles } from "../utils/loadArticles.js";
 import shopeeLinks from "../data/shopee-links.json";
 import { getCategoryTheme } from "../utils/theme.js";
 
@@ -44,7 +44,7 @@ function iconFor(cat) {
   return categoryIcon[cat] || "📦";
 }
 const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.length || 0), 0);
-const insightArticles = [...articles].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+const insightArticles = loadAllArticles();
 const heroSlides = [
   {
     title: "Industrial parts intelligence",
@@ -168,7 +168,9 @@ const shopeeMap = shopeeLinks || {};
       <div class="feat-track" id="feat-track">
         {insightArticles.map((a) => (
           <a class="feat-card" href={`/knowledge/${a.slug}/`}>
-            <div class="feat-img" style={`background-image:url('${a.image}')`} />
+            <div class="feat-img">
+              <img src={a.image} alt="" loading="lazy" onerror={`this.onerror=null;this.src='${a.imageFallback}'`} />
+            </div>
             <div class="feat-body">
               <span class="feat-date">{a.date}</span>
               <h3>{a.title}</h3>
@@ -372,16 +374,29 @@ const shopeeMap = shopeeLinks || {};
     }
     setInterval(() => { idx = (idx + 1) % slides.length; paint(); }, 2000);
 
-    // Featured horizontal auto-scroll gentle
+    
+    // Wawasan: auto-geser tiap 3 detik, loop terus
     const track = document.getElementById("feat-track");
     if (track) {
+      let pause = false;
+      track.addEventListener("mouseenter", () => { pause = true; });
+      track.addEventListener("mouseleave", () => { pause = false; });
+      track.addEventListener("touchstart", () => { pause = true; }, { passive: true });
+      track.addEventListener("touchend", () => { setTimeout(() => { pause = false; }, 2500); }, { passive: true });
       setInterval(() => {
-        track.scrollBy({ left: 280, behavior: "smooth" });
-        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+        if (pause || !track) return;
+        const max = track.scrollWidth - track.clientWidth;
+        if (max <= 8) return;
+        const step = Math.min(track.clientWidth * 0.85, 320);
+        if (track.scrollLeft + step >= max - 4) {
           track.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          track.scrollBy({ left: step, behavior: "smooth" });
         }
-      }, 3200);
+      }, 3000);
     }
+
+
 
     // Search / filter — category chip = exact data-category (bukan text search)
     const input = document.getElementById("search") as HTMLInputElement | null;
@@ -479,7 +494,8 @@ const shopeeMap = shopeeLinks || {};
       background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
       overflow: hidden; color: var(--ink);
     }
-    .feat-img { height: 120px; background-size: cover; background-position: center; }
+    .feat-img { height: 120px; background: #0e141c; overflow: hidden; }
+    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .feat-body { padding: 0.9rem 1rem 1.1rem; }
     .feat-date { font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal); letter-spacing: 0.04em; }
     .feat-body h3 { font-size: 0.98rem; margin: 0.35rem 0 0.25rem; font-family: var(--font-display); line-height: 1.3; }
