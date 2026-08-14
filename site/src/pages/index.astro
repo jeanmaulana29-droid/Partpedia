@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import AdSlot from "../components/AdSlot.astro";
 import Badge from "../components/Badge.astro";
 import data from "../data/data.json";
+import articles from "../data/articles.json";
 import shopeeLinks from "../data/shopee-links.json";
 import { getCategoryTheme } from "../utils/theme.js";
 
@@ -43,7 +44,7 @@ function iconFor(cat) {
   return categoryIcon[cat] || "📦";
 }
 const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.length || 0), 0);
-const featured = data.filter((d) => d.equivalent_codes?.length).slice(0, 8);
+const insightArticles = [...articles].sort((a, b) => String(b.date).localeCompare(String(a.date)));
 const heroSlides = [
   {
     title: "Industrial parts intelligence",
@@ -158,27 +159,24 @@ const shopeeMap = shopeeLinks || {};
   </section>
 
   <!-- FEATURED CAROUSEL -->
-  {featured.length > 0 && (
-    <section class="featured" aria-label="Part unggulan">
+  {insightArticles.length > 0 && (
+    <section class="featured" id="insights" aria-label="Wawasan industri">
       <div class="sec-head">
-        <h2>Featured cross-reference</h2>
-        <p>Part dengan data ekuivalen antar-brand</p>
+        <h2 data-i18n="insights_title">Wawasan Industri</h2>
+        <p data-i18n="insights_sub">Artikel & bacaan seputar part, spek, dan praktik MRO</p>
       </div>
       <div class="feat-track" id="feat-track">
-        {featured.map((item) => {
-          const theme = getCategoryTheme(item.category);
-          return (
-            <a class="feat-card" href={`/sparepart/${item.slug}/`}>
-              <div class="feat-img" style={`background-image:url('${imgFor(item)}')`} />
-              <div class="feat-body">
-                <Badge label={item.category} bg={theme.bg} fg={theme.fg} />
-                <h3>{item.part_number}</h3>
-                <p>{item.part_name}</p>
-                <span class="price">{item.price_range || "Cek vendor"}</span>
-              </div>
-            </a>
-          );
-        })}
+        {insightArticles.map((a) => (
+          <a class="feat-card" href={`/knowledge/${a.slug}/`}>
+            <div class="feat-img" style={`background-image:url('${a.image}')`} />
+            <div class="feat-body">
+              <span class="feat-date">{a.date}</span>
+              <h3>{a.title}</h3>
+              <p>{a.excerpt}</p>
+              <span class="price" data-i18n="insights_read">Baca artikel →</span>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   )}
@@ -483,7 +481,8 @@ const shopeeMap = shopeeLinks || {};
     }
     .feat-img { height: 120px; background-size: cover; background-position: center; }
     .feat-body { padding: 0.9rem 1rem 1.1rem; }
-    .feat-body h3 { font-size: 1.05rem; margin: 0.4rem 0 0.15rem; font-family: var(--font-mono); }
+    .feat-date { font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal); letter-spacing: 0.04em; }
+    .feat-body h3 { font-size: 0.98rem; margin: 0.35rem 0 0.25rem; font-family: var(--font-display); line-height: 1.3; }
     .feat-body p { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
     .feat-body .price { font-family: var(--font-mono); font-size: 0.82rem; color: var(--amber); }
 
