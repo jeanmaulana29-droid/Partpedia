@@ -1,4 +1,6 @@
 ---
+import data from "../data/data.json";
+
 interface Code {
   brand: string;
   code: string;
@@ -7,17 +9,84 @@ interface Props {
   codes: Code[];
 }
 const { codes } = Astro.props;
+
+/** Map kode part (normalized) → slug lokal jika ada di katalog */
+function norm(s: string) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+const localByCode = new Map<string, { slug: string; part_number: string; part_name: string }>();
+for (const row of data as Array<Record<string, unknown>>) {
+  const slug = String(row.slug || "");
+  const pn = String(row.part_number || "");
+  if (!slug || !pn) continue;
+  localByCode.set(norm(pn), {
+    slug,
+    part_number: pn,
+    part_name: String(row.part_name || pn),
+  });
+  // also index without common seal suffixes for soft match
+  const base = pn.replace(/[-]?2RS1?$/i, "").replace(/[-]?ZZ$/i, "").replace(/[-]?2Z$/i, "");
+  if (base && base !== pn && !localByCode.has(norm(base))) {
+    // don't overwrite exact matches; only as weak hint — skip weak for safety
+  }
+}
+
+function resolve(code: string) {
+  const n = norm(code);
+  if (localByCode.has(n)) return localByCode.get(n)!;
+  // try with/without 2RS variants
+  const variants = [
+    n,
+    n.replace(/2rs1$/, "2rs"),
+    n.replace(/2rs$/, "2rs1"),
+    n + "2rs",
+    n.replace(/ddu$/, "2rs"),
+    n.replace(/llb$/, "2rs"),
+  ];
+  for (const v of variants) {
+    if (localByCode.has(v)) return localByCode.get(v)!;
+  }
+  return null;
+}
+
+function amazonUrl(brand: string, code: string) {
+  const q = encodeURIComponent(`${brand} ${code}`.trim());
+  return `https://www.amazon.com/s?k=${q}&tag=partpedia29-20`;
+}
 ---
 
 {
   codes && codes.length > 0 && (
     <div class="eq-grid">
-      {codes.map((c) => (
-        <div class="eq-item">
-          <span class="eq-brand">{c.brand}</span>
-          <span class="eq-code">{c.code}</span>
-        </div>
-      ))}
+      {codes.map((c) => {
+        const local = resolve(c.code);
+        if (local) {
+          return (
+            <a class="eq-item eq-local" href={`/sparepart/${local.slug}/`} title={`Lihat di Partpedia: ${local.part_number}`}>
+              <span class="eq-brand">{c.brand}</span>
+              <span class="eq-code">{c.code}</span>
+              <span class="eq-badge">Di katalog →</span>
+            </a>
+          );
+        }
+        return (
+          <a
+            class="eq-item eq-amazon"
+            href={amazonUrl(c.brand, c.code)}
+            target="_blank"
+            rel="noopener sponsored nofollow"
+            title={`Cari di Amazon: ${c.brand} ${c.code}`}
+          >
+            <span class="eq-brand">{c.brand}</span>
+            <span class="eq-code">{c.code}</span>
+            <span class="eq-badge eq-badge-amz">Amazon →</span>
+          </a>
+        );
+      })}
     </div>
   )
 }
@@ -25,25 +94,57 @@ const { codes } = Astro.props;
 <style>
   .eq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 0.6rem;
-    margin: 1rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 0.65rem;
+    margin: 1rem 0 1.25rem;
   }
   .eq-item {
-    border: 1px solid var(--color-line);
-    background: #fff;
-    padding: 0.65rem 0.85rem;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    gap: 0.2rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(165deg, #1a2330 0%, #121820 100%);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   }
-  .eq-item:hover { border-color: var(--color-amber); transform: translateY(-1px); }
+  .eq-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(240, 164, 58, 0.55);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  }
+  .eq-local {
+    border-color: rgba(61, 207, 182, 0.28);
+  }
+  .eq-local:hover {
+    border-color: rgba(61, 207, 182, 0.65);
+  }
+  .eq-amazon:hover {
+    border-color: rgba(255, 153, 0, 0.55);
+  }
   .eq-brand {
     font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
-    color: var(--color-steel-light);
+    text-transform: uppercase;
+    color: #8b9aab;
   }
-  .eq-code { font-family: var(--font-mono); font-weight: 600; font-size: 0.95rem; }
+  .eq-code {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #eef2f6;
+    word-break: break-all;
+  }
+  .eq-badge {
+    margin-top: 0.35rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #3dcfb6;
+  }
+  .eq-badge-amz {
+    color: #ff9900;
+  }
 </style>
