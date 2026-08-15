@@ -169,7 +169,7 @@ const shopeeMap = shopeeLinks || {};
         {insightArticles.map((a) => (
           <a class="feat-card" href={`/knowledge/${a.slug}/`}>
             <div class="feat-img">
-              <img src={a.image} alt="" loading="lazy" onerror={`this.onerror=null;this.src='${a.imageFallback}'`} />
+              <img src={a.image} alt="" loading="lazy" />
             </div>
             <div class="feat-body">
               <h3>{a.title}</h3>
@@ -378,20 +378,21 @@ const shopeeMap = shopeeLinks || {};
     const track = document.getElementById("feat-track");
     if (track) {
       let pause = false;
+      let cardIndex = 0;
       track.addEventListener("mouseenter", () => { pause = true; });
       track.addEventListener("mouseleave", () => { pause = false; });
       track.addEventListener("touchstart", () => { pause = true; }, { passive: true });
       track.addEventListener("touchend", () => { setTimeout(() => { pause = false; }, 2500); }, { passive: true });
+      const cards = () => Array.from(track.querySelectorAll(".feat-card"));
       setInterval(() => {
-        if (pause || !track) return;
-        const max = track.scrollWidth - track.clientWidth;
-        if (max <= 8) return;
-        const step = Math.min(track.clientWidth * 0.85, 320);
-        if (track.scrollLeft + step >= max - 4) {
-          track.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          track.scrollBy({ left: step, behavior: "smooth" });
-        }
+        if (pause) return;
+        const list = cards();
+        if (list.length < 2) return;
+        cardIndex = (cardIndex + 1) % list.length;
+        const target = list[cardIndex];
+        if (!target) return;
+        const left = target.offsetLeft - 8;
+        track.scrollTo({ left, behavior: "smooth" });
       }, 3000);
     }
 
@@ -485,8 +486,19 @@ const shopeeMap = shopeeLinks || {};
     .sec-head p { color: var(--muted); margin: 0; }
 
     .feat-track {
-      display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
-      padding-bottom: 0.5rem; -webkit-overflow-scrolling: touch;
+      display: flex;
+      gap: 0.85rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.35rem;
+      scrollbar-width: thin;
+    }
+    .feat-card {
+      flex: 0 0 min(280px, 78vw);
+      scroll-snap-align: start;
+      max-width: 300px;
     }
     .feat-card {
       flex: 0 0 260px; scroll-snap-align: start;
