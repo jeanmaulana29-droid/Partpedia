@@ -42,14 +42,18 @@ export function parseArticleText(raw, slug) {
   let start = 3;
   while (start < lines.length && lines[start].trim() === "") start++;
   const body = lines.slice(start).join("\n").trim();
+  const stock = stockImage(slug);
   return {
     slug,
     title,
     excerpt: excerpt || title,
     date,
     body,
-    image: `/articles/${slug}.jpg`,
-    imageFallback: stockImage(slug),
+    // Gambar otomatis (stok industri unik per slug).
+    // Opsional: upload /public/articles/{slug}.jpg untuk mengganti.
+    image: stock,
+    imageLocal: `/articles/${slug}.jpg`,
+    imageFallback: stock,
   };
 }
 
