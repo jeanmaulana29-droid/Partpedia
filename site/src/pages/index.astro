@@ -169,7 +169,7 @@ const shopeeMap = shopeeLinks || {};
         {insightArticles.map((a) => (
           <a class="feat-card" href={`/knowledge/${a.slug}/`}>
             <div class="feat-img">
-              <img src={a.image} alt="" loading="lazy" />
+              <img src={a.image} alt="" loading="lazy" onerror={`this.onerror=null;this.src='${a.imageFallback}'`} />
             </div>
             <div class="feat-body">
               <h3>{a.title}</h3>
