@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import { loadAllArticles } from "../../utils/loadArticles.js";
 
-const all = loadAllArticles();
 export async function getStaticPaths() {
   const list = loadAllArticles();
   return list.map((article) => ({
@@ -20,9 +19,10 @@ const blocks = String(article.body || "")
   .filter(Boolean);
 
 function isHeading(p) {
-  // short line without period at end often a subheading
   return p.length < 80 && !p.endsWith(".") && !p.startsWith("-") && !/^\d+\./.test(p) && !p.includes("\n");
 }
+
+const midAt = Math.max(1, Math.floor(blocks.length / 2));
 ---
 <Layout title={`${article.title} — Partpedia`} description={article.excerpt}>
   <div class="mag">
@@ -41,45 +41,48 @@ function isHeading(p) {
     <h1 class="mag-title">{article.title}</h1>
     <p class="mag-deck">{article.excerpt}</p>
 
+    <!-- Gambar 1: utama (hero) — upload: public/articles/{slug}.jpg -->
     <div class="mag-hero">
       <img
-        id="article-hero"
         src={article.image}
         alt=""
-        data-local={article.imageLocal}
-        data-fallback={article.imageFallback}
+        width="1200"
+        height="675"
+        onerror={`this.onerror=null;this.src='${article.imageFallback}'`}
       />
     </div>
-    <script>
-      const img = document.getElementById("article-hero");
-      if (img) {
-        const local = img.getAttribute("data-local");
-        const fallback = img.getAttribute("data-fallback") || img.src;
-        if (local) {
-          const probe = new Image();
-          probe.onload = () => { img.src = local; };
-          probe.onerror = () => { img.src = fallback; };
-          probe.src = local;
-        }
-      }
-    </script>
 
     <AdSlot slotId="article-top" />
 
     <div class="mag-body">
-      {blocks.map((p) => {
+      {blocks.map((p, i) => {
+        const nodes = [];
+        if (i === midAt) {
+          nodes.push(
+            <div class="mag-mid">
+              <img
+                src={article.imageMid}
+                alt=""
+                width="1200"
+                height="675"
+                onerror={`this.onerror=null;this.src='${article.imageMidFallback}'`}
+              />
+            </div>
+          );
+        }
         if (p.startsWith("- ") || p.includes("\n- ")) {
           const items = p.split("\n").filter((l) => l.trim().startsWith("- "));
-          return (
+          nodes.push(
             <ul>
               {items.map((li) => <li>{li.replace(/^\s*-\s*/, "")}</li>)}
             </ul>
           );
+        } else if (isHeading(p)) {
+          nodes.push(<h2>{p}</h2>);
+        } else {
+          nodes.push(<p>{p}</p>);
         }
-        if (isHeading(p)) {
-          return <h2>{p}</h2>;
-        }
-        return <p>{p}</p>;
+        return nodes;
       })}
     </div>
 
@@ -94,107 +97,49 @@ function isHeading(p) {
   </div>
 
   <style>
-    .mag {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 1.25rem 0 3rem;
-    }
+    .mag { max-width: 720px; margin: 0 auto; padding: 1.25rem 0 3rem; }
     .mag-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.75rem;
-      padding-bottom: 0.85rem;
-      border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      margin-bottom: 1.75rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--line);
     }
     .mag-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--ink);
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
+      color: var(--ink); text-decoration: none;
     }
     .mag-brand img { border-radius: 8px; }
     .mag-brand .accent { color: var(--amber); }
     .mag-nav { display: flex; gap: 1rem; font-size: 0.88rem; }
     .mag-nav a { color: var(--muted); }
-    .mag-nav a:hover { color: var(--amber); }
     .mag-kicker {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin: 0 0 0.35rem;
-    }
-    .mag-date {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 0.65rem;
+      font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal); margin: 0 0 0.35rem;
     }
     .mag-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 4.5vw, 2.45rem);
-      line-height: 1.15;
-      margin: 0 0 0.75rem;
-      letter-spacing: -0.02em;
+      font-family: var(--font-display); font-size: clamp(1.75rem, 4.5vw, 2.45rem);
+      line-height: 1.15; margin: 0 0 0.75rem; letter-spacing: -0.02em;
     }
-    .mag-deck {
-      font-size: 1.12rem;
-      line-height: 1.55;
-      color: var(--muted);
-      margin: 0 0 1.35rem;
+    .mag-deck { font-size: 1.12rem; line-height: 1.55; color: var(--muted); margin: 0 0 1.35rem; }
+    .mag-hero, .mag-mid {
+      border-radius: 16px; overflow: hidden; border: 1px solid var(--line);
+      background: #0e141c; margin-bottom: 1.5rem; aspect-ratio: 16 / 9;
     }
-    .mag-hero {
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #0e141c;
-      margin-bottom: 1.5rem;
-      aspect-ratio: 16 / 9;
+    .mag-mid { margin: 1.75rem 0; }
+    .mag-hero img, .mag-mid img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
-    .mag-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .mag-body {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #d5dde6;
-    }
+    .mag-body { font-size: 1.05rem; line-height: 1.75; color: #d5dde6; }
     .mag-body p { margin: 0 0 1.15rem; }
     .mag-body h2 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      margin: 1.75rem 0 0.65rem;
-      color: var(--ink);
+      font-family: var(--font-display); font-size: 1.25rem;
+      margin: 1.75rem 0 0.65rem; color: var(--ink);
     }
-    .mag-body ul {
-      margin: 0 0 1.15rem;
-      padding-left: 1.2rem;
-    }
+    .mag-body ul { margin: 0 0 1.15rem; padding-left: 1.2rem; }
     .mag-body li { margin-bottom: 0.4rem; }
     .mag-foot {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 2.5rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--line);
-      font-weight: 600;
+      display: flex; justify-content: space-between; gap: 1rem;
+      margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-weight: 600;
     }
     .mag-foot a { color: var(--blue); }
-    @media (max-width: 560px) {
-      .mag { padding: 0.75rem 0 2.5rem; }
-      .mag-body { font-size: 1rem; }
-    }
   </style>
 </Layout>
