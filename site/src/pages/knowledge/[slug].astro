@@ -43,11 +43,26 @@ function isHeading(p) {
 
     <div class="mag-hero">
       <img
+        id="article-hero"
         src={article.image}
         alt=""
-        onerror={`this.onerror=null;this.src='${article.imageFallback}'`}
+        data-local={article.imageLocal}
+        data-fallback={article.imageFallback}
       />
     </div>
+    <script>
+      const img = document.getElementById("article-hero");
+      if (img) {
+        const local = img.getAttribute("data-local");
+        const fallback = img.getAttribute("data-fallback") || img.src;
+        if (local) {
+          const probe = new Image();
+          probe.onload = () => { img.src = local; };
+          probe.onerror = () => { img.src = fallback; };
+          probe.src = local;
+        }
+      }
+    </script>
 
     <AdSlot slotId="article-top" />
 

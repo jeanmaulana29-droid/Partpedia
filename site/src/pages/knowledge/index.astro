@@ -22,7 +22,7 @@ const sorted = loadAllArticles();
       {sorted.map((a) => (
         <a class="row" href={`/knowledge/${a.slug}/`}>
           <div class="thumb">
-            <img src={a.image} alt="" onerror={`this.onerror=null;this.src='${a.imageFallback}'`} />
+            <img src={a.image} alt="" loading="lazy" />
           </div>
           <div>
             <h2>{a.title}</h2>
