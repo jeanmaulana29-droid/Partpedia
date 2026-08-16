@@ -44,7 +44,7 @@ function iconFor(cat) {
   return categoryIcon[cat] || "📦";
 }
 const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.length || 0), 0);
-const insightArticles = loadAllArticles();
+const insightArticles = loadAllArticles(); // sudah sort terbaru dulu di loadArticles
 const heroSlides = [
   {
     title: "Industrial parts intelligence",
@@ -374,25 +374,34 @@ const shopeeMap = shopeeLinks || {};
     setInterval(() => { idx = (idx + 1) % slides.length; paint(); }, 2000);
 
     
-    // Wawasan: auto-geser tiap 3 detik, loop terus
+    // Wawasan: mulai dari terbaru, geser tiap 3 detik, loop
     const track = document.getElementById("feat-track");
     if (track) {
       let pause = false;
       let cardIndex = 0;
+      const cards = () => Array.from(track.querySelectorAll(".feat-card"));
+
+      const goTo = (i) => {
+        const list = cards();
+        if (!list.length) return;
+        cardIndex = ((i % list.length) + list.length) % list.length;
+        const target = list[cardIndex];
+        if (!target) return;
+        track.scrollTo({ left: Math.max(0, target.offsetLeft - 4), behavior: "smooth" });
+      };
+
+      // pastikan mulai di kartu paling kiri = artikel terbaru
+      requestAnimationFrame(() => goTo(0));
+
       track.addEventListener("mouseenter", () => { pause = true; });
       track.addEventListener("mouseleave", () => { pause = false; });
       track.addEventListener("touchstart", () => { pause = true; }, { passive: true });
-      track.addEventListener("touchend", () => { setTimeout(() => { pause = false; }, 2500); }, { passive: true });
-      const cards = () => Array.from(track.querySelectorAll(".feat-card"));
+      track.addEventListener("touchend", () => { setTimeout(() => { pause = false; }, 2000); }, { passive: true });
+
       setInterval(() => {
         if (pause) return;
-        const list = cards();
-        if (list.length < 2) return;
-        cardIndex = (cardIndex + 1) % list.length;
-        const target = list[cardIndex];
-        if (!target) return;
-        const left = target.offsetLeft - 8;
-        track.scrollTo({ left, behavior: "smooth" });
+        if (cards().length < 2) return;
+        goTo(cardIndex + 1);
       }, 3000);
     }
 
@@ -491,8 +500,9 @@ const shopeeMap = shopeeLinks || {};
       overflow-x: auto;
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 0.35rem;
+      padding: 0.15rem 0.1rem 0.5rem;
       scrollbar-width: thin;
     }
     .feat-card {
