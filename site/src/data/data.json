@@ -26095,5 +26095,1619 @@
     "subcategory": "Simplex / Duplex",
     "affiliate_query": "Tsubaki RS80-2",
     "image_url": ""
+  },
+  {
+    "part_name": "Bando Classical V-Belt C-60",
+    "part_number": "C-60",
+    "category": "V-Belt",
+    "brand": "Bando",
+    "specification": "Profil C; Inside ~60 in / Li class C60; lebar nominal ~22 mm; tinggi ~14 mm; sudut flank ~40°. Profil klasik C (lebih lebar dari A/B) untuk daya menengah-tinggi pada pulley klasik. Bahan: CR/NR rubber compound + fabric wrap; cord: Polyester tension cord.",
+    "compatible_equipment": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "price_range": "Rp 95.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "v-belt-c-60-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "C",
+      "Length": "Inside ~60 in / Li class C60",
+      "Top width": "22 mm",
+      "Height": "14 mm",
+      "Material": "CR/NR rubber compound + fabric wrap",
+      "Cord": "Polyester tension cord",
+      "Temp range": "-30°C to +70°C (peak short ~+80°C)"
+    },
+    "iso_standard": "ISO 4184 / DIN 2215 (classical V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Bando",
+        "code": "C-60"
+      },
+      {
+        "brand": "Gates",
+        "code": "C-60"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "C-60"
+      },
+      {
+        "brand": "Mitsuboshi",
+        "code": "C-60"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Bando Classical V-Belt C-60 (C-60). Sabuk transmisi profil C. Transmisi daya klasik untuk poros paralel, rasio tetap. End-use: Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah. Ketahanan: Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~60 in / Li class C60",
+    "fungsi": "Transmisi daya klasik untuk poros paralel, rasio tetap",
+    "kegunaan": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "durability": "Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih",
+    "unit": "pcs",
+    "material": "CR/NR rubber compound + fabric wrap",
+    "subcategory": "Classical C",
+    "affiliate_query": "Bando C-60 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Classical V-Belt C-75",
+    "part_number": "C-75",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil C; Inside ~75 in; lebar nominal ~22 mm; tinggi ~14 mm; sudut flank ~40°. Profil klasik C (lebih lebar dari A/B) untuk daya menengah-tinggi pada pulley klasik. Bahan: CR/NR rubber compound + fabric wrap; cord: Polyester tension cord.",
+    "compatible_equipment": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "price_range": "Rp 120.000 - 280.000",
+    "alternative_parts": "",
+    "slug": "v-belt-c-75",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "C",
+      "Length": "Inside ~75 in",
+      "Top width": "22 mm",
+      "Height": "14 mm",
+      "Material": "CR/NR rubber compound + fabric wrap",
+      "Cord": "Polyester tension cord",
+      "Temp range": "-30°C to +70°C (peak short ~+80°C)"
+    },
+    "iso_standard": "ISO 4184 / DIN 2215 (classical V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Bando",
+        "code": "C-75"
+      },
+      {
+        "brand": "Gates",
+        "code": "C-75"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "C-75"
+      },
+      {
+        "brand": "Mitsuboshi",
+        "code": "C-75"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Classical V-Belt C-75 (C-75). Sabuk transmisi profil C. Transmisi daya klasik untuk poros paralel, rasio tetap. End-use: Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah. Ketahanan: Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~75 in",
+    "fungsi": "Transmisi daya klasik untuk poros paralel, rasio tetap",
+    "kegunaan": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "durability": "Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih",
+    "unit": "pcs",
+    "material": "CR/NR rubber compound + fabric wrap",
+    "subcategory": "Classical C",
+    "affiliate_query": "Gates C-75 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Optibelt Classical V-Belt C-90",
+    "part_number": "C-90",
+    "category": "V-Belt",
+    "brand": "Optibelt",
+    "specification": "Profil C; Inside ~90 in; lebar nominal ~22 mm; tinggi ~14 mm; sudut flank ~40°. Profil klasik C (lebih lebar dari A/B) untuk daya menengah-tinggi pada pulley klasik. Bahan: CR/NR rubber compound + fabric wrap; cord: Polyester tension cord.",
+    "compatible_equipment": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "price_range": "Rp 150.000 - 350.000",
+    "alternative_parts": "",
+    "slug": "v-belt-c-90",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "C",
+      "Length": "Inside ~90 in",
+      "Top width": "22 mm",
+      "Height": "14 mm",
+      "Material": "CR/NR rubber compound + fabric wrap",
+      "Cord": "Polyester tension cord",
+      "Temp range": "-30°C to +70°C (peak short ~+80°C)"
+    },
+    "iso_standard": "ISO 4184 / DIN 2215 (classical V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Bando",
+        "code": "C-90"
+      },
+      {
+        "brand": "Gates",
+        "code": "C-90"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "C-90"
+      },
+      {
+        "brand": "Mitsuboshi",
+        "code": "C-90"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Optibelt Classical V-Belt C-90 (C-90). Sabuk transmisi profil C. Transmisi daya klasik untuk poros paralel, rasio tetap. End-use: Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah. Ketahanan: Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~90 in",
+    "fungsi": "Transmisi daya klasik untuk poros paralel, rasio tetap",
+    "kegunaan": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "durability": "Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih",
+    "unit": "pcs",
+    "material": "CR/NR rubber compound + fabric wrap",
+    "subcategory": "Classical C",
+    "affiliate_query": "Optibelt C-90 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Mitsuboshi Classical V-Belt C-105",
+    "part_number": "C-105",
+    "category": "V-Belt",
+    "brand": "Mitsuboshi",
+    "specification": "Profil C; Inside ~105 in; lebar nominal ~22 mm; tinggi ~14 mm; sudut flank ~40°. Profil klasik C (lebih lebar dari A/B) untuk daya menengah-tinggi pada pulley klasik. Bahan: CR/NR rubber compound + fabric wrap; cord: Polyester tension cord.",
+    "compatible_equipment": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "price_range": "Rp 180.000 - 400.000",
+    "alternative_parts": "",
+    "slug": "v-belt-c-105",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "C",
+      "Length": "Inside ~105 in",
+      "Top width": "22 mm",
+      "Height": "14 mm",
+      "Material": "CR/NR rubber compound + fabric wrap",
+      "Cord": "Polyester tension cord",
+      "Temp range": "-30°C to +70°C (peak short ~+80°C)"
+    },
+    "iso_standard": "ISO 4184 / DIN 2215 (classical V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Bando",
+        "code": "C-105"
+      },
+      {
+        "brand": "Gates",
+        "code": "C-105"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "C-105"
+      },
+      {
+        "brand": "Mitsuboshi",
+        "code": "C-105"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Mitsuboshi Classical V-Belt C-105 (C-105). Sabuk transmisi profil C. Transmisi daya klasik untuk poros paralel, rasio tetap. End-use: Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah. Ketahanan: Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~105 in",
+    "fungsi": "Transmisi daya klasik untuk poros paralel, rasio tetap",
+    "kegunaan": "Pompa air, blower, kompresor piston, conveyor, mesin pertanian, genset kecil-menengah",
+    "durability": "Umur tipikal 1–3 tahun tergantung alignment, tension, debu, dan overload; ganti jika retak samping, mengkilap, atau elongasi berlebih",
+    "unit": "pcs",
+    "material": "CR/NR rubber compound + fabric wrap",
+    "subcategory": "Classical C",
+    "affiliate_query": "Mitsuboshi C-105 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Classical V-Belt A-70",
+    "part_number": "A-70",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil A; Inside ~70 in; lebar nominal ~13 mm; tinggi ~8 mm; sudut flank ~40°.  Bahan: Wrapped rubber (NR/CR) with fabric jacket; cord: Polyester cords.",
+    "compatible_equipment": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "price_range": "Rp 45.000 - 110.000",
+    "alternative_parts": "",
+    "slug": "v-belt-a-70",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "A",
+      "Length": "Inside ~70 in",
+      "Top width": "13 mm",
+      "Height": "8 mm",
+      "Material": "Wrapped rubber (NR/CR) with fabric jacket",
+      "Cord": "Polyester cords",
+      "Temp range": "-30°C to +70°C"
+    },
+    "iso_standard": "ISO 4184",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "A-70"
+      },
+      {
+        "brand": "Bando",
+        "code": "A-70"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "A-70"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Classical V-Belt A-70 (A-70). Sabuk transmisi profil A. Penggerak sabuk-V standar industri & utilitas. End-use: HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools. Ketahanan: Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~70 in",
+    "fungsi": "Penggerak sabuk-V standar industri & utilitas",
+    "kegunaan": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "durability": "Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis",
+    "unit": "pcs",
+    "material": "Wrapped rubber (NR/CR) with fabric jacket",
+    "subcategory": "Classical A",
+    "affiliate_query": "Gates A-70 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Bando Classical V-Belt A-80",
+    "part_number": "A-80",
+    "category": "V-Belt",
+    "brand": "Bando",
+    "specification": "Profil A; Inside ~80 in; lebar nominal ~13 mm; tinggi ~8 mm; sudut flank ~40°.  Bahan: Wrapped rubber (NR/CR) with fabric jacket; cord: Polyester cords.",
+    "compatible_equipment": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "price_range": "Rp 50.000 - 120.000",
+    "alternative_parts": "",
+    "slug": "v-belt-a-80",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "A",
+      "Length": "Inside ~80 in",
+      "Top width": "13 mm",
+      "Height": "8 mm",
+      "Material": "Wrapped rubber (NR/CR) with fabric jacket",
+      "Cord": "Polyester cords",
+      "Temp range": "-30°C to +70°C"
+    },
+    "iso_standard": "ISO 4184",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "A-80"
+      },
+      {
+        "brand": "Bando",
+        "code": "A-80"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "A-80"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Bando Classical V-Belt A-80 (A-80). Sabuk transmisi profil A. Penggerak sabuk-V standar industri & utilitas. End-use: HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools. Ketahanan: Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~80 in",
+    "fungsi": "Penggerak sabuk-V standar industri & utilitas",
+    "kegunaan": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "durability": "Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis",
+    "unit": "pcs",
+    "material": "Wrapped rubber (NR/CR) with fabric jacket",
+    "subcategory": "Classical A",
+    "affiliate_query": "Bando A-80 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Optibelt Classical V-Belt B-60",
+    "part_number": "B-60",
+    "category": "V-Belt",
+    "brand": "Optibelt",
+    "specification": "Profil B; Inside ~60 in; lebar nominal ~17 mm; tinggi ~11 mm; sudut flank ~40°.  Bahan: Wrapped rubber (NR/CR) with fabric jacket; cord: Polyester cords.",
+    "compatible_equipment": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "price_range": "Rp 70.000 - 160.000",
+    "alternative_parts": "",
+    "slug": "v-belt-b-60-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "B",
+      "Length": "Inside ~60 in",
+      "Top width": "17 mm",
+      "Height": "11 mm",
+      "Material": "Wrapped rubber (NR/CR) with fabric jacket",
+      "Cord": "Polyester cords",
+      "Temp range": "-30°C to +70°C"
+    },
+    "iso_standard": "ISO 4184",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "B-60"
+      },
+      {
+        "brand": "Bando",
+        "code": "B-60"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "B-60"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Optibelt Classical V-Belt B-60 (B-60). Sabuk transmisi profil B. Penggerak sabuk-V standar industri & utilitas. End-use: HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools. Ketahanan: Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~60 in",
+    "fungsi": "Penggerak sabuk-V standar industri & utilitas",
+    "kegunaan": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "durability": "Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis",
+    "unit": "pcs",
+    "material": "Wrapped rubber (NR/CR) with fabric jacket",
+    "subcategory": "Classical B",
+    "affiliate_query": "Optibelt B-60 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Mitsuboshi Classical V-Belt B-75",
+    "part_number": "B-75",
+    "category": "V-Belt",
+    "brand": "Mitsuboshi",
+    "specification": "Profil B; Inside ~75 in; lebar nominal ~17 mm; tinggi ~11 mm; sudut flank ~40°.  Bahan: Wrapped rubber (NR/CR) with fabric jacket; cord: Polyester cords.",
+    "compatible_equipment": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "price_range": "Rp 85.000 - 190.000",
+    "alternative_parts": "",
+    "slug": "v-belt-b-75",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "B",
+      "Length": "Inside ~75 in",
+      "Top width": "17 mm",
+      "Height": "11 mm",
+      "Material": "Wrapped rubber (NR/CR) with fabric jacket",
+      "Cord": "Polyester cords",
+      "Temp range": "-30°C to +70°C"
+    },
+    "iso_standard": "ISO 4184",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "B-75"
+      },
+      {
+        "brand": "Bando",
+        "code": "B-75"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "B-75"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Mitsuboshi Classical V-Belt B-75 (B-75). Sabuk transmisi profil B. Penggerak sabuk-V standar industri & utilitas. End-use: HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools. Ketahanan: Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~75 in",
+    "fungsi": "Penggerak sabuk-V standar industri & utilitas",
+    "kegunaan": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "durability": "Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis",
+    "unit": "pcs",
+    "material": "Wrapped rubber (NR/CR) with fabric jacket",
+    "subcategory": "Classical B",
+    "affiliate_query": "Mitsuboshi B-75 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Classical V-Belt B-85",
+    "part_number": "B-85",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil B; Inside ~85 in; lebar nominal ~17 mm; tinggi ~11 mm; sudut flank ~40°.  Bahan: Wrapped rubber (NR/CR) with fabric jacket; cord: Polyester cords.",
+    "compatible_equipment": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "price_range": "Rp 95.000 - 210.000",
+    "alternative_parts": "",
+    "slug": "v-belt-b-85",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "B",
+      "Length": "Inside ~85 in",
+      "Top width": "17 mm",
+      "Height": "11 mm",
+      "Material": "Wrapped rubber (NR/CR) with fabric jacket",
+      "Cord": "Polyester cords",
+      "Temp range": "-30°C to +70°C"
+    },
+    "iso_standard": "ISO 4184",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "B-85"
+      },
+      {
+        "brand": "Bando",
+        "code": "B-85"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "B-85"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Classical V-Belt B-85 (B-85). Sabuk transmisi profil B. Penggerak sabuk-V standar industri & utilitas. End-use: HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools. Ketahanan: Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Inside ~85 in",
+    "fungsi": "Penggerak sabuk-V standar industri & utilitas",
+    "kegunaan": "HVAC fan, pompa, mesin cuci industri, woodworking, small machine tools",
+    "durability": "Cek tension setelah 24–48 jam run-in; misalignment >1° memangkas umur drastis",
+    "unit": "pcs",
+    "material": "Wrapped rubber (NR/CR) with fabric jacket",
+    "subcategory": "Classical B",
+    "affiliate_query": "Gates B-85 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Optibelt Wedge Belt SPA-1000",
+    "part_number": "SPA-1000",
+    "category": "V-Belt",
+    "brand": "Optibelt",
+    "specification": "Profil SPA; Pitch length ~1000 mm; lebar nominal ~13 mm; tinggi ~10 mm; sudut flank ~40°. Profil sempit (wedge) meningkatkan wedge action di groove, efisiensi lebih baik pada center distance pendek. Bahan: Narrow/wedge rubber compound, often raw-edge or wrapped; cord: High-modulus polyester or aramid option on premium lines.",
+    "compatible_equipment": "Machine tools, compact drives, packaging; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "price_range": "Rp 55.000 - 140.000",
+    "alternative_parts": "",
+    "slug": "v-belt-spa-1000",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "SPA",
+      "Length": "Pitch length ~1000 mm",
+      "Top width": "13 mm",
+      "Height": "10 mm",
+      "Material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+      "Cord": "High-modulus polyester or aramid option on premium lines",
+      "Temp range": "-30°C to +80°C (compound dependent)"
+    },
+    "iso_standard": "ISO 4183 / DIN 7753 (narrow V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Optibelt",
+        "code": "SPA-1000"
+      },
+      {
+        "brand": "Gates",
+        "code": "SPA-1000"
+      },
+      {
+        "brand": "Bando",
+        "code": "SPA-1000"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "SPA-1000"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Optibelt Wedge Belt SPA-1000 (SPA-1000). Sabuk transmisi profil SPA. Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical. End-use: Machine tools, compact drives, packaging; cocok pulley SPZ/SPA/SPB/SPC metric. Ketahanan: Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length ~1000 mm",
+    "fungsi": "Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical",
+    "kegunaan": "Machine tools, compact drives, packaging; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "durability": "Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash",
+    "unit": "pcs",
+    "material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+    "subcategory": "Wedge SPA",
+    "affiliate_query": "Optibelt SPA-1000 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Wedge Belt SPA-1320",
+    "part_number": "SPA-1320",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil SPA; Pitch length ~1320 mm; lebar nominal ~13 mm; tinggi ~10 mm; sudut flank ~40°. Profil sempit (wedge) meningkatkan wedge action di groove, efisiensi lebih baik pada center distance pendek. Bahan: Narrow/wedge rubber compound, often raw-edge or wrapped; cord: High-modulus polyester or aramid option on premium lines.",
+    "compatible_equipment": "Pumps, fans, light conveyors; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "price_range": "Rp 70.000 - 165.000",
+    "alternative_parts": "",
+    "slug": "v-belt-spa-1320",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "SPA",
+      "Length": "Pitch length ~1320 mm",
+      "Top width": "13 mm",
+      "Height": "10 mm",
+      "Material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+      "Cord": "High-modulus polyester or aramid option on premium lines",
+      "Temp range": "-30°C to +80°C (compound dependent)"
+    },
+    "iso_standard": "ISO 4183 / DIN 7753 (narrow V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Optibelt",
+        "code": "SPA-1320"
+      },
+      {
+        "brand": "Gates",
+        "code": "SPA-1320"
+      },
+      {
+        "brand": "Bando",
+        "code": "SPA-1320"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "SPA-1320"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Wedge Belt SPA-1320 (SPA-1320). Sabuk transmisi profil SPA. Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical. End-use: Pumps, fans, light conveyors; cocok pulley SPZ/SPA/SPB/SPC metric. Ketahanan: Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length ~1320 mm",
+    "fungsi": "Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical",
+    "kegunaan": "Pumps, fans, light conveyors; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "durability": "Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash",
+    "unit": "pcs",
+    "material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+    "subcategory": "Wedge SPA",
+    "affiliate_query": "Gates SPA-1320 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Bando Wedge Belt SPB-1900",
+    "part_number": "SPB-1900",
+    "category": "V-Belt",
+    "brand": "Bando",
+    "specification": "Profil SPB; Pitch length ~1900 mm; lebar nominal ~17 mm; tinggi ~14 mm; sudut flank ~40°. Profil sempit (wedge) meningkatkan wedge action di groove, efisiensi lebih baik pada center distance pendek. Bahan: Narrow/wedge rubber compound, often raw-edge or wrapped; cord: High-modulus polyester or aramid option on premium lines.",
+    "compatible_equipment": "Industrial fans, compressors, mixers; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "price_range": "Rp 120.000 - 280.000",
+    "alternative_parts": "",
+    "slug": "v-belt-spb-1900",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "SPB",
+      "Length": "Pitch length ~1900 mm",
+      "Top width": "17 mm",
+      "Height": "14 mm",
+      "Material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+      "Cord": "High-modulus polyester or aramid option on premium lines",
+      "Temp range": "-30°C to +80°C (compound dependent)"
+    },
+    "iso_standard": "ISO 4183 / DIN 7753 (narrow V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Optibelt",
+        "code": "SPB-1900"
+      },
+      {
+        "brand": "Gates",
+        "code": "SPB-1900"
+      },
+      {
+        "brand": "Bando",
+        "code": "SPB-1900"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "SPB-1900"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Bando Wedge Belt SPB-1900 (SPB-1900). Sabuk transmisi profil SPB. Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical. End-use: Industrial fans, compressors, mixers; cocok pulley SPZ/SPA/SPB/SPC metric. Ketahanan: Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length ~1900 mm",
+    "fungsi": "Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical",
+    "kegunaan": "Industrial fans, compressors, mixers; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "durability": "Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash",
+    "unit": "pcs",
+    "material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+    "subcategory": "Wedge SPB",
+    "affiliate_query": "Bando SPB-1900 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Mitsuboshi Wedge Belt SPB-2360",
+    "part_number": "SPB-2360",
+    "category": "V-Belt",
+    "brand": "Mitsuboshi",
+    "specification": "Profil SPB; Pitch length ~2360 mm; lebar nominal ~17 mm; tinggi ~14 mm; sudut flank ~40°. Profil sempit (wedge) meningkatkan wedge action di groove, efisiensi lebih baik pada center distance pendek. Bahan: Narrow/wedge rubber compound, often raw-edge or wrapped; cord: High-modulus polyester or aramid option on premium lines.",
+    "compatible_equipment": "Process fans, larger pump sets; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "price_range": "Rp 150.000 - 340.000",
+    "alternative_parts": "",
+    "slug": "v-belt-spb-2360",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "SPB",
+      "Length": "Pitch length ~2360 mm",
+      "Top width": "17 mm",
+      "Height": "14 mm",
+      "Material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+      "Cord": "High-modulus polyester or aramid option on premium lines",
+      "Temp range": "-30°C to +80°C (compound dependent)"
+    },
+    "iso_standard": "ISO 4183 / DIN 7753 (narrow V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Optibelt",
+        "code": "SPB-2360"
+      },
+      {
+        "brand": "Gates",
+        "code": "SPB-2360"
+      },
+      {
+        "brand": "Bando",
+        "code": "SPB-2360"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "SPB-2360"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Mitsuboshi Wedge Belt SPB-2360 (SPB-2360). Sabuk transmisi profil SPB. Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical. End-use: Process fans, larger pump sets; cocok pulley SPZ/SPA/SPB/SPC metric. Ketahanan: Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length ~2360 mm",
+    "fungsi": "Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical",
+    "kegunaan": "Process fans, larger pump sets; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "durability": "Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash",
+    "unit": "pcs",
+    "material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+    "subcategory": "Wedge SPB",
+    "affiliate_query": "Mitsuboshi SPB-2360 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Optibelt Wedge Belt SPC-3000",
+    "part_number": "SPC-3000",
+    "category": "V-Belt",
+    "brand": "Optibelt",
+    "specification": "Profil SPC; Pitch length ~3000 mm; lebar nominal ~22 mm; tinggi ~18 mm; sudut flank ~40°. Profil sempit (wedge) meningkatkan wedge action di groove, efisiensi lebih baik pada center distance pendek. Bahan: Narrow/wedge rubber compound, often raw-edge or wrapped; cord: High-modulus polyester or aramid option on premium lines.",
+    "compatible_equipment": "Heavy fans, crushers auxiliary, large HVAC; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "price_range": "Rp 250.000 - 550.000",
+    "alternative_parts": "",
+    "slug": "v-belt-spc-3000",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "SPC",
+      "Length": "Pitch length ~3000 mm",
+      "Top width": "22 mm",
+      "Height": "18 mm",
+      "Material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+      "Cord": "High-modulus polyester or aramid option on premium lines",
+      "Temp range": "-30°C to +80°C (compound dependent)"
+    },
+    "iso_standard": "ISO 4183 / DIN 7753 (narrow V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Optibelt",
+        "code": "SPC-3000"
+      },
+      {
+        "brand": "Gates",
+        "code": "SPC-3000"
+      },
+      {
+        "brand": "Bando",
+        "code": "SPC-3000"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "SPC-3000"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Optibelt Wedge Belt SPC-3000 (SPC-3000). Sabuk transmisi profil SPC. Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical. End-use: Heavy fans, crushers auxiliary, large HVAC; cocok pulley SPZ/SPA/SPB/SPC metric. Ketahanan: Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length ~3000 mm",
+    "fungsi": "Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical",
+    "kegunaan": "Heavy fans, crushers auxiliary, large HVAC; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "durability": "Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash",
+    "unit": "pcs",
+    "material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+    "subcategory": "Wedge SPC",
+    "affiliate_query": "Optibelt SPC-3000 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Wedge Belt SPC-3550",
+    "part_number": "SPC-3550",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil SPC; Pitch length ~3550 mm; lebar nominal ~22 mm; tinggi ~18 mm; sudut flank ~40°. Profil sempit (wedge) meningkatkan wedge action di groove, efisiensi lebih baik pada center distance pendek. Bahan: Narrow/wedge rubber compound, often raw-edge or wrapped; cord: High-modulus polyester or aramid option on premium lines.",
+    "compatible_equipment": "Heavy-duty continuous industrial drives; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "price_range": "Rp 300.000 - 650.000",
+    "alternative_parts": "",
+    "slug": "v-belt-spc-3550",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "SPC",
+      "Length": "Pitch length ~3550 mm",
+      "Top width": "22 mm",
+      "Height": "18 mm",
+      "Material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+      "Cord": "High-modulus polyester or aramid option on premium lines",
+      "Temp range": "-30°C to +80°C (compound dependent)"
+    },
+    "iso_standard": "ISO 4183 / DIN 7753 (narrow V-belts)",
+    "equivalent_codes": [
+      {
+        "brand": "Optibelt",
+        "code": "SPC-3550"
+      },
+      {
+        "brand": "Gates",
+        "code": "SPC-3550"
+      },
+      {
+        "brand": "Bando",
+        "code": "SPC-3550"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "SPC-3550"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Wedge Belt SPC-3550 (SPC-3550). Sabuk transmisi profil SPC. Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical. End-use: Heavy-duty continuous industrial drives; cocok pulley SPZ/SPA/SPB/SPC metric. Ketahanan: Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length ~3550 mm",
+    "fungsi": "Sabuk wedge (narrow) — kapasitas daya lebih tinggi per lebar vs classical",
+    "kegunaan": "Heavy-duty continuous industrial drives; cocok pulley SPZ/SPA/SPB/SPC metric",
+    "durability": "Lebih kaku; tensioning harus sesuai catalog load; hindari oil splash",
+    "unit": "pcs",
+    "material": "Narrow/wedge rubber compound, often raw-edge or wrapped",
+    "subcategory": "Wedge SPC",
+    "affiliate_query": "Gates SPC-3550 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Wedge Belt 3V-500",
+    "part_number": "3V-500",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil 3V; Datum/outside length class 3V-500; lebar nominal ~9.5 mm; tinggi ~8 mm; sudut flank ~40°.  Bahan: RMA/MPTA wedge rubber with fiber reinforcement; cord: Polyester tension members.",
+    "compatible_equipment": "Small high-speed drives, HVAC",
+    "price_range": "Rp 40.000 - 100.000",
+    "alternative_parts": "",
+    "slug": "v-belt-3v-500",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "3V",
+      "Length": "Datum/outside length class 3V-500",
+      "Top width": "9.5 mm",
+      "Height": "8 mm",
+      "Material": "RMA/MPTA wedge rubber with fiber reinforcement",
+      "Cord": "Polyester tension members",
+      "Temp range": "-35°C to +70°C typical"
+    },
+    "iso_standard": "RMA IP-22 / MPTA wedge belt",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "3V-500"
+      },
+      {
+        "brand": "Bando",
+        "code": "3V-500"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "3V-500"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Wedge Belt 3V-500 (3V-500). Sabuk transmisi profil 3V. Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi. End-use: Small high-speed drives, HVAC. Ketahanan: Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Datum/outside length class 3V-500",
+    "fungsi": "Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi",
+    "kegunaan": "Small high-speed drives, HVAC",
+    "durability": "Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set",
+    "unit": "pcs",
+    "material": "RMA/MPTA wedge rubber with fiber reinforcement",
+    "subcategory": "Wedge 3V",
+    "affiliate_query": "Gates 3V-500 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Bando Wedge Belt 3V-710",
+    "part_number": "3V-710",
+    "category": "V-Belt",
+    "brand": "Bando",
+    "specification": "Profil 3V; Datum/outside length class 3V-710; lebar nominal ~9.5 mm; tinggi ~8 mm; sudut flank ~40°.  Bahan: RMA/MPTA wedge rubber with fiber reinforcement; cord: Polyester tension members.",
+    "compatible_equipment": "Machine tools, blowers",
+    "price_range": "Rp 50.000 - 120.000",
+    "alternative_parts": "",
+    "slug": "v-belt-3v-710",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "3V",
+      "Length": "Datum/outside length class 3V-710",
+      "Top width": "9.5 mm",
+      "Height": "8 mm",
+      "Material": "RMA/MPTA wedge rubber with fiber reinforcement",
+      "Cord": "Polyester tension members",
+      "Temp range": "-35°C to +70°C typical"
+    },
+    "iso_standard": "RMA IP-22 / MPTA wedge belt",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "3V-710"
+      },
+      {
+        "brand": "Bando",
+        "code": "3V-710"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "3V-710"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Bando Wedge Belt 3V-710 (3V-710). Sabuk transmisi profil 3V. Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi. End-use: Machine tools, blowers. Ketahanan: Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Datum/outside length class 3V-710",
+    "fungsi": "Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi",
+    "kegunaan": "Machine tools, blowers",
+    "durability": "Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set",
+    "unit": "pcs",
+    "material": "RMA/MPTA wedge rubber with fiber reinforcement",
+    "subcategory": "Wedge 3V",
+    "affiliate_query": "Bando 3V-710 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Optibelt Wedge Belt 5V-1000",
+    "part_number": "5V-1000",
+    "category": "V-Belt",
+    "brand": "Optibelt",
+    "specification": "Profil 5V; Datum/outside length class 5V-1000; lebar nominal ~16 mm; tinggi ~13 mm; sudut flank ~40°.  Bahan: RMA/MPTA wedge rubber with fiber reinforcement; cord: Polyester tension members.",
+    "compatible_equipment": "Industrial pumps & fans",
+    "price_range": "Rp 110.000 - 260.000",
+    "alternative_parts": "",
+    "slug": "v-belt-5v-1000",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "5V",
+      "Length": "Datum/outside length class 5V-1000",
+      "Top width": "16 mm",
+      "Height": "13 mm",
+      "Material": "RMA/MPTA wedge rubber with fiber reinforcement",
+      "Cord": "Polyester tension members",
+      "Temp range": "-35°C to +70°C typical"
+    },
+    "iso_standard": "RMA IP-22 / MPTA wedge belt",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "5V-1000"
+      },
+      {
+        "brand": "Bando",
+        "code": "5V-1000"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "5V-1000"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Optibelt Wedge Belt 5V-1000 (5V-1000). Sabuk transmisi profil 5V. Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi. End-use: Industrial pumps & fans. Ketahanan: Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Datum/outside length class 5V-1000",
+    "fungsi": "Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi",
+    "kegunaan": "Industrial pumps & fans",
+    "durability": "Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set",
+    "unit": "pcs",
+    "material": "RMA/MPTA wedge rubber with fiber reinforcement",
+    "subcategory": "Wedge 5V",
+    "affiliate_query": "Optibelt 5V-1000 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Wedge Belt 5V-1400",
+    "part_number": "5V-1400",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil 5V; Datum/outside length class 5V-1400; lebar nominal ~16 mm; tinggi ~13 mm; sudut flank ~40°.  Bahan: RMA/MPTA wedge rubber with fiber reinforcement; cord: Polyester tension members.",
+    "compatible_equipment": "Compressors, process equipment",
+    "price_range": "Rp 140.000 - 320.000",
+    "alternative_parts": "",
+    "slug": "v-belt-5v-1400",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "5V",
+      "Length": "Datum/outside length class 5V-1400",
+      "Top width": "16 mm",
+      "Height": "13 mm",
+      "Material": "RMA/MPTA wedge rubber with fiber reinforcement",
+      "Cord": "Polyester tension members",
+      "Temp range": "-35°C to +70°C typical"
+    },
+    "iso_standard": "RMA IP-22 / MPTA wedge belt",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "5V-1400"
+      },
+      {
+        "brand": "Bando",
+        "code": "5V-1400"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "5V-1400"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Wedge Belt 5V-1400 (5V-1400). Sabuk transmisi profil 5V. Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi. End-use: Compressors, process equipment. Ketahanan: Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Datum/outside length class 5V-1400",
+    "fungsi": "Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi",
+    "kegunaan": "Compressors, process equipment",
+    "durability": "Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set",
+    "unit": "pcs",
+    "material": "RMA/MPTA wedge rubber with fiber reinforcement",
+    "subcategory": "Wedge 5V",
+    "affiliate_query": "Gates 5V-1400 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Wedge Belt 8V-1600",
+    "part_number": "8V-1600",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil 8V; Datum/outside length class 8V-1600; lebar nominal ~25 mm; tinggi ~23 mm; sudut flank ~40°.  Bahan: RMA/MPTA wedge rubber with fiber reinforcement; cord: Polyester tension members.",
+    "compatible_equipment": "Heavy industrial, large fans",
+    "price_range": "Rp 280.000 - 650.000",
+    "alternative_parts": "",
+    "slug": "v-belt-8v-1600",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "8V",
+      "Length": "Datum/outside length class 8V-1600",
+      "Top width": "25 mm",
+      "Height": "23 mm",
+      "Material": "RMA/MPTA wedge rubber with fiber reinforcement",
+      "Cord": "Polyester tension members",
+      "Temp range": "-35°C to +70°C typical"
+    },
+    "iso_standard": "RMA IP-22 / MPTA wedge belt",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "8V-1600"
+      },
+      {
+        "brand": "Bando",
+        "code": "8V-1600"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "8V-1600"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Wedge Belt 8V-1600 (8V-1600). Sabuk transmisi profil 8V. Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi. End-use: Heavy industrial, large fans. Ketahanan: Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Datum/outside length class 8V-1600",
+    "fungsi": "Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi",
+    "kegunaan": "Heavy industrial, large fans",
+    "durability": "Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set",
+    "unit": "pcs",
+    "material": "RMA/MPTA wedge rubber with fiber reinforcement",
+    "subcategory": "Wedge 8V",
+    "affiliate_query": "Gates 8V-1600 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Mitsuboshi Wedge Belt 8V-2000",
+    "part_number": "8V-2000",
+    "category": "V-Belt",
+    "brand": "Mitsuboshi",
+    "specification": "Profil 8V; Datum/outside length class 8V-2000; lebar nominal ~25 mm; tinggi ~23 mm; sudut flank ~40°.  Bahan: RMA/MPTA wedge rubber with fiber reinforcement; cord: Polyester tension members.",
+    "compatible_equipment": "Crushers auxiliary, large HP drives",
+    "price_range": "Rp 350.000 - 780.000",
+    "alternative_parts": "",
+    "slug": "v-belt-8v-2000",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "8V",
+      "Length": "Datum/outside length class 8V-2000",
+      "Top width": "25 mm",
+      "Height": "23 mm",
+      "Material": "RMA/MPTA wedge rubber with fiber reinforcement",
+      "Cord": "Polyester tension members",
+      "Temp range": "-35°C to +70°C typical"
+    },
+    "iso_standard": "RMA IP-22 / MPTA wedge belt",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "8V-2000"
+      },
+      {
+        "brand": "Bando",
+        "code": "8V-2000"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "8V-2000"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Mitsuboshi Wedge Belt 8V-2000 (8V-2000). Sabuk transmisi profil 8V. Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi. End-use: Crushers auxiliary, large HP drives. Ketahanan: Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Datum/outside length class 8V-2000",
+    "fungsi": "Narrow wedge belt standar RMA (3V/5V/8V) untuk daya tinggi",
+    "kegunaan": "Crushers auxiliary, large HP drives",
+    "durability": "Gunakan matched set (same code batch) untuk multi-belt drives; jangan campur merek dalam satu set",
+    "unit": "pcs",
+    "material": "RMA/MPTA wedge rubber with fiber reinforcement",
+    "subcategory": "Wedge 8V",
+    "affiliate_query": "Mitsuboshi 8V-2000 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Timing Belt HTD-8M-1000-20",
+    "part_number": "HTD-8M-1000-20",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil HTD 8M; Pitch length class HTD-8M-1000-20; lebar nominal ~20 mm; tinggi ~tooth HTD 8 mm; sudut flank ~curvilinear HTD. Pitch 8 mm, lebar 20 mm. Gigi curvilinear HTD untuk kapasitas lebih tinggi vs trapezoidal lama. Bahan: CR or HNBR body (premium oil/heat resistant grades available); cord: Glass fiber or steel cord (depending on series).",
+    "compatible_equipment": "CNC axes light, packaging, robotics peripheral; ganti jika tooth shear, fabric peel, atau back crack",
+    "price_range": "Rp 180.000 - 420.000",
+    "alternative_parts": "",
+    "slug": "v-belt-htd-8m-1000-20",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "HTD 8M",
+      "Length": "Pitch length class HTD-8M-1000-20",
+      "Top width": "20 mm",
+      "Height": "tooth HTD 8 mm",
+      "Material": "CR or HNBR body (premium oil/heat resistant grades available)",
+      "Cord": "Glass fiber or steel cord (depending on series)",
+      "Temp range": "-20°C to +100°C (HNBR higher)"
+    },
+    "iso_standard": "ISO 13050 (curvilinear synchronous belts) / manufacturer HTD catalog",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "HTD-8M-1000-20"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "HTD-8M-1000-20"
+      },
+      {
+        "brand": "Bando",
+        "code": "HTD-8M-1000-20"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "HTD-8M-1000-20"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Timing Belt HTD-8M-1000-20 (HTD-8M-1000-20). Sabuk transmisi profil HTD 8M. Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga. End-use: CNC axes light, packaging, robotics peripheral; ganti jika tooth shear, fabric peel, atau back crack. Ketahanan: Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length class HTD-8M-1000-20",
+    "fungsi": "Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga",
+    "kegunaan": "CNC axes light, packaging, robotics peripheral; ganti jika tooth shear, fabric peel, atau back crack",
+    "durability": "Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar",
+    "unit": "pcs",
+    "material": "CR or HNBR body (premium oil/heat resistant grades available)",
+    "subcategory": "Timing HTD 8M",
+    "affiliate_query": "Gates HTD-8M-1000-20 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Optibelt Timing Belt HTD-8M-1200-30",
+    "part_number": "HTD-8M-1200-30",
+    "category": "V-Belt",
+    "brand": "Optibelt",
+    "specification": "Profil HTD 8M; Pitch length class HTD-8M-1200-30; lebar nominal ~30 mm; tinggi ~tooth HTD 8 mm; sudut flank ~curvilinear HTD. Pitch 8 mm, lebar 30 mm. Gigi curvilinear HTD untuk kapasitas lebih tinggi vs trapezoidal lama. Bahan: CR or HNBR body (premium oil/heat resistant grades available); cord: Glass fiber or steel cord (depending on series).",
+    "compatible_equipment": "Linear actuators, conveyor indexing; ganti jika tooth shear, fabric peel, atau back crack",
+    "price_range": "Rp 250.000 - 550.000",
+    "alternative_parts": "",
+    "slug": "v-belt-htd-8m-1200-30",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "HTD 8M",
+      "Length": "Pitch length class HTD-8M-1200-30",
+      "Top width": "30 mm",
+      "Height": "tooth HTD 8 mm",
+      "Material": "CR or HNBR body (premium oil/heat resistant grades available)",
+      "Cord": "Glass fiber or steel cord (depending on series)",
+      "Temp range": "-20°C to +100°C (HNBR higher)"
+    },
+    "iso_standard": "ISO 13050 (curvilinear synchronous belts) / manufacturer HTD catalog",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "HTD-8M-1200-30"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "HTD-8M-1200-30"
+      },
+      {
+        "brand": "Bando",
+        "code": "HTD-8M-1200-30"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "HTD-8M-1200-30"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Optibelt Timing Belt HTD-8M-1200-30 (HTD-8M-1200-30). Sabuk transmisi profil HTD 8M. Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga. End-use: Linear actuators, conveyor indexing; ganti jika tooth shear, fabric peel, atau back crack. Ketahanan: Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length class HTD-8M-1200-30",
+    "fungsi": "Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga",
+    "kegunaan": "Linear actuators, conveyor indexing; ganti jika tooth shear, fabric peel, atau back crack",
+    "durability": "Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar",
+    "unit": "pcs",
+    "material": "CR or HNBR body (premium oil/heat resistant grades available)",
+    "subcategory": "Timing HTD 8M",
+    "affiliate_query": "Optibelt HTD-8M-1200-30 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Bando Timing Belt HTD-8M-1600-50",
+    "part_number": "HTD-8M-1600-50",
+    "category": "V-Belt",
+    "brand": "Bando",
+    "specification": "Profil HTD 8M; Pitch length class HTD-8M-1600-50; lebar nominal ~50 mm; tinggi ~tooth HTD 8 mm; sudut flank ~curvilinear HTD. Pitch 8 mm, lebar 50 mm. Gigi curvilinear HTD untuk kapasitas lebih tinggi vs trapezoidal lama. Bahan: CR or HNBR body (premium oil/heat resistant grades available); cord: Glass fiber or steel cord (depending on series).",
+    "compatible_equipment": "Higher torque synchronous drives; ganti jika tooth shear, fabric peel, atau back crack",
+    "price_range": "Rp 400.000 - 900.000",
+    "alternative_parts": "",
+    "slug": "v-belt-htd-8m-1600-50",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "HTD 8M",
+      "Length": "Pitch length class HTD-8M-1600-50",
+      "Top width": "50 mm",
+      "Height": "tooth HTD 8 mm",
+      "Material": "CR or HNBR body (premium oil/heat resistant grades available)",
+      "Cord": "Glass fiber or steel cord (depending on series)",
+      "Temp range": "-20°C to +100°C (HNBR higher)"
+    },
+    "iso_standard": "ISO 13050 (curvilinear synchronous belts) / manufacturer HTD catalog",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "HTD-8M-1600-50"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "HTD-8M-1600-50"
+      },
+      {
+        "brand": "Bando",
+        "code": "HTD-8M-1600-50"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "HTD-8M-1600-50"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Bando Timing Belt HTD-8M-1600-50 (HTD-8M-1600-50). Sabuk transmisi profil HTD 8M. Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga. End-use: Higher torque synchronous drives; ganti jika tooth shear, fabric peel, atau back crack. Ketahanan: Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length class HTD-8M-1600-50",
+    "fungsi": "Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga",
+    "kegunaan": "Higher torque synchronous drives; ganti jika tooth shear, fabric peel, atau back crack",
+    "durability": "Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar",
+    "unit": "pcs",
+    "material": "CR or HNBR body (premium oil/heat resistant grades available)",
+    "subcategory": "Timing HTD 8M",
+    "affiliate_query": "Bando HTD-8M-1600-50 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Timing Belt HTD-14M-1400-40",
+    "part_number": "HTD-14M-1400-40",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil HTD 14M; Pitch length class HTD-14M-1400-40; lebar nominal ~40 mm; tinggi ~tooth HTD 14 mm; sudut flank ~curvilinear HTD. Pitch 14 mm, lebar 40 mm. Gigi curvilinear HTD untuk kapasitas lebih tinggi vs trapezoidal lama. Bahan: CR or HNBR body (premium oil/heat resistant grades available); cord: Glass fiber or steel cord (depending on series).",
+    "compatible_equipment": "Heavy synchronous, extrusion auxiliary, printing; ganti jika tooth shear, fabric peel, atau back crack",
+    "price_range": "Rp 550.000 - 1.200.000",
+    "alternative_parts": "",
+    "slug": "v-belt-htd-14m-1400-40",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "HTD 14M",
+      "Length": "Pitch length class HTD-14M-1400-40",
+      "Top width": "40 mm",
+      "Height": "tooth HTD 14 mm",
+      "Material": "CR or HNBR body (premium oil/heat resistant grades available)",
+      "Cord": "Glass fiber or steel cord (depending on series)",
+      "Temp range": "-20°C to +100°C (HNBR higher)"
+    },
+    "iso_standard": "ISO 13050 (curvilinear synchronous belts) / manufacturer HTD catalog",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "HTD-14M-1400-40"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "HTD-14M-1400-40"
+      },
+      {
+        "brand": "Bando",
+        "code": "HTD-14M-1400-40"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "HTD-14M-1400-40"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Timing Belt HTD-14M-1400-40 (HTD-14M-1400-40). Sabuk transmisi profil HTD 14M. Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga. End-use: Heavy synchronous, extrusion auxiliary, printing; ganti jika tooth shear, fabric peel, atau back crack. Ketahanan: Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length class HTD-14M-1400-40",
+    "fungsi": "Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga",
+    "kegunaan": "Heavy synchronous, extrusion auxiliary, printing; ganti jika tooth shear, fabric peel, atau back crack",
+    "durability": "Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar",
+    "unit": "pcs",
+    "material": "CR or HNBR body (premium oil/heat resistant grades available)",
+    "subcategory": "Timing HTD 14M",
+    "affiliate_query": "Gates HTD-14M-1400-40 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Mitsuboshi Timing Belt HTD-14M-1750-55",
+    "part_number": "HTD-14M-1750-55",
+    "category": "V-Belt",
+    "brand": "Mitsuboshi",
+    "specification": "Profil HTD 14M; Pitch length class HTD-14M-1750-55; lebar nominal ~55 mm; tinggi ~tooth HTD 14 mm; sudut flank ~curvilinear HTD. Pitch 14 mm, lebar 55 mm. Gigi curvilinear HTD untuk kapasitas lebih tinggi vs trapezoidal lama. Bahan: CR or HNBR body (premium oil/heat resistant grades available); cord: Glass fiber or steel cord (depending on series).",
+    "compatible_equipment": "High torque timing applications; ganti jika tooth shear, fabric peel, atau back crack",
+    "price_range": "Rp 750.000 - 1.600.000",
+    "alternative_parts": "",
+    "slug": "v-belt-htd-14m-1750-55",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "HTD 14M",
+      "Length": "Pitch length class HTD-14M-1750-55",
+      "Top width": "55 mm",
+      "Height": "tooth HTD 14 mm",
+      "Material": "CR or HNBR body (premium oil/heat resistant grades available)",
+      "Cord": "Glass fiber or steel cord (depending on series)",
+      "Temp range": "-20°C to +100°C (HNBR higher)"
+    },
+    "iso_standard": "ISO 13050 (curvilinear synchronous belts) / manufacturer HTD catalog",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "HTD-14M-1750-55"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "HTD-14M-1750-55"
+      },
+      {
+        "brand": "Bando",
+        "code": "HTD-14M-1750-55"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "HTD-14M-1750-55"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Mitsuboshi Timing Belt HTD-14M-1750-55 (HTD-14M-1750-55). Sabuk transmisi profil HTD 14M. Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga. End-use: High torque timing applications; ganti jika tooth shear, fabric peel, atau back crack. Ketahanan: Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length class HTD-14M-1750-55",
+    "fungsi": "Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga",
+    "kegunaan": "High torque timing applications; ganti jika tooth shear, fabric peel, atau back crack",
+    "durability": "Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar",
+    "unit": "pcs",
+    "material": "CR or HNBR body (premium oil/heat resistant grades available)",
+    "subcategory": "Timing HTD 14M",
+    "affiliate_query": "Mitsuboshi HTD-14M-1750-55 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Timing Belt HTD-5M-720-15",
+    "part_number": "HTD-5M-720-15",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil HTD 5M; Pitch length class HTD-5M-720-15; lebar nominal ~15 mm; tinggi ~tooth HTD 5 mm; sudut flank ~curvilinear HTD. Pitch 5 mm, lebar 15 mm. Gigi curvilinear HTD untuk kapasitas lebih tinggi vs trapezoidal lama. Bahan: CR or HNBR body (premium oil/heat resistant grades available); cord: Glass fiber or steel cord (depending on series).",
+    "compatible_equipment": "Small automation, office/industrial equipment; ganti jika tooth shear, fabric peel, atau back crack",
+    "price_range": "Rp 90.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "v-belt-htd-5m-720-15",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "HTD 5M",
+      "Length": "Pitch length class HTD-5M-720-15",
+      "Top width": "15 mm",
+      "Height": "tooth HTD 5 mm",
+      "Material": "CR or HNBR body (premium oil/heat resistant grades available)",
+      "Cord": "Glass fiber or steel cord (depending on series)",
+      "Temp range": "-20°C to +100°C (HNBR higher)"
+    },
+    "iso_standard": "ISO 13050 (curvilinear synchronous belts) / manufacturer HTD catalog",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "HTD-5M-720-15"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "HTD-5M-720-15"
+      },
+      {
+        "brand": "Bando",
+        "code": "HTD-5M-720-15"
+      },
+      {
+        "brand": "ContiTech",
+        "code": "HTD-5M-720-15"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Timing Belt HTD-5M-720-15 (HTD-5M-720-15). Sabuk transmisi profil HTD 5M. Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga. End-use: Small automation, office/industrial equipment; ganti jika tooth shear, fabric peel, atau back crack. Ketahanan: Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Pitch length class HTD-5M-720-15",
+    "fungsi": "Sabuk sinkron (timing) — rasio tetap tanpa slip, posisi angular terjaga",
+    "kegunaan": "Small automation, office/industrial equipment; ganti jika tooth shear, fabric peel, atau back crack",
+    "durability": "Jangan over-tension; ikut toleransi pulley HTD; kontaminasi oli mempercepat failure pada grade standar",
+    "unit": "pcs",
+    "material": "CR or HNBR body (premium oil/heat resistant grades available)",
+    "subcategory": "Timing HTD 5M",
+    "affiliate_query": "Gates HTD-5M-720-15 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Cogged V-Belt AX-45",
+    "part_number": "AX-45",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil AX; Cogged length class AX-45; lebar nominal ~raw-edge section; tinggi ~cogged; sudut flank ~40°.  Bahan: Raw-edge molded rubber with cogged base for flexibility; cord: Polyester / aramid on heavy duty.",
+    "compatible_equipment": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "price_range": "Rp 55.000 - 130.000",
+    "alternative_parts": "",
+    "slug": "v-belt-ax-45",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "AX",
+      "Length": "Cogged length class AX-45",
+      "Top width": "raw-edge section",
+      "Height": "cogged",
+      "Material": "Raw-edge molded rubber with cogged base for flexibility",
+      "Cord": "Polyester / aramid on heavy duty",
+      "Temp range": "-30°C to +90°C (heat-resistant compounds)"
+    },
+    "iso_standard": "Manufacturer cogged/narrow standards",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "AX-45"
+      },
+      {
+        "brand": "Bando",
+        "code": "AX-45"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "AX-45"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Cogged V-Belt AX-45 (AX-45). Sabuk transmisi profil AX. Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik. End-use: High-speed fans, automotive-derived industrial drives, compact pulley diameters. Ketahanan: Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Cogged length class AX-45",
+    "fungsi": "Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik",
+    "kegunaan": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "durability": "Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam",
+    "unit": "pcs",
+    "material": "Raw-edge molded rubber with cogged base for flexibility",
+    "subcategory": "Cogged AX",
+    "affiliate_query": "Gates AX-45 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Bando Cogged V-Belt BX-50",
+    "part_number": "BX-50",
+    "category": "V-Belt",
+    "brand": "Bando",
+    "specification": "Profil BX; Cogged length class BX-50; lebar nominal ~raw-edge section; tinggi ~cogged; sudut flank ~40°.  Bahan: Raw-edge molded rubber with cogged base for flexibility; cord: Polyester / aramid on heavy duty.",
+    "compatible_equipment": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "price_range": "Rp 80.000 - 180.000",
+    "alternative_parts": "",
+    "slug": "v-belt-bx-50",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "BX",
+      "Length": "Cogged length class BX-50",
+      "Top width": "raw-edge section",
+      "Height": "cogged",
+      "Material": "Raw-edge molded rubber with cogged base for flexibility",
+      "Cord": "Polyester / aramid on heavy duty",
+      "Temp range": "-30°C to +90°C (heat-resistant compounds)"
+    },
+    "iso_standard": "Manufacturer cogged/narrow standards",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "BX-50"
+      },
+      {
+        "brand": "Bando",
+        "code": "BX-50"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "BX-50"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Bando Cogged V-Belt BX-50 (BX-50). Sabuk transmisi profil BX. Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik. End-use: High-speed fans, automotive-derived industrial drives, compact pulley diameters. Ketahanan: Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Cogged length class BX-50",
+    "fungsi": "Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik",
+    "kegunaan": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "durability": "Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam",
+    "unit": "pcs",
+    "material": "Raw-edge molded rubber with cogged base for flexibility",
+    "subcategory": "Cogged BX",
+    "affiliate_query": "Bando BX-50 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Optibelt Cogged V-Belt XPZ-1180",
+    "part_number": "XPZ-1180",
+    "category": "V-Belt",
+    "brand": "Optibelt",
+    "specification": "Profil XPZ; Cogged length class XPZ-1180; lebar nominal ~raw-edge section; tinggi ~cogged; sudut flank ~40°.  Bahan: Raw-edge molded rubber with cogged base for flexibility; cord: Polyester / aramid on heavy duty.",
+    "compatible_equipment": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "price_range": "Rp 60.000 - 150.000",
+    "alternative_parts": "",
+    "slug": "v-belt-xpz-1180",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "XPZ",
+      "Length": "Cogged length class XPZ-1180",
+      "Top width": "raw-edge section",
+      "Height": "cogged",
+      "Material": "Raw-edge molded rubber with cogged base for flexibility",
+      "Cord": "Polyester / aramid on heavy duty",
+      "Temp range": "-30°C to +90°C (heat-resistant compounds)"
+    },
+    "iso_standard": "Manufacturer cogged/narrow standards",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "XPZ-1180"
+      },
+      {
+        "brand": "Bando",
+        "code": "XPZ-1180"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "XPZ-1180"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Optibelt Cogged V-Belt XPZ-1180 (XPZ-1180). Sabuk transmisi profil XPZ. Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik. End-use: High-speed fans, automotive-derived industrial drives, compact pulley diameters. Ketahanan: Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Cogged length class XPZ-1180",
+    "fungsi": "Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik",
+    "kegunaan": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "durability": "Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam",
+    "unit": "pcs",
+    "material": "Raw-edge molded rubber with cogged base for flexibility",
+    "subcategory": "Cogged XPZ",
+    "affiliate_query": "Optibelt XPZ-1180 V-belt",
+    "image_url": ""
+  },
+  {
+    "part_name": "Gates Cogged V-Belt XPA-1400",
+    "part_number": "XPA-1400",
+    "category": "V-Belt",
+    "brand": "Gates",
+    "specification": "Profil XPA; Cogged length class XPA-1400; lebar nominal ~raw-edge section; tinggi ~cogged; sudut flank ~40°.  Bahan: Raw-edge molded rubber with cogged base for flexibility; cord: Polyester / aramid on heavy duty.",
+    "compatible_equipment": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "price_range": "Rp 85.000 - 200.000",
+    "alternative_parts": "",
+    "slug": "v-belt-xpa-1400",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Section": "XPA",
+      "Length": "Cogged length class XPA-1400",
+      "Top width": "raw-edge section",
+      "Height": "cogged",
+      "Material": "Raw-edge molded rubber with cogged base for flexibility",
+      "Cord": "Polyester / aramid on heavy duty",
+      "Temp range": "-30°C to +90°C (heat-resistant compounds)"
+    },
+    "iso_standard": "Manufacturer cogged/narrow standards",
+    "equivalent_codes": [
+      {
+        "brand": "Gates",
+        "code": "XPA-1400"
+      },
+      {
+        "brand": "Bando",
+        "code": "XPA-1400"
+      },
+      {
+        "brand": "Optibelt",
+        "code": "XPA-1400"
+      }
+    ],
+    "vendor_type": "Industrial power transmission / MRO distributor",
+    "search_intent": "transactional",
+    "description": "Gates Cogged V-Belt XPA-1400 (XPA-1400). Sabuk transmisi profil XPA. Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik. End-use: High-speed fans, automotive-derived industrial drives, compact pulley diameters. Ketahanan: Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Cogged length class XPA-1400",
+    "fungsi": "Sabuk cogged/raw-edge — fleksibel, grip lebih baik, panas lebih rendah vs wrapped klasik",
+    "kegunaan": "High-speed fans, automotive-derived industrial drives, compact pulley diameters",
+    "durability": "Lebih sensitif terhadap misalignment tajam; simpan di tempat sejuk tanpa tekuk tajam",
+    "unit": "pcs",
+    "material": "Raw-edge molded rubber with cogged base for flexibility",
+    "subcategory": "Cogged XPA",
+    "affiliate_query": "Gates XPA-1400 V-belt",
+    "image_url": ""
   }
 ]
