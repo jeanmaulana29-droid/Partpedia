@@ -27709,5 +27709,3139 @@
     "subcategory": "Cogged XPA",
     "affiliate_query": "Gates XPA-1400 V-belt",
     "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6300-2RS",
+    "part_number": "6300-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "10×35×11 sealed",
+    "compatible_equipment": "Small motors, pulleys",
+    "price_range": "Rp 35.000 - 90.000",
+    "alternative_parts": "",
+    "slug": "bearing-6300-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "10×35×11",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6300-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6300-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6300-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6300-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6300-2RS (6300-2RS). 10×35×11 sealed. Fungsi: Radial ball bearing. Dipakai pada: Small motors, pulleys.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "10×35×11",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Small motors, pulleys",
+    "durability": "2RS sealed",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6300-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6301-2RS",
+    "part_number": "6301-2RS",
+    "category": "Bearing",
+    "brand": "NSK",
+    "specification": "12×37×12 sealed",
+    "compatible_equipment": "Motors, gearboxes",
+    "price_range": "Rp 40.000 - 100.000",
+    "alternative_parts": "",
+    "slug": "bearing-6301-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "12×37×12",
+      "Brand": "NSK"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6301-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6301-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6301-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6301-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6301-2RS (6301-2RS). 12×37×12 sealed. Fungsi: Radial ball bearing. Dipakai pada: Motors, gearboxes.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "12×37×12",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Motors, gearboxes",
+    "durability": "ISO 15",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NSK 6301-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6302-2RS",
+    "part_number": "6302-2RS",
+    "category": "Bearing",
+    "brand": "NTN",
+    "specification": "15×42×13 sealed",
+    "compatible_equipment": "Pumps, fans",
+    "price_range": "Rp 45.000 - 110.000",
+    "alternative_parts": "",
+    "slug": "bearing-6302-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "15×42×13",
+      "Brand": "NTN"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6302-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6302-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6302-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6302-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6302-2RS (6302-2RS). 15×42×13 sealed. Fungsi: Radial ball bearing. Dipakai pada: Pumps, fans.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "15×42×13",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Pumps, fans",
+    "durability": "High MRO demand",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NTN 6302-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6303-2RS",
+    "part_number": "6303-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "17×47×14 sealed",
+    "compatible_equipment": "Motors, agri machinery",
+    "price_range": "Rp 50.000 - 130.000",
+    "alternative_parts": "",
+    "slug": "bearing-6303-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "17×47×14",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6303-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6303-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6303-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6303-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6303-2RS (6303-2RS). 17×47×14 sealed. Fungsi: Radial ball bearing. Dipakai pada: Motors, agri machinery.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "17×47×14",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Motors, agri machinery",
+    "durability": "Top searched 63-series",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6303-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6304-2RS",
+    "part_number": "6304-2RS",
+    "category": "Bearing",
+    "brand": "FAG",
+    "specification": "20×52×15 sealed",
+    "compatible_equipment": "Industrial motors",
+    "price_range": "Rp 55.000 - 140.000",
+    "alternative_parts": "",
+    "slug": "bearing-6304-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "20×52×15",
+      "Brand": "FAG"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6304-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6304-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6304-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6304-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6304-2RS (6304-2RS). 20×52×15 sealed. Fungsi: Radial ball bearing. Dipakai pada: Industrial motors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "20×52×15",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Industrial motors",
+    "durability": "GCr15 steel",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "FAG 6304-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6305-2RS",
+    "part_number": "6305-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "25×62×17 sealed",
+    "compatible_equipment": "Motors 0.75–3kW, gearboxes",
+    "price_range": "Rp 65.000 - 160.000",
+    "alternative_parts": "",
+    "slug": "bearing-6305-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25×62×17",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6305-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6305-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6305-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6305-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6305-2RS (6305-2RS). 25×62×17 sealed. Fungsi: Radial ball bearing. Dipakai pada: Motors 0.75–3kW, gearboxes.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25×62×17",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Motors 0.75–3kW, gearboxes",
+    "durability": "Very high global search volume",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6305-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6306-2RS",
+    "part_number": "6306-2RS",
+    "category": "Bearing",
+    "brand": "NSK",
+    "specification": "30×72×19 sealed",
+    "compatible_equipment": "Pumps, larger motors",
+    "price_range": "Rp 85.000 - 210.000",
+    "alternative_parts": "",
+    "slug": "bearing-6306-2rs",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "30×72×19",
+      "Brand": "NSK"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6306-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6306-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6306-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6306-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6306-2RS (6306-2RS). 30×72×19 sealed. Fungsi: Radial ball bearing. Dipakai pada: Pumps, larger motors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "30×72×19",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Pumps, larger motors",
+    "durability": "ISO metric 63",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NSK 6306-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6308-2RS",
+    "part_number": "6308-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "40×90×23 sealed",
+    "compatible_equipment": "Gearboxes, heavy motors",
+    "price_range": "Rp 140.000 - 350.000",
+    "alternative_parts": "",
+    "slug": "bearing-6308-2rs",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "40×90×23",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6308-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6308-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6308-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6308-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6308-2RS (6308-2RS). 40×90×23 sealed. Fungsi: Radial ball bearing. Dipakai pada: Gearboxes, heavy motors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "40×90×23",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Gearboxes, heavy motors",
+    "durability": "Plant MRO staple",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6308-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6309-2RS",
+    "part_number": "6309-2RS",
+    "category": "Bearing",
+    "brand": "NTN",
+    "specification": "45×100×25 sealed",
+    "compatible_equipment": "Heavy drives",
+    "price_range": "Rp 180.000 - 420.000",
+    "alternative_parts": "",
+    "slug": "bearing-6309-2rs",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "45×100×25",
+      "Brand": "NTN"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6309-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6309-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6309-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6309-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6309-2RS (6309-2RS). 45×100×25 sealed. Fungsi: Radial ball bearing. Dipakai pada: Heavy drives.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "45×100×25",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Heavy drives",
+    "durability": "Check shaft fit",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NTN 6309-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6310-2RS",
+    "part_number": "6310-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "50×110×27 sealed",
+    "compatible_equipment": "Large motors/pumps",
+    "price_range": "Rp 220.000 - 520.000",
+    "alternative_parts": "",
+    "slug": "bearing-6310-2rs",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "50×110×27",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6310-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6310-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6310-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6310-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6310-2RS (6310-2RS). 50×110×27 sealed. Fungsi: Radial ball bearing. Dipakai pada: Large motors/pumps.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "50×110×27",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Large motors/pumps",
+    "durability": "Series 63 capacity",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6310-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6004-2RS",
+    "part_number": "6004-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "20×42×12 thin section",
+    "compatible_equipment": "Tools, small gearboxes",
+    "price_range": "Rp 40.000 - 100.000",
+    "alternative_parts": "",
+    "slug": "bearing-6004-2rs",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "20×42×12",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6004-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6004-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6004-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6004-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6004-2RS (6004-2RS). 20×42×12 thin section. Fungsi: Compact radial bearing. Dipakai pada: Tools, small gearboxes.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "20×42×12",
+    "fungsi": "Compact radial bearing",
+    "kegunaan": "Tools, small gearboxes",
+    "durability": "Series 60",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6004-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6005-2RS",
+    "part_number": "6005-2RS",
+    "category": "Bearing",
+    "brand": "NSK",
+    "specification": "25×47×12",
+    "compatible_equipment": "Motors, equipment",
+    "price_range": "Rp 45.000 - 110.000",
+    "alternative_parts": "",
+    "slug": "bearing-6005-2rs",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25×47×12",
+      "Brand": "NSK"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6005-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6005-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6005-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6005-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6005-2RS (6005-2RS). 25×47×12. Fungsi: Compact radial bearing. Dipakai pada: Motors, equipment.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25×47×12",
+    "fungsi": "Compact radial bearing",
+    "kegunaan": "Motors, equipment",
+    "durability": "High volume SKU",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NSK 6005-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6006-2RS",
+    "part_number": "6006-2RS",
+    "category": "Bearing",
+    "brand": "NTN",
+    "specification": "30×55×13",
+    "compatible_equipment": "Pumps, fans",
+    "price_range": "Rp 55.000 - 130.000",
+    "alternative_parts": "",
+    "slug": "bearing-6006-2rs",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "30×55×13",
+      "Brand": "NTN"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6006-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6006-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6006-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6006-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6006-2RS (6006-2RS). 30×55×13. Fungsi: Compact radial bearing. Dipakai pada: Pumps, fans.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "30×55×13",
+    "fungsi": "Compact radial bearing",
+    "kegunaan": "Pumps, fans",
+    "durability": "2RS",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NTN 6006-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6208-2RS",
+    "part_number": "6208-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "40×80×18",
+    "compatible_equipment": "Motors, conveyors",
+    "price_range": "Rp 95.000 - 240.000",
+    "alternative_parts": "",
+    "slug": "bearing-6208-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "40×80×18",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6208-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6208-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6208-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6208-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6208-2RS (6208-2RS). 40×80×18. Fungsi: Radial ball bearing. Dipakai pada: Motors, conveyors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "40×80×18",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Motors, conveyors",
+    "durability": "Top 62-series search",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6208-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6209-2RS",
+    "part_number": "6209-2RS",
+    "category": "Bearing",
+    "brand": "NSK",
+    "specification": "45×85×19",
+    "compatible_equipment": "Industrial MRO",
+    "price_range": "Rp 110.000 - 280.000",
+    "alternative_parts": "",
+    "slug": "bearing-6209-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "45×85×19",
+      "Brand": "NSK"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6209-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6209-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6209-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6209-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6209-2RS (6209-2RS). 45×85×19. Fungsi: Radial ball bearing. Dipakai pada: Industrial MRO.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "45×85×19",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Industrial MRO",
+    "durability": "ISO 15",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NSK 6209-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Deep Groove Ball Bearing 6210-2RS",
+    "part_number": "6210-2RS",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "50×90×20",
+    "compatible_equipment": "Pumps, motors",
+    "price_range": "Rp 130.000 - 320.000",
+    "alternative_parts": "",
+    "slug": "bearing-6210-2rs-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "50×90×20",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "6210-2RS"
+      },
+      {
+        "brand": "NSK",
+        "code": "6210-2RS"
+      },
+      {
+        "brand": "NTN",
+        "code": "6210-2RS"
+      },
+      {
+        "brand": "FAG",
+        "code": "6210-2RS"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Deep Groove Ball Bearing 6210-2RS (6210-2RS). 50×90×20. Fungsi: Radial ball bearing. Dipakai pada: Pumps, motors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "50×90×20",
+    "fungsi": "Radial ball bearing",
+    "kegunaan": "Pumps, motors",
+    "durability": "Common stock",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 6210-2RS",
+    "image_url": ""
+  },
+  {
+    "part_name": "Insert Bearing UC205",
+    "part_number": "UC205",
+    "category": "Bearing",
+    "brand": "Asahi/Generic",
+    "specification": "Bore 25mm set-screw",
+    "compatible_equipment": "UCP205, conveyors",
+    "price_range": "Rp 55.000 - 140.000",
+    "alternative_parts": "",
+    "slug": "bearing-uc205",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25 mm",
+      "Brand": "Asahi/Generic"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "UC205"
+      },
+      {
+        "brand": "NSK",
+        "code": "UC205"
+      },
+      {
+        "brand": "NTN",
+        "code": "UC205"
+      },
+      {
+        "brand": "FAG",
+        "code": "UC205"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Insert Bearing UC205 (UC205). Bore 25mm set-screw. Fungsi: Insert for pillow block. Dipakai pada: UCP205, conveyors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25 mm",
+    "fungsi": "Insert for pillow block",
+    "kegunaan": "UCP205, conveyors",
+    "durability": "Spherical OD",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "Asahi/Generic UC205",
+    "image_url": ""
+  },
+  {
+    "part_name": "Insert Bearing UC206",
+    "part_number": "UC206",
+    "category": "Bearing",
+    "brand": "NTN",
+    "specification": "Bore 30mm",
+    "compatible_equipment": "UCP206",
+    "price_range": "Rp 65.000 - 160.000",
+    "alternative_parts": "",
+    "slug": "bearing-uc206",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "30 mm",
+      "Brand": "NTN"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "UC206"
+      },
+      {
+        "brand": "NSK",
+        "code": "UC206"
+      },
+      {
+        "brand": "NTN",
+        "code": "UC206"
+      },
+      {
+        "brand": "FAG",
+        "code": "UC206"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Insert Bearing UC206 (UC206). Bore 30mm. Fungsi: Insert bearing. Dipakai pada: UCP206.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "30 mm",
+    "fungsi": "Insert bearing",
+    "kegunaan": "UCP206",
+    "durability": "Relubricable options",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NTN UC206",
+    "image_url": ""
+  },
+  {
+    "part_name": "Insert Bearing UC207",
+    "part_number": "UC207",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "Bore 35mm",
+    "compatible_equipment": "Agri & conveyor",
+    "price_range": "Rp 80.000 - 200.000",
+    "alternative_parts": "",
+    "slug": "bearing-uc207",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "35 mm",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "UC207"
+      },
+      {
+        "brand": "NSK",
+        "code": "UC207"
+      },
+      {
+        "brand": "NTN",
+        "code": "UC207"
+      },
+      {
+        "brand": "FAG",
+        "code": "UC207"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Insert Bearing UC207 (UC207). Bore 35mm. Fungsi: Insert bearing. Dipakai pada: Agri & conveyor.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "35 mm",
+    "fungsi": "Insert bearing",
+    "kegunaan": "Agri & conveyor",
+    "durability": "YAR/UC style",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF UC207",
+    "image_url": ""
+  },
+  {
+    "part_name": "Insert Bearing UC208",
+    "part_number": "UC208",
+    "category": "Bearing",
+    "brand": "NSK",
+    "specification": "Bore 40mm",
+    "compatible_equipment": "Heavier shafts",
+    "price_range": "Rp 95.000 - 240.000",
+    "alternative_parts": "",
+    "slug": "bearing-uc208",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "40 mm",
+      "Brand": "NSK"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "UC208"
+      },
+      {
+        "brand": "NSK",
+        "code": "UC208"
+      },
+      {
+        "brand": "NTN",
+        "code": "UC208"
+      },
+      {
+        "brand": "FAG",
+        "code": "UC208"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Insert Bearing UC208 (UC208). Bore 40mm. Fungsi: Insert bearing. Dipakai pada: Heavier shafts.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "40 mm",
+    "fungsi": "Insert bearing",
+    "kegunaan": "Heavier shafts",
+    "durability": "Set screw lock",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NSK UC208",
+    "image_url": ""
+  },
+  {
+    "part_name": "Pillow Block UCP204",
+    "part_number": "UCP204",
+    "category": "Bearing",
+    "brand": "Asahi",
+    "specification": "Housing + UC204 20mm",
+    "compatible_equipment": "Light conveyor",
+    "price_range": "Rp 90.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "bearing-ucp204-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "20 mm",
+      "Brand": "Asahi"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "UCP204"
+      },
+      {
+        "brand": "NSK",
+        "code": "UCP204"
+      },
+      {
+        "brand": "NTN",
+        "code": "UCP204"
+      },
+      {
+        "brand": "FAG",
+        "code": "UCP204"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Pillow Block UCP204 (UCP204). Housing + UC204 20mm. Fungsi: Mounted bearing unit. Dipakai pada: Light conveyor.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "20 mm",
+    "fungsi": "Mounted bearing unit",
+    "kegunaan": "Light conveyor",
+    "durability": "2-bolt base",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "Asahi UCP204",
+    "image_url": ""
+  },
+  {
+    "part_name": "Pillow Block UCP207",
+    "part_number": "UCP207",
+    "category": "Bearing",
+    "brand": "NTN",
+    "specification": "Housing + UC207 35mm",
+    "compatible_equipment": "Conveyor, elevators",
+    "price_range": "Rp 150.000 - 380.000",
+    "alternative_parts": "",
+    "slug": "bearing-ucp207",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "35 mm",
+      "Brand": "NTN"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "UCP207"
+      },
+      {
+        "brand": "NSK",
+        "code": "UCP207"
+      },
+      {
+        "brand": "NTN",
+        "code": "UCP207"
+      },
+      {
+        "brand": "FAG",
+        "code": "UCP207"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Pillow Block UCP207 (UCP207). Housing + UC207 35mm. Fungsi: Mounted bearing unit. Dipakai pada: Conveyor, elevators.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "35 mm",
+    "fungsi": "Mounted bearing unit",
+    "kegunaan": "Conveyor, elevators",
+    "durability": "Very common plant unit",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NTN UCP207",
+    "image_url": ""
+  },
+  {
+    "part_name": "Pillow Block UCP208",
+    "part_number": "UCP208",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "Housing + UC208 40mm",
+    "compatible_equipment": "Industrial conveyors",
+    "price_range": "Rp 180.000 - 450.000",
+    "alternative_parts": "",
+    "slug": "bearing-ucp208-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "40 mm",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "UCP208"
+      },
+      {
+        "brand": "NSK",
+        "code": "UCP208"
+      },
+      {
+        "brand": "NTN",
+        "code": "UCP208"
+      },
+      {
+        "brand": "FAG",
+        "code": "UCP208"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Pillow Block UCP208 (UCP208). Housing + UC208 40mm. Fungsi: Mounted bearing unit. Dipakai pada: Industrial conveyors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "40 mm",
+    "fungsi": "Mounted bearing unit",
+    "kegunaan": "Industrial conveyors",
+    "durability": "2-bolt pillow",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF UCP208",
+    "image_url": ""
+  },
+  {
+    "part_name": "Tapered Roller Bearing 30205",
+    "part_number": "30205",
+    "category": "Bearing",
+    "brand": "Timken",
+    "specification": "25×52×16.25 metric taper",
+    "compatible_equipment": "Hubs, gearboxes",
+    "price_range": "Rp 85.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "bearing-30205",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25×52×16.25",
+      "Brand": "Timken"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "30205"
+      },
+      {
+        "brand": "NSK",
+        "code": "30205"
+      },
+      {
+        "brand": "NTN",
+        "code": "30205"
+      },
+      {
+        "brand": "FAG",
+        "code": "30205"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Tapered Roller Bearing 30205 (30205). 25×52×16.25 metric taper. Fungsi: Taper radial+axial. Dipakai pada: Hubs, gearboxes.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25×52×16.25",
+    "fungsi": "Taper radial+axial",
+    "kegunaan": "Hubs, gearboxes",
+    "durability": "Set preload correctly",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "Timken 30205",
+    "image_url": ""
+  },
+  {
+    "part_name": "Tapered Roller Bearing 30206",
+    "part_number": "30206",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "30×62×17.25",
+    "compatible_equipment": "Gearboxes",
+    "price_range": "Rp 95.000 - 250.000",
+    "alternative_parts": "",
+    "slug": "bearing-30206",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "30×62×17.25",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "30206"
+      },
+      {
+        "brand": "NSK",
+        "code": "30206"
+      },
+      {
+        "brand": "NTN",
+        "code": "30206"
+      },
+      {
+        "brand": "FAG",
+        "code": "30206"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Tapered Roller Bearing 30206 (30206). 30×62×17.25. Fungsi: Tapered roller. Dipakai pada: Gearboxes.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "30×62×17.25",
+    "fungsi": "Tapered roller",
+    "kegunaan": "Gearboxes",
+    "durability": "ISO 355",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 30206",
+    "image_url": ""
+  },
+  {
+    "part_name": "Tapered Roller Bearing 30208",
+    "part_number": "30208",
+    "category": "Bearing",
+    "brand": "NSK",
+    "specification": "40×80×19.75",
+    "compatible_equipment": "Heavy gearboxes",
+    "price_range": "Rp 140.000 - 360.000",
+    "alternative_parts": "",
+    "slug": "bearing-30208",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "40×80×19.75",
+      "Brand": "NSK"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "30208"
+      },
+      {
+        "brand": "NSK",
+        "code": "30208"
+      },
+      {
+        "brand": "NTN",
+        "code": "30208"
+      },
+      {
+        "brand": "FAG",
+        "code": "30208"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Tapered Roller Bearing 30208 (30208). 40×80×19.75. Fungsi: Tapered roller. Dipakai pada: Heavy gearboxes.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "40×80×19.75",
+    "fungsi": "Tapered roller",
+    "kegunaan": "Heavy gearboxes",
+    "durability": "Often paired",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "NSK 30208",
+    "image_url": ""
+  },
+  {
+    "part_name": "Spherical Roller Bearing 22205 E",
+    "part_number": "22205-E",
+    "category": "Bearing",
+    "brand": "SKF",
+    "specification": "25×52×18 spherical",
+    "compatible_equipment": "Misaligned shafts",
+    "price_range": "Rp 220.000 - 550.000",
+    "alternative_parts": "",
+    "slug": "bearing-22205-e",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25×52×18",
+      "Brand": "SKF"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "22205-E"
+      },
+      {
+        "brand": "NSK",
+        "code": "22205-E"
+      },
+      {
+        "brand": "NTN",
+        "code": "22205-E"
+      },
+      {
+        "brand": "FAG",
+        "code": "22205-E"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Spherical Roller Bearing 22205 E (22205-E). 25×52×18 spherical. Fungsi: Self-aligning spherical. Dipakai pada: Misaligned shafts.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25×52×18",
+    "fungsi": "Self-aligning spherical",
+    "kegunaan": "Misaligned shafts",
+    "durability": "E high capacity",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "SKF 22205-E",
+    "image_url": ""
+  },
+  {
+    "part_name": "Spherical Roller Bearing 22208 E",
+    "part_number": "22208-E",
+    "category": "Bearing",
+    "brand": "FAG",
+    "specification": "40×80×23",
+    "compatible_equipment": "Fans, conveyors",
+    "price_range": "Rp 380.000 - 900.000",
+    "alternative_parts": "",
+    "slug": "bearing-22208-e",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "40×80×23",
+      "Brand": "FAG"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "22208-E"
+      },
+      {
+        "brand": "NSK",
+        "code": "22208-E"
+      },
+      {
+        "brand": "NTN",
+        "code": "22208-E"
+      },
+      {
+        "brand": "FAG",
+        "code": "22208-E"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Spherical Roller Bearing 22208 E (22208-E). 40×80×23. Fungsi: Spherical roller. Dipakai pada: Fans, conveyors.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "40×80×23",
+    "fungsi": "Spherical roller",
+    "kegunaan": "Fans, conveyors",
+    "durability": "Lubrication critical",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "FAG 22208-E",
+    "image_url": ""
+  },
+  {
+    "part_name": "Needle Bearing HK2016",
+    "part_number": "HK2016",
+    "category": "Bearing",
+    "brand": "INA",
+    "specification": "Drawn cup 20×26×16",
+    "compatible_equipment": "Gearbox layshafts",
+    "price_range": "Rp 35.000 - 95.000",
+    "alternative_parts": "",
+    "slug": "bearing-hk2016",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "20×26×16",
+      "Brand": "INA"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "HK2016"
+      },
+      {
+        "brand": "NSK",
+        "code": "HK2016"
+      },
+      {
+        "brand": "NTN",
+        "code": "HK2016"
+      },
+      {
+        "brand": "FAG",
+        "code": "HK2016"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Needle Bearing HK2016 (HK2016). Drawn cup 20×26×16. Fungsi: Needle radial. Dipakai pada: Gearbox layshafts.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "20×26×16",
+    "fungsi": "Needle radial",
+    "kegunaan": "Gearbox layshafts",
+    "durability": "Hard shaft preferred",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "INA HK2016",
+    "image_url": ""
+  },
+  {
+    "part_name": "One-Way Clutch HFL2022",
+    "part_number": "HFL2022",
+    "category": "Bearing",
+    "brand": "INA",
+    "specification": "20×26×22",
+    "compatible_equipment": "Backstop, indexing",
+    "price_range": "Rp 55.000 - 150.000",
+    "alternative_parts": "",
+    "slug": "bearing-hfl2022",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "20×26×22",
+      "Brand": "INA"
+    },
+    "iso_standard": "ISO 15 / ISO 355",
+    "equivalent_codes": [
+      {
+        "brand": "SKF",
+        "code": "HFL2022"
+      },
+      {
+        "brand": "NSK",
+        "code": "HFL2022"
+      },
+      {
+        "brand": "NTN",
+        "code": "HFL2022"
+      },
+      {
+        "brand": "FAG",
+        "code": "HFL2022"
+      }
+    ],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "One-Way Clutch HFL2022 (HFL2022). 20×26×22. Fungsi: One-way needle clutch. Dipakai pada: Backstop, indexing.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "20×26×22",
+    "fungsi": "One-way needle clutch",
+    "kegunaan": "Backstop, indexing",
+    "durability": "Lock direction critical",
+    "unit": "pcs",
+    "material": "Chrome steel 100Cr6",
+    "subcategory": "63/60/62/UC/Taper/Spherical",
+    "affiliate_query": "INA HFL2022",
+    "image_url": ""
+  },
+  {
+    "part_name": "SPA Pulley 100mm 1-Groove",
+    "part_number": "SPA-100-1",
+    "category": "Pulley",
+    "brand": "Generic/OEM",
+    "specification": "SPA PCD~100 1G",
+    "compatible_equipment": "Fan/motor SPA drives",
+    "price_range": "Rp 120.000 - 320.000",
+    "alternative_parts": "",
+    "slug": "pulley-spa-100-1",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "PCD100 1G",
+      "Brand": "Generic/OEM"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "SPA Pulley 100mm 1-Groove (SPA-100-1). SPA PCD~100 1G. Fungsi: Wedge pulley SPA. Dipakai pada: Fan/motor SPA drives.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "PCD100 1G",
+    "fungsi": "Wedge pulley SPA",
+    "kegunaan": "Fan/motor SPA drives",
+    "durability": "G6.3 balance typical",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Generic/OEM SPA-100-1",
+    "image_url": ""
+  },
+  {
+    "part_name": "SPA Pulley 140mm 2-Groove",
+    "part_number": "SPA-140-2",
+    "category": "Pulley",
+    "brand": "Martin/Generic",
+    "specification": "SPA dual groove",
+    "compatible_equipment": "Matched multi-belt",
+    "price_range": "Rp 220.000 - 520.000",
+    "alternative_parts": "",
+    "slug": "pulley-spa-140-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "PCD140 2G",
+      "Brand": "Martin/Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "SPA Pulley 140mm 2-Groove (SPA-140-2). SPA dual groove. Fungsi: Multi SPA pulley. Dipakai pada: Matched multi-belt.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "PCD140 2G",
+    "fungsi": "Multi SPA pulley",
+    "kegunaan": "Matched multi-belt",
+    "durability": "Matched belts required",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Martin/Generic SPA-140-2",
+    "image_url": ""
+  },
+  {
+    "part_name": "SPB Pulley 180mm 1-Groove",
+    "part_number": "SPB-180-1",
+    "category": "Pulley",
+    "brand": "Generic/OEM",
+    "specification": "SPB section",
+    "compatible_equipment": "Fans & pumps",
+    "price_range": "Rp 280.000 - 650.000",
+    "alternative_parts": "",
+    "slug": "pulley-spb-180-1",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "PCD180 1G",
+      "Brand": "Generic/OEM"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "SPB Pulley 180mm 1-Groove (SPB-180-1). SPB section. Fungsi: SPB pulley. Dipakai pada: Fans & pumps.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "PCD180 1G",
+    "fungsi": "SPB pulley",
+    "kegunaan": "Fans & pumps",
+    "durability": "GG25 cast iron common",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Generic/OEM SPB-180-1",
+    "image_url": ""
+  },
+  {
+    "part_name": "SPB Pulley 224mm 2-Groove",
+    "part_number": "SPB-224-2",
+    "category": "Pulley",
+    "brand": "Generic/OEM",
+    "specification": "SPB dual",
+    "compatible_equipment": "Higher kW drives",
+    "price_range": "Rp 450.000 - 1.100.000",
+    "alternative_parts": "",
+    "slug": "pulley-spb-224-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "PCD224 2G",
+      "Brand": "Generic/OEM"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "SPB Pulley 224mm 2-Groove (SPB-224-2). SPB dual. Fungsi: SPB multi-groove. Dipakai pada: Higher kW drives.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "PCD224 2G",
+    "fungsi": "SPB multi-groove",
+    "kegunaan": "Higher kW drives",
+    "durability": "Taper bush bore",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Generic/OEM SPB-224-2",
+    "image_url": ""
+  },
+  {
+    "part_name": "Taper Bush 1610",
+    "part_number": "TB-1610",
+    "category": "Pulley",
+    "brand": "Fenner/Generic",
+    "specification": "Taper lock 1610",
+    "compatible_equipment": "Pulleys & sprockets",
+    "price_range": "Rp 45.000 - 120.000",
+    "alternative_parts": "",
+    "slug": "pulley-tb-1610",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "1610",
+      "Brand": "Fenner/Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Taper Bush 1610 (TB-1610). Taper lock 1610. Fungsi: Taper bush hub. Dipakai pada: Pulleys & sprockets.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "1610",
+    "fungsi": "Taper bush hub",
+    "kegunaan": "Pulleys & sprockets",
+    "durability": "Tighten in sequence",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Fenner/Generic TB-1610",
+    "image_url": ""
+  },
+  {
+    "part_name": "Taper Bush 2517",
+    "part_number": "TB-2517",
+    "category": "Pulley",
+    "brand": "Fenner/Generic",
+    "specification": "Taper lock 2517",
+    "compatible_equipment": "Medium hubs",
+    "price_range": "Rp 85.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "pulley-tb-2517",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "2517",
+      "Brand": "Fenner/Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Taper Bush 2517 (TB-2517). Taper lock 2517. Fungsi: Taper bush. Dipakai pada: Medium hubs.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "2517",
+    "fungsi": "Taper bush",
+    "kegunaan": "Medium hubs",
+    "durability": "8° taper standard",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Fenner/Generic TB-2517",
+    "image_url": ""
+  },
+  {
+    "part_name": "HTD 8M Pulley 30T×20mm",
+    "part_number": "HTD8M-30-20",
+    "category": "Pulley",
+    "brand": "Generic/OEM",
+    "specification": "30T 8M width20",
+    "compatible_equipment": "CNC, packaging",
+    "price_range": "Rp 95.000 - 250.000",
+    "alternative_parts": "",
+    "slug": "pulley-htd8m-30-20",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "30T×20",
+      "Brand": "Generic/OEM"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "HTD 8M Pulley 30T×20mm (HTD8M-30-20). 30T 8M width20. Fungsi: Timing pulley HTD. Dipakai pada: CNC, packaging.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "30T×20",
+    "fungsi": "Timing pulley HTD",
+    "kegunaan": "CNC, packaging",
+    "durability": "Match belt width",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Generic/OEM HTD8M-30-20",
+    "image_url": ""
+  },
+  {
+    "part_name": "HTD 8M Pulley 40T×30mm",
+    "part_number": "HTD8M-40-30",
+    "category": "Pulley",
+    "brand": "Generic/OEM",
+    "specification": "40T width30",
+    "compatible_equipment": "Automation",
+    "price_range": "Rp 140.000 - 360.000",
+    "alternative_parts": "",
+    "slug": "pulley-htd8m-40-30",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "40T×30",
+      "Brand": "Generic/OEM"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "HTD 8M Pulley 40T×30mm (HTD8M-40-30). 40T width30. Fungsi: HTD pulley. Dipakai pada: Automation.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "40T×30",
+    "fungsi": "HTD pulley",
+    "kegunaan": "Automation",
+    "durability": "Al or steel",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Generic/OEM HTD8M-40-30",
+    "image_url": ""
+  },
+  {
+    "part_name": "HTD 14M Pulley 28T×40mm",
+    "part_number": "HTD14M-28-40",
+    "category": "Pulley",
+    "brand": "Generic/OEM",
+    "specification": "28T 14M",
+    "compatible_equipment": "High torque sync",
+    "price_range": "Rp 280.000 - 700.000",
+    "alternative_parts": "",
+    "slug": "pulley-htd14m-28-40",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "28T×40",
+      "Brand": "Generic/OEM"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "HTD 14M Pulley 28T×40mm (HTD14M-28-40). 28T 14M. Fungsi: Heavy HTD pulley. Dipakai pada: High torque sync.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "28T×40",
+    "fungsi": "Heavy HTD pulley",
+    "kegunaan": "High torque sync",
+    "durability": "Steel for shock",
+    "unit": "pcs",
+    "material": "CI/Steel/Al",
+    "subcategory": "SPA/SPB/Taper/HTD",
+    "affiliate_query": "Generic/OEM HTD14M-28-40",
+    "image_url": ""
+  },
+  {
+    "part_name": "Hex Nut M8 Class 8",
+    "part_number": "M8-NUT-8",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "ISO 4032",
+    "compatible_equipment": "General assembly",
+    "price_range": "Rp 500 - 2.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m8-nut-8",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M8",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Hex Nut M8 Class 8 (M8-NUT-8). ISO 4032. Fungsi: Mur hex. Dipakai pada: General assembly.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M8",
+    "fungsi": "Mur hex",
+    "kegunaan": "General assembly",
+    "durability": "Match bolt grade",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M8-NUT-8",
+    "image_url": ""
+  },
+  {
+    "part_name": "Hex Nut M10 Class 8",
+    "part_number": "M10-NUT-8",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "ISO hex nut",
+    "compatible_equipment": "Frames",
+    "price_range": "Rp 800 - 3.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m10-nut-8",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M10",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Hex Nut M10 Class 8 (M10-NUT-8). ISO hex nut. Fungsi: Mur hex. Dipakai pada: Frames.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M10",
+    "fungsi": "Mur hex",
+    "kegunaan": "Frames",
+    "durability": "Class 8",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M10-NUT-8",
+    "image_url": ""
+  },
+  {
+    "part_name": "Hex Nut M12 Class 8",
+    "part_number": "M12-NUT-8",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "ISO hex nut",
+    "compatible_equipment": "Bases",
+    "price_range": "Rp 1.200 - 4.500",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m12-nut-8",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M12",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Hex Nut M12 Class 8 (M12-NUT-8). ISO hex nut. Fungsi: Mur hex. Dipakai pada: Bases.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M12",
+    "fungsi": "Mur hex",
+    "kegunaan": "Bases",
+    "durability": "Class 8",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M12-NUT-8",
+    "image_url": ""
+  },
+  {
+    "part_name": "Hex Nut M8 SS304",
+    "part_number": "M8-NUT-SS304",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "A2-70",
+    "compatible_equipment": "Corrosive areas",
+    "price_range": "Rp 1.500 - 5.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m8-nut-ss304",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M8",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Hex Nut M8 SS304 (M8-NUT-SS304). A2-70. Fungsi: Mur stainless. Dipakai pada: Corrosive areas.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M8",
+    "fungsi": "Mur stainless",
+    "kegunaan": "Corrosive areas",
+    "durability": "A2-70",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M8-NUT-SS304",
+    "image_url": ""
+  },
+  {
+    "part_name": "Flat Washer M10",
+    "part_number": "M10-FW",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "ISO 7089",
+    "compatible_equipment": "Load spread",
+    "price_range": "Rp 300 - 1.500",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m10-fw",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M10",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Flat Washer M10 (M10-FW). ISO 7089. Fungsi: Ring rata. Dipakai pada: Load spread.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M10",
+    "fungsi": "Ring rata",
+    "kegunaan": "Load spread",
+    "durability": "HV200",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M10-FW",
+    "image_url": ""
+  },
+  {
+    "part_name": "Spring Washer M12",
+    "part_number": "M12-SW",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "DIN 127",
+    "compatible_equipment": "Anti-loosen",
+    "price_range": "Rp 400 - 2.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m12-sw",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M12",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Spring Washer M12 (M12-SW). DIN 127. Fungsi: Ring pegas. Dipakai pada: Anti-loosen.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M12",
+    "fungsi": "Ring pegas",
+    "kegunaan": "Anti-loosen",
+    "durability": "Vibration service",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M12-SW",
+    "image_url": ""
+  },
+  {
+    "part_name": "Hex Bolt M16×100 8.8",
+    "part_number": "M16-G8.8-100",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "Partial thread 8.8",
+    "compatible_equipment": "Machine bases",
+    "price_range": "Rp 8.000 - 25.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m16-g8-8-100",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M16×100",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Hex Bolt M16×100 8.8 (M16-G8.8-100). Partial thread 8.8. Fungsi: Baut struktural. Dipakai pada: Machine bases.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M16×100",
+    "fungsi": "Baut struktural",
+    "kegunaan": "Machine bases",
+    "durability": "Torque to spec",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M16-G8.8-100",
+    "image_url": ""
+  },
+  {
+    "part_name": "Hex Bolt M20×120 8.8",
+    "part_number": "M20-G8.8-120",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Generic",
+    "specification": "Structural 8.8",
+    "compatible_equipment": "Foundations",
+    "price_range": "Rp 18.000 - 45.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-m20-g8-8-120",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M20×120",
+      "Brand": "Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Hex Bolt M20×120 8.8 (M20-G8.8-120). Structural 8.8. Fungsi: Baut berat. Dipakai pada: Foundations.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M20×120",
+    "fungsi": "Baut berat",
+    "kegunaan": "Foundations",
+    "durability": "Class 8.8",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Generic M20-G8.8-120",
+    "image_url": ""
+  },
+  {
+    "part_name": "Wedge Anchor M10",
+    "part_number": "HILTI-M10",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Hilti/Generic",
+    "specification": "Expansion anchor",
+    "compatible_equipment": "Foundations, racks",
+    "price_range": "Rp 12.000 - 35.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-hilti-m10",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M10",
+      "Brand": "Hilti/Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Wedge Anchor M10 (HILTI-M10). Expansion anchor. Fungsi: Anchor beton. Dipakai pada: Foundations, racks.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M10",
+    "fungsi": "Anchor beton",
+    "kegunaan": "Foundations, racks",
+    "durability": "Edge distance",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Hilti/Generic HILTI-M10",
+    "image_url": ""
+  },
+  {
+    "part_name": "Chemical Anchor Stud M12",
+    "part_number": "CHEM-M12",
+    "category": "Baut, Mur, & Washer",
+    "brand": "Fischer/Generic",
+    "specification": "Rod + resin",
+    "compatible_equipment": "Heavy concrete fixings",
+    "price_range": "Rp 25.000 - 70.000",
+    "alternative_parts": "",
+    "slug": "baut-mur-washer-chem-m12",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M12",
+      "Brand": "Fischer/Generic"
+    },
+    "iso_standard": "ISO 4014/4032",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Chemical Anchor Stud M12 (CHEM-M12). Rod + resin. Fungsi: Anchor kimia. Dipakai pada: Heavy concrete fixings.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M12",
+    "fungsi": "Anchor kimia",
+    "kegunaan": "Heavy concrete fixings",
+    "durability": "Full cure before load",
+    "unit": "pcs",
+    "material": "8.8 / SS304",
+    "subcategory": "",
+    "affiliate_query": "Fischer/Generic CHEM-M12",
+    "image_url": ""
+  },
+  {
+    "part_name": "Spiral Wound Gasket DN50 SS304/Graphite",
+    "part_number": "SWG-DN50-304",
+    "category": "Gasket & Packing",
+    "brand": "Flexitallic/Generic",
+    "specification": "ASME B16.20",
+    "compatible_equipment": "Steam/oil flanges",
+    "price_range": "Rp 45.000 - 120.000",
+    "alternative_parts": "",
+    "slug": "gasket-packing-swg-dn50-304",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "DN50",
+      "Brand": "Flexitallic/Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Spiral Wound Gasket DN50 SS304/Graphite (SWG-DN50-304). ASME B16.20. Fungsi: Gasket flens HP. Dipakai pada: Steam/oil flanges.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "DN50",
+    "fungsi": "Gasket flens HP",
+    "kegunaan": "Steam/oil flanges",
+    "durability": "Do not reuse",
+    "unit": "pcs",
+    "material": "Graphite/PTFE/CAF",
+    "subcategory": "Spiral/Packing",
+    "affiliate_query": "Flexitallic/Generic SWG-DN50-304",
+    "image_url": ""
+  },
+  {
+    "part_name": "Spiral Wound Gasket DN100 SS316",
+    "part_number": "SWG-DN100-316",
+    "category": "Gasket & Packing",
+    "brand": "Generic",
+    "specification": "316+graphite SWG",
+    "compatible_equipment": "Chemical/steam",
+    "price_range": "Rp 90.000 - 240.000",
+    "alternative_parts": "",
+    "slug": "gasket-packing-swg-dn100-316",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "DN100",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Spiral Wound Gasket DN100 SS316 (SWG-DN100-316). 316+graphite SWG. Fungsi: Gasket flens. Dipakai pada: Chemical/steam.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "DN100",
+    "fungsi": "Gasket flens",
+    "kegunaan": "Chemical/steam",
+    "durability": "Ring style per spec",
+    "unit": "pcs",
+    "material": "Graphite/PTFE/CAF",
+    "subcategory": "Spiral/Packing",
+    "affiliate_query": "Generic SWG-DN100-316",
+    "image_url": ""
+  },
+  {
+    "part_name": "PTFE Thread Seal Tape 19mm",
+    "part_number": "PTFE-TAPE-19",
+    "category": "Gasket & Packing",
+    "brand": "Generic",
+    "specification": "Industrial PTFE tape",
+    "compatible_equipment": "BSP/NPT",
+    "price_range": "Rp 3.000 - 12.000",
+    "alternative_parts": "",
+    "slug": "gasket-packing-ptfe-tape-19",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "19mm×15m",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "PTFE Thread Seal Tape 19mm (PTFE-TAPE-19). Industrial PTFE tape. Fungsi: Seal ulir. Dipakai pada: BSP/NPT.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "19mm×15m",
+    "fungsi": "Seal ulir",
+    "kegunaan": "BSP/NPT",
+    "durability": "3–5 wraps",
+    "unit": "pcs",
+    "material": "Graphite/PTFE/CAF",
+    "subcategory": "Spiral/Packing",
+    "affiliate_query": "Generic PTFE-TAPE-19",
+    "image_url": ""
+  },
+  {
+    "part_name": "Graphite Gland Packing 8mm",
+    "part_number": "PACK-GRAPH-8",
+    "category": "Gasket & Packing",
+    "brand": "Generic",
+    "specification": "Flexible graphite",
+    "compatible_equipment": "Pump/valve stem",
+    "price_range": "Rp 85.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "gasket-packing-pack-graph-8",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "8×8",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Graphite Gland Packing 8mm (PACK-GRAPH-8). Flexible graphite. Fungsi: Gland packing. Dipakai pada: Pump/valve stem.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "8×8",
+    "fungsi": "Gland packing",
+    "kegunaan": "Pump/valve stem",
+    "durability": "High temp steam OK",
+    "unit": "pcs",
+    "material": "Graphite/PTFE/CAF",
+    "subcategory": "Spiral/Packing",
+    "affiliate_query": "Generic PACK-GRAPH-8",
+    "image_url": ""
+  },
+  {
+    "part_name": "PTFE Gland Packing 10mm",
+    "part_number": "PACK-PTFE-10",
+    "category": "Gasket & Packing",
+    "brand": "Generic",
+    "specification": "PTFE square packing",
+    "compatible_equipment": "Aggressive media",
+    "price_range": "Rp 95.000 - 250.000",
+    "alternative_parts": "",
+    "slug": "gasket-packing-pack-ptfe-10",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "10×10",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "PTFE Gland Packing 10mm (PACK-PTFE-10). PTFE square packing. Fungsi: Chemical packing. Dipakai pada: Aggressive media.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "10×10",
+    "fungsi": "Chemical packing",
+    "kegunaan": "Aggressive media",
+    "durability": "Low friction",
+    "unit": "pcs",
+    "material": "Graphite/PTFE/CAF",
+    "subcategory": "Spiral/Packing",
+    "affiliate_query": "Generic PACK-PTFE-10",
+    "image_url": ""
+  },
+  {
+    "part_name": "Non-Asbestos Gasket DN80",
+    "part_number": "CAF-DN80",
+    "category": "Gasket & Packing",
+    "brand": "Generic",
+    "specification": "CAF cut ring",
+    "compatible_equipment": "Water/air/oil",
+    "price_range": "Rp 15.000 - 45.000",
+    "alternative_parts": "",
+    "slug": "gasket-packing-caf-dn80",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "DN80",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Non-Asbestos Gasket DN80 (CAF-DN80). CAF cut ring. Fungsi: General gasket. Dipakai pada: Water/air/oil.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "DN80",
+    "fungsi": "General gasket",
+    "kegunaan": "Water/air/oil",
+    "durability": "Check T/P sheet rating",
+    "unit": "pcs",
+    "material": "Graphite/PTFE/CAF",
+    "subcategory": "Spiral/Packing",
+    "affiliate_query": "Generic CAF-DN80",
+    "image_url": ""
+  },
+  {
+    "part_name": "JIC 37° Adapter 7/16-20 × 1/4",
+    "part_number": "JIC-07-04",
+    "category": "Fitting & Quick Coupler",
+    "brand": "Parker/Generic",
+    "specification": "Male JIC adapter",
+    "compatible_equipment": "Mobile hydraulics",
+    "price_range": "Rp 25.000 - 70.000",
+    "alternative_parts": "",
+    "slug": "fitting-quick-coupler-jic-07-04",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "07-04",
+      "Brand": "Parker/Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "JIC 37° Adapter 7/16-20 × 1/4 (JIC-07-04). Male JIC adapter. Fungsi: Fitting hidrolik JIC. Dipakai pada: Mobile hydraulics.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "07-04",
+    "fungsi": "Fitting hidrolik JIC",
+    "kegunaan": "Mobile hydraulics",
+    "durability": "Torque by dash chart",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "Hydraulic",
+    "affiliate_query": "Parker/Generic JIC-07-04",
+    "image_url": ""
+  },
+  {
+    "part_name": "BSP 1/2 Adapter",
+    "part_number": "BSP-1-2-ADAPT",
+    "category": "Fitting & Quick Coupler",
+    "brand": "Generic",
+    "specification": "BSPP adapter",
+    "compatible_equipment": "Hydraulic ports",
+    "price_range": "Rp 20.000 - 55.000",
+    "alternative_parts": "",
+    "slug": "fitting-quick-coupler-bsp-1-2-adapt",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "1/2\"",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "BSP 1/2 Adapter (BSP-1-2-ADAPT). BSPP adapter. Fungsi: Adapter BSP. Dipakai pada: Hydraulic ports.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "1/2\"",
+    "fungsi": "Adapter BSP",
+    "kegunaan": "Hydraulic ports",
+    "durability": "Bonded washer BSPP",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "Hydraulic",
+    "affiliate_query": "Generic BSP-1-2-ADAPT",
+    "image_url": ""
+  },
+  {
+    "part_name": "NPT 1/4 90 Elbow",
+    "part_number": "NPT-1-4-ELB",
+    "category": "Fitting & Quick Coupler",
+    "brand": "Generic",
+    "specification": "Forged NPT elbow",
+    "compatible_equipment": "Air/oil lines",
+    "price_range": "Rp 15.000 - 45.000",
+    "alternative_parts": "",
+    "slug": "fitting-quick-coupler-npt-1-4-elb",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "1/4\"",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "NPT 1/4 90 Elbow (NPT-1-4-ELB). Forged NPT elbow. Fungsi: Elbow NPT. Dipakai pada: Air/oil lines.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "1/4\"",
+    "fungsi": "Elbow NPT",
+    "kegunaan": "Air/oil lines",
+    "durability": "PTFE on NPT",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "Hydraulic",
+    "affiliate_query": "Generic NPT-1-4-ELB",
+    "image_url": ""
+  },
+  {
+    "part_name": "ISO-A Quick Coupler 1/2",
+    "part_number": "QUICK-ISO-A-1-2",
+    "category": "Fitting & Quick Coupler",
+    "brand": "Faster/Generic",
+    "specification": "Poppet quick couple",
+    "compatible_equipment": "Attachments",
+    "price_range": "Rp 85.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "fitting-quick-coupler-quick-iso-a-1-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "1/2\"",
+      "Brand": "Faster/Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "ISO-A Quick Coupler 1/2 (QUICK-ISO-A-1-2). Poppet quick couple. Fungsi: Quick coupler. Dipakai pada: Attachments.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "1/2\"",
+    "fungsi": "Quick coupler",
+    "kegunaan": "Attachments",
+    "durability": "Clean before couple",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "Hydraulic",
+    "affiliate_query": "Faster/Generic QUICK-ISO-A-1-2",
+    "image_url": ""
+  },
+  {
+    "part_name": "Hose Ferrule R2 1/2",
+    "part_number": "FERRULE-R2-1-2",
+    "category": "Fitting & Quick Coupler",
+    "brand": "Generic",
+    "specification": "Crimp ferrule 2SN",
+    "compatible_equipment": "Hose assembly",
+    "price_range": "Rp 12.000 - 35.000",
+    "alternative_parts": "",
+    "slug": "fitting-quick-coupler-ferrule-r2-1-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "1/2\"",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Hose Ferrule R2 1/2 (FERRULE-R2-1-2). Crimp ferrule 2SN. Fungsi: Ferrule selang. Dipakai pada: Hose assembly.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "1/2\"",
+    "fungsi": "Ferrule selang",
+    "kegunaan": "Hose assembly",
+    "durability": "Match die set",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "Hydraulic",
+    "affiliate_query": "Generic FERRULE-R2-1-2",
+    "image_url": ""
+  },
+  {
+    "part_name": "Glass Rotameter LZB-25",
+    "part_number": "LZB-25",
+    "category": "Flow Meter",
+    "brand": "Generic",
+    "specification": "Variable area meter",
+    "compatible_equipment": "Utilities, process water",
+    "price_range": "Rp 350.000 - 900.000",
+    "alternative_parts": "",
+    "slug": "flow-meter-lzb-25",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "DN25",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Glass Rotameter LZB-25 (LZB-25). Variable area meter. Fungsi: Ukur aliran. Dipakai pada: Utilities, process water.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "DN25",
+    "fungsi": "Ukur aliran",
+    "kegunaan": "Utilities, process water",
+    "durability": "Calibrate for media",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Generic LZB-25",
+    "image_url": ""
+  },
+  {
+    "part_name": "Woltmann Water Meter DN50",
+    "part_number": "WOLTMAN-50",
+    "category": "Flow Meter",
+    "brand": "Generic",
+    "specification": "Bulk turbine water meter",
+    "compatible_equipment": "Utilities, process water",
+    "price_range": "Rp 1.200.000 - 3.000.000",
+    "alternative_parts": "",
+    "slug": "flow-meter-woltman-50",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "DN50",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Woltmann Water Meter DN50 (WOLTMAN-50). Bulk turbine water meter. Fungsi: Ukur aliran. Dipakai pada: Utilities, process water.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "DN50",
+    "fungsi": "Ukur aliran",
+    "kegunaan": "Utilities, process water",
+    "durability": "Calibrate for media",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Generic WOLTMAN-50",
+    "image_url": ""
+  },
+  {
+    "part_name": "Electromagnetic Flowmeter DN50",
+    "part_number": "MAG-DN50",
+    "category": "Flow Meter",
+    "brand": "Generic",
+    "specification": "Magmeter conductive liquids",
+    "compatible_equipment": "Utilities, process water",
+    "price_range": "Rp 8.000.000 - 25.000.000",
+    "alternative_parts": "",
+    "slug": "flow-meter-mag-dn50",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "DN50",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Electromagnetic Flowmeter DN50 (MAG-DN50). Magmeter conductive liquids. Fungsi: Ukur aliran. Dipakai pada: Utilities, process water.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "DN50",
+    "fungsi": "Ukur aliran",
+    "kegunaan": "Utilities, process water",
+    "durability": "Calibrate for media",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Generic MAG-DN50",
+    "image_url": ""
+  },
+  {
+    "part_name": "Siemens 3RU Overload 2.2-3.2A",
+    "part_number": "3RU2116-1HB0",
+    "category": "Thermal Overload Relay",
+    "brand": "Siemens",
+    "specification": "3RU21 thermal overload",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 350.000 - 850.000",
+    "alternative_parts": "",
+    "slug": "thermal-overload-relay-3ru2116-1hb0",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "2.2-3.2A",
+      "Brand": "Siemens"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Siemens 3RU Overload 2.2-3.2A (3RU2116-1HB0). 3RU21 thermal overload. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "2.2-3.2A",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Siemens 3RU2116-1HB0",
+    "image_url": ""
+  },
+  {
+    "part_name": "Siemens 3RU Overload 3.5-5A",
+    "part_number": "3RU2116-1JB0",
+    "category": "Thermal Overload Relay",
+    "brand": "Siemens",
+    "specification": "3RU21",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 380.000 - 900.000",
+    "alternative_parts": "",
+    "slug": "thermal-overload-relay-3ru2116-1jb0",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "3.5-5A",
+      "Brand": "Siemens"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Siemens 3RU Overload 3.5-5A (3RU2116-1JB0). 3RU21. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "3.5-5A",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Siemens 3RU2116-1JB0",
+    "image_url": ""
+  },
+  {
+    "part_name": "Schneider LRD14 7-10A",
+    "part_number": "LRD14",
+    "category": "Thermal Overload Relay",
+    "brand": "Schneider Electric",
+    "specification": "TeSys LRD",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 280.000 - 650.000",
+    "alternative_parts": "",
+    "slug": "thermal-overload-relay-lrd14",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "7-10A",
+      "Brand": "Schneider Electric"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Schneider LRD14 7-10A (LRD14). TeSys LRD. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "7-10A",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Schneider Electric LRD14",
+    "image_url": ""
+  },
+  {
+    "part_name": "Siemens Contactor 3RT2015 7A",
+    "part_number": "3RT2015-1AB01",
+    "category": "Contactor & Relay",
+    "brand": "Siemens",
+    "specification": "SIRIUS S00",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 320.000 - 750.000",
+    "alternative_parts": "",
+    "slug": "contactor-relay-3rt2015-1ab01",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "7A AC3",
+      "Brand": "Siemens"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Siemens Contactor 3RT2015 7A (3RT2015-1AB01). SIRIUS S00. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "7A AC3",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Siemens 3RT2015-1AB01",
+    "image_url": ""
+  },
+  {
+    "part_name": "Siemens Contactor 3RT2026 25A",
+    "part_number": "3RT2026-1AB01",
+    "category": "Contactor & Relay",
+    "brand": "Siemens",
+    "specification": "SIRIUS S0",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 650.000 - 1.500.000",
+    "alternative_parts": "",
+    "slug": "contactor-relay-3rt2026-1ab01",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25A AC3",
+      "Brand": "Siemens"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Siemens Contactor 3RT2026 25A (3RT2026-1AB01). SIRIUS S0. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25A AC3",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Siemens 3RT2026-1AB01",
+    "image_url": ""
+  },
+  {
+    "part_name": "Schneider Contactor LC1D65A",
+    "part_number": "LC1D65A",
+    "category": "Contactor & Relay",
+    "brand": "Schneider Electric",
+    "specification": "65A AC3 TeSys D",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 1.400.000 - 3.200.000",
+    "alternative_parts": "",
+    "slug": "contactor-relay-lc1d65a",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "65A",
+      "Brand": "Schneider Electric"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Schneider Contactor LC1D65A (LC1D65A). 65A AC3 TeSys D. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "65A",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Schneider Electric LC1D65A",
+    "image_url": ""
+  },
+  {
+    "part_name": "Schneider Contactor LC1D80",
+    "part_number": "LC1D80",
+    "category": "Contactor & Relay",
+    "brand": "Schneider Electric",
+    "specification": "80A AC3",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 2.000.000 - 4.500.000",
+    "alternative_parts": "",
+    "slug": "contactor-relay-lc1d80-2",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "80A",
+      "Brand": "Schneider Electric"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Schneider Contactor LC1D80 (LC1D80). 80A AC3. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "80A",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Schneider Electric LC1D80",
+    "image_url": ""
+  },
+  {
+    "part_name": "Schneider Acti9 RCBO 25A",
+    "part_number": "A9V41225",
+    "category": "MCB / MCCB / Breaker",
+    "brand": "Schneider Electric",
+    "specification": "RCBO 30mA",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 450.000 - 1.100.000",
+    "alternative_parts": "",
+    "slug": "mcb-mccb-breaker-a9v41225",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25A 2P",
+      "Brand": "Schneider Electric"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Schneider Acti9 RCBO 25A (A9V41225). RCBO 30mA. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25A 2P",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Schneider Electric A9V41225",
+    "image_url": ""
+  },
+  {
+    "part_name": "Schneider GV2ME08 2.5-4A",
+    "part_number": "GV2ME08",
+    "category": "MCB / MCCB / Breaker",
+    "brand": "Schneider Electric",
+    "specification": "Manual motor starter",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 350.000 - 850.000",
+    "alternative_parts": "",
+    "slug": "mcb-mccb-breaker-gv2me08",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "2.5-4A",
+      "Brand": "Schneider Electric"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Schneider GV2ME08 2.5-4A (GV2ME08). Manual motor starter. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "2.5-4A",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Schneider Electric GV2ME08",
+    "image_url": ""
+  },
+  {
+    "part_name": "Schneider GV2ME14 6-10A",
+    "part_number": "GV2ME14",
+    "category": "MCB / MCCB / Breaker",
+    "brand": "Schneider Electric",
+    "specification": "MMSP",
+    "compatible_equipment": "MCC & distribution",
+    "price_range": "Rp 380.000 - 900.000",
+    "alternative_parts": "",
+    "slug": "mcb-mccb-breaker-gv2me14",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "6-10A",
+      "Brand": "Schneider Electric"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Schneider GV2ME14 6-10A (GV2ME14). MMSP. Fungsi: Switching / proteksi motor. Dipakai pada: MCC & distribution.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "6-10A",
+    "fungsi": "Switching / proteksi motor",
+    "kegunaan": "MCC & distribution",
+    "durability": "Set to motor FLC",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Schneider Electric GV2ME14",
+    "image_url": ""
+  },
+  {
+    "part_name": "Omron E5CC Temperature Controller",
+    "part_number": "E5CC-RX3A5M-000",
+    "category": "Temperature Controller",
+    "brand": "Omron",
+    "specification": "1/16 DIN relay out",
+    "compatible_equipment": "Oven, extruder, HVAC",
+    "price_range": "Rp 1.200.000 - 2.800.000",
+    "alternative_parts": "",
+    "slug": "temperature-controller-e5cc-rx3a5m-000",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "1/16 DIN",
+      "Brand": "Omron"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Omron E5CC Temperature Controller (E5CC-RX3A5M-000). 1/16 DIN relay out. Fungsi: Ukur/kontrol suhu. Dipakai pada: Oven, extruder, HVAC.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "1/16 DIN",
+    "fungsi": "Ukur/kontrol suhu",
+    "kegunaan": "Oven, extruder, HVAC",
+    "durability": "Match sensor to input type",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Omron E5CC-RX3A5M-000",
+    "image_url": ""
+  },
+  {
+    "part_name": "REX C100 PID Controller",
+    "part_number": "REX-C100",
+    "category": "Temperature Controller",
+    "brand": "RKC/Generic",
+    "specification": "Economy PID 48×48",
+    "compatible_equipment": "Oven, extruder, HVAC",
+    "price_range": "Rp 250.000 - 650.000",
+    "alternative_parts": "",
+    "slug": "temperature-controller-rex-c100",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "48×48",
+      "Brand": "RKC/Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "REX C100 PID Controller (REX-C100). Economy PID 48×48. Fungsi: Ukur/kontrol suhu. Dipakai pada: Oven, extruder, HVAC.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "48×48",
+    "fungsi": "Ukur/kontrol suhu",
+    "kegunaan": "Oven, extruder, HVAC",
+    "durability": "Match sensor to input type",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "RKC/Generic REX-C100",
+    "image_url": ""
+  },
+  {
+    "part_name": "RTD PT100 3-Wire 200mm",
+    "part_number": "PT100-3W-200",
+    "category": "Thermocouple / RTD",
+    "brand": "Generic",
+    "specification": "Class B probe",
+    "compatible_equipment": "Oven, extruder, HVAC",
+    "price_range": "Rp 85.000 - 220.000",
+    "alternative_parts": "",
+    "slug": "thermocouple-rtd-pt100-3w-200",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "Ø6×200",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "RTD PT100 3-Wire 200mm (PT100-3W-200). Class B probe. Fungsi: Ukur/kontrol suhu. Dipakai pada: Oven, extruder, HVAC.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Ø6×200",
+    "fungsi": "Ukur/kontrol suhu",
+    "kegunaan": "Oven, extruder, HVAC",
+    "durability": "Match sensor to input type",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Generic PT100-3W-200",
+    "image_url": ""
+  },
+  {
+    "part_name": "RTD PT100 with Head",
+    "part_number": "PT100-HEAD",
+    "category": "Thermocouple / RTD",
+    "brand": "Generic",
+    "specification": "PT100 + Al head",
+    "compatible_equipment": "Oven, extruder, HVAC",
+    "price_range": "Rp 150.000 - 400.000",
+    "alternative_parts": "",
+    "slug": "thermocouple-rtd-pt100-head",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "M16/M20",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "RTD PT100 with Head (PT100-HEAD). PT100 + Al head. Fungsi: Ukur/kontrol suhu. Dipakai pada: Oven, extruder, HVAC.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "M16/M20",
+    "fungsi": "Ukur/kontrol suhu",
+    "kegunaan": "Oven, extruder, HVAC",
+    "durability": "Match sensor to input type",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Generic PT100-HEAD",
+    "image_url": ""
+  },
+  {
+    "part_name": "Type K TC Inconel 300mm",
+    "part_number": "TC-K-INCONEL-300",
+    "category": "Thermocouple / RTD",
+    "brand": "Generic",
+    "specification": "MI thermocouple K",
+    "compatible_equipment": "Oven, extruder, HVAC",
+    "price_range": "Rp 120.000 - 320.000",
+    "alternative_parts": "",
+    "slug": "thermocouple-rtd-tc-k-inconel-300",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "Ø3×300",
+      "Brand": "Generic"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Type K TC Inconel 300mm (TC-K-INCONEL-300). MI thermocouple K. Fungsi: Ukur/kontrol suhu. Dipakai pada: Oven, extruder, HVAC.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "Ø3×300",
+    "fungsi": "Ukur/kontrol suhu",
+    "kegunaan": "Oven, extruder, HVAC",
+    "durability": "Match sensor to input type",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Generic TC-K-INCONEL-300",
+    "image_url": ""
+  },
+  {
+    "part_name": "SMC Cylinder CD85 Ø25×50",
+    "part_number": "CD85N25-50",
+    "category": "Pneumatic Cylinder",
+    "brand": "SMC",
+    "specification": "ISO 6432 round",
+    "compatible_equipment": "Packaging, clamp, pick-place",
+    "price_range": "Rp 280.000 - 700.000",
+    "alternative_parts": "",
+    "slug": "pneumatic-cylinder-cd85n25-50",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "25×50",
+      "Brand": "SMC"
+    },
+    "iso_standard": "ISO 6432",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "SMC Cylinder CD85 Ø25×50 (CD85N25-50). ISO 6432 round. Fungsi: Aktuasi pneumatik. Dipakai pada: Packaging, clamp, pick-place.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "25×50",
+    "fungsi": "Aktuasi pneumatik",
+    "kegunaan": "Packaging, clamp, pick-place",
+    "durability": "Filtered dry air",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "SMC CD85N25-50",
+    "image_url": ""
+  },
+  {
+    "part_name": "SMC Compact CQ2 Ø50×50",
+    "part_number": "CQ2B50-50D",
+    "category": "Pneumatic Cylinder",
+    "brand": "SMC",
+    "specification": "CQ2 compact",
+    "compatible_equipment": "Packaging, clamp, pick-place",
+    "price_range": "Rp 450.000 - 1.100.000",
+    "alternative_parts": "",
+    "slug": "pneumatic-cylinder-cq2b50-50d",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "50×50",
+      "Brand": "SMC"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "SMC Compact CQ2 Ø50×50 (CQ2B50-50D). CQ2 compact. Fungsi: Aktuasi pneumatik. Dipakai pada: Packaging, clamp, pick-place.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "50×50",
+    "fungsi": "Aktuasi pneumatik",
+    "kegunaan": "Packaging, clamp, pick-place",
+    "durability": "Filtered dry air",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "SMC CQ2B50-50D",
+    "image_url": ""
+  },
+  {
+    "part_name": "Airtac Solenoid 4V310-10",
+    "part_number": "4V310-10",
+    "category": "Solenoid Valve",
+    "brand": "Airtac",
+    "specification": "5/2 3/8 body",
+    "compatible_equipment": "Packaging, clamp, pick-place",
+    "price_range": "Rp 150.000 - 380.000",
+    "alternative_parts": "",
+    "slug": "solenoid-valve-4v310-10",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "3/8\"",
+      "Brand": "Airtac"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "Airtac Solenoid 4V310-10 (4V310-10). 5/2 3/8 body. Fungsi: Aktuasi pneumatik. Dipakai pada: Packaging, clamp, pick-place.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "3/8\"",
+    "fungsi": "Aktuasi pneumatik",
+    "kegunaan": "Packaging, clamp, pick-place",
+    "durability": "Filtered dry air",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "Airtac 4V310-10",
+    "image_url": ""
+  },
+  {
+    "part_name": "SMC Gripper MHZ2-16D",
+    "part_number": "MHZ2-16D",
+    "category": "Pneumatic Cylinder",
+    "brand": "SMC",
+    "specification": "Parallel gripper",
+    "compatible_equipment": "Packaging, clamp, pick-place",
+    "price_range": "Rp 1.200.000 - 2.800.000",
+    "alternative_parts": "",
+    "slug": "pneumatic-cylinder-mhz2-16d",
+    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
+    "specs_table": {
+      "Size": "16",
+      "Brand": "SMC"
+    },
+    "iso_standard": "",
+    "equivalent_codes": [],
+    "vendor_type": "Industrial MRO distributor",
+    "search_intent": "transactional",
+    "description": "SMC Gripper MHZ2-16D (MHZ2-16D). Parallel gripper. Fungsi: Aktuasi pneumatik. Dipakai pada: Packaging, clamp, pick-place.",
+    "source_url": "https://partpedia.vercel.app/",
+    "last_updated": "2026-08-16",
+    "size": "16",
+    "fungsi": "Aktuasi pneumatik",
+    "kegunaan": "Packaging, clamp, pick-place",
+    "durability": "Filtered dry air",
+    "unit": "pcs",
+    "material": "",
+    "subcategory": "",
+    "affiliate_query": "SMC MHZ2-16D",
+    "image_url": ""
   }
 ]
