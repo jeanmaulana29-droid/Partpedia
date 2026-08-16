@@ -113,6 +113,20 @@ function imgFallback(item) {
   return cat;
 }
 const shopeeMap = shopeeLinks || {};
+
+/** Acak urutan katalog (Fisher–Yates) agar tidak berderet 0001,0002,0003… */
+function shuffleCatalog(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+  return a;
+}
+// Semua produk di beranda: urutan acak tiap build/deploy
+const catalog = shuffleCatalog(data);
 ---
 
 <Layout
@@ -204,7 +218,7 @@ const shopeeMap = shopeeLinks || {};
     </div>
 
     <div class="grid" id="results">
-      {data.map((item) => {
+      {catalog.map((item) => {
         const theme = getCategoryTheme(item.category);
         const blob = [
           item.part_name, item.part_number, item.category, item.subcategory,
