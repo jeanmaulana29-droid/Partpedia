@@ -62,7 +62,7 @@ const heroSlides = [
     img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80",
   },
 ];
-const brands = ["SKF", "NSK", "NTN", "FAG", "Timken", "KOYO", "NACHI", "Gates", "Optibelt", "Siemens", "Schneider", "ABB"];
+const brands = [{"name": "SKF", "src": "/brands/skf.png"}, {"name": "NSK", "src": "/brands/nsk.png"}, {"name": "NTN", "src": "/brands/ntn.png"}, {"name": "FAG", "src": "/brands/fag.svg"}, {"name": "Timken", "src": "/brands/timken.svg"}, {"name": "KOYO", "src": "/brands/koyo.svg"}, {"name": "NACHI", "src": "/brands/nachi.svg"}, {"name": "Gates", "src": "/brands/gates.png"}, {"name": "Optibelt", "src": "/brands/optibelt.svg"}, {"name": "Siemens", "src": "/brands/siemens.svg"}, {"name": "Schneider", "src": "/brands/schneider.png"}, {"name": "ABB", "src": "/brands/abb.svg"}, {"name": "Omron", "src": "/brands/omron.svg"}, {"name": "SMC", "src": "/brands/smc.png"}, {"name": "Festo", "src": "/brands/festo.png"}, {"name": "Yaskawa", "src": "/brands/yaskawa.png"}, {"name": "Bosch", "src": "/brands/bosch.svg"}, {"name": "Parker", "src": "/brands/parker.svg"}, {"name": "Mitsubishi", "src": "/brands/mitsubishi.ico"}, {"name": "Danfoss", "src": "/brands/danfoss.ico"}];
 const categoryImage: Record<string, string> = {
   Bearing: "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&w=600&q=70",
   "V-Belt": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=70",
@@ -157,8 +157,20 @@ const catalog = shuffleCatalog(data);
   <section class="brands" id="brands" aria-label="Brand referensi industri">
     <p class="brands-label" data-i18n="brands_label">Referensi lintas merek yang sering dicari di industri</p>
     <div class="brands-track">
-      {brands.map((b) => <span class="brand-pill">{b}</span>)}
-      {brands.map((b) => <span class="brand-pill" aria-hidden="true">{b}</span>)}
+      {brands.map((b) => (
+        <span class="brand-pill" title={b.name}>
+          <img src={b.src} alt={b.name} width="120" height="40" loading="lazy"
+            onerror={`this.style.display='none';this.nextElementSibling.style.display='inline'`} />
+          <span class="brand-fallback">{b.name}</span>
+        </span>
+      ))}
+      {brands.map((b) => (
+        <span class="brand-pill" title={b.name} aria-hidden="true">
+          <img src={b.src} alt="" width="120" height="40" loading="lazy"
+            onerror={`this.style.display='none';this.nextElementSibling.style.display='inline'`} />
+          <span class="brand-fallback">{b.name}</span>
+        </span>
+      ))}
     </div>
   </section>
 
@@ -483,8 +495,16 @@ const catalog = shuffleCatalog(data);
 
     .brands { margin: 1.5rem 0 2rem; overflow: hidden; }
     .brands-label { text-align: center; color: var(--muted); font-size: 0.8rem; margin-bottom: 0.85rem; }
-    .brands-track { display: flex; gap: 0.65rem; width: max-content; animation: marquee 28s linear infinite; }
+    .brands-track { display: flex; gap: 0.85rem; align-items: center; width: max-content; animation: marquee 40s linear infinite; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .brand-pill img {
+      max-height: 32px; max-width: 100px; width: auto; height: auto;
+      object-fit: contain; display: block; filter: none;
+    }
+    .brand-fallback {
+      display: none; font-weight: 800; font-size: 0.85rem; color: #111;
+      letter-spacing: 0.04em;
+    }
     .brand-pill {
       font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
       padding: 0.55rem 1rem; border-radius: 999px;
