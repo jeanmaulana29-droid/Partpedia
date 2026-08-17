@@ -212,6 +212,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       .footer-links { display: flex; flex-wrap: wrap; gap: 0.85rem 1.15rem; }
       .footer-links a { color: var(--muted); font-size: 0.88rem; }
       .footer-links a:hover { color: var(--amber); }
+      .footer-aff { color: var(--muted); font-size: 0.8rem; line-height: 1.45; max-width: 52rem; }
       .btn {
         display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
         font-weight: 600; font-size: 0.9rem;
@@ -230,37 +231,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         border: 1px solid var(--line);
         color: var(--ink);
       }
-      .ad-slot {
-        border: 1px dashed rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.02);
-        color: var(--muted);
-        text-align: center;
-        padding: 1.25rem;
-        border-radius: var(--radius);
-        font-size: 0.75rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        margin: 1.25rem 0;
-      }
       /* soft first-visit promo — dismissible, not hard interstitial */
-      .welcome-ad {
-        position: fixed; inset: auto 1rem 1rem 1rem; z-index: 100;
-        max-width: 420px; margin: 0 auto; left: 0; right: 0;
-        background: var(--bg-card);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 1.1rem 1.2rem;
-        box-shadow: var(--shadow);
-        display: none;
-      }
-      .welcome-ad.show { display: block; animation: slideUp 0.35s ease; }
+      
+      
       @keyframes slideUp {
         from { transform: translateY(16px); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
       }
-      .welcome-ad h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-      .welcome-ad p { margin: 0 0 0.8rem; color: var(--muted); font-size: 0.88rem; }
-      .welcome-ad .row { display: flex; gap: 0.5rem; justify-content: flex-end; }
+      
     </style>
     <!-- Vercel Web Analytics (aktifkan dulu di dashboard Vercel → Analytics) -->
     <script defer src="/_vercel/insights/script.js"></script>
@@ -292,36 +270,19 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       <div class="wrap">
         <div><strong>Partpedia</strong> — <span data-i18n="footer_1">direktori spek, kode part & referensi pengganti sparepart industri.</span></div>
         <div data-i18n="footer_2">Harga bersifat estimasi pasar. Selalu verifikasi ke vendor resmi sebelum membeli.</div>
-        <div>© {new Date().getFullYear()} Partpedia · Built for MRO & plant maintenance research</div>
+        <div class="footer-links">
+          <a href="/about/">Tentang</a>
+          <a href="/contact/">Kontak</a>
+          <a href="/privacy/">Privasi</a>
+          <a href="/disclaimer/">Disclaimer</a>
+        </div>
+        <div class="footer-aff">Beberapa tautan ke toko bersifat afiliasi; kami dapat menerima komisi jika Anda membeli lewat tautan tersebut, tanpa biaya tambahan untuk Anda.</div>
+        <div>© 2026 Partpedia · Built for MRO & plant maintenance research</div>
       </div>
     </footer>
 
-    <div class="welcome-ad" id="welcome-ad" role="dialog" aria-label="Promosi">
-      <h3 data-i18n="welcome_title">Temukan part lebih cepat</h3>
-      <p data-i18n="welcome_body">Jelajahi spek, size & kode setara. Slot sponsor tersedia di area ini setelah AdSense/affiliate aktif.</p>
-      <div class="row">
-        <button type="button" class="btn btn-ghost" id="welcome-close" data-i18n="welcome_close">Tutup</button>
-        <a class="btn btn-primary" href="/#catalog" data-i18n="welcome_cta">Lihat katalog</a>
-      </div>
-    </div>
-
     <script>
-      // Soft welcome (once / 24h) — not a blocking interstitial
-      const wel = document.getElementById("welcome-ad");
-      const key = "partpedia_welcome_v1";
-      try {
-        const last = localStorage.getItem(key);
-        const day = 24 * 60 * 60 * 1000;
-        if (!last || Date.now() - Number(last) > day) {
-          setTimeout(() => wel?.classList.add("show"), 2800);
-        }
-      } catch {}
-      document.getElementById("welcome-close")?.addEventListener("click", () => {
-        wel?.classList.remove("show");
-        try { localStorage.setItem(key, String(Date.now())); } catch {}
-      });
-
-      // Site-wide ID/EN toggle (elements with data-i18n)
+      
       const dict = {
         en: {
           nav_catalog: "Catalog",
