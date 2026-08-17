@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Kebijakan Privasi — Partpedia"
+  description="Kebijakan privasi Partpedia: data yang dikumpulkan, cookie, analitik, dan hak pengguna."
+>
+  <article class="legal">
+
+    <p class="eyebrow">Legal</p>
+    <h1>Kebijakan privasi</h1>
+    <p class="meta">Terakhir diperbarui: 17 Agustus 2026 · Berlaku untuk situs partpedia.vercel.app</p>
+
+    <p>
+      Kebijakan ini menjelaskan bagaimana Partpedia memperlakukan informasi ketika Anda mengunjungi situs kami.
+      Kami berupaya menjaga situs tetap ringan dan transparan.
+    </p>
+
+    <h2>1. Informasi yang kami kumpulkan</h2>
+    <p>Bergantung pada cara Anda memakai situs, data berikut dapat diproses:</p>
+    <ul>
+      <li><strong>Data teknis otomatis</strong> — misalnya jenis perangkat, browser, halaman yang dibuka, dan waktu kunjungan, melalui log server atau layanan analitik.</li>
+      <li><strong>Data yang Anda kirim sukarela</strong> — jika Anda menghubungi kami lewat telepon atau saluran lain dan menyampaikan identitas atau detail permintaan.</li>
+      <li><strong>Preferensi lokal</strong> — misalnya pilihan bahasa yang disimpan di perangkat Anda (localStorage) agar tampilan konsisten.</li>
+    </ul>
+    <p>Kami tidak meminta pembuatan akun untuk membaca katalog.</p>
+
+    <h2>2. Cookie dan teknologi serupa</h2>
+    <p>
+      Situs dapat memakai cookie atau penyimpanan lokal untuk fungsi dasar (misalnya bahasa) dan, jika diaktifkan,
+      untuk analitik atau penayangan iklan dari pihak ketiga (seperti Google AdSense) sesuai pengaturan layanan tersebut.
+    </p>
+    <p>
+      Anda dapat membatasi cookie melalui pengaturan browser. Beberapa fitur mungkin tidak bekerja optimal jika cookie dinonaktifkan sepenuhnya.
+    </p>
+
+    <h2>3. Analitik dan iklan</h2>
+    <p>
+      Kami dapat menggunakan layanan analitik (misalnya Vercel Analytics atau Google) untuk memahami halaman mana yang paling berguna.
+      Jika Google AdSense atau jaringan iklan lain diaktifkan, pihak ketiga tersebut dapat memakai cookie atau pengenal untuk menayangkan iklan
+      — termasuk iklan yang disesuaikan — sesuai kebijakan privasi mereka.
+    </p>
+    <p>
+      Pengunjung dapat mengatur preferensi iklan Google melalui pengaturan iklan Google atau opsi opt-out yang disediakan Google.
+    </p>
+
+    <h2>4. Tautan affiliate dan pihak ketiga</h2>
+    <p>
+      Beberapa tautan mengarah ke toko atau marketplace (misalnya Amazon atau Shopee). Jika Anda mengeklik dan bertransaksi di sana,
+      data pembelian diproses oleh platform tersebut, bukan oleh Partpedia. Kami dapat menerima komisi afiliasi dari program resmi mereka
+      tanpa menambah biaya untuk Anda, sesuai ketentuan program tersebut.
+    </p>
+
+    <h2>5. Penyimpanan dan keamanan</h2>
+    <p>
+      Situs dihosting pada infrastruktur cloud (termasuk Vercel). Kami menerapkan praktik wajar untuk melindungi sistem,
+      namun tidak ada transmisi internet yang 100% bebas risiko.
+    </p>
+
+    <h2>6. Anak di bawah umur</h2>
+    <p>
+      Situs ditujukan untuk keperluan industri dan profesional. Kami tidak secara sengaja mengumpulkan data pribadi anak di bawah umur.
+    </p>
+
+    <h2>7. Perubahan kebijakan</h2>
+    <p>
+      Kebijakan ini dapat diperbarui seiring perubahan layanan. Tanggal “terakhir diperbarui” di atas akan disesuaikan bila ada perubahan material.
+    </p>
+
+    <h2>8. Hubungi kami</h2>
+    <p>
+      Untuk pertanyaan terkait privasi: telepon <a href="tel:+622648330329">(0264) 8330329</a>
+      atau lihat <a href="/contact/">halaman Kontak</a>.
+    </p>
+
+    <div class="foot-links">
+      <a href="/about/">Tentang</a>
+      <a href="/contact/">Kontak</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/">← Katalog</a>
+    </div>
+
+  </article>
+  <style>
+
+  .legal {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 0 3.5rem;
+  }
+  .legal .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 0.5rem;
+  }
+  .legal h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.35rem);
+    line-height: 1.15;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .legal h2 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin: 2rem 0 0.65rem;
+    color: var(--ink);
+  }
+  .legal p, .legal li {
+    color: #c5d0dc;
+    line-height: 1.75;
+    font-size: 1.02rem;
+  }
+  .legal p { margin: 0 0 1rem; }
+  .legal ul { margin: 0 0 1.15rem; padding-left: 1.2rem; }
+  .legal li { margin-bottom: 0.4rem; }
+  .legal a { color: var(--amber); }
+  .legal .meta {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-bottom: 1.75rem;
+  }
+  .legal .card {
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .legal .card strong { color: var(--ink); }
+  .legal .foot-links {
+    display: flex; flex-wrap: wrap; gap: 0.85rem;
+    margin-top: 2.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+  }
+
+  </style>
+</Layout>

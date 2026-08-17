@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Disclaimer — Partpedia"
+  description="Disclaimer Partpedia terkait data katalog, harga estimasi, merek dagang, dan tautan pihak ketiga."
+>
+  <article class="legal">
+
+    <p class="eyebrow">Legal</p>
+    <h1>Disclaimer</h1>
+    <p class="meta">Terakhir diperbarui: 17 Agustus 2026</p>
+
+    <p>
+      Dengan menggunakan Partpedia, Anda memahami batasan berikut. Harap dibaca sebelum mengandalkan data di situs untuk keputusan teknis atau pembelian.
+    </p>
+
+    <h2>1. Sifat informasi</h2>
+    <p>
+      Katalog, spek, size, kode ekuivalen, dan teks artikel disediakan untuk <strong>referensi dan edukasi</strong>.
+      Meski kami berupaya menjaga akurasi, data dapat mengandung kesalahan, keterlambatan pembaruan, atau perbedaan dari katalog resmi pabrikan.
+    </p>
+    <p>
+      Untuk aplikasi kritis (keselamatan, tekanan tinggi, food-grade, dan sejenisnya), selalu verifikasi ke dokumentasi resmi merek atau distributor berwenang.
+    </p>
+
+    <h2>2. Harga</h2>
+    <p>
+      Kisaran harga di situs bersifat <strong>estimasi pasar</strong> dan dapat berbeda jauh dari harga aktual, stok, atau kondisi barang di penjual.
+      Partpedia tidak menjual barang secara langsung dan tidak menerbitkan penawaran resmi.
+    </p>
+
+    <h2>3. Merek dagang</h2>
+    <p>
+      Semua nama merek, logo, dan kode part yang disebut adalah milik pemiliknya masing-masing.
+      Penyebutan di Partpedia tidak mengimplikasikan dukungan, sponsor, atau kemitraan resmi, kecuali dinyatakan secara eksplisit.
+    </p>
+
+    <h2>4. Tautan eksternal &amp; affiliate</h2>
+    <p>
+      Tautan ke Amazon, Shopee, atau situs lain adalah tanggung jawab platform tujuan.
+      Partpedia tidak mengendalikan ketersediaan barang, kualitas, pengiriman, atau kebijakan retur di pihak ketiga.
+      Partisipasi program afiliasi dapat menghasilkan komisi bagi Partpedia atas transaksi yang memenuhi syarat.
+    </p>
+
+    <h2>5. Tidak ada jaminan</h2>
+    <p>
+      Situs disediakan “sebagaimana adanya”. Sepanjang diizinkan hukum yang berlaku, Partpedia tidak menjamin
+      bahwa situs akan bebas gangguan, bebas kesalahan, atau selalu lengkap.
+    </p>
+
+    <h2>6. Batasan tanggung jawab</h2>
+    <p>
+      Sejauh diizinkan hukum, Partpedia tidak bertanggung jawab atas kerugian langsung maupun tidak langsung
+      yang timbul dari penggunaan atau ketidakmampuan menggunakan informasi di situs, termasuk keputusan pembelian atau penggantian part.
+    </p>
+
+    <h2>7. Kontak</h2>
+    <p>
+      Pertanyaan terkait disclaimer ini: <a href="tel:+622648330329">(0264) 8330329</a> ·
+      <a href="/contact/">Kontak</a>
+    </p>
+
+    <div class="foot-links">
+      <a href="/about/">Tentang</a>
+      <a href="/contact/">Kontak</a>
+      <a href="/privacy/">Kebijakan privasi</a>
+      <a href="/">← Katalog</a>
+    </div>
+
+  </article>
+  <style>
+
+  .legal {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 0 3.5rem;
+  }
+  .legal .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 0.5rem;
+  }
+  .legal h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.35rem);
+    line-height: 1.15;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .legal h2 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin: 2rem 0 0.65rem;
+    color: var(--ink);
+  }
+  .legal p, .legal li {
+    color: #c5d0dc;
+    line-height: 1.75;
+    font-size: 1.02rem;
+  }
+  .legal p { margin: 0 0 1rem; }
+  .legal ul { margin: 0 0 1.15rem; padding-left: 1.2rem; }
+  .legal li { margin-bottom: 0.4rem; }
+  .legal a { color: var(--amber); }
+  .legal .meta {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-bottom: 1.75rem;
+  }
+  .legal .card {
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .legal .card strong { color: var(--ink); }
+  .legal .foot-links {
+    display: flex; flex-wrap: wrap; gap: 0.85rem;
+    margin-top: 2.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+  }
+
+  </style>
+</Layout>

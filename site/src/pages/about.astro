@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Tentang Partpedia"
+  description="Partpedia adalah direktori spek, kode part, dan referensi pengganti sparepart industri untuk tim maintenance dan pengadaan."
+>
+  <article class="legal">
+
+    <p class="eyebrow">Partpedia</p>
+    <h1>Tentang kami</h1>
+    <p class="meta">Direktori sparepart industri · spek · cross-reference</p>
+
+    <p>
+      Partpedia lahir dari kebutuhan yang cukup sederhana di lapangan: ketika sebuah mesin berhenti,
+      yang dicari biasanya bukan esai panjang, melainkan <strong>kode part yang tepat</strong>,
+      ukuran, dan apakah ada pengganti yang setara dari merek lain.
+    </p>
+    <p>
+      Di banyak workshop dan pabrik, informasi itu tersebar di katalog PDF, chat vendor, dan catatan
+      teknisi. Partpedia mencoba merapikan sebagian dari itu ke satu tempat yang bisa dicari cepat—
+      dari bearing dan V-belt sampai sensor, PLC, dan komponen MRO lain yang sering muncul di pengadaan harian.
+    </p>
+
+    <h2>Apa yang kami fokuskan</h2>
+    <ul>
+      <li>Data spek dan size yang bisa dibaca cepat di HP maupun desktop</li>
+      <li>Kode ekuivalen antar merek (cross-reference) bila tersedia</li>
+      <li>Estimasi kisaran harga pasar sebagai gambaran—bukan penawaran resmi</li>
+      <li>Tautan ke marketplace agar pengguna bisa membandingkan sendiri</li>
+      <li>Artikel singkat seputar praktik perawatan dan pemilihan part</li>
+    </ul>
+
+    <h2>Yang perlu dipahami</h2>
+    <p>
+      Partpedia <strong>bukan toko resmi</strong> dan tidak mewakili merek-merek yang disebut di katalog.
+      Nama merek dan logo dipakai sebagai referensi pencarian, sesuai praktik umum direktori industri.
+      Keputusan pembelian tetap ada di tangan pengguna, setelah verifikasi ke distributor atau vendor yang dipercaya.
+    </p>
+    <p>
+      Kami terus menambah dan merapikan data. Kalau ada koreksi spek atau usulan part yang sering dipakai
+      di plant Anda, silakan hubungi kami lewat halaman kontak.
+    </p>
+
+    <div class="card">
+      <p style="margin:0"><strong>Ingin menghubungi kami?</strong><br />
+      Lihat <a href="/contact/">halaman Kontak</a> untuk telepon dan saluran yang tersedia.</p>
+    </div>
+
+    <div class="foot-links">
+      <a href="/contact/">Kontak</a>
+      <a href="/privacy/">Kebijakan privasi</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/">← Katalog</a>
+    </div>
+
+  </article>
+  <style>
+
+  .legal {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 0 3.5rem;
+  }
+  .legal .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 0.5rem;
+  }
+  .legal h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.35rem);
+    line-height: 1.15;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .legal h2 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin: 2rem 0 0.65rem;
+    color: var(--ink);
+  }
+  .legal p, .legal li {
+    color: #c5d0dc;
+    line-height: 1.75;
+    font-size: 1.02rem;
+  }
+  .legal p { margin: 0 0 1rem; }
+  .legal ul { margin: 0 0 1.15rem; padding-left: 1.2rem; }
+  .legal li { margin-bottom: 0.4rem; }
+  .legal a { color: var(--amber); }
+  .legal .meta {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-bottom: 1.75rem;
+  }
+  .legal .card {
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .legal .card strong { color: var(--ink); }
+  .legal .foot-links {
+    display: flex; flex-wrap: wrap; gap: 0.85rem;
+    margin-top: 2.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+  }
+
+  </style>
+</Layout>
