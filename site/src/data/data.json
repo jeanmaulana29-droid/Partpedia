@@ -27711,55 +27711,6 @@
     "image_url": ""
   },
   {
-    "part_name": "Deep Groove Ball Bearing 6300-2RS",
-    "part_number": "6300-2RS",
-    "category": "Bearing",
-    "brand": "SKF",
-    "specification": "10×35×11 sealed",
-    "compatible_equipment": "Small motors, pulleys",
-    "price_range": "Rp 35.000 - 90.000",
-    "alternative_parts": "",
-    "slug": "bearing-6300-2rs-2",
-    "price_note": "Estimasi pasar (kurasi manual), bukan harga real-time — verifikasi ke vendor sebelum membeli",
-    "specs_table": {
-      "Size": "10×35×11",
-      "Brand": "SKF"
-    },
-    "iso_standard": "ISO 15 / ISO 355",
-    "equivalent_codes": [
-      {
-        "brand": "SKF",
-        "code": "6300-2RS"
-      },
-      {
-        "brand": "NSK",
-        "code": "6300-2RS"
-      },
-      {
-        "brand": "NTN",
-        "code": "6300-2RS"
-      },
-      {
-        "brand": "FAG",
-        "code": "6300-2RS"
-      }
-    ],
-    "vendor_type": "Industrial MRO distributor",
-    "search_intent": "transactional",
-    "description": "Deep Groove Ball Bearing 6300-2RS (6300-2RS). 10×35×11 sealed. Fungsi: Radial ball bearing. Dipakai pada: Small motors, pulleys.",
-    "source_url": "https://partpedia.vercel.app/",
-    "last_updated": "2026-08-16",
-    "size": "10×35×11",
-    "fungsi": "Radial ball bearing",
-    "kegunaan": "Small motors, pulleys",
-    "durability": "2RS sealed",
-    "unit": "pcs",
-    "material": "Chrome steel 100Cr6",
-    "subcategory": "63/60/62/UC/Taper/Spherical",
-    "affiliate_query": "SKF 6300-2RS",
-    "image_url": ""
-  },
-  {
     "part_name": "Deep Groove Ball Bearing 6301-2RS",
     "part_number": "6301-2RS",
     "category": "Bearing",
