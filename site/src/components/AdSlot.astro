@@ -1,24 +1,41 @@
 ---
-interface Props { slotId?: string; }
-const { slotId = "ad" } = Astro.props;
+/**
+ * Slot iklan.
+ * - Kosong / belum ada publisher ID → tidak ditampilkan (aman untuk review AdSense).
+ * - Nanti isi ADSENSE_CLIENT & ADSENSE_SLOT di bawah, atau lewat props — unit iklan muncul otomatis.
+ */
+interface Props {
+  slotId?: string;
+  /** Override slot unit AdSense (opsional) */
+  adSlot?: string;
+}
+const { slotId = "ad", adSlot = "" } = Astro.props;
+
+// TODO saat AdSense disetujui: ganti string di bawah dengan milikmu
+const ADSENSE_CLIENT = ""; // contoh: "ca-pub-xxxxxxxxxxxxxxxx"
+const ADSENSE_SLOT = adSlot || ""; // contoh: "1234567890"
+const enabled = Boolean(ADSENSE_CLIENT && ADSENSE_SLOT);
 ---
-<aside class="ad-slot" data-ad-slot={slotId} aria-label="Ruang iklan">
-  <span>Ad space · {slotId}</span>
-  <small>Tempat unit AdSense / sponsor — ganti dengan kode iklan Anda</small>
-</aside>
+{enabled && (
+  <aside class="ad-slot" data-ad-slot={slotId} aria-label="Iklan">
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={ADSENSE_CLIENT}
+      data-ad-slot={ADSENSE_SLOT}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
+    <script is:inline>
+      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+    </script>
+  </aside>
+)}
 <style>
   .ad-slot {
-    display: grid; gap: 0.25rem; place-items: center;
-    border: 1px dashed rgba(255,255,255,0.14);
-    background: rgba(255,255,255,0.03);
-    color: var(--muted, #8b9aab);
-    text-align: center;
-    padding: 1.4rem 1rem;
-    border-radius: 14px;
-    margin: 1.35rem 0;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    margin: 1.25rem 0;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 12px;
   }
-  small { text-transform: none; letter-spacing: 0; opacity: 0.8; font-size: 0.75rem; }
 </style>
