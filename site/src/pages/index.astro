@@ -44,7 +44,9 @@ function iconFor(cat) {
   return categoryIcon[cat] || "📦";
 }
 const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.length || 0), 0);
-const insightArticles = loadAllArticles(); // sudah sort terbaru dulu di loadArticles
+const _allInsights = loadAllArticles(); // sort terbaru → terlama di loadArticles
+// Carousel: max 10 artikel terbaru (kiri = baru, kanan = lebih lama). Sisanya tidak ikut geser.
+const insightArticles = _allInsights.slice(0, 10);
 const heroSlides = [
   {
     title: "Industrial parts intelligence",
@@ -400,34 +402,51 @@ const catalog = shuffleCatalog(data);
     setInterval(() => { idx = (idx + 1) % slides.length; paint(); }, 2000);
 
     
-    // Wawasan: mulai dari terbaru, geser tiap 3 detik, loop
+    // Wawasan Industri:
+    // - Kartu kiri = artikel terbaru (default saat buka halaman)
+    // - Geser ke kanan tiap 3 detik (artikel lebih lama)
+    // - Maks 10 kartu; setelah kartu terakhir → kembali ke kiri (terbaru)
     const track = document.getElementById("feat-track");
     if (track) {
       let pause = false;
       let cardIndex = 0;
       const cards = () => Array.from(track.querySelectorAll(".feat-card"));
 
-      const goTo = (i) => {
+      const goTo = (i, smooth = true) => {
         const list = cards();
         if (!list.length) return;
-        cardIndex = ((i % list.length) + list.length) % list.length;
+        const n = list.length;
+        // setelah kartu terakhir (paling kanan / paling lama) → kembali ke 0 (terbaru)
+        if (i >= n) {
+          cardIndex = 0;
+          track.scrollTo({ left: 0, behavior: "auto" });
+          return;
+        }
+        if (i < 0) i = 0;
+        cardIndex = i;
         const target = list[cardIndex];
         if (!target) return;
-        track.scrollTo({ left: Math.max(0, target.offsetLeft - 4), behavior: "smooth" });
+        track.scrollTo({
+          left: Math.max(0, target.offsetLeft - 8),
+          behavior: smooth ? "smooth" : "auto",
+        });
       };
 
-      // pastikan mulai di kartu paling kiri = artikel terbaru
-      requestAnimationFrame(() => goTo(0));
+      // default: ujung kiri = artikel terbaru
+      requestAnimationFrame(() => {
+        track.scrollTo({ left: 0, behavior: "auto" });
+        cardIndex = 0;
+      });
 
       track.addEventListener("mouseenter", () => { pause = true; });
       track.addEventListener("mouseleave", () => { pause = false; });
       track.addEventListener("touchstart", () => { pause = true; }, { passive: true });
-      track.addEventListener("touchend", () => { setTimeout(() => { pause = false; }, 2000); }, { passive: true });
+      track.addEventListener("touchend", () => { setTimeout(() => { pause = false; }, 2500); }, { passive: true });
 
       setInterval(() => {
         if (pause) return;
         if (cards().length < 2) return;
-        goTo(cardIndex + 1);
+        goTo(cardIndex + 1, true);
       }, 3000);
     }
 
@@ -530,13 +549,12 @@ const catalog = shuffleCatalog(data);
 
     .feat-track {
       display: flex;
-      gap: 0.85rem;
+      gap: 1rem;
       overflow-x: auto;
-      overflow-y: hidden;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
+      padding-bottom: 0.35rem;
       -webkit-overflow-scrolling: touch;
-      padding: 0.15rem 0.1rem 0.5rem;
       scrollbar-width: thin;
     }
     .feat-card {
