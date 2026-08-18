@@ -1,0 +1,68 @@
+Problem Solving 2: Cara Mengatasi Masalah-Masalah pada Proses Produksi Galvanis dan Mengenali Defect-Defect yang Muncul
+Sekuel dari pembahasan galvalum, kali ini fokus ke baja lapis seng murni alias galvanis, lengkap dengan defect-defect khasnya yang ternyata cukup berbeda meski sama-sama pakai proses celup panas.
+
+Kalau di artikel sebelumnya sudah dibahas soal galvalum yang lapisannya campuran aluminium-seng, kali ini gantian bahas saudaranya yang justru lebih dulu populer di dunia konstruksi: galvanis, atau dalam istilah teknisnya Bj.LS, Baja Lembaran Lapis Seng. Meski sama-sama diproses lewat celup panas, komposisi lapisannya jauh berbeda, dan itu artinya jenis defect yang muncul pun punya karakter yang tidak seratus persen sama dengan galvalum. Beberapa masalah memang mirip, tapi ada juga yang benar-benar khas galvanis dan jarang ditemui di lapisan aluminium-seng.
+
+BEDA LAPISAN, BEDA JUGA KARAKTER PROSESNYA
+
+Kalau galvalum lapisannya campuran 55 persen aluminium, galvanis justru sebaliknya, didominasi seng murni sampai sekitar 98 persen, dengan sedikit aluminium sekitar 0,2 persen yang sengaja ditambahkan bukan untuk melapisi, melainkan untuk membantu kelancaran alir logam cair di dalam bak dan membentuk lapisan tipis penghambat difusi di batas antara baja dan sengnya. Di Indonesia, produk ini diatur lewat SNI 07-2053:2006 yang sudah direvisi jadi SNI 2053:2019, sementara standar internasionalnya mengacu pada ASTM A653/A653M dari Amerika atau JIS G3302 dari Jepang.
+
+Sistem penomoran ketebalan lapisannya juga punya dua "bahasa" yang sering bikin bingung orang baru: sistem G dalam satuan Amerika seperti G60 atau G90, dan sistem Z dalam satuan metrik seperti Z180 atau Z275, di mana keduanya sebenarnya saling berkorespondensi, G90 kurang lebih setara Z275, jadi diaanya menunjukkan bobot total lapisan seng di kedua sisi sekitar 275 gram per meter persegi. G90 alias Z275 inilah yang paling umum dipakai di pasaran karena dianggap titik seimbang antara biaya dan ketahanan korosi untuk pemakaian luar ruangan jangka panjang.
+
+Prosesnya sendiri mirip alurnya dengan galvalum, cuma suhu bak celupnya lebih rendah, seng murni membeku di sekitar 420 derajat Celsius sehingga suhu operasional bak biasanya dijaga tidak jauh di atas itu, beda dengan bak galvalum yang harus dijaga di kisaran 600 derajat Celsius. Suhu operasional yang relatif rendah ini sebenarnya menguntungkan dari sisi konsumsi energi, tapi juga berarti "ruang gerak" toleransi suhunya lebih sempit sebelum masalah mulai muncul.
+
+ASH MARK: NODA ABU-ABU DARI PERMUKAAN BAK
+
+Kalau di galvalum musuh utamanya dross, di galvanis ada satu masalah tambahan yang lebih spesifik bernama ash mark atau ash staining. Permukaan bak seng cair yang terus-menerus kontak dengan udara akan mengalami oksidasi terus-menerus, membentuk lapisan abu oksida seng di permukaannya. Kalau abu ini tidak rutin dibersihkan lewat proses skimming, ia bisa menempel ke strip baja saat proses pencelupan dan penarikan, meninggalkan noda keabu-abuan yang kusam dan tidak merata di permukaan produk jadi. Penyebabnya biasanya kombinasi kadar oksigen dalam bak yang terlalu tinggi, idealnya dijaga di bawah 0,3 persen, ditambah jadwal skimming yang tidak cukup rutin mengikuti kecepatan produksi.
+
+DROSS: MASIH MUNCUL, TAPI DENGAN "RESEP" YANG BEDA
+
+Dross tetap jadi masalah umum di galvanis, tapi komposisinya sedikit berbeda dari galvalum, biasanya berupa kristal intermetalik dengan perbandingan sekitar 95 persen seng dan 5 persen besi. Kelebihan kandungan besi di dalam bak, entah karena besi yang ikut larut dari strip baja atau dari komponen bak itu sendiri yang mulai terkorosi, bisa mengganggu fluiditas seng cair dan menghasilkan lapisan yang tampak kusam serta daya rekatnya kurang baik. Penanganannya tetap sama seperti prinsip umum: filtrasi dan skimming rutin, plus pemantauan komposisi bak secara berkala supaya kadar besinya tidak terus menumpuk dari waktu ke waktu.
+
+REACTIVE STEEL: KETIKA BAJANYA SENDIRI YANG JADI MASALAH
+
+Ini salah satu fenomena paling khas di dunia galvanis dan jarang dibahas tuntas: reactive steel, kadang disebut juga efek Sandelin. Ternyata, kandungan silikon dalam baja substrat, khususnya kalau berada di rentang sekitar 0,04 sampai 0,14 persen, membuat reaksi antara besi dan seng berlangsung jauh lebih cepat dan tidak terkendali dibanding baja dengan kandungan silikon normal. Akibatnya, lapisan seng-besi yang terbentuk jadi jauh lebih tebal dari target, permukaannya tampak kusam keabu-abuan alih-alih mengilap cerah, dan yang lebih merepotkan, lapisan setebal itu cenderung lebih getas dan mudah terkelupas saat mengalami penekukan atau pembentukan lanjutan. Masalahnya, ini bukan cacat proses di lini galvanis, melainkan karakter kimia baja substratnya sendiri, sehingga solusi paling efektif justru harus dimulai dari tahap pemilihan dan pengendalian mutu bahan baku baja sebelum masuk ke lini galvanis sama sekali.
+
+SPANGLE: HIASAN ALAMI YANG KADANG DISALAHPAHAMI SEBAGAI CACAT
+
+Kalau diperhatikan dekat-dekat, permukaan galvanis sering menampilkan pola kristal berbentuk seperti bunga atau bintang, disebut spangle, terbentuk secara alami saat lapisan seng cair membeku dan kristalnya tumbuh dari beberapa titik inti sekaligus. Ukuran spangle ini dipengaruhi kandungan unsur jejak dalam bak seperti timbal atau antimon, dan meski tampilannya bisa sangat bervariasi dari yang halus nyaris tidak terlihat sampai yang besar dan mencolok, secara teknis ini murni soal estetika permukaan dan tidak mempengaruhi performa perlindungan korosinya sama sekali. Masalahnya justru sering muncul dari sisi komplain pelanggan yang mengira variasi ukuran spangle sebagai tanda kualitas tidak konsisten, padahal faktanya tidak selalu begitu.
+
+TIDE MARK: GARIS-GARIS AKIBAT KECEPATAN PENARIKAN YANG TIDAK STABIL
+
+Tide mark, atau garis oksida yang tampak seperti jejak air pasang di permukaan, muncul kalau kecepatan penarikan strip keluar dari bak celup tidak konsisten atau sempat berhenti sesaat. Setiap kali kecepatan berubah, lapisan oksida tipis di permukaan seng cair yang sedang membeku ikut terganggu, meninggalkan garis kontras berupa variasi tingkat kilap yang sejajar dengan arah tarikan strip. Menjaga kecepatan line tetap stabil sepanjang proses pencelupan dan penarikan adalah kunci utama mencegah masalah ini.
+
+ROLL MARK DARI SKIN PASS MILL: KETIKA SENG YANG LUNAK "NEMPEL" DI ROL YANG KERAS
+
+Satu masalah lain yang cukup sering terjadi khusus di tahap akhir produksi adalah zinc pickup di roll skin pass mill. Karena lapisan seng jauh lebih lunak dibanding permukaan roller baja yang keras, gesekan berulang selama proses penggilingan akhir ini bisa membuat sedikit demi sedikit partikel seng menempel dan menumpuk di permukaan roller, yang kemudian tercetak balik ke strip berikutnya sebagai pola berulang yang konsisten. Solusi praktisnya meliputi pemolesan rutin permukaan roller dan penerapan sistem pendinginan atau pelumasan basah selama proses penggilingan untuk mengurangi gesekan kering yang memicu masalah ini.
+
+WHITE RUST: MASALAH LAMA YANG JUSTRU LEBIH RENTAN DI GALVANIS
+
+White rust juga jadi ancaman di galvanis, bahkan bisa dibilang risikonya sedikit lebih tinggi dibanding galvalum, karena permukaan seng murni memang secara alami lebih reaktif terhadap kelembapan dibanding permukaan yang mengandung aluminium. Itu sebabnya lapisan passivasi chromate di tahap akhir produksi jadi sangat krusial perannya untuk memperlambat reaksi ini, meski sifatnya cuma perlindungan sementara, bukan permanen. Penyimpanan dalam kondisi lembap tanpa ventilasi yang baik tetap jadi penyebab utama, dan penanganannya sama seperti galvalum, sebisa mungkin dicegah lewat manajemen gudang yang baik ketimbang diperbaiki setelah bercak putihnya sudah telanjur muncul.
+
+TIPS PRAKTIS UNTUK LINI PRODUKSI DAN QUALITY CONTROL
+
+Beberapa kebiasaan yang sebaiknya jadi standar rutin:
+
+Pantau kadar oksigen dan jadwal skimming bak seng secara konsisten, jangan menunggu ash mark benar-benar muncul di produk jadi baru bertindak, karena kondisi bak yang mulai memburuk biasanya sudah terlihat dari perubahan warna permukaan bak jauh sebelum sempat mempengaruhi produk.
+
+Kalau menerima laporan lapisan terlalu tebal dan kusam padahal parameter proses semua normal, jangan buru-buru menyalahkan lini produksi, cek dulu sertifikat komposisi kimia baja substratnya, karena bisa jadi ini murni soal reactive steel yang berasal dari sumber bahan baku, bukan kesalahan proses galvanisnya.
+
+Edukasi tim sales dan customer service soal spangle sebagai variasi estetika alami, bukan cacat kualitas, supaya komplain yang sebenarnya tidak berdasar tidak perlu berujung retur produk yang sebenarnya masih dalam kondisi baik.
+
+Terapkan pemolesan berkala pada roller skin pass mill dan pastikan sistem pendinginannya berfungsi optimal untuk mencegah roll mark akibat zinc pickup menumpuk seiring waktu pemakaian roller.
+
+TANYA JAWAB SEPUTAR DEFECT GALVANIS
+
+Apakah spangle yang besar berarti kualitas galvanisnya lebih bagus?
+Tidak. Ukuran spangle murni soal tampilan estetika yang dipengaruhi komposisi unsur jejak dalam bak, tidak berkorelasi langsung dengan ketahanan korosi maupun kekuatan lapisannya.
+
+Kenapa ada galvanis yang lapisannya matte abu-abu, bukan mengilap seperti biasanya?
+Kemungkinan besar ini disebabkan reactive steel, baja substrat dengan kandungan silikon di rentang tertentu yang membuat reaksi besi-seng berlangsung berlebihan, menghasilkan lapisan lebih tebal dan tampak kusam, meski secara umum ini soal karakter bahan baku, bukan otomatis berarti cacat produksi.
+
+Apa beda utama ash mark dan dross kalau dilihat secara kasat mata?
+Ash mark biasanya tampak sebagai noda kusam datar yang menyebar mengikuti arah gerakan strip, sementara dross pimple lebih terasa sebagai benjolan kasar yang bisa diraba menonjol di permukaan, bukan sekadar noda warna.
+
+Apakah G90 dan Z275 itu produk yang berbeda?
+Bukan, keduanya cuma sistem penomoran berbeda untuk bobot lapisan yang secara praktis setara, G90 memakai satuan imperial Amerika sementara Z275 memakai satuan metrik, dan angkanya mengacu pada bobot total lapisan seng di kedua sisi lembaran.
+
+Ujung-ujungnya, baik galvalum maupun galvanis sebenarnya mengajarkan pelajaran yang sama: kualitas lapisan pelindung itu hasil dari puluhan variabel kecil yang harus dijaga bersamaan, mulai dari kebersihan strip, kestabilan suhu dan komposisi bak, sampai karakter kimia baja substrat yang kadang justru berasal dari luar kendali langsung lini produksi itu sendiri.
