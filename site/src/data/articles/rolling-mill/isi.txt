@@ -1,0 +1,70 @@
+Problem Solving 3: Mengenali Defect-Defect pada Proses Cold Rolling Mill dan Panduan Cara Mengatasinya
+Kalau dua artikel sebelumnya bahas cacat lapisan pelindung, kali ini kita mundur satu langkah ke proses yang jauh lebih mendasar, cold rolling mill, tempat baja canai panas diubah jadi baja canai dingin yang jadi bahan baku hampir semua produk baja lapis.
+
+Sebelum coil baja sempat dicelup ke bak seng atau aluminium-seng, ia lebih dulu melalui proses yang jauh lebih halus dan sering luput dari perhatian orang di luar industri: cold rolling mill, atau disingkat CRM. Di sinilah baja canai panas atau hot rolled coil diubah jadi baja canai dingin atau cold rolled coil, lewat proses yang menuntut presisi jauh lebih ketat dibanding tahap-tahap sebelumnya. Wajar kalau proses ini juga jadi sumber cacat yang karakternya cukup berbeda dari defect lapisan pelapis yang sudah dibahas di artikel sebelumnya, karena masalahnya bukan lagi soal lapisan pelindung, melainkan soal struktur dan permukaan baja itu sendiri.
+
+MENGENAL DULU ALUR PROSESNYA
+
+Cold rolling, sesuai namanya, adalah proses reduksi ketebalan baja lewat sepasang rol yang berputar berlawanan arah, dilakukan pada suhu ruang tanpa pemanasan tambahan, berbeda dari hot rolling yang prosesnya berlangsung pada suhu tinggi. Umumnya proses ini mampu menipiskan baja dari ketebalan hot rolled coil yang berkisar 1,5 sampai 5 milimeter menjadi cold rolled coil setipis 0,12 sampai 2,5 milimeter, jauh lebih tipis dari yang bisa dicapai lewat hot rolling saja.
+
+Alurnya dimulai dari pickling, proses pembersihan kerak oksida sisa hot rolling memakai larutan asam, biasanya asam klorida atau asam sulfat, supaya permukaan baja benar-benar bersih sebelum masuk ke tahap reduksi. Baja kemudian melewati rolling mill, bisa berupa tandem mill dengan beberapa stand rol berurutan atau reversing mill yang bolak-balik lewat rol yang sama berkali-kali, sampai ketebalan targetnya tercapai. Karena proses reduksi dingin ini membuat struktur kristal baja jadi sangat kaku dan getas akibat pengerasan regang atau work hardening, baja kemudian wajib melalui annealing, pemanasan ulang untuk mengembalikan keuletannya, entah lewat bell furnace atau box annealing yang memanaskan gulungan coil utuh selama berjam-jam, atau continuous annealing line yang memproses strip secara berkesinambungan dengan kecepatan lebih tinggi.
+
+Setelah annealing, baja dalam kondisi sangat lunak, sering disebut kondisi dead soft, sehingga perlu melalui temper rolling atau skin pass, reduksi ringan tambahan untuk memperbaiki kerataan, kekasaran permukaan, dan sifat mekanisnya, sekaligus menghilangkan fenomena yang disebut Luders band, garis-garis regangan yang bisa muncul di permukaan produk kalau baja lunak ini langsung dibentuk tanpa skin pass terlebih dahulu.
+
+STICKER MARK: CACAT PALING KHAS DARI PROSES ANNEALING
+
+Kalau ada satu defect yang benar-benar khas milik cold rolling mill dan jarang ditemui di tahap lain, itu adalah sticker mark, sering disebut juga cacat lengket atau bonding. Ini terjadi ketika lapisan-lapisan gulungan coil yang saling bertumpuk di dalam annealing furnace justru "mengelas" diri sendiri akibat tekanan radial tinggi yang muncul saat suhu naik di atas 600 derajat Celsius selama berjam-jam masa pemanasan. Kalau tekanan dan suhunya cukup ekstrem, lapisan-lapisan itu benar-benar menempel satu sama lain, dan saat coil dibuka kembali, permukaannya bisa robek, berlubang, bahkan dalam kasus terparah membuat coil sama sekali tidak bisa dibuka lagi, dikenal di lapangan sebagai dead roll.
+
+Penyebabnya biasanya kombinasi beberapa faktor: tegangan gulungan yang terlalu tinggi saat coiling, bentuk pelat yang kurang rata sehingga sebagian area gulungan menerima tekanan lebih besar dari area lain, residu emulsion atau cairan pendingin rolling yang tidak bersih sempurna sehingga mengarbonisasi dan meninggalkan sisa saat dipanaskan, sampai sirkulasi gas pelindung di dalam furnace yang tidak merata. Pencegahannya butuh kombinasi kontrol tegangan coiling yang presisi, pembersihan sisa emulsion yang lebih tuntas sebelum masuk furnace, dan pemantauan ketat profil suhu selama siklus annealing berlangsung.
+
+EDGE CRACK DAN MASALAH BENTUK LAINNYA
+
+Edge crack, retakan kecil di sepanjang tepi strip, biasanya muncul akibat distribusi gaya reduksi yang tidak merata sepanjang lebar strip, entah karena keausan rol yang tidak simetris atau karena kualitas tepi hot rolled coil yang jadi bahan bakunya sendiri sudah punya cacat kecil sejak awal. Berkaitan erat dengan ini, ada juga masalah bentuk atau shape defect yang lebih luas, seperti edge wave di mana tepi strip bergelombang, center buckle di mana bagian tengah strip menggembung, atau kombinasi keduanya yang membuat strip terlihat "tidak rata" kalau diletakkan di permukaan datar. Akar masalahnya hampir selalu soal ketidakseimbangan pengurangan ketebalan antara satu sisi strip dengan sisi lainnya, entah karena rol yang tidak sejajar sempurna atau sistem kontrol otomatis ketebalan yang butuh kalibrasi ulang.
+
+SCRATCH, ROLL MARK, DAN CHATTER MARK
+
+Goresan atau scratch di permukaan cold rolled coil terbagi dua jenis berdasarkan arahnya. Goresan memanjang searah arah rolling biasanya berasal dari kontak antara strip dengan tepi tajam guide plate atau rol pengarah selama proses berlangsung, atau dari partikel keras yang menempel di permukaan rol. Goresan melintang lebih sering muncul dari gesekan saat strip bergerak menyamping di meja pendingin atau selama proses transportasi dan penggulungan ulang.
+
+Roll mark sedikit berbeda karakternya, muncul sebagai pola berulang dengan interval konsisten karena benar-benar tercetak dari cacat permukaan rol kerja itu sendiri, entah berupa goresan halus atau bekas partikel keras yang pernah menempel di rol. Sementara chatter mark tampak sebagai pola garis-garis berulang yang lebih halus dan rapat, biasanya disebabkan getaran atau resonansi pada stand rolling mill saat kecepatan produksi berada di titik tertentu yang memicu vibrasi tidak stabil.
+
+EMULSION SPOT: NODA DARI CAIRAN PENDINGIN YANG TERTINGGAL
+
+Selama proses cold rolling, cairan emulsion dipakai sebagai pendingin sekaligus pelumas antara rol dan strip. Kalau sisa cairan ini tidak tersapu bersih sebelum strip masuk annealing furnace, sisa itu akan mengarbonisasi saat terkena suhu tinggi dan meninggalkan noda kehitaman atau kecokelatan berbentuk pulau-pulau tidak beraturan di permukaan produk jadi. Penyebabnya biasanya tekanan blower pembersih di ujung stand rolling terakhir yang kurang kuat, prosedur pembersihan yang terlewat saat pergantian gulungan, atau waktu purging sebelum pemanasan furnace yang terlalu singkat.
+
+PITTING DAN KEKASARAN PERMUKAAN AKIBAT PICKLING
+
+Masalah kadang sudah dimulai sebelum strip sempat masuk ke rol reduksi sama sekali. Proses pickling yang terlalu agresif, entah konsentrasi asamnya terlalu tinggi atau waktu perendamannya terlalu lama, bisa menyebabkan pitting, lubang-lubang kecil di permukaan akibat asam yang "memakan" baja secara berlebihan alih-alih cuma melarutkan kerak oksidanya saja. Sebaliknya, pickling yang kurang tuntas meninggalkan sisa kerak yang nantinya terjebak dan tergilas masuk ke permukaan strip selama proses reduksi, menciptakan cacat permukaan kasar yang sulit diperbaiki di tahap-tahap berikutnya.
+
+TONG MARK DAN MASALAH SAAT PENANGANAN MATERIAL
+
+Tidak semua cacat berasal dari proses metalurgi murni. Tong mark, bekas jepitan alat angkat seperti crane tong saat memindahkan coil antar stasiun kerja, cukup sering ditemukan terutama di area dekat tepi atau permukaan luar gulungan. Ada juga masalah telescoping, kondisi di mana gulungan coil bergeser membentuk pola menyerupai teleskop akibat tegangan gulungan yang tidak rata saat coiling, biasanya makin parah kalau terjadi guncangan selama proses transportasi. Kedua masalah ini menegaskan bahwa problem solving di cold rolling mill tidak boleh berhenti cuma di parameter mesin produksi, tapi juga harus mencakup prosedur penanganan material di sepanjang rantai produksi.
+
+PENDEKATAN PROBLEM SOLVING DI COLD ROLLING MILL
+
+Polanya sebenarnya konsisten dengan prinsip problem solving di lini produksi manapun: kenali dulu ciri visual defectnya secara spesifik, karena satu jenis noda gelap saja bisa punya beberapa kemungkinan penyebab berbeda tergantung bentuk dan polanya, lalu telusuri ke parameter proses yang paling relevan, entah itu tegangan coiling, profil suhu annealing, kebersihan emulsion, atau kondisi permukaan rol. Yang sering jadi jebakan adalah menyalahkan tahap yang paling dekat dengan kemunculan defect, padahal akar masalahnya bisa saja sudah tertanam beberapa tahap sebelumnya, seperti sticker mark yang gejalanya baru terlihat saat uncoiling, padahal sumber masalahnya sudah terjadi jauh sebelumnya di dalam annealing furnace.
+
+TIPS PRAKTIS UNTUK LINI CRM DAN QUALITY CONTROL
+
+Catat parameter tegangan coiling dan profil suhu annealing setiap batch produksi, karena data historis ini jadi rujukan paling cepat begitu sticker mark atau cacat bentuk mulai muncul berulang pada kondisi tertentu.
+
+Jadwalkan pemeriksaan kondisi permukaan rol kerja secara berkala, karena roll mark dan chatter mark yang tampak seperti masalah baru seringkali sebenarnya sudah berkembang perlahan sejak beberapa hari sebelumnya seiring keausan rol.
+
+Pastikan sistem blower pembersih emulsion di ujung stand rolling terakhir diperiksa rutin, karena tekanan angin yang melemah biasanya tidak langsung terlihat sampai emulsion spot benar-benar muncul di produk annealing.
+
+Latih tim penanganan material soal cara mengangkat dan menyimpan coil yang benar, karena tong mark dan telescoping seringkali murni soal kebiasaan kerja, bukan soal parameter mesin produksi sama sekali.
+
+TANYA JAWAB SEPUTAR DEFECT COLD ROLLING MILL
+
+Apakah sticker mark bisa diperbaiki setelah terjadi?
+Tergantung tingkat keparahannya. Sticker mark ringan kadang masih bisa diterima untuk aplikasi tertentu setelah area yang terdampak dipotong, tapi kasus yang parah, terutama sampai membuat permukaan robek atau berlubang, umumnya membuat bagian tersebut harus dipisahkan sebagai material reject.
+
+Kenapa cold rolled coil butuh proses annealing kalau reduksi ketebalannya sudah selesai di tahap rolling?
+Karena proses reduksi dingin membuat struktur kristal baja jadi keras dan getas akibat pengerasan regang, sehingga tanpa annealing, material ini terlalu kaku dan rawan retak kalau langsung dibentuk lebih lanjut di tahap produksi berikutnya.
+
+Apa beda utama roll mark dan chatter mark kalau dilihat di permukaan produk?
+Roll mark biasanya berpola tunggal yang jelas dan berulang mengikuti keliling rol yang bermasalah, sementara chatter mark tampak sebagai garis-garis lebih halus dan rapat yang muncul akibat getaran mesin, bukan dari satu titik cacat spesifik di permukaan rol.
+
+Apakah semua cold rolled coil pasti melalui tahap temper rolling?
+Hampir selalu iya untuk aplikasi yang menuntut kerataan dan sifat mekanis tertentu, karena kondisi baja langsung setelah annealing terlalu lunak dan rawan mengalami Luders band kalau langsung dibentuk tanpa skin pass terlebih dahulu.
+
+Kalau ditarik kesimpulan, defect di cold rolling mill mengajarkan satu hal yang sama pentingnya dengan proses coating: gejala yang muncul di ujung rantai produksi seringkali cuma jejak dari masalah yang sebenarnya terjadi jauh lebih awal, entah di dalam bak asam pickling, di antara stand rolling mill, atau di dalam furnace annealing yang tertutup rapat selama berjam-jam sebelum siapapun sempat melihat apa yang sebenarnya terjadi di dalamnya.
