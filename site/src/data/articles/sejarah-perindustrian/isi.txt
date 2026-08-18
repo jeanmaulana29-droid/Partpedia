@@ -1,0 +1,50 @@
+Bagaimana Sejarah Perindustrian dan Manufaktur Terbentuk?
+Menyusuri perjalanan panjang dari bengkel tukang rumahan sampai pabrik pintar yang terhubung internet, lewat empat gelombang revolusi yang masing-masing mengubah total cara manusia membuat barang.
+
+Coba bayangkan dunia tanpa pabrik. Bukan berarti dunia tanpa barang, karena orang-orang zaman dulu tetap punya baju, sepatu, dan perkakas. Bedanya, semua itu dibuat satu per satu, di rumah masing-masing, oleh tukang tenun atau tukang besi yang kerjanya diwariskan turun-temurun lewat sistem magang bertahun-tahun. Sistem ini dikenal sebagai cottage industry, industri rumahan, di mana pedagang biasanya menitipkan bahan mentah ke rumah-rumah penduduk, menunggu produk jadi selesai ditenun atau dijahit, lalu mengambilnya untuk dijual. Prosesnya lambat, hasilnya tidak seragam, dan skala produksinya jauh dari kata besar.
+
+Lalu, dalam rentang waktu kurang dari tiga abad, dunia berubah total. Dari rumah-rumah penenun individual, manusia berpindah ke pabrik raksasa yang mampu mencetak ribuan unit barang identik dalam sehari, lalu ke lini produksi otomatis yang berjalan sendiri tanpa banyak campur tangan manusia, sampai akhirnya ke pabrik pintar hari ini yang mesin-mesinnya saling "berbicara" lewat internet. Perjalanan ini biasa dibagi jadi empat gelombang besar, yang masing-masing punya cerita menariknya sendiri.
+
+GELOMBANG PERTAMA: KETIKA AIR MENDIDIH MENGUBAH DUNIA
+
+Semuanya dimulai di Inggris, sekitar tahun 1760 sampai 1840. Negeri itu kebetulan punya kombinasi yang pas: cadangan batu bara dan bijih besi melimpah, jaringan kolonial yang menyediakan bahan baku murah, dan stabilitas politik yang cukup untuk investasi jangka panjang.
+
+Pemicu utamanya adalah mesin uap. Sebenarnya mesin uap sudah ada sebelum James Watt, dipakai Thomas Newcomen sejak awal 1700-an untuk memompa air keluar dari tambang batu bara, tapi desainnya boros bahan bakar dan tidak efisien. Titik baliknya datang pada suatu hari Minggu tahun 1765, ketika Watt yang sedang berjalan-jalan di taman dekat Sungai Clyde tiba-tiba mendapat ide: pisahkan ruang kondensasi uap dari silinder utama mesin. Idenya dipatenkan pada 1769, dan hasilnya adalah mesin uap yang jauh lebih hemat energi dan bisa dipakai untuk hampir semua jenis mesin, bukan cuma pompa air tambang.
+
+Industri tekstil jadi yang paling cepat merasakan dampaknya. Spinning jenny buatan James Hargreaves memungkinkan satu pekerja memintal banyak benang sekaligus, water frame karya Richard Arkwright menyempurnakannya dengan tenaga air, dan power loom rancangan Edmund Cartwright mengotomatiskan proses tenun yang tadinya seluruhnya manual. Ketiga mesin ini butuh tenaga penggerak yang kuat dan konsisten, dan di situlah mesin uap Watt masuk, membebaskan pabrik dari keharusan dibangun di tepi sungai demi tenaga air, sekaligus memungkinkan pabrik beroperasi siang malam tanpa bergantung cuaca.
+
+BAJA MURAH UNTUK DUNIA YANG SEDANG TUMBUH
+
+Sebelum pertengahan 1800-an, baja itu barang mewah, mahal, dan cuma diproduksi dalam jumlah kecil lewat proses yang rumit. Hampir semua struktur logam besar, dari jembatan sampai rel kereta, masih memakai besi tempa atau besi tuang yang jauh lebih rapuh.
+
+Semua berubah pada 11 Agustus 1856, ketika insinyur Inggris Henry Bessemer mempresentasikan makalahnya di hadapan British Association di Cheltenham, berjudul kurang lebih "Cara Membuat Besi dan Baja Tanpa Bahan Bakar Tambahan". Prosesnya, yang kemudian dikenal sebagai Bessemer process, meniupkan udara ke dalam besi cair untuk membakar habis kotoran karbon di dalamnya lewat reaksi kimia, bukan lewat pemanasan eksternal. Hasilnya luar biasa: satu konverter Bessemer sanggup mengubah dua puluh lima ton besi kasar menjadi baja hanya dalam waktu sekitar tiga puluh menit, sesuatu yang sebelumnya butuh berhari-hari lewat metode lama. Harga baja pun anjlok drastis, membuka jalan bagi pembangunan rel kereta api dalam skala benua, gedung pencakar langit, dan kapal-kapal baja raksasa.
+
+Di saat yang hampir bersamaan, di seberang Atlantik, seorang penemu Amerika bernama Eli Whitney, yang lebih dulu terkenal lewat mesin pemisah biji kapas (cotton gin) buatannya di tahun 1793, mempopulerkan gagasan interchangeable parts, komponen yang diproduksi dengan presisi seragam sehingga bisa dipertukarkan antar satu unit produk dengan unit lainnya, awalnya diterapkan pada produksi senapan. Gagasan inilah yang kelak jadi fondasi dari apa yang disebut American System of Manufacturing, cikal bakal langsung dari cara pabrik modern memproduksi barang hari ini.
+
+GELOMBANG KEDUA: LISTRIK DAN BAN BERJALAN YANG TIDAK PERNAH BERHENTI
+
+Kalau gelombang pertama soal tenaga uap, gelombang kedua yang berlangsung sejak sekitar 1870-an sampai Perang Dunia I soal listrik. Thomas Edison mematenkan bola lampu pijar praktis pada 1879 dan membangun pembangkit listrik komersial pertamanya di New York pada 1882, membuka jalan bagi elektrifikasi pabrik secara masif. Mesin-mesin pabrik yang tadinya harus disambungkan lewat sabuk mekanis panjang ke satu sumber tenaga uap pusat, kini bisa digerakkan motor listrik masing-masing, jauh lebih fleksibel dan efisien.
+
+Tapi ikon paling terkenal dari era ini datang dari Henry Ford. Pada 1913, di pabriknya di Highland Park, Michigan, Ford memperkenalkan moving assembly line, konsep lini perakitan berjalan yang katanya terinspirasi dari cara rumah pemotongan hewan di Chicago menggantung karkas sapi sepanjang jalur produksi. Alih-alih pekerja berpindah-pindah mengelilingi satu mobil yang diam, mobilnya sendiri yang bergerak lewat ban berjalan, sementara setiap pekerja tetap di posisinya dan mengerjakan satu tugas spesifik berulang-ulang. Hasilnya dramatis: waktu perakitan satu unit mobil Ford Model T yang tadinya sekitar dua belas jam, terpangkas jadi hanya sembilan puluh tiga menit. Produksi massal yang terjangkau kelas menengah pun jadi kenyataan.
+
+Kemampuan produksi massal ala Ford ini terbukti sangat menentukan ketika Perang Dunia II pecah. Amerika Serikat, dengan basis industri yang sudah terbiasa dengan lini produksi masif, mampu memproduksi sekitar tiga ratus ribu unit pesawat terbang, delapan puluh enam ribu tank, dan hampir tiga juta senapan mesin selama masa perang, sebuah skala produksi yang hanya mungkin terjadi berkat fondasi yang dibangun sejak era assembly line Ford tiga dekade sebelumnya.
+
+GELOMBANG KETIGA: KETIKA MESIN MULAI "BERPIKIR" SENDIRI
+
+Kalau dua gelombang sebelumnya soal mengganti tenaga otot manusia, gelombang ketiga yang berlangsung sejak sekitar 1950-an sampai 1990-an soal mengganti sebagian peran otak manusia lewat komputer dan otomasi.
+
+Cikal bakal komputer modern sebenarnya lahir dari kebutuhan militer, seperti Colossus, mesin pemecah kode Nazi Jerman yang dikembangkan Inggris selama Perang Dunia II, salah satu komputer terprogram pertama di dunia meski ukurannya sebesar satu kamar penuh. Beberapa dekade kemudian, teknologi ini merambah ke lantai pabrik. Titik penting yang sering disebut adalah tahun 1961, ketika Unimate, robot industri pertama di dunia hasil rancangan Joseph Engelberger yang kemudian dijuluki "Bapak Robotika", mulai bekerja di lini produksi General Motors, mengangkat dan menyusun komponen logam panas hasil die-casting, pekerjaan yang sebelumnya dianggap terlalu berbahaya dan melelahkan untuk pekerja manusia.
+
+Di Jepang, pada periode yang kurang lebih sama, Toyota lewat sosok insinyurnya Taiichi Ohno mengembangkan sistem produksi yang kelak dikenal luas sebagai Toyota Production System, dengan dua pilar utama: just in time, memproduksi komponen hanya sejumlah yang dibutuhkan dan tepat pada waktu dibutuhkan untuk menekan pemborosan stok, dan kanban, sistem kartu sinyal visual untuk mengatur alur kerja antar stasiun produksi. Filosofi ini belakangan menjadi dasar dari apa yang sekarang dikenal luas sebagai lean manufacturing di hampir seluruh industri manufaktur dunia.
+
+GELOMBANG KEEMPAT: PABRIK YANG TERHUBUNG KE INTERNET
+
+Istilah "Industrie 4.0" pertama kali dipopulerkan di Jerman sekitar tahun 2011, awalnya sebagai proyek strategi teknologi tinggi pemerintah Jerman yang kemudian dipromosikan luas lewat forum industri seperti Hannover Messe. Intinya sederhana: menggabungkan otomatisasi yang sudah ada sejak gelombang ketiga dengan teknologi siber, sehingga mesin-mesin di pabrik tidak cuma bekerja otomatis, tapi juga saling terhubung, saling bertukar data secara real time, dan bisa dipantau atau bahkan diperbaiki dari jarak jauh.
+
+Konsep intinya disebut cyber-physical system, di mana setiap mesin fisik di lantai produksi punya semacam "kembaran digital" yang tersimpan di sistem komputer, sehingga status, kinerja, dan potensi kerusakannya bisa dipantau tanpa harus berdiri langsung di depan mesinnya. Sensor Internet of Things ditempel di berbagai titik, data besar dikumpulkan lalu dianalisis dengan kecerdasan buatan untuk memprediksi kapan sebuah komponen perlu diganti sebelum benar-benar rusak, dan seluruh lini produksi bisa diatur ulang secara fleksibel hanya lewat perubahan pada sistem digitalnya, bukan lewat pembongkaran fisik mesin.
+
+LALU, KE MANA LAGI SETELAH INI?
+
+Sudah mulai ramai dibicarakan apa yang disebut sebagian orang sebagai Industri 5.0, sebuah gagasan yang tidak lagi cuma soal mesin makin pintar, tapi soal bagaimana manusia dan mesin bekerja berdampingan secara lebih seimbang, dengan penekanan lebih besar pada keberlanjutan lingkungan dan kesejahteraan pekerja, bukan cuma efisiensi dan kecepatan produksi semata.
+
+Kalau ditarik mundur, jalan panjang dari rumah-rumah penenun di pedesaan Inggris sampai pabrik pintar hari ini sebenarnya cuma soal satu hal yang terus berulang: setiap generasi selalu mencari cara membuat lebih banyak barang, dengan kualitas lebih konsisten, dalam waktu yang lebih singkat. Bedanya cuma alat yang dipakai untuk mencapainya, dari uap, ke listrik, ke komputer, sampai sekarang ke jaringan internet yang menghubungkan segalanya. Dan kemungkinan besar, cerita ini belum selesai.
