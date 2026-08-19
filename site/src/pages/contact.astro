@@ -28,7 +28,19 @@ import Layout from "../layouts/Layout.astro";
       <p style="margin:0;font-size:1.25rem;color:var(--ink)">
         <a href="mailto:qca9299@gmail.com">qca9299@gmail.com</a>
       </p>
-      <p style="margin:0.75rem 0 0;font-size:0.9rem;color:var(--muted)">
+    </div>
+
+    <div class="card card-address">
+      <p style="margin:0 0 0.5rem"><strong>Alamat</strong></p>
+      <div class="address-row">
+        <span class="pin" aria-hidden="true">📍</span>
+        <p class="address-text">
+          Babakan Sari, Kecamatan Kiaracondong<br />
+          Bandung, Jawa Barat 40281<br />
+          Indonesia
+        </p>
+      </div>
+      <p style="margin:0.85rem 0 0;font-size:0.9rem;color:var(--muted)">
         Jam respons biasanya pada hari kerja. Mohon siapkan kode part atau tautan halaman terkait bila melapor koreksi data.
       </p>
     </div>
@@ -104,6 +116,22 @@ import Layout from "../layouts/Layout.astro";
     margin: 1.25rem 0;
   }
   .legal .card strong { color: var(--ink); }
+  .address-row {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+  }
+  .address-row .pin {
+    flex-shrink: 0;
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+  .address-text {
+    margin: 0 !important;
+    color: var(--ink) !important;
+    font-size: 1.05rem !important;
+    line-height: 1.55 !important;
+  }
   .legal .foot-links {
     display: flex; flex-wrap: wrap; gap: 0.85rem;
     margin-top: 2.5rem; padding-top: 1.25rem;
