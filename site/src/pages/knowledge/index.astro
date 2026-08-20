@@ -3,36 +3,120 @@ import Layout from "../../layouts/Layout.astro";
 import { loadAllArticles } from "../../utils/loadArticles.js";
 const sorted = loadAllArticles();
 ---
-<Layout title="Wawasan Industri — Partpedia" description="Artikel ringkas seputar sparepart dan MRO.">
+<Layout title="Wawasan Industri — Partpedia" description="Artikel ringkas seputar sparepart dan MRO. Cari artikel berdasarkan kata kunci.">
   <div class="hub">
     <p class="kicker">Knowledge Hub</p>
     <h1>Wawasan Industri</h1>
     <p class="lead">Bacaan singkat seputar part, spek, dan praktik lapangan.</p>
-    <div class="list">
-      {sorted.map((a) => (
-        <a class="row" href={`/knowledge/${a.slug}/`}>
-          <div class="thumb">
-            <img
-              src={a.image}
-              alt=""
-              loading="lazy"
-              onerror={`this.onerror=null;this.src='${a.imageFallback}'`}
-            />
-          </div>
-          <div>
-            <h2>{a.title}</h2>
-            <p class="ex">{a.excerpt}</p>
-          </div>
-        </a>
-      ))}
+
+    <div class="search-wrap">
+      <label class="sr-only" for="article-search">Cari artikel</label>
+      <input
+        id="article-search"
+        type="search"
+        placeholder="Cari judul, topik, atau kata dalam artikel…"
+        autocomplete="off"
+        aria-label="Cari artikel"
+      />
+      <p class="search-hint" id="search-hint" hidden></p>
     </div>
+
+    <div class="list" id="article-list">
+      {sorted.map((a) => {
+        const blob = [a.title, a.excerpt, a.body, a.slug].filter(Boolean).join(" ").toLowerCase();
+        return (
+          <a class="row" href={`/knowledge/${a.slug}/`} data-search={blob}>
+            <div class="thumb">
+              <img
+                src={a.image}
+                alt=""
+                loading="lazy"
+                onerror={`this.onerror=null;this.src='${a.imageFallback}'`}
+              />
+            </div>
+            <div>
+              <h2>{a.title}</h2>
+              <p class="ex">{a.excerpt}</p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+    <p class="empty" id="article-empty" hidden>Tidak ada artikel yang cocok. Coba kata kunci lain.</p>
     <p class="back"><a href="/">← Katalog</a></p>
   </div>
+
+  <script>
+    const input = document.getElementById("article-search");
+    const rows = Array.from(document.querySelectorAll("#article-list .row"));
+    const empty = document.getElementById("article-empty");
+    const hint = document.getElementById("search-hint");
+
+    function apply() {
+      const q = (input?.value || "").toLowerCase().trim();
+      // multi-word: semua kata harus ada (semakin lengkap = semakin spesifik)
+      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+      let n = 0;
+      rows.forEach((row) => {
+        const hay = row.getAttribute("data-search") || "";
+        const ok = terms.length === 0 || terms.every((t) => hay.includes(t));
+        row.style.display = ok ? "" : "none";
+        if (ok) n++;
+      });
+      if (empty) empty.hidden = n !== 0;
+      if (hint) {
+        if (!q) {
+          hint.hidden = true;
+        } else {
+          hint.hidden = false;
+          hint.textContent = n === 0 ? "0 artikel" : `${n} artikel cocok`;
+        }
+      }
+    }
+    input?.addEventListener("input", apply);
+  </script>
+
   <style>
     .hub { max-width: 800px; margin: 0 auto; padding: 1.5rem 0 3rem; }
-    .kicker { font-family: var(--font-mono); font-size: 0.72rem; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
+    .kicker {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0;
+    }
     h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.35rem 0 0.5rem; }
-    .lead { color: var(--muted); margin-bottom: 1.5rem; }
+    .lead { color: var(--muted); margin: 0 0 1.15rem; }
+
+    .search-wrap { margin: 0 0 1.35rem; }
+    #article-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.85rem 1.05rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      color: var(--ink);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    #article-search::placeholder { color: var(--muted); }
+    #article-search:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(240,164,58,0.18);
+    }
+    .search-hint {
+      margin: 0.45rem 0 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); border: 0;
+    }
+
     .list { display: grid; gap: 0.9rem; }
     .row {
       display: grid; grid-template-columns: 140px 1fr; gap: 1rem;
@@ -44,7 +128,11 @@ const sorted = loadAllArticles();
     .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 96px; }
     h2 { font-size: 1.02rem; margin: 0 0 0.3rem; }
     .ex { margin: 0; color: var(--muted); font-size: 0.86rem; }
+    .empty { color: var(--muted); margin: 1rem 0 0; }
     .back { margin-top: 2rem; }
-    @media (max-width: 560px) { .row { grid-template-columns: 1fr; } .thumb { height: 150px; } }
+    @media (max-width: 560px) {
+      .row { grid-template-columns: 1fr; }
+      .thumb { height: 150px; }
+    }
   </style>
 </Layout>
