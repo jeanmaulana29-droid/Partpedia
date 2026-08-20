@@ -192,6 +192,7 @@ const catalog = shuffleCatalog(data);
       <div class="sec-head">
         <h2 data-i18n="insights_title">Wawasan Industri</h2>
         <p data-i18n="insights_sub">Artikel & bacaan seputar part, spek, dan praktik MRO</p>
+        <a class="insights-all" href="/knowledge/">Baca semua wawasan Artikel →</a>
       </div>
       <div class="feat-track" id="feat-track">
         {insightArticles.map((a) => (
@@ -547,6 +548,22 @@ const catalog = shuffleCatalog(data);
     .sec-head h2 { font-size: 1.45rem; }
     .sec-head p { color: var(--muted); margin: 0; }
 
+    .insights-all {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.65rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--amber);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .insights-all:hover {
+      color: #ffc56e;
+      border-bottom-color: rgba(240,164,58,0.55);
+    }
     .feat-track {
       display: flex;
       gap: 1rem;
