@@ -155,6 +155,27 @@ const catalog = shuffleCatalog(data);
     <div class="hero-dots" id="hero-dots" aria-hidden="true"></div>
   </section>
 
+
+  <!-- SMART FIND — deskripsi natural language -->
+  <section class="smart-find" id="smart-find" aria-label="Cari sparepart dengan deskripsi">
+    <div class="smart-find-inner">
+      <p class="smart-kicker">Pencarian cerdas</p>
+      <h2 class="smart-title">Jelaskan sparepart yang kamu butuhkan</h2>
+      <p class="smart-sub">Tulis mesin, kendaraan, gejala, atau spek — kami carikan di katalog.</p>
+      <textarea
+        id="smart-query"
+        rows="4"
+        placeholder="Contoh: bearing yang kuat untuk dinamo pompa air pada mesin rolling mill… atau seal oli gearbox mobil…"
+        aria-label="Deskripsi sparepart yang dicari"
+      ></textarea>
+      <div class="smart-actions">
+        <button type="button" class="btn-temukan" id="smart-submit">TEMUKAN</button>
+        <span class="smart-hint" id="smart-status"></span>
+      </div>
+      <div class="smart-results" id="smart-results" hidden></div>
+    </div>
+  </section>
+
   <!-- BRAND STRIP -->
   <section class="brands" id="brands" aria-label="Brand referensi industri">
     <p class="brands-label" data-i18n="brands_label">Referensi lintas merek yang sering dicari di industri</p>
@@ -453,6 +474,153 @@ const catalog = shuffleCatalog(data);
 
 
 
+    
+    // —— Smart Find (deskripsi natural language, tanpa API berbayar) ——
+    (function () {
+      const ta = document.getElementById("smart-query");
+      const btn = document.getElementById("smart-submit");
+      const box = document.getElementById("smart-results");
+      const status = document.getElementById("smart-status");
+      if (!ta || !btn || !box) return;
+
+      const SYNONYMS = {
+        bearing: ["bearing", "bantalan", "ball bearing", "roller"],
+        bantalan: ["bearing", "bantalan"],
+        dinamo: ["dinamo", "motor listrik", "motor"],
+        pompa: ["pompa", "pump", "pompa air"],
+        seal: ["seal", "oil seal", "packing"],
+        belt: ["v-belt", "belt", "sabuk", "fan belt"],
+        "v-belt": ["v-belt", "sabuk", "belt"],
+        gearbox: ["gearbox", "reducer", "gear reducer"],
+        hidrolik: ["hidrolik", "hydraulic", "selang hidrolik"],
+        pneumatik: ["pneumatik", "pneumatic", "silinder"],
+        sensor: ["sensor", "proximity", "photoelectric"],
+        inverter: ["inverter", "vfd", "variable frequency"],
+        mobil: ["mobil", "kendaraan", "otomotif"],
+        motor: ["motor", "sepeda motor", "kendaraan"],
+        traktor: ["traktor", "pertanian", "alat pertanian"],
+        konveyor: ["konveyor", "conveyor"],
+        kontaktor: ["kontaktor", "contactor"],
+        filter: ["filter", "saringan"],
+        baut: ["baut", "mur", "fastener", "hex"],
+        suhu: ["suhu", "temperature", "pt100", "rtd", "thermocouple"],
+        tekanan: ["tekanan", "pressure", "gauge"],
+        rantai: ["rantai", "chain", "sprocket"],
+        kopling: ["kopling", "coupling"],
+        valve: ["valve", "katup"],
+        plc: ["plc", "otomasi", "kontrol"],
+      };
+
+      function tokens(text) {
+        return String(text || "")
+          .toLowerCase()
+          .replace(/[^a-z0-9à-ÿ.\-\s]/gi, " ")
+          .split(/\s+/)
+          .filter((t) => t.length >= 2);
+      }
+
+      function expand(terms) {
+        const out = new Set();
+        terms.forEach((t) => {
+          out.add(t);
+          Object.keys(SYNONYMS).forEach((k) => {
+            if (t.includes(k) || k.includes(t)) {
+              SYNONYMS[k].forEach((s) => out.add(s));
+            }
+          });
+          // light typo: keep stem without last char if long
+          if (t.length >= 5) out.add(t.slice(0, -1));
+        });
+        return [...out];
+      }
+
+      function score(item, expanded, rawTerms) {
+        const blob = item.search_blob || "";
+        const tags = (item.application_tags || []).join(" ").toLowerCase();
+        let s = 0;
+        expanded.forEach((t) => {
+          if (blob.includes(t)) s += 2;
+          if (tags.includes(t)) s += 3;
+          if ((item.category || "").toLowerCase().includes(t)) s += 2;
+          if ((item.part_number || "").toLowerCase().includes(t)) s += 4;
+          if ((item.part_name || "").toLowerCase().includes(t)) s += 3;
+        });
+        // bonus if multiple raw terms hit
+        let hits = 0;
+        rawTerms.forEach((t) => {
+          if (blob.includes(t)) hits++;
+        });
+        s += hits * 2;
+        return s;
+      }
+
+      let catalog = null;
+      async function loadCatalog() {
+        if (catalog) return catalog;
+        const res = await fetch("/smart-catalog.json", { cache: "force-cache" });
+        catalog = await res.json();
+        return catalog;
+      }
+
+      async function run() {
+        const q = (ta.value || "").trim();
+        if (q.length < 4) {
+          box.hidden = false;
+          box.innerHTML = `<p class="smart-empty">Tulis deskripsi minimal beberapa kata agar hasil lebih akurat.</p>`;
+          status.textContent = "";
+          return;
+        }
+        btn.disabled = true;
+        status.textContent = "Mencari…";
+        try {
+          const list = await loadCatalog();
+          const rawTerms = tokens(q);
+          const expanded = expand(rawTerms);
+          const ranked = list
+            .map((item) => ({ item, s: score(item, expanded, rawTerms) }))
+            .filter((x) => x.s > 0)
+            .sort((a, b) => b.s - a.s)
+            .slice(0, 12);
+
+          box.hidden = false;
+          if (!ranked.length) {
+            box.innerHTML = `<p class="smart-empty">Belum ketemu yang cocok. Coba sebutkan jenis part (bearing, seal, V-belt…), mesin, atau kode part.</p>`;
+            status.textContent = "0 hasil";
+          } else {
+            status.textContent = `${ranked.length} rekomendasi`;
+            box.innerHTML = ranked
+              .map(({ item }) => {
+                const tags = (item.application_tags || []).slice(0, 6).join(" · ");
+                return `<a class="smart-card" href="/sparepart/${item.slug}/">
+                  <div>
+                    <h3>${item.part_name || item.part_number}</h3>
+                    <p class="meta">${item.part_number || ""} · ${item.category || ""} · ${item.brand || ""}</p>
+                    <p class="tags">${tags}</p>
+                  </div>
+                  <div class="price">${item.price_range || ""}</div>
+                </a>`;
+              })
+              .join("");
+          }
+        } catch (e) {
+          box.hidden = false;
+          box.innerHTML = `<p class="smart-empty">Gagal memuat katalog pencarian. Muat ulang halaman.</p>`;
+          status.textContent = "";
+        } finally {
+          btn.disabled = false;
+        }
+      }
+
+      btn.addEventListener("click", run);
+      ta.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+          e.preventDefault();
+          run();
+        }
+      });
+    })();
+
+
     // Search / filter — category chip = exact data-category (bukan text search)
     const input = document.getElementById("search") as HTMLInputElement | null;
     const cards = Array.from(document.querySelectorAll<HTMLElement>("#results .card"));
@@ -512,6 +680,105 @@ const catalog = shuffleCatalog(data);
     .hero-dots { position: absolute; bottom: 0.9rem; right: 1rem; z-index: 3; display: flex; gap: 0.35rem; }
     .dot { width: 8px; height: 8px; border-radius: 99px; border: none; background: rgba(255,255,255,0.35); cursor: pointer; padding: 0; }
     .dot.on { background: var(--amber); width: 18px; }
+
+    
+    .smart-find {
+      margin: 1.25rem 0 0.5rem;
+    }
+    .smart-find-inner {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.35rem 1.35rem 1.25rem;
+      background:
+        radial-gradient(120% 80% at 10% 0%, rgba(240,164,58,0.12), transparent 55%),
+        radial-gradient(100% 70% at 90% 20%, rgba(45, 212, 191, 0.08), transparent 50%),
+        var(--bg-card);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+    }
+    .smart-kicker {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .smart-title {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      letter-spacing: -0.02em;
+    }
+    .smart-sub {
+      margin: 0 0 0.95rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    #smart-query {
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 120px;
+      resize: vertical;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(8,12,18,0.55);
+      color: var(--ink);
+      padding: 1rem 1.1rem;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    #smart-query::placeholder { color: var(--muted); opacity: 0.9; }
+    #smart-query:focus {
+      border-color: rgba(240,164,58,0.65);
+      box-shadow: 0 0 0 3px rgba(240,164,58,0.18);
+    }
+    .smart-actions {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.85rem;
+      margin-top: 0.9rem;
+    }
+    .btn-temukan {
+      appearance: none; border: none; cursor: pointer;
+      font-weight: 800; font-size: 0.95rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.6rem; border-radius: 999px;
+      color: #1a1205;
+      background: linear-gradient(135deg, var(--amber), #e08a1a);
+      box-shadow: 0 10px 28px rgba(240,164,58,0.28);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-temukan:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(240,164,58,0.35); }
+    .btn-temukan:disabled { opacity: 0.6; cursor: wait; transform: none; }
+    .smart-hint { color: var(--muted); font-size: 0.88rem; }
+    .smart-results {
+      margin-top: 1.15rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .smart-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem 1rem;
+      align-items: start;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease;
+    }
+    .smart-card:hover { border-color: var(--amber); }
+    .smart-card h3 { margin: 0 0 0.25rem; font-size: 1rem; }
+    .smart-card .meta { margin: 0; color: var(--muted); font-size: 0.82rem; }
+    .smart-card .tags { margin: 0.35rem 0 0; font-size: 0.78rem; color: var(--teal); }
+    .smart-card .price { font-weight: 700; color: var(--amber); font-size: 0.9rem; white-space: nowrap; }
+    .smart-empty { color: var(--muted); font-size: 0.92rem; padding: 0.5rem 0; }
+    @media (max-width: 560px) {
+      .smart-find-inner { padding: 1.1rem; border-radius: 18px; }
+      .smart-card { grid-template-columns: 1fr; }
+    }
 
     .brands { margin: 1.5rem 0 2rem; overflow: hidden; }
     .brands-label { text-align: center; color: var(--muted); font-size: 0.8rem; margin-bottom: 0.85rem; }
