@@ -1,0 +1,296 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Download Aplikasi Partpedia"
+  description="Pasang Partpedia di ponsel atau desktop — akses katalog sparepart industri lebih cepat, seperti aplikasi."
+>
+  <section class="dl">
+    <div class="dl-card">
+      <p class="dl-kicker">Partpedia App</p>
+      <h1 class="dl-headline">
+        Bawa katalog sparepart di saku.
+        <span class="grad">Lebih cepat. Lebih siap.</span>
+      </h1>
+      <p class="dl-lead">
+        Jangan cuma sekadar buka browser — pasang Partpedia sebagai aplikasi.
+        Cari kode part, spek, dan referensi MRO dalam satu ketukan, kapan saja dibutuhkan di workshop atau plant.
+      </p>
+
+      <div class="dl-logo-wrap">
+        <img
+          src="/partpedia-app-logo.png"
+          alt="Logo Partpedia"
+          width="220"
+          height="220"
+          class="dl-logo"
+        />
+      </div>
+
+      <div class="dl-actions">
+        <button type="button" class="btn-install" id="pwa-install">
+          Pasang aplikasi
+        </button>
+        <a class="btn-secondary" href="/">Tetap di website</a>
+      </div>
+      <p class="dl-status" id="pwa-status" aria-live="polite"></p>
+
+      <div class="dl-steps">
+        <h2>Cara memasang</h2>
+        <div class="steps-grid">
+          <article class="step">
+            <span class="n">01</span>
+            <h3>Android (Chrome)</h3>
+            <p>Menu ⋮ → <strong>Install app</strong> / <strong>Tambahkan ke layar utama</strong>, atau ketuk tombol di atas saat muncul.</p>
+          </article>
+          <article class="step">
+            <span class="n">02</span>
+            <h3>iPhone / iPad</h3>
+            <p>Safari → tombol Bagikan → <strong>Add to Home Screen</strong> → Add. Ikon Partpedia muncul di layar utama.</p>
+          </article>
+          <article class="step">
+            <span class="n">03</span>
+            <h3>Desktop</h3>
+            <p>Chrome / Edge → ikon pasang di bilah alamat, atau Menu → <strong>Install Partpedia</strong>.</p>
+          </article>
+        </div>
+      </div>
+
+      <ul class="dl-benefits">
+        <li>Akses katalog full-screen, terasa seperti app native</li>
+        <li>Ikon di layar utama — buka tanpa mengetik alamat</li>
+        <li>Gratis · tanpa akun · data tetap dari Partpedia online</li>
+      </ul>
+
+      <p class="dl-note">
+        Partpedia App adalah <strong> Progressive Web App (PWA)</strong> — bukan unduhan APK toko pihak ketiga.
+        Selalu aman dipasang lewat browser resmi Anda.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const btn = document.getElementById("pwa-install");
+      const status = document.getElementById("pwa-status");
+      let deferred: any = null;
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferred = e;
+        if (btn) btn.classList.add("ready");
+        if (status) status.textContent = "Siap dipasang di perangkat ini.";
+      });
+
+      window.addEventListener("appinstalled", () => {
+        deferred = null;
+        if (status) status.textContent = "Partpedia sudah terpasang. Buka dari ikon di layar utama.";
+        if (btn) {
+          btn.textContent = "Sudah terpasang";
+          (btn as HTMLButtonElement).disabled = true;
+        }
+      });
+
+      btn?.addEventListener("click", async () => {
+        if (deferred) {
+          deferred.prompt();
+          try {
+            const choice = await deferred.userChoice;
+            if (status) {
+              status.textContent =
+                choice.outcome === "accepted"
+                  ? "Memasang Partpedia…"
+                  : "Pemasangan dibatalkan. Anda masih bisa pakai website.";
+            }
+          } catch {}
+          deferred = null;
+          return;
+        }
+        // Fallback instructions
+        const ua = navigator.userAgent || "";
+        const isIOS = /iPad|iPhone|iPod/.test(ua);
+        if (status) {
+          status.textContent = isIOS
+            ? "Di iPhone: Safari → Bagikan → Add to Home Screen."
+            : "Jika tombol pasang tidak muncul: buka menu browser → Install app / Tambahkan ke layar utama.";
+        }
+      });
+
+      // Already running as installed PWA
+      if (window.matchMedia("(display-mode: standalone)").matches) {
+        if (btn) {
+          btn.textContent = "Sedang berjalan sebagai app";
+          (btn as HTMLButtonElement).disabled = true;
+        }
+        if (status) status.textContent = "Anda sudah membuka Partpedia dalam mode aplikasi.";
+      }
+    })();
+  </script>
+
+  <style>
+    .dl {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.5rem 0 3.5rem;
+    }
+    .dl-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.75rem 1.5rem 2rem;
+      background:
+        radial-gradient(120% 80% at 50% -10%, rgba(240,164,58,0.16), transparent 55%),
+        radial-gradient(90% 60% at 100% 50%, rgba(45,212,191,0.07), transparent 50%),
+        var(--bg-card);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.28);
+      text-align: center;
+    }
+    .dl-kicker {
+      margin: 0 0 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .dl-headline {
+      margin: 0 0 0.75rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.55rem, 4.5vw, 2.15rem);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+    .dl-headline .grad {
+      display: block;
+      background: linear-gradient(90deg, var(--amber), #ffc56e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .dl-lead {
+      margin: 0 auto 1.5rem;
+      max-width: 34rem;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+    .dl-logo-wrap {
+      display: grid;
+      place-items: center;
+      margin: 0.5rem 0 1.5rem;
+    }
+    .dl-logo {
+      width: min(220px, 56vw);
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+    }
+    .dl-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.65rem;
+    }
+    .btn-install {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 0.9rem 1.55rem;
+      border-radius: 999px;
+      color: #1a1205;
+      background: linear-gradient(135deg, var(--amber), #e08a1a);
+      box-shadow: 0 12px 32px rgba(240,164,58,0.32);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-install:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(240,164,58,0.4);
+    }
+    .btn-install:disabled {
+      opacity: 0.65;
+      cursor: default;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.03);
+    }
+    .btn-secondary:hover { border-color: var(--amber); }
+    .dl-status {
+      min-height: 1.35rem;
+      margin: 0 0 1.5rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .dl-steps {
+      text-align: left;
+      margin: 0 0 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+    .dl-steps h2 {
+      margin: 0 0 0.85rem;
+      font-size: 1.05rem;
+      text-align: center;
+      font-family: var(--font-display);
+    }
+    .steps-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 0.9rem 0.95rem;
+      background: rgba(0,0,0,0.2);
+    }
+    .step .n {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--amber);
+      letter-spacing: 0.08em;
+    }
+    .step h3 {
+      margin: 0.35rem 0 0.35rem;
+      font-size: 0.95rem;
+    }
+    .step p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .dl-benefits {
+      text-align: left;
+      margin: 0 0 1.25rem;
+      padding: 0.85rem 1rem 0.85rem 1.6rem;
+      border-radius: 14px;
+      border: 1px solid rgba(45,212,191,0.2);
+      background: rgba(45,212,191,0.06);
+      color: var(--ink);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+    .dl-benefits li { margin: 0.25rem 0; }
+    .dl-note {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+  </style>
+</Layout>
