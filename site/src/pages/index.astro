@@ -147,7 +147,11 @@ const catalog = shuffleCatalog(data);
             <div class="hero-cta">
               <a class="btn btn-primary" href="#catalog" data-i18n="hero_cta1">Jelajahi katalog</a>
               <a class="btn btn-ghost" href="/knowledge/" data-i18n="hero_cta2">Knowledge hub</a>
-              <a class="btn btn-tools" href="/tools/">Smart Tools</a>
+              <a class="btn btn-tools" href="/tools/">
+                <span class="btn-tools-ico" aria-hidden="true">◇</span>
+                <span>Smart Tools</span>
+                <span class="btn-tools-badge">Utilitas</span>
+              </a>
             </div>
           </div>
         </div>
@@ -975,6 +979,64 @@ const catalog = shuffleCatalog(data);
       applyAll();
     });
   </script>
+
+  
+<style is:global>
+  /* Hero — Smart Tools sebagai CTA spesial */
+  .hero-cta {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.7rem !important;
+    align-items: center !important;
+  }
+  .hero-cta .btn-tools {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.78rem 1.15rem !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    letter-spacing: 0.03em !important;
+    text-decoration: none !important;
+    color: #041016 !important;
+    background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 45%, #14b8a6 100%) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    box-shadow:
+      0 0 0 1px rgba(45,212,191,0.25),
+      0 12px 32px rgba(45,212,191,0.35),
+      0 0 40px rgba(45,212,191,0.15) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+  }
+  .hero-cta .btn-tools:hover {
+    transform: translateY(-2px) !important;
+    box-shadow:
+      0 0 0 1px rgba(45,212,191,0.4),
+      0 16px 40px rgba(45,212,191,0.45),
+      0 0 48px rgba(45,212,191,0.2) !important;
+  }
+  .hero-cta .btn-tools-ico {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
+  .hero-cta .btn-tools-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.2);
+    color: #ecfeff;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  @media (max-width: 560px) {
+    .hero-cta .btn-tools {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
 
   <style>
     .hero { position: relative; margin: 1.25rem 0 1.5rem; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); }
