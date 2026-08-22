@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import AdSlot from "../components/AdSlot.astro";
 import Badge from "../components/Badge.astro";
 import data from "../data/data.json";
 import { loadAllArticles } from "../utils/loadArticles.js";
@@ -511,7 +510,6 @@ const catalog = shuffleCatalog(data);
     </div>
   </section>
 
-  <AdSlot slotId="home-top" />
 
   <!-- STATS -->
   <section class="stats" aria-label="Ringkasan">
@@ -625,7 +623,6 @@ const catalog = shuffleCatalog(data);
     <p id="empty-state" class="empty" hidden data-i18n="empty">Tidak ada hasil.</p>
   </section>
 
-  <AdSlot slotId="home-mid" />
 
   <!-- WORLD / DISTRIBUTION VISUAL -->
   <section class="map-sec" aria-label="Jaringan industri global">
@@ -717,7 +714,6 @@ const catalog = shuffleCatalog(data);
   </section>
 
   <p class="aff-note">Partpedia is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate we may earn from qualifying purchases. “Cek harga beli” may open Amazon search results.</p>
-  <AdSlot slotId="home-bottom" />
 
   <script>
     // Hero auto-rotate 2s
