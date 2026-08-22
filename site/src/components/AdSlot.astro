@@ -1,19 +1,15 @@
 ---
 /**
- * Slot iklan.
- * - Kosong / belum ada publisher ID → tidak ditampilkan (aman untuk review AdSense).
- * - Nanti isi ADSENSE_CLIENT & ADSENSE_SLOT di bawah, atau lewat props — unit iklan muncul otomatis.
+ * Slot iklan — HANYA render jika ADSENSE_CLIENT + ADSENSE_SLOT sudah diisi.
+ * Jangan tampilkan placeholder teks (penting untuk review AdSense).
  */
 interface Props {
   slotId?: string;
-  /** Override slot unit AdSense (opsional) */
   adSlot?: string;
 }
 const { slotId = "ad", adSlot = "" } = Astro.props;
-
-// TODO saat AdSense disetujui: ganti string di bawah dengan milikmu
-const ADSENSE_CLIENT = ""; // contoh: "ca-pub-xxxxxxxxxxxxxxxx"
-const ADSENSE_SLOT = adSlot || ""; // contoh: "1234567890"
+const ADSENSE_CLIENT = ""; // isi setelah AdSense disetujui, contoh: "ca-pub-xxxxxxxx"
+const ADSENSE_SLOT = adSlot || "";
 const enabled = Boolean(ADSENSE_CLIENT && ADSENSE_SLOT);
 ---
 {enabled && (
