@@ -5,8 +5,20 @@
  * Masih support file lama:
  *   site/src/data/articles/{slug}.txt
  *   + gambar di folder {slug}/1.jpeg jika ada
+ *
+ * Urutan: TERBARU di index 0 (kiri carousel).
+ * Prioritas tanggal:
+ *   1) baris tanggal YYYY-MM-DD di isi.txt (opsional)
+ *   2) waktu commit git file tersebut (%ct) — akurat per-upload
+ *   3) mtime file di disk saat build
  */
 import { execSync } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const articlesRoot = path.resolve(__dirname, "../data/articles");
 
 function hash(s) {
   let h = 0;
@@ -21,25 +33,53 @@ function defaultMid(slug) {
   return `/articles/default-${((hash(slug) + 2) % 4) + 1}.jpg`;
 }
 
-function gitDateForSlug(slug) {
+/** Unix seconds — semakin besar = semakin baru */
+function gitTimestampForSlug(slug) {
   const candidates = [
     `site/src/data/articles/${slug}/isi.txt`,
     `src/data/articles/${slug}/isi.txt`,
     `site/src/data/articles/${slug}/1.jpeg`,
     `site/src/data/articles/${slug}/1.jpg`,
+    `site/src/data/articles/${slug}/1.png`,
     `site/src/data/articles/${slug}.txt`,
     `src/data/articles/${slug}.txt`,
   ];
   for (const rel of candidates) {
     try {
-      const d = execSync(`git log -1 --format=%cs -- "${rel}"`, {
+      const d = execSync(`git log -1 --format=%ct -- "${rel}"`, {
         encoding: "utf8",
         stdio: ["ignore", "pipe", "ignore"],
       }).trim();
-      if (/^\d{4}-\d{2}-\d{2}$/.test(d)) return d;
+      const n = Number(d);
+      if (Number.isFinite(n) && n > 0) return n;
     } catch {}
   }
-  return "1970-01-01";
+  return 0;
+}
+
+function mtimeForSlug(slug) {
+  const candidates = [
+    path.join(articlesRoot, slug, "isi.txt"),
+    path.join(articlesRoot, `${slug}.txt`),
+    path.join(articlesRoot, slug, "1.jpg"),
+    path.join(articlesRoot, slug, "1.jpeg"),
+    path.join(articlesRoot, slug, "1.png"),
+  ];
+  let best = 0;
+  for (const p of candidates) {
+    try {
+      const st = fs.statSync(p);
+      if (st.mtimeMs > best) best = st.mtimeMs;
+    } catch {}
+  }
+  return best;
+}
+
+function toDateStr(tsSec) {
+  if (!tsSec) return "1970-01-01";
+  const d = new Date(tsSec * 1000);
+  if (Number.isNaN(d.getTime())) return "1970-01-01";
+  return d.toISOString().slice(0, 10);
 }
 
 export function parseArticleText(raw, slug) {
@@ -100,31 +140,56 @@ export function loadAllArticles() {
     art.imageMid = mid || `/articles/${art.slug}-2.jpg`;
     art.imageFallback = defaultHero(art.slug);
     art.imageMidFallback = defaultMid(art.slug);
-    // jika ada file folder, prioritaskan (hero/mid sudah di-set di atas)
     if (hero) art.image = hero;
     if (mid) art.imageMid = mid;
     return art;
   }
 
-  for (const path in folderTexts) {
-    const parts = path.replace(/\\/g, "/").split("/");
-    const slug = parts[parts.length - 2];
-    if (!slug || slug === "articles") continue;
-    const art = parseArticleText(folderTexts[path], slug);
-    if (!art.date) art.date = gitDateForSlug(slug);
-    bySlug.set(slug, attachImages(art));
+  function attachSortKey(art) {
+    // 1) tanggal eksplisit di file → tengah hari UTC hari itu
+    if (art.date && /^\d{4}-\d{2}-\d{2}$/.test(art.date)) {
+      art._sort = Date.parse(art.date + "T12:00:00Z") || 0;
+      return art;
+    }
+    // 2) waktu commit git (detik) — bedakan upload di hari yang sama
+    const gitTs = gitTimestampForSlug(art.slug);
+    if (gitTs > 0) {
+      art._sort = gitTs * 1000;
+      art.date = art.date || toDateStr(gitTs);
+      return art;
+    }
+    // 3) mtime file saat build
+    const mt = mtimeForSlug(art.slug);
+    art._sort = mt || 0;
+    if (!art.date && mt) art.date = toDateStr(Math.floor(mt / 1000));
+    if (!art.date) art.date = "1970-01-01";
+    return art;
   }
 
-  for (const path in flatTexts) {
-    const base = path.split("/").pop() || "";
+  for (const p in folderTexts) {
+    const parts = p.replace(/\\/g, "/").split("/");
+    const slug = parts[parts.length - 2];
+    if (!slug || slug === "articles") continue;
+    let art = parseArticleText(folderTexts[p], slug);
+    art = attachSortKey(attachImages(art));
+    bySlug.set(slug, art);
+  }
+
+  for (const p in flatTexts) {
+    const base = p.split("/").pop() || "";
     const slug = base.replace(/\.txt$/i, "");
     if (!slug || bySlug.has(slug)) continue;
-    const art = parseArticleText(flatTexts[path], slug);
-    if (!art.date) art.date = gitDateForSlug(slug);
-    bySlug.set(slug, attachImages(art));
+    let art = parseArticleText(flatTexts[p], slug);
+    art = attachSortKey(attachImages(art));
+    bySlug.set(slug, art);
   }
 
   const list = [...bySlug.values()];
-  list.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  // Terbaru dulu (kiri carousel). Seri: slug agar stabil.
+  list.sort((a, b) => {
+    const d = (b._sort || 0) - (a._sort || 0);
+    if (d !== 0) return d;
+    return String(a.slug).localeCompare(String(b.slug));
+  });
   return list;
 }
