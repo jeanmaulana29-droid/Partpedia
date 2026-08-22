@@ -139,7 +139,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         text-decoration: none;
       }
       .brand-logo { border-radius: 6px; display: block; }
-      .brand span { color: var(--amber); }
+      .brand-text { letter-spacing: normal; word-spacing: 0; }
+      .brand-accent { color: var(--amber); }
       .nav {
         display: flex;
         gap: 0.4rem;
@@ -249,7 +250,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         <div class="header-row">
           <a class="brand" href="/">
             <img src="/logo.png" alt="Partpedia" width="28" height="28" class="brand-logo" />
-            Part<span>pedia</span>
+            <span class="brand-text">Part<span class="brand-accent">pedia</span></span>
           </a>
           <button type="button" class="lang-btn" id="lang-toggle" aria-label="Language">EN</button>
         </div>
