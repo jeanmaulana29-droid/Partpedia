@@ -1,0 +1,150 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { loadAllQa } from "../../data/loadQa.js";
+
+const items = loadAllQa();
+---
+<Layout
+  title="Q&A Industri & Manufaktur — Partpedia"
+  description="Pertanyaan dan jawaban praktis seputar bearing, pompa, gearbox, hidrolik, VFD, maintenance, dan operasional pabrik manufaktur."
+>
+  <section class="qa-hub">
+    <header class="qa-head">
+      <div class="qa-brand">
+        <img src="/logo.png" alt="Partpedia" width="40" height="40" />
+        <span class="qa-brand-name">Part<span>pedia</span></span>
+      </div>
+      <p class="kicker">Insight · Q&amp;A</p>
+      <h1>Pertanyaan &amp; jawaban industri</h1>
+      <p class="lead">
+        Kumpulan Q&amp;A praktis untuk maintenance, reliability, dan operasional manufaktur —
+        dari bearing dan pompa hingga hidrolik, VFD, OEE, dan K3.
+      </p>
+      <p class="count">{items.length} topik</p>
+    </header>
+
+    <div class="qa-list" role="list">
+      {items.map((it, i) => (
+        <a class="qa-card" href={`/qa/${it.slug}/`} role="listitem">
+          <span class="qa-num">{String(it.id || i + 1).padStart(2, "0")}</span>
+          <span class="qa-q">{it.question}</span>
+          <span class="qa-go" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <style>
+    .qa-hub {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 1.5rem 0 3.5rem;
+    }
+    .qa-head {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .qa-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.85rem;
+      text-decoration: none;
+    }
+    .qa-brand img {
+      border-radius: 8px;
+    }
+    .qa-brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .qa-brand-name span { color: var(--amber); }
+    .kicker {
+      margin: 0 0 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .qa-head h1 {
+      margin: 0 0 0.5rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.55rem, 4vw, 2.15rem);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .lead {
+      margin: 0 auto;
+      max-width: 36rem;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.55;
+    }
+    .count {
+      margin: 0.75rem 0 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+    .qa-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .qa-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.85rem 1rem;
+      align-items: center;
+      padding: 1.05rem 1.15rem;
+      border-radius: 16px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(45,212,191,0.06), transparent 55%),
+        var(--bg-card);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .qa-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(45,212,191,0.45);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.2), 0 0 0 1px rgba(45,212,191,0.12);
+    }
+    .qa-num {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal);
+      background: rgba(45,212,191,0.12);
+      border: 1px solid rgba(45,212,191,0.28);
+      border-radius: 999px;
+      padding: 0.28rem 0.55rem;
+      min-width: 2.4rem;
+      text-align: center;
+    }
+    .qa-q {
+      font-weight: 650;
+      font-size: 0.98rem;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    .qa-go {
+      font-size: 1.15rem;
+      color: var(--amber);
+      opacity: 0.85;
+    }
+    @media (max-width: 560px) {
+      .qa-card {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+      }
+      .qa-go { display: none; }
+    }
+  </style>
+</Layout>

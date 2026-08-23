@@ -1,0 +1,175 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getQa, loadAllQa } from "../../data/loadQa.js";
+
+export function getStaticPaths() {
+  return loadAllQa().map((it) => ({ params: { slug: it.slug } }));
+}
+
+const { slug } = Astro.params;
+const item = getQa(slug);
+if (!item) {
+  throw new Error("Q&A not found: " + slug);
+}
+const all = loadAllQa();
+const idx = all.findIndex((x) => x.slug === slug);
+const prev = idx > 0 ? all[idx - 1] : null;
+const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null;
+---
+<Layout
+  title={`${item.question} — Q&A Partpedia`}
+  description={item.answer.slice(0, 155).replace(/\s+/g, " ")}
+>
+  <article class="qa-detail">
+    <a class="back" href="/qa/">← Semua Q&amp;A</a>
+    <header class="qa-d-head">
+      <div class="qa-brand">
+        <img src="/logo.png" alt="Partpedia" width="32" height="32" />
+        <span class="qa-brand-name">Part<span>pedia</span></span>
+      </div>
+      <p class="kicker">Insight · Q&amp;A</p>
+      <h1>{item.question}</h1>
+    </header>
+
+    <div class="qa-answer card-border">
+      <h2>Jawaban</h2>
+      {item.answer.split(/\n\n+/).map((para) => (
+        <p>{para}</p>
+      ))}
+    </div>
+
+    {item.source && (
+      <div class="qa-source card-border">
+        <h2>Sumber</h2>
+        <p>{item.source}</p>
+      </div>
+    )}
+
+    <nav class="qa-pager">
+      {prev ? (
+        <a class="pager-link" href={`/qa/${prev.slug}/`}>
+          <span class="pager-label">Sebelumnya</span>
+          <span class="pager-q">{prev.question}</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a class="pager-link next" href={`/qa/${next.slug}/`}>
+          <span class="pager-label">Berikutnya</span>
+          <span class="pager-q">{next.question}</span>
+        </a>
+      ) : <span />}
+    </nav>
+  </article>
+
+  <style>
+    .qa-detail {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 1.25rem 0 3.5rem;
+    }
+    .back {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back:hover { color: var(--amber); }
+    .qa-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.65rem;
+    }
+    .qa-brand img { border-radius: 7px; }
+    .qa-brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .qa-brand-name span { color: var(--amber); }
+    .kicker {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .qa-d-head h1 {
+      margin: 0 0 1.25rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+    .card-border {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem 1.25rem;
+      margin-bottom: 1rem;
+      background:
+        radial-gradient(120% 80% at 0% 0%, rgba(45,212,191,0.07), transparent 50%),
+        var(--bg-card);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
+    }
+    .card-border h2 {
+      margin: 0 0 0.65rem;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .qa-answer p {
+      margin: 0 0 0.9rem;
+      line-height: 1.7;
+      color: var(--ink);
+      font-size: 1.02rem;
+    }
+    .qa-answer p:last-child { margin-bottom: 0; }
+    .qa-source p {
+      margin: 0;
+      line-height: 1.55;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .qa-pager {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+    .pager-link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease;
+    }
+    .pager-link:hover { border-color: rgba(240,164,58,0.45); }
+    .pager-link.next { text-align: right; }
+    .pager-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+    .pager-q {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    @media (max-width: 560px) {
+      .qa-pager { grid-template-columns: 1fr; }
+      .pager-link.next { text-align: left; }
+    }
+  </style>
+</Layout>
