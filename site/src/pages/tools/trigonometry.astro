@@ -9,14 +9,14 @@ import Layout from "../../layouts/Layout.astro";
       <p class="desc">Segitiga siku-siku: sudut θ (derajat), sisi depan (opposite), sisi samping (adjacent), hipotenusa. Isi kombinasi yang cukup untuk menyelesaikan.</p>
       <div class="formula">sin θ = O/H · cos θ = A/H · tan θ = O/A</div>
       <div class="fields cols-2">
-      <div class="field"><label for="deg">Sudut θ <span>(derajat)</span></label><input id="deg" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="opp">Sisi depan O</label><input id="opp" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="adj">Sisi samping A</label><input id="adj" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="hyp">Hipotenusa H</label><input id="hyp" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="deg">Sudut θ <span>(° derajat)</span></label><input id="deg" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="opp">Sisi depan O <span>(mm)</span></label><input id="opp" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="adj">Sisi samping A <span>(mm)</span></label><input id="adj" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="hyp">Hipotenusa H <span>(mm)</span></label><input id="hyp" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
       </div>
       <div class="actions">
         <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
         <button type="button" class="btn-reset" id="btn-reset">Reset</button>
         <p class="msg" id="msg" role="status"></p>
       </div>
-      <p class="hint">Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
+      <p class="hint"><strong>Satuan:</strong> gunakan satu sistem satuan yang konsisten pada semua kolom (sesuai label). Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
     </div>
   </div>
   <script is:inline>

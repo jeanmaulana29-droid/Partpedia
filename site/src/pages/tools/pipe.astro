@@ -9,14 +9,14 @@ import Layout from "../../layouts/Layout.astro";
       <p class="desc">Outside diameter, inside diameter, ketebalan dinding.</p>
       <div class="formula">OD = ID + 2×t · t = (OD−ID)/2</div>
       <div class="fields cols-3">
-      <div class="field"><label for="od">OD luar</label><input id="od" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="id">ID dalam</label><input id="id" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="th">Thickness t</label><input id="th" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="od">OD luar <span>(mm)</span></label><input id="od" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="id">ID dalam <span>(mm)</span></label><input id="id" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="th">Thickness t <span>(mm)</span></label><input id="th" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
       </div>
       <div class="actions">
         <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
         <button type="button" class="btn-reset" id="btn-reset">Reset</button>
         <p class="msg" id="msg" role="status"></p>
       </div>
-      <p class="hint">Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
+      <p class="hint"><strong>Satuan:</strong> gunakan satu sistem satuan yang konsisten pada semua kolom (sesuai label). Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
     </div>
   </div>
   <script is:inline>

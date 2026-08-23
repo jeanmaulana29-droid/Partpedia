@@ -9,14 +9,14 @@ import Layout from "../../layouts/Layout.astro";
       <p class="desc">Hitung sisi A, B, atau sisi miring C. Isi 2 nilai, kosongkan 1 yang dicari.</p>
       <div class="formula">A² + B² = C²</div>
       <div class="fields cols-3">
-      <div class="field"><label for="a">Sisi A <span>(kaki 1)</span></label><input id="a" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="b">Sisi B <span>(kaki 2)</span></label><input id="b" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="c">Sisi C <span>(miring)</span></label><input id="c" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="a">Sisi A <span>(mm — kaki 1)</span></label><input id="a" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="b">Sisi B <span>(mm — kaki 2)</span></label><input id="b" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="c">Sisi C <span>(mm — miring)</span></label><input id="c" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
       </div>
       <div class="actions">
         <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
         <button type="button" class="btn-reset" id="btn-reset">Reset</button>
         <p class="msg" id="msg" role="status"></p>
       </div>
-      <p class="hint">Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
+      <p class="hint"><strong>Satuan:</strong> gunakan satu sistem satuan yang konsisten pada semua kolom (sesuai label). Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
     </div>
   </div>
   <script is:inline>

@@ -9,14 +9,14 @@ import Layout from "../../layouts/Layout.astro";
       <p class="desc">Tekanan, gaya, luas penampang (satuannya harus konsisten, mis. N & m² → Pa).</p>
       <div class="formula">P = F / A</div>
       <div class="fields cols-3">
-      <div class="field"><label for="p">Tekanan P</label><input id="p" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="f">Gaya F</label><input id="f" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="a">Area A</label><input id="a" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="p">Tekanan P <span>(Pa = N/m²)</span></label><input id="p" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="f">Gaya F <span>(N)</span></label><input id="f" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="a">Area A <span>(m²)</span></label><input id="a" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
       </div>
       <div class="actions">
         <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
         <button type="button" class="btn-reset" id="btn-reset">Reset</button>
         <p class="msg" id="msg" role="status"></p>
       </div>
-      <p class="hint">Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
+      <p class="hint"><strong>Satuan:</strong> gunakan satu sistem satuan yang konsisten pada semua kolom (sesuai label). Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
     </div>
   </div>
   <script is:inline>

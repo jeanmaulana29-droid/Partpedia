@@ -9,14 +9,14 @@ import Layout from "../../layouts/Layout.astro";
       <p class="desc">Cycle time (detik/pcs) ↔ production rate (pcs/jam). Faktor 3600 untuk jam.</p>
       <div class="formula">Rate = 3600 / Cycle · Cycle = 3600 / Rate</div>
       <div class="fields cols-2">
-      <div class="field"><label for="ct">Cycle time <span>(detik/pcs)</span></label><input id="ct" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="rate">Production rate <span>(pcs/jam)</span></label><input id="rate" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="ct">Cycle time <span>(s/pcs)</span></label><input id="ct" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="rate">Production rate <span>(pcs/jam)</span></label><input id="rate" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
       </div>
       <div class="actions">
         <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
         <button type="button" class="btn-reset" id="btn-reset">Reset</button>
         <p class="msg" id="msg" role="status"></p>
       </div>
-      <p class="hint">Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
+      <p class="hint"><strong>Satuan:</strong> gunakan satu sistem satuan yang konsisten pada semua kolom (sesuai label). Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
     </div>
   </div>
   <script is:inline>
