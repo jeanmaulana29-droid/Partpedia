@@ -1,0 +1,144 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout title="Yield · Scrap — Smart Tools · Partpedia" description="Persentase yield (baik) dan scrap dari jumlah total produksi.">
+  <div class="tool-page">
+    <a class="back" href="/tools/">← Semua Smart Tools</a>
+    <div class="tool-card">
+      <h1>Yield · Scrap</h1>
+      <p class="desc">Persentase yield (baik) dan scrap dari jumlah total produksi.</p>
+      <div class="formula">Yield% = Good/Total×100</div>
+      <div class="fields cols-2">
+      <div class="field"><label for="total">Total unit <span>(pcs)</span></label><input id="total" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="good">Good unit <span>(pcs)</span></label><input id="good" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="scrap">Scrap unit <span>(pcs)</span></label><input id="scrap" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="yp">Yield <span>(%)</span></label><input id="yp" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="sp">Scrap <span>(%)</span></label><input id="sp" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
+        <button type="button" class="btn-reset" id="btn-reset">Reset</button>
+        <p class="msg" id="msg" role="status"></p>
+      </div>
+      <p class="hint"><strong>Satuan:</strong> gunakan satuan pada label secara konsisten. Isi nilai yang diketahui, kosongkan yang dicari. Kolom hasil ditandai tosca. Isi minimal Total+Good, atau Good+Scrap, atau Total+Yield%.</p>
+    </div>
+  </div>
+  <script is:inline>
+
+  function parseNum(el) {
+    if (!el) return null;
+    let v = String(el.value||"").trim().replace(",", ".");
+    if (v === "") return null;
+    const n = Number(v);
+    return Number.isFinite(n) ? n : NaN;
+  }
+  function fmt(x) {
+    if (!Number.isFinite(x)) return "";
+    const a = Math.abs(x);
+    if (a !== 0 && (a < 1e-7 || a >= 1e10)) return x.toExponential(8);
+    return x.toFixed(10).replace(/\.?0+$/, "");
+  }
+  function clearComputed(ids) {
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      const field = el?.closest(".field");
+      field?.classList.remove("is-result");
+      if (el?.dataset.computed === "1") { el.value = ""; delete el.dataset.computed; }
+    });
+  }
+  function setResult(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.value = fmt(value);
+    el.dataset.computed = "1";
+    el.closest(".field")?.classList.add("is-result");
+  }
+  function wire(ids, compute) {
+    const msg = document.getElementById("msg");
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      el?.addEventListener("input", () => {
+        if (el.dataset.computed === "1") {
+          delete el.dataset.computed;
+          el.closest(".field")?.classList.remove("is-result");
+        } else {
+          clearComputed(ids);
+        }
+        const filled = ids.filter((i) => { const v = parseNum(document.getElementById(i)); return v !== null && !Number.isNaN(v); }).length;
+        if (filled >= 2) compute();
+        else if (msg) msg.textContent = "";
+      });
+      el?.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); compute(); } });
+    });
+    document.getElementById("btn-calc")?.addEventListener("click", compute);
+    document.getElementById("btn-reset")?.addEventListener("click", () => {
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) { el.value = ""; delete el.dataset.computed; }
+        el?.closest(".field")?.classList.remove("is-result");
+      });
+      if (msg) msg.textContent = "";
+    });
+  }
+
+    (function(){
+      const ids = ["total", "good", "scrap", "yp", "sp"];
+      const msg = document.getElementById("msg");
+      function compute() {
+        clearComputed(ids);
+        
+    let total=parseNum(document.getElementById("total"));
+    let good=parseNum(document.getElementById("good"));
+    let scrap=parseNum(document.getElementById("scrap"));
+    let yp=parseNum(document.getElementById("yp"));
+    let sp=parseNum(document.getElementById("sp"));
+    if ([total,good,scrap,yp,sp].some(x=>x!==null&&(Number.isNaN(x)||x<0))) { msg.textContent="Nilai harus ≥ 0"; return; }
+    if (total===null && good!==null && scrap!==null){ setResult("total", good+scrap); total=good+scrap; msg.textContent="Total = Good + Scrap"; }
+    if (scrap===null && total!==null && good!==null){ setResult("scrap", total-good); scrap=total-good; msg.textContent="Scrap = Total − Good"; }
+    if (good===null && total!==null && scrap!==null){ setResult("good", total-scrap); good=total-scrap; msg.textContent="Good = Total − Scrap"; }
+    if (yp===null && total!==null && total!==0 && good!==null){ setResult("yp", good/total*100); msg.textContent="Yield% = Good/Total×100"; }
+    if (sp===null && total!==null && total!==0 && scrap!==null){ setResult("sp", scrap/total*100); msg.textContent="Scrap% = Scrap/Total×100"; }
+    if (sp===null && yp!==null){ setResult("sp", 100-yp); msg.textContent="Scrap% = 100 − Yield%"; }
+    if (yp===null && sp!==null){ setResult("yp", 100-sp); msg.textContent="Yield% = 100 − Scrap%"; }
+    if (good===null && total!==null && yp!==null){ setResult("good", total*yp/100); msg.textContent="Good = Total×Yield%/100"; }
+    if (scrap===null && total!==null && sp!==null){ setResult("scrap", total*sp/100); msg.textContent="Scrap = Total×Scrap%/100"; }
+    if (!msg.textContent) msg.textContent="Isi kombinasi yang cukup";
+  
+      }
+      wire(ids, compute);
+    })();
+  </script>
+
+<style>
+  .tool-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 0 3rem; }
+  .back { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.88rem; color: var(--muted); text-decoration:none; margin-bottom:0.85rem; }
+  .back:hover { color: var(--amber); }
+  .tool-card {
+    border:1px solid var(--line); border-radius:22px; padding:1.25rem;
+    background: radial-gradient(120% 80% at 0% 0%, rgba(45,212,191,0.08), transparent 50%), var(--bg-card);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.2);
+  }
+  .tool-card h1 { margin:0 0 0.35rem; font-family: var(--font-display); font-size:1.45rem; }
+  .tool-card .desc { margin:0 0 1rem; color: var(--muted); font-size:0.92rem; line-height:1.5; }
+  .formula { display:inline-block; font-family: var(--font-mono); font-size:0.85rem; color: var(--amber);
+    border:1px solid rgba(240,164,58,0.35); background:rgba(240,164,58,0.08); padding:0.35rem 0.65rem; border-radius:999px; margin-bottom:1rem; }
+  .fields { display:grid; gap:0.75rem; }
+  @media(min-width:560px){ .fields.cols-2{ grid-template-columns:1fr 1fr;} .fields.cols-3{ grid-template-columns:1fr 1fr 1fr;} .fields.cols-4{ grid-template-columns:1fr 1fr;} }
+  .field { display:flex; flex-direction:column; gap:0.35rem; padding:0.75rem 0.85rem; border-radius:14px;
+    border:1px solid var(--line); background:rgba(0,0,0,0.22); transition: border-color .15s, background .15s, box-shadow .15s; }
+  .field label { font-size:0.8rem; font-weight:600; color: var(--ink); }
+  .field label span { font-weight:500; color: var(--muted); font-size:0.75rem; }
+  .field input { border:none; outline:none; background:transparent; color: var(--ink); font-size:1.25rem; font-weight:700; font-family: var(--font-mono); width:100%; }
+  .field.is-result { border-color: rgba(45,212,191,0.65); background: rgba(45,212,191,0.12); box-shadow:0 0 0 3px rgba(45,212,191,0.12); }
+  .field.is-result label { color: var(--teal); }
+  .actions { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; margin-top:1rem; }
+  .btn-calc { appearance:none; border:none; cursor:pointer; font-weight:800; padding:0.7rem 1.25rem; border-radius:999px;
+    background: linear-gradient(135deg,#2dd4bf,#14b8a6); color:#041016; }
+  .btn-reset { appearance:none; cursor:pointer; font-weight:600; padding:0.65rem 1.1rem; border-radius:999px;
+    background:transparent; border:1px solid var(--line); color: var(--ink); }
+  .msg { margin:0; font-size:0.86rem; color: var(--muted); }
+  .hint { margin-top:1rem; padding:0.75rem 0.9rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.03); font-size:0.84rem; color: var(--muted); line-height:1.45; }
+</style>
+
+</Layout>

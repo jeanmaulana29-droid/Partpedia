@@ -1,0 +1,137 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout title="Gaya Silinder — Smart Tools · Partpedia" description="Gaya dorong silinder hidrolik/pneumatik dari tekanan dan luas penampang piston.">
+  <div class="tool-page">
+    <a class="back" href="/tools/">← Semua Smart Tools</a>
+    <div class="tool-card">
+      <h1>Gaya Silinder</h1>
+      <p class="desc">Gaya dorong silinder hidrolik/pneumatik dari tekanan dan luas penampang piston.</p>
+      <div class="formula">F = P × A × 10</div>
+      <div class="fields cols-3">
+      <div class="field"><label for="p">Tekanan P <span>(bar)</span></label><input id="p" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="a">Luas piston A <span>(cm²)</span></label><input id="a" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="f">Gaya F <span>(N)</span></label><input id="f" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
+        <button type="button" class="btn-reset" id="btn-reset">Reset</button>
+        <p class="msg" id="msg" role="status"></p>
+      </div>
+      <p class="hint"><strong>Satuan:</strong> gunakan satuan pada label secara konsisten. Isi nilai yang diketahui, kosongkan yang dicari. Kolom hasil ditandai tosca. 1 bar × 1 cm² ≈ 10 N. A = π×(d/2)² dengan d dalam cm.</p>
+    </div>
+  </div>
+  <script is:inline>
+
+  function parseNum(el) {
+    if (!el) return null;
+    let v = String(el.value||"").trim().replace(",", ".");
+    if (v === "") return null;
+    const n = Number(v);
+    return Number.isFinite(n) ? n : NaN;
+  }
+  function fmt(x) {
+    if (!Number.isFinite(x)) return "";
+    const a = Math.abs(x);
+    if (a !== 0 && (a < 1e-7 || a >= 1e10)) return x.toExponential(8);
+    return x.toFixed(10).replace(/\.?0+$/, "");
+  }
+  function clearComputed(ids) {
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      const field = el?.closest(".field");
+      field?.classList.remove("is-result");
+      if (el?.dataset.computed === "1") { el.value = ""; delete el.dataset.computed; }
+    });
+  }
+  function setResult(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.value = fmt(value);
+    el.dataset.computed = "1";
+    el.closest(".field")?.classList.add("is-result");
+  }
+  function wire(ids, compute) {
+    const msg = document.getElementById("msg");
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      el?.addEventListener("input", () => {
+        if (el.dataset.computed === "1") {
+          delete el.dataset.computed;
+          el.closest(".field")?.classList.remove("is-result");
+        } else {
+          clearComputed(ids);
+        }
+        const filled = ids.filter((i) => { const v = parseNum(document.getElementById(i)); return v !== null && !Number.isNaN(v); }).length;
+        if (filled >= 2) compute();
+        else if (msg) msg.textContent = "";
+      });
+      el?.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); compute(); } });
+    });
+    document.getElementById("btn-calc")?.addEventListener("click", compute);
+    document.getElementById("btn-reset")?.addEventListener("click", () => {
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) { el.value = ""; delete el.dataset.computed; }
+        el?.closest(".field")?.classList.remove("is-result");
+      });
+      if (msg) msg.textContent = "";
+    });
+  }
+
+    (function(){
+      const ids = ["p", "a", "f"];
+      const msg = document.getElementById("msg");
+      function compute() {
+        clearComputed(ids);
+        
+    const p=parseNum(document.getElementById("p"));
+    const a=parseNum(document.getElementById("a"));
+    const f=parseNum(document.getElementById("f"));
+    if ([p,a,f].some(x=>x!==null&&(Number.isNaN(x)||x<0))) { msg.textContent="Nilai harus ≥ 0"; return; }
+    const n=[p,a,f].filter(x=>x!==null).length;
+    if(n<2){ msg.textContent="Isi 2 kolom"; return;}
+    if(n>2){ msg.textContent="Kosongkan 1 kolom"; return;}
+    // F(N) = P(bar) * A(cm²) * 10
+    if (f===null&&p!==null&&a!==null){ setResult("f", p*a*10); msg.textContent="F = P × A × 10"; }
+    else if (p===null&&f!==null&&a!==null){ if(a===0){msg.textContent="A tidak boleh 0";return;} setResult("p", f/(a*10)); msg.textContent="P = F / (A×10)"; }
+    else if (a===null&&f!==null&&p!==null){ if(p===0){msg.textContent="P tidak boleh 0";return;} setResult("a", f/(p*10)); msg.textContent="A = F / (P×10)"; }
+  
+      }
+      wire(ids, compute);
+    })();
+  </script>
+
+<style>
+  .tool-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 0 3rem; }
+  .back { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.88rem; color: var(--muted); text-decoration:none; margin-bottom:0.85rem; }
+  .back:hover { color: var(--amber); }
+  .tool-card {
+    border:1px solid var(--line); border-radius:22px; padding:1.25rem;
+    background: radial-gradient(120% 80% at 0% 0%, rgba(45,212,191,0.08), transparent 50%), var(--bg-card);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.2);
+  }
+  .tool-card h1 { margin:0 0 0.35rem; font-family: var(--font-display); font-size:1.45rem; }
+  .tool-card .desc { margin:0 0 1rem; color: var(--muted); font-size:0.92rem; line-height:1.5; }
+  .formula { display:inline-block; font-family: var(--font-mono); font-size:0.85rem; color: var(--amber);
+    border:1px solid rgba(240,164,58,0.35); background:rgba(240,164,58,0.08); padding:0.35rem 0.65rem; border-radius:999px; margin-bottom:1rem; }
+  .fields { display:grid; gap:0.75rem; }
+  @media(min-width:560px){ .fields.cols-2{ grid-template-columns:1fr 1fr;} .fields.cols-3{ grid-template-columns:1fr 1fr 1fr;} .fields.cols-4{ grid-template-columns:1fr 1fr;} }
+  .field { display:flex; flex-direction:column; gap:0.35rem; padding:0.75rem 0.85rem; border-radius:14px;
+    border:1px solid var(--line); background:rgba(0,0,0,0.22); transition: border-color .15s, background .15s, box-shadow .15s; }
+  .field label { font-size:0.8rem; font-weight:600; color: var(--ink); }
+  .field label span { font-weight:500; color: var(--muted); font-size:0.75rem; }
+  .field input { border:none; outline:none; background:transparent; color: var(--ink); font-size:1.25rem; font-weight:700; font-family: var(--font-mono); width:100%; }
+  .field.is-result { border-color: rgba(45,212,191,0.65); background: rgba(45,212,191,0.12); box-shadow:0 0 0 3px rgba(45,212,191,0.12); }
+  .field.is-result label { color: var(--teal); }
+  .actions { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; margin-top:1rem; }
+  .btn-calc { appearance:none; border:none; cursor:pointer; font-weight:800; padding:0.7rem 1.25rem; border-radius:999px;
+    background: linear-gradient(135deg,#2dd4bf,#14b8a6); color:#041016; }
+  .btn-reset { appearance:none; cursor:pointer; font-weight:600; padding:0.65rem 1.1rem; border-radius:999px;
+    background:transparent; border:1px solid var(--line); color: var(--ink); }
+  .msg { margin:0; font-size:0.86rem; color: var(--muted); }
+  .hint { margin-top:1rem; padding:0.75rem 0.9rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.03); font-size:0.84rem; color: var(--muted); line-height:1.45; }
+</style>
+
+</Layout>
