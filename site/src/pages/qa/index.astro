@@ -20,18 +20,71 @@ const items = loadAllQa();
         Kumpulan Q&amp;A praktis untuk maintenance, reliability, dan operasional manufaktur —
         dari bearing dan pompa hingga hidrolik, VFD, OEE, dan K3.
       </p>
-</header>
+    </header>
 
-    <div class="qa-list" role="list">
-      {items.map((it, i) => (
-        <a class="qa-card" href={`/qa/${it.slug}/`} role="listitem">
-          <span class="qa-num">{String(it.id || i + 1).padStart(2, "0")}</span>
-          <span class="qa-q">{it.question}</span>
-          <span class="qa-go" aria-hidden="true">→</span>
-        </a>
-      ))}
+    <div class="search-wrap">
+      <label class="sr-only" for="qa-search">Cari Q&amp;A</label>
+      <input
+        id="qa-search"
+        type="search"
+        placeholder="Cari kata atau kalimat dalam pertanyaan & jawaban…"
+        autocomplete="off"
+        aria-label="Cari Q dan A"
+      />
+      <p class="search-hint" id="qa-search-hint" hidden></p>
     </div>
+
+    <div class="qa-list" id="qa-list" role="list">
+      {items.map((it, i) => {
+        const blob = [it.question, it.answer, it.source, it.slug]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        return (
+          <a
+            class="qa-card"
+            href={`/qa/${it.slug}/`}
+            role="listitem"
+            data-search={blob}
+          >
+            <span class="qa-num">{String(it.id || i + 1).padStart(2, "0")}</span>
+            <span class="qa-q">{it.question}</span>
+            <span class="qa-go" aria-hidden="true">→</span>
+          </a>
+        );
+      })}
+    </div>
+    <p class="qa-empty" id="qa-empty" hidden>Tidak ada topik yang cocok. Coba kata kunci lain.</p>
   </section>
+
+  <script>
+    const input = document.getElementById("qa-search");
+    const rows = Array.from(document.querySelectorAll("#qa-list .qa-card"));
+    const empty = document.getElementById("qa-empty");
+    const hint = document.getElementById("qa-search-hint");
+
+    function apply() {
+      const q = (input?.value || "").toLowerCase().trim();
+      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+      let n = 0;
+      rows.forEach((row) => {
+        const hay = row.getAttribute("data-search") || "";
+        const ok = terms.length === 0 || terms.every((t) => hay.includes(t));
+        row.style.display = ok ? "" : "none";
+        if (ok) n++;
+      });
+      if (empty) empty.hidden = n !== 0;
+      if (hint) {
+        if (!q) {
+          hint.hidden = true;
+        } else {
+          hint.hidden = false;
+          hint.textContent = n === 0 ? "0 topik cocok" : `${n} topik cocok`;
+        }
+      }
+    }
+    input?.addEventListener("input", apply);
+  </script>
 
   <style>
     .qa-hub {
@@ -41,7 +94,7 @@ const items = loadAllQa();
     }
     .qa-head {
       text-align: center;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.25rem;
     }
     .qa-brand {
       display: inline-flex;
@@ -83,12 +136,36 @@ const items = loadAllQa();
       font-size: 1.02rem;
       line-height: 1.55;
     }
-    .count {
-      margin: 0.75rem 0 0;
-      font-size: 0.84rem;
-      color: var(--muted);
-      font-family: var(--font-mono);
+
+    .search-wrap { margin: 0 0 1.25rem; }
+    #qa-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.85rem 1.05rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      color: var(--ink);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
+    #qa-search::placeholder { color: var(--muted); }
+    #qa-search:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(240,164,58,0.18);
+    }
+    .search-hint {
+      margin: 0.45rem 0 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: left;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); border: 0;
+    }
+
     .qa-list {
       display: flex;
       flex-direction: column;
@@ -137,6 +214,12 @@ const items = loadAllQa();
       font-size: 1.15rem;
       color: var(--amber);
       opacity: 0.85;
+    }
+    .qa-empty {
+      margin: 1rem 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
     @media (max-width: 560px) {
       .qa-card {
