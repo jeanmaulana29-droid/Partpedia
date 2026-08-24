@@ -220,7 +220,7 @@ const catalog = shuffleCatalog(data);
         <textarea
           id="smart-query"
           rows="3"
-          placeholder="Contoh: bearing yang kuat untuk dinamo pompa air pada mesin rolling mill… atau seal oli gearbox mobil…"
+          placeholder="Contoh: mau beli bearing 6205… | SKF habis, equivalent NSK/NTN? | bearing dinamo pompa rolling mill… | seal oli gearbox…"
           aria-label="Deskripsi sparepart yang dicari"
         ></textarea>
         <button type="button" class="smart-clear" id="smart-clear" title="Hapus semua teks" aria-label="Hapus semua teks" hidden>×</button>
@@ -367,6 +367,7 @@ const catalog = shuffleCatalog(data);
       line-height: 1.3;
       color: var(--ink);
     }
+    .smart-card .eq-line { color: var(--teal); font-size: 0.8rem; margin: 0.15rem 0 0.25rem; }
     .smart-card .meta {
       margin: 0;
       color: var(--muted);
@@ -786,7 +787,7 @@ const catalog = shuffleCatalog(data);
 
     
     
-    // —— Smart Find (deskripsi natural language, tanpa API berbayar) ——
+    // —— Smart Find (natural language + cross-ref / equivalent) ——
     (function () {
       const ta = document.getElementById("smart-query");
       const btn = document.getElementById("smart-submit");
@@ -796,39 +797,66 @@ const catalog = shuffleCatalog(data);
       if (!ta || !btn || !box) return;
 
       const SYNONYMS = {
-        bearing: ["bearing", "bantalan", "ball bearing", "roller"],
-        bantalan: ["bearing", "bantalan"],
+        bearing: ["bearing", "bantalan", "ball bearing", "roller", "bantalan bola"],
+        bantalan: ["bearing", "bantalan", "ball bearing"],
         dinamo: ["dinamo", "motor listrik", "motor"],
         pompa: ["pompa", "pump", "pompa air"],
-        seal: ["seal", "oil seal", "packing"],
+        seal: ["seal", "oil seal", "packing", "sealing"],
         belt: ["v-belt", "belt", "sabuk", "fan belt"],
         "v-belt": ["v-belt", "sabuk", "belt"],
-        gearbox: ["gearbox", "reducer", "gear reducer"],
+        gearbox: ["gearbox", "reducer", "gear reducer", "nmrv"],
         hidrolik: ["hidrolik", "hydraulic", "selang hidrolik"],
         pneumatik: ["pneumatik", "pneumatic", "silinder"],
         sensor: ["sensor", "proximity", "photoelectric"],
         inverter: ["inverter", "vfd", "variable frequency"],
         mobil: ["mobil", "kendaraan", "otomotif"],
-        motor: ["motor", "sepeda motor", "kendaraan"],
+        motor: ["motor", "sepeda motor", "kendaraan", "motor listrik"],
         traktor: ["traktor", "pertanian", "alat pertanian"],
         konveyor: ["konveyor", "conveyor"],
         kontaktor: ["kontaktor", "contactor"],
         filter: ["filter", "saringan"],
-        baut: ["baut", "mur", "fastener", "hex"],
+        baut: ["baut", "mur", "fastener", "hex", "washer"],
         suhu: ["suhu", "temperature", "pt100", "rtd", "thermocouple"],
         tekanan: ["tekanan", "pressure", "gauge"],
         rantai: ["rantai", "chain", "sprocket"],
         kopling: ["kopling", "coupling"],
-        valve: ["valve", "katup"],
+        valve: ["valve", "katup", "solenoid"],
         plc: ["plc", "otomasi", "kontrol"],
+        silinder: ["silinder", "cylinder", "pneumatic"],
+        equivalent: ["equivalent", "ekuivalen", "setara", "pengganti", "ganti", "alternatif", "cross", "crossref", "interchange"],
+        beli: ["beli", "membeli", "butuh", "cari", "mau", "ingin", "perlu", "order", "purchase", "buy"],
+        rusak: ["rusak", "aus", "pecah", "macet", "ganti", "replacement", "broken", "worn"],
+        dimensi: ["dimensi", "ukuran", "bore", "od", "tebal", "size", "diameter", "mm", "sama"],
       };
+
+      const BRANDS = ["skf","nsk","ntn","fag","ina","koyo","nachi","timken","asahi","fyh","nok","gates","optibelt","bando","smc","festo","airtac","schneider","abb","siemens","mitsubishi","omron","wika","hiwin","thk","tsubaki","kana","parker","yuken","delta","inovance"];
 
       function tokens(text) {
         return String(text || "")
           .toLowerCase()
-          .replace(/[^a-z0-9à-ÿ.\-\s]/gi, " ")
+          .replace(/[^a-z0-9à-ÿ.\-\/\s×x]/gi, " ")
           .split(/\s+/)
           .filter((t) => t.length >= 2);
+      }
+
+      function extractCodes(text) {
+        const t = String(text || "").toUpperCase();
+        const found = new Set();
+        // 6205-2RS, 6205, UCP204, LC1D09, NMRV-040, A-42, 40-15T, etc.
+        const patterns = [
+          /\b\d{4}[- ]?(?:2RS1?|2RSR|ZZ|2Z|RS|DDU|LLU|LLB|2NSE)?\b/g,
+          /\bUC[A-Z]{0,2}\d{3,4}\b/g,
+          /\bLC1D\d{2,3}\b/g,
+          /\bNMRV[- ]?\d{2,3}\b/g,
+          /\b(?:RS)?\d{2,3}(?:-\d)?\b/g,
+          /\b\d{2,3}-\d{1,3}T\b/g,
+          /\b[A-Z]{1,3}[-]?\d{2,4}\b/g,
+        ];
+        patterns.forEach((re) => {
+          const m = t.match(re);
+          if (m) m.forEach((x) => found.add(x.replace(/\s+/g, "")));
+        });
+        return [...found].map((x) => x.toLowerCase());
       }
 
       function expand(terms) {
@@ -845,22 +873,97 @@ const catalog = shuffleCatalog(data);
         return [...out];
       }
 
-      function score(item, expanded, rawTerms) {
-        const blob = item.search_blob || "";
+      function detectIntent(q, terms) {
+        const s = q.toLowerCase();
+        return {
+          wantBuy: /beli|membeli|butuh|mau |ingin|perlu|order|purchase|buy|cari/.test(s),
+          wantEquiv: /equivalent|ekuivalen|setara|pengganti|ganti|alternatif|cross|interchange|habis|tidak punya|ga ada|nggak ada|vendor/.test(s),
+          wantDim: /dimensi|ukuran|bore| diameter|od |tebal|size|sama ukuran|dimensi sama/.test(s),
+          brands: BRANDS.filter((b) => s.includes(b)),
+          categoryHint: null,
+        };
+      }
+
+      function eqBlob(item) {
+        const eq = item.equivalent_codes || [];
+        const parts = eq.map((x) => {
+          if (typeof x === "string") return x;
+          return `${x.brand || ""} ${x.code || ""}`;
+        });
+        parts.push(item.alternative_parts || "");
+        return parts.join(" ").toLowerCase();
+      }
+
+      function score(item, expanded, rawTerms, codes, intent) {
+        const blob = (item.search_blob || "").toLowerCase();
         const tags = (item.application_tags || []).join(" ").toLowerCase();
+        const pn = (item.part_number || "").toLowerCase().replace(/\s+/g, "");
+        const name = (item.part_name || "").toLowerCase();
+        const cat = (item.category || "").toLowerCase();
+        const eq = eqBlob(item);
+        const size = (item.size || item.specification || "").toLowerCase();
         let s = 0;
+
+        // Direct part-number / code match (highest)
+        codes.forEach((c) => {
+          const c2 = c.replace(/-/g, "");
+          if (pn.includes(c) || pn.replace(/-/g, "").includes(c2)) s += 28;
+          if (eq.includes(c) || eq.replace(/-/g, "").includes(c2)) s += 26;
+          if (name.includes(c)) s += 12;
+          if (blob.includes(c)) s += 8;
+        });
+
         expanded.forEach((t) => {
+          if (t.length < 2) return;
           if (blob.includes(t)) s += 2;
           if (tags.includes(t)) s += 3;
-          if ((item.category || "").toLowerCase().includes(t)) s += 2;
-          if ((item.part_number || "").toLowerCase().includes(t)) s += 4;
-          if ((item.part_name || "").toLowerCase().includes(t)) s += 3;
+          if (cat.includes(t)) s += 4;
+          if (pn.includes(t)) s += 6;
+          if (name.includes(t)) s += 4;
+          if (eq.includes(t)) s += 5;
+          if (size.includes(t)) s += 3;
         });
+
         let hits = 0;
         rawTerms.forEach((t) => {
-          if (blob.includes(t)) hits++;
+          if (blob.includes(t) || eq.includes(t) || tags.includes(t)) hits++;
         });
         s += hits * 2;
+
+        // Intent boosts
+        if (intent.wantEquiv) {
+          if ((item.equivalent_codes || []).length) s += 6;
+          intent.brands.forEach((b) => {
+            if (eq.includes(b) || (item.brand || "").toLowerCase().includes(b)) s += 8;
+          });
+        }
+        if (intent.wantDim && size) s += 3;
+        if (intent.wantBuy && cat) s += 1;
+
+        // Category keyword soft boost when query is broad ("mau beli bearing")
+        const catMap = {
+          bearing: "bearing",
+          bantalan: "bearing",
+          seal: "seal",
+          "v-belt": "v-belt",
+          sabuk: "v-belt",
+          sprocket: "sprocket",
+          rantai: "rantai",
+          kontaktor: "contactor",
+          contactor: "contactor",
+          inverter: "inverter",
+          vfd: "inverter",
+          sensor: "sensor",
+          filter: "filter",
+          kopling: "kopling",
+          valve: "valve",
+          silinder: "pneumatic",
+          hidrolik: "hidrolik",
+        };
+        Object.keys(catMap).forEach((k) => {
+          if (rawTerms.some((t) => t === k || t.includes(k)) && cat.includes(catMap[k])) s += 10;
+        });
+
         return s;
       }
 
@@ -892,7 +995,7 @@ const catalog = shuffleCatalog(data);
       let catalog = null;
       async function loadCatalog() {
         if (catalog) return catalog;
-        const res = await fetch("/smart-catalog.json", { cache: "force-cache" });
+        const res = await fetch("/smart-catalog.json", { cache: "no-cache" });
         catalog = await res.json();
         return catalog;
       }
@@ -905,11 +1008,21 @@ const catalog = shuffleCatalog(data);
           .replace(/"/g, "&quot;");
       }
 
+      function formatEq(item) {
+        const eq = item.equivalent_codes || [];
+        if (!eq.length) return "";
+        const bits = eq.slice(0, 4).map((x) => {
+          if (typeof x === "string") return x;
+          return `${x.brand || ""} ${x.code || ""}`.trim();
+        });
+        return bits.filter(Boolean).join(" · ");
+      }
+
       async function run() {
         const q = (ta.value || "").trim();
-        if (q.length < 4) {
+        if (q.length < 3) {
           box.hidden = false;
-          box.innerHTML = `<p class="smart-empty">Tulis deskripsi minimal beberapa kata agar hasil lebih akurat.</p>`;
+          box.innerHTML = `<p class="smart-empty">Tulis minimal beberapa kata, kode part, atau jenis part (bearing, seal…).</p>`;
           if (status) status.textContent = "";
           return;
         }
@@ -919,25 +1032,26 @@ const catalog = shuffleCatalog(data);
           const list = await loadCatalog();
           const rawTerms = tokens(q);
           const expanded = expand(rawTerms);
+          const codes = extractCodes(q);
+          const intent = detectIntent(q, rawTerms);
+
           const ranked = list
-            .map((item) => ({ item, s: score(item, expanded, rawTerms) }))
+            .map((item) => ({ item, s: score(item, expanded, rawTerms, codes, intent) }))
             .filter((x) => x.s > 0)
             .sort((a, b) => b.s - a.s);
 
-          // Ambang dinamis: ambil yang skornya cukup dekat dengan terbaik
-          // Jumlah hasil mengikuti kualitas kecocokan (bukan selalu 12)
           if (!ranked.length) {
             box.hidden = false;
-            box.innerHTML = `<p class="smart-empty">Belum ketemu yang cocok. Coba sebutkan jenis part (bearing, seal, V-belt…), mesin, atau kode part.</p>`;
+            box.innerHTML = `<p class="smart-empty">Belum ketemu yang cocok. Coba sebutkan jenis part, kode (mis. 6205-2RS), merek setara, atau dimensi.</p>`;
             if (status) status.textContent = "0 hasil";
           } else {
-            // Hanya 1–3 teratas yang paling mendekati
             const best = ranked[0].s;
-            const minScore = Math.max(6, Math.floor(best * 0.72));
-            let picked = ranked.filter((x) => x.s >= minScore).slice(0, 3);
+            // equivalent / code queries → tampilkan lebih banyak (sampai 5)
+            const maxN = intent.wantEquiv || codes.length ? 5 : 3;
+            const minScore = Math.max(4, Math.floor(best * 0.55));
+            let picked = ranked.filter((x) => x.s >= minScore).slice(0, maxN);
             if (!picked.length) picked = ranked.slice(0, 1);
-            // jika runner-up jauh di bawah best, cukup 1 hasil
-            if (picked.length > 1 && picked[1].s < best * 0.55) picked = picked.slice(0, 1);
+            if (picked.length > 1 && picked[1].s < best * 0.4) picked = picked.slice(0, 1);
 
             if (status) status.textContent = `${picked.length} rekomendasi terbaik`;
             box.hidden = false;
@@ -948,10 +1062,15 @@ const catalog = shuffleCatalog(data);
                   .slice(0, 5)
                   .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
                   .join("");
+                const eqLine = formatEq(item);
+                const eqHtml = eqLine
+                  ? `<p class="meta eq-line">Setara: ${escapeHtml(eqLine)}</p>`
+                  : "";
                 return `<a class="smart-card" href="/sparepart/${escapeHtml(item.slug)}/">
                   <div>
                     <h3>${escapeHtml(item.part_name || item.part_number)}</h3>
                     <p class="meta">${escapeHtml(item.part_number || "")} · ${escapeHtml(item.category || "")} · ${escapeHtml(item.brand || "")}</p>
+                    ${eqHtml}
                     <div class="tags">${tags}</div>
                   </div>
                   <div class="price">${escapeHtml(item.price_range || "")}</div>
@@ -971,7 +1090,6 @@ const catalog = shuffleCatalog(data);
       btn.addEventListener("click", run);
       clearBtn?.addEventListener("click", clearAll);
 
-      // Enter = cari; Shift+Enter = baris baru
       ta.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !e.shiftKey) {
           e.preventDefault();
@@ -989,7 +1107,8 @@ const catalog = shuffleCatalog(data);
       syncClearBtn();
     })();
 
-    // Search / filter — category chip = exact data-category (bukan text search)
+    
+// Search / filter — category chip = exact data-category (bukan text search)
     const input = document.getElementById("search") as HTMLInputElement | null;
     const cards = Array.from(document.querySelectorAll<HTMLElement>("#results .card"));
     const empty = document.getElementById("empty-state");
