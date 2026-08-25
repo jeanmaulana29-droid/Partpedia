@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import AdSlot from "../../components/AdSlot.astro";
 import PartPlate from "../../components/PartPlate.astro";
 import Badge from "../../components/Badge.astro";
 import EquivalentCodes from "../../components/EquivalentCodes.astro";
@@ -128,10 +127,7 @@ const jsonLd = {
           </div>
         )}
       </div>
-
-      <AdSlot slotId="slot-detail-atas" />
-
-      <div class="info-cards">
+<div class="info-cards">
         {entry.fungsi && (
           <article class="info-card">
             <h2>Fungsi</h2>
@@ -186,12 +182,8 @@ const jsonLd = {
           Beli di Shopee →
         </a>
       </div>
-<AdSlot slotId="slot-detail-tengah" />
 
-
-      <AdSlot slotId="slot-detail-bawah" />
-
-      {
+{
         relatedEntries.length > 0 && (
           <section class="related">
             <h2 class="section-title">Sparepart Terkait — {entry.category}</h2>
