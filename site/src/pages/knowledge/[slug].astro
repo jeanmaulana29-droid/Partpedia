@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import AdSlot from "../../components/AdSlot.astro";
 import { loadAllArticles } from "../../utils/loadArticles.js";
 
 export async function getStaticPaths() {
@@ -39,7 +38,9 @@ const midAt = Math.max(1, Math.floor(blocks.length / 2));
 
     <p class="mag-kicker">Wawasan Industri</p>
     <h1 class="mag-title">{article.title}</h1>
-    <p class="mag-deck">{article.excerpt}</p>
+    {article.showDeck && article.excerpt ? (
+      <p class="mag-deck">{article.excerpt}</p>
+    ) : null}
 
     <!-- Gambar 1: utama (hero) — upload: public/articles/{slug}.jpg -->
     <div class="mag-hero">
@@ -51,10 +52,7 @@ const midAt = Math.max(1, Math.floor(blocks.length / 2));
         onerror={`this.onerror=null;this.src='${article.imageFallback}'`}
       />
     </div>
-
-    <AdSlot slotId="article-top" />
-
-    <div class="mag-body">
+<div class="mag-body">
       {blocks.map((p, i) => {
         const nodes = [];
         if (i === midAt) {
@@ -85,16 +83,11 @@ const midAt = Math.max(1, Math.floor(blocks.length / 2));
         return nodes;
       })}
     </div>
-
-    <AdSlot slotId="article-mid" />
-
-    <footer class="mag-foot">
+<footer class="mag-foot">
       <a href="/knowledge/">← Semua wawasan</a>
       <a href="/">Jelajahi katalog →</a>
     </footer>
-
-    <AdSlot slotId="article-bottom" />
-  </div>
+</div>
 
   <style>
     .mag { max-width: 720px; margin: 0 auto; padding: 1.25rem 0 3rem; }
