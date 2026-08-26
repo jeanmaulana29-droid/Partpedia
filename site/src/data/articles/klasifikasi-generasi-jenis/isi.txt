@@ -1,0 +1,1318 @@
+KLASIFIKASI GENERASI REVOLUSI INDUSTRI: DARI TENAGA UAP, LISTRIK, KOMPUTER, HINGGA INDUSTRI CERDAS
+
+Kalau kita melihat sebuah pabrik modern yang dipenuhi robot, sensor, layar monitoring, conveyor otomatis, sistem produksi yang saling terhubung, dan komputer yang mampu membaca data mesin secara real time, mudah sekali menganggap dunia industri memang sejak awal berkembang seperti itu.
+
+Padahal tidak.
+
+Pabrik modern adalah hasil dari perjalanan yang sangat panjang. Mesin yang sekarang dapat dikendalikan komputer merupakan kelanjutan dari perubahan yang dimulai ketika manusia mulai mengganti tenaga otot dengan tenaga mekanis. Setelah itu muncul listrik, produksi massal, elektronik, komputer, internet, kecerdasan buatan, robotika, dan sistem yang mampu menghubungkan dunia fisik dengan dunia digital.
+
+Karena perubahan tersebut berlangsung bertahap, sejarah industri biasanya dikelompokkan ke dalam beberapa generasi besar. Pembagian yang paling populer adalah Industri 1.0, Industri 2.0, Industri 3.0, dan Industri 4.0. Istilah Industri 5.0 juga semakin banyak digunakan, tetapi statusnya berbeda dengan empat generasi sebelumnya dan tidak tepat jika dianggap sekadar “bab kelima” yang secara resmi sudah menggantikan Industri 4.0.
+
+Itulah bagian yang sering membingungkan.
+
+Seseorang bisa mengatakan bahwa sekarang kita sudah berada di Industri 5.0. Orang lain mengatakan dunia masih berada di Industri 4.0. Keduanya bisa mempunyai dasar, tergantung konteks yang digunakan.
+
+Agar tidak salah memahami istilah tersebut, kita perlu melihat setiap generasi dari teknologi utamanya, sumber energinya, cara produksi, peran manusia, jenis mesin, sistem kontrol, sampai perubahan bisnis yang ditimbulkannya.
+
+APA SEBENARNYA YANG DIMAKSUD DENGAN “GENERASI” REVOLUSI INDUSTRI?
+
+Klasifikasi generasi revolusi industri bukan pembagian seperti generasi manusia yang mempunyai tanggal lahir dan tanggal pensiun yang pasti.
+
+Tidak ada satu pagi tertentu ketika dunia bangun lalu tiba-tiba berubah dari Industri 2.0 menjadi Industri 3.0.
+
+Perubahan industri berlangsung secara bertahap.
+
+Teknologi baru muncul, kemudian dipakai oleh sebagian perusahaan, menyebar ke sektor lain, menjadi semakin murah, lalu mengubah cara produksi. Pada saat yang sama, teknologi generasi sebelumnya tidak langsung menghilang.
+
+Itulah sebabnya sebuah negara bisa memiliki pabrik yang menggunakan teknologi Industri 2.0, Industri 3.0, dan Industri 4.0 pada waktu yang sama.
+
+Bahkan dalam satu perusahaan, kondisi tersebut sangat mungkin terjadi.
+
+Sebuah motor listrik bisa menggerakkan mesin yang secara mekanis sudah berumur puluhan tahun. Mesin tersebut mungkin dikendalikan oleh panel kontrol lama, sementara data produksinya dikirim ke server modern. Dengan demikian, teknologi lama dan teknologi baru hidup berdampingan.
+
+Jadi, klasifikasi ini lebih tepat dipahami sebagai cara untuk menjelaskan lompatan besar dalam teknologi produksi.
+
+EMPAT GENERASI UTAMA YANG PALING BANYAK DIGUNAKAN
+
+Secara sederhana, klasifikasinya dapat digambarkan seperti ini:
+
+Industri 1.0 = mekanisasi menggunakan tenaga air dan uap.
+
+Industri 2.0 = elektrifikasi, produksi massal, dan lini perakitan.
+
+Industri 3.0 = elektronik, komputer, dan otomatisasi.
+
+Industri 4.0 = konektivitas, data, sistem siber-fisik, AI, IoT, dan pabrik cerdas.
+
+Kemudian muncul istilah Industri 5.0 yang menambahkan penekanan pada manusia, keberlanjutan, dan ketahanan industri.
+
+Namun jangan berhenti pada daftar tersebut.
+
+Setiap generasi mempunyai masalah yang ingin diselesaikan oleh teknologi pada zamannya.
+
+Industri 1.0 berusaha memperbesar tenaga produksi.
+
+Industri 2.0 berusaha memperbesar skala dan kecepatan produksi.
+
+Industri 3.0 berusaha mengotomatisasi pengendalian proses.
+
+Industri 4.0 berusaha membuat mesin, produk, manusia, dan sistem informasi saling terhubung.
+
+Sementara konsep Industri 5.0 menempatkan teknologi tersebut dalam tujuan yang lebih luas: industri yang berpusat pada manusia, berkelanjutan, dan tahan terhadap gangguan.
+
+INDUSTRI 1.0 — KETIKA MESIN MULAI MENGGANTIKAN TENAGA OTOT
+
+Revolusi industri pertama biasanya ditempatkan pada akhir abad ke-18 dan berkembang dari Inggris. Perubahannya sangat berkaitan dengan mekanisasi, terutama penggunaan tenaga air dan kemudian tenaga uap untuk menjalankan mesin.
+
+Sebelum periode tersebut, sebagian besar produksi dilakukan dengan tangan atau menggunakan alat sederhana yang digerakkan manusia, hewan, angin, atau air.
+
+Banyak kegiatan manufaktur masih berlangsung dalam skala kecil.
+
+Seorang pengrajin membuat produk.
+
+Satu keluarga mengerjakan tekstil.
+
+Pekerjaan dilakukan dengan keterampilan tangan yang diwariskan.
+
+Produktivitas sangat tergantung pada tenaga manusia, kemampuan pengrajin, waktu kerja, dan kondisi alam.
+
+Kemudian mesin mulai mengubah persamaan tersebut.
+
+TENAGA AIR MENJADI SALAH SATU PENDORONG AWAL
+
+Sebelum uap mendominasi, tenaga air mempunyai peran penting dalam mekanisasi.
+
+Roda air dapat menggerakkan berbagai mesin.
+
+Masalahnya jelas.
+
+Pabrik yang membutuhkan tenaga air harus berada dekat sumber air yang sesuai.
+
+Artinya lokasi produksi dibatasi oleh kondisi geografis.
+
+Kemudian tenaga uap memberikan kemungkinan yang jauh lebih besar.
+
+Mesin tidak harus selalu bergantung pada aliran sungai.
+
+Penggunaan mesin uap berkembang dari kebutuhan pertambangan dan kemudian masuk ke berbagai aktivitas industri.
+
+Perbaikan terhadap mesin uap oleh James Watt menjadi salah satu perkembangan penting dalam sejarah mekanisasi, meskipun tentu saja Revolusi Industri bukan hasil penemuan satu orang saja. Banyak penemu, insinyur, pengusaha, pekerja, dan pengembang mesin berkontribusi terhadap perubahan tersebut.
+
+Literatur sejarah teknologi juga menunjukkan bahwa tenaga air tetap sangat penting selama sebagian periode awal industrialisasi. Jadi gambaran bahwa semua industri tiba-tiba digerakkan uap adalah penyederhanaan sejarah.
+
+APA YANG BERUBAH PADA INDUSTRI 1.0?
+
+Perubahan terbesarnya adalah kemampuan manusia menghasilkan tenaga mekanis dalam skala yang jauh lebih besar.
+
+Mesin dapat:
+
+memintal serat;
+
+menenun;
+
+memompa air;
+
+menggerakkan mesin;
+
+mengolah material;
+
+dan kemudian mendukung transportasi.
+
+Pabrik menjadi semakin penting.
+
+Produksi mulai bergeser dari sistem pengrajin dan rumah tangga menuju sistem manufaktur terpusat.
+
+Output meningkat.
+
+Kecepatan produksi meningkat.
+
+Kebutuhan terhadap mesin dan machine tools meningkat.
+
+Kebutuhan terhadap batu bara dan besi juga berkembang.
+
+Menurut kajian sejarah ekonomi dan teknologi, mekanisasi berbasis air dan uap merupakan ciri utama fase pertama, dengan mesin uap, sistem pabrik, tekstil, batu bara, kereta api, kapal uap, dan machine tools menjadi bagian penting dari transformasinya.
+
+INDUSTRI 1.0 BUKAN SEKADAR TENTANG MESIN UAP
+
+Ini penting.
+
+Kalau Industri 1.0 hanya didefinisikan sebagai “zaman mesin uap”, pemahamannya menjadi terlalu sempit.
+
+Inti perubahan sebenarnya adalah mekanisasi.
+
+Manusia mulai membangun sistem produksi yang menggunakan sumber energi mekanis untuk melakukan pekerjaan yang sebelumnya dilakukan oleh tenaga manusia atau hewan.
+
+Mesin menjadi pengganda tenaga.
+
+Seorang operator tidak lagi hanya mengandalkan kekuatan tubuhnya.
+
+Ia mengendalikan mesin.
+
+Ini merupakan perubahan besar dalam hubungan manusia dengan pekerjaan.
+
+DAMPAK INDUSTRI 1.0 TERHADAP PEKERJA
+
+Perubahan tersebut membawa dua sisi.
+
+Di satu sisi, produksi meningkat dan harga berbagai barang dapat menjadi lebih terjangkau.
+
+Di sisi lain, pekerjaan berubah drastis.
+
+Pekerja pabrik harus mengikuti ritme mesin.
+
+Jam kerja menjadi lebih terstruktur.
+
+Keterampilan tertentu kehilangan sebagian nilainya karena pekerjaan dapat dipecah dan dilakukan dengan mesin.
+
+Pada saat yang sama, pekerjaan baru muncul untuk mengoperasikan, merawat, dan membuat mesin.
+
+Jadi sejak generasi pertama saja sudah terlihat pola yang terus berulang sampai sekarang:
+
+teknologi menghilangkan sebagian tugas, tetapi menciptakan kebutuhan baru.
+
+INDUSTRI 2.0 — KETIKA LISTRIK MENGUBAH SKALA PRODUKSI
+
+Generasi kedua memiliki karakter yang berbeda.
+
+Jika Industri 1.0 identik dengan mekanisasi dan tenaga uap, Industri 2.0 sangat berkaitan dengan listrik, produksi massal, mesin yang lebih presisi, komunikasi modern, dan organisasi produksi dalam skala besar.
+
+Periode ini berkembang terutama pada akhir abad ke-19 dan awal abad ke-20.
+
+Elektrifikasi menjadi salah satu perubahan fundamental.
+
+Mengapa listrik begitu penting?
+
+Karena listrik membuat tenaga dapat didistribusikan dengan lebih fleksibel.
+
+Mesin tidak lagi harus bergantung pada satu sumber tenaga mekanis utama seperti shaft line yang panjang.
+
+Motor listrik dapat ditempatkan dekat mesin.
+
+Sebuah mesin dapat memiliki motor sendiri.
+
+Layout pabrik menjadi lebih fleksibel.
+
+KEKUATAN SEBENARNYA BUKAN HANYA LISTRIK
+
+Listrik membuka pintu, tetapi yang mengubah industri adalah kombinasi beberapa teknologi.
+
+Motor listrik.
+
+Generator.
+
+Mesin pembakaran internal.
+
+Telepon.
+
+Telegraf.
+
+Baja dalam skala besar.
+
+Mesin perkakas yang semakin presisi.
+
+Bahan kimia.
+
+Sistem transportasi.
+
+Dan yang sangat penting:
+
+produksi massal.
+
+Oxford Academic mencatat bahwa pembagian revolusi industri yang umum digunakan menempatkan elektrifikasi dan motorisasi sebagai bagian penting dari revolusi kedua, sementara produksi massal menjadi salah satu karakter utamanya.
+
+DARI PRODUK SATUAN MENUJU PRODUK MASSAL
+
+Bayangkan sebuah produk dibuat satu per satu.
+
+Seorang pekerja mengambil semua komponen.
+
+Ia memasang bagian pertama.
+
+Kemudian bagian kedua.
+
+Kemudian bagian ketiga.
+
+Jika produk tersebut semakin kompleks, waktu produksi juga semakin lama.
+
+Produksi massal mengubah pendekatan tersebut.
+
+Pekerjaan dipecah.
+
+Setiap stasiun melakukan tugas tertentu.
+
+Material bergerak dari satu stasiun ke stasiun berikutnya.
+
+Pekerja menjadi sangat spesifik pada tugasnya.
+
+Mesin dapat dirancang untuk melakukan langkah yang sama berulang-ulang.
+
+Inilah dasar dari assembly line.
+
+Henry Ford kemudian menjadi salah satu nama paling terkenal dalam penerapan produksi massal pada industri otomotif, meskipun perkembangan lini produksi sendiri merupakan hasil dari sejarah teknologi dan manajemen yang lebih panjang.
+
+MENGAPA ASSEMBLY LINE SANGAT REVOLUSIONER?
+
+Karena produksi tidak lagi hanya bergantung pada seberapa cepat seseorang dapat membuat satu produk.
+
+Yang dioptimalkan adalah aliran.
+
+Jika satu stasiun dapat menyelesaikan pekerjaannya dalam 30 detik, stasiun berikutnya juga harus memiliki kapasitas yang seimbang.
+
+Muncullah konsep cycle time.
+
+Balance line.
+
+Standard work.
+
+Flow.
+
+Takt time.
+
+Layout produksi.
+
+Material handling.
+
+Semua konsep tersebut kemudian menjadi fondasi teknik industri modern.
+
+INDUSTRI 2.0 MELAHIRKAN PABRIK DALAM SKALA YANG BERBEDA
+
+Pabrik menjadi semakin besar.
+
+Investasi mesin meningkat.
+
+Perusahaan membutuhkan supply chain.
+
+Bahan baku harus datang secara konsisten.
+
+Produk harus dikirim dalam jumlah besar.
+
+Maintenance menjadi semakin penting.
+
+Quality control menjadi semakin terstruktur.
+
+Manajemen produksi berkembang menjadi disiplin tersendiri.
+
+Kalau Industri 1.0 membuat mesin menjadi pusat produksi, Industri 2.0 membuat sistem produksi menjadi semakin terorganisasi.
+
+DAMPAK TERHADAP PEKERJA
+
+Pekerjaan menjadi lebih terspesialisasi.
+
+Seorang pekerja mungkin hanya melakukan satu bagian kecil dari keseluruhan proses.
+
+Produktivitas per pekerja meningkat.
+
+Tetapi pekerjaan dapat menjadi repetitif.
+
+OECD mencatat bahwa produksi massal dan pembagian kerja yang semakin terstruktur juga membawa proses routinisasi pekerjaan dan perubahan keterampilan tenaga kerja.
+
+Inilah salah satu paradoks industrialisasi.
+
+Semakin besar kemampuan produksi, semakin besar pula kebutuhan untuk mengatur manusia sebagai bagian dari sistem produksi.
+
+INDUSTRI 3.0 — KETIKA ELEKTRONIK DAN KOMPUTER MASUK KE PABRIK
+
+Kemudian datang perubahan yang sangat berbeda.
+
+Mesin tidak hanya membutuhkan tenaga.
+
+Mesin membutuhkan “otak”.
+
+Perkembangan elektronik, semikonduktor, komputer, programmable logic controller, sensor, robot industri, dan sistem kontrol mulai mengubah cara mesin beroperasi.
+
+Inilah yang biasanya disebut sebagai Industri 3.0 atau revolusi digital.
+
+OECD menggambarkan revolusi industri ketiga sebagai fase yang didorong oleh pengenalan, pengembangan, dan penyebaran komputer, dengan perkembangan semikonduktor, komputer pribadi, internet, dan teknologi digital yang mengubah struktur ekonomi serta pekerjaan.
+
+DARI OPERATOR KE SISTEM KONTROL
+
+Pada sistem lama, operator harus melakukan banyak tindakan secara manual.
+
+Tekan tombol.
+
+Buka valve.
+
+Tutup valve.
+
+Periksa temperatur.
+
+Periksa tekanan.
+
+Pindahkan material.
+
+Nyalakan motor.
+
+Matikan motor.
+
+Dengan kontrol elektronik, sebagian tindakan tersebut dapat dilakukan otomatis.
+
+Sensor membaca kondisi.
+
+Controller mengambil keputusan berdasarkan logic.
+
+Actuator menjalankan perintah.
+
+Operator mengawasi sistem.
+
+Inilah konsep dasar otomatisasi.
+
+PLC MENJADI SALAH SATU “OTAK” PENTING PABRIK
+
+Programmable Logic Controller atau PLC menjadi sangat penting dalam otomatisasi manufaktur.
+
+PLC memungkinkan logika pengendalian mesin diprogram.
+
+Misalnya:
+
+jika sensor A aktif, motor B menyala.
+
+Jika temperatur terlalu tinggi, heater mati.
+
+Jika emergency stop ditekan, sistem berhenti.
+
+Jika benda terdeteksi, cylinder bergerak.
+
+Logika yang dahulu membutuhkan rangkaian relay dalam jumlah besar dapat diprogram dan diubah dengan lebih fleksibel.
+
+Perubahan ini sangat penting untuk maintenance dan engineering.
+
+ROBOT INDUSTRI MULAI MEMASUKI PRODUKSI
+
+Robot industri juga menjadi bagian penting dari era otomatisasi.
+
+Robot dapat melakukan welding, handling, painting, assembly tertentu, dan pekerjaan repetitif lainnya.
+
+Kelebihannya bukan sekadar karena robot tidak lelah.
+
+Robot dapat memberikan gerakan yang konsisten.
+
+Ia dapat bekerja dalam lingkungan yang tidak nyaman bagi manusia.
+
+Ia dapat melakukan pekerjaan yang membutuhkan pengulangan sangat tinggi.
+
+Namun robot generasi ini umumnya masih membutuhkan lingkungan yang cukup terstruktur.
+
+Robot arm dipasang.
+
+Program dibuat.
+
+Jig disiapkan.
+
+Sensor dipasang.
+
+Area kerja diatur.
+
+Robot melakukan tugas yang spesifik.
+
+Inilah perbedaan penting antara otomatisasi generasi ketiga dan visi industri cerdas generasi berikutnya.
+
+INDUSTRI 3.0 MEMISAHKAN OTOMATISASI DARI KONEKTIVITAS
+
+Sebuah mesin dapat bekerja otomatis tetapi belum tentu terhubung dengan sistem lain.
+
+PLC mengendalikan mesin.
+
+HMI menampilkan data.
+
+Sensor membaca kondisi.
+
+Robot bekerja.
+
+Tetapi data mungkin masih tersimpan secara lokal.
+
+Operator melihat mesin.
+
+Teknisi memeriksa alarm.
+
+Supervisor mengambil laporan.
+
+Sistem produksi belum tentu mempunyai satu gambaran digital yang menyatukan semuanya.
+
+Kemudian internet, jaringan industri, cloud computing, IoT, big data, AI, dan teknologi komunikasi mulai mengubah kondisi tersebut.
+
+INDUSTRI 4.0 — KETIKA MESIN MULAI “BERBICARA” SATU SAMA LAIN
+
+Inilah generasi yang paling sering dibicarakan sekarang.
+
+Industri 4.0 bukan sekadar membeli robot.
+
+Bukan sekadar menggunakan komputer.
+
+Bukan sekadar memasang sensor.
+
+Dan bukan sekadar membuat pabrik terlihat modern.
+
+Inti Industri 4.0 adalah integrasi dunia fisik dengan dunia digital.
+
+Platform Industrie 4.0 Jerman menjelaskan Industrie 4.0 sebagai transformasi yang melibatkan jaringan produk, proses, dan infrastruktur secara real time, dengan integrasi Cyber-Physical Systems dalam produksi dan logistik. Mesin, sistem penyimpanan, dan sumber daya produksi dapat bertukar informasi dan melakukan tindakan secara semakin mandiri.
+
+KONSEP CYBER-PHYSICAL SYSTEM
+
+Cyber-Physical System atau CPS merupakan salah satu konsep penting.
+
+Sederhananya, dunia fisik dan dunia digital tidak lagi berdiri sendiri.
+
+Mesin fisik memiliki sensor.
+
+Sensor menghasilkan data.
+
+Data masuk ke sistem digital.
+
+Sistem menganalisis kondisi.
+
+Hasil analisis dapat memengaruhi tindakan mesin.
+
+Mesin kemudian menghasilkan kondisi fisik baru.
+
+Data kembali dibaca.
+
+Siklus terus berlangsung.
+
+Contoh sederhana:
+
+motor berputar.
+
+Sensor vibration membaca getaran.
+
+Data dikirim ke sistem monitoring.
+
+Algoritma melihat adanya perubahan pola.
+
+Sistem memberikan peringatan.
+
+Maintenance melakukan inspeksi.
+
+Jika sistem sudah terintegrasi lebih jauh, keputusan tertentu bahkan dapat dipicu otomatis.
+
+Inilah dunia industri yang lebih “terhubung”.
+
+INTERNET OF THINGS DALAM PABRIK
+
+IoT memungkinkan perangkat memiliki identitas dan kemampuan komunikasi.
+
+Dalam industri, istilah Industrial Internet of Things atau IIoT lebih sering digunakan.
+
+Sensor dapat mengirim:
+
+temperature;
+
+pressure;
+
+vibration;
+
+flow;
+
+current;
+
+speed;
+
+position;
+
+energy consumption;
+
+dan berbagai parameter lain.
+
+Data tersebut dapat dikumpulkan dalam jumlah besar.
+
+Dari sinilah muncul Big Data.
+
+Tetapi data dalam jumlah besar tidak otomatis berguna.
+
+Nilainya muncul ketika data dapat diubah menjadi informasi yang membantu keputusan.
+
+BIG DATA MENGUBAH CARA PABRIK MEMANDANG MESIN
+
+Pada sistem lama, maintenance sering bertanya:
+
+“Mesin rusak atau tidak?”
+
+Dalam sistem yang lebih digital, pertanyaannya berubah:
+
+“Apakah pola mesin menunjukkan kemungkinan kerusakan?”
+
+Ini melahirkan predictive maintenance.
+
+Contohnya bearing.
+
+Jika vibration meningkat secara bertahap, temperatur naik, dan karakteristik suara berubah, sistem dapat mendeteksi pola abnormal sebelum bearing benar-benar gagal.
+
+Ini dapat mengurangi downtime.
+
+Tetapi predictive maintenance juga membutuhkan sensor, data berkualitas, model analisis, dan pemahaman engineering.
+
+AI TIDAK SAMA DENGAN INDUSTRI 4.0, TETAPI AI MENJADI PENGUATNYA
+
+Kesalahan umum adalah menganggap AI sebagai definisi Industri 4.0.
+
+Tidak tepat.
+
+Industri 4.0 jauh lebih luas.
+
+AI adalah salah satu teknologi yang dapat digunakan di dalamnya.
+
+AI dapat membantu:
+
+quality inspection;
+
+forecasting;
+
+predictive maintenance;
+
+process optimization;
+
+demand forecasting;
+
+energy optimization;
+
+anomaly detection;
+
+computer vision;
+
+dan pengambilan keputusan berbasis data.
+
+Tetapi pabrik yang memasang AI pada satu kamera belum otomatis menjadi pabrik Industri 4.0.
+
+Integrasi sistemlah yang lebih penting.
+
+DIGITAL TWIN: MEMBUAT “KEMBARAN” DIGITAL DARI DUNIA FISIK
+
+Digital Twin menjadi salah satu konsep menarik dalam industri modern.
+
+Sebuah mesin fisik memiliki representasi digital.
+
+Data aktual mesin masuk ke model tersebut.
+
+Perusahaan dapat memantau kondisi.
+
+Bahkan dalam penerapan tertentu, model dapat digunakan untuk simulasi.
+
+Misalnya sebelum mengubah parameter proses, engineer dapat mempelajari dampaknya pada model digital.
+
+Tujuannya adalah mengurangi eksperimen mahal di dunia nyata.
+
+Namun Digital Twin tidak selalu berarti simulasi 3D yang terlihat seperti video game.
+
+Konsepnya dapat sangat sederhana atau sangat kompleks.
+
+PABRIK MULAI BERUBAH MENJADI SISTEM DATA
+
+Pada Industri 1.0, pusat perhatian adalah mesin.
+
+Pada Industri 2.0, pusat perhatian adalah sistem produksi.
+
+Pada Industri 3.0, otomatisasi dan kontrol menjadi sangat penting.
+
+Pada Industri 4.0, data menjadi bagian dari aliran produksi.
+
+Material mengalir.
+
+Energi mengalir.
+
+Produk mengalir.
+
+Dan informasi juga mengalir.
+
+Inilah perubahan yang sangat besar.
+
+Sebuah produk bukan hanya benda fisik.
+
+Ia dapat membawa data mengenai proses pembuatannya.
+
+Mesin bukan hanya equipment.
+
+Ia menjadi sumber informasi.
+
+Operator bukan hanya tenaga kerja.
+
+Ia menjadi bagian dari human-machine system.
+
+PERBEDAAN PALING JELAS ANTARA INDUSTRI 3.0 DAN 4.0
+
+Cara termudah memahaminya adalah seperti ini.
+
+Industri 3.0:
+
+“Mesin dapat bekerja sendiri.”
+
+Industri 4.0:
+
+“Mesin dapat bekerja otomatis, terhubung, bertukar data, dan menjadi bagian dari sistem digital yang lebih luas.”
+
+Misalnya ada mesin CNC.
+
+Dalam Industri 3.0, CNC dapat menjalankan program secara otomatis.
+
+Dalam pendekatan Industri 4.0, CNC dapat terhubung ke sistem produksi, menerima informasi order, mengirim status produksi, mengirim data kondisi mesin, terhubung dengan quality system, dan menjadi bagian dari analisis keseluruhan pabrik.
+
+Perbedaannya bukan sekadar “ada komputer”.
+
+Perbedaannya adalah konektivitas dan integrasi.
+
+LALU APA ITU INDUSTRI 5.0?
+
+Di sinilah banyak artikel di internet membuat pembaca bingung.
+
+Industri 5.0 sering digambarkan sebagai generasi berikutnya setelah Industri 4.0.
+
+Tetapi European Commission memberikan penjelasan yang lebih hati-hati.
+
+Komisi Eropa menjelaskan Industry 5.0 sebagai visi yang melengkapi dan memperluas Industry 4.0, dengan fokus pada human-centricity, sustainability, dan resilience.
+
+Artinya Industri 5.0 tidak harus dipahami sebagai:
+
+“Industri 4.0 sudah selesai, sekarang semuanya harus menjadi Industri 5.0.”
+
+Bahkan European Commission secara eksplisit menyatakan bahwa Industry 5.0 tidak seharusnya dipahami sebagai kelanjutan kronologis sederhana atau pengganti Industry 4.0.
+
+Ini penting.
+
+INDUSTRI 5.0 LEBIH BANYAK MEMBICARAKAN “UNTUK APA” TEKNOLOGI DIGUNAKAN
+
+Industri 4.0 sangat kuat pada pertanyaan:
+
+Bagaimana membuat industri lebih terhubung, otomatis, dan berbasis data?
+
+Industri 5.0 menambahkan pertanyaan:
+
+Untuk siapa teknologi itu digunakan?
+
+Apa dampaknya terhadap manusia?
+
+Apakah produksinya berkelanjutan?
+
+Apakah perusahaan tahan terhadap gangguan?
+
+Bagaimana pekerja diberdayakan?
+
+Bagaimana teknologi membantu manusia, bukan sekadar menggantikannya?
+
+European Commission menyebut tiga pilar utama Industry 5.0:
+
+human-centricity;
+
+sustainability;
+
+resilience.
+
+MANUSIA MENJADI BAGIAN PUSAT
+
+Dalam pendekatan human-centric, teknologi tidak hanya dinilai berdasarkan produktivitas.
+
+Keselamatan pekerja diperhatikan.
+
+Keterampilan pekerja diperhatikan.
+
+Kesejahteraan pekerja diperhatikan.
+
+Teknologi dapat digunakan untuk mengurangi pekerjaan fisik yang berbahaya atau terlalu berat.
+
+Robot kolaboratif dapat membantu manusia.
+
+AI dapat membantu pengambilan keputusan.
+
+Wearable dapat membantu monitoring kondisi kerja.
+
+Tujuannya bukan sekadar membuat manusia lebih cepat.
+
+Tujuannya membuat sistem industri lebih baik bagi manusia.
+
+SUSTAINABILITY MENJADI PARAMETER PRODUKSI
+
+Pabrik tidak bisa lagi hanya menghitung output.
+
+Harus dihitung juga:
+
+berapa energi yang digunakan;
+
+berapa material terbuang;
+
+berapa emisi dihasilkan;
+
+berapa banyak air digunakan;
+
+berapa limbah terbentuk;
+
+dan apakah produk dapat diperbaiki atau didaur ulang.
+
+Ini semakin penting karena tekanan lingkungan dan regulasi meningkat.
+
+Pabrik masa depan harus semakin efisien bukan hanya dalam uang, tetapi juga dalam penggunaan sumber daya.
+
+RESILIENCE: PABRIK HARUS TAHAN TERHADAP GANGGUAN
+
+Pandemi, konflik geopolitik, gangguan logistik, kelangkaan komponen, bencana alam, dan perubahan harga energi menunjukkan bahwa efisiensi saja tidak cukup.
+
+Pabrik yang sangat murah tetapi langsung berhenti ketika satu supplier terganggu bukanlah sistem yang benar-benar tangguh.
+
+Resilience berarti perusahaan mampu:
+
+mengantisipasi gangguan;
+
+merespons;
+
+beradaptasi;
+
+dan kembali beroperasi.
+
+Teknologi digital dapat membantu, tetapi strategi supply chain juga tetap diperlukan.
+
+APAKAH INDUSTRI 5.0 SUDAH TERJADI?
+
+Jawabannya:
+
+Ya sebagai pendekatan dan arah pengembangan industri.
+
+Tidak jika dimaksudkan bahwa seluruh dunia sudah berpindah secara resmi ke Industri 5.0.
+
+Konsep tersebut belum menjadi klasifikasi global yang digunakan seragam oleh semua negara dan perusahaan.
+
+Banyak perusahaan masih berada pada tahap otomatisasi dasar.
+
+Banyak pabrik bahkan belum sepenuhnya menerapkan Industri 3.0.
+
+Jadi sangat mungkin menemukan perusahaan yang menyebut dirinya “Industry 4.0” tetapi sebagian besar prosesnya masih manual.
+
+Begitu juga istilah Industry 5.0 dapat digunakan sebagai visi strategis tanpa berarti seluruh sistem teknologinya sudah sempurna.
+
+APAKAH INDUSTRI 1.0, 2.0, 3.0, DAN 4.0 MASIH ADA?
+
+Ya.
+
+Ini salah satu hal terpenting untuk dipahami.
+
+Generasi industri tidak hilang seperti versi software.
+
+Sebuah pabrik modern bisa menggunakan:
+
+boiler dan steam system;
+
+motor listrik;
+
+PLC;
+
+robot;
+
+sensor IoT;
+
+cloud;
+
+AI;
+
+dan operator manusia.
+
+Semua hidup dalam satu pabrik.
+
+Bahkan satu mesin dapat mengandung teknologi dari beberapa generasi.
+
+Misalnya mesin tua digerakkan motor listrik, dikontrol PLC, dipasangi sensor vibration modern, kemudian datanya dikirim ke cloud.
+
+Secara fisik mesin tersebut mungkin tua.
+
+Secara digital mesin tersebut bisa menjadi bagian dari sistem modern.
+
+INILAH YANG DISEBUT BROWNFIELD
+
+Brownfield adalah lingkungan industri yang sudah ada dan kemudian diperbarui.
+
+Ini sangat penting bagi negara seperti Indonesia.
+
+Tidak semua perusahaan mampu membangun pabrik baru.
+
+Maka perusahaan dapat melakukan retrofit.
+
+Sensor ditambahkan.
+
+PLC diperbarui.
+
+Drive diganti.
+
+Motor dipantau.
+
+Data dikumpulkan.
+
+Gateway dipasang.
+
+Dashboard dibuat.
+
+Dengan cara tersebut, pabrik lama dapat bergerak menuju digitalisasi tanpa mengganti semua mesin.
+
+KEBALIKANNYA ADALAH GREENFIELD
+
+Greenfield berarti membangun fasilitas baru.
+
+Perusahaan dapat langsung merancang:
+
+layout;
+
+network;
+
+automation;
+
+robot;
+
+sensor;
+
+MES;
+
+SCADA;
+
+ERP integration;
+
+cybersecurity;
+
+dan energy management
+
+sejak awal.
+
+Greenfield lebih mudah untuk membuat sistem terintegrasi.
+
+Namun biaya investasinya juga sangat besar.
+
+BROWNFIELD AKAN SANGAT PENTING DI INDONESIA
+
+Karena Indonesia memiliki banyak pabrik dengan umur mesin yang berbeda-beda, pendekatan retrofit sangat realistis.
+
+Tidak masuk akal mengatakan:
+
+“Semua mesin lama harus dibuang agar menjadi Industri 4.0.”
+
+Justru mesin lama dapat menjadi sumber nilai jika prosesnya dipahami dan titik digitalisasinya dipilih dengan benar.
+
+Misalnya sebuah motor besar tidak perlu diganti hanya karena usianya tua.
+
+Jika kondisinya baik, mungkin cukup dipasang sensor, monitoring energi, vibration monitoring, dan sistem maintenance yang tepat.
+
+DIGITALISASI TANPA PERBAIKAN PROSES BISA MENJADI PEMBOROSAN
+
+Ini juga harus ditegaskan.
+
+Membeli dashboard mahal tidak otomatis meningkatkan produksi.
+
+Memasang 500 sensor tidak otomatis membuat pabrik pintar.
+
+Membeli robot tidak otomatis meningkatkan profit.
+
+Kalau proses dasarnya buruk, teknologi hanya membuat proses buruk tersebut menjadi lebih mahal dan lebih rumit.
+
+Karena itu sebelum digitalisasi, perusahaan harus memahami proses.
+
+Apa masalahnya?
+
+Di mana bottleneck?
+
+Apa penyebab downtime?
+
+Apa defect terbesar?
+
+Apa data yang benar-benar dibutuhkan?
+
+Apa keputusan yang ingin diperbaiki?
+
+Setelah itu teknologi dipilih.
+
+Bukan sebaliknya.
+
+KLASIFIKASI BERDASARKAN SUMBER ENERGI
+
+Kalau ingin memahami empat revolusi dengan cara paling sederhana, lihat sumber tenaga utamanya.
+
+Industri 1.0:
+
+air dan uap.
+
+Industri 2.0:
+
+listrik dan energi dalam sistem produksi massal.
+
+Industri 3.0:
+
+elektronik dan energi listrik yang dikendalikan secara otomatis.
+
+Industri 4.0:
+
+energi tetap penting, tetapi konektivitas dan informasi menjadi lapisan tambahan yang sangat menentukan.
+
+Industri 5.0:
+
+teknologi digunakan dalam kerangka manusia, keberlanjutan, dan ketahanan.
+
+Tentu saja pembagian ini tidak sempurna.
+
+Namun sangat membantu sebagai peta mental.
+
+KLASIFIKASI BERDASARKAN CARA MESIN BEKERJA
+
+Industri 1.0:
+
+mesin melakukan pekerjaan fisik yang sebelumnya dilakukan manusia.
+
+Industri 2.0:
+
+mesin diproduksi dan diorganisasi untuk menghasilkan produk dalam skala besar.
+
+Industri 3.0:
+
+mesin dapat dikendalikan secara otomatis.
+
+Industri 4.0:
+
+mesin dapat terhubung dan bertukar informasi.
+
+Industri 5.0:
+
+mesin, manusia, dan sistem industri diarahkan pada tujuan yang lebih berkelanjutan, tangguh, dan berpusat pada manusia.
+
+KLASIFIKASI BERDASARKAN PERAN MANUSIA
+
+Pada Industri 1.0, manusia adalah penggerak utama yang dibantu mesin.
+
+Pada Industri 2.0, manusia menjadi bagian dari sistem produksi massal yang sangat terstruktur.
+
+Pada Industri 3.0, manusia semakin banyak mengawasi mesin otomatis.
+
+Pada Industri 4.0, manusia bekerja bersama sistem digital dan mesin yang terhubung.
+
+Pada Industry 5.0, manusia kembali ditempatkan secara eksplisit sebagai pusat desain sistem industri.
+
+Ini bukan berarti teknologi mundur.
+
+Justru teknologi semakin maju sehingga manusia dapat melakukan pekerjaan yang lebih kompleks.
+
+DARI OTOT KE INFORMASI
+
+Kalau seluruh sejarah tersebut diringkas menjadi satu garis besar, evolusinya sangat menarik.
+
+Industri 1.0 memperbesar kekuatan fisik.
+
+Industri 2.0 memperbesar kapasitas produksi.
+
+Industri 3.0 memperbesar kemampuan kontrol.
+
+Industri 4.0 memperbesar kemampuan informasi.
+
+Industri 5.0 mencoba mengarahkan seluruh kemampuan tersebut untuk menghasilkan sistem yang lebih manusiawi, berkelanjutan, dan tangguh.
+
+Inilah cara paling mudah memahami perjalanan tersebut.
+
+MENGAPA REVOLUSI INDUSTRI SELALU MEMICU PERUBAHAN PEKERJAAN?
+
+Karena setiap revolusi mengubah “unit produktivitas”.
+
+Pada sistem manual, produktivitas sangat tergantung pada tangan manusia.
+
+Ketika mesin muncul, produktivitas bergeser ke kemampuan mesin.
+
+Ketika listrik muncul, mesin dapat bekerja dalam skala yang lebih besar.
+
+Ketika komputer muncul, kontrol menjadi otomatis.
+
+Ketika data dan AI masuk, keputusan tertentu dapat dibantu sistem.
+
+Maka pekerjaan yang hanya terdiri dari tugas berulang akan selalu menghadapi tekanan otomatisasi.
+
+Namun pekerjaan baru muncul.
+
+Teknisi mesin.
+
+Electrician.
+
+Automation engineer.
+
+PLC programmer.
+
+Robot programmer.
+
+Data analyst.
+
+AI engineer.
+
+Cybersecurity specialist.
+
+System integrator.
+
+Energy manager.
+
+Dan berbagai profesi lain.
+
+PERUBAHAN SKILL ADALAH CIRI SETIAP REVOLUSI
+
+Inilah alasan perusahaan tidak cukup hanya membeli mesin.
+
+Mereka harus menyiapkan manusia.
+
+Industri 1.0 membutuhkan orang yang dapat mengoperasikan mesin.
+
+Industri 2.0 membutuhkan pekerja yang mampu bekerja dalam sistem produksi massal.
+
+Industri 3.0 membutuhkan tenaga elektronik dan kontrol.
+
+Industri 4.0 membutuhkan kemampuan digital, data, jaringan, automation, dan cybersecurity.
+
+Industri 5.0 menambahkan kemampuan bekerja dengan teknologi sambil mempertimbangkan manusia, lingkungan, dan resilience.
+
+Jadi skill manusia selalu mengikuti mesin.
+
+MESIN YANG SAMA BISA BERADA DI GENERASI BERBEDA
+
+Ini contoh yang sering terlewat.
+
+Sebuah conveyor bukan otomatis Industri 1.0.
+
+Conveyor dengan motor listrik dan operator manual bisa menjadi bagian dari sistem Industri 2.0.
+
+Conveyor dengan sensor dan PLC dapat menjadi bagian dari Industri 3.0.
+
+Conveyor yang terhubung ke MES, mengirim data real time, dipantau AI, dan berkomunikasi dengan sistem logistik dapat menjadi bagian dari arsitektur Industri 4.0.
+
+Artinya bukan nama mesinnya yang menentukan generasi.
+
+Yang menentukan adalah bagaimana teknologi tersebut digunakan dan diintegrasikan.
+
+BAGAIMANA MENENTUKAN PABRIK SUDAH MASUK INDUSTRI 4.0?
+
+Jangan lihat jumlah robot.
+
+Lihat integrasinya.
+
+Apakah mesin menghasilkan data?
+
+Apakah data dapat diakses?
+
+Apakah data digunakan untuk keputusan?
+
+Apakah sistem produksi terhubung dengan maintenance?
+
+Apakah quality terhubung dengan produksi?
+
+Apakah inventory terhubung dengan produksi?
+
+Apakah perusahaan dapat melihat kondisi produksi secara real time?
+
+Apakah mesin dapat berkomunikasi?
+
+Apakah sistem dapat mendeteksi kondisi abnormal?
+
+Semakin banyak jawaban “ya”, semakin kuat karakter Industri 4.0-nya.
+
+APA YANG MEMBUAT INDUSTRI 4.0 SULIT DITERAPKAN?
+
+Bukan hanya harga teknologi.
+
+Masalah terbesar sering kali justru integrasi.
+
+Mesin berbeda merek.
+
+Protocol berbeda.
+
+Data tidak standar.
+
+Sensor tidak tersedia.
+
+Software lama tidak kompatibel.
+
+Operator belum terlatih.
+
+Engineer kekurangan skill.
+
+Jaringan tidak stabil.
+
+Cybersecurity lemah.
+
+Data terlalu banyak tetapi tidak berkualitas.
+
+Dan yang paling sering terjadi:
+
+perusahaan tidak tahu masalah apa yang ingin diselesaikan.
+
+Karena itu transformasi industri harus dimulai dari kebutuhan bisnis dan proses, bukan dari tren teknologi.
+
+REVOLUSI INDUSTRI TIDAK TERJADI DENGAN KECEPATAN YANG SAMA DI SEMUA NEGARA
+
+Inggris menjadi salah satu pusat awal revolusi pertama.
+
+Kemudian industrialisasi menyebar.
+
+Amerika Serikat, Jerman, Jepang, Korea Selatan, China, dan negara lain mengembangkan basis industri dengan kecepatan dan strategi berbeda.
+
+Begitu juga sekarang.
+
+Ada perusahaan yang sudah menggunakan AI dan digital twin.
+
+Ada yang baru memasang PLC.
+
+Ada yang masih mengandalkan manual inspection.
+
+Ada yang masih menggunakan pencatatan kertas.
+
+Ini bukan kontradiksi.
+
+Itulah kenyataan perkembangan industri.
+
+INDONESIA SEBENARNYA BERADA DI MANA?
+
+Tidak tepat jika Indonesia disebut sepenuhnya berada di Industri 4.0.
+
+Lebih tepat mengatakan bahwa Indonesia sedang mengalami transisi digital industri dengan tingkat kematangan yang berbeda-beda.
+
+Sebagian perusahaan besar telah menggunakan automation, robotics, MES, IIoT, analytics, dan sistem digital.
+
+Sebagian perusahaan menengah sedang melakukan retrofit.
+
+Sebagian industri kecil masih menjalankan produksi secara manual.
+
+Semua dapat hidup bersamaan.
+
+Karena itu strategi Indonesia tidak harus mengejar label.
+
+Yang lebih penting adalah meningkatkan produktivitas.
+
+Pabrik kecil tidak harus langsung membeli robot humanoid.
+
+Mungkin kebutuhan pertamanya hanya:
+
+sensor temperatur;
+
+energy meter;
+
+inverter;
+
+PLC;
+
+digital maintenance record;
+
+barcode;
+
+quality tracking;
+
+atau inventory system.
+
+Teknologi sederhana yang menyelesaikan masalah nyata jauh lebih berharga daripada teknologi mahal yang hanya menjadi pajangan.
+
+APA YANG AKAN DATANG SETELAH INDUSTRI 4.0?
+
+Tidak ada satu jawaban tunggal.
+
+Teknologi akan terus berkembang.
+
+AI semakin kuat.
+
+Robot semakin fleksibel.
+
+Humanoid mulai diuji di industri.
+
+Digital twin semakin matang.
+
+Autonomous mobile robot semakin banyak digunakan.
+
+Industrial cloud semakin berkembang.
+
+Edge computing semakin penting.
+
+Energy management menjadi semakin kritis.
+
+Biomanufacturing dan advanced materials juga berkembang.
+
+Tetapi kita sebaiknya tidak buru-buru membuat label “Industri 6.0” hanya karena ada teknologi baru.
+
+Klasifikasi industri berguna ketika membantu kita memahami perubahan.
+
+Bukan ketika menjadi perlombaan membuat angka paling tinggi.
+
+KESIMPULAN: EMPAT REVOLUSI INDUSTRI ADALAH EMPAT LOMPATAN BESAR DALAM CARA MANUSIA MENGHASILKAN BARANG
+
+Jika harus dijelaskan dengan kalimat paling tegas, klasifikasi revolusi industri dapat dipahami seperti ini:
+
+Industri 1.0 adalah saat manusia mulai menggunakan mesin dan tenaga air serta uap untuk melakukan pekerjaan mekanis dalam skala industri.
+
+Industri 2.0 adalah saat listrik, mesin modern, komunikasi, dan produksi massal membuat pabrik mampu menghasilkan barang dalam jumlah jauh lebih besar dan lebih terorganisasi.
+
+Industri 3.0 adalah saat elektronik, komputer, PLC, robot, dan sistem kontrol memungkinkan banyak proses produksi berjalan otomatis.
+
+Industri 4.0 adalah saat mesin, manusia, produk, dan sistem bisnis mulai terhubung melalui jaringan digital, sensor, IIoT, cloud, data, AI, dan Cyber-Physical Systems.
+
+Sementara Industry 5.0 adalah pendekatan yang memperluas Industry 4.0 dengan menempatkan human-centricity, sustainability, dan resilience sebagai tujuan penting. European Commission sendiri menekankan bahwa Industry 5.0 melengkapi dan memperluas Industry 4.0, bukan sekadar menggantikannya secara kronologis.
+
+Kalau diperhatikan lebih dalam, perjalanan tersebut sebenarnya bukan sekadar cerita tentang mesin.
+
+Ini adalah cerita tentang bagaimana manusia memindahkan kemampuan produksi dari tubuh menuju teknologi.
+
+Pertama, manusia memberikan kekuatan fisik kepada mesin.
+
+Kemudian manusia memberikan energi listrik kepada sistem produksi.
+
+Setelah itu manusia memberikan kemampuan kontrol kepada elektronik dan komputer.
+
+Berikutnya manusia menghubungkan mesin-mesin tersebut melalui jaringan dan data.
+
+Dan sekarang manusia mulai mencoba membuat sistem yang mampu memahami kondisi produksi, bekerja bersama manusia, belajar dari data, serta mengambil keputusan tertentu.
+
+Itulah sebabnya revolusi industri tidak berhenti pada satu mesin.
+
+Setiap generasi mengubah cara pabrik dirancang.
+
+Mengubah cara pekerja dilatih.
+
+Mengubah jenis pekerjaan yang bernilai.
+
+Mengubah cara perusahaan bersaing.
+
+Mengubah supply chain.
+
+Mengubah biaya produksi.
+
+Bahkan mengubah cara masyarakat hidup.
+
+Dari sudut pandang manufaktur, pelajaran terpentingnya sederhana:
+
+Jangan terpaku pada angka generasinya.
+
+Pahami teknologi di baliknya.
+
+Pahami masalah yang ingin diselesaikan.
+
+Pahami bagaimana teknologi mengubah produktivitas.
+
+Dan pahami bagaimana manusia harus beradaptasi.
+
+Sebuah perusahaan tidak menjadi maju hanya karena menempelkan tulisan “Industry 4.0” pada dinding pabrik.
+
+Begitu pula perusahaan tidak otomatis menjadi lebih baik hanya karena membeli robot, memasang sensor, atau menggunakan AI.
+
+Industri yang benar-benar maju adalah industri yang mampu mengubah teknologi menjadi produktivitas, kualitas, keselamatan, fleksibilitas, efisiensi energi, dan daya saing.
+
+Itulah inti dari seluruh perjalanan revolusi industri.
+
+Dari mesin uap sampai kecerdasan buatan, teknologi pada akhirnya selalu kembali pada satu pertanyaan:
+
+Seberapa banyak nilai yang dapat dihasilkan manusia dengan sumber daya yang dimilikinya?
+
+Dan setiap revolusi industri memberikan jawaban yang berbeda.
+
+SUMBER RUJUKAN
+
+1. Plattform Industrie 4.0, “Industrie 4.0 in a Global Context” — Pemerintah Federal Jerman / Plattform Industrie 4.0.
+https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/industrie-40-in-a-global-context.pdf
+
+2. European Commission, “Industry 5.0 – Towards a sustainable, human-centric and resilient European industry.”
+https://research-and-innovation.ec.europa.eu/knowledge-publications-tools-and-data/publications/all-publications/industry-50-towards-sustainable-human-centric-and-resilient-european-industry_en
+
+3. European Commission, “Industry 5.0.”
+https://research-and-innovation.ec.europa.eu/research-area/industrial-research-and-innovation/industry-50_en
+
+4. European Commission, “Industry 5.0: Towards more sustainable, resilient and human-centric industry.”
+https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/industry-50-towards-more-sustainable-resilient-and-human-centric-industry-2021-01-07_en
+
+5. OECD, “Broad-based Innovation Policy for All Regions and Cities,” bagian mengenai industrial transitions.
+https://www.oecd.org/en/publications/broad-based-innovation-policy-for-all-regions-and-cities_299731d2-en/full-report/component-7.html
+
+6. Oxford Academic, Industrial and Corporate Change, “Origins and pathways of innovation in the third industrial revolution.”
+https://academic.oup.com/icc/article/28/5/1125/5193703
+
+7. OpenStax, “The Second Industrial Revolution,” World History Volume 2.
+https://openstax.org/books/world-history-volume-2/pages/9-1-the-second-industrial-revolution
+
+CATATAN AKURASI
+
+Tanggal batas antar-revolusi industri berbeda menurut sumber dan kerangka akademik yang digunakan. Karena itu artikel ini tidak memperlakukan tahun tertentu sebagai batas absolut. Pembagian Industri 1.0 sampai 4.0 merupakan kerangka populer untuk menjelaskan lompatan teknologi, bukan kalender universal yang secara resmi disepakati seluruh sejarawan.
+
+Istilah Industry 5.0 juga diperlakukan secara hati-hati. Artikel ini mengikuti penjelasan European Commission bahwa Industry 5.0 merupakan visi yang melengkapi dan memperluas Industry 4.0 dengan tiga fokus utama: human-centricity, sustainability, dan resilience.
