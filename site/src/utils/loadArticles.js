@@ -85,17 +85,63 @@ function toDateStr(tsSec) {
 export function parseArticleText(raw, slug) {
   const lines = String(raw || "").replace(/^\uFEFF/, "").split(/\r?\n/);
   const title = (lines[0] || slug).trim();
-  const excerpt = (lines[1] || "").trim();
+  let i = 1;
+  // lewati baris kosong setelah judul
+  while (i < lines.length && lines[i].trim() === "") i++;
+
   let date = "";
-  let start = 2;
-  const maybeDate = (lines[2] || "").trim();
-  if (/^\d{4}-\d{2}-\d{2}$/.test(maybeDate)) {
-    date = maybeDate;
-    start = 3;
+  if (i < lines.length && /^\d{4}-\d{2}-\d{2}$/.test(lines[i].trim())) {
+    date = lines[i].trim();
+    i++;
+    while (i < lines.length && lines[i].trim() === "") i++;
   }
-  while (start < lines.length && lines[start].trim() === "") start++;
-  const body = lines.slice(start).join("\n").trim();
-  return { slug, title, excerpt: excerpt || title, date, body };
+
+  // Excerpt eksplisit HANYA jika baris pendek + diikuti baris kosong + ada isi setelahnya
+  // (supaya paste teks bebas tidak menyalin judul ke bawah)
+  let excerpt = "";
+  if (i < lines.length) {
+    const cand = lines[i].trim();
+    const followedByBlank = i + 1 < lines.length && lines[i + 1].trim() === "";
+    const restAfter = lines.slice(i + 2).join("\n").trim();
+    if (
+      cand &&
+      cand !== title &&
+      cand.length <= 200 &&
+      followedByBlank &&
+      restAfter.length > 40
+    ) {
+      excerpt = cand;
+      i += 2;
+      while (i < lines.length && lines[i].trim() === "") i++;
+    }
+  }
+
+  let body = lines.slice(i).join("\n").trim();
+
+  // Buang judul yang tidak sengaja ikut di awal body
+  if (body === title) body = "";
+  else if (body.startsWith(title + "\n")) body = body.slice(title.length).replace(/^\n+/, "").trim();
+  const parts = body.split(/\n\n+/);
+  if (parts.length && parts[0].trim() === title) {
+    body = parts.slice(1).join("\n\n").trim();
+  }
+
+  // Untuk kartu/meta: ringkas dari body jika tidak ada excerpt eksplisit — JANGAN pakai ulang judul
+  let cardExcerpt = excerpt;
+  if (!cardExcerpt) {
+    const plain = body.replace(/\s+/g, " ").trim();
+    cardExcerpt = plain.length > 160 ? plain.slice(0, 157) + "…" : plain;
+  }
+
+  return {
+    slug,
+    title,
+    excerpt: cardExcerpt,
+    // true hanya jika penulis memang memberi ringkasan terpisah
+    showDeck: Boolean(excerpt && excerpt !== title),
+    date,
+    body,
+  };
 }
 
 function resolveImg(slug, kind, urlMap) {
