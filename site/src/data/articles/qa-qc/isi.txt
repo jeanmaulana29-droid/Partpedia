@@ -1,0 +1,1062 @@
+INI PERBEDAAN QA DAN QC DI INDUSTRI DAN MANUFAKTUR: TUGAS, CARA KERJA, DAN MANA YANG LEBIH PENTING?
+
+Di banyak pabrik, istilah QA dan QC sering dipakai seolah-olah mempunyai arti yang sama. Bahkan tidak jarang sebuah perusahaan menyebut departemennya “QA/QC” tanpa menjelaskan secara tegas siapa yang bertanggung jawab terhadap apa.
+
+Padahal keduanya mempunyai fokus yang berbeda.
+
+Perbedaan paling mudah dipahami adalah ini:
+
+QA berfokus pada sistem dan proses yang membuat kualitas dapat tercapai secara konsisten.
+
+QC berfokus pada pemeriksaan dan pengendalian untuk memastikan hasil memenuhi persyaratan.
+
+ISO menjelaskan perbedaan tersebut dengan cara yang sangat sederhana: quality assurance berorientasi pada bagaimana proses dikelola agar defect dapat dicegah, sedangkan quality control berorientasi pada pemeriksaan output untuk memastikan produk memenuhi spesifikasi. citeturn0search3
+
+Namun di dunia industri, perbedaannya tidak berhenti pada definisi tersebut.
+
+QA dan QC mempunyai pekerjaan, alat, tanggung jawab, pola pikir, serta titik interaksi yang berbeda dengan produksi, engineering, maintenance, purchasing, warehouse, supplier, dan pelanggan.
+
+Dan kalau sebuah pabrik hanya mengandalkan QC untuk menemukan produk cacat setelah produk selesai dibuat, sebenarnya perusahaan tersebut sudah terlambat.
+
+KENAPA QA DAN QC SERING DIANGGAP SAMA?
+
+Penyebabnya cukup masuk akal.
+
+Keduanya sama-sama berhubungan dengan quality.
+
+Keduanya bisa melakukan inspection.
+
+Keduanya menggunakan data.
+
+Keduanya berurusan dengan defect.
+
+Keduanya bisa terlibat dalam investigasi masalah.
+
+Keduanya bahkan dapat berada dalam satu departemen pada perusahaan kecil.
+
+ASQ menjelaskan bahwa QA dan QC merupakan dua aspek dari quality management dan dalam praktiknya aktivitas keduanya dapat saling berhubungan. Namun secara konsep, QA lebih luas dan QC merupakan bagian dari aktivitas quality control dalam sistem kualitas. citeturn0search0
+
+Jadi jangan membayangkan QA dan QC sebagai dua dunia yang sepenuhnya terpisah.
+
+Mereka justru harus bekerja sebagai satu sistem.
+
+APA ITU QA?
+
+QA adalah singkatan dari Quality Assurance.
+
+Secara sederhana, QA bertugas membangun keyakinan bahwa proses dan sistem perusahaan mampu menghasilkan produk yang memenuhi persyaratan kualitas.
+
+Pertanyaannya bukan sekadar:
+
+“Produk ini bagus atau tidak?”
+
+QA lebih banyak bertanya:
+
+“Apakah sistem kita sudah dibuat sedemikian rupa sehingga produk yang benar dapat dihasilkan secara konsisten?”
+
+Karena itu pekerjaan QA sering berhubungan dengan:
+
+quality management system;
+
+prosedur;
+
+standard;
+
+audit;
+
+document control;
+
+training;
+
+supplier quality;
+
+risk management;
+
+CAPA;
+
+deviation;
+
+change control;
+
+validation;
+
+dan continuous improvement.
+
+Tidak semua perusahaan menggunakan struktur dan istilah yang persis sama. Pada industri yang sangat teregulasi, tanggung jawab QA bisa jauh lebih luas.
+
+APA ITU QC?
+
+QC adalah singkatan dari Quality Control.
+
+QC lebih dekat dengan aktivitas operasional untuk memeriksa apakah material, proses, atau produk memenuhi persyaratan yang sudah ditetapkan.
+
+Contohnya:
+
+incoming inspection;
+
+in-process inspection;
+
+final inspection;
+
+sampling;
+
+measurement;
+
+testing;
+
+laboratory analysis;
+
+dimensional checking;
+
+visual inspection;
+
+dan pengujian karakteristik tertentu.
+
+ASQ mendefinisikan quality control sebagai bagian dari quality management yang berfokus pada pemenuhan persyaratan kualitas melalui teknik dan aktivitas operasional. citeturn0search0
+
+Dengan kata lain, QC bertanya:
+
+“Apakah hasil yang kita dapatkan sesuai specification?”
+
+PERBEDAAN QA DAN QC DALAM SATU CONTOH SEDERHANA
+
+Bayangkan pabrik memproduksi shaft baja.
+
+Spesifikasinya mencakup diameter, panjang, hardness, surface condition, dan material grade.
+
+QC akan melakukan pemeriksaan terhadap karakteristik tersebut sesuai inspection plan.
+
+Jika diameter harus 50 ± 0,05 mm, QC akan mengukur.
+
+Kalau hasilnya 50,02 mm, sesuai.
+
+Kalau 50,12 mm, tidak sesuai.
+
+Tetapi QA akan melihat pertanyaan yang lebih jauh.
+
+Mengapa proses bisa menghasilkan diameter di luar tolerance?
+
+Apakah drawing dan specification dikendalikan?
+
+Apakah mesin sudah dikalibrasi?
+
+Apakah measurement system memadai?
+
+Apakah operator sudah dilatih?
+
+Apakah parameter proses sudah ditetapkan?
+
+Apakah prosedur changeover benar?
+
+Apakah supplier material memenuhi persyaratan?
+
+Apakah proses mempunyai kontrol yang cukup untuk mencegah masalah berulang?
+
+Di sinilah perbedaan pola pikirnya terlihat.
+
+QC menemukan dan mengendalikan ketidaksesuaian.
+
+QA membantu memastikan sistem mampu mencegah atau mengurangi kemungkinan ketidaksesuaian tersebut.
+
+QA LEBIH BANYAK BERPIKIR “SEBELUM MASALAH”
+
+Ini bukan berarti QA tidak pernah bekerja setelah masalah terjadi.
+
+QA juga terlibat dalam investigation, corrective action, audit, complaint, dan berbagai aktivitas setelah masalah ditemukan.
+
+Namun orientasinya adalah sistem.
+
+Misalnya defect terjadi berulang kali.
+
+QC mungkin menemukan:
+
+“Produk nomor sekian memiliki defect.”
+
+QA akan bertanya:
+
+“Kenapa sistem memungkinkan defect ini berulang?”
+
+Pertanyaannya menjadi lebih dalam.
+
+Apakah standard kerja tidak jelas?
+
+Apakah training tidak efektif?
+
+Apakah perubahan parameter tidak dikontrol?
+
+Apakah supplier berubah?
+
+Apakah inspeksi tidak mampu mendeteksi masalah?
+
+Apakah root cause analysis sebelumnya salah?
+
+Apakah corrective action hanya memperbaiki gejala?
+
+Dengan cara ini QA berusaha membuat organisasi belajar dari masalah.
+
+QC LEBIH BANYAK BERHADAPAN DENGAN HASIL NYATA
+
+QC biasanya lebih dekat dengan produk dan proses aktual.
+
+Seorang QC inspector bisa menghabiskan sebagian besar waktunya:
+
+mengukur;
+
+mengambil sample;
+
+melakukan inspection;
+
+menguji;
+
+mencatat hasil;
+
+membandingkan dengan specification;
+
+memberi status;
+
+memisahkan produk nonconforming;
+
+atau melaporkan hasil.
+
+Pada beberapa industri, QC juga berada di laboratorium.
+
+Misalnya pengujian:
+
+chemical composition;
+
+tensile strength;
+
+hardness;
+
+moisture;
+
+viscosity;
+
+dimension;
+
+surface roughness;
+
+atau parameter lain sesuai produk.
+
+Karena itu kemampuan teknis dan ketelitian sangat penting bagi QC.
+
+QA TIDAK BERARTI HANYA DUDUK DI KANTOR
+
+Ini salah satu salah kaprah.
+
+QA memang banyak berurusan dengan dokumen dan sistem.
+
+Tetapi QA yang baik tidak boleh terputus dari proses produksi.
+
+Kalau QA hanya membaca dokumen tanpa memahami kondisi line, sistem quality dapat menjadi terlalu teoritis.
+
+QA perlu memahami bagaimana proses benar-benar berjalan.
+
+Ia perlu melihat:
+
+mesin;
+
+operator;
+
+material;
+
+inspection;
+
+flow produksi;
+
+perubahan proses;
+
+dan masalah yang terjadi di lapangan.
+
+Dengan begitu prosedur yang dibuat tidak hanya bagus di atas kertas.
+
+QC JUGA BUKAN SEKADAR “TUKANG CEK”
+
+QC bukan sekadar orang yang mengambil sample lalu menulis angka.
+
+QC harus memahami apa yang diukur dan mengapa karakteristik tersebut penting.
+
+Kalau menemukan hasil abnormal, QC perlu mengetahui:
+
+apakah measurement benar;
+
+apakah alat ukur valid;
+
+apakah sample representatif;
+
+apakah proses memang berubah;
+
+dan siapa yang harus diberi tahu.
+
+Inspection tanpa pemahaman proses dapat menghasilkan banyak data tetapi sedikit manfaat.
+
+TUGAS QA DI INDUSTRI DAN MANUFAKTUR
+
+Tanggung jawab QA berbeda menurut perusahaan, tetapi biasanya dapat mencakup:
+
+1. Menjaga dan mengembangkan quality management system.
+
+2. Membuat atau mengendalikan prosedur kualitas.
+
+3. Mengelola document control.
+
+4. Melakukan atau mengoordinasikan internal audit.
+
+5. Mengawasi corrective dan preventive action sesuai sistem perusahaan.
+
+6. Menangani deviation atau nonconformance dari sisi sistem.
+
+7. Mengelola change control bila diperlukan.
+
+8. Memantau efektivitas tindakan perbaikan.
+
+9. Mendukung supplier quality.
+
+10. Menilai risiko kualitas.
+
+11. Mengelola training yang berkaitan dengan sistem kualitas.
+
+12. Meninjau complaint pelanggan.
+
+13. Menganalisis trend kualitas.
+
+14. Memastikan persyaratan customer dan regulasi diterjemahkan ke sistem yang sesuai.
+
+ASQ menjelaskan bahwa auditing merupakan bagian dari fungsi QA dan audit digunakan untuk membandingkan kondisi aktual dengan persyaratan yang disepakati. citeturn0search0
+
+TUGAS QC DI INDUSTRI DAN MANUFAKTUR
+
+QC biasanya lebih dekat dengan aktivitas pengujian dan inspeksi.
+
+Tugasnya dapat meliputi:
+
+1. Incoming inspection.
+
+2. First piece inspection.
+
+3. In-process inspection.
+
+4. Final inspection.
+
+5. Sampling.
+
+6. Measurement.
+
+7. Testing.
+
+8. Pemeriksaan visual.
+
+9. Pemeriksaan dimensi.
+
+10. Pengujian material.
+
+11. Pencatatan hasil inspection.
+
+12. Identifikasi produk nonconforming.
+
+13. Menahan produk yang belum memenuhi persyaratan sesuai prosedur.
+
+14. Memberikan feedback kepada produksi.
+
+15. Membantu analisis trend defect.
+
+16. Menjaga status dan traceability sample atau produk sesuai sistem perusahaan.
+
+FDA juga menggunakan pembedaan yang jelas dalam konteks regulated manufacturing: QC berkaitan dengan testing dan inspection terhadap komponen atau finished product dibandingkan dengan specification, sedangkan QA mencakup aktivitas terencana dan sistematis untuk memastikan kualitas dibangun ke dalam proses dan produk. citeturn0search36turn0search37
+
+QA DAN QC BEKERJA DI TITIK YANG BERBEDA
+
+Bayangkan aliran manufaktur seperti ini:
+
+Supplier → Incoming Material → Production → Inspection → Final Product → Customer
+
+QC bisa terlibat di beberapa titik:
+
+incoming inspection;
+
+in-process inspection;
+
+final inspection.
+
+QA berada di atas sistem yang mengatur bagaimana semua aktivitas tersebut harus dilakukan.
+
+Misalnya:
+
+siapa yang boleh melakukan inspection;
+
+alat ukur apa yang digunakan;
+
+bagaimana alat dikalibrasi;
+
+berapa frekuensi sampling;
+
+bagaimana hasil dicatat;
+
+apa yang dilakukan ketika hasil NG;
+
+siapa yang berwenang melakukan release;
+
+dan bagaimana masalah diselidiki.
+
+Karena itu QA bukan sekadar “QC yang lebih senior”.
+
+Keduanya mempunyai fungsi yang berbeda.
+
+CONTOH QA DAN QC PADA PABRIK BAJA
+
+Misalnya perusahaan memproduksi coil baja.
+
+Customer menetapkan:
+
+thickness;
+
+width;
+
+mechanical properties;
+
+surface quality;
+
+coating weight;
+
+chemical requirements;
+
+dan packaging specification.
+
+QC akan memeriksa karakteristik tersebut berdasarkan inspection plan dan metode pengukuran yang ditetapkan.
+
+Jika coating weight tidak memenuhi specification, QC menemukan ketidaksesuaian.
+
+QA kemudian dapat terlibat untuk melihat sistem:
+
+Apakah specification terbaru sudah masuk ke dokumen?
+
+Apakah proses dikendalikan sesuai requirement?
+
+Apakah equipment measurement terkalibrasi?
+
+Apakah prosedur inspection benar?
+
+Apakah ada perubahan proses?
+
+Apakah corrective action sebelumnya efektif?
+
+Apakah supplier material mempunyai masalah?
+
+Jadi QC dapat menjadi pihak yang pertama kali melihat gejalanya.
+
+QA membantu memastikan organisasi memahami dan memperbaiki sistem penyebabnya.
+
+CONTOH QA DAN QC PADA INDUSTRI MAKANAN
+
+Pada pabrik makanan, QC bisa melakukan pemeriksaan:
+
+berat;
+
+ukuran;
+
+warna;
+
+pH;
+
+moisture;
+
+microbiological parameter;
+
+atau karakteristik lain sesuai produk dan regulasi.
+
+QA dapat memastikan:
+
+hygiene system;
+
+sanitation procedure;
+
+supplier control;
+
+traceability;
+
+training;
+
+document control;
+
+complaint handling;
+
+audit;
+
+dan sistem keamanan pangan berjalan sesuai persyaratan.
+
+Karena industri makanan menyangkut keamanan konsumen, hubungan antara sistem QA dan aktivitas QC menjadi sangat penting.
+
+CONTOH QA DAN QC PADA FARMASI
+
+Industri farmasi memiliki sistem yang jauh lebih ketat.
+
+FDA menjelaskan bahwa quality unit dalam fasilitas tertentu dapat menjalankan tanggung jawab QA dan QC, baik sebagai unit terpisah maupun sebagai satu kelompok, tergantung struktur organisasinya. citeturn0search1
+
+QC dapat melakukan testing bahan dan produk.
+
+QA dapat menangani review prosedur, catatan, audit, investigasi, dan keputusan terkait sistem kualitas sesuai struktur dan regulasi yang berlaku.
+
+Dalam lingkungan seperti ini, dokumentasi bukan sekadar administrasi.
+
+Dokumentasi merupakan bagian dari bukti bahwa proses dilakukan sesuai sistem.
+
+APA ITU NONCONFORMANCE?
+
+Nonconformance berarti sesuatu tidak memenuhi requirement yang sudah ditetapkan.
+
+Contohnya:
+
+diameter di luar tolerance;
+
+material grade salah;
+
+surface defect;
+
+label salah;
+
+packaging tidak sesuai;
+
+parameter proses keluar dari batas;
+
+atau dokumen tidak memenuhi requirement.
+
+QC sering menjadi pihak yang menemukan ketidaksesuaian.
+
+Namun penyelesaian tidak berhenti pada:
+
+“Barang ini NG.”
+
+Pertanyaan berikutnya adalah:
+
+“Kenapa bisa NG?”
+
+Dan lebih penting lagi:
+
+“Bagaimana supaya tidak terjadi lagi?”
+
+DI SINILAH ROOT CAUSE ANALYSIS MASUK
+
+Salah satu kesalahan besar dalam quality adalah berhenti pada gejala.
+
+Contoh:
+
+Produk memiliki scratch.
+
+Tindakan:
+
+“Pisahkan produk scratch.”
+
+Itu containment.
+
+Belum tentu corrective action.
+
+Root cause analysis harus mencari penyebab yang memungkinkan masalah tersebut terjadi.
+
+Mungkin:
+
+roller rusak;
+
+guide bergeser;
+
+material terkontaminasi;
+
+setting salah;
+
+prosedur tidak jelas;
+
+operator tidak menerima informasi perubahan;
+
+atau maintenance terlambat.
+
+QA dan QC dapat terlibat bersama departemen lain dalam proses investigasi.
+
+PRODUK NG BUKAN BERARTI QC GAGAL
+
+Ini penting.
+
+Kalau QC menemukan 100 produk NG, bukan berarti QC menyebabkan 100 produk NG.
+
+Justru QC mungkin telah melakukan fungsi deteksi dengan benar.
+
+QC bukan pembuat defect.
+
+Produksi juga tidak boleh otomatis dianggap sebagai satu-satunya penyebab.
+
+Defect bisa berasal dari desain, material, tooling, mesin, metode, measurement system, manusia, lingkungan, atau kombinasi beberapa faktor.
+
+Tujuan quality bukan mencari orang untuk disalahkan.
+
+Tujuannya mengurangi kemungkinan masalah terulang.
+
+QA DAN QC HARUS BEKERJA SAMA DENGAN PRODUKSI
+
+Quality bukan tanggung jawab departemen quality saja.
+
+Operator harus menjaga kualitas pekerjaannya.
+
+Production harus mengendalikan proses.
+
+Maintenance harus menjaga equipment.
+
+Engineering harus memastikan desain dan parameter teknis sesuai.
+
+Purchasing harus mempertimbangkan persyaratan supplier.
+
+Warehouse harus menjaga material.
+
+QA dan QC memastikan sistem dan kontrol kualitas berjalan.
+
+Kalau semua orang berpikir:
+
+“Quality itu urusan QC,”
+
+maka perusahaan akan bergantung pada inspeksi.
+
+Dan itu bukan sistem quality yang kuat.
+
+QC YANG MENEMUKAN MASALAH TERUS-MENERUS HARUS MEMICU PERBAIKAN PROSES
+
+Misalnya setiap hari QC menemukan defect yang sama.
+
+Hari pertama:
+
+10 pcs NG.
+
+Hari kedua:
+
+12 pcs NG.
+
+Hari ketiga:
+
+15 pcs NG.
+
+Kalau pekerjaan hanya:
+
+sortir;
+
+pisahkan;
+
+rework;
+
+release;
+
+selesai,
+
+maka perusahaan sebenarnya sedang membayar QC untuk menemukan masalah yang sama setiap hari.
+
+Data QC seharusnya menjadi sinyal bagi organisasi untuk melakukan improvement.
+
+Inilah alasan data inspection sangat berharga.
+
+DARI INSPEKSI MENUJU PENCEGAHAN
+
+ASQ mencatat perkembangan quality dari inspection menuju pengendalian variasi proses dan kemudian pendekatan assurance serta audit. citeturn0search0
+
+Intinya sederhana.
+
+Semakin matang sistem manufaktur, semakin perusahaan berusaha membuat produk benar sejak awal.
+
+Bukan berarti inspection dihapus.
+
+Inspection tetap diperlukan.
+
+Tetapi inspection tidak boleh menjadi satu-satunya pertahanan.
+
+Kalau defect baru diketahui setelah produk selesai, biaya perbaikannya biasanya lebih tinggi daripada mencegahnya di sumber.
+
+MANA YANG LEBIH PENTING, QA ATAU QC?
+
+Jawaban tegasnya:
+
+Tidak ada yang boleh dihilangkan.
+
+Tetapi kalau harus memilih prinsip mana yang lebih fundamental untuk sistem jangka panjang, QA memiliki peran lebih luas karena QA membantu membangun sistem yang mencegah kualitas bergantung hanya pada inspection.
+
+ISO sendiri menggambarkan QA sebagai pendekatan yang berorientasi pada proses dan pencegahan, sementara QC berorientasi pada output dan deteksi. citeturn0search3
+
+Namun perusahaan yang mempunyai QA bagus tanpa QC yang kuat juga bermasalah.
+
+Anda bisa mempunyai SOP sempurna.
+
+Audit bagus.
+
+Dokumen lengkap.
+
+Tetapi jika tidak ada pemeriksaan nyata terhadap produk dan proses, perusahaan tidak tahu apakah sistem tersebut benar-benar menghasilkan output sesuai specification.
+
+Jadi jawaban yang benar bukan memilih salah satu.
+
+QA membangun sistem.
+
+QC membuktikan kondisi aktual.
+
+Keduanya membutuhkan produksi untuk menjalankan proses dengan benar.
+
+PERBEDAAN QA DAN QC DARI SISI PEKERJAAN
+
+QA biasanya lebih banyak membutuhkan kemampuan:
+
+system thinking;
+
+audit;
+
+document control;
+
+risk management;
+
+problem solving;
+
+communication;
+
+regulatory awareness;
+
+data analysis;
+
+dan process improvement.
+
+QC lebih banyak membutuhkan:
+
+measurement;
+
+inspection;
+
+testing;
+
+sampling;
+
+product knowledge;
+
+instrument handling;
+
+data recording;
+
+drawing/specification reading;
+
+dan ketelitian.
+
+Namun ada overlap.
+
+Orang QC yang bagus sebaiknya memahami proses.
+
+Orang QA yang bagus juga harus memahami produk.
+
+QA DAN QC DARI SISI KARIER
+
+Kalau Anda ingin berkarier di quality, pahami perbedaan karakter pekerjaannya.
+
+QC cocok bagi orang yang menikmati:
+
+pengukuran;
+
+pemeriksaan;
+
+laboratorium;
+
+detail teknis;
+
+produk;
+
+data;
+
+dan aktivitas yang membutuhkan ketelitian tinggi.
+
+QA cocok bagi orang yang menikmati:
+
+sistem;
+
+audit;
+
+prosedur;
+
+investigasi;
+
+komunikasi lintas departemen;
+
+risk management;
+
+dan perbaikan sistem.
+
+Tetapi jangan menganggap satu jalur lebih tinggi daripada yang lain.
+
+Seorang QC berpengalaman dapat berkembang menjadi QC supervisor, quality engineer, laboratory specialist, atau quality manager.
+
+Seorang QA dapat berkembang menjadi QA supervisor, quality system specialist, compliance specialist, quality manager, atau bahkan posisi yang lebih luas dalam quality management.
+
+APA ITU QUALITY ENGINEER?
+
+Quality Engineer sering menjadi jembatan antara data quality dan proses engineering.
+
+Pekerjaannya dapat mencakup:
+
+process capability;
+
+SPC;
+
+root cause analysis;
+
+FMEA;
+
+8D;
+
+problem solving;
+
+measurement system analysis;
+
+improvement;
+
+customer complaint;
+
+dan process control.
+
+Struktur organisasi berbeda-beda.
+
+Di satu perusahaan Quality Engineer bisa berada di bawah Quality.
+
+Di perusahaan lain bisa sangat dekat dengan Manufacturing Engineering.
+
+Yang penting adalah fungsi yang dijalankan, bukan sekadar nama jabatan.
+
+QA, QC, DAN QUALITY ENGINEERING BUKAN HAL YANG SAMA
+
+Cara sederhana membedakannya:
+
+QA:
+“Apakah sistem kita benar?”
+
+QC:
+“Apakah hasilnya benar?”
+
+Quality Engineering:
+“Bagaimana membuat proses menghasilkan hasil yang benar secara konsisten dan semakin baik?”
+
+Ketiganya saling berhubungan.
+
+APA PERAN OPERATOR DALAM QUALITY?
+
+Sangat besar.
+
+Operator adalah orang yang paling dekat dengan proses.
+
+Operator dapat melihat:
+
+suara mesin;
+
+perubahan material;
+
+perubahan bentuk produk;
+
+perubahan warna;
+
+vibration;
+
+temperature;
+
+pressure;
+
+dan kondisi lain yang mungkin tidak langsung muncul dalam laporan.
+
+Karena itu jangan membuat operator merasa bahwa quality hanya urusan QC.
+
+Quality harus dibangun sejak pekerjaan pertama dilakukan.
+
+FDA juga menekankan bahwa tanggung jawab membangun kualitas ke dalam produk tidak hanya berada pada quality unit, tetapi tetap menjadi tanggung jawab personel manufaktur dalam aktivitas sehari-hari. citeturn0search38
+
+APA YANG TERJADI JIKA QA DAN QC TIDAK BERFUNGSI?
+
+Gejalanya biasanya terlihat.
+
+QC menemukan defect yang sama berulang kali.
+
+Produksi sering melakukan rework.
+
+Customer complaint meningkat.
+
+Data inspection tidak konsisten.
+
+Dokumen berbeda antarversi.
+
+Operator tidak tahu specification terbaru.
+
+Alat ukur tidak terkontrol.
+
+Corrective action selesai di kertas tetapi masalah kembali.
+
+Supplier bermasalah berulang.
+
+Audit menemukan temuan yang sama.
+
+Kalau kondisi seperti ini terjadi, perusahaan bukan hanya mempunyai masalah QC.
+
+Kemungkinan ada masalah sistem quality yang lebih luas.
+
+QA/QC PADA PABRIK KECIL
+
+Tidak semua perusahaan membutuhkan struktur QA dan QC sebesar perusahaan multinasional.
+
+Pabrik kecil mungkin hanya mempunyai satu atau beberapa orang quality.
+
+Bahkan satu orang dapat menjalankan beberapa fungsi dengan tetap menjaga kontrol yang memadai.
+
+FDA, dalam konteks regulated manufacturing tertentu, juga mengakui bahwa quality unit dapat berbentuk unit QA dan QC terpisah atau satu individu/kelompok, tergantung ukuran dan struktur organisasi. citeturn0search1
+
+Namun prinsipnya jangan hilang:
+
+ada specification;
+
+ada standard;
+
+ada inspection;
+
+ada dokumentasi;
+
+ada traceability;
+
+ada pengendalian alat ukur;
+
+ada penanganan produk nonconforming;
+
+dan ada tindakan terhadap masalah berulang.
+
+Pabrik kecil tidak membutuhkan birokrasi berlebihan.
+
+Tetapi tetap membutuhkan disiplin quality.
+
+QA/QC DI ERA INDUSTRI 4.0
+
+Perkembangan teknologi membuat fungsi quality semakin berubah.
+
+Data mesin dapat dikumpulkan secara real-time.
+
+Sensor dapat memonitor proses.
+
+Vision inspection dapat mendeteksi defect.
+
+SPC dapat dilakukan secara digital.
+
+Traceability dapat dibuat otomatis.
+
+AI bahkan mulai digunakan untuk mendeteksi pola defect.
+
+Artikel ilmiah dalam Quality Engineering pada 2025 membahas perkembangan Learning Quality Control yang menggabungkan Quality 4.0 dengan manufacturing big data, IIoT, cloud computing, dan AI untuk mendeteksi serta memprediksi defect. citeturn0search11
+
+Artinya QC masa depan tidak harus selalu berarti orang berdiri dengan caliper memeriksa satu per satu produk.
+
+Sebagian inspection dapat dilakukan otomatis.
+
+Tetapi manusia tetap dibutuhkan untuk menentukan specification, memahami konteks proses, mengevaluasi risiko, menangani abnormality, dan mengambil keputusan.
+
+QA juga akan semakin banyak berurusan dengan:
+
+data integrity;
+
+digital records;
+
+cybersecurity dalam quality system;
+
+AI governance;
+
+automated inspection;
+
+electronic traceability;
+
+dan validasi sistem digital.
+
+KESALAHAN UMUM DALAM MEMAHAMI QA DAN QC
+
+Kesalahan pertama:
+
+“QC bertugas mencari siapa yang salah.”
+
+Salah.
+
+QC bertugas melakukan kontrol dan pemeriksaan sesuai sistem.
+
+Kesalahan kedua:
+
+“QA hanya urusan dokumen.”
+
+Salah.
+
+QA berhubungan dengan sistem kualitas secara lebih luas.
+
+Kesalahan ketiga:
+
+“Kalau sudah ada QC, quality aman.”
+
+Salah.
+
+QC dapat menemukan defect, tetapi tidak otomatis menghilangkan penyebab defect.
+
+Kesalahan keempat:
+
+“QA lebih tinggi daripada QC.”
+
+Tidak sesederhana itu.
+
+Struktur organisasi berbeda.
+
+Yang berbeda adalah fokus fungsi.
+
+Kesalahan kelima:
+
+“Produksi tidak bertanggung jawab atas quality.”
+
+Salah.
+
+Produksi adalah bagian utama dari proses pembentukan kualitas.
+
+KESIMPULAN PALING MUDAH DIINGAT
+
+Kalau Anda hanya mengingat empat kalimat dari artikel ini, ingat ini:
+
+QA bertanya: “Apakah sistem dan proses kita dibuat untuk menghasilkan kualitas?”
+
+QC bertanya: “Apakah produk atau proses yang sedang kita hasilkan memenuhi specification?”
+
+QA berusaha mencegah masalah melalui sistem.
+
+QC menemukan, mengukur, dan mengendalikan kondisi aktual melalui inspection dan testing.
+
+Keduanya tidak boleh dipertentangkan.
+
+QA tanpa QC seperti mempunyai aturan tetapi tidak pernah memeriksa kenyataan.
+
+QC tanpa QA seperti terus-menerus menemukan kebocoran tetapi tidak pernah memperbaiki sistem yang membuat kebocoran terjadi.
+
+Pabrik yang matang tidak memilih antara QA dan QC.
+
+Pabrik yang matang membuat QA, QC, produksi, engineering, maintenance, supplier, dan seluruh organisasi bekerja dalam satu sistem kualitas.
+
+Karena pada akhirnya customer tidak membeli “QA”.
+
+Customer juga tidak membeli “QC”.
+
+Customer membeli produk yang sesuai specification, aman digunakan, konsisten, dan dapat dipercaya.
+
+Dan kualitas seperti itu tidak lahir dari satu departemen.
+
+Ia lahir dari seluruh sistem manufaktur.
+
+SUMBER RUJUKAN
+
+1. International Organization for Standardization (ISO) — Quality assurance: A critical ingredient for organizational success.
+https://www.iso.org/quality-management/quality-assurance
+
+2. American Society for Quality (ASQ) — Quality Assurance vs Quality Control.
+https://asq.org/quality-resources/quality-assurance-vs-control
+
+3. U.S. Food and Drug Administration (FDA) — Q7A Good Manufacturing Practice Guidance for Active Pharmaceutical Ingredients.
+https://www.fda.gov/regulatory-information/search-fda-guidance-documents/q7a-good-manufacturing-practice-guidance-active-pharmaceutical-ingredients
+
+4. U.S. Food and Drug Administration (FDA) — Overview of the Quality System Regulation.
+https://www.fda.gov/media/118198/download
+
+5. U.S. Food and Drug Administration (FDA) — Guide to Inspections of Quality Systems.
+https://www.fda.gov/files/Guide-to-Inspections-of-Quality-Systems.pdf
+
+6. American Society for Quality — Quality 4.0: Learning quality control, the evolution of SQC/SPC.
+https://asq.org/quality-resources/articles/learning-quality-control
+
+CATATAN
+
+Struktur QA dan QC berbeda antarperusahaan dan industri. Pada industri yang sangat teregulasi, pembagian tanggung jawab dapat ditentukan secara khusus oleh regulasi. Karena itu artikel ini menjelaskan prinsip umum manufaktur dan bukan pengganti standar, regulasi, prosedur internal, atau persyaratan customer yang berlaku pada perusahaan tertentu.
