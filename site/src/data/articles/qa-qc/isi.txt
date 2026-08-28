@@ -1,4 +1,4 @@
-INI PERBEDAAN QA DAN QC DI INDUSTRI DAN MANUFAKTUR: TUGAS, CARA KERJA, DAN MANA YANG LEBIH PENTING?
+ini perbedaan QA dan QC : Tugas, Cara kerja, dan mana yang lebih penting
 
 Di banyak pabrik, istilah QA dan QC sering dipakai seolah-olah mempunyai arti yang sama. Bahkan tidak jarang sebuah perusahaan menyebut departemennya “QA/QC” tanpa menjelaskan secara tegas siapa yang bertanggung jawab terhadap apa.
 
