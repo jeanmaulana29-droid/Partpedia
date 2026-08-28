@@ -737,7 +737,7 @@ const catalog = shuffleCatalog(data);
     
     // Wawasan Industri:
     // - Kartu kiri = artikel terbaru (default saat buka halaman)
-    // - Geser ke kanan tiap 3 detik (artikel lebih lama)
+    // - Geser ke kanan tiap 5 detik (artikel lebih lama)
     // - Maks 10 kartu; setelah kartu terakhir → kembali ke kiri (terbaru)
     const track = document.getElementById("feat-track");
     if (track) {
@@ -780,7 +780,7 @@ const catalog = shuffleCatalog(data);
         if (pause) return;
         if (cards().length < 2) return;
         goTo(cardIndex + 1, true);
-      }, 3000);
+      }, 5000);
     }
 
 
