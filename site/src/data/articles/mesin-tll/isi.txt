@@ -1,4 +1,4 @@
-MENGUASAI INDUSTRI: MEMAHAMI MESIN TENSION LEVELLER LINE (TLL) DAN FUNGSI UTAMANYA PADA INDUSTRI BAJA GULUNG (CRC COIL)
+Apa itu Mesin Tension Leveller Line (TLL) dan Fungsi utamnya pada industri Baja gulung (CRC Coil)
 
 Ketika sebuah CRC coil keluar dari proses rolling, pekerjaan belum tentu selesai. Permukaan mungkin sudah memenuhi persyaratan tertentu, ketebalan sudah mendekati target, dan coil telah memiliki bentuk yang secara kasatmata terlihat baik. Namun begitu strip dibuka dan dilewatkan ke proses berikutnya, masalah flatness dapat muncul: edge wave, center wave, crossbow, coil set, atau bentuk gelombang lain yang membuat material sulit diproses.
 
