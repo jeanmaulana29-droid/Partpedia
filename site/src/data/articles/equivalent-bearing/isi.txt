@@ -1,0 +1,1250 @@
+Equivalent Bearing SKF ke NTN, NSK, FAG, KOYO, NACHI, dan Merek Lain: Tabel Lengkap yang Paling Sering Dicari
+
+Ketika sebuah bearing rusak di tengah operasi mesin, pertanyaan yang paling sering muncul di ruang maintenance biasanya sederhana: “Kalau SKF tidak ada, bisa diganti NTN atau NSK?”
+
+Jawabannya: sering kali bisa, tetapi tidak boleh dilakukan hanya dengan melihat angka yang sama atau ukuran diameter dalamnya.
+
+Pada banyak bearing standar, nomor dasar memang dibuat berdasarkan sistem dimensi yang memungkinkan produk dari beberapa manufacturer mempunyai ukuran batas yang sama. Contohnya 6205 merupakan deep groove ball bearing dengan ukuran dasar 25 × 52 × 15 mm. SKF, NSK, NTN, FAG dan beberapa merek lain dapat memiliki bearing dengan basic designation 6205. Namun ketika kode lengkapnya berubah menjadi 6205-2RSH, 6205DDU, 6205LLU, 6205-2RSR, atau 6205ZZ, perbedaan seal, shield, clearance, grease, cage, tolerance, dan karakteristik lainnya mulai harus diperhatikan.
+
+NSK sendiri menyediakan interchange list yang menunjukkan banyak padanan designation dari SKF, FAG, NTN dan manufacturer lain. Pada daftar tersebut terlihat bahwa sejumlah kode dasar dan suffix dapat diterjemahkan antarbrand, tetapi juga terdapat designation tertentu yang tidak memiliki padanan langsung. Artinya, cross-reference bearing bukan sekadar mengganti nama merek. Ini adalah pekerjaan identifikasi teknis.
+
+Artikel ini dibuat sebagai panduan praktis untuk mencari equivalent bearing SKF ke NTN, NSK, FAG/Schaeffler, KOYO, NACHI, Timken, dan merek lainnya, terutama untuk bearing yang sering digunakan pada motor listrik, gearbox, conveyor, pompa, fan, mesin produksi, workshop, dan berbagai peralatan industri.
+
+Catatan penting sebelum menggunakan tabel: “equivalent” dalam artikel ini terutama berarti padanan designation atau kesesuaian dimensi dasar pada bearing standard. Untuk mesin kritis, high speed, temperatur tinggi, beban berat, precision bearing, bearing dengan special clearance, bearing listrik berinsulasi, atau bearing yang ditentukan OEM, full specification tetap harus diverifikasi melalui katalog manufacturer.
+
+Mengapa bearing dari merek berbeda bisa memiliki nomor yang sama?
+
+Hal ini terjadi karena dunia bearing menggunakan standar dimensi dan sistem designation yang membuat banyak bearing standard mempunyai boundary dimensions yang sama.
+
+Pada deep groove ball bearing seperti 6205, angka dasarnya dapat sama walaupun manufacturer berbeda.
+
+Contohnya:
+
+SKF 6205
+NSK 6205
+NTN 6205
+FAG 6205
+KOYO 6205
+NACHI 6205
+
+Untuk basic bearing yang benar-benar sekelas, angka dasar tersebut mengarah pada envelope atau boundary dimensions yang sama.
+
+NSK bahkan mempunyai produk 6205 dengan diameter dalam 25 mm, diameter luar 52 mm, dan lebar 15 mm. NTN juga mencantumkan 6205 dengan 25 mm, 52 mm, dan 15 mm. Hal ini menunjukkan mengapa cross-reference pada bearing standard dapat dilakukan. Namun nilai load rating, limiting speed, seal, grease, dan detail internal tidak otomatis sama hanya karena dimensinya sama.
+
+Karena itu ada dua istilah yang sebaiknya dibedakan:
+
+Dimensional equivalent
+Artinya bearing mempunyai boundary dimensions yang sesuai untuk mounting envelope tertentu.
+
+Functional equivalent
+Artinya selain dimensinya sesuai, karakteristik seperti clearance, sealing, cage, load rating, speed, lubrication, precision, dan konstruksi internal juga sesuai dengan kebutuhan aplikasi.
+
+Dalam pekerjaan industri, functional equivalence jauh lebih penting daripada sekadar dimensional equivalence.
+
+Tabel padanan bearing yang paling sering dicari
+
+Tabel berikut difokuskan pada bearing standard yang umum ditemukan di maintenance. Suffix dibuat terpisah karena bagian inilah yang paling sering menyebabkan kesalahan ketika mengganti merek.
+
+1. Deep groove ball bearing 6200 series
+
+SKF | NTN | NSK | FAG/Schaeffler | KOYO | NACHI | Jenis
+6200 | 6200 | 6200 | 6200 | 6200 | 6200 | Open deep groove ball bearing
+6201 | 6201 | 6201 | 6201 | 6201 | 6201 | Open deep groove ball bearing
+6202 | 6202 | 6202 | 6202 | 6202 | 6202 | Open deep groove ball bearing
+6203 | 6203 | 6203 | 6203 | 6203 | 6203 | Open deep groove ball bearing
+6204 | 6204 | 6204 | 6204 | 6204 | 6204 | Open deep groove ball bearing
+6205 | 6205 | 6205 | 6205 | 6205 | 6205 | Open deep groove ball bearing
+6206 | 6206 | 6206 | 6206 | 6206 | 6206 | Open deep groove ball bearing
+6207 | 6207 | 6207 | 6207 | 6207 | 6207 | Open deep groove ball bearing
+6208 | 6208 | 6208 | 6208 | 6208 | 6208 | Open deep groove ball bearing
+6209 | 6209 | 6209 | 6209 | 6209 | 6209 | Open deep groove ball bearing
+6210 | 6210 | 6210 | 6210 | 6210 | 6210 | Open deep groove ball bearing
+
+Pada basic designation seperti ini, angka dasarnya sama karena merupakan bearing standard dengan boundary dimensions yang sama. Tetapi jangan langsung menambahkan suffix merek lain secara sembarangan.
+
+2. Deep groove ball bearing 6300 series
+
+SKF | NTN | NSK | FAG/Schaeffler | KOYO | NACHI | Jenis
+6300 | 6300 | 6300 | 6300 | 6300 | 6300 | Open deep groove ball bearing
+6301 | 6301 | 6301 | 6301 | 6301 | 6301 | Open deep groove ball bearing
+6302 | 6302 | 6302 | 6302 | 6302 | 6302 | Open deep groove ball bearing
+6303 | 6303 | 6303 | 6303 | 6303 | 6303 | Open deep groove ball bearing
+6304 | 6304 | 6304 | 6304 | 6304 | 6304 | Open deep groove ball bearing
+6305 | 6305 | 6305 | 6305 | 6305 | 6305 | Open deep groove ball bearing
+6306 | 6306 | 6306 | 6306 | 6306 | 6306 | Open deep groove ball bearing
+6307 | 6307 | 6307 | 6307 | 6307 | 6307 | Open deep groove ball bearing
+6308 | 6308 | 6308 | 6308 | 6308 | 6308 | Open deep groove ball bearing
+6309 | 6309 | 6309 | 6309 | 6309 | 6309 | Open deep groove ball bearing
+6310 | 6310 | 6310 | 6310 | 6310 | 6310 | Open deep groove ball bearing
+
+6300 series sering digunakan ketika kebutuhan radial load lebih tinggi dibandingkan bearing dari series yang lebih ringan dengan bore yang sama. Jangan menukar 6205 dengan 6305 hanya karena keduanya mempunyai bore 25 mm. Outside diameter dan width berbeda.
+
+3. Contoh equivalent 6205 dengan seal dan shield
+
+Kode dasar:
+
+SKF 6205
+NTN 6205
+NSK 6205
+FAG 6205
+KOYO 6205
+NACHI 6205
+
+Untuk versi shield atau seal, penamaannya berbeda.
+
+SKF 6205-2Z = shield pada kedua sisi
+NSK 6205ZZ = shield pada kedua sisi
+NTN 6205ZZ = shield pada kedua sisi
+FAG 6205-2ZR = shield pada kedua sisi pada nomenclature tertentu
+KOYO 6205ZZ = shield pada kedua sisi
+
+Untuk versi contact seal, contoh yang sering ditemukan:
+
+SKF 6205-2RSH
+NTN 6205LLU
+NSK 6205DDU
+FAG 6205-2RSR
+KOYO 6205-2RS
+NACHI 6205-2NSE
+
+Daftar ini merupakan contoh cross-reference yang sering digunakan, tetapi suffix harus diverifikasi pada katalog masing-masing manufacturer sebelum pengadaan.
+
+NSK secara resmi menjelaskan bahwa DDU menunjukkan rubber contact seal pada kedua sisi. Produk NSK 6205DDU mempunyai ukuran 25 × 52 × 15 mm dan radial internal clearance CN. NTN juga mencantumkan 6205LLU sebagai single-row deep groove ball bearing dengan contact seals pada kedua sisi.
+
+Jadi secara praktis:
+
+SKF 6205-2RSH
+NSK 6205DDU
+NTN 6205LLU
+FAG 6205-2RSR
+
+dapat menjadi kandidat cross-reference untuk kebutuhan bearing sealed dengan ukuran dasar 6205.
+
+Tetapi jangan menyimpulkan bahwa keempat bearing tersebut identik dalam setiap parameter.
+
+4. Equivalent 6305
+
+Basic designation:
+
+SKF 6305
+NTN 6305
+NSK 6305
+FAG 6305
+KOYO 6305
+NACHI 6305
+
+Versi sealed yang sering dicari:
+
+SKF 6305-2RSH
+NTN 6305LLU
+NSK 6305DDU
+FAG 6305-2RSR
+KOYO 6305-2RS
+NACHI 6305-2NSE
+
+Versi shielded:
+
+SKF 6305-2Z
+NTN 6305ZZ
+NSK 6305ZZ
+FAG 6305-2ZR
+KOYO 6305ZZ
+
+Untuk 6305, boundary dimensions umumnya 25 × 62 × 17 mm. Perbedaan dengan 6205 sangat penting: keduanya bore 25 mm, tetapi diameter luar dan width berbeda.
+
+5. Equivalent 6206
+
+Basic designation:
+
+SKF 6206
+NTN 6206
+NSK 6206
+FAG 6206
+KOYO 6206
+NACHI 6206
+
+Versi contact sealed yang sering dicari:
+
+SKF 6206-2RSH
+NTN 6206LLU
+NSK 6206DDU
+FAG 6206-2RSR
+KOYO 6206-2RS
+NACHI 6206-2NSE
+
+Versi shielded:
+
+SKF 6206-2Z
+NTN 6206ZZ
+NSK 6206ZZ
+FAG 6206-2ZR
+KOYO 6206ZZ
+
+6206 mempunyai bore 30 mm, outside diameter 62 mm, dan width 16 mm pada konfigurasi standard yang umum.
+
+6. Equivalent 6204
+
+Basic designation:
+
+SKF 6204
+NTN 6204
+NSK 6204
+FAG 6204
+KOYO 6204
+NACHI 6204
+
+Contact seal:
+
+SKF 6204-2RSH
+NTN 6204LLU
+NSK 6204DDU
+FAG 6204-2RSR
+KOYO 6204-2RS
+NACHI 6204-2NSE
+
+Shield:
+
+SKF 6204-2Z
+NTN 6204ZZ
+NSK 6204ZZ
+FAG 6204-2ZR
+KOYO 6204ZZ
+
+7. Equivalent 6203
+
+Basic designation:
+
+SKF 6203
+NTN 6203
+NSK 6203
+FAG 6203
+KOYO 6203
+NACHI 6203
+
+Contact seal:
+
+SKF 6203-2RSH
+NTN 6203LLU
+NSK 6203DDU
+FAG 6203-2RSR
+KOYO 6203-2RS
+NACHI 6203-2NSE
+
+Shield:
+
+SKF 6203-2Z
+NTN 6203ZZ
+NSK 6203ZZ
+FAG 6203-2ZR
+KOYO 6203ZZ
+
+8. Equivalent 6306
+
+Basic designation:
+
+SKF 6306
+NTN 6306
+NSK 6306
+FAG 6306
+KOYO 6306
+NACHI 6306
+
+Contact seal:
+
+SKF 6306-2RSH
+NTN 6306LLU
+NSK 6306DDU
+FAG 6306-2RSR
+KOYO 6306-2RS
+NACHI 6306-2NSE
+
+Shield:
+
+SKF 6306-2Z
+NTN 6306ZZ
+NSK 6306ZZ
+FAG 6306-2ZR
+KOYO 6306ZZ
+
+9. Equivalent 6307
+
+Basic designation:
+
+SKF 6307
+NTN 6307
+NSK 6307
+FAG 6307
+KOYO 6307
+NACHI 6307
+
+Contact seal:
+
+SKF 6307-2RSH
+NTN 6307LLU
+NSK 6307DDU
+FAG 6307-2RSR
+KOYO 6307-2RS
+NACHI 6307-2NSE
+
+Shield:
+
+SKF 6307-2Z
+NTN 6307ZZ
+NSK 6307ZZ
+FAG 6307-2ZR
+KOYO 6307ZZ
+
+10. Equivalent 6308
+
+Basic designation:
+
+SKF 6308
+NTN 6308
+NSK 6308
+FAG 6308
+KOYO 6308
+NACHI 6308
+
+Shielded example:
+
+SKF 6308-2Z
+NTN 6308ZZ
+NSK 6308ZZ
+FAG 6308-2ZR
+KOYO 6308-2Z
+
+Contact sealed example:
+
+SKF 6308-2RSH
+NTN 6308LLU
+NSK 6308DDU
+FAG 6308-2RSR
+KOYO 6308-2RS
+
+11. Equivalent 6000 series
+
+SKF 6000
+NTN 6000
+NSK 6000
+FAG 6000
+KOYO 6000
+NACHI 6000
+
+SKF 6001
+NTN 6001
+NSK 6001
+FAG 6001
+KOYO 6001
+NACHI 6001
+
+SKF 6002
+NTN 6002
+NSK 6002
+FAG 6002
+KOYO 6002
+NACHI 6002
+
+SKF 6003
+NTN 6003
+NSK 6003
+FAG 6003
+KOYO 6003
+NACHI 6003
+
+SKF 6004
+NTN 6004
+NSK 6004
+FAG 6004
+KOYO 6004
+NACHI 6004
+
+SKF 6005
+NTN 6005
+NSK 6005
+FAG 6005
+KOYO 6005
+NACHI 6005
+
+SKF 6006
+NTN 6006
+NSK 6006
+FAG 6006
+KOYO 6006
+NACHI 6006
+
+SKF 6007
+NTN 6007
+NSK 6007
+FAG 6007
+KOYO 6007
+NACHI 6007
+
+SKF 6008
+NTN 6008
+NSK 6008
+FAG 6008
+KOYO 6008
+NACHI 6008
+
+SKF 6009
+NTN 6009
+NSK 6009
+FAG 6009
+KOYO 6009
+NACHI 6009
+
+SKF 6010
+NTN 6010
+NSK 6010
+FAG 6010
+KOYO 6010
+NACHI 6010
+
+12. Perbedaan 6000, 6200, dan 6300 series
+
+Kesalahan yang sering terjadi adalah menganggap semua bearing dengan bore yang sama bisa ditukar.
+
+Padahal dimension series menentukan envelope bearing.
+
+Sebagai contoh, untuk bore 25 mm:
+
+6205 = 25 × 52 × 15 mm
+6305 = 25 × 62 × 17 mm
+
+Keduanya tidak dapat dipertukarkan jika housing dirancang untuk salah satunya.
+
+Karena itu ketika mencari equivalent, urutannya bukan:
+
+“Cari bearing 25 mm.”
+
+Urutannya adalah:
+
+“Cari bearing dengan tipe, basic designation, boundary dimensions, clearance, sealing, cage, dan karakteristik aplikasi yang sesuai.”
+
+13. Bearing 6000 series versus 6200 series
+
+Keduanya sama-sama deep groove ball bearing.
+
+Namun series berbeda.
+
+6000 series umumnya mempunyai envelope yang lebih kecil.
+
+6200 series mempunyai envelope lebih besar.
+
+Jika sebuah motor menggunakan 6204, jangan mengganti dengan 6004 hanya karena bore sama-sama 20 mm.
+
+Diameter luar dan width tidak sama.
+
+14. Bearing 6200 series versus 6300 series
+
+Ini bahkan lebih sering terjadi di lapangan.
+
+6205 dan 6305 sama-sama bore 25 mm.
+
+Namun:
+
+6205 = 25 × 52 × 15 mm
+6305 = 25 × 62 × 17 mm
+
+Jika bearing dipasang pada housing tertentu, 6305 tidak akan menjadi pengganti langsung 6205.
+
+Sebaliknya, jika mesin dirancang untuk 6305, 6205 juga bukan pengganti otomatis.
+
+15. Bearing C3: apakah SKF C3 sama dengan NTN C3?
+
+Secara konsep, C3 mengacu pada radial internal clearance yang lebih besar daripada Normal.
+
+Tetapi nilai clearance aktual tetap harus dilihat dari standar dan katalog manufacturer.
+
+Jangan menganggap semua C3 mempunyai angka clearance yang persis sama.
+
+Untuk aplikasi biasa, perbedaan kecil dapat terlihat tidak penting. Pada motor listrik, high-speed machinery, bearing dengan interference fit, atau temperatur operasi tinggi, perbedaan tersebut dapat menjadi penting.
+
+Karena itu equivalent bearing harus mencocokkan kelas clearance.
+
+Contoh:
+
+SKF 6205-2RSH/C3
+
+lebih tepat dicari padanannya pada bearing 6205 sealed dengan C3, bukan sekadar “bearing 6205”.
+
+16. Equivalent bearing dengan suffix seal
+
+Berikut pola yang sering ditemukan pada deep groove ball bearing:
+
+Fitur: rubber contact seal pada kedua sisi
+
+SKF: 2RS1 atau 2RSH, tergantung product designation
+NSK: DDU
+NTN: LLU
+FAG: 2RSR
+KOYO: 2RS
+NACHI: 2NSE
+
+Fitur: shield pada kedua sisi
+
+SKF: 2Z
+NSK: ZZ
+NTN: ZZ
+FAG: 2ZR
+KOYO: ZZ
+
+Namun jangan membuat konversi suffix sebagai rumus mutlak.
+
+NSK sendiri menjelaskan bahwa D, DU, DW dan V digunakan dalam supplementary designation untuk sealing, sedangkan Z digunakan untuk shield. SKF mempunyai designation sendiri, dan NTN juga mempunyai designation sendiri.
+
+17. Mengapa bearing sealed tidak selalu bisa disamakan dengan bearing shielded?
+
+Karena seal dan shield mempunyai karakteristik berbeda.
+
+Seal kontak biasanya memberikan perlindungan terhadap kontaminasi lebih kuat.
+
+Shield mempunyai konstruksi berbeda dan biasanya mempunyai friction yang berbeda pula.
+
+Akibatnya limiting speed dapat berubah.
+
+Contoh nyata dapat dilihat pada katalog manufacturer. NSK mencantumkan 6205ZZ dengan limiting speed grease 15.000 rpm, sedangkan 6205DDU pada halaman produk NSK mencantumkan 9.000 rpm. Ini menunjukkan bahwa mengganti shield dengan contact seal bukan perubahan kosmetik.
+
+18. Apakah SKF 6205-2RSH bisa langsung diganti NTN 6205LLU?
+
+Untuk banyak aplikasi standard, keduanya merupakan kandidat cross-reference yang sangat umum.
+
+Namun sebelum dipasang, periksa:
+
+1. Bore
+2. Outside diameter
+3. Width
+4. Clearance
+5. Seal
+6. Load rating
+7. Limiting speed
+8. Grease
+9. Cage
+10. Operating temperature
+11. Shaft fit
+12. Housing fit
+
+Jika semua kebutuhan aplikasi terpenuhi, substitution dapat dipertimbangkan.
+
+Untuk mesin kritis, lakukan approval engineering.
+
+19. Equivalent bearing untuk motor listrik
+
+Bearing pada motor listrik sering membutuhkan perhatian lebih pada:
+
+noise
+vibration
+temperature
+grease
+clearance
+speed
+electrical current
+
+SKF bahkan memberikan contoh 6205-2RSH/C3 pada aplikasi motor listrik dan menjelaskan bahwa speed capability dipengaruhi oleh bearing type, internal design, load, lubrication, cooling, cage, accuracy dan internal clearance.
+
+Jadi jika motor memakai SKF 6205-2RSH/C3, menggantinya dengan bearing 6205 dari merek lain harus tetap mempertahankan kebutuhan clearance dan sealing yang tepat.
+
+20. Equivalent bearing untuk conveyor
+
+Conveyor sering menggunakan bearing deep groove, spherical roller, pillow block, atau tapered roller tergantung konstruksinya.
+
+Untuk conveyor ringan, 6200 dan 6300 series sering ditemukan.
+
+Untuk conveyor dengan shaft lebih besar atau beban berat, spherical roller bearing atau mounted bearing unit dapat lebih sesuai.
+
+Jika original bearing adalah unit mounted seperti UCP, jangan menyamakannya dengan bearing insert saja.
+
+Housing dan locking arrangement merupakan bagian dari assembly.
+
+21. Equivalent bearing untuk gearbox
+
+Gearbox mempunyai kondisi yang lebih kompleks.
+
+Bearing tidak hanya menanggung radial load. Beberapa posisi juga menerima axial load.
+
+Selain itu:
+
+RPM
+temperature
+gear mesh
+lubrication
+shaft arrangement
+preload
+internal clearance
+
+harus diperiksa.
+
+Karena itu cross-reference gearbox harus lebih ketat daripada mengganti bearing pada fan sederhana.
+
+22. Equivalent bearing untuk pompa
+
+Pompa dapat mempunyai kebutuhan bearing yang sangat berbeda tergantung jenisnya.
+
+Centrifugal pump, multistage pump, vertical pump, slurry pump, dan pump dengan thrust arrangement tidak bisa diperlakukan sama.
+
+Bearing dengan seal rubber mungkin cocok untuk aplikasi tertentu, tetapi tidak otomatis cocok untuk bearing yang bekerja di dalam oil bath atau temperatur tinggi.
+
+23. Equivalent bearing untuk rolling mill dan industri baja
+
+Pada industri baja, bearing dapat menghadapi:
+
+beban tinggi
+shock load
+temperatur tinggi
+kontaminasi air
+scale
+debu
+misalignment
+high speed
+lubrication yang berat
+
+Karena itu mengganti bearing hanya berdasarkan nomor dasar sangat berisiko.
+
+Spherical roller bearing, cylindrical roller bearing, tapered roller bearing, four-row bearings, dan special bearings memerlukan pemeriksaan lebih detail.
+
+24. Equivalent spherical roller bearing
+
+Beberapa series spherical roller bearing yang sering dicari antara lain:
+
+22210
+22212
+22214
+22216
+22218
+22220
+22222
+22224
+22226
+22310
+22312
+22314
+22316
+22318
+22320
+
+Pada basic designation standard, banyak manufacturer memiliki angka series yang sama.
+
+Contoh cross-reference yang sering dijumpai:
+
+SKF 22210 E
+FAG 22210-E1
+NTN 22210EAW33
+NSK 22210EAE4
+
+Tetapi suffix tersebut menunjukkan perbedaan konstruksi internal dan lubrication arrangement.
+
+Karena itu jangan menyederhanakan semuanya menjadi “22210”.
+
+25. Apa arti W33 pada spherical roller bearing?
+
+W33 merupakan designation yang sangat umum pada spherical roller bearing tertentu dan berkaitan dengan lubrication groove serta lubrication holes pada outer ring.
+
+Contoh:
+
+22210 E/C3
+
+berbeda informasinya dengan:
+
+22210 E/C3W33
+
+W33 dapat menjadi penting pada sistem grease lubrication karena memberikan jalur lubrication yang berbeda.
+
+Jika bearing original mempunyai W33, jangan menghilangkan suffix tersebut tanpa memeriksa sistem lubrication mesin.
+
+26. Equivalent cylindrical roller bearing
+
+Cylindrical roller bearing mempunyai designation seperti:
+
+NU
+NJ
+NUP
+N
+NN
+NNU
+
+Contoh yang sering dicari:
+
+SKF NU309 ECP
+FAG NU309-E-TVP2
+NTN NU309E
+NSK NU309EW
+
+Designation tersebut dapat mempunyai boundary dimensions yang sekelas, tetapi cage dan internal design dapat berbeda.
+
+SKF ECP, FAG TVP2, dan designation manufacturer lain tidak boleh dianggap hanya sebagai nama dagang. Konstruksi cage dan internal geometry harus diverifikasi.
+
+27. Equivalent tapered roller bearing
+
+Tapered roller bearing memiliki sistem cross-reference yang juga sering dicari:
+
+SKF 32208 J2/Q
+FAG 32208-A
+Timken 32208
+NTN 4T-32208
+NSK HR32208J
+KOYO 32208JR
+
+Contoh lain:
+
+SKF 30210 J2/Q
+FAG 30210-A
+Timken 30210
+NTN 4T-30210
+NSK HR30210J
+KOYO 30210JR
+
+Pada tapered roller bearing, penting mengetahui apakah kode merujuk pada cone, cup, atau complete assembly.
+
+28. Mengapa Timken kadang mempunyai kode berbeda?
+
+Timken mempunyai nomenclature yang berbeda pada banyak product family, terutama tapered roller bearing.
+
+Jadi jangan menganggap semua bearing harus mempunyai angka yang identik antarbrand.
+
+Pada deep groove tertentu, nomor dasar dapat terlihat sama.
+
+Pada tapered roller bearing, Timken sering menggunakan sistem part numbering yang berbeda dari SKF atau NSK.
+
+Karena itu pencarian equivalent harus menggunakan catalog cross-reference, bukan hanya pencarian berdasarkan angka.
+
+29. Equivalent bearing untuk kebutuhan gudang
+
+Untuk warehouse, sebaiknya jangan menyimpan satu kolom “equivalent”.
+
+Buat beberapa kategori:
+
+Original part number
+Approved alternative
+Manufacturer
+Bearing type
+Dimensions
+Clearance
+Seal
+Cage
+Load rating
+Speed
+Application
+Approval status
+
+Contoh:
+
+Original:
+SKF 6205-2RSH/C3
+
+Approved alternative:
+NSK 6205DDUC3
+NTN 6205LLU/C3
+FAG 6205-2RSR-C3
+
+Status:
+Perlu verifikasi sesuai katalog dan application.
+
+Dengan cara ini purchasing tidak akan menganggap semua bearing 6205 otomatis setara.
+
+30. Daftar checklist sebelum mengganti merek bearing
+
+Sebelum melakukan substitution, periksa:
+
+[ ] Basic designation sama
+[ ] Bearing type sama
+[ ] Bore sama
+[ ] Outside diameter sama
+[ ] Width sama
+[ ] Clearance sama
+[ ] Seal atau shield sesuai
+[ ] Cage sesuai kebutuhan
+[ ] Load rating memenuhi
+[ ] Speed rating memenuhi
+[ ] Temperature sesuai
+[ ] Lubricant sesuai
+[ ] Shaft fit sesuai
+[ ] Housing fit sesuai
+[ ] Mounting method sesuai
+[ ] Electrical insulation sesuai jika diperlukan
+[ ] OEM requirement tidak dilanggar
+[ ] Supplier dapat menjamin keaslian
+[ ] Datasheet manufacturer sudah diperiksa
+
+31. Jangan membandingkan bearing hanya dari harga
+
+Misalnya:
+
+SKF 6205 = mahal
+NTN 6205 = lebih murah
+NSK 6205 = sedang
+
+Kemudian seseorang menyimpulkan bahwa NTN atau NSK pasti sama dan tinggal pilih yang paling murah.
+
+Cara tersebut terlalu sederhana.
+
+Harga dipengaruhi oleh:
+
+grade
+precision
+seal
+grease
+cage
+load rating
+supply chain
+country of origin
+packaging
+distributor
+quantity
+
+Jika mesin downtime karena bearing murah gagal lebih cepat, penghematan harga pembelian menjadi tidak berarti.
+
+32. Apakah semua bearing SKF mempunyai equivalent NTN atau NSK?
+
+Tidak.
+
+Bearing standard biasanya lebih mudah dicari padanannya.
+
+Bearing special dapat tidak mempunyai direct equivalent.
+
+Contohnya:
+
+special internal geometry
+special preload
+ceramic bearing
+hybrid bearing
+electrically insulated bearing
+high-temperature bearing
+special grease
+special cage
+OEM customized bearing
+matched bearing set
+precision spindle bearing
+
+NSK interchange list sendiri memperlihatkan beberapa SKF designation yang diberi tanda tidak memiliki padanan langsung dalam daftar tersebut.
+
+Ini merupakan pengingat bahwa cross-reference tidak selalu menghasilkan satu jawaban.
+
+33. Kapan harus menggunakan bearing dengan merek yang sama?
+
+Gunakan merek dan designation original ketika:
+
+1. Mesin masih dalam warranty.
+2. OEM mensyaratkan part tertentu.
+3. Bearing merupakan bagian dari critical rotating equipment.
+4. Bearing mempunyai special preload.
+5. Bearing merupakan matched set.
+6. Bearing memiliki electrical insulation.
+7. Bearing bekerja pada RPM sangat tinggi.
+8. Bearing bekerja pada temperatur ekstrem.
+9. Failure bearing mempunyai konsekuensi keselamatan.
+10. Manufacturer memberikan designation khusus.
+
+Dalam kondisi seperti itu, penggantian merek sebaiknya melalui engineering approval.
+
+34. Kapan equivalent bearing lebih masuk akal?
+
+Equivalent bearing sangat berguna ketika:
+
+1. Original brand tidak tersedia.
+2. Lead time terlalu panjang.
+3. Distributor original tidak mempunyai stok.
+4. Mesin menggunakan bearing standard.
+5. Dimensi dan specification sudah terverifikasi.
+6. Ada approved vendor list.
+7. Manufacturer alternatif mempunyai data teknis yang memenuhi.
+
+Dalam kondisi tersebut, cross-reference dapat mengurangi downtime.
+
+35. Cara tercepat mencari equivalent bearing dari SKF
+
+Gunakan urutan:
+
+Langkah 1
+Catat full SKF designation.
+
+Langkah 2
+Pisahkan basic number dan suffix.
+
+Langkah 3
+Cari designation pada katalog SKF.
+
+Langkah 4
+Catat dimensi.
+
+Langkah 5
+Catat clearance.
+
+Langkah 6
+Catat seal atau shield.
+
+Langkah 7
+Catat load rating dan speed.
+
+Langkah 8
+Cari cross-reference resmi atau katalog manufacturer alternatif.
+
+Langkah 9
+Bandingkan parameter.
+
+Langkah 10
+Tentukan apakah substitution bersifat approved.
+
+36. Contoh nyata: SKF 6205-2RSH/C3
+
+Misalnya bearing original pada motor adalah:
+
+SKF 6205-2RSH/C3
+
+Jangan mencari:
+
+“bearing 25 mm”
+
+Cari:
+
+“6205 sealed C3”
+
+Kemudian kandidat dapat berupa:
+
+NSK 6205DDUC3
+NTN 6205LLU/C3
+FAG 6205-2RSR-C3
+
+Setelah itu bandingkan:
+
+25 × 52 × 15 mm
+sealed two sides
+C3
+load rating
+speed
+grease
+cage
+application
+
+Jika seluruh kebutuhan cocok, alternatif dapat dipertimbangkan.
+
+37. Contoh nyata: SKF 6305-2Z/C3
+
+Original:
+
+SKF 6305-2Z/C3
+
+Kandidat:
+
+NSK 6305ZZC3
+NTN 6305ZZC3
+FAG 6305-2ZRC3
+
+Namun designation persis harus diverifikasi pada katalog masing-masing.
+
+Yang dicari bukan hanya:
+
+6305
+
+tetapi:
+
+6305 + shield + C3
+
+38. Mengapa suffix harus dipisahkan dari basic number?
+
+Karena basic number menjawab:
+
+“Bearing ini tipe dan ukurannya apa?”
+
+Suffix menjawab:
+
+“Versi khususnya bagaimana?”
+
+Contohnya:
+
+6205
+
+dan
+
+6205-2RSH/C3
+
+bukan informasi yang sama.
+
+Bearing pertama belum menyebut sealing dan clearance.
+
+Bearing kedua memberikan informasi tambahan yang dapat sangat menentukan performa.
+
+39. Perbedaan equivalent dan interchange
+
+Equivalent berarti suatu bearing dianggap mempunyai spesifikasi yang cukup sepadan untuk kebutuhan tertentu.
+
+Interchange berarti bearing tersebut dapat menggantikan bearing lain dalam suatu aplikasi.
+
+Dua bearing dapat mempunyai dimensi sama tetapi belum tentu interchangeable untuk semua kondisi.
+
+Contoh:
+
+Bearing A:
+25 × 52 × 15
+C3
+sealed
+Cr tertentu
+
+Bearing B:
+25 × 52 × 15
+CN
+shielded
+Cr berbeda
+
+Secara dimensi keduanya sama.
+
+Tetapi tidak otomatis interchangeable dalam semua aplikasi.
+
+40. Tabel ringkas suffix yang paling sering dicari
+
+Fitur | SKF | NSK | NTN | FAG/Schaeffler | Catatan
+
+Open | tanpa suffix tertentu | tanpa suffix tertentu | tanpa suffix tertentu | tanpa suffix tertentu | bearing terbuka
+Shield 1 sisi | Z | Z | Z | Z | verifikasi designation lengkap
+Shield 2 sisi | 2Z | ZZ | ZZ | 2ZR | nomenclature berbeda
+Seal 2 sisi | 2RS1/2RSH pada family tertentu | DDU | LLU | 2RSR | harus verifikasi product family
+Clearance lebih besar dari Normal | C3 | C3 | C3 | C3 | nilai aktual tetap diperiksa
+Clearance lebih besar lagi | C4 | C4 | C4 | C4 | cek katalog
+Tapered bore | K pada family tertentu | K pada family tertentu | K pada family tertentu | K | rasio taper perlu diperiksa
+Lubrication groove pada spherical roller tertentu | W33 | W33 | W33 | W33 | cek product family
+
+Tabel ini adalah peta awal, bukan pengganti katalog.
+
+41. Daftar bearing yang paling sering dicari untuk cross-reference
+
+Berikut kelompok basic designation yang sangat umum dalam maintenance:
+
+6000
+6001
+6002
+6003
+6004
+6005
+6006
+6007
+6008
+6009
+6010
+
+6200
+6201
+6202
+6203
+6204
+6205
+6206
+6207
+6208
+6209
+6210
+
+6300
+6301
+6302
+6303
+6304
+6305
+6306
+6307
+6308
+6309
+6310
+
+6403
+6404
+6405
+6406
+6407
+6408
+
+6000, 6200, 6300, dan 6400 tidak boleh dipertukarkan hanya berdasarkan bore.
+
+42. Mengapa 6400 series perlu perhatian lebih?
+
+6400 series mempunyai envelope yang lebih berat dibandingkan series 6000, 6200, dan 6300 pada bore yang sama.
+
+Jika mesin menggunakan 6405, jangan menggantinya dengan 6305 tanpa memeriksa housing.
+
+Keduanya dapat mempunyai bore yang sama, tetapi dimensi luar dan width berbeda.
+
+43. Bearing 2RS versus 2Z untuk gudang
+
+Jika gudang menyimpan bearing untuk berbagai mesin, jangan mencampurkan:
+
+6205
+6205-2Z
+6205-2RS
+6205-C3
+6205-2RS/C3
+
+Walaupun angka dasarnya sama, spesifikasinya berbeda.
+
+Kode harus dicatat lengkap pada inventory.
+
+44. Cara membuat tabel equivalent bearing sendiri
+
+Jika sebuah perusahaan ingin membuat database cross-reference internal, buat kolom:
+
+Original brand
+Original designation
+Bearing type
+d
+D
+B
+Clearance
+Seal
+Shield
+Cage
+Dynamic load rating
+Static load rating
+Limiting speed
+Grease
+Alternative brand
+Alternative designation
+Approval
+Source
+Date verified
+
+Dengan database seperti ini, perusahaan dapat membangun approved equivalent list sendiri.
+
+45. Mengapa sumber katalog resmi lebih penting daripada marketplace?
+
+Marketplace berguna untuk mengetahui ketersediaan dan harga.
+
+Namun marketplace bukan sumber utama untuk keputusan engineering.
+
+Katalog manufacturer memberikan:
+
+dimensi
+load rating
+clearance
+speed
+seal
+cage
+tolerance
+lubrication
+operating temperature
+drawing
+
+Untuk spare part kritis, data tersebut jauh lebih penting daripada judul listing.
+
+46. Sumber resmi yang layak digunakan
+
+Untuk SKF:
+SKF General Catalogue dan technical publications.
+
+Untuk NSK:
+NSK Bearing Replacement Guide dan product catalogue.
+
+Untuk NTN:
+NTN-SNR product catalogue dan technical documentation.
+
+Untuk FAG/INA:
+Schaeffler product catalogue dan medias.
+
+Untuk Timken:
+Timken bearing catalogue dan engineering resources.
+
+Untuk KOYO:
+JTEKT bearing catalogue.
+
+Untuk NACHI:
+NACHI bearing catalogue.
+
+Jika dua sumber memberikan designation yang berbeda, gunakan data manufacturer untuk product yang akan dibeli.
+
+47. Kesimpulan praktis
+
+Jika tujuan Anda hanya mencari bearing yang bisa masuk ke shaft dan housing, basic designation serta boundary dimensions adalah titik awal.
+
+Jika tujuan Anda mengganti bearing secara aman, pekerjaan belum selesai.
+
+Anda harus memeriksa:
+
+tipe bearing
+basic designation
+bore
+outside diameter
+width
+clearance
+seal
+shield
+cage
+load rating
+speed
+grease
+temperature
+precision
+mounting
+application
+
+Itulah perbedaan antara “bearing yang ukurannya sama” dan “bearing yang benar-benar layak menjadi pengganti”.
+
+Untuk bearing standard seperti 6205, 6206, 6305, dan 6306, pencarian equivalent antar SKF, NTN, NSK, FAG, KOYO, NACHI dan Timken relatif mudah karena basic designation-nya umum digunakan.
+
+Untuk bearing dengan suffix khusus, spherical roller, cylindrical roller, tapered roller, precision bearing, insulated bearing, atau special OEM bearing, prosesnya harus lebih ketat.
+
+Jadi jika SKF 6205 sedang kosong, jawaban yang benar bukan sekadar:
+
+“Pakai NTN 6205 saja.”
+
+Jawaban yang lebih tepat:
+
+“NTN 6205 merupakan kandidat dimensional equivalent. Sekarang cocokkan sealing, clearance, cage, load rating, speed, grease, dan kondisi aplikasinya.”
+
+Kalimat tersebut mungkin terdengar lebih panjang, tetapi justru itulah cara kerja maintenance yang benar.
+
+Bearing bukan hanya ukuran diameter dalam.
+
+Bearing adalah komponen presisi yang bekerja dengan beban, kecepatan, temperatur, pelumasan, clearance, dan lingkungan tertentu.
+
+Karena itu equivalent bearing terbaik bukan merek yang paling murah dan bukan pula merek yang paling mahal.
+
+Equivalent terbaik adalah bearing yang memenuhi kebutuhan teknis mesin dan dapat dipertanggungjawabkan berdasarkan data manufacturer.
+
+Sumber rujukan
+
+1. NSK, Bearing Replacement Guide / Interchange List.
+https://www.nsk.com/
+
+2. NSK, product pages untuk 6205, 6205ZZ, dan 6205DDU.
+https://www.nsk.com/
+
+3. SKF, Bearing Handbook for Electric Motors and Generators.
+https://www.skf.com/
+
+4. SKF, Bearings and CR Seals Specification Handbook.
+https://www.skf.com/
+
+5. NTN-SNR, product information dan bearing catalogue.
+https://www.ntn-snr.com/
+
+6. Schaeffler, product catalogue dan medias.
+https://www.schaeffler.com/
+
+7. Timken, engineering and bearing reference resources.
+https://www.timken.com/
+
+Catatan teknis
+
+Tabel cross-reference dalam artikel ini dibuat sebagai panduan pencarian dan identifikasi, bukan sebagai persetujuan universal bahwa semua bearing dalam satu baris dapat dipasang pada semua mesin.
+
+Untuk mesin kritis, high-speed equipment, rolling mill, gearbox besar, motor besar, pompa kritis, bearing dengan preload, special clearance, electrical insulation, high-temperature grease, matched set, atau bearing OEM khusus, gunakan full designation dan data teknis manufacturer.
+
+Jangan menghapus suffix hanya karena nomor dasarnya sama.
+
+Jangan menganggap C3, seal, shield, cage, grease, dan load rating sama antarbrand tanpa verifikasi.
+
+Dan jangan menggunakan harga atau ketersediaan marketplace sebagai satu-satunya dasar pemilihan.
+
+Cara paling aman adalah mencatat bearing original secara lengkap, mencari candidate equivalent, membandingkan parameter teknis, lalu meminta approval engineering apabila equipment termasuk critical machinery.
+
+Kesimpulan akhir untuk maintenance dan purchasing
+
+Jika hanya ada satu hal yang perlu diingat, ingat prinsip berikut:
+
+Nomor bearing yang sama belum tentu berarti bearing yang identik, tetapi nomor dasar yang sama pada bearing standard sering menjadi titik awal yang baik untuk mencari equivalent.
+
+Jangan takut menggunakan merek alternatif. Yang harus dihindari adalah menggunakan merek alternatif tanpa verifikasi.
+
+Untuk bearing standard seperti 6205, 6206, 6305, dan 6308, cross-reference antar SKF, NTN, NSK, FAG, KOYO, NACHI, dan Timken relatif mudah. Namun begitu suffix, clearance, seal, cage, lubrication, speed, atau internal design berubah, pemeriksaan teknis harus dilakukan.
+
+Pada spherical roller, cylindrical roller, tapered roller, precision bearing, electrically insulated bearing, atau bearing OEM khusus, jangan mengandalkan tabel sederhana. Gunakan full designation dan katalog manufacturer.
+
+Tujuan cross-reference bukan mencari bearing yang sekadar “mirip”. Tujuannya adalah menemukan bearing yang memenuhi fungsi teknis yang dibutuhkan mesin.
+
+Itulah standar yang seharusnya digunakan ketika memilih equivalent bearing di industri.
