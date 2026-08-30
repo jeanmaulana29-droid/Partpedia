@@ -1,4 +1,4 @@
-CARA MEMBACA KODE BEARING SKF, NSK, NTN, FAG, DAN MEREK LAIN DENGAN MUDAH
+Cara membaca kode Bearing SKF, NSK, NTN, FAG, dan Merk lain dengan mudah
 
 Bagi teknisi maintenance, engineer, purchasing, maupun pemilik workshop, tulisan yang tertera pada bearing sering kali menjadi informasi pertama ketika sebuah spare part harus diganti. Masalahnya, kode seperti 6205, 6308, 22220, NU 220, 22317-E1-XL-K-C3, atau berbagai kombinasi huruf dan angka lain terlihat seperti kode yang rumit.
 
