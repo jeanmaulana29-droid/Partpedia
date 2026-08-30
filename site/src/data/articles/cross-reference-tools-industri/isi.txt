@@ -1,0 +1,3016 @@
+Panduan Lengkap Cross Reference Sparepart Industri: Merk, Kode, Ukuran, dan Cara Mencari Penggantinya
+
+Ketika sebuah mesin produksi berhenti, masalah terbesar sering kali bukan kerusakan komponennya. Masalah yang lebih merepotkan adalah menemukan pengganti yang benar.
+
+Di gudang tertulis SKF 6205-2RS. Supplier menawarkan NSK 6205DDU. Supplier lain menawarkan NTN 6205LLU. Ada pula FAG 6205-2RSR. Secara kasat mata semuanya terlihat seperti bearing yang sama. Tetapi pekerjaan cross reference tidak boleh berhenti pada kemiripan angka.
+
+Hal yang sama terjadi pada V-belt, chain, oil seal, coupling, mechanical seal, filter, pneumatic cylinder, solenoid valve, hydraulic hose, contactor, overload relay, sensor, motor, gearbox, hingga linear guide.
+
+Kode boleh berbeda, tetapi dimensinya mungkin sama. Sebaliknya, kode yang terlihat hampir sama belum tentu dapat dipasang pada mesin yang sama.
+
+Itulah inti dari cross reference sparepart industri.
+
+Cross reference adalah proses mencari komponen pengganti dari merk atau seri lain dengan mencocokkan fungsi, ukuran, interface, rating, material, kapasitas, dan karakteristik teknis yang relevan. Tujuannya bukan sekadar mencari barang yang bentuknya mirip, tetapi menemukan produk yang benar-benar dapat menggantikan fungsi komponen asli tanpa menimbulkan masalah baru.
+
+Dalam praktik maintenance, kemampuan melakukan cross reference sangat bernilai karena dapat mempercepat pembelian sparepart, mengurangi ketergantungan pada satu merek, memperluas pilihan supplier, dan membantu perusahaan mengurangi downtime.
+
+Namun ada satu aturan yang harus selalu diingat:
+
+Equivalent bukan berarti identical.
+
+Komponen dengan dimensi pemasangan sama belum tentu memiliki kapasitas, material, seal, clearance, speed rating, electrical rating, atau kualitas yang sama.
+
+Karena itu, tabel cross reference dalam artikel ini harus digunakan sebagai titik awal pencarian, bukan sebagai izin otomatis untuk mengganti sebuah komponen tanpa pemeriksaan datasheet.
+
+Mengapa cross reference sparepart sangat penting di industri?
+
+Bayangkan sebuah pabrik memiliki satu mesin yang berhenti karena bearing rusak.
+
+Bearing original membutuhkan waktu pengadaan tujuh hari karena harus didatangkan dari luar negeri.
+
+Di sisi lain, bearing dari merk lain dengan bore, outside diameter, width, internal clearance, sealing arrangement, dan load rating yang sesuai tersedia di distributor lokal.
+
+Jika engineer mampu melakukan cross reference dengan benar, waktu tunggu dapat dipangkas secara signifikan.
+
+Hal yang sama berlaku pada:
+
+bearing;
+
+V-belt;
+
+timing belt;
+
+roller chain;
+
+sprocket;
+
+oil seal;
+
+mechanical seal;
+
+coupling;
+
+gearbox;
+
+electric motor;
+
+hydraulic hose;
+
+fitting;
+
+pneumatic cylinder;
+
+solenoid valve;
+
+filter;
+
+pressure gauge;
+
+pressure transmitter;
+
+proximity sensor;
+
+contactor;
+
+thermal overload relay;
+
+MCB;
+
+VFD;
+
+linear guide;
+
+ball screw;
+
+thermocouple;
+
+RTD;
+
+dan berbagai komponen maintenance lainnya.
+
+Cross reference juga penting ketika sebuah merk sudah discontinued.
+
+Produk industri memiliki umur pemakaian panjang. Mesin bisa beroperasi selama 10, 15, bahkan puluhan tahun, sementara model sparepart elektronik dan komponen tertentu dapat berubah lebih cepat.
+
+Karena itu engineer maintenance harus mampu membaca spesifikasi, bukan hanya menghafal kode.
+
+Prinsip dasar cross reference: mulai dari fungsi, bukan merk
+
+Kesalahan paling umum adalah bertanya:
+
+“SKF 6205 sama dengan merk apa?”
+
+Pertanyaan yang lebih tepat adalah:
+
+“Bearing dengan bore, OD, width, type, clearance, sealing, load, speed, dan application requirement seperti bearing ini tersedia dalam merk apa?”
+
+Setelah parameter utama diketahui, barulah merk dibandingkan.
+
+Schaeffler menjelaskan bahwa designation bearing menunjukkan tipe, dimensi, toleransi, internal clearance, dan fitur penting tertentu. Mereka juga menjelaskan bahwa bearing dengan designation standar yang sama pada prinsipnya interchangeable, tetapi suffix dan fitur khusus tetap harus diperhatikan. citeturn0search97
+
+Dengan kata lain, angka dasar bearing bisa membantu menemukan padanan, tetapi suffix dapat mengubah karakteristik produk.
+
+Data yang wajib dikumpulkan sebelum melakukan cross reference
+
+Jangan hanya memotret label.
+
+Ambil sebanyak mungkin informasi dari komponen lama:
+
+1. Merk
+2. Full part number
+3. Prefix
+4. Basic code
+5. Suffix
+6. Size
+7. Material
+8. Rating
+9. Application
+10. Operating temperature
+11. Speed
+12. Load
+13. Pressure
+14. Voltage
+15. Current
+16. Connection
+17. Mounting
+18. Seal type
+19. Clearance
+20. Direction of rotation
+21. Environmental condition
+22. Certificate atau standard jika diperlukan
+
+Untuk komponen mekanis, ukur bagian fisiknya.
+
+Untuk komponen electrical, baca nameplate dan wiring diagram.
+
+Untuk komponen hydraulic atau pneumatic, periksa pressure, flow, port size, thread standard, bore, stroke, dan mounting.
+
+Untuk filter, periksa filtration rating, dimensions, sealing, pressure rating, dan application.
+
+Untuk sensor, periksa supply, output, sensing distance, mounting, connector, IP rating, dan target.
+
+Kategori sparepart industri yang paling sering membutuhkan cross reference
+
+1. Bearing
+
+Bearing adalah salah satu kategori cross reference paling populer.
+
+Merk besar yang sering ditemui di industri antara lain:
+
+SKF
+
+NSK
+
+NTN
+
+FAG / Schaeffler
+
+TIMKEN
+
+NACHI
+
+KOYO / JTEKT
+
+IKO
+
+NMB / MinebeaMitsumi
+
+RBC Bearings
+
+INA / Schaeffler
+
+Jenis bearing yang umum:
+
+Deep Groove Ball Bearing
+
+Angular Contact Ball Bearing
+
+Self-Aligning Ball Bearing
+
+Cylindrical Roller Bearing
+
+Spherical Roller Bearing
+
+Tapered Roller Bearing
+
+Needle Roller Bearing
+
+Thrust Ball Bearing
+
+Thrust Roller Bearing
+
+Insert Bearing
+
+Pillow Block Bearing
+
+Contoh basic designation yang umum:
+
+6203
+
+6204
+
+6205
+
+6206
+
+6207
+
+6208
+
+6209
+
+6210
+
+6304
+
+6305
+
+6306
+
+6307
+
+6308
+
+6309
+
+6310
+
+22205
+
+22206
+
+22207
+
+22208
+
+22209
+
+22210
+
+22310
+
+30205
+
+30206
+
+30207
+
+30208
+
+30209
+
+32005
+
+32006
+
+32007
+
+NU205
+
+NU206
+
+NU207
+
+NU208
+
+NU209
+
+NU210
+
+Tetapi kode tersebut belum cukup untuk menentukan equivalent.
+
+Parameter yang harus dibandingkan:
+
+d = bore diameter
+
+D = outside diameter
+
+B = width
+
+C = dynamic load rating
+
+C0 = static load rating
+
+limiting/reference speed
+
+internal clearance
+
+seal/shield
+
+cage
+
+accuracy class
+
+material
+
+preload
+
+Shaft diameter
+
+Housing diameter
+
+Mounting arrangement
+
+NSK menyediakan online catalog yang memungkinkan pencarian bearing berdasarkan designation dan menyediakan informasi seperti boundary dimensions, load ratings, dan limiting speeds. citeturn0search1
+
+Karena itu database cross reference bearing yang baik seharusnya tidak hanya mempunyai kolom “SKF = NSK”.
+
+Format database yang lebih berguna adalah:
+
+Merk | Kode | Type | Bore | OD | Width | Clearance | Seal | Load | Speed | Equivalent
+
+Contoh:
+
+SKF 6205-2RS1 | Deep Groove | 25 mm | 52 mm | 15 mm | C3 jika tercantum | 2RS1 | cek datasheet | cek datasheet
+
+NSK 6205DDU | Deep Groove | 25 mm | 52 mm | 15 mm | sesuai suffix | DDU | cek datasheet | cek datasheet
+
+NTN 6205LLU | Deep Groove | 25 mm | 52 mm | 15 mm | sesuai suffix | LLU | cek datasheet | cek datasheet
+
+FAG 6205-2RSR | Deep Groove | 25 mm | 52 mm | 15 mm | sesuai suffix | 2RSR | cek datasheet | cek datasheet
+
+Ini lebih aman daripada menyebut semuanya “100% sama”.
+
+2. Oil seal
+
+Oil seal juga memiliki banyak cross reference.
+
+Merk yang sering ditemui:
+
+NOK
+
+SKF
+
+Freudenberg / Simrit
+
+Trelleborg
+
+Hallite
+
+Garlock
+
+Parker
+
+Koyo
+
+National
+
+Corteco
+
+Oil seal sering ditulis berdasarkan:
+
+shaft diameter
+
+housing diameter
+
+width
+
+material
+
+seal lip arrangement
+
+spring
+
+temperature range
+
+pressure capability
+
+rotation
+
+media
+
+Contoh ukuran:
+
+25 x 40 x 7
+
+30 x 47 x 7
+
+35 x 52 x 7
+
+40 x 62 x 8
+
+45 x 65 x 10
+
+50 x 72 x 10
+
+55 x 80 x 10
+
+60 x 80 x 10
+
+70 x 90 x 10
+
+Namun ukuran luar dan dalam saja belum tentu cukup.
+
+Perhatikan apakah seal:
+
+single lip;
+
+double lip;
+
+dust lip;
+
+FKM/Viton;
+
+NBR;
+
+PTFE;
+
+high-temperature;
+
+pressure seal;
+
+atau desain khusus.
+
+Untuk oil seal, cross reference berdasarkan ukuran adalah langkah awal. Material dan desain lip menentukan apakah produk cocok dengan oil, temperature, shaft speed, dan pressure.
+
+3. V-Belt
+
+Merk besar yang sering digunakan:
+
+Gates
+
+Optibelt
+
+Continental
+
+Mitsuboshi
+
+Bando
+
+Dayco
+
+Megadyne
+
+Fenner
+
+Kategori umum:
+
+Classical V-Belt
+
+A
+
+B
+
+C
+
+D
+
+E
+
+Narrow V-Belt
+
+SPZ
+
+SPA
+
+SPB
+
+SPC
+
+XPZ
+
+XPA
+
+XPB
+
+XPC
+
+Metric atau wrapped series tertentu
+
+Gates mencantumkan classical cross sections seperti 10X, 13X, dan 17X serta narrow sections seperti XPZ/SPZ, XPA/SPA, XPB/SPB, dan XPC/SPC. citeturn0search10
+
+Saat melakukan cross reference V-belt, jangan hanya melihat panjang.
+
+Bandingkan:
+
+profile
+
+top width
+
+height
+
+pitch length
+
+outside length
+
+inside length
+
+angle
+
+construction
+
+rubber compound
+
+cord
+
+temperature resistance
+
+oil resistance
+
+static conductivity
+
+matched set requirement
+
+Contoh:
+
+B-50
+
+SPB 1900
+
+SPA 1250
+
+XPB 2240
+
+Tidak boleh langsung dianggap equivalent hanya karena panjangnya mendekati.
+
+4. Timing Belt
+
+Merk:
+
+Gates
+
+Optibelt
+
+Continental
+
+Mitsuboshi
+
+Bando
+
+Megadyne
+
+ContiTech
+
+Parameter penting:
+
+pitch
+
+number of teeth
+
+belt width
+
+tooth profile
+
+pitch length
+
+material
+
+reinforcement
+
+temperature
+
+application
+
+Contoh profile:
+
+HTD 3M
+
+HTD 5M
+
+HTD 8M
+
+HTD 14M
+
+T5
+
+T10
+
+AT5
+
+AT10
+
+XL
+
+L
+
+H
+
+XH
+
+Jangan mencampur profile hanya karena pitch length sama.
+
+5. Industrial Chain
+
+Merk:
+
+Renold
+
+Tsubaki
+
+DID
+
+KANA
+
+IWIS
+
+Donghua
+
+Rexnord
+
+Diamond Chain
+
+Chain cross reference harus dimulai dari standard.
+
+British/European:
+
+06B
+
+08B
+
+10B
+
+12B
+
+16B
+
+20B
+
+24B
+
+American ANSI:
+
+25
+
+35
+
+40
+
+50
+
+60
+
+80
+
+100
+
+120
+
+140
+
+160
+
+180
+
+200
+
+240
+
+Kemudian tentukan:
+
+simplex
+
+duplex
+
+triplex
+
+atau multiple strand.
+
+Renold menjelaskan bahwa ISO 606 dan DIN 8187 mencakup chain European Standard dan contoh 08B-2 berarti pitch 1/2 inch dengan dua strand. Untuk ANSI, contoh 40-2 menunjukkan chain 1/2 inch, roller chain, duplex. citeturn0search0
+
+Renold juga menjelaskan bahwa identifikasi chain pada dasarnya dapat dimulai dari pitch, inside width, dan roller diameter. citeturn0search3
+
+Parameter cross reference chain:
+
+pitch
+
+roller diameter
+
+inner width
+
+plate height
+
+plate thickness
+
+pin diameter
+
+pin length
+
+strand
+
+tensile strength
+
+attachment
+
+material
+
+heat treatment
+
+lubrication
+
+Jangan menyamakan BS 08B dengan ANSI 40 hanya berdasarkan pitch.
+
+Dimensinya bisa berbeda.
+
+6. Sprocket
+
+Merk dapat mengikuti chain manufacturer:
+
+Tsubaki
+
+Renold
+
+DID
+
+KANA
+
+Rexnord
+
+Martin
+
+Diamond
+
+Parameter:
+
+chain number
+
+number of teeth
+
+bore
+
+outside diameter
+
+pitch diameter
+
+hub type
+
+hub diameter
+
+keyway
+
+material
+
+hardening
+
+row/strand
+
+Contoh:
+
+40B-15T
+
+40B-20T
+
+50B-15T
+
+60B-15T
+
+80B-20T
+
+Tetapi jumlah gigi saja tidak cukup.
+
+Sprocket harus cocok dengan chain.
+
+7. Coupling
+
+Kategori:
+
+Jaw coupling
+
+Grid coupling
+
+Gear coupling
+
+Disc coupling
+
+Oldham coupling
+
+Flexible coupling
+
+Rigid coupling
+
+Merk:
+
+Lovejoy
+
+KTR
+
+Rexnord
+
+Falk
+
+Flender
+
+Timken
+
+NBK
+
+Miki Pulley
+
+TB Wood's
+
+Cross reference harus melihat:
+
+bore
+
+OD
+
+length
+
+torque
+
+RPM
+
+misalignment
+
+keyway
+
+spacer
+
+element material
+
+temperature
+
+shaft arrangement
+
+Contoh jaw coupling:
+
+L-050
+
+L-075
+
+L-090
+
+L-095
+
+L-100
+
+L-110
+
+L-150
+
+L-190
+
+Tetapi L-series dari satu manufacturer tidak boleh otomatis dianggap sama dengan produk merk lain tanpa membandingkan dimensions dan torque rating.
+
+8. Mechanical seal
+
+Merk:
+
+John Crane
+
+EagleBurgmann
+
+AESSEAL
+
+Flowserve
+
+Chesterton
+
+Vulcan
+
+Parameter:
+
+shaft diameter
+
+stationary seat
+
+rotary face
+
+seal face material
+
+O-ring material
+
+spring
+
+pressure
+
+temperature
+
+speed
+
+media
+
+balance/unbalance
+
+Mechanical seal adalah kategori yang sangat berbahaya jika hanya dicari berdasarkan ukuran.
+
+Seal 25 mm belum tentu cocok dengan pump tertentu.
+
+9. Hydraulic hose
+
+Merk:
+
+Parker
+
+Gates
+
+Eaton
+
+Manuli
+
+Alfagomma
+
+ContiTech
+
+Semperit
+
+Parameter:
+
+inside diameter
+
+outside diameter
+
+working pressure
+
+burst pressure
+
+temperature
+
+cover
+
+reinforcement
+
+hose standard
+
+fitting
+
+thread
+
+bending radius
+
+application
+
+Contoh hose:
+
+1/4"
+
+3/8"
+
+1/2"
+
+3/4"
+
+1"
+
+1-1/4"
+
+1-1/2"
+
+2"
+
+Tetapi diameter hose bukan dasar cross reference satu-satunya.
+
+10. Hydraulic fittings
+
+Merk:
+
+Parker
+
+Eaton
+
+Stauff
+
+Gates
+
+Swagelok
+
+Parker Ermeto
+
+Kategori thread:
+
+BSP
+
+BSPT
+
+NPT
+
+JIC
+
+ORFS
+
+Metric
+
+SAE
+
+UNF
+
+UNC
+
+Cross reference thread harus sangat hati-hati.
+
+NPT tidak otomatis interchangeable dengan BSPT hanya karena diameter tampak mirip.
+
+Bandingkan:
+
+thread type
+
+pitch
+
+angle
+
+major diameter
+
+seat
+
+sealing method
+
+pressure rating
+
+material
+
+11. Pneumatic cylinder
+
+Merk:
+
+SMC
+
+Festo
+
+Airtac
+
+Parker
+
+Norgren
+
+Camozzi
+
+CKD
+
+Metal Work
+
+Parameter:
+
+bore
+
+stroke
+
+rod diameter
+
+mounting
+
+port size
+
+working pressure
+
+sensor groove
+
+cushion
+
+thread
+
+single/double acting
+
+Contoh bore:
+
+32
+
+40
+
+50
+
+63
+
+80
+
+100
+
+125
+
+160
+
+Cross reference harus mempertimbangkan mounting dimension, bukan hanya bore dan stroke.
+
+12. Solenoid valve
+
+Merk:
+
+SMC
+
+Festo
+
+Parker
+
+ASCO
+
+Airtac
+
+CKD
+
+Norgren
+
+Burkert
+
+Parameter:
+
+port
+
+orifice
+
+Cv
+
+pressure
+
+coil voltage
+
+frequency
+
+body material
+
+seal material
+
+direct/pilot operated
+
+normally closed/open
+
+fluid
+
+temperature
+
+Contoh coil:
+
+24 VDC
+
+24 VAC
+
+110 VAC
+
+220/230 VAC
+
+Jangan mengganti coil hanya berdasarkan tegangan.
+
+Watt, connector, coil construction, dan valve compatibility juga harus diperiksa.
+
+13. Air filter, regulator, lubricator
+
+Merk:
+
+SMC
+
+Festo
+
+Parker
+
+Norgren
+
+Airtac
+
+CKD
+
+Parameter:
+
+port size
+
+flow
+
+pressure
+
+filtration micron
+
+bowl
+
+drain
+
+temperature
+
+mounting
+
+14. Industrial filter
+
+Kategori:
+
+hydraulic filter
+
+lubrication filter
+
+air filter
+
+oil filter
+
+fuel filter
+
+dust collector filter
+
+process filter
+
+Merk:
+
+Parker
+
+Donaldson
+
+Hydac
+
+Pall
+
+Eaton
+
+Mahle
+
+Mann+Hummel
+
+Baldwin
+
+Fleetguard
+
+Parameter:
+
+element length
+
+OD
+
+ID
+
+micron
+
+absolute/nominal filtration
+
+beta ratio
+
+collapse pressure
+
+flow
+
+seal
+
+media
+
+15. Hydraulic pump
+
+Merk:
+
+Bosch Rexroth
+
+Parker
+
+Eaton
+
+Vickers
+
+Denison
+
+Yuken
+
+Kawasaki
+
+Linde
+
+Parameter:
+
+displacement
+
+pressure
+
+RPM
+
+flow
+
+mounting
+
+shaft
+
+rotation
+
+port
+
+control type
+
+Cross reference hydraulic pump harus jauh lebih ketat daripada bearing.
+
+Pump dengan displacement sama belum tentu interchangeable.
+
+16. Hydraulic valve
+
+Kategori:
+
+directional control valve
+
+relief valve
+
+check valve
+
+flow control valve
+
+proportional valve
+
+servo valve
+
+Merk:
+
+Bosch Rexroth
+
+Parker
+
+Eaton
+
+Yuken
+
+Atos
+
+Sun Hydraulics
+
+Bucher
+
+Parameter:
+
+size
+
+port
+
+flow
+
+pressure
+
+spool
+
+mounting pattern
+
+solenoid
+
+voltage
+
+response
+
+17. Electric motor
+
+Merk:
+
+ABB
+
+Siemens
+
+WEG
+
+TECO
+
+SEW-Eurodrive
+
+NORD
+
+Toshiba
+
+Mitsubishi
+
+Regal Rexnord
+
+Parameter:
+
+power
+
+voltage
+
+current
+
+frequency
+
+RPM
+
+frame size
+
+mounting
+
+shaft diameter
+
+shaft length
+
+IP rating
+
+insulation class
+
+duty
+
+efficiency class
+
+terminal box position
+
+Motor 15 kW tidak otomatis interchangeable dengan motor 15 kW.
+
+Frame size dan mounting harus cocok.
+
+18. Gear reducer
+
+Merk:
+
+SEW-Eurodrive
+
+Flender
+
+Bonfiglioli
+
+NORD
+
+Sumitomo
+
+Motovario
+
+Varvel
+
+Transtecno
+
+Jenis:
+
+helical
+
+worm
+
+bevel
+
+planetary
+
+parallel shaft
+
+Parameter:
+
+ratio
+
+output torque
+
+input speed
+
+output speed
+
+mounting
+
+shaft
+
+flange
+
+motor size
+
+service factor
+
+backlash
+
+Worm gearbox NMRV misalnya harus diperiksa berdasarkan frame size, ratio, shaft configuration, flange, dan torque.
+
+19. Contactor
+
+Merk:
+
+Schneider Electric
+
+Siemens
+
+ABB
+
+Mitsubishi
+
+Fuji Electric
+
+LS Electric
+
+Eaton
+
+Chint
+
+Parameter:
+
+AC-3 current
+
+motor power
+
+coil voltage
+
+main contacts
+
+auxiliary contacts
+
+frame size
+
+utilization category
+
+Cross reference contactor harus memperhatikan coil voltage.
+
+Contactor 220 VAC coil tidak dapat dianggap equivalent dengan 24 VDC hanya karena rating AC-3 sama.
+
+20. Thermal Overload Relay
+
+Merk:
+
+Schneider
+
+Siemens
+
+ABB
+
+Mitsubishi
+
+Fuji
+
+Eaton
+
+Parameter:
+
+current range
+
+trip class
+
+mounting
+
+contactor compatibility
+
+reset mode
+
+auxiliary contact
+
+phase failure protection
+
+21. Circuit breaker
+
+Merk:
+
+Schneider
+
+ABB
+
+Siemens
+
+Eaton
+
+Mitsubishi
+
+LS
+
+Chint
+
+Parameter:
+
+frame
+
+poles
+
+rated current
+
+breaking capacity
+
+voltage
+
+trip curve
+
+trip unit
+
+mounting
+
+accessories
+
+Jangan cross reference hanya berdasarkan ampere.
+
+22. Proximity sensor
+
+Merk:
+
+OMRON
+
+Pepperl+Fuchs
+
+SICK
+
+IFM
+
+Turck
+
+Balluff
+
+Autonics
+
+Keyence
+
+Schneider
+
+Parameter:
+
+sensor type
+
+M8/M12/M18/M30
+
+sensing distance
+
+flush/non-flush
+
+PNP/NPN
+
+NO/NC
+
+voltage
+
+frequency
+
+IP rating
+
+connector
+
+material
+
+23. Photoelectric sensor
+
+Merk:
+
+SICK
+
+OMRON
+
+Keyence
+
+Pepperl+Fuchs
+
+IFM
+
+Banner
+
+Autonics
+
+Jenis:
+
+through-beam
+
+retro-reflective
+
+diffuse
+
+background suppression
+
+Parameter:
+
+range
+
+light source
+
+output
+
+response time
+
+supply
+
+IP
+
+connector
+
+24. Pressure gauge
+
+Merk:
+
+WIKA
+
+Ashcroft
+
+Baumer
+
+Bourdon
+
+Nuova Fima
+
+Parameter:
+
+range
+
+dial size
+
+connection
+
+thread
+
+material
+
+accuracy
+
+filled/unfilled
+
+process temperature
+
+25. Pressure transmitter
+
+Merk:
+
+WIKA
+
+Yokogawa
+
+Emerson
+
+Honeywell
+
+Endress+Hauser
+
+ABB
+
+Siemens
+
+Keller
+
+Parameter:
+
+pressure range
+
+output
+
+2-wire/4-wire
+
+4-20 mA
+
+HART
+
+accuracy
+
+process connection
+
+electrical connection
+
+temperature
+
+wetted material
+
+Cross reference transmitter tidak cukup hanya mencari range 0-10 bar.
+
+26. Flow meter
+
+Merk:
+
+Endress+Hauser
+
+Krohne
+
+Yokogawa
+
+Siemens
+
+ABB
+
+Keyence
+
+Jenis:
+
+magnetic
+
+Coriolis
+
+vortex
+
+ultrasonic
+
+turbine
+
+variable area
+
+Parameter:
+
+pipe size
+
+flow range
+
+fluid
+
+temperature
+
+pressure
+
+output
+
+lining
+
+electrode
+
+accuracy
+
+27. Temperature sensor
+
+Kategori:
+
+Thermocouple
+
+RTD
+
+Resistance temperature detector
+
+Thermistor
+
+Merk:
+
+WIKA
+
+Omega
+
+Yokogawa
+
+Endress+Hauser
+
+Siemens
+
+Jumo
+
+Omron
+
+Parameter:
+
+type K/J/T/N
+
+Pt100/Pt1000
+
+2-wire/3-wire/4-wire
+
+probe diameter
+
+probe length
+
+temperature range
+
+process connection
+
+sheath material
+
+28. Temperature controller
+
+Merk:
+
+Omron
+
+Autonics
+
+Fuji Electric
+
+Yokogawa
+
+Honeywell
+
+Schneider
+
+RKC
+
+Parameter:
+
+input type
+
+control output
+
+relay/SSR/analog
+
+power supply
+
+display
+
+control method
+
+PID
+
+alarm
+
+communication
+
+29. Inverter / VFD
+
+Merk:
+
+ABB
+
+Schneider Electric
+
+Siemens
+
+Danfoss
+
+Mitsubishi
+
+Yaskawa
+
+Fuji Electric
+
+WEG
+
+INVT
+
+Parameter:
+
+motor power
+
+input voltage
+
+output current
+
+overload capacity
+
+control mode
+
+frequency
+
+braking
+
+communication
+
+IP rating
+
+harmonic features
+
+EMC
+
+enclosure
+
+VFD cross reference adalah salah satu yang paling sering salah dilakukan.
+
+VFD 7.5 kW dari dua merk belum tentu equivalent.
+
+Bandingkan output current, overload duty, motor type, voltage class, input phase, control mode, braking requirement, communication, enclosure, dan application.
+
+30. PLC dan I/O module
+
+Merk:
+
+Siemens
+
+Schneider
+
+Mitsubishi
+
+Omron
+
+Rockwell Automation
+
+ABB
+
+Keyence
+
+Fuji
+
+Parameter:
+
+CPU
+
+I/O count
+
+digital/analog
+
+voltage
+
+communication
+
+memory
+
+scan time
+
+protocol
+
+mounting
+
+expansion
+
+PLC hampir tidak pernah boleh diganti hanya berdasarkan jumlah input-output.
+
+Program, protocol, addressing, software ecosystem, dan electrical interface juga harus dipertimbangkan.
+
+31. Linear guide
+
+Merk:
+
+THK
+
+HIWIN
+
+NSK
+
+IKO
+
+Bosch Rexroth
+
+Festo
+
+PMI
+
+CPC
+
+Parameter:
+
+rail width
+
+block length
+
+block type
+
+rail length
+
+preload
+
+accuracy
+
+mounting
+
+bolt size
+
+load capacity
+
+Contoh series:
+
+HGR
+
+MGN
+
+LM
+
+SHS
+
+SSR
+
+HG
+
+Cross reference linear guide harus memeriksa dimensi mounting dan preload.
+
+32. Ball screw
+
+Merk:
+
+THK
+
+NSK
+
+HIWIN
+
+TBI Motion
+
+Bosch Rexroth
+
+IKO
+
+Parameter:
+
+diameter
+
+lead
+
+pitch
+
+length
+
+nut type
+
+preload
+
+accuracy
+
+shaft end
+
+mounting
+
+Contoh:
+
+1605
+
+1610
+
+2005
+
+2010
+
+2505
+
+2510
+
+3210
+
+Namun angka 2005 tidak otomatis berarti semua nut 20 mm dengan lead 5 mm bisa saling menggantikan.
+
+33. Coupling insert / spider
+
+Merk:
+
+Lovejoy
+
+KTR
+
+NBK
+
+Miki Pulley
+
+Parameter:
+
+coupling size
+
+element hardness
+
+bore
+
+OD
+
+length
+
+temperature
+
+torque
+
+Misalnya spider dapat memiliki hardness berbeda seperti 80A, 92A, atau 98A tergantung manufacturer.
+
+34. Gasket dan packing
+
+Merk:
+
+Garlock
+
+Klinger
+
+Flexitallic
+
+Chesterton
+
+John Crane
+
+Tipe:
+
+spiral wound gasket
+
+sheet gasket
+
+graphite packing
+
+PTFE packing
+
+rubber gasket
+
+Parameter:
+
+material
+
+thickness
+
+ID
+
+OD
+
+pressure class
+
+flange standard
+
+temperature
+
+media
+
+35. Pneumatic fitting
+
+Merk:
+
+SMC
+
+Festo
+
+Airtac
+
+Parker
+
+CKD
+
+Jenis:
+
+straight
+
+elbow
+
+tee
+
+bulkhead
+
+Y fitting
+
+quick fitting
+
+Parameter:
+
+tube OD
+
+thread
+
+BSP
+
+NPT
+
+metric
+
+material
+
+pressure
+
+temperature
+
+36. Industrial hose fitting
+
+Merk:
+
+Parker
+
+Eaton
+
+Gates
+
+Stauff
+
+Parameter:
+
+hose ID
+
+thread
+
+connection
+
+pressure
+
+material
+
+crimp standard
+
+37. Filter regulator lubricator
+
+Selain ukuran port, periksa flow capacity, pressure rating, filtration, bowl type, drain, dan compatibility.
+
+38. Solenoid coil
+
+Cross reference coil harus berdasarkan:
+
+valve series
+
+voltage
+
+AC/DC
+
+power
+
+connector
+
+frequency
+
+coil dimensions
+
+duty
+
+Coil 24 VDC dari valve berbeda belum tentu interchangeable.
+
+39. Relay
+
+Merk:
+
+Omron
+
+Schneider
+
+Finder
+
+Phoenix Contact
+
+Weidmuller
+
+Siemens
+
+ABB
+
+Parameter:
+
+coil voltage
+
+contact arrangement
+
+contact rating
+
+number of poles
+
+mounting
+
+socket
+
+LED
+
+suppression
+
+40. Industrial fan dan blower
+
+Merk:
+
+Ziehl-Abegg
+
+ebm-papst
+
+Howden
+
+Elektror
+
+Parameter:
+
+airflow
+
+pressure
+
+RPM
+
+motor
+
+impeller
+
+diameter
+
+rotation
+
+mounting
+
+Cross reference tidak cukup berdasarkan diameter fan.
+
+41. Mechanical bearing housing
+
+Merk:
+
+SKF
+
+FAG
+
+NTN
+
+Timken
+
+Parameter:
+
+bearing insert
+
+shaft diameter
+
+housing type
+
+mounting
+
+seal
+
+material
+
+42. Pillow block bearing
+
+Contoh series:
+
+UCP
+
+UCF
+
+UCFL
+
+UCT
+
+UCFC
+
+Merk:
+
+SKF
+
+FYH
+
+NTN
+
+NSK
+
+FAG
+
+Timken
+
+Parameter:
+
+insert bearing
+
+shaft
+
+housing dimensions
+
+bolt spacing
+
+housing material
+
+seal
+
+43. Retaining ring dan circlip
+
+Merk:
+
+Seeger
+
+Rotor Clip
+
+Smol
+
+Parameter:
+
+shaft diameter
+
+bore
+
+groove diameter
+
+ring thickness
+
+material
+
+44. Key dan taper bush
+
+Merk:
+
+Fenner
+
+Fenner Drives
+
+Martin
+
+TB Wood's
+
+Parameter:
+
+shaft
+
+keyway
+
+bush size
+
+bore
+
+OD
+
+flange
+
+45. Pulley
+
+Merk:
+
+Fenner
+
+Optibelt
+
+Gates
+
+Dodge
+
+Martin
+
+Parameter:
+
+belt profile
+
+diameter
+
+groove
+
+number of grooves
+
+bore
+
+hub
+
+pitch diameter
+
+Cross reference database yang ideal
+
+Jika tujuan Anda membangun database sparepart industri yang benar-benar berguna, jangan membuat tabel hanya seperti:
+
+SKF | NSK | NTN | FAG
+
+Buat struktur seperti ini:
+
+Kategori
+
+Subkategori
+
+Merk
+
+Part Number
+
+Equivalent Part Number
+
+Standard
+
+Type
+
+Size
+
+Dimension 1
+
+Dimension 2
+
+Dimension 3
+
+Material
+
+Rating
+
+Load
+
+Pressure
+
+Temperature
+
+Voltage
+
+Current
+
+Speed
+
+Thread
+
+Mounting
+
+Seal
+
+Clearance
+
+Output
+
+Application
+
+Original/OEM
+
+Equivalent Level
+
+Source
+
+Verification Date
+
+Catatan
+
+Kolom “Equivalent Level” sangat penting.
+
+Gunakan klasifikasi:
+
+A = direct interchangeable berdasarkan standard/dimensi dan spesifikasi utama
+
+B = mechanically compatible tetapi ada perbedaan spesifikasi yang harus divalidasi
+
+C = functional alternative tetapi bukan direct replacement
+
+D = hanya reference awal, wajib verifikasi manufacturer
+
+Dengan sistem ini, database tidak memberikan kesan palsu bahwa semua produk yang memiliki ukuran sama adalah identik.
+
+Cara membuat cross reference yang benar
+
+Langkah 1 — Identifikasi part number asli
+
+Foto nameplate.
+
+Foto kemasan.
+
+Foto marking pada komponen.
+
+Catat semua suffix.
+
+Langkah 2 — Tentukan standard
+
+Apakah:
+
+ISO?
+
+DIN?
+
+ANSI?
+
+JIS?
+
+IEC?
+
+NEMA?
+
+SAE?
+
+BSP?
+
+NPT?
+
+Metric?
+
+Langkah 3 — Ukur komponen
+
+Gunakan:
+
+caliper
+
+micrometer
+
+depth gauge
+
+thread gauge
+
+tape measure
+
+multimeter
+
+pressure gauge
+
+atau alat ukur lain sesuai kategori.
+
+Langkah 4 — Cari katalog manufacturer
+
+Jangan mengandalkan tabel internet yang tidak jelas sumbernya.
+
+NSK menyediakan katalog dan CAD/datasheet melalui situs resminya. citeturn0search1
+
+Renold juga menyediakan katalog chain yang memuat data dimensi dan konfigurasi. citeturn0search8
+
+Langkah 5 — Bandingkan dimension
+
+Minimal:
+
+mounting dimension
+
+interface
+
+shaft
+
+bore
+
+length
+
+width
+
+height
+
+port
+
+thread
+
+bolt pattern
+
+Langkah 6 — Bandingkan performance
+
+Misalnya bearing:
+
+load
+
+speed
+
+clearance
+
+seal
+
+temperature
+
+Untuk hydraulic:
+
+pressure
+
+flow
+
+displacement
+
+Untuk electrical:
+
+voltage
+
+current
+
+frequency
+
+breaking capacity
+
+Untuk sensor:
+
+sensing distance
+
+output
+
+response time
+
+Langkah 7 — Bandingkan environment
+
+Apakah digunakan:
+
+di luar ruangan;
+
+di area basah;
+
+debu;
+
+oil;
+
+chemical;
+
+temperature tinggi;
+
+food processing;
+
+hazardous area?
+
+Langkah 8 — Validasi dengan supplier atau manufacturer
+
+Untuk spare kritis, minta confirmation tertulis.
+
+Cara membaca kode sparepart tanpa terjebak
+
+Kode produk biasanya terdiri dari:
+
+prefix + basic designation + suffix.
+
+Tetapi struktur setiap manufacturer berbeda.
+
+Pada bearing, suffix dapat menunjukkan seal, clearance, cage, tolerance, atau fitur lain.
+
+Pada VFD, karakter kode dapat menunjukkan voltage, power, enclosure, option, dan hardware configuration.
+
+Pada chain, angka dan huruf dapat menunjukkan pitch, standard, dan jumlah strand.
+
+Pada belt, kode dapat menunjukkan profile dan length.
+
+Karena itu jangan membuat satu “kamus universal” untuk semua merk.
+
+Setiap kategori mempunyai bahasa kode sendiri.
+
+Cross reference berdasarkan ukuran: kapan aman?
+
+Relatif aman jika:
+
+komponen mengikuti standard dimensional;
+
+interface identik;
+
+performance memenuhi kebutuhan;
+
+material sesuai;
+
+dan manufacturer menyatakan interchangeability atau data teknis mendukungnya.
+
+Contohnya bearing standar dengan designation standar.
+
+Tetapi semakin kompleks komponen, semakin tidak aman jika hanya mengandalkan ukuran.
+
+Cross reference berdasarkan fungsi: kapan diperlukan?
+
+Untuk:
+
+VFD
+
+PLC
+
+hydraulic valve
+
+servo motor
+
+pressure transmitter
+
+flow meter
+
+mechanical seal
+
+pump
+
+gearbox
+
+safety sensor
+
+Maka cross reference harus berbasis fungsi dan interface.
+
+Komponen elektronik dan hydraulic sering membutuhkan verifikasi jauh lebih dalam daripada spare mekanis standar.
+
+Daftar parameter minimum berdasarkan kategori
+
+Bearing:
+
+bore, OD, width, load, speed, clearance, seal.
+
+V-belt:
+
+profile, width, height, pitch length, construction.
+
+Chain:
+
+pitch, roller diameter, inner width, strand, tensile strength.
+
+Sprocket:
+
+chain number, teeth, bore, hub, keyway.
+
+Oil seal:
+
+shaft, housing, width, material, lip design.
+
+Coupling:
+
+bore, torque, RPM, misalignment, element.
+
+Motor:
+
+kW, voltage, current, RPM, frame, mounting, IP, duty.
+
+Gearbox:
+
+ratio, torque, input speed, output speed, mounting.
+
+Hydraulic hose:
+
+ID, pressure, temperature, standard, fitting.
+
+Hydraulic pump:
+
+displacement, pressure, RPM, flow, mounting.
+
+Pneumatic cylinder:
+
+bore, stroke, rod, mounting, port.
+
+Solenoid valve:
+
+port, orifice, pressure, flow, voltage, seal.
+
+Contactor:
+
+AC-3 current, coil voltage, poles, auxiliary.
+
+Overload relay:
+
+current range, trip class, mounting.
+
+Sensor:
+
+technology, range, output, voltage, mounting, IP.
+
+VFD:
+
+input voltage, phase, output current, overload, control mode, enclosure.
+
+Pressure transmitter:
+
+range, accuracy, output, connection, material.
+
+Temperature sensor:
+
+type, range, probe, wiring, connection.
+
+PLC:
+
+CPU, I/O, protocol, software, voltage.
+
+Linear guide:
+
+rail width, block, length, preload, accuracy.
+
+Ball screw:
+
+diameter, lead, nut, preload, accuracy.
+
+Kapan cross reference tidak boleh dilakukan sembarangan?
+
+Ada beberapa kategori yang harus diperlakukan sebagai critical spare.
+
+Contohnya:
+
+safety relay;
+
+emergency stop;
+
+safety light curtain;
+
+safety scanner;
+
+pressure safety device;
+
+explosion-proof electrical equipment;
+
+high-pressure hydraulic component;
+
+high-speed rotating component;
+
+servo drive;
+
+servo motor;
+
+crane component;
+
+boiler component;
+
+pressure vessel component.
+
+Pada kategori tersebut, “bentuk sama” bukan alasan untuk mengganti komponen.
+
+Risk assessment, standard, certification, dan manufacturer approval dapat menjadi bagian dari keputusan.
+
+Membuat database cross reference untuk website
+
+Jika database ini akan digunakan pada website katalog sparepart, struktur datanya sebaiknya tidak hanya:
+
+“SKF 6205 = NSK 6205”.
+
+Buat halaman:
+
+SKF 6205
+
+Kemudian tampilkan:
+
+Basic specification
+
+Dimensions
+
+Bearing type
+
+Sealing options
+
+Clearance
+
+Available brands
+
+Equivalent codes
+
+Related parts
+
+Application
+
+Technical notes
+
+Verification status
+
+Manufacturer source
+
+Dengan begitu pengguna yang mencari “SKF 6205 equivalent” mendapatkan informasi yang jauh lebih berguna.
+
+Untuk V-belt:
+
+B-50 equivalent
+
+Untuk chain:
+
+08B-1 equivalent
+
+Untuk oil seal:
+
+30x47x7 equivalent
+
+Untuk coupling:
+
+L-100 coupling equivalent
+
+Untuk contactor:
+
+Schneider LC1D25 equivalent
+
+Untuk proximity:
+
+M18 inductive PNP NO 8 mm equivalent
+
+Inilah jenis pencarian yang biasanya memiliki intent sangat kuat karena orang yang mencarinya sering sedang membutuhkan sparepart.
+
+Tetapi database harus memberi peringatan bahwa “equivalent” memiliki tingkat kecocokan.
+
+Jangan membuat klaim “100% equivalent” hanya karena ukuran sama.
+
+Kesimpulan
+
+Cross reference sparepart industri bukan sekadar membuat daftar merk A sama dengan merk B.
+
+Itu adalah pekerjaan identifikasi teknis.
+
+Bearing membutuhkan dimensi, clearance, seal, load dan speed.
+
+V-belt membutuhkan profile dan length.
+
+Chain membutuhkan standard, pitch, roller diameter, width dan strand.
+
+Oil seal membutuhkan shaft, housing, width dan material.
+
+Coupling membutuhkan bore, torque, RPM dan misalignment.
+
+Hydraulic component membutuhkan pressure, flow, interface dan configuration.
+
+Pneumatic component membutuhkan bore, stroke, mounting dan port.
+
+Motor membutuhkan frame, power, voltage, RPM dan mounting.
+
+VFD membutuhkan current, voltage, overload, control mode dan application.
+
+Sensor membutuhkan technology, output, distance, mounting dan wiring.
+
+PLC membutuhkan hardware, I/O, communication dan software compatibility.
+
+Karena itu, database cross reference yang benar harus memisahkan antara:
+
+direct equivalent;
+
+mechanical equivalent;
+
+functional alternative;
+
+dan reference only.
+
+Jika sistem seperti ini dibuat dengan disiplin, manfaatnya jauh lebih besar daripada sekadar daftar kode sparepart.
+
+Engineer dapat mencari alternatif lebih cepat.
+
+Purchasing dapat meminta quotation dari lebih banyak supplier.
+
+Warehouse dapat mengurangi duplikasi item.
+
+Maintenance dapat mempercepat penggantian spare.
+
+Dan perusahaan dapat mengurangi ketergantungan pada satu merk.
+
+Yang paling penting, cross reference membuat data sparepart berubah dari sekadar daftar kode menjadi knowledge base teknis.
+
+Itulah bentuk database sparepart industri yang benar-benar berguna.
+
+Sumber teknis dan rujukan
+
+1. NSK Global — Catalogs & CAD Drawings.
+https://www.nsk.com/catalogs-and-cad/
+
+2. Schaeffler — Rolling Bearings Catalogue HR 1.
+https://www.schaeffler.com/remotemedien/media/_shared_media/08_media_library/01_publications/schaeffler_2/catalogue_1/downloads_6/hr1_de_en.pdf
+
+3. Renold — Chain Standards.
+https://www.renold.com/support/chain-info-index/chain-standards/
+
+4. Renold — Introduction to Chain.
+https://www.renold.com/support/chain-info-index/chain-introduction/
+
+5. Renold — Roller Chain.
+https://www.renold.com/products/industrial-transmission-chain/general-transmission-chain/renold/
+
+6. Gates — Metric Power V-Belts.
+https://www.gates.com/
+
+Catatan penting mengenai tabel cross reference
+
+Tabel dan contoh kode dalam artikel ini dimaksudkan sebagai panduan identifikasi dan pencarian awal. Tidak semua kode yang memiliki dimensi dasar sama dapat dipasang sebagai pengganti langsung.
+
+Untuk sparepart kritis, selalu cocokkan full part number, suffix, dimensi, rating, standard, material, environmental rating, mounting, dan application requirement dengan katalog manufacturer terbaru.
+
+Manufacturer dapat mengubah kode, mengganti suffix, menghentikan produk, atau memperbarui spesifikasi. Karena itu status cross reference sebaiknya selalu diberi tanggal verifikasi.
+
+Sistem cross reference terbaik bukan sistem yang mempunyai paling banyak pasangan kode.
+
+Sistem terbaik adalah sistem yang paling sedikit memberikan rekomendasi salah.
