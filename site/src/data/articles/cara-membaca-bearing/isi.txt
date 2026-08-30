@@ -1,0 +1,847 @@
+CARA MEMBACA KODE BEARING SKF, NSK, NTN, FAG, DAN MEREK LAIN DENGAN MUDAH
+
+Bagi teknisi maintenance, engineer, purchasing, maupun pemilik workshop, tulisan yang tertera pada bearing sering kali menjadi informasi pertama ketika sebuah spare part harus diganti. Masalahnya, kode seperti 6205, 6308, 22220, NU 220, 22317-E1-XL-K-C3, atau berbagai kombinasi huruf dan angka lain terlihat seperti kode yang rumit.
+
+Padahal, kode tersebut mempunyai pola.
+
+Jika pola dasarnya sudah dipahami, teknisi tidak perlu menghafalkan ribuan nomor bearing. Yang perlu dipahami adalah bagaimana membaca identitas dasar, ukuran, konfigurasi, dan suffix-nya. Setelah itu barulah katalog resmi merek digunakan untuk memastikan detail yang tidak bersifat universal.
+
+Hal ini penting karena SKF, NSK, NTN, FAG/Schaeffler, Timken, Koyo, NACHI, dan produsen lainnya mempunyai banyak designation yang terlihat mirip, tetapi tidak selalu mempunyai arti suffix yang sama.
+
+APA ITU KODE BEARING?
+
+Kode bearing atau bearing designation adalah identitas teknis yang digunakan untuk menunjukkan jenis, ukuran, dan karakteristik sebuah rolling bearing.
+
+NSK menjelaskan bahwa bearing designation dapat menunjukkan bearing type, dimensi utama, accuracy, internal clearance, dan spesifikasi lain. NSK membaginya menjadi basic designation dan supplementary designation. Basic designation memberikan informasi utama mengenai tipe dan dimensi, sedangkan supplementary designation memberikan informasi tambahan yang dapat bersifat khusus bagi manufacturer.
+
+Schaeffler juga menjelaskan bahwa designation bearing dapat menunjukkan tipe, dimensi, toleransi, internal clearance, dan karakteristik lainnya. Struktur dasarnya dapat dipahami sebagai prefix, basic designation, dan suffix.
+
+Jadi ketika melihat kode 6205-2RS-C3, jangan menghafalkannya sebagai satu kata. Pecahlah menjadi:
+
+6205 = basic designation
+2RS = konfigurasi sealing menurut nomenclature manufacturer
+C3 = internal clearance
+
+Dengan cara tersebut, pembacaan menjadi jauh lebih logis.
+
+STRUKTUR UMUM KODE BEARING
+
+Secara umum, banyak rolling bearing dapat dipahami dengan pola:
+
+PREFIX + BASIC DESIGNATION + SUFFIX
+
+Tetapi tidak semua bearing mempunyai ketiga bagian tersebut.
+
+Basic designation adalah identitas utama. Prefix berada sebelum basic designation dan suffix berada setelahnya. Prefix atau suffix dapat menjelaskan desain khusus, komponen, cage, sealing, clearance, material, precision, lubrication, heat treatment, atau fitur lainnya.
+
+SKF menjelaskan bahwa sebagian besar rolling bearing mereka menggunakan basic designation dengan satu atau lebih prefix dan/atau suffix. Prefix terutama digunakan untuk komponen atau varian tertentu, sedangkan suffix menunjukkan desain atau variasi dari desain dasar.
+
+Schaeffler menggunakan konsep yang serupa. Contohnya 21317-E1-XL-K-C3 dapat dipecah menjadi basic designation 21317 dan beberapa suffix tambahan.
+
+Hal paling penting: jangan menganggap arti semua suffix bersifat universal. Basic designation sering memiliki kesamaan karena mengikuti sistem dimensi yang umum, tetapi supplementary designation dapat berbeda antarprodusen.
+
+CARA MEMBACA KODE SKF
+
+SKF merupakan salah satu merek bearing yang paling banyak digunakan di industri. Pada sistem basic designation SKF, angka atau kombinasi huruf awal menunjukkan jenis bearing. Angka berikutnya berkaitan dengan dimension series, sedangkan dua angka terakhir pada banyak bearing metric digunakan untuk menentukan bore diameter dengan aturan tertentu.
+
+Beberapa identitas tipe yang umum pada SKF adalah:
+
+0 = double-row angular contact ball bearing
+1 = self-aligning ball bearing
+2 = spherical roller bearing dan spherical roller thrust bearing
+3 = tapered roller bearing
+4 = double-row deep groove ball bearing
+5 = thrust ball bearing
+6 = single-row deep groove ball bearing
+7 = single-row angular contact ball bearing
+8 = cylindrical roller thrust bearing
+C = CARB toroidal roller bearing
+N = cylindrical roller bearing
+NK = needle roller bearing
+QJ = four-point contact ball bearing
+
+Daftar tersebut adalah bagian dari sistem SKF dan tidak boleh dianggap sebagai kamus universal semua merek.
+
+CONTOH SKF 6205
+
+Mari pecahkan 6205.
+
+6 menunjukkan single-row deep groove ball bearing.
+
+20 menunjukkan dimension series.
+
+05 merupakan bore code.
+
+Untuk bore code umum, angka 05 dikalikan 5:
+
+05 × 5 = 25 mm.
+
+Jadi bore nominal 6205 adalah 25 mm.
+
+Aturan ini sangat berguna, tetapi jangan diterapkan tanpa memperhatikan pengecualian. Pada sistem SKF, 00 berarti 10 mm, 01 berarti 12 mm, 02 berarti 15 mm, dan 03 berarti 17 mm. Ada juga aturan khusus untuk bore tertentu seperti 22, 28, 32 mm, bore sangat kecil, bore besar, serta bore non-standard.
+
+CONTOH 6205-2Z
+
+Pada nomenclature SKF yang umum, 2Z menunjukkan shield pada kedua sisi.
+
+Artinya 6205-2Z bukan sekadar 6205 dengan tambahan huruf. Konfigurasi sisi bearing sudah berbeda dari bearing open.
+
+CONTOH 6205-2RS1/C3
+
+Pada designation SKF tertentu, suffix seal dan clearance memberikan informasi tambahan mengenai konstruksi bearing.
+
+C3 menunjukkan radial internal clearance lebih besar daripada Normal.
+
+Ini tidak berarti C3 adalah bearing dengan kualitas lebih tinggi. C3 adalah kelas clearance yang dipilih untuk kondisi aplikasi tertentu.
+
+CARA MEMBACA NSK
+
+NSK menggunakan basic designation dan supplementary designation. NSK menjelaskan bahwa basic designation mengindikasikan tipe bearing dan dimensi penting, sedangkan supplementary designation dapat menunjukkan desain, material, cage, dan spesifikasi lainnya.
+
+Pada bearing radial, struktur umumnya berkaitan dengan:
+
+bearing type
+dimension series
+bore number
+contact angle jika berlaku
+supplementary designation
+
+Karena basic designation banyak yang mengikuti sistem yang sama, kode seperti 6205 pada NSK dapat dibaca dengan logika dasar yang sama untuk tipe dan bore.
+
+Tetapi suffix tidak boleh ditebak berdasarkan katalog SKF.
+
+Misalnya jika ditemukan bearing NSK dengan designation panjang, tuliskan seluruh kode. Jangan hanya mencatat angka dasarnya.
+
+CARA MEMBACA NTN
+
+NTN juga menggunakan sistem designation untuk menunjukkan tipe, dimensi, internal clearance, sealing, cage, dan karakteristik lainnya.
+
+Pada bearing metric standar, beberapa basic designation NTN akan terlihat sangat mirip dengan SKF atau NSK. Ini terjadi karena dimensi dan sistem designation industri mempunyai banyak kesamaan.
+
+Tetapi ketika muncul suffix, jangan langsung menganggap arti huruf tersebut sama.
+
+Prinsip yang aman adalah:
+
+baca basic designation;
+tentukan ukuran;
+catat seluruh suffix;
+kemudian buka katalog NTN untuk memastikan arti suffix.
+
+Dalam pekerjaan maintenance, satu huruf dapat menentukan apakah bearing mempunyai seal tertentu, clearance tertentu, cage tertentu, atau konstruksi khusus.
+
+CARA MEMBACA FAG / SCHAEFFLER
+
+FAG merupakan merek yang berada dalam kelompok Schaeffler bersama INA. Sistem designation Schaeffler sangat berguna untuk dipelajari karena satu kode dapat menjelaskan banyak informasi.
+
+Contoh yang diberikan dalam materi Schaeffler adalah:
+
+21317-E1-XL-K-C3
+
+Cara membaca contoh tersebut:
+
+2 = spherical roller bearing
+13 = dimension series
+17 = bore code
+17 × 5 = 85 mm bore
+E1 = internal design variant
+XL = X-life
+K = tapered bore
+C3 = radial internal clearance lebih besar daripada Normal
+
+Contoh tersebut memperlihatkan bahwa suffix bukan sekadar hiasan. Huruf dan angka tambahan dapat menentukan karakteristik yang sangat penting terhadap pemasangan dan operasi.
+
+ARTI BORE CODE
+
+Bore code adalah salah satu bagian yang paling mudah dipelajari pada bearing metric umum.
+
+Untuk banyak bearing:
+
+00 = 10 mm
+01 = 12 mm
+02 = 15 mm
+03 = 17 mm
+
+Kemudian pada banyak kode:
+
+04 = 20 mm
+05 = 25 mm
+06 = 30 mm
+07 = 35 mm
+08 = 40 mm
+09 = 45 mm
+10 = 50 mm
+12 = 60 mm
+15 = 75 mm
+20 = 100 mm
+
+Untuk kode setelah 03, pola yang umum adalah kode dikalikan 5, tetapi pengecualian tetap harus diperiksa.
+
+Karena itu jangan menyimpulkan bahwa setiap angka terakhir bearing pasti dikalikan lima.
+
+DIMENSION SERIES SANGAT PENTING
+
+Banyak orang hanya melihat bore.
+
+Padahal dimension series juga menentukan ukuran keseluruhan bearing.
+
+Contohnya 6205 dan 6305 sama-sama memiliki bore 25 mm.
+
+Tetapi 6205 berada pada 62 series, sedangkan 6305 berada pada 63 series.
+
+Akibatnya outside diameter dan width berbeda.
+
+Secara umum tiga dimensi utama adalah:
+
+d = bore diameter
+D = outside diameter
+B = bearing width
+
+Jadi mengganti 6205 dengan 6305 hanya karena keduanya mempunyai bore 25 mm adalah keputusan yang salah jika housing dan shaft arrangement dirancang untuk 6205.
+
+ARTI C2, C3, C4, DAN C5
+
+Internal clearance adalah ruang bebas internal antara komponen bearing sebelum bearing dipasang dan beroperasi pada kondisi tertentu.
+
+Kode C2 berarti clearance lebih kecil daripada Normal pada sistem designation tertentu.
+
+C3 berarti lebih besar daripada Normal.
+
+C4 lebih besar daripada C3.
+
+C5 lebih besar daripada C4.
+
+Clearance tidak boleh dipandang sebagai tingkatan kualitas.
+
+C3 bukan berarti lebih bagus daripada Normal. C3 dipilih jika kondisi operasi memang membutuhkan clearance lebih besar.
+
+Faktor seperti temperatur, interference fit, shaft expansion, housing condition, speed, dan operating load dapat memengaruhi pemilihan clearance.
+
+ARTI 2RS, 2Z, DAN 2ZZ
+
+Kode sealing dan shielding sangat sering muncul pada deep groove ball bearing.
+
+Secara umum:
+
+OPEN = bearing terbuka
+SHIELDED = memakai shield
+SEALED = memakai seal
+
+Kode seperti 2RS sering digunakan untuk menunjukkan seal pada kedua sisi, sedangkan 2Z atau 2ZZ pada banyak nomenclature digunakan untuk shield pada kedua sisi.
+
+Namun detailnya tidak boleh disamakan antarbrand.
+
+Seal dan shield mempunyai karakteristik berbeda. Seal biasanya memberikan perlindungan kontaminasi lebih kuat, tetapi dapat menghasilkan friction lebih besar. Shield mempunyai karakteristik berbeda dan sering dipilih untuk kondisi speed atau aplikasi tertentu.
+
+Pemilihan harus mengikuti katalog manufacturer dan kondisi mesin.
+
+MENGAPA 2RS SKF DAN 2RS MEREK LAIN TIDAK BOLEH LANGSUNG DIANGGAP IDENTIK?
+
+Karena suffix dapat mempunyai arti manufacturer-specific.
+
+Basic designation dapat sama, tetapi material seal, desain seal, grease, cage, clearance, tolerance, dan internal geometry dapat berbeda.
+
+Inilah alasan mengapa teknisi sebaiknya mencatat full designation dan manufacturer.
+
+Untuk pekerjaan kritis, jangan membeli “6205-2RS” tanpa menyebut merek atau specification jika equipment memang mensyaratkan produk tertentu.
+
+ARTI K PADA FAG / SCHAEFFLER
+
+Pada contoh Schaeffler:
+
+21317-E1-XL-K-C3
+
+K menunjukkan tapered bore.
+
+Schaeffler memberikan contoh tapered bore 1:12 untuk designation tersebut.
+
+Bearing dengan tapered bore mempunyai kebutuhan mounting yang berbeda dari bearing dengan cylindrical bore. Bearing dapat digunakan bersama adapter sleeve atau arrangement lain sesuai desain.
+
+Jadi suffix K dapat menjadi sangat penting.
+
+ARTI XL PADA SCHAEFFLER
+
+Pada contoh tersebut XL menunjukkan X-life.
+
+Jangan membaca XL sebagai “extra large”.
+
+Itu adalah designation performa Schaeffler dan harus dipahami berdasarkan product family serta katalog manufacturer.
+
+ARTI E1 PADA SCHAEFFLER
+
+Pada contoh 21317-E1-XL-K-C3, E1 menunjukkan internal design variant.
+
+Ini memperlihatkan mengapa membaca huruf secara sembarangan bisa menyebabkan kesalahan.
+
+Satu huruf dapat menjelaskan perubahan konstruksi internal.
+
+CYLINDRICAL ROLLER BEARING: NU, NJ, NUP
+
+Cylindrical roller bearing sering mempunyai designation seperti:
+
+N
+NU
+NJ
+NUP
+NN
+NNU
+
+Huruf-huruf tersebut berkaitan dengan konfigurasi flange dan fungsi locating atau non-locating.
+
+Pada sistem SKF, N merupakan cylindrical roller bearing dan dapat diikuti huruf lain yang menunjukkan kombinasi flange.
+
+Perbedaan ini sangat penting.
+
+Bearing NU dan NJ tidak boleh ditukar hanya karena ID, OD, dan width terlihat sama.
+
+Konfigurasi flange memengaruhi kemampuan bearing dalam menangani perpindahan aksial dan fungsi locating pada shaft.
+
+SPHERICAL ROLLER BEARING
+
+Spherical roller bearing banyak digunakan pada:
+
+rolling mill
+conveyor
+crusher
+cement plant
+mining equipment
+gearbox
+fan
+heavy machinery
+
+Series seperti 222, 223, 230, 231, 232, 239, 240, dan 241 sering ditemukan.
+
+Tetapi designation lengkap dapat mempunyai suffix untuk internal design, cage, clearance, tapered bore, sealing, heat stabilization, dan fitur lain.
+
+Contoh 21317-E1-XL-K-C3 menunjukkan bagaimana satu spherical roller bearing dapat memiliki banyak informasi dalam satu designation.
+
+TAPERED ROLLER BEARING DAN TIMKEN
+
+Tapered roller bearing mempunyai sistem identifikasi yang berbeda dari deep groove ball bearing.
+
+Timken merupakan salah satu produsen utama tapered roller bearing dan menyediakan katalog yang menjelaskan part number, series, cone, cup, serta dimensi seperti bore, outside diameter, width, dan fillet radius.
+
+Pada tapered roller bearing, teknisi harus mengetahui apakah nomor yang ditemukan adalah cone, cup, atau complete bearing assembly.
+
+Ini penting karena cone dan cup dapat mempunyai part number berbeda.
+
+Jangan membeli tapered roller bearing hanya berdasarkan satu angka yang terbaca sebagian.
+
+KENAPA BASIC DESIGNATION BISA MIRIP ANTAR MEREK?
+
+Karena banyak bearing standard menggunakan sistem dimensi yang memiliki dasar ISO/JIS atau standar industri terkait.
+
+NSK menjelaskan bahwa basic designation menggunakan definisi ISO/JIS, sementara supplementary designation dapat ditentukan secara khusus oleh manufacturer.
+
+Inilah alasan mengapa 6205 dari beberapa merek dapat mempunyai dimensi dasar yang sama.
+
+Namun kemiripan basic designation tidak otomatis berarti semua karakteristik produk identik.
+
+DIMENSIONALLY INTERCHANGEABLE TIDAK SELALU BERARTI IDENTIK
+
+Ini prinsip penting dalam spare part.
+
+Dua bearing dapat mempunyai:
+
+ID sama
+OD sama
+width sama
+
+tetapi berbeda pada:
+
+internal clearance
+seal
+cage
+grease
+internal geometry
+load rating
+speed rating
+precision
+material
+heat treatment
+
+Karena itu interchange harus diperiksa secara teknis.
+
+Schaeffler bahkan menyediakan Medias interchange untuk membantu mencari designation INA/FAG yang berhubungan dengan designation produsen lain. Hasil interchange tetap perlu diperiksa karena interchangeability dapat bersifat penuh maupun bersyarat.
+
+CARA CEPAT MEMBACA BEARING DI WORKSHOP
+
+Jika menemukan bearing bekas, lakukan urutan berikut.
+
+1. Foto kode lengkap pada ring.
+
+2. Foto packaging jika masih tersedia.
+
+3. Catat manufacturer.
+
+4. Pisahkan basic designation dan suffix.
+
+5. Tentukan tipe bearing.
+
+6. Tentukan dimension series.
+
+7. Tentukan bore.
+
+8. Periksa ID, OD, dan width dengan alat ukur jika diperlukan.
+
+9. Periksa seal atau shield.
+
+10. Periksa clearance.
+
+11. Periksa apakah bore cylindrical atau tapered.
+
+12. Cocokkan dengan equipment manual atau BOM.
+
+13. Verifikasi pada katalog resmi.
+
+Dengan cara tersebut, kemungkinan salah beli jauh lebih kecil.
+
+JANGAN HANYA MENGUKUR BEARING
+
+Mengukur bearing memang berguna jika kode sudah aus atau tidak terbaca.
+
+Tetapi ukuran saja tidak cukup.
+
+Misalnya hasil pengukuran menunjukkan:
+
+ID 25 mm
+OD 52 mm
+width 15 mm
+
+Ada beberapa bearing yang dapat mempunyai ukuran dasar tersebut.
+
+Tetapi belum tentu semuanya mempunyai:
+
+clearance sama
+seal sama
+cage sama
+grease sama
+load rating sama
+speed rating sama
+
+Jadi pengukuran digunakan untuk membantu identifikasi, bukan menggantikan engineering verification.
+
+BEARING OPEN VS SEALED VS SHIELDED
+
+Bearing open cocok untuk kondisi tertentu ketika lubrication diberikan dari sistem eksternal.
+
+Bearing shielded menggunakan shield untuk mengurangi masuknya kontaminan dan membantu mempertahankan lubricant.
+
+Bearing sealed menggunakan seal untuk perlindungan lingkungan yang lebih kuat.
+
+Tidak ada pilihan yang otomatis paling bagus.
+
+Pada aplikasi high speed, friction dan heat generation penting.
+
+Pada lingkungan berdebu, perlindungan kontaminasi penting.
+
+Pada temperatur tinggi, jenis seal dan grease menjadi sangat penting.
+
+Pada food processing, chemical plant, steel mill, dan area basah, kebutuhan sealing bisa berbeda lagi.
+
+CARA MEMBACA KODE UNTUK PURCHASING
+
+Jangan menulis:
+
+Bearing motor 25 mm.
+
+Informasi tersebut terlalu sedikit.
+
+Lebih baik:
+
+SKF 6205-2Z/C3
+
+atau full designation sesuai bearing yang dipakai.
+
+Master data spare part sebaiknya berisi:
+
+manufacturer
+full designation
+bearing type
+bore
+outside diameter
+width
+clearance
+seal/shield
+cage
+lubricant jika relevan
+OEM part number
+equipment
+location
+quantity
+
+Data seperti ini membuat purchasing lebih aman dan maintenance history lebih berguna.
+
+CARA MEMERIKSA BEARING YANG KODENYA SUDAH HILANG
+
+Jika marking tidak terbaca, lakukan identifikasi bertahap.
+
+Pertama, tentukan bentuk bearing.
+
+Apakah deep groove ball bearing?
+
+Spherical roller?
+
+Cylindrical roller?
+
+Tapered roller?
+
+Thrust?
+
+Needle roller?
+
+Kemudian ukur:
+
+bore
+outside diameter
+width
+
+Setelah itu lihat konstruksi:
+
+jumlah row
+seal
+shield
+flange
+taper
+cage
+
+Kemudian cari bearing berdasarkan dimensi dan bentuk pada katalog manufacturer.
+
+Jika bearing merupakan spare part mesin OEM, periksa juga drawing, BOM, manual, atau part number mesin.
+
+Jangan langsung menggunakan hasil pencarian marketplace sebagai bukti bahwa bearing tersebut identik.
+
+CARA MEMBEDAKAN KODE ASLI DAN PALSU
+
+Kode yang benar belum membuktikan bearing asli.
+
+Produk palsu dapat meniru marking.
+
+Pemeriksaan keaslian sebaiknya mempertimbangkan:
+
+supplier
+packaging
+marking
+quality printing
+traceability
+dimensi
+berat
+surface finish
+cage
+seal
+dokumen pembelian
+
+Untuk bearing kritis, gunakan distributor atau channel yang dapat diverifikasi.
+
+Jika harga sebuah bearing jauh lebih murah daripada harga pasar resmi, jangan langsung menganggap itu keuntungan.
+
+Biaya downtime mesin dapat jauh lebih mahal daripada selisih harga bearing.
+
+KESALAHAN YANG PALING SERING TERJADI
+
+Pertama, menganggap semua merek menggunakan suffix dengan arti yang sama.
+
+Kedua, hanya membaca angka utama.
+
+Ketiga, mengabaikan C3 atau clearance lain.
+
+Keempat, mengabaikan seal dan shield.
+
+Kelima, mengganti bearing hanya karena ID dan OD sama.
+
+Keenam, menganggap C3 sebagai upgrade kualitas.
+
+Ketujuh, menganggap bearing yang lebih mahal pasti lebih cocok.
+
+Kedelapan, membaca kode berdasarkan ingatan tanpa membuka katalog.
+
+Kesembilan, membeli bearing tanpa menyebut manufacturer ketika aplikasi membutuhkan spesifikasi tertentu.
+
+Kesepuluh, mengganti bearing tanpa mencari penyebab kerusakan bearing sebelumnya.
+
+KESALAHAN TERAKHIR SANGAT PENTING
+
+Jika bearing gagal, jangan hanya mengganti bearing.
+
+Cari penyebabnya.
+
+Bearing dapat rusak karena:
+
+misalignment
+overload
+underload
+poor lubrication
+contamination
+incorrect mounting
+excessive preload
+incorrect clearance
+shaft fit
+housing fit
+vibration
+electrical current
+overheating
+corrosion
+
+Jika penyebab tidak diperbaiki, bearing baru dapat rusak lagi.
+
+KODE BEARING DALAM MAINTENANCE
+
+Designation bearing sebaiknya masuk ke maintenance master data.
+
+Contoh:
+
+Equipment: Motor M-204
+Position: DE
+Bearing: SKF 6205-2Z/C3
+Quantity: 1
+
+Informasi seperti ini jauh lebih berguna daripada hanya menulis “bearing motor”.
+
+Ketika mesin mengalami failure lagi, engineer dapat melihat histori penggantian dan membandingkannya dengan vibration, temperature, lubrication, alignment, dan operating hours.
+
+KODE BEARING DAN PREDICTIVE MAINTENANCE
+
+Bearing designation juga membantu condition monitoring.
+
+Jenis bearing dapat menentukan geometry dan karakteristik yang dibutuhkan dalam analisis vibration.
+
+Tetapi kode bukan satu-satunya informasi.
+
+Analisis yang baik menggabungkan:
+
+bearing designation
+RPM
+load
+temperature
+vibration spectrum
+lubrication
+operating hours
+historical failure
+
+Dengan data tersebut, engineer dapat membedakan apakah masalah berasal dari bearing atau dari sistem yang menggerakkannya.
+
+CARA MUDAH MENGINGAT POLA BEARING
+
+Untuk bearing metric yang umum, gunakan pola:
+
+JENIS → DIMENSION SERIES → BORE → SUFFIX
+
+Contoh:
+
+6205-2RS/C3
+
+6 = tipe
+20 = dimension series
+05 = bore
+2RS = sealing
+C3 = clearance
+
+Jangan mencoba menghafalkan semua nomor.
+
+Pahami struktur.
+
+Setelah itu gunakan katalog untuk memastikan detail.
+
+CONTOH LAIN
+
+6204
+
+6 = deep groove ball bearing
+20 = dimension series
+04 = 20 mm bore
+
+6206
+
+6 = deep groove ball bearing
+20 = dimension series
+06 = 30 mm bore
+
+6308
+
+6 = deep groove ball bearing
+30 = dimension series
+08 = 40 mm bore
+
+Perhatikan bahwa 6208 dan 6308 sama-sama mempunyai bore 40 mm, tetapi dimension series berbeda.
+
+Jadi ukuran luar juga berbeda.
+
+CONTOH KODE FAG/SCHAEFFLER
+
+21317-E1-XL-K-C3
+
+2 = spherical roller bearing
+13 = dimension series
+17 = 85 mm bore
+E1 = internal design
+XL = X-life
+K = tapered bore
+C3 = clearance lebih besar dari Normal
+
+Contoh ini berasal dari material Schaeffler dan harus dipahami sebagai contoh sistem Schaeffler, bukan aturan universal untuk semua merek.
+
+APAKAH KODE SKF, NSK, NTN, FAG BISA SALING DICOCOKKAN?
+
+Bisa untuk banyak bearing standard, tetapi bukan berarti cukup dengan mengganti merek.
+
+Metode yang benar adalah:
+
+1. Identifikasi bearing lama.
+2. Catat full designation.
+3. Catat dimensi.
+4. Catat clearance.
+5. Catat seal.
+6. Catat cage.
+7. Catat load rating.
+8. Catat speed.
+9. Catat application.
+10. Cari cross-reference resmi.
+11. Verifikasi drawing atau katalog.
+12. Baru lakukan pengadaan.
+
+Untuk kebutuhan kritis, cross-reference dari manufacturer atau distributor resmi jauh lebih dapat dipercaya daripada tabel random di internet.
+
+KAPAN KODE SAJA TIDAK CUKUP?
+
+Kode tidak cukup ketika bearing merupakan:
+
+special bearing
+OEM customized bearing
+modified internal geometry
+special grease
+special tolerance
+special heat treatment
+electrical insulation
+high-temperature design
+food-grade lubrication
+corrosion-resistant variant
+matched set
+preloaded arrangement
+
+Dalam kondisi seperti ini, drawing number, OEM part number, catalogue designation, atau technical specification harus digunakan.
+
+KENAPA PACKAGING HARUS DISIMPAN?
+
+SKF menjelaskan bahwa complete designation biasanya tercantum pada package, sementara marking pada bearing dapat dibuat lebih pendek karena keterbatasan ruang.
+
+Karena itu packaging bukan sampah biasa bagi maintenance.
+
+Untuk spare part kritis, simpan informasi:
+
+full designation
+manufacturer
+batch atau traceability jika tersedia
+supplier
+tanggal pembelian
+equipment
+
+Data tersebut membantu ketika terjadi complaint atau investigation.
+
+BAGAIMANA MEMBUAT STANDAR PEMBELIAN BEARING DI PABRIK?
+
+Pabrik sebaiknya membuat standard spare part.
+
+Misalnya setiap bearing master data wajib mempunyai:
+
+Part number
+Manufacturer
+Full designation
+Bearing type
+Dimensions
+Clearance
+Seal
+Cage
+Application
+OEM reference
+Approved supplier
+
+Dengan sistem tersebut, purchasing tidak bebas mengganti bearing hanya berdasarkan ukuran.
+
+Maintenance juga tidak perlu mengingat semua kode.
+
+Sistem data yang baik membuat knowledge perusahaan tidak hanya berada di kepala satu teknisi senior.
+
+KESIMPULAN
+
+Kode bearing sebenarnya tidak dibuat untuk menyulitkan teknisi. Kode dibuat agar identitas teknis bearing dapat disampaikan secara ringkas.
+
+Cara paling mudah memahaminya adalah dengan memisahkan:
+
+PREFIX
+BASIC DESIGNATION
+SUFFIX
+
+Basic designation biasanya memberikan identitas tipe, dimension series, dan bore. Suffix kemudian memberikan informasi tambahan seperti seal, shield, clearance, cage, material, precision, tapered bore, lubrication, atau desain khusus.
+
+Pada bearing umum seperti 6205, angka dapat dibaca dengan logika:
+
+6 = single-row deep groove ball bearing
+20 = dimension series
+05 = bore 25 mm
+
+Tetapi ketika kode menjadi 6205-2RS/C3, bagian tambahan tidak boleh diabaikan.
+
+2RS berkaitan dengan sealing menurut nomenclature yang digunakan, sedangkan C3 menunjukkan radial internal clearance yang lebih besar daripada Normal pada sistem designation terkait.
+
+Pada Schaeffler, contoh 21317-E1-XL-K-C3 menunjukkan bagaimana satu designation dapat memuat informasi tipe spherical roller bearing, dimension series, bore, internal design, X-life, tapered bore, dan clearance.
+
+SKF, NSK, NTN, FAG/Schaeffler, Timken dan produsen lain mempunyai banyak kesamaan pada basic designation, tetapi supplementary designation tidak selalu universal.
+
+Karena itu aturan paling aman adalah:
+
+JANGAN MEMBACA KODE BERDASARKAN ANGKA SAJA.
+
+Baca merek.
+
+Baca full designation.
+
+Pisahkan basic designation dan suffix.
+
+Periksa dimensi.
+
+Periksa clearance.
+
+Periksa seal atau shield.
+
+Periksa cage dan konstruksi.
+
+Periksa application.
+
+Kemudian verifikasi dengan katalog resmi.
+
+Bagi maintenance, kemampuan membaca bearing designation dapat mengurangi kesalahan spare part.
+
+Bagi purchasing, kemampuan ini membantu mencegah pembelian bearing yang dimensinya terlihat sama tetapi spesifikasinya berbeda.
+
+Bagi engineer, informasi designation membantu ketika melakukan bearing selection, troubleshooting, reliability analysis, dan condition monitoring.
+
+Dan bagi pemilik workshop, memahami kode bearing berarti tidak perlu bergantung sepenuhnya pada penjual hanya untuk mengetahui bearing apa yang sebenarnya sedang dicari.
+
+Kode bearing bukan sekadar angka yang tercetak pada logam.
+
+Di baliknya terdapat informasi tentang desain, ukuran, clearance, sealing, konstruksi, dan karakteristik operasi.
+
+Semakin kritis mesin yang ditangani, semakin penting membaca kode tersebut secara lengkap.
+
+SUMBER RUJUKAN
+
+SKF — Bearing Basics dan Bearing Designations
+https://www.skf.com/
+
+NSK — Bearing Designations
+https://www.nsk.com/tools-resources/abc-bearings/bearing-designations/
+
+Schaeffler — Technical Pocket Guide
+https://www.schaeffler.com/
+
+Schaeffler — Medias Product Catalogue dan Interchange
+https://www.schaeffler.de/en/products-and-solutions/industrial/medias-product-catalog/
+
+Timken — Maintenance & Reference Information
+https://www.timken.com/en-in/maintenance-reference-information/
+
+Timken — Bearing Dimension Guide
+https://engineering.timken.com/
+
+CATATAN TEKNIS
+
+Arti designation dapat bergantung pada manufacturer, product family, generasi produk, dan standar yang digunakan. Contoh kode dalam artikel digunakan untuk menjelaskan prinsip pembacaan. Untuk pengadaan spare part kritis, selalu verifikasi full designation, dimensi, clearance, sealing, cage, load rating, speed capability, lubrication, dan application melalui katalog resmi manufacturer atau rekomendasi OEM.
