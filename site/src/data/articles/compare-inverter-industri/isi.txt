@@ -1,0 +1,1491 @@
+Cara Membaca Kode Inverter / VFD Schneider, ABB, dan Merek Lainnya
+
+Bagi teknisi listrik dan engineer maintenance, membaca kode yang tercetak pada inverter atau VFD bukan sekadar mengetahui nama mereknya. Dari satu rangkaian huruf dan angka, biasanya kita bisa menemukan petunjuk tentang seri produk, kapasitas daya, tegangan, jumlah fase, bentuk konstruksi, dan pada model tertentu konfigurasi atau option yang terpasang.
+
+Masalahnya, setiap manufacturer mempunyai sistem penamaan sendiri.
+
+Kode Schneider Electric tidak boleh dibaca dengan aturan ABB. Kode ABB tidak boleh diterjemahkan memakai pola Danfoss. Bahkan di dalam satu merek pun, pola kode seri lama dan seri baru dapat berbeda.
+
+Inilah sumber kesalahan yang sering terjadi ketika teknisi mencari pengganti VFD.
+
+Contohnya sebuah unit bertuliskan:
+
+ATV320U15N4C
+
+Orang yang sudah terbiasa dengan Altivar mungkin langsung dapat membaca bahwa ini adalah keluarga ATV320 dengan rating tertentu dan supply 380–500 V tiga fase. Schneider memang mencantumkan ATV320U15N4C sebagai drive 1,5 kW, 380–500 V, tiga fase, dengan format compact. citeturn1search2turn1search8
+
+Namun jangan menggunakan pola tersebut untuk membaca:
+
+ABB ACS580-01-...
+
+atau:
+
+Danfoss FC-302...
+
+Karakter dalam kode tersebut mempunyai aturan berbeda.
+
+Karena itu, cara paling aman membaca kode VFD adalah membongkar kode berdasarkan datasheet atau catalog manufacturer, lalu mencocokkannya dengan nameplate dan rating aktual.
+
+Artikel ini membahas cara membaca kode Schneider, ABB, Danfoss, Siemens, dan beberapa pola umum merek lain, sekaligus menjelaskan bagian mana yang boleh dibaca langsung dan bagian mana yang tidak boleh ditebak.
+
+Mengapa kode VFD harus dipahami?
+
+Di pabrik, inverter sering diganti ketika terjadi kerusakan.
+
+Masalahnya, VFD bukan komponen yang cukup diganti berdasarkan tulisan “7,5 kW”.
+
+Dua inverter sama-sama 7,5 kW belum tentu interchangeable.
+
+Perlu dilihat:
+
+tegangan input;
+jumlah fase;
+arus output;
+heavy-duty rating;
+normal-duty rating;
+overload capability;
+enclosure;
+IP rating;
+braking;
+EMC filter;
+komunikasi;
+I/O;
+control mode;
+dan kebutuhan aplikasi.
+
+Misalnya sebuah motor 7,5 kW digunakan untuk conveyor berat.
+
+VFD 7,5 kW yang cocok untuk fan atau pump belum tentu cocok untuk conveyor tersebut.
+
+Karena itu, membaca kode hanya langkah pertama.
+
+Langkah berikutnya adalah memeriksa datasheet.
+
+Bagian paling penting dari kode inverter
+
+Secara umum, kode VFD dapat mengandung beberapa informasi:
+
+1. Product family
+2. Series
+3. Power rating
+4. Voltage class
+5. Phase
+6. Construction atau enclosure
+7. EMC/RFI filter
+8. Brake option
+9. Control panel
+10. Communication option
+11. I/O option
+12. Safety option
+13. Coating atau environmental option
+14. Hardware variant
+15. Software atau configuration variant
+
+Tidak semua merek memasukkan seluruh informasi tersebut ke dalam kode.
+
+Ada yang menggunakan kode pendek.
+
+Ada yang menggunakan kode sangat panjang.
+
+Ada pula manufacturer yang menggunakan basic type code kemudian menambahkan option code menggunakan tanda +.
+
+ABB, misalnya, pada katalog ACS580 menunjukkan contoh type code:
+
+ACS580-07-246A-4+XXXX
+
+Katalog tersebut menjelaskan bahwa bagian kode menunjukkan product series, construction/type, current rating, voltage, dan option codes. citeturn0search48
+
+Schneider Altivar mempunyai pola yang berbeda.
+
+Danfoss FC 302 bahkan dapat menggunakan type code yang sangat panjang dengan posisi karakter tertentu untuk menentukan berbagai option. citeturn0search49turn0search50
+
+Jadi jangan menghafalkan bentuk kode.
+
+Pahami logikanya.
+
+Cara membaca kode Schneider Altivar
+
+Schneider Electric menggunakan keluarga Altivar untuk berbagai kebutuhan variable speed drive.
+
+Beberapa keluarga yang sering ditemui antara lain:
+
+ATV12
+
+ATV320
+
+ATV340
+
+ATV600
+
+ATV900
+
+dan seri Altivar lainnya.
+
+Setiap keluarga memiliki karakter aplikasi dan struktur model yang berbeda.
+
+Untuk belajar membaca kode, ATV320 adalah contoh yang sangat bagus.
+
+Contoh:
+
+ATV320U15N4C
+
+Kita pecah:
+
+ATV320 | U15 | N4 | C
+
+ATV320 = product family
+
+U15 = rating/model size
+
+N4 = voltage class
+
+C = compact form factor
+
+Schneider mencantumkan ATV320U15N4C sebagai model 1,5 kW, 380/480 V pada dokumentasi quick-start. citeturn1search2
+
+Dalam katalog pemilihan ATV320, Schneider juga menunjukkan berbagai model dengan pola yang sama, misalnya ATV320U04N4C, ATV320U07N4C, ATV320U15N4C, ATV320U22N4C, dan seterusnya, serta membedakan versi Compact dan Book. citeturn1search8
+
+Apa arti ATV320?
+
+ATV320 adalah keluarga atau series drive.
+
+Jangan menerjemahkan angka 320 sebagai daya.
+
+320 bukan berarti 320 kW.
+
+Ini adalah identitas seri produk.
+
+Kesalahan seperti ini sering terjadi pada orang yang baru membaca katalog.
+
+Apa arti U15?
+
+Pada keluarga ATV320, kode U15 berhubungan dengan ukuran/rating drive tertentu.
+
+Untuk ATV320U15N4C, ratingnya adalah 1,5 kW.
+
+Tetapi jangan membuat aturan universal bahwa semua kode “U15” pada seluruh Altivar pasti berarti hal yang sama.
+
+Kode harus dibaca dalam konteks series.
+
+Itulah prinsip utama.
+
+Apa arti N4?
+
+Pada ATV320, N4 menunjukkan kelas tegangan 380/500 V untuk konfigurasi tiga fase tertentu.
+
+Schneider mencantumkan ATV320pppN4p sebagai kelompok drive untuk 400/480 Vac three-phase, dengan katalog aktual mencakup 380–500 V pada model terkait. citeturn1search8
+
+Jadi N4 bukan angka power.
+
+Ia berkaitan dengan voltage family.
+
+Bandingkan dengan S6 atau M3 pada keluarga Altivar tertentu.
+
+Pada dokumentasi Altivar 630, Schneider menjelaskan:
+
+M3 = 200/240 V
+
+N4 = 380/480 V
+
+S6 = 600 V
+
+Y6 = 500/690 V
+
+untuk pola supply pada keluarga tersebut. citeturn1search17
+
+Tetapi lagi-lagi, aturan harus dibaca berdasarkan seri produk yang bersangkutan.
+
+Apa arti huruf C pada ATV320?
+
+C menunjukkan compact form factor pada pola katalog ATV320.
+
+Schneider juga menyediakan varian B yang disebut book form factor. Dokumentasi Schneider menyebut katalog number designation B untuk book form factor dan C untuk compact form factor. citeturn1search0
+
+Jadi:
+
+ATV320U15N4C
+
+dan
+
+ATV320U15N4B
+
+dapat mempunyai rating dasar yang sama tetapi bentuk konstruksi berbeda.
+
+Ini sangat penting ketika mengganti VFD di panel.
+
+Secara elektrik mungkin terlihat mirip.
+
+Secara mekanis belum tentu langsung cocok.
+
+Cara membaca kode Schneider ATV630
+
+Sekarang gunakan contoh yang lebih besar:
+
+ATV630D15N4
+
+Schneider mencantumkan produk tersebut sebagai:
+
+Altivar Process ATV630
+
+15 kW / 20 HP
+
+380...480 V
+
+IP21 / UL Type 1. citeturn1search1turn1search5
+
+Kita dapat membaca secara praktis:
+
+ATV630 = series
+
+D15 = ukuran/rating model
+
+N4 = voltage family
+
+Namun jangan menyimpulkan bahwa D15 selalu berarti 15 kW pada semua seri Schneider.
+
+Pada ATV630 memang model ATV630D15N4 adalah 15 kW.
+
+Schneider juga menunjukkan bahwa ATV630U75N4 dan ATV630D11N4 berada pada kelompok 7,5–11 kW, sedangkan ATV630D15N4, D18N4, dan D22N4 berada pada kelompok 15–22 kW untuk 400/480 V. citeturn1search13
+
+Artinya, huruf dan angka model harus dibaca sebagai bagian dari struktur catalog number.
+
+Jangan memisahkan karakter secara sembarangan.
+
+Cara membaca kode ABB ACS580
+
+ABB menggunakan pola yang sangat berbeda.
+
+Contoh:
+
+ACS580-01-07A6-4
+
+atau format lain sesuai varian.
+
+Katalog ABB menjelaskan bahwa type designation digunakan untuk menunjukkan spesifikasi dan konfigurasi drive.
+
+Pada contoh ACS580-07-246A-4+XXXX:
+
+ACS580 = product series
+
+07 = construction/type
+
+246A = current rating
+
+4 = voltage
+
++XXXX = option code
+
+citeturn0search48
+
+Ini perbedaan penting dengan Schneider.
+
+Pada ABB, angka seperti 246A dalam contoh tersebut bukan berarti “246 kW”.
+
+Itu adalah current rating yang menjadi bagian dari type designation.
+
+Jadi jika seseorang membaca:
+
+ACS580-07-246A-4
+
+lalu mengatakan “ini VFD 246 kW”, itu kesimpulan yang salah.
+
+ABB sendiri menyatakan bahwa segment D pada contoh tersebut adalah current rating dan segment E adalah voltage rating. citeturn0search48
+
+Apa arti angka 4 pada ABB ACS580?
+
+Pada contoh katalog ACS580-07, ABB mencantumkan:
+
+4 = 380...480 V.
+
+Jadi angka 4 pada posisi tersebut berkaitan dengan voltage class.
+
+Sekali lagi, jangan menerapkan aturan ini ke semua ABB tanpa memeriksa seri.
+
+ABB mempunyai banyak drive family:
+
+ACS150
+
+ACS180
+
+ACS355
+
+ACS380
+
+ACS580
+
+ACS880
+
+dan lainnya.
+
+Masing-masing memiliki struktur ordering code yang dapat berbeda.
+
+Apa arti +XXXX pada ABB?
+
+Bagian setelah tanda plus biasanya menunjukkan option atau konfigurasi tambahan.
+
+Contoh:
+
+ACS580-07-246A-4+XXXX
+
+Tanda “+” bukan bagian dari power rating.
+
+Ia memisahkan basic type designation dengan option codes.
+
+Dalam katalog ABB, option code dapat menentukan konfigurasi seperti enclosure, EMC-related options, communication, I/O, atau kebutuhan lainnya tergantung drive family. citeturn0search48
+
+Jadi saat membeli replacement ABB, jangan hanya menyalin bagian sebelum tanda plus.
+
+Option juga dapat menentukan apakah unit sesuai dengan instalasi lama.
+
+Cara membaca kode Danfoss VLT
+
+Danfoss mempunyai sistem yang lebih panjang.
+
+Contoh VLT AutomationDrive FC 302.
+
+Pada konfigurasi tertentu, type code dapat terlihat seperti:
+
+PLV302T7I710C1BMXXXX7XAXL21XXXXXXXD2
+
+Jangan mencoba membaca string tersebut sebagai satu angka panjang.
+
+Bongkar berdasarkan posisi.
+
+Danfoss menjelaskan bahwa karakter 1–3 pada contoh tersebut adalah product group PLV, karakter 4–6 menunjukkan drive series 302 untuk FC 302, karakter 8 menunjukkan mains voltage, karakter 9 menunjukkan standard IEC atau UL, dan karakter 10–12 menunjukkan power rating. citeturn0search49
+
+Contoh:
+
+PLV | 302 | T | 7 | I | 710 | ...
+
+PLV = product group
+
+302 = FC 302
+
+T = input filter option
+
+7 = 525–690 V
+
+I = IEC
+
+710 = power rating 710 kW pada konfigurasi contoh tersebut
+
+Ini memperlihatkan mengapa type code Danfoss tidak boleh ditebak berdasarkan jumlah digit.
+
+Posisi karakter adalah bagian dari sistem penamaan.
+
+Apa arti T5 dan T7 pada Danfoss?
+
+Pada konfigurasi FC 302 tertentu:
+
+T5 = 380–500 V AC
+
+T7 = 525–690 V AC
+
+Danfoss mencantumkan kode mains voltage tersebut dalam tabel ordering type code. citeturn0search49
+
+Apa arti I dan U?
+
+Pada tabel yang sama:
+
+I = IEC
+
+U = UL
+
+Ini menunjukkan standar atau certification configuration pada posisi tersebut, bukan daya motor.
+
+Apa arti power rating seperti N90, N110, N132?
+
+Pada konfigurasi FC 302, Danfoss mencantumkan model seperti:
+
+N90 = 90 kW
+
+N110 = 110 kW
+
+N132 = 132 kW
+
+dan seterusnya.
+
+Pada konfigurasi enclosed drive tertentu, power rating menjadi bagian dari type code. citeturn0search49
+
+Namun lagi-lagi, konfigurasi enclosure dapat mengubah struktur keseluruhan kode.
+
+Karena itu, jangan menghafal hanya “N90 = 90 kW”.
+
+Pahami di mana posisi kode tersebut berada.
+
+Cara membaca kode Siemens SINAMICS
+
+Siemens mempunyai sistem order number yang dikenal dengan format MLFB.
+
+Keluarga SINAMICS mencakup berbagai drive, misalnya:
+
+SINAMICS V20
+
+SINAMICS G120
+
+SINAMICS G120C
+
+SINAMICS G120X
+
+SINAMICS S120
+
+dan lainnya.
+
+Pada Siemens, pembacaan order number sangat bergantung pada series dan product generation.
+
+Karena itu, untuk Siemens, aturan paling aman adalah membuka catalog atau datasheet seri yang tepat lalu membaca posisi MLFB satu per satu.
+
+Jangan menggunakan pola ABB atau Schneider untuk Siemens.
+
+Ini penting karena Siemens dapat memisahkan power module, control unit, option, dan konfigurasi dalam struktur produk tertentu.
+
+Untuk sistem G120 misalnya, pemilihan tidak selalu hanya “satu kode VFD”.
+
+Ada Power Module dan Control Unit yang dapat menjadi bagian dari konfigurasi.
+
+Artinya, teknisi harus memahami apakah nomor yang ditemukan di nameplate adalah:
+
+complete drive;
+
+power module;
+
+control unit;
+
+atau accessory.
+
+Ini salah satu perbedaan besar dibanding VFD compact yang sudah menjadi satu unit.
+
+Cara membaca kode Mitsubishi
+
+Mitsubishi Electric menggunakan keluarga inverter seperti:
+
+FR-D700
+
+FR-E700
+
+FR-F800
+
+FR-A800
+
+dan seri lainnya.
+
+Pada Mitsubishi, bagian kode dapat memberikan petunjuk tentang series dan kapasitas, tetapi aturan detail bergantung pada family.
+
+Misalnya kode FR dapat menjadi identitas keluarga inverter.
+
+Kemudian angka dan huruf setelahnya menentukan model dan rating.
+
+Untuk Mitsubishi, jangan menerjemahkan angka berdasarkan perkiraan.
+
+Selalu cocokkan catalog number dengan katalog seri.
+
+Cara membaca kode Yaskawa
+
+Yaskawa mempunyai keluarga seperti:
+
+GA500
+
+GA700
+
+GA800
+
+A1000
+
+dan lainnya.
+
+Pada Yaskawa modern, GA500 misalnya merupakan family drive, sedangkan model lengkap dan option dapat menentukan voltage, current, enclosure, braking, atau configuration.
+
+Yaskawa juga menggunakan model number yang harus dicocokkan dengan datasheet.
+
+Sekali lagi, prinsipnya sama:
+
+family → model → rating → voltage → option.
+
+Tetapi karakter spesifiknya tidak boleh dipaksakan mengikuti merek lain.
+
+Cara membaca kode Fuji Electric
+
+Fuji Electric mempunyai keluarga FRENIC seperti:
+
+FRENIC-Mini
+
+FRENIC-Mega
+
+FRENIC-Ace
+
+dan lainnya.
+
+Kode Fuji dapat memuat family, capacity, voltage class, dan option.
+
+Untuk replacement, teknisi harus mencatat seluruh model reference, bukan hanya family.
+
+Misalnya mengetahui “FRENIC-Mega” belum cukup untuk membeli unit pengganti.
+
+Harus diketahui model lengkap.
+
+Mengapa power kW tidak cukup?
+
+Ini kesalahan paling umum.
+
+Misalnya motor:
+
+15 kW.
+
+Teknisi kemudian mencari:
+
+VFD 15 kW.
+
+Selesai?
+
+Belum.
+
+Harus dilihat motor:
+
+380 V
+
+3 phase
+
+50 Hz
+
+rated current misalnya 28 A
+
+RPM
+
+application
+
+overload requirement.
+
+Kemudian lihat VFD:
+
+input voltage;
+
+output current;
+
+normal duty current;
+
+heavy duty current;
+
+overload capacity;
+
+control mode.
+
+Pada beberapa drive, satu rating kW dapat memiliki current rating berbeda tergantung application duty.
+
+Karena itu current motor sering menjadi parameter yang lebih penting daripada kW ketika memilih VFD.
+
+Contoh sederhana
+
+Motor:
+
+15 kW
+
+380 V
+
+28 A
+
+Conveyor.
+
+VFD A:
+
+15 kW
+
+normal duty current 32 A
+
+heavy duty current 24 A.
+
+VFD B:
+
+15 kW
+
+normal duty current 35 A
+
+heavy duty current 30 A.
+
+Jika conveyor membutuhkan heavy-duty torque, VFD A mungkin tidak cocok meskipun sama-sama bertuliskan 15 kW.
+
+Jadi jangan memilih VFD hanya berdasarkan horsepower.
+
+Cara membaca voltage code
+
+Voltage code biasanya menunjukkan kelas supply.
+
+Contoh pada Schneider ATV320:
+
+M2 berkaitan dengan 200/240 V class.
+
+N4 berkaitan dengan 380/500 V class.
+
+S6 berkaitan dengan 600 V class pada keluarga tertentu.
+
+Pada Altivar 630, Schneider secara eksplisit mencantumkan M3, N4, S6, dan Y6 untuk kelompok supply tertentu. citeturn1search17
+
+Pada ABB ACS580, contoh katalog menunjukkan kode 4 untuk 380...480 V pada posisi voltage segment. citeturn0search48
+
+Pada Danfoss FC 302, T5 dan T7 digunakan untuk kelompok mains voltage tertentu. citeturn0search49
+
+Jadi voltage code adalah salah satu bagian yang paling penting ketika membaca VFD.
+
+Salah voltage class dapat menyebabkan unit tidak sesuai dengan supply.
+
+Cara membaca phase
+
+Tidak semua manufacturer menuliskan jumlah fase secara eksplisit dalam kode.
+
+Kadang informasi tersebut muncul pada datasheet.
+
+Contoh Schneider ATV320 memiliki model yang dibedakan berdasarkan voltage/supply configuration.
+
+Karena itu jangan memaksa mencari angka “3” di dalam kode lalu menyimpulkan bahwa angka tersebut berarti tiga fase.
+
+Jumlah fase harus diverifikasi dari product data.
+
+Cara membaca enclosure dan IP rating
+
+Kode VFD tertentu dapat menunjukkan enclosure configuration.
+
+Pada Danfoss FC 302, misalnya, bagian type code dapat menentukan enclosure seperti E20, E21, E54, dan konfigurasi lain pada model tertentu. citeturn0search5
+
+E20 dapat menunjukkan IP20/chassis pada konfigurasi tersebut.
+
+E21 dapat menunjukkan IP21/Type 1.
+
+E54 dapat menunjukkan IP54/Type 12.
+
+Ini menunjukkan bahwa kode bukan hanya soal electrical rating.
+
+Mechanical/environmental configuration juga bisa berada di dalamnya.
+
+Mengapa IP rating penting?
+
+Karena VFD yang dipasang di panel bersih dan VFD yang dipasang di area berdebu membutuhkan perlindungan berbeda.
+
+Jangan mengganti IP54 dengan IP20 lalu menganggap semuanya sama hanya karena kW sama.
+
+Cara membaca brake option
+
+Beberapa VFD mempunyai built-in braking transistor atau opsi braking.
+
+Dalam type code, informasi ini dapat muncul sebagai huruf atau option code.
+
+Danfoss FC 302, misalnya, memiliki posisi untuk brake configuration pada type code tertentu. citeturn0search5
+
+Ini penting untuk:
+
+hoist;
+crane;
+centrifuge;
+unwinder;
+high inertia load;
+dan aplikasi yang membutuhkan rapid deceleration.
+
+Jika VFD lama mempunyai braking hardware dan VFD baru tidak, performa stopping bisa berubah drastis.
+
+Cara membaca communication option
+
+VFD modern sering digunakan dalam automation network.
+
+Option yang mungkin ditemukan:
+
+Modbus RTU
+
+Modbus TCP
+
+PROFINET
+
+PROFIBUS
+
+EtherNet/IP
+
+CANopen
+
+EtherCAT
+
+dan lainnya.
+
+Danfoss FC 302, misalnya, menyediakan option codes untuk berbagai network seperti PROFIBUS, CANopen, EtherCAT, PROFINET, EtherNet/IP, Modbus TCP, dan Powerlink dalam struktur ordering code tertentu. citeturn0search3
+
+Jadi saat replacement, jangan lupa mengecek communication card.
+
+VFD baru yang secara power cocok belum tentu cocok dengan PLC lama jika communication interface berbeda.
+
+Cara membaca option code ABB
+
+ABB menggunakan tanda “+” untuk option code pada banyak konfigurasi.
+
+Contoh:
+
+ACS580-07-246A-4+XXXX
+
+Bagian setelah “+” harus dibaca dari tabel option yang berlaku untuk seri tersebut.
+
+Jangan mengartikan +XXXX sebagai satu kode universal.
+
+Kode option dapat berubah berdasarkan seri dan market configuration.
+
+Karena itu, ketika mencari replacement ABB, catat:
+
+base type code;
+
+option codes;
+
+serial number;
+
+dan product family.
+
+Cara membaca model dari nameplate
+
+Di lapangan, Anda biasanya menemukan beberapa angka sekaligus:
+
+Model
+
+Type
+
+Catalog No.
+
+Serial No.
+
+Input
+
+Output
+
+Power
+
+Frequency
+
+IP
+
+SCCR
+
+Firmware
+
+Jangan salah mengambil serial number sebagai model.
+
+Serial number biasanya unik untuk satu unit.
+
+Catalog number atau model reference adalah yang diperlukan untuk mengidentifikasi konfigurasi produk.
+
+Schneider sendiri dalam dokumentasi instalasi meminta pengguna memverifikasi catalog number yang tercetak pada label dan menuliskan model reference serta serial number. citeturn1search2
+
+Jadi ketika memotret nameplate, ambil seluruh label.
+
+Jangan hanya memotret tulisan “ATV320”.
+
+Apa yang harus difoto teknisi?
+
+Jika Anda meminta teknisi mengirim data VFD melalui WhatsApp, jangan hanya meminta:
+
+“Foto VFD-nya.”
+
+Minta:
+
+1. Foto nameplate lengkap.
+2. Foto model/catalog number.
+3. Foto input rating.
+4. Foto output rating.
+5. Foto terminal power.
+6. Foto terminal control.
+7. Foto communication card.
+8. Foto display atau fault code.
+9. Foto panel tempat VFD dipasang.
+10. Foto label motor.
+
+Dengan data tersebut, replacement jauh lebih aman.
+
+Cara membandingkan dua VFD
+
+Misalnya:
+
+VFD lama:
+
+Schneider ATV320U15N4C
+
+VFD calon pengganti:
+
+ABB ACS580-01-...
+
+Jangan membandingkan:
+
+ATV320 vs ACS580.
+
+Itu hanya membandingkan family.
+
+Buat tabel:
+
+Parameter | VFD lama | VFD baru
+
+Input voltage | ... | ...
+
+Phase | ... | ...
+
+Motor power | ... | ...
+
+Output current | ... | ...
+
+Duty | ... | ...
+
+Overload | ... | ...
+
+Speed range | ... | ...
+
+Control mode | ... | ...
+
+Brake | ... | ...
+
+Communication | ... | ...
+
+IP/enclosure | ... | ...
+
+Cooling | ... | ...
+
+Mounting | ... | ...
+
+Dimensions | ... | ...
+
+Jangan menyatakan equivalent sebelum seluruh parameter diperiksa.
+
+Apa arti “equivalent VFD”?
+
+Equivalent bukan berarti:
+
+“kW sama.”
+
+Equivalent berarti fungsi dan kemampuan memenuhi kebutuhan sistem.
+
+Untuk replacement industrial, paling tidak harus dicek:
+
+electrical compatibility;
+
+motor compatibility;
+
+mechanical compatibility;
+
+control compatibility;
+
+communication compatibility;
+
+environmental compatibility;
+
+safety compatibility.
+
+Jika salah satu gagal, unit tersebut belum tentu equivalent.
+
+Kesalahan membaca kode VFD yang paling sering terjadi
+
+Kesalahan 1:
+
+Menganggap semua angka adalah kW.
+
+Salah.
+
+Pada ABB ACS580, contoh 246A menunjukkan current rating, bukan 246 kW. citeturn0search48
+
+Kesalahan 2:
+
+Menganggap satu huruf selalu mempunyai arti sama di semua merek.
+
+Salah.
+
+Huruf N, C, T, B, I, U, dan lainnya dapat mempunyai arti berbeda.
+
+Kesalahan 3:
+
+Membaca hanya bagian depan kode.
+
+Padahal option ada di belakang.
+
+Kesalahan 4:
+
+Mengabaikan suffix.
+
+Padahal suffix dapat menentukan bentuk konstruksi atau option.
+
+Kesalahan 5:
+
+Mengganti berdasarkan horsepower saja.
+
+Kesalahan 6:
+
+Tidak memeriksa input voltage.
+
+Kesalahan 7:
+
+Tidak memeriksa output current.
+
+Kesalahan 8:
+
+Tidak memeriksa heavy-duty rating.
+
+Kesalahan 9:
+
+Tidak memeriksa braking.
+
+Kesalahan 10:
+
+Tidak memeriksa communication.
+
+Kesalahan 11:
+
+Tidak memeriksa IP/enclosure.
+
+Kesalahan 12:
+
+Menganggap VFD baru pasti plug-and-play.
+
+Belum tentu.
+
+Parameter motor dan control logic tetap harus dikonfigurasi.
+
+Kesalahan 13:
+
+Menggunakan katalog seri yang salah.
+
+Misalnya mencoba membaca ATV630 menggunakan tabel ATV320.
+
+Kesalahan 14:
+
+Menganggap kode lama dan kode baru pasti identik.
+
+Manufacturer dapat mengganti product family, suffix, atau option structure.
+
+Cara cepat membaca VFD di lapangan
+
+Jika Anda hanya punya waktu dua menit, lakukan urutan ini.
+
+Pertama:
+
+Catat merek.
+
+Kedua:
+
+Catat family.
+
+Ketiga:
+
+Catat full model/catalog number.
+
+Keempat:
+
+Catat input voltage.
+
+Kelima:
+
+Catat output current.
+
+Keenam:
+
+Catat power.
+
+Ketujuh:
+
+Catat phase.
+
+Kedelapan:
+
+Catat IP/enclosure.
+
+Kesembilan:
+
+Catat communication option.
+
+Kesepuluh:
+
+Catat serial number.
+
+Setelah itu baru buka datasheet.
+
+Jangan melakukan kebalikannya.
+
+Contoh praktis Schneider
+
+Nameplate:
+
+ATV320U15N4C
+
+Pembacaan awal:
+
+ATV320 = family
+
+U15 = model/rating
+
+N4 = voltage class
+
+C = compact
+
+Data manufacturer menunjukkan model tersebut 1,5 kW dan 380/500 V class. citeturn1search2turn1search8
+
+Kesimpulan:
+
+Ini bukan sekadar “VFD Schneider 1,5 kW”.
+
+Ia adalah model tertentu dengan electrical dan mechanical configuration tertentu.
+
+Contoh praktis ABB
+
+Nameplate:
+
+ACS580-07-246A-4+XXXX
+
+Pembacaan:
+
+ACS580 = family
+
+07 = construction/type
+
+246A = current rating
+
+4 = 380...480 V
+
++XXXX = options
+
+Ini mengikuti struktur ordering code yang dijelaskan ABB. citeturn0search48
+
+Jangan menyebutnya “ABB 246 kW”.
+
+Itu salah.
+
+Contoh praktis Danfoss
+
+Type code:
+
+PLV302T7I710C1BMXXXX7XAXL21XXXXXXXD2
+
+Pembacaan awal:
+
+PLV = product group
+
+302 = FC 302
+
+T = input filter option
+
+7 = 525–690 V
+
+I = IEC
+
+710 = power rating pada konfigurasi contoh
+
+Kemudian karakter berikutnya menentukan hardware, enclosure, options, software, dan konfigurasi lainnya.
+
+Danfoss sendiri menjelaskan bahwa type code harus dibaca berdasarkan posisi karakter. citeturn0search49
+
+Mengapa engineer harus membaca catalog, bukan menebak?
+
+Karena kode VFD adalah sistem ordering.
+
+Ia dibuat agar manufacturer dapat membedakan konfigurasi produk.
+
+Satu karakter dapat mengubah:
+
+voltage;
+
+enclosure;
+
+filter;
+
+brake;
+
+communication;
+
+control panel;
+
+atau option lainnya.
+
+Karena itu, membaca kode tanpa katalog bisa menghasilkan keputusan yang kelihatannya masuk akal tetapi sebenarnya salah.
+
+Ini terutama berbahaya ketika membeli spare part.
+
+Salah satu digit bisa berarti Anda membeli:
+
+380 V padahal mesin membutuhkan 690 V;
+
+IP20 padahal lokasi membutuhkan enclosure lebih terlindungi;
+
+tanpa brake padahal aplikasi membutuhkan braking;
+
+tanpa communication card padahal PLC membutuhkan network tertentu;
+
+atau rating current yang tidak mencukupi.
+
+Metode paling aman membaca kode semua merek
+
+Gunakan metode 7 langkah.
+
+Langkah 1 — Identifikasi manufacturer
+
+Schneider?
+
+ABB?
+
+Danfoss?
+
+Siemens?
+
+Mitsubishi?
+
+Yaskawa?
+
+Fuji?
+
+Delta?
+
+Hitachi?
+
+Jangan lanjut sebelum jelas.
+
+Langkah 2 — Identifikasi product family
+
+ATV320?
+
+ATV630?
+
+ACS580?
+
+ACS880?
+
+FC302?
+
+SINAMICS G120?
+
+GA500?
+
+Langkah 3 — Cari catalog number lengkap
+
+Jangan potong.
+
+Langkah 4 — Buka datasheet seri tersebut
+
+Bukan datasheet merek secara umum.
+
+Langkah 5 — Pecah kode berdasarkan posisi
+
+Buat kolom:
+
+Segment
+
+Code
+
+Meaning
+
+Langkah 6 — Cocokkan dengan rating nameplate
+
+Pastikan:
+
+input;
+
+output;
+
+current;
+
+power;
+
+frequency;
+
+IP.
+
+Langkah 7 — Cocokkan application
+
+Fan?
+
+Pump?
+
+Conveyor?
+
+Hoist?
+
+Crusher?
+
+Extruder?
+
+Rolling mill?
+
+Compressor?
+
+Application menentukan duty.
+
+Tabel ringkas pola beberapa merek
+
+Schneider Altivar:
+
+Family → model/rating → voltage code → form factor/variant
+
+Contoh:
+
+ATV320U15N4C
+
+ABB ACS580:
+
+Family → construction/type → current rating → voltage → option
+
+Contoh:
+
+ACS580-07-246A-4+XXXX
+
+Danfoss FC 302:
+
+Product group → series → filter → voltage → standard → power → hardware/options
+
+Contoh:
+
+PLV302T7I710...
+
+Siemens SINAMICS:
+
+Product family → model/order number → configuration/MLFB → option sesuai seri
+
+Mitsubishi:
+
+Series → model/capacity → voltage/option sesuai family
+
+Yaskawa:
+
+Family → model → rating/voltage/option sesuai seri
+
+Fuji:
+
+Family → model/capacity → voltage/option sesuai seri
+
+Tabel ini hanya menunjukkan pola membaca, bukan kamus universal.
+
+Setiap model harus tetap diverifikasi pada catalog manufacturer.
+
+Cara membuat database sparepart VFD
+
+Untuk perusahaan yang memiliki banyak inverter, saya sangat menyarankan membuat database.
+
+Kolomnya:
+
+Brand
+
+Family
+
+Model
+
+Full catalog number
+
+Power kW
+
+Power HP
+
+Input voltage
+
+Input phase
+
+Output voltage
+
+Output current
+
+Normal duty
+
+Heavy duty
+
+Frequency
+
+IP rating
+
+Brake
+
+EMC/RFI
+
+Communication
+
+Control method
+
+Cooling
+
+Frame size
+
+Dimensions
+
+Replacement model
+
+Firmware
+
+Serial number
+
+Location
+
+Machine
+
+Criticality
+
+Dengan database seperti ini, teknisi tidak perlu mencari dari awal ketika VFD rusak.
+
+Contoh:
+
+Machine: Conveyor Line 2
+
+Brand: Schneider
+
+Family: ATV320
+
+Model: ATV320U15N4C
+
+Power: 1.5 kW
+
+Voltage: 380–500 V
+
+Communication: Modbus
+
+Spare: 1 unit
+
+Location: MCC-02
+
+Data tersebut jauh lebih berguna daripada sekadar:
+
+“VFD conveyor 1,5 kW.”
+
+Bagaimana jika kode VFD sudah pudar?
+
+Jangan menebak.
+
+Cari:
+
+serial number;
+
+QR code;
+
+barcode;
+
+label samping;
+
+manual;
+
+drawing electrical;
+
+BOM panel;
+
+purchase order;
+
+invoice;
+
+PLC program;
+
+SCADA tag;
+
+maintenance history.
+
+Pada beberapa sistem, model VFD juga dapat diketahui dari parameter identification di keypad atau software engineering.
+
+Danfoss FC 302, misalnya, mempunyai parameter identification yang mencakup ordered typecode string dan actual typecode string, sehingga informasi konfigurasi dapat dibaca dari drive pada kondisi tertentu. citeturn0search51
+
+Ini sangat membantu ketika nameplate sudah rusak.
+
+Apakah semua kode VFD bisa dibaca hanya dari internet?
+
+Tidak.
+
+Ini jawaban yang harus tegas.
+
+Internet membantu, tetapi sumber utama tetap manufacturer documentation.
+
+Untuk produk yang sudah discontinued, cari:
+
+old catalog;
+
+legacy manual;
+
+replacement notice;
+
+product archive;
+
+dan distributor resmi.
+
+Schneider misalnya mencantumkan status discontinued dan replacement untuk beberapa seri lama. Contoh ATV312H075N4 dinyatakan discontinued dan direkomendasikan diganti dengan ATV320U07N4C. citeturn1search12
+
+Namun replacement resmi pun harus diperiksa ulang terhadap application.
+
+Jangan menganggap “recommended replacement” berarti seluruh wiring dan parameter pasti identik.
+
+Kesimpulan
+
+Kode inverter atau VFD sebenarnya adalah bahasa singkat yang digunakan manufacturer untuk menggambarkan identitas dan konfigurasi produknya.
+
+Masalahnya, bahasa tersebut berbeda antara Schneider, ABB, Danfoss, Siemens, Mitsubishi, Yaskawa, Fuji, dan merek lainnya.
+
+Karena itu, cara membaca yang benar bukan menghafalkan semua huruf.
+
+Cara yang benar adalah memahami struktur.
+
+Schneider Altivar biasanya perlu dibaca dari family, model/rating, voltage code, dan variant seperti compact atau book. Contoh ATV320U15N4C adalah drive ATV320 1,5 kW dengan 380/500 V class dan compact form factor. citeturn1search2turn1search8
+
+ABB ACS580 menggunakan struktur type designation yang dapat memisahkan series, construction/type, current rating, voltage, lalu option code setelah tanda plus. citeturn0search48
+
+Danfoss FC 302 menggunakan type code yang jauh lebih panjang, dengan arti karakter ditentukan berdasarkan posisi. Dalam contoh resmi, karakter tertentu menunjukkan series, mains voltage, standard, power rating, dan berbagai hardware/option. citeturn0search49
+
+Untuk merek lain, prinsipnya tetap sama:
+
+jangan menebak;
+
+jangan menyamakan pola antarbrand;
+
+jangan memilih hanya berdasarkan kW;
+
+dan jangan mengabaikan suffix atau option.
+
+Jika tujuan Anda hanya mengenali sebuah VFD, membaca family dan model mungkin sudah cukup.
+
+Tetapi jika tujuan Anda membeli sparepart atau mencari replacement, standar yang digunakan harus jauh lebih tinggi.
+
+Minimal cocokkan:
+
+full catalog number;
+
+input voltage;
+
+phase;
+
+output current;
+
+motor power;
+
+duty;
+
+overload;
+
+frequency;
+
+IP/enclosure;
+
+braking;
+
+communication;
+
+mounting;
+
+dan application.
+
+Untuk teknisi maintenance, satu kebiasaan sederhana dapat menghindari banyak kesalahan:
+
+Setiap kali menemukan VFD di mesin, foto seluruh nameplate dan catat full model number sebelum unit mengalami kerusakan.
+
+Jangan menunggu VFD mati baru mencari modelnya.
+
+Karena pada saat mesin berhenti, waktu jauh lebih mahal daripada harga inverter itu sendiri.
+
+Sumber teknis
+
+1. Schneider Electric – Altivar Machine ATV320 selection and catalog information.
+https://productinfo.se.com/
+
+2. Schneider Electric – ATV320 Getting Started Manual.
+https://www.se.com/
+
+3. Schneider Electric – ATV630 product information.
+https://www.se.com/id/en/product/ATV630D15N4/
+
+4. ABB – ACS580 General Purpose Drives Catalog.
+https://library.e.abb.com/
+
+5. ABB – ACS580 General Purpose Drives.
+https://new.abb.com/drives/
+
+6. Danfoss – VLT AutomationDrive FC 302 Design Guide.
+https://www.danfoss.com/
+
+7. Danfoss – VLT AutomationDrive FC 301/302 ordering information.
+https://files.danfoss.com/
+
+Catatan penting
+
+Contoh kode dalam artikel berasal dari seri dan konfigurasi manufacturer tertentu. Arti sebuah huruf atau angka tidak boleh dipindahkan secara otomatis ke seri lain hanya karena bentuk kodenya terlihat mirip.
+
+Untuk pembelian, replacement, commissioning, atau pekerjaan panel yang kritis, selalu cocokkan full model/catalog number dengan datasheet dan manual resmi manufacturer. Selain kode, periksa juga output current, overload rating, voltage, application duty, braking, communication, enclosure, dan persyaratan instalasi.
