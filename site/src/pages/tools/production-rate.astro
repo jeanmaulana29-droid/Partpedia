@@ -1,29 +1,75 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 ---
-<Layout title="Production rate (qty / waktu) — Smart Tools · Partpedia" description="Jumlah unit yang dihasilkan per satuan waktu (jam, shift, dll — konsistenkan satuan).">
+<Layout title="Berat Gulungan (Coil) — Smart Tools · Partpedia" description="Hitung berat gulungan/coil: R2 = ketebalan radial, R1 = diameter lubang dalam. Berat = silinder OD penuh − silinder ID. Kosongkan 1 kolom yang ingin dicari.">
   <div class="tool-page">
     <a class="back" href="/tools/">← Semua Smart Tools</a>
     <div class="tool-card">
-      <h1>Production rate (qty / waktu)</h1>
-      <p class="desc">Jumlah unit yang dihasilkan per satuan waktu (jam, shift, dll — konsistenkan satuan).</p>
-      <div class="formula">Rate = Qty / Waktu</div>
-      <div class="fields cols-3">
-      <div class="field"><label for="qty">Jumlah Qty <span>(unit)</span></label><input id="qty" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="time">Waktu <span>(jam)</span></label><input id="time" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="rate">Rate <span>(unit/jam)</span></label><input id="rate" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <h1>Berat Gulungan (Coil)</h1>
+      <p class="desc">R1 = diameter lubang dalam (ID). R2 = ketebalan radial material (bukan jari-jari dari pusat). Diameter luar OD = R1 + 2×R2. Berat coil = berat silinder penuh OD − berat silinder seolah penuh ID.</p>
+      <div class="formula">OD = R1 + 2×R2 · W = (π/4)×(OD² − R1²)×lebar×ρ ÷ 1e6</div>
+
+      <div class="fields cols-2">
+        <div class="field">
+          <label for="r2">Ketebalan radial R2 <span>(mm)</span></label>
+          <input id="r2" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="r1">Diameter dalam R1 <span>(mm · ID lubang)</span></label>
+          <input id="r1" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="width">Lebar <span>(mm)</span></label>
+          <input id="width" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" />
+        </div>
+        <div class="field field-select">
+          <label for="mat">Material / massa jenis <span>(g/cm³)</span></label>
+          <select id="mat" aria-label="Pilih material">
+            <option value="7.85">Baja karbon — 7.85</option>
+            <option value="7.87">Baja tool — 7.87</option>
+            <option value="7.93">Stainless 304 — 7.93</option>
+            <option value="8.00">Stainless 316 — 8.00</option>
+            <option value="7.20">Besi cor — 7.20</option>
+            <option value="7.30">Besi cor abu-abu — 7.30</option>
+            <option value="2.70">Aluminium — 2.70</option>
+            <option value="2.81">Aluminium 7075 — 2.81</option>
+            <option value="8.96">Tembaga — 8.96</option>
+            <option value="8.50">Kuningan (brass) — 8.50</option>
+            <option value="8.80">Perunggu — 8.80</option>
+            <option value="4.51">Titanium — 4.51</option>
+            <option value="7.14">Seng — 7.14</option>
+            <option value="8.90">Nikel — 8.90</option>
+            <option value="11.34">Timbal — 11.34</option>
+            <option value="7.19">Krom — 7.19</option>
+            <option value="10.22">Molibdenum — 10.22</option>
+            <option value="1.40">PVC — 1.40</option>
+            <option value="0.95">Polietilen (PE) — 0.95</option>
+            <option value="1.04">ABS — 1.04</option>
+            <option value="2.20">PTFE (Teflon) — 2.20</option>
+            <option value="1.20">Akrilik — 1.20</option>
+            <option value="0.90">Karet (approx.) — 0.90</option>
+            <option value="custom">Kustom (isi manual)…</option>
+          </select>
+          <input id="rho" type="number" inputmode="decimal" step="any" placeholder="g/cm³" autocomplete="off" value="7.85" style="margin-top:0.4rem;" />
+        </div>
+        <div class="field" style="grid-column: 1 / -1;">
+          <label for="weight">Berat coil <span>(kg)</span></label>
+          <input id="weight" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" />
+        </div>
       </div>
+
       <div class="actions">
         <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
         <button type="button" class="btn-reset" id="btn-reset">Reset</button>
         <p class="msg" id="msg" role="status"></p>
       </div>
-      <p class="hint"><strong>Satuan:</strong> gunakan satu sistem satuan yang konsisten pada semua kolom (sesuai label). Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
+      <p class="hint"><strong>Langkah:</strong> OD = R1 + 2×R2 → berat total (silinder OD) − berat ID (seolah penuh) = berat coil. Satuan: mm &amp; g/cm³ → kg. Kosongkan tepat 1 kolom (R2, R1, Lebar, atau Berat). Densitas dari daftar material. Kolom hasil ditandai warna tosca.</p>
     </div>
   </div>
   <script is:inline>
-
   function parseNum(el) {
     if (!el) return null;
-    let v = String(el.value||"").trim().replace(",", ".");
+    let v = String(el.value || "").trim().replace(",", ".");
     if (v === "") return null;
     const n = Number(v);
     return Number.isFinite(n) ? n : NaN;
@@ -32,14 +78,17 @@ import Layout from "../../layouts/Layout.astro";
     if (!Number.isFinite(x)) return "";
     const a = Math.abs(x);
     if (a !== 0 && (a < 1e-7 || a >= 1e10)) return x.toExponential(8);
-    return x.toFixed(10).replace(/\.?0+$/, "");
+    return Number(x.toFixed(4)).toString();
   }
   function clearComputed(ids) {
     ids.forEach((id) => {
       const el = document.getElementById(id);
       const field = el?.closest(".field");
       field?.classList.remove("is-result");
-      if (el?.dataset.computed === "1") { el.value = ""; delete el.dataset.computed; }
+      if (el?.dataset.computed === "1") {
+        el.value = "";
+        delete el.dataset.computed;
+      }
     });
   }
   function setResult(id, value) {
@@ -49,8 +98,129 @@ import Layout from "../../layouts/Layout.astro";
     el.dataset.computed = "1";
     el.closest(".field")?.classList.add("is-result");
   }
-  function wire(ids, compute) {
+
+  (function () {
+    const ids = ["r2", "r1", "width", "weight"];
     const msg = document.getElementById("msg");
+    const mat = document.getElementById("mat");
+    const rhoEl = document.getElementById("rho");
+
+    function syncRhoFromMat() {
+      if (!mat || !rhoEl) return;
+      if (mat.value === "custom") {
+        rhoEl.readOnly = false;
+        rhoEl.focus();
+        return;
+      }
+      rhoEl.readOnly = true;
+      rhoEl.value = mat.value;
+      delete rhoEl.dataset.computed;
+      rhoEl.closest(".field")?.classList.remove("is-result");
+    }
+    mat?.addEventListener("change", () => {
+      syncRhoFromMat();
+      compute();
+    });
+    syncRhoFromMat();
+
+    function compute() {
+      clearComputed(ids);
+      const r2 = parseNum(document.getElementById("r2")); // ketebalan radial
+      const r1 = parseNum(document.getElementById("r1")); // diameter ID
+      const w = parseNum(document.getElementById("width"));
+      const weight = parseNum(document.getElementById("weight"));
+      const rho = parseNum(rhoEl);
+
+      if (rho === null || Number.isNaN(rho) || rho <= 0) {
+        if (msg) msg.textContent = "Pilih material / isi massa jenis > 0";
+        return;
+      }
+      const vals = { r2, r1, width: w, weight };
+      const keys = ["r2", "r1", "width", "weight"];
+      const missing = keys.filter((k) => vals[k] === null);
+      const invalid = keys.filter((k) => vals[k] !== null && (Number.isNaN(vals[k]) || vals[k] < 0));
+      if (invalid.length) {
+        if (msg) msg.textContent = "Nilai tidak boleh negatif / tidak valid";
+        return;
+      }
+      if (missing.length !== 1) {
+        if (msg)
+          msg.textContent =
+            missing.length === 0
+              ? "Kosongkan 1 kolom yang ingin dicari (R2, R1, Lebar, atau Berat)"
+              : "Isi 3 kolom, kosongkan 1 yang dicari";
+        return;
+      }
+
+      const PI4 = Math.PI / 4;
+      const target = missing[0];
+
+      // W = (π/4)*(OD² - ID²)*lebar*ρ/1e6 , OD = R1 + 2*R2, ID = R1
+      if (target === "weight") {
+        if (r2 <= 0) {
+          if (msg) msg.textContent = "R2 (ketebalan) harus > 0";
+          return;
+        }
+        const OD = r1 + 2 * r2;
+        const wt = (PI4 * (OD * OD - r1 * r1) * w * rho) / 1e6;
+        setResult("weight", wt);
+        if (msg) msg.textContent = "OD=" + fmt(OD) + " · Berat = total OD − ID seolah penuh";
+        return;
+      }
+      if (target === "width") {
+        if (r2 <= 0) {
+          if (msg) msg.textContent = "R2 harus > 0";
+          return;
+        }
+        const OD = r1 + 2 * r2;
+        const denom = PI4 * (OD * OD - r1 * r1) * rho;
+        if (denom === 0) {
+          if (msg) msg.textContent = "Pembagi nol";
+          return;
+        }
+        setResult("width", (weight * 1e6) / denom);
+        if (msg) msg.textContent = "Lebar dari berat coil & dimensi";
+        return;
+      }
+      if (target === "r2") {
+        // r2^2 + r1*r2 - K/4 = 0 , K = weight*1e6/(PI4*w*rho)
+        if (w <= 0 || r1 < 0) {
+          if (msg) msg.textContent = "Lebar & R1 harus valid";
+          return;
+        }
+        const K = (weight * 1e6) / (PI4 * w * rho);
+        const disc = r1 * r1 + K;
+        if (disc < 0) {
+          if (msg) msg.textContent = "Kombinasi tidak valid untuk R2";
+          return;
+        }
+        const out = (-r1 + Math.sqrt(disc)) / 2;
+        if (out <= 0) {
+          if (msg) msg.textContent = "Hasil R2 tidak valid — periksa input";
+          return;
+        }
+        setResult("r2", out);
+        if (msg) msg.textContent = "R2 (ketebalan) dari berat coil";
+        return;
+      }
+      if (target === "r1") {
+        // r1 = K/(4*r2) - r2
+        if (r2 <= 0 || w <= 0) {
+          if (msg) msg.textContent = "R2 & lebar harus > 0";
+          return;
+        }
+        const K = (weight * 1e6) / (PI4 * w * rho);
+        const out = K / (4 * r2) - r2;
+        if (out < 0) {
+          if (msg) msg.textContent = "Hasil R1 negatif — periksa input";
+          return;
+        }
+        setResult("r1", out);
+        if (msg) msg.textContent = "R1 (diameter ID) dari berat coil";
+        return;
+      }
+    }
+
     ids.forEach((id) => {
       const el = document.getElementById(id);
       el?.addEventListener("input", () => {
@@ -60,48 +230,38 @@ import Layout from "../../layouts/Layout.astro";
         } else {
           clearComputed(ids);
         }
-        const filled = ids.filter((i) => { const v = parseNum(document.getElementById(i)); return v !== null && !Number.isNaN(v); }).length;
-        if (filled >= 2) compute();
-        else if (msg) msg.textContent = "";
       });
-      el?.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); compute(); } });
+      el?.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          compute();
+        }
+      });
     });
+    rhoEl?.addEventListener("input", () => {
+      if (mat) mat.value = "custom";
+      rhoEl.readOnly = false;
+    });
+
     document.getElementById("btn-calc")?.addEventListener("click", compute);
     document.getElementById("btn-reset")?.addEventListener("click", () => {
       ids.forEach((id) => {
         const el = document.getElementById(id);
-        if (el) { el.value = ""; delete el.dataset.computed; }
+        if (el) {
+          el.value = "";
+          delete el.dataset.computed;
+        }
         el?.closest(".field")?.classList.remove("is-result");
       });
+      if (mat) mat.value = "7.85";
+      syncRhoFromMat();
       if (msg) msg.textContent = "";
     });
-  }
-
-    (function(){
-      const ids = ["qty", "time", "rate"];
-      const msg = document.getElementById("msg");
-      function compute() {
-        clearComputed(ids);
-        
-    const qty=parseNum(document.getElementById("qty"));
-    const time=parseNum(document.getElementById("time"));
-    const rate=parseNum(document.getElementById("rate"));
-    if ([qty,time,rate].some(x=>x!==null&&(Number.isNaN(x)||x<=0))) { msg.textContent="Nilai harus > 0"; return; }
-    const c=[qty,time,rate].filter(x=>x!==null).length;
-    if(c<2){ msg.textContent="Isi 2 kolom"; return;}
-    if(c>2){ msg.textContent="Kosongkan 1 kolom"; return;}
-    if (rate===null&&qty!==null&&time!==null){ setResult("rate", qty/time); msg.textContent="Rate = Qty / Waktu"; }
-    else if (qty===null&&rate!==null&&time!==null){ setResult("qty", rate*time); msg.textContent="Qty = Rate × Waktu"; }
-    else if (time===null&&rate!==null&&qty!==null){ setResult("time", qty/rate); msg.textContent="Waktu = Qty / Rate"; }
-  
-      }
-      wire(ids, compute);
-    })();
+  })();
   </script>
   <style>
-
-  .tool-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 0 3rem; }
-  .back { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.88rem; color: var(--muted); text-decoration:none; margin-bottom:0.85rem; }
+  .tool-page { max-width: 640px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+  .back { display:inline-block; font-size:0.88rem; color: var(--muted); text-decoration:none; margin-bottom:0.85rem; }
   .back:hover { color: var(--amber); }
   .tool-card {
     border:1px solid var(--line); border-radius:22px; padding:1.25rem;
@@ -110,15 +270,20 @@ import Layout from "../../layouts/Layout.astro";
   }
   .tool-card h1 { margin:0 0 0.35rem; font-family: var(--font-display); font-size:1.45rem; }
   .tool-card .desc { margin:0 0 1rem; color: var(--muted); font-size:0.92rem; line-height:1.5; }
-  .formula { display:inline-block; font-family: var(--font-mono); font-size:0.85rem; color: var(--amber);
-    border:1px solid rgba(240,164,58,0.35); background:rgba(240,164,58,0.08); padding:0.35rem 0.65rem; border-radius:999px; margin-bottom:1rem; }
+  .formula { display:inline-block; font-family: var(--font-mono); font-size:0.72rem; color: var(--amber);
+    border:1px solid rgba(240,164,58,0.35); background:rgba(240,164,58,0.08); padding:0.35rem 0.65rem; border-radius:999px; margin-bottom:1rem; max-width:100%; line-height:1.4; }
   .fields { display:grid; gap:0.75rem; }
-  @media(min-width:560px){ .fields.cols-2{ grid-template-columns:1fr 1fr;} .fields.cols-3{ grid-template-columns:1fr 1fr 1fr;} }
+  @media(min-width:560px){ .fields.cols-2{ grid-template-columns:1fr 1fr;} }
   .field { display:flex; flex-direction:column; gap:0.35rem; padding:0.75rem 0.85rem; border-radius:14px;
     border:1px solid var(--line); background:rgba(0,0,0,0.22); transition: border-color .15s, background .15s, box-shadow .15s; }
   .field label { font-size:0.8rem; font-weight:600; color: var(--ink); }
   .field label span { font-weight:500; color: var(--muted); font-size:0.75rem; }
-  .field input { border:none; outline:none; background:transparent; color: var(--ink); font-size:1.25rem; font-weight:700; font-family: var(--font-mono); width:100%; }
+  .field input, .field select {
+    border:none; outline:none; background:transparent; color: var(--ink);
+    font-size:1.15rem; font-weight:700; font-family: var(--font-mono); width:100%;
+  }
+  .field select { font-size:0.92rem; font-weight:600; cursor:pointer; padding:0.15rem 0; }
+  .field select option { background: #1a1f2e; color: #e8eaef; }
   .field.is-result { border-color: rgba(45,212,191,0.65); background: rgba(45,212,191,0.12); box-shadow:0 0 0 3px rgba(45,212,191,0.12); }
   .field.is-result label { color: var(--teal); }
   .actions { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; margin-top:1rem; }
@@ -129,6 +294,5 @@ import Layout from "../../layouts/Layout.astro";
   .msg { margin:0; font-size:0.86rem; color: var(--muted); }
   .hint { margin-top:1rem; padding:0.75rem 0.9rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);
     background:rgba(255,255,255,0.03); font-size:0.84rem; color: var(--muted); line-height:1.45; }
-
   </style>
 </Layout>
