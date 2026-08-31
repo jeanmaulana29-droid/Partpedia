@@ -1,0 +1,172 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const heroSlides = [
+  {
+    title: "Industrial parts intelligence",
+    sub: "Specs, cross-reference codes, MRO reading, and plant calculators — in one modern directory.",
+    img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=80",
+  },
+  {
+    title: "From bearings to automation",
+    sub: "Research parts, compare equivalents, then calculate field needs with Smart Tools.",
+    img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80",
+  },
+  {
+    title: "Find part codes in seconds",
+    sub: "Cross-reference, knowledge hub, and industrial utilities — ready for plant and workshop use.",
+    img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80",
+  },
+];
+---
+<Layout
+  lang="en"
+  title="Partpedia — Industrial Spare Parts Catalog, Specs & Cross-Reference"
+  description="Modern industrial spare parts directory: bearings, V-belts, sensors, PLC, VFD, lubricants. Specs, sizes, price estimates & cross-reference for MRO and plant maintenance."
+>
+  <section class="hero" aria-label="Main banner">
+    <div class="hero-slider" id="hero-slider">
+      {heroSlides.map((s, i) => (
+        <div class={`hero-slide ${i === 0 ? "active" : ""}`} style={`background-image:url('${s.img}')`}>
+          <div class="hero-overlay">
+            <p class="kicker">Partpedia · Global industrial reference</p>
+            <h1>{s.title}</h1>
+            <p class="hero-sub">{s.sub}</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="/#catalog">Browse catalog</a>
+              <a class="btn btn-ghost" href="/knowledge/">Knowledge hub</a>
+              <a class="btn btn-tools" href="/tools/">Smart Tools</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="hero-dots" id="hero-dots" aria-hidden="true"></div>
+  </section>
+
+  <section class="intro wrap">
+    <h2>What is Partpedia?</h2>
+    <p>
+      Partpedia is a modern reference for industrial spare parts and MRO. Look up part names, sizes, typical use,
+      and cross-reference codes — then jump to trusted marketplaces when you are ready to buy.
+    </p>
+    <div class="cards">
+      <a class="card" href="/#catalog">
+        <span class="ico">📦</span>
+        <strong>Parts catalog</strong>
+        <span>Hundreds of industrial components with specs and equivalents.</span>
+      </a>
+      <a class="card" href="/knowledge/">
+        <span class="ico">📚</span>
+        <strong>Knowledge</strong>
+        <span>Practical articles on parts, failure modes, and plant practice.</span>
+      </a>
+      <a class="card" href="/tools/">
+        <span class="ico">🧮</span>
+        <strong>Smart Tools</strong>
+        <span>Fast calculators for geometry, materials, production, and more.</span>
+      </a>
+      <a class="card" href="/qa/">
+        <span class="ico">💡</span>
+        <strong>Insights Q&amp;A</strong>
+        <span>Common manufacturing questions with clear, structured answers.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="note wrap">
+    <p>
+      <strong>Language:</strong> This English home page is for international visitors.
+      The full catalog and tools remain available from the menu — part codes are universal.
+      Switch to Indonesian anytime with the <strong>ID</strong> button.
+    </p>
+  </section>
+
+  <script is:inline>
+    (function () {
+      const slides = Array.from(document.querySelectorAll(".hero-slide"));
+      const dotsWrap = document.getElementById("hero-dots");
+      if (!slides.length || !dotsWrap) return;
+      let i = 0;
+      slides.forEach((_, idx) => {
+        const d = document.createElement("button");
+        d.type = "button";
+        d.className = "dot" + (idx === 0 ? " on" : "");
+        d.addEventListener("click", () => go(idx));
+        dotsWrap.appendChild(d);
+      });
+      const dots = Array.from(dotsWrap.children);
+      function go(n) {
+        slides[i].classList.remove("active");
+        dots[i]?.classList.remove("on");
+        i = (n + slides.length) % slides.length;
+        slides[i].classList.add("active");
+        dots[i]?.classList.add("on");
+      }
+      setInterval(() => go(i + 1), 5000);
+    })();
+  </script>
+
+  <style>
+    .hero { position: relative; margin: 0 0 1.5rem; border-radius: 0 0 24px 24px; overflow: hidden; }
+    .hero-slider { position: relative; min-height: 380px; }
+    .hero-slide {
+      position: absolute; inset: 0; background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 0.8s ease; pointer-events: none;
+    }
+    .hero-slide.active { opacity: 1; pointer-events: auto; position: relative; }
+    .hero-overlay {
+      min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.75rem 1.25rem 2rem;
+      background: linear-gradient(180deg, rgba(8,12,18,0.25), rgba(8,12,18,0.88));
+      color: #f5f7fb;
+    }
+    .kicker {
+      margin: 0 0 0.35rem; font-family: var(--font-mono); font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #2dd4bf;
+    }
+    .hero-overlay h1 {
+      margin: 0 0 0.5rem; font-family: var(--font-display); font-size: clamp(1.55rem, 4.5vw, 2.35rem);
+      letter-spacing: -0.02em; max-width: 18ch;
+    }
+    .hero-sub { margin: 0 0 1.1rem; max-width: 36ch; line-height: 1.5; color: rgba(245,247,251,0.88); font-size: 0.98rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .hero-cta .btn-tools {
+      display: inline-flex; align-items: center; font-weight: 700; font-size: 0.9rem;
+      padding: 0.7rem 1.15rem; border-radius: 999px; text-decoration: none;
+      background: linear-gradient(135deg, #2dd4bf, #14b8a6); color: #041016;
+    }
+    .hero-dots { position: absolute; left: 0; right: 0; bottom: 0.75rem; display: flex; justify-content: center; gap: 0.4rem; z-index: 2; }
+    .hero-dots .dot {
+      width: 8px; height: 8px; border-radius: 999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(255,255,255,0.35);
+    }
+    .hero-dots .dot.on { background: #f0a43a; width: 18px; }
+    @media (min-width: 768px) {
+      .hero-slider, .hero-overlay { min-height: 420px; }
+      .hero-overlay { padding: 2rem 2.25rem; }
+    }
+    .intro { padding: 1.5rem 0 0.5rem; }
+    .intro h2 { margin: 0 0 0.6rem; font-family: var(--font-display); font-size: 1.35rem; }
+    .intro > p { margin: 0 0 1.25rem; color: var(--muted); line-height: 1.55; max-width: 52rem; }
+    .cards {
+      display: grid; gap: 0.75rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 800px) { .cards { grid-template-columns: repeat(4, 1fr); } }
+    .card {
+      display: flex; flex-direction: column; gap: 0.35rem; padding: 1rem 1.05rem;
+      border-radius: 16px; border: 1px solid var(--line); background: var(--bg-card);
+      text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s;
+    }
+    .card:hover { border-color: var(--amber); transform: translateY(-2px); }
+    .card .ico { font-size: 1.35rem; }
+    .card strong { font-size: 0.95rem; }
+    .card span:last-child { font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+    .note {
+      margin: 1.5rem auto 2.5rem; padding: 1rem 1.15rem; border-radius: 14px;
+      border: 1px solid rgba(45,212,191,0.25); background: rgba(45,212,191,0.06);
+      color: var(--muted); font-size: 0.9rem; line-height: 1.5; max-width: 52rem;
+    }
+  </style>
+</Layout>
