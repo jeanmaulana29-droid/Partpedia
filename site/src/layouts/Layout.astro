@@ -3,13 +3,21 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>;
+  /** Page language for <html lang> and hreflang pairing (phase 1: id | en) */
+  lang?: "id" | "en";
 }
-const { title, description, jsonLd } = Astro.props;
+const { title, description, jsonLd, lang = "id" } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const siteOrigin = Astro.site ? new URL(Astro.site).origin : "https://www.klikpartpedia.com";
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+// Phase 1: only home ID <-> home EN are reciprocal hreflang pairs
+const isHomeId = path === "/" || path === "";
+const isHomeEn = path === "/en";
+const showHomeHreflang = isHomeId || isHomeEn;
 ---
 <!doctype html>
-<html lang="id">
-<!-- content bilingual-friendly; toggle sets lang attribute -->
+<html lang={lang}>
+<!-- lang from page prop; EN/ID toggle navigates / <-> /en/ for SEO -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,6 +31,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="apple-mobile-web-app-title" content="Partpedia" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {showHomeHreflang && (
+      <>
+        <link rel="alternate" hreflang="id" href={`${siteOrigin}/`} />
+        <link rel="alternate" hreflang="en" href={`${siteOrigin}/en/`} />
+        <link rel="alternate" hreflang="x-default" href={`${siteOrigin}/`} />
+      </>
+    )}
     <meta name="keywords" content="sparepart industri, bearing, V-belt, PLC, sensor industri, kode part, cross reference, harga sparepart, industrial parts, MRO, maintenance repair operations, gearbox, seal, filter hidrolik" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Partpedia" />
@@ -167,6 +182,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       }
       .nav a:hover { color: var(--ink); border-color: var(--amber); }
       .lang-btn {
+        text-decoration: none;
 
         font-family: var(--font-mono);
         font-size: 0.7rem;
@@ -252,7 +268,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
             <img src="/logo.png" alt="Partpedia" width="28" height="28" class="brand-logo" />
             <span class="brand-text">Part<span class="brand-accent">pedia</span></span>
           </a>
-          <button type="button" class="lang-btn" id="lang-toggle" aria-label="Language">EN</button>
+          <a class="lang-btn" id="lang-toggle" href={lang === "id" ? "/en/" : "/"} aria-label="Language">{lang === "id" ? "EN" : "ID"}</a>
         </div>
         <nav class="nav" aria-label="Main menu">
           <a href="/#catalog" data-i18n="nav_catalog">Katalog</a>
@@ -364,16 +380,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         });
         try { localStorage.setItem("partpedia_lang", lang); } catch {}
       }
-      let lang = "id";
-      try {
-        const saved = localStorage.getItem("partpedia_lang");
-        if (saved === "en" || saved === "id") lang = saved;
-      } catch {}
-      applyLang(lang);
-      document.getElementById("lang-toggle")?.addEventListener("click", () => {
-        lang = lang === "id" ? "en" : "id";
-        applyLang(lang);
-      });
+      // URL-based language (SEO): / = id, /en/ = en. Toggle is a link, not in-page only.
+      const pageLang = document.documentElement.lang === "en" ? "en" : "id";
+      try { localStorage.setItem("partpedia_lang", pageLang); } catch {}
+      // Still apply data-i18n dict on ID pages for any remaining client labels
+      if (pageLang === "id") {
+        applyLang("id");
+      }
     </script>
   </body>
 </html>
