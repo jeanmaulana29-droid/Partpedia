@@ -1,0 +1,933 @@
+[
+  {
+    "slug": "hardness",
+    "name": "Hardness",
+    "sub": "HRC · HRB · HR15T · HR30T · HV · HB",
+    "emoji": "💎",
+    "color": "#f43f5e",
+    "mode": "hardness",
+    "note": "Konversi kekerasan memakai interpolasi tabel (ASTM E140 / ISO 18265 untuk baja; HR15T & HR30T sesuai tabel referensi G3141/ASTM). Nilai perkiraan — untuk QA kritis gunakan chart material resmi.",
+    "units": [
+      {
+        "id": "hrc",
+        "label": "HRC (Rockwell C)",
+        "toBase": 1
+      },
+      {
+        "id": "hrb",
+        "label": "HRB (Rockwell B)",
+        "toBase": 1
+      },
+      {
+        "id": "hr15t",
+        "label": "HR15T (Rockwell 15T)",
+        "toBase": 1
+      },
+      {
+        "id": "hr30t",
+        "label": "HR30T (Rockwell 30T)",
+        "toBase": 1
+      },
+      {
+        "id": "hv",
+        "label": "HV (Vickers)",
+        "toBase": 1
+      },
+      {
+        "id": "hb",
+        "label": "HB / HBW (Brinell)",
+        "toBase": 1
+      },
+      {
+        "id": "mpa",
+        "label": "MPa (UTS approx.)",
+        "toBase": 1
+      }
+    ]
+  },
+  {
+    "slug": "length",
+    "name": "Length / Dimensi",
+    "sub": "mm · inch · ft",
+    "emoji": "📏",
+    "color": "#3b82f6",
+    "units": [
+      {
+        "id": "mm",
+        "label": "mm",
+        "toBase": 1
+      },
+      {
+        "id": "cm",
+        "label": "cm",
+        "toBase": 10
+      },
+      {
+        "id": "m",
+        "label": "m",
+        "toBase": 1000
+      },
+      {
+        "id": "inch",
+        "label": "inch",
+        "toBase": 25.4
+      },
+      {
+        "id": "ft",
+        "label": "ft",
+        "toBase": 304.8
+      }
+    ]
+  },
+  {
+    "slug": "thickness",
+    "name": "Thickness",
+    "sub": "mm · µm · inch",
+    "emoji": "📐",
+    "color": "#6366f1",
+    "units": [
+      {
+        "id": "mm",
+        "label": "mm",
+        "toBase": 1
+      },
+      {
+        "id": "um",
+        "label": "µm",
+        "toBase": 0.001
+      },
+      {
+        "id": "inch",
+        "label": "inch",
+        "toBase": 25.4
+      },
+      {
+        "id": "thou",
+        "label": "thou (0.001 inch)",
+        "toBase": 0.0254
+      }
+    ]
+  },
+  {
+    "slug": "weight",
+    "name": "Weight / Mass",
+    "sub": "kg · ton · lb",
+    "emoji": "⚖️",
+    "color": "#8b5cf6",
+    "units": [
+      {
+        "id": "kg",
+        "label": "kg",
+        "toBase": 1
+      },
+      {
+        "id": "g",
+        "label": "g",
+        "toBase": 0.001
+      },
+      {
+        "id": "ton",
+        "label": "ton (metric)",
+        "toBase": 1000
+      },
+      {
+        "id": "lb",
+        "label": "lb",
+        "toBase": 0.45359237
+      }
+    ]
+  },
+  {
+    "slug": "force",
+    "name": "Force / Gaya",
+    "sub": "N · kN · kgf · lbf",
+    "emoji": "💪",
+    "color": "#a855f7",
+    "units": [
+      {
+        "id": "n",
+        "label": "N",
+        "toBase": 1
+      },
+      {
+        "id": "kn",
+        "label": "kN",
+        "toBase": 1000
+      },
+      {
+        "id": "kgf",
+        "label": "kgf",
+        "toBase": 9.80665
+      },
+      {
+        "id": "tf",
+        "label": "tf (metric)",
+        "toBase": 9806.65
+      },
+      {
+        "id": "lbf",
+        "label": "lbf",
+        "toBase": 4.4482216152605
+      }
+    ]
+  },
+  {
+    "slug": "pressure",
+    "name": "Pressure",
+    "sub": "MPa · bar · psi",
+    "emoji": "⏲",
+    "color": "#ec4899",
+    "units": [
+      {
+        "id": "mpa",
+        "label": "MPa",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "kpa",
+        "label": "kPa",
+        "toBase": 1000.0
+      },
+      {
+        "id": "bar",
+        "label": "bar",
+        "toBase": 100000.0
+      },
+      {
+        "id": "kgfcm2",
+        "label": "kgf/cm²",
+        "toBase": 98066.5
+      },
+      {
+        "id": "psi",
+        "label": "psi",
+        "toBase": 6894.757293168
+      },
+      {
+        "id": "atm",
+        "label": "atm",
+        "toBase": 101325
+      }
+    ]
+  },
+  {
+    "slug": "stress",
+    "name": "Stress / Tegangan",
+    "sub": "MPa · ksi · psi",
+    "emoji": "🧱",
+    "color": "#f97316",
+    "units": [
+      {
+        "id": "mpa",
+        "label": "MPa",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "nmm2",
+        "label": "N/mm²",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "kgfmm2",
+        "label": "kgf/mm²",
+        "toBase": 9806650.0
+      },
+      {
+        "id": "ksi",
+        "label": "ksi",
+        "toBase": 6894757.293
+      },
+      {
+        "id": "psi",
+        "label": "psi",
+        "toBase": 6894.757293
+      }
+    ]
+  },
+  {
+    "slug": "temperature",
+    "name": "Temperature",
+    "sub": "°C · °F · K",
+    "emoji": "🌡️",
+    "color": "#ef4444",
+    "mode": "temperature",
+    "units": [
+      {
+        "id": "c",
+        "label": "°C",
+        "toBase": 1
+      },
+      {
+        "id": "f",
+        "label": "°F",
+        "toBase": 1
+      },
+      {
+        "id": "k",
+        "label": "K",
+        "toBase": 1
+      }
+    ]
+  },
+  {
+    "slug": "area",
+    "name": "Area / Luas",
+    "sub": "mm² · m² · inch²",
+    "emoji": "⬜",
+    "color": "#14b8a6",
+    "units": [
+      {
+        "id": "mm2",
+        "label": "mm²",
+        "toBase": 1e-06
+      },
+      {
+        "id": "cm2",
+        "label": "cm²",
+        "toBase": 0.0001
+      },
+      {
+        "id": "m2",
+        "label": "m²",
+        "toBase": 1
+      },
+      {
+        "id": "in2",
+        "label": "inch²",
+        "toBase": 0.00064516
+      },
+      {
+        "id": "ft2",
+        "label": "ft²",
+        "toBase": 0.09290304
+      }
+    ]
+  },
+  {
+    "slug": "volume",
+    "name": "Volume",
+    "sub": "mm³ · L · m³",
+    "emoji": "🧪",
+    "color": "#06b6d4",
+    "units": [
+      {
+        "id": "mm3",
+        "label": "mm³",
+        "toBase": 1e-09
+      },
+      {
+        "id": "cm3",
+        "label": "cm³ / mL",
+        "toBase": 1e-06
+      },
+      {
+        "id": "l",
+        "label": "L",
+        "toBase": 0.001
+      },
+      {
+        "id": "m3",
+        "label": "m³",
+        "toBase": 1
+      },
+      {
+        "id": "in3",
+        "label": "in³",
+        "toBase": 1.6387064e-05
+      },
+      {
+        "id": "ft3",
+        "label": "ft³",
+        "toBase": 0.028316846592
+      }
+    ]
+  },
+  {
+    "slug": "flow",
+    "name": "Flow Rate",
+    "sub": "L/min · m³/h · GPM",
+    "emoji": "💧",
+    "color": "#0ea5e9",
+    "units": [
+      {
+        "id": "lmin",
+        "label": "L/min",
+        "toBase": 1.6666666667e-05
+      },
+      {
+        "id": "lh",
+        "label": "L/h",
+        "toBase": 2.777777778e-07
+      },
+      {
+        "id": "m3h",
+        "label": "m³/h",
+        "toBase": 0.0002777777777777778
+      },
+      {
+        "id": "m3min",
+        "label": "m³/min",
+        "toBase": 0.016666666666666666
+      },
+      {
+        "id": "gpm",
+        "label": "GPM (US)",
+        "toBase": 6.30901964e-05
+      }
+    ]
+  },
+  {
+    "slug": "speed",
+    "name": "Linear Speed",
+    "sub": "m/min · m/s · ft/min",
+    "emoji": "🚀",
+    "color": "#22c55e",
+    "units": [
+      {
+        "id": "mmin",
+        "label": "m/min",
+        "toBase": 0.016666666666666666
+      },
+      {
+        "id": "ms",
+        "label": "m/s",
+        "toBase": 1
+      },
+      {
+        "id": "mms",
+        "label": "mm/s",
+        "toBase": 0.001
+      },
+      {
+        "id": "ftmin",
+        "label": "ft/min",
+        "toBase": 0.00508
+      }
+    ]
+  },
+  {
+    "slug": "rpm",
+    "name": "Rotational Speed",
+    "sub": "RPM · rad/s",
+    "emoji": "🌀",
+    "color": "#84cc16",
+    "units": [
+      {
+        "id": "rpm",
+        "label": "RPM",
+        "toBase": 0.10471975511965977
+      },
+      {
+        "id": "rads",
+        "label": "rad/s",
+        "toBase": 1
+      }
+    ]
+  },
+  {
+    "slug": "torque",
+    "name": "Torque / Torsi",
+    "sub": "N·m · kgf·m · lbf·ft",
+    "emoji": "🔧",
+    "color": "#eab308",
+    "units": [
+      {
+        "id": "nm",
+        "label": "N·m",
+        "toBase": 1
+      },
+      {
+        "id": "kgfm",
+        "label": "kgf·m",
+        "toBase": 9.80665
+      },
+      {
+        "id": "kgfcm",
+        "label": "kgf·cm",
+        "toBase": 0.0980665
+      },
+      {
+        "id": "lbfft",
+        "label": "lbf·ft",
+        "toBase": 1.3558179483314
+      },
+      {
+        "id": "lbfin",
+        "label": "lbf·in",
+        "toBase": 0.1129848290276
+      }
+    ]
+  },
+  {
+    "slug": "power",
+    "name": "Power / Daya",
+    "sub": "W · kW · HP · PS",
+    "emoji": "⚡",
+    "color": "#f59e0b",
+    "units": [
+      {
+        "id": "w",
+        "label": "W",
+        "toBase": 1
+      },
+      {
+        "id": "kw",
+        "label": "kW",
+        "toBase": 1000
+      },
+      {
+        "id": "mw",
+        "label": "MW",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "hp",
+        "label": "HP (mechanical)",
+        "toBase": 745.6998715823
+      },
+      {
+        "id": "ps",
+        "label": "PS (metric hp)",
+        "toBase": 735.49875
+      }
+    ]
+  },
+  {
+    "slug": "energy",
+    "name": "Energy / Work",
+    "sub": "J · kWh · cal",
+    "emoji": "🔋",
+    "color": "#f97316",
+    "units": [
+      {
+        "id": "j",
+        "label": "J",
+        "toBase": 1
+      },
+      {
+        "id": "kj",
+        "label": "kJ",
+        "toBase": 1000
+      },
+      {
+        "id": "mj",
+        "label": "MJ",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "wh",
+        "label": "Wh",
+        "toBase": 3600
+      },
+      {
+        "id": "kwh",
+        "label": "kWh",
+        "toBase": 3600000.0
+      },
+      {
+        "id": "cal",
+        "label": "cal (thermochemical)",
+        "toBase": 4.184
+      }
+    ]
+  },
+  {
+    "slug": "voltage",
+    "name": "Voltage",
+    "sub": "V · mV · kV",
+    "emoji": "🔌",
+    "color": "#eab308",
+    "units": [
+      {
+        "id": "v",
+        "label": "V",
+        "toBase": 1
+      },
+      {
+        "id": "mv",
+        "label": "mV",
+        "toBase": 0.001
+      },
+      {
+        "id": "kv",
+        "label": "kV",
+        "toBase": 1000
+      }
+    ]
+  },
+  {
+    "slug": "current",
+    "name": "Current",
+    "sub": "A · mA · kA",
+    "emoji": "⚡",
+    "color": "#facc15",
+    "units": [
+      {
+        "id": "a",
+        "label": "A",
+        "toBase": 1
+      },
+      {
+        "id": "ma",
+        "label": "mA",
+        "toBase": 0.001
+      },
+      {
+        "id": "ka",
+        "label": "kA",
+        "toBase": 1000
+      }
+    ]
+  },
+  {
+    "slug": "resistance",
+    "name": "Resistance",
+    "sub": "Ω · kΩ · MΩ",
+    "emoji": "🧲",
+    "color": "#a3e635",
+    "units": [
+      {
+        "id": "ohm",
+        "label": "Ω",
+        "toBase": 1
+      },
+      {
+        "id": "mohm",
+        "label": "mΩ",
+        "toBase": 0.001
+      },
+      {
+        "id": "kohm",
+        "label": "kΩ",
+        "toBase": 1000
+      },
+      {
+        "id": "mohm_mega",
+        "label": "MΩ",
+        "toBase": 1000000.0
+      }
+    ]
+  },
+  {
+    "slug": "electrical-power",
+    "name": "Electrical Power",
+    "sub": "W · kW · VA · kVA",
+    "emoji": "💡",
+    "color": "#4ade80",
+    "note": "W/kW = daya aktif. VA/kVA = daya semu (tanpa faktor daya). Konversi angka 1:1 antar skala; faktor daya tidak dihitung di sini.",
+    "units": [
+      {
+        "id": "w",
+        "label": "W",
+        "toBase": 1
+      },
+      {
+        "id": "kw",
+        "label": "kW",
+        "toBase": 1000
+      },
+      {
+        "id": "va",
+        "label": "VA",
+        "toBase": 1
+      },
+      {
+        "id": "kva",
+        "label": "kVA",
+        "toBase": 1000
+      },
+      {
+        "id": "mw",
+        "label": "MW",
+        "toBase": 1000000.0
+      }
+    ]
+  },
+  {
+    "slug": "frequency",
+    "name": "Frequency",
+    "sub": "Hz · kHz · MHz",
+    "emoji": "📡",
+    "color": "#2dd4bf",
+    "units": [
+      {
+        "id": "hz",
+        "label": "Hz",
+        "toBase": 1
+      },
+      {
+        "id": "khz",
+        "label": "kHz",
+        "toBase": 1000
+      },
+      {
+        "id": "mhz",
+        "label": "MHz",
+        "toBase": 1000000.0
+      }
+    ]
+  },
+  {
+    "slug": "vacuum",
+    "name": "Pressure / Vacuum",
+    "sub": "Pa · bar · mmHg · Torr",
+    "emoji": "🫧",
+    "color": "#67e8f9",
+    "units": [
+      {
+        "id": "pa",
+        "label": "Pa",
+        "toBase": 1
+      },
+      {
+        "id": "kpa",
+        "label": "kPa",
+        "toBase": 1000
+      },
+      {
+        "id": "mpa",
+        "label": "MPa",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "bar",
+        "label": "bar",
+        "toBase": 100000.0
+      },
+      {
+        "id": "mbar",
+        "label": "mbar",
+        "toBase": 100
+      },
+      {
+        "id": "mmhg",
+        "label": "mmHg",
+        "toBase": 133.322387415
+      },
+      {
+        "id": "inhg",
+        "label": "inHg",
+        "toBase": 3386.389
+      },
+      {
+        "id": "torr",
+        "label": "Torr",
+        "toBase": 133.322368421
+      }
+    ]
+  },
+  {
+    "slug": "roughness",
+    "name": "Surface Roughness",
+    "sub": "µm · µin",
+    "emoji": "🌊",
+    "color": "#38bdf8",
+    "note": "Konversi satuan panjang kekasaran (µm ↔ µin). Ra, Rz, Rt adalah parameter berbeda — masukkan nilai parameter yang sama; jangan menyamakan Ra dengan Rz tanpa chart profil.",
+    "units": [
+      {
+        "id": "um",
+        "label": "µm",
+        "toBase": 1
+      },
+      {
+        "id": "uin",
+        "label": "µin",
+        "toBase": 0.0254
+      }
+    ]
+  },
+  {
+    "slug": "geometric",
+    "name": "Geometric Tolerance",
+    "sub": "mm · µm · thou",
+    "emoji": "✏️",
+    "color": "#818cf8",
+    "units": [
+      {
+        "id": "mm",
+        "label": "mm",
+        "toBase": 1
+      },
+      {
+        "id": "um",
+        "label": "µm",
+        "toBase": 0.001
+      },
+      {
+        "id": "inch",
+        "label": "inch",
+        "toBase": 25.4
+      },
+      {
+        "id": "thou",
+        "label": "thou / mil",
+        "toBase": 0.0254
+      }
+    ]
+  },
+  {
+    "slug": "clearance",
+    "name": "Clearance / Gap",
+    "sub": "mm · µm · thou",
+    "emoji": "🔍",
+    "color": "#c084fc",
+    "units": [
+      {
+        "id": "mm",
+        "label": "mm",
+        "toBase": 1
+      },
+      {
+        "id": "um",
+        "label": "µm",
+        "toBase": 0.001
+      },
+      {
+        "id": "inch",
+        "label": "inch",
+        "toBase": 25.4
+      },
+      {
+        "id": "thou",
+        "label": "thou / mil",
+        "toBase": 0.0254
+      }
+    ]
+  },
+  {
+    "slug": "density",
+    "name": "Density",
+    "sub": "kg/m³ · g/cm³",
+    "emoji": "🧲",
+    "color": "#e879f9",
+    "units": [
+      {
+        "id": "kgm3",
+        "label": "kg/m³",
+        "toBase": 1
+      },
+      {
+        "id": "gcm3",
+        "label": "g/cm³",
+        "toBase": 1000
+      },
+      {
+        "id": "gl",
+        "label": "g/L",
+        "toBase": 1
+      },
+      {
+        "id": "lbft3",
+        "label": "lb/ft³",
+        "toBase": 16.01846337
+      }
+    ]
+  },
+  {
+    "slug": "viscosity",
+    "name": "Viscosity",
+    "sub": "Pa·s · cP",
+    "emoji": "🫗",
+    "color": "#f472b6",
+    "note": "Viskositas dinamis. 1 cP = 1 mPa·s. Viskositas kinematik (cSt = mm²/s) = dinamis/densitas — tidak dikonversi di sini tanpa densitas fluida.",
+    "units": [
+      {
+        "id": "pas",
+        "label": "Pa·s",
+        "toBase": 1
+      },
+      {
+        "id": "mpas",
+        "label": "mPa·s",
+        "toBase": 0.001
+      },
+      {
+        "id": "cp",
+        "label": "cP",
+        "toBase": 0.001
+      }
+    ]
+  },
+  {
+    "slug": "thermal",
+    "name": "Thermal Conductivity",
+    "sub": "W/m·K · BTU",
+    "emoji": "🔥",
+    "color": "#fb7185",
+    "units": [
+      {
+        "id": "wmk",
+        "label": "W/(m·K)",
+        "toBase": 1
+      },
+      {
+        "id": "kcal",
+        "label": "kcal/(m·h·°C)",
+        "toBase": 1.163
+      },
+      {
+        "id": "btu",
+        "label": "BTU/(h·ft·°F)",
+        "toBase": 1.73073467
+      }
+    ]
+  },
+  {
+    "slug": "areal-weight",
+    "name": "Areal Weight",
+    "sub": "g/m² · oz/yd²",
+    "emoji": "🧾",
+    "color": "#fb923c",
+    "units": [
+      {
+        "id": "gm2",
+        "label": "g/m²",
+        "toBase": 1
+      },
+      {
+        "id": "kgm2",
+        "label": "kg/m²",
+        "toBase": 1000
+      },
+      {
+        "id": "ozyd2",
+        "label": "oz/yd²",
+        "toBase": 33.90574745
+      }
+    ]
+  },
+  {
+    "slug": "tensile",
+    "name": "Tensile / Yield",
+    "sub": "MPa · ksi · psi",
+    "emoji": "🏋️",
+    "color": "#fbbf24",
+    "units": [
+      {
+        "id": "mpa",
+        "label": "MPa",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "nmm2",
+        "label": "N/mm²",
+        "toBase": 1000000.0
+      },
+      {
+        "id": "ksi",
+        "label": "ksi",
+        "toBase": 6894757.293
+      },
+      {
+        "id": "kgfmm2",
+        "label": "kgf/mm²",
+        "toBase": 9806650.0
+      },
+      {
+        "id": "psi",
+        "label": "psi",
+        "toBase": 6894.757293
+      }
+    ]
+  }
+]
