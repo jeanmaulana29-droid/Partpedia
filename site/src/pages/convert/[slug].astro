@@ -1,0 +1,340 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import converters from "../../../data/converters.json";
+
+export function getStaticPaths() {
+  return converters.map((c) => ({ params: { slug: c.slug } }));
+}
+
+const { slug } = Astro.params;
+const conv = converters.find((c) => c.slug === slug);
+if (!conv) {
+  return Astro.redirect("/convert/");
+}
+const unitsJson = JSON.stringify(conv.units);
+const mode = conv.mode || "linear";
+---
+<Layout
+  title={`${conv.name} Converter — Convert X · Partpedia`}
+  description={`Konversi ${conv.sub}. ${conv.name} unit converter untuk industri & manufaktur.`}
+>
+  <div class="tool-page">
+    <a class="back" href="/convert/">← Semua Convert X</a>
+    <div class="tool-card">
+      <div class="head-row">
+        <div class="face" style={`background: linear-gradient(145deg, ${conv.color}cc, ${conv.color}66);`}>
+          <span class="float-ico">{conv.emoji}</span>
+        </div>
+        <div>
+          <h1>{conv.name}</h1>
+          <p class="desc">{conv.sub} — isi satu kolom, lainnya terisi otomatis.</p>
+        </div>
+      </div>
+
+      <div class="fields" id="fields">
+        {conv.units.map((u) => (
+          <div class="field">
+            <label for={u.id}>{u.label}</label>
+            <input id={u.id} type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" data-unit={u.id} />
+          </div>
+        ))}
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn-reset" id="btn-reset">Reset</button>
+        <p class="msg" id="msg" role="status"></p>
+      </div>
+      {conv.note && <p class="hint"><strong>Catatan:</strong> {conv.note}</p>}
+      {!conv.note && (
+        <p class="hint">Faktor konversi mengikuti konstanta SI / NIST. Hapus nilai di kolom sumber untuk mengosongkan semua hasil otomatis.</p>
+      )}
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ unitsJson, mode }}>
+  const units = JSON.parse(unitsJson);
+  const ids = units.map((u) => u.id);
+
+  function parseNum(el) {
+    if (!el) return null;
+    let v = String(el.value || "").trim().replace(",", ".");
+    if (v === "") return null;
+    const n = Number(v);
+    return Number.isFinite(n) ? n : NaN;
+  }
+  function fmt(x) {
+    if (!Number.isFinite(x)) return "";
+    const a = Math.abs(x);
+    if (a !== 0 && (a < 1e-6 || a >= 1e9)) return Number(x.toExponential(6)).toString();
+    // up to 8 significant-ish decimals, trim zeros
+    let s = x.toPrecision(10);
+    s = String(Number(s));
+    return s;
+  }
+  function clearAll(exceptId) {
+    ids.forEach((id) => {
+      if (id === exceptId) return;
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.value = "";
+      el.dataset.computed = "";
+      el.closest(".field")?.classList.remove("is-result");
+    });
+  }
+  function setResult(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.value = fmt(value);
+    el.dataset.computed = "1";
+    el.closest(".field")?.classList.add("is-result");
+  }
+
+
+  /* —— Hardness: table interpolation (ASTM E140 / user HR15T·HR30T tables) —— */
+  const HR30T_HRB = [[35.0, 28.1], [36.0, 29.6], [37.0, 31.1], [38.0, 32.5], [39.0, 34.0], [40.0, 35.5], [41.0, 37.0], [42.0, 38.5], [43.0, 40.0], [44.0, 41.5], [45.0, 43.0], [46.0, 44.5], [47.0, 46.0], [48.0, 47.5], [49.0, 49.0], [50.0, 50.5], [51.0, 52.0], [52.0, 53.5], [53.0, 55.0], [54.0, 56.5], [55.0, 58.0], [56.0, 59.5], [57.0, 60.9], [58.0, 62.4], [59.0, 63.9], [60.0, 65.4], [61.0, 66.9], [62.0, 68.4], [63.0, 69.9], [64.0, 71.4], [65.0, 72.9], [66.0, 74.4], [67.0, 75.9], [68.0, 77.4], [69.0, 78.9], [70.0, 80.4], [71.0, 81.9], [72.0, 83.4], [73.0, 84.9], [74.0, 86.4], [75.0, 87.9], [76.0, 89.4], [77.0, 90.8], [78.0, 92.3], [79.0, 93.8], [80.0, 95.3], [81.0, 96.8], [82.0, 98.3]];
+  const HR15T_HRB = [[70.0, 28.8], [70.5, 30.3], [71.0, 31.9], [71.5, 33.4], [72.0, 35.0], [72.5, 36.5], [73.0, 38.0], [73.5, 39.6], [74.0, 41.1], [74.5, 42.7], [75.0, 44.2], [75.5, 45.7], [76.0, 47.3], [76.5, 48.8], [77.0, 50.4], [77.5, 51.9], [78.0, 53.4], [78.5, 55.0], [79.0, 56.5], [79.5, 58.1], [80.0, 59.6], [80.5, 61.1], [81.0, 62.7], [81.5, 64.2], [82.0, 65.8], [82.5, 67.3], [83.0, 68.8], [83.5, 70.4], [84.0, 71.9], [84.5, 73.5], [85.0, 75.0], [85.5, 76.6], [86.0, 78.1], [86.5, 79.6], [87.0, 81.2], [87.5, 82.7], [88.0, 84.3], [88.5, 85.8], [89.0, 87.3], [89.5, 88.9], [90.0, 90.4], [90.5, 92.0], [91.0, 93.5], [91.5, 95.0], [92.0, 96.6], [92.5, 98.1], [93.0, 99.7]];
+  // [HRC, HV, HB, MPa]
+  const HRC_TBL = [[20, 244, 226, 835], [22, 253, 237, 870], [24, 263, 247, 905], [26, 277, 258, 955], [28, 291, 271, 1000], [30, 302, 286, 1050], [32, 319, 302, 1100], [34, 336, 319, 1160], [36, 354, 336, 1220], [38, 372, 353, 1280], [40, 392, 371, 1350], [42, 412, 390, 1420], [44, 434, 409, 1500], [46, 458, 432, 1580], [48, 484, 455, 1670], [50, 513, 481, 1770], [52, 544, 512, 1880], [54, 577, 543, 1990], [56, 613, 578, 2110], [58, 653, 615, 2250], [60, 697, 654, 2400], [62, 746, 688, 2570], [65, 832, 739, 2550]];
+  // [HRB, HV, HB, MPa]
+  const HRB_TBL = [[70, 139, 139, 480], [72, 143, 143, 495], [74, 148, 148, 510], [76, 153, 153, 525], [78, 157, 157, 540], [80, 163, 163, 560], [82, 170, 170, 580], [84, 176, 176, 600], [86, 182, 182, 625], [88, 189, 189, 650], [90, 195, 195, 670], [92, 203, 203, 700], [94, 212, 212, 725], [96, 219, 219, 750], [98, 228, 228, 780], [100, 240, 240, 820]];
+
+  function lerpXY(pts, x) {
+    if (!pts.length) return null;
+    if (x <= pts[0][0]) {
+      const [x0,y0]=pts[0], [x1,y1]=pts[1];
+      return y0 + (y1-y0)*(x-x0)/(x1-x0);
+    }
+    if (x >= pts[pts.length-1][0]) {
+      const [x0,y0]=pts[pts.length-2], [x1,y1]=pts[pts.length-1];
+      return y0 + (y1-y0)*(x-x0)/(x1-x0);
+    }
+    for (let i=0;i<pts.length-1;i++) {
+      const [x0,y0]=pts[i], [x1,y1]=pts[i+1];
+      if (x0<=x && x<=x1) return x1===x0 ? y0 : y0+(y1-y0)*(x-x0)/(x1-x0);
+    }
+    return null;
+  }
+  function invLerpXY(pts, y) {
+    // pts are [x,y]; invert to find x for given y
+    const inv = pts.map(([a,b]) => [b,a]).sort((p,q)=>p[0]-q[0]);
+    return lerpXY(inv, y);
+  }
+  function hrcRow(hrc) {
+    return {
+      hrc: hrc,
+      hv: lerpXY(HRC_TBL.map(r=>[r[0],r[1]]), hrc),
+      hb: lerpXY(HRC_TBL.map(r=>[r[0],r[2]]), hrc),
+      mpa: lerpXY(HRC_TBL.map(r=>[r[0],r[3]]), hrc),
+    };
+  }
+  function hrbRow(hrb) {
+    return {
+      hrb: hrb,
+      hv: lerpXY(HRB_TBL.map(r=>[r[0],r[1]]), hrb),
+      hb: lerpXY(HRB_TBL.map(r=>[r[0],r[2]]), hrb),
+      mpa: lerpXY(HRB_TBL.map(r=>[r[0],r[3]]), hrb),
+    };
+  }
+  function convertHardness(fromId, value) {
+    let hrb = null, hrc = null, hv = null, hb = null, mpa = null;
+    let hr15t = null, hr30t = null;
+
+    if (fromId === "hr30t") {
+      hr30t = value;
+      hrb = lerpXY(HR30T_HRB, value);
+    } else if (fromId === "hr15t") {
+      hr15t = value;
+      hrb = lerpXY(HR15T_HRB, value);
+    } else if (fromId === "hrb") {
+      hrb = value;
+    } else if (fromId === "hrc") {
+      hrc = value;
+      const row = hrcRow(value);
+      hv = row.hv; hb = row.hb; mpa = row.mpa;
+    } else if (fromId === "hv") {
+      hv = value;
+      // invert HRC table on HV
+      hrc = invLerpXY(HRC_TBL.map(r=>[r[0],r[1]]), value);
+      if (hrc != null) {
+        const row = hrcRow(hrc);
+        hb = row.hb; mpa = row.mpa;
+      } else {
+        hrb = invLerpXY(HRB_TBL.map(r=>[r[0],r[1]]), value);
+        if (hrb != null) {
+          const row = hrbRow(hrb);
+          hb = row.hb; mpa = row.mpa;
+        }
+      }
+    } else if (fromId === "hb") {
+      hb = value;
+      hrc = invLerpXY(HRC_TBL.map(r=>[r[0],r[2]]), value);
+      if (hrc != null) {
+        const row = hrcRow(hrc);
+        hv = row.hv; mpa = row.mpa;
+      } else {
+        hrb = invLerpXY(HRB_TBL.map(r=>[r[0],r[2]]), value);
+        if (hrb != null) {
+          const row = hrbRow(hrb);
+          hv = row.hv; mpa = row.mpa;
+        }
+      }
+    } else if (fromId === "mpa") {
+      mpa = value;
+      hrc = invLerpXY(HRC_TBL.map(r=>[r[0],r[3]]), value);
+      if (hrc != null) {
+        const row = hrcRow(hrc);
+        hv = row.hv; hb = row.hb;
+      } else {
+        hrb = invLerpXY(HRB_TBL.map(r=>[r[0],r[3]]), value);
+        if (hrb != null) {
+          const row = hrbRow(hrb);
+          hv = row.hv; hb = row.hb;
+        }
+      }
+    }
+
+    // Fill HRB-related superficial scales
+    if (hrb != null && fromId !== "hrb") {
+      // already set
+    }
+    if (hrb == null && hrc != null) {
+      // soft bridge: below ~20 HRC use HRB path if possible via HV
+      if (hv == null) {
+        const row = hrcRow(hrc);
+        hv = row.hv; hb = row.hb; mpa = row.mpa;
+      }
+    }
+    if (hrb == null && hv != null && hrc == null) {
+      hrb = invLerpXY(HRB_TBL.map(r=>[r[0],r[1]]), hv);
+    }
+    if (fromId !== "hrb" && hrb == null && hb != null && hrc == null) {
+      hrb = invLerpXY(HRB_TBL.map(r=>[r[0],r[2]]), hb);
+    }
+
+    if (hrb != null) {
+      if (fromId !== "hrb" && (fromId === "hr15t" || fromId === "hr30t" || fromId === "hrb" || hrc == null)) {
+        const row = hrbRow(hrb);
+        if (hv == null) hv = row.hv;
+        if (hb == null) hb = row.hb;
+        if (mpa == null) mpa = row.mpa;
+      }
+      if (hr15t == null) hr15t = invLerpXY(HR15T_HRB, hrb);
+      if (hr30t == null) hr30t = invLerpXY(HR30T_HRB, hrb);
+    }
+
+    if (hrc != null && fromId !== "hrc") {
+      const row = hrcRow(hrc);
+      if (hv == null) hv = row.hv;
+      if (hb == null) hb = row.hb;
+      if (mpa == null) mpa = row.mpa;
+    }
+
+    const out = { hrc, hrb, hr15t, hr30t, hv, hb, mpa };
+    ids.forEach((id) => {
+      if (id === fromId) return;
+      if (out[id] != null && Number.isFinite(out[id])) setResult(id, out[id]);
+    });
+    const msg = document.getElementById("msg");
+    if (msg) msg.textContent = "Interpolasi tabel ASTM E140 / HR15T·HR30T — perkiraan untuk baja.";
+  }
+
+  function convertLinear(fromId, value) {
+    const src = units.find((u) => u.id === fromId);
+    if (!src) return;
+    const base = value * src.toBase;
+    ids.forEach((id) => {
+      if (id === fromId) return;
+      const u = units.find((x) => x.id === id);
+      if (!u || !u.toBase) return;
+      setResult(id, base / u.toBase);
+    });
+  }
+
+  function convertHardness(fromId, value) {
+    const hv = toHV(fromId, value);
+    ids.forEach((id) => {
+      if (id === fromId) return;
+      setResult(id, fromHV(id, hv));
+    });
+    const msg = document.getElementById("msg");
+    if (msg) msg.textContent = "Perkiraan baja (bukan universal) — verifikasi chart ASTM E140 untuk QA.";
+  }
+
+  function onInput(fromId) {
+    const el = document.getElementById(fromId);
+    const v = parseNum(el);
+    // mark source as user input
+    if (el) {
+      delete el.dataset.computed;
+      el.closest(".field")?.classList.remove("is-result");
+    }
+    if (v === null || Number.isNaN(v)) {
+      clearAll(null);
+      const msg = document.getElementById("msg");
+      if (msg) msg.textContent = "";
+      return;
+    }
+    clearAll(fromId);
+    if (mode === "temperature") convertTemperature(fromId, v);
+    else if (mode === "hardness") convertHardness(fromId, v);
+    else convertLinear(fromId, v);
+  }
+
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    el?.addEventListener("input", () => onInput(id));
+    el?.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") e.preventDefault();
+    });
+  });
+  document.getElementById("btn-reset")?.addEventListener("click", () => {
+    clearAll(null);
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.value = "";
+    });
+    const msg = document.getElementById("msg");
+    if (msg) msg.textContent = "";
+  });
+  </script>
+
+  <style>
+  .tool-page { max-width: 640px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+  .back { display:inline-block; font-size:0.88rem; color: var(--muted); text-decoration:none; margin-bottom:0.85rem; }
+  .back:hover { color: var(--amber); }
+  .tool-card {
+    border:1px solid var(--line); border-radius:22px; padding:1.25rem;
+    background: radial-gradient(120% 80% at 0% 0%, rgba(45,212,191,0.08), transparent 50%), var(--bg-card);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.2);
+  }
+  .head-row { display:flex; gap:0.9rem; align-items:center; margin-bottom:1.1rem; }
+  .face {
+    width: 3.5rem; height: 3.5rem; border-radius: 16px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:1.6rem;
+  }
+  .float-ico { display:inline-block; animation: bob 2.8s ease-in-out infinite; }
+  @keyframes bob {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  .tool-card h1 { margin:0 0 0.25rem; font-family: var(--font-display); font-size:1.35rem; }
+  .desc { margin:0; color: var(--muted); font-size:0.9rem; line-height:1.45; }
+  .fields { display:grid; gap:0.65rem; grid-template-columns:1fr; }
+  @media(min-width:520px){ .fields { grid-template-columns:1fr 1fr; } }
+  .field { display:flex; flex-direction:column; gap:0.3rem; padding:0.7rem 0.85rem; border-radius:14px;
+    border:1px solid var(--line); background:rgba(0,0,0,0.22); transition: border-color .15s, background .15s; }
+  .field label { font-size:0.78rem; font-weight:600; color: var(--ink); }
+  .field input {
+    border:none; outline:none; background:transparent; color: var(--ink);
+    font-size:1.12rem; font-weight:700; font-family: var(--font-mono); width:100%;
+  }
+  .field.is-result { border-color: rgba(45,212,191,0.65); background: rgba(45,212,191,0.12); }
+  .field.is-result label { color: var(--teal); }
+  .actions { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; margin-top:1rem; }
+  .btn-reset { appearance:none; cursor:pointer; font-weight:600; padding:0.65rem 1.1rem; border-radius:999px;
+    background:transparent; border:1px solid var(--line); color: var(--ink); }
+  .msg { margin:0; font-size:0.84rem; color: var(--muted); }
+  .hint { margin-top:1rem; padding:0.75rem 0.9rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.03); font-size:0.84rem; color: var(--muted); line-height:1.45; }
+  </style>
+</Layout>
