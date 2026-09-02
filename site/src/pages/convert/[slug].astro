@@ -1,6 +1,6 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import converters from "../../../data/converters.json";
+import Layout from "../../layouts/Layout.astro";
+import converters from "../../data/converters.json";
 
 export function getStaticPaths() {
   return converters.map((c) => ({ params: { slug: c.slug } }));
