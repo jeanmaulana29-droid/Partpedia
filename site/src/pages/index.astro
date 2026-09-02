@@ -1,73 +1,1725 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import converters from "../../data/converters.json";
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import data from "../data/data.json";
+import { loadAllArticles } from "../utils/loadArticles.js";
+import shopeeLinks from "../data/shopee-links.json";
+import { getCategoryTheme } from "../utils/theme.js";
+
+const total = data.length;
+const categories = [...new Set(data.map((d) => d.category))];
+const categoryIcon = {
+  "Bearing": "⚙️",
+  "V-Belt": "🪢",
+  "Sprocket": "⭕",
+  "Rantai Industri": "🔗",
+  "Pulley": "🌀",
+  "Kopling": "🔧",
+  "Gear Reducer": "🛞",
+  "Baut, Mur, & Washer": "🔩",
+  "Gasket & Packing": "🟤",
+  "Seal": "💍",
+  "Valve Industri": "🚰",
+  "Pressure Gauge & Transmitter": "⏲️",
+  "Flow Meter": "📈",
+  "Selang Hidrolik": "〰️",
+  "Pneumatic Cylinder": "🛢️",
+  "Solenoid Valve": "⚡",
+  "Hydraulic Pump": "💧",
+  "Fitting & Quick Coupler": "🔌",
+  "Filter": "🧺",
+  "Motor Listrik": "🔋",
+  "PLC": "🖥️",
+  "Inverter / VFD": "📶",
+  "Sensor Industri": "📡",
+  "Contactor & Relay": "🔘",
+  "MCB / MCCB / Breaker": "🛡️",
+  "Thermal Overload Relay": "🌡️",
+  "Linear Guide & Ball Screw": "📏",
+  "Thermocouple / RTD": "🔥",
+  "Temperature Controller": "🎛️",
+};
+function iconFor(cat) {
+  return categoryIcon[cat] || "📦";
+}
+const totalEquivalents = data.reduce((sum, d) => sum + (d.equivalent_codes?.length || 0), 0);
+const _allInsights = loadAllArticles(); // sort terbaru → terlama di loadArticles
+// Carousel: max 10 artikel terbaru (kiri = baru, kanan = lebih lama). Sisanya tidak ikut geser.
+const insightArticles = _allInsights.slice(0, 10);
+const heroSlides = [
+  {
+    title: "Industrial parts intelligence",
+    sub: "Katalog spek & kode part · artikel MRO · utilitas hitung cepat di satu platform",
+    img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=80",
+  },
+  {
+    title: "Dari bearing hingga otomasi",
+    sub: "Riset part, bandingkan referensi, lalu hitung kebutuhan lapangan dengan Smart Tools",
+    img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80",
+  },
+  {
+    title: "Cari kode part dalam hitungan detik",
+    sub: "Cross-reference, knowledge hub, dan alat bantu perhitungan industri — siap pakai di plant & workshop",
+    img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80",
+  },
+];
+const brands = [{"name": "SKF", "src": "/brands/skf.png"}, {"name": "NSK", "src": "/brands/nsk.png"}, {"name": "NTN", "src": "/brands/ntn.png"}, {"name": "FAG", "src": "/brands/fag.svg"}, {"name": "Timken", "src": "/brands/timken.svg"}, {"name": "KOYO", "src": "/brands/koyo.svg"}, {"name": "NACHI", "src": "/brands/nachi.svg"}, {"name": "Gates", "src": "/brands/gates.png"}, {"name": "Optibelt", "src": "/brands/optibelt.svg"}, {"name": "Siemens", "src": "/brands/siemens.svg"}, {"name": "Schneider", "src": "/brands/schneider.png"}, {"name": "ABB", "src": "/brands/abb.svg"}, {"name": "Omron", "src": "/brands/omron.svg"}, {"name": "SMC", "src": "/brands/smc.png"}, {"name": "Festo", "src": "/brands/festo.png"}, {"name": "Yaskawa", "src": "/brands/yaskawa.png"}, {"name": "Bosch", "src": "/brands/bosch.svg"}, {"name": "Parker", "src": "/brands/parker.svg"}, {"name": "Mitsubishi", "src": "/brands/mitsubishi.ico"}, {"name": "Danfoss", "src": "/brands/danfoss.ico"}];
+const categoryImage: Record<string, string> = {
+  Bearing: "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&w=600&q=70",
+  "V-Belt": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=70",
+  Filter: "https://images.unsplash.com/photo-1615900366914-79a2a0a9b13f?auto=format&fit=crop&w=600&q=70",
+  Seal: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Motor Listrik": "https://images.unsplash.com/photo-1565793298595-6a901bc2a8ae?auto=format&fit=crop&w=600&q=70",
+  "Gear Reducer": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=70",
+  Sprocket: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=70",
+  "Selang Hidrolik": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=70",
+  Kopling: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=70",
+  "Sensor Industri": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=70",
+  PLC: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=70",
+  "Inverter / VFD": "https://images.unsplash.com/photo-1558449028-b53a1269d6b3?auto=format&fit=crop&w=600&q=70",
+  "Pelumas Industri": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=70",
+  "Alat Ukur": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+
+  "Rantai Industri": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=70",
+  "Pulley": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=70",
+  "Baut, Mur, & Washer": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Gasket & Packing": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Valve Industri": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=70",
+  "Pressure Gauge & Transmitter": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+  "Flow Meter": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+  "Pneumatic Cylinder": "https://images.unsplash.com/photo-1565793298595-6a901bc2a8ae?auto=format&fit=crop&w=600&q=70",
+  "Solenoid Valve": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=70",
+  "Hydraulic Pump": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=70",
+  "Fitting & Quick Coupler": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=70",
+  "Contactor & Relay": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=70",
+  "MCB / MCCB / Breaker": "https://images.unsplash.com/photo-1558449028-b53a1269d6b3?auto=format&fit=crop&w=600&q=70",
+  "Thermal Overload Relay": "https://images.unsplash.com/photo-1558449028-b53a1269d6b3?auto=format&fit=crop&w=600&q=70",
+  "Linear Guide & Ball Screw": "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=70",
+  "Thermocouple / RTD": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=70",
+  "Temperature Controller": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=70",
+  "Rantai Industri": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=70",
+  default: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=70",
+};
+/** Prioritas: image_url di data.json → /products/{slug}.jpg → gambar kategori */
+function imgFor(item) {
+  if (item.image_url) return item.image_url;
+  // Prefer .jpg; onerror in template also tries .jpeg then .png then category
+  if (item.slug) return `/products/${item.slug}.jpg`;
+  return categoryImage[item.category] || categoryImage.default;
+}
+function imgFallback(item) {
+  const cat = categoryImage[item.category] || categoryImage.default;
+  if (!item.slug) return cat;
+  // chain handled in onerror attribute
+  return cat;
+}
+const shopeeMap = shopeeLinks || {};
+
+/** Acak urutan katalog (Fisher–Yates) agar tidak berderet 0001,0002,0003… */
+function shuffleCatalog(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+  return a;
+}
+// Semua produk di beranda: urutan acak tiap build/deploy
+const catalog = shuffleCatalog(data);
 ---
+
 <Layout
-  title="Convert X — Unit Converter Industri · Partpedia"
-  description="30 konverter satuan industri: panjang, tekanan, torsi, kekerasan, listrik, aliran, dan lainnya. Akurat untuk manufaktur & MRO."
+  title="Partpedia — Katalog Sparepart Industri, Spek & Kode Pengganti"
+  description="Direktori modern sparepart industri: bearing, V-belt, sensor, PLC, VFD, pelumas. Spek, size, estimasi harga & cross-reference untuk MRO dan plant maintenance."
 >
-  <section class="hub">
-    <header class="hub-head">
-      <p class="kicker">Convert X</p>
-      <h1>Konverter satuan industri</h1>
-      <p>Pilih kategori — isi satu nilai, satuan lain terisi otomatis. Faktor konversi mengikuti standar industri (SI, ISO, NIST).</p>
-    </header>
-    <div class="app-grid">
-      {converters.map((c) => (
-        <a class="app-icon" href={`/convert/${c.slug}/`}>
-          <div class="app-face" style={`background: linear-gradient(145deg, ${c.color}cc, ${c.color}66);`}>
-            <span class="float-ico" aria-hidden="true">{c.emoji}</span>
+  <!-- HERO SLIDER -->
+  <section class="hero" aria-label="Banner utama">
+    <div class="hero-slider" id="hero-slider">
+      {heroSlides.map((s, i) => (
+        <div class={`hero-slide ${i === 0 ? "active" : ""}`} style={`background-image:url('${s.img}')`}>
+          <div class="hero-overlay">
+            <p class="eyebrow">{total}+ parts · {categories.length} categories · live catalog</p>
+            <h1>{s.title}</h1>
+            <p class="hero-sub">{s.sub}</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#catalog" data-i18n="hero_cta1">Jelajahi katalog</a>
+              <a class="btn btn-ghost" href="/knowledge/" data-i18n="hero_cta2">Knowledge hub</a>
+              <a class="btn btn-tools" href="/tools/">
+                <span class="btn-tools-ico" aria-hidden="true">◇</span>
+                <span>Smart Tools</span>
+                <span class="btn-tools-badge">Utilitas</span>
+              </a>
+              <a class="btn btn-convert" href="/convert/">
+                <span class="btn-convert-ico" aria-hidden="true">⇄</span>
+                <span>Convert X</span>
+                <span class="btn-convert-badge">Satuan</span>
+              </a>
+            </div>
           </div>
-          <span class="app-name">{c.name}</span>
-          <span class="app-sub">{c.sub}</span>
-        </a>
+        </div>
+      ))}
+    </div>
+    <div class="hero-dots" id="hero-dots" aria-hidden="true"></div>
+  </section>
+
+
+  
+<style is:global>
+  /* Hero mobile: tinggi cukup agar judul + 3 CTA tidak terpotong */
+  @media (max-width: 640px) {
+    .hero-slider {
+      min-height: 520px !important;
+    }
+    .hero-slide {
+      min-height: 520px !important;
+    }
+    .hero-overlay {
+      padding: 1.35rem 1.15rem 1.6rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      box-sizing: border-box !important;
+      min-height: 520px !important;
+    }
+    .hero-overlay h1 {
+      font-size: clamp(1.45rem, 7vw, 1.85rem) !important;
+      line-height: 1.18 !important;
+      margin-bottom: 0.45rem !important;
+    }
+    .hero-sub {
+      max-width: 100% !important;
+      font-size: 0.9rem !important;
+      line-height: 1.45 !important;
+      margin-bottom: 0.85rem !important;
+    }
+    .hero-cta {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 0.55rem !important;
+    }
+    .hero-cta .btn,
+    .hero-cta .btn-tools,
+    .hero-cta .btn-convert {
+      width: 100% !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+  }
+  @media (min-width: 641px) {
+    .hero-slider { min-height: 420px !important; }
+    .hero-overlay { padding: 2rem 2.25rem !important; }
+    .hero-sub { max-width: 42ch !important; }
+  }
+</style>
+
+  <!-- SMART FIND — deskripsi natural language -->
+  <section class="smart-find" id="smart-find" aria-label="Cari sparepart dengan deskripsi">
+    <div class="smart-find-inner">
+      <p class="smart-kicker">Pencarian cerdas</p>
+      <h2 class="smart-title">Jelaskan sparepart yang kamu butuhkan</h2>
+      <p class="smart-sub">Tulis mesin, kendaraan, gejala, atau spek — kami carikan di katalog.</p>
+      <div class="smart-box">
+        <textarea
+          id="smart-query"
+          rows="3"
+          placeholder="Contoh: mau beli bearing 6205… | SKF habis, equivalent NSK/NTN? | bearing dinamo pompa rolling mill… | seal oli gearbox…"
+          aria-label="Deskripsi sparepart yang dicari"
+        ></textarea>
+        <button type="button" class="smart-clear" id="smart-clear" title="Hapus semua teks" aria-label="Hapus semua teks" hidden>×</button>
+      </div>
+      <div class="smart-actions">
+        <button type="button" class="btn-temukan" id="smart-submit">TEMUKAN</button>
+        <span class="smart-hint" id="smart-status"></span>
+      </div>
+      <div class="smart-results" id="smart-results" hidden></div>
+    </div>
+  </section>
+
+<style is:global>
+  /* Smart Find — global agar kartu hasil (innerHTML) ikut ter-style */
+  
+
+    .smart-find {
+      margin: 1.25rem 0 0.5rem;
+    }
+    .smart-find-inner {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.35rem 1.35rem 1.25rem;
+      background:
+        radial-gradient(120% 80% at 10% 0%, rgba(240,164,58,0.12), transparent 55%),
+        radial-gradient(100% 70% at 90% 20%, rgba(45, 212, 191, 0.08), transparent 50%),
+        var(--bg-card);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+    }
+    .smart-kicker {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .smart-title {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      letter-spacing: -0.02em;
+    }
+    .smart-sub {
+      margin: 0 0 0.95rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .smart-box {
+      position: relative;
+    }
+    #smart-query {
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 96px;
+      max-height: 420px;
+      resize: none;
+      overflow-y: auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(8,12,18,0.55);
+      color: var(--ink);
+      padding: 1rem 2.6rem 1rem 1.1rem;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      field-sizing: content;
+    }
+    #smart-query::placeholder {
+      color: var(--muted);
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+    #smart-query:focus {
+      border-color: rgba(240,164,58,0.65);
+      box-shadow: 0 0 0 3px rgba(240,164,58,0.18);
+    }
+    .smart-clear {
+      position: absolute;
+      right: 0.55rem;
+      bottom: 0.55rem;
+      width: 1.85rem;
+      height: 1.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.45);
+      color: var(--ink);
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .smart-clear:hover {
+      background: rgba(240,164,58,0.2);
+      border-color: rgba(240,164,58,0.5);
+    }
+    .smart-actions {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.85rem;
+      margin-top: 0.9rem;
+    }
+    .btn-temukan {
+      appearance: none; border: none; cursor: pointer;
+      font-weight: 800; font-size: 0.95rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.6rem; border-radius: 999px;
+      color: #1a1205;
+      background: linear-gradient(135deg, var(--amber), #e08a1a);
+      box-shadow: 0 10px 28px rgba(240,164,58,0.28);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-temukan:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(240,164,58,0.35); }
+    .btn-temukan:disabled { opacity: 0.6; cursor: wait; transform: none; }
+    .smart-hint { color: var(--muted); font-size: 0.88rem; }
+    .smart-results {
+      margin-top: 1.15rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .smart-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.45rem 1rem;
+      align-items: start;
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .smart-card:hover {
+      border-color: rgba(240,164,58,0.55);
+      transform: translateY(-1px);
+    }
+    .smart-card h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.02rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .smart-card .eq-line { color: var(--teal); font-size: 0.8rem; margin: 0.15rem 0 0.25rem; }
+    .smart-card .meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+    .smart-card .tags {
+      margin: 0.45rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .smart-card .tag {
+      display: inline-block;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(45, 212, 191, 0.28);
+      background: rgba(45, 212, 191, 0.08);
+      color: var(--teal);
+      font-size: 0.72rem;
+      line-height: 1.3;
+    }
+    .smart-card .price {
+      font-weight: 700;
+      color: var(--amber);
+      font-size: 0.9rem;
+      white-space: nowrap;
+      text-align: right;
+    }
+    .smart-empty {
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 0.85rem 1rem;
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.2);
+    }
+    @media (max-width: 560px) {
+      .smart-find-inner { padding: 1.1rem; border-radius: 18px; }
+      .smart-card { grid-template-columns: 1fr; }
+      .smart-card .price { text-align: left; }
+      #smart-query {
+        font-size: 0.95rem;
+        min-height: 88px;
+        padding: 0.85rem 2.4rem 0.85rem 0.95rem;
+      }
+      #smart-query::placeholder {
+        font-size: 0.8rem;
+        line-height: 1.4;
+      }
+    }
+  .smart-results {
+    margin-top: 1.15rem;
+    display: grid !important;
+    gap: 0.85rem !important;
+  }
+  .smart-card {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    gap: 0.5rem 1rem !important;
+    align-items: start !important;
+    padding: 1rem 1.15rem !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    background: linear-gradient(165deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)) !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22) !important;
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  .smart-card:hover {
+    border-color: rgba(240,164,58,0.55) !important;
+    transform: translateY(-1px);
+  }
+  .smart-card h3 {
+    margin: 0 0 0.35rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+    color: var(--ink, #eef3f8) !important;
+    font-weight: 700 !important;
+  }
+  .smart-card .meta {
+    margin: 0 !important;
+    color: var(--muted, #8b9aab) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+  }
+  .smart-card .tags {
+    margin: 0.5rem 0 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+  }
+  .smart-card .tag {
+    display: inline-block !important;
+    padding: 0.2rem 0.55rem !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(45, 212, 191, 0.3) !important;
+    background: rgba(45, 212, 191, 0.1) !important;
+    color: var(--teal, #2dd4bf) !important;
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
+  }
+  .smart-card .price {
+    font-weight: 700 !important;
+    color: var(--amber, #f0a43a) !important;
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+  }
+  .smart-empty {
+    color: var(--muted, #8b9aab) !important;
+    font-size: 0.92rem !important;
+    padding: 0.9rem 1rem !important;
+    border-radius: 14px !important;
+    border: 1px dashed rgba(255,255,255,0.14) !important;
+    background: rgba(0,0,0,0.25) !important;
+  }
+  @media (max-width: 560px) {
+    .smart-card { grid-template-columns: 1fr !important; }
+    .smart-card .price { text-align: left !important; }
+  }
+</style>
+
+  <!-- BRAND STRIP -->
+  <section class="brands" id="brands" aria-label="Brand referensi industri">
+    <p class="brands-label" data-i18n="brands_label">Referensi lintas merek yang sering dicari di industri</p>
+    <div class="brands-track">
+      {brands.map((b) => (
+        <span class="brand-pill" title={b.name}>
+          <img src={b.src} alt={b.name} width="120" height="40" loading="lazy"
+            onerror={`this.style.display='none';this.nextElementSibling.style.display='inline'`} />
+          <span class="brand-fallback">{b.name}</span>
+        </span>
+      ))}
+      {brands.map((b) => (
+        <span class="brand-pill" title={b.name} aria-hidden="true">
+          <img src={b.src} alt="" width="120" height="40" loading="lazy"
+            onerror={`this.style.display='none';this.nextElementSibling.style.display='inline'`} />
+          <span class="brand-fallback">{b.name}</span>
+        </span>
       ))}
     </div>
   </section>
+
+
+  <!-- STATS -->
+  <section class="stats" aria-label="Ringkasan">
+    <div class="stat"><span class="v">{total}</span><span class="l">Parts indexed</span></div>
+    <div class="stat"><span class="v">{categories.length}</span><span class="l">Categories</span></div>
+    <div class="stat"><span class="v">{totalEquivalents}</span><span class="l">Equivalents</span></div>
+    <div class="stat"><span class="v">24/7</span><span class="l">Catalog online</span></div>
+  </section>
+
+  <!-- FEATURED CAROUSEL -->
+  {insightArticles.length > 0 && (
+    <section class="featured" id="insights" aria-label="Wawasan industri">
+      <div class="sec-head">
+        <h2 data-i18n="insights_title">Wawasan Industri</h2>
+        <p data-i18n="insights_sub">Artikel & bacaan seputar part, spek, dan praktik MRO</p>
+        <a class="insights-all" href="/knowledge/">Baca semua wawasan Artikel →</a>
+      </div>
+      <div class="feat-track" id="feat-track">
+        {insightArticles.map((a) => (
+          <a class="feat-card" href={`/knowledge/${a.slug}/`}>
+            <div class="feat-img">
+              <img src={a.image} alt="" loading="lazy" onerror={`this.onerror=null;this.src='${a.imageFallback}'`} />
+            </div>
+            <div class="feat-body">
+              <h3>{a.title}</h3>
+              <p>{a.excerpt}</p>
+              <span class="price" data-i18n="insights_read">Baca artikel →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- CATALOG -->
+  <section class="catalog" id="catalog">
+    <div class="sec-head">
+      <h2>Katalog sparepart</h2>
+      <p>Cari nama, kode, size, atau kategori</p>
+    </div>
+    <input id="search" type="search" placeholder="Cari kode part, nama, size, merek…" data-i18n-placeholder="search_ph" aria-label="Cari" />
+    <div class="cat-rail-wrap">
+      <div class="cat-rail" id="cat-rail" role="list">
+        {categories.map((c) => {
+          return (
+            <button type="button" class="chip cat-item" data-category={c.toLowerCase()} role="listitem" title={c}>
+              <span class="cat-icon" aria-hidden="true">{iconFor(c)}</span>
+              <span class="cat-label">{c}</span>
+            </button>
+          );
+        })}
+      </div>
+      <button type="button" class="chip chip-reset" id="reset-filter" hidden>Reset filter</button>
+    </div>
+
+    <div class="grid" id="results">
+      {catalog.map((item) => {
+        const theme = getCategoryTheme(item.category);
+        const blob = [
+          item.part_name, item.part_number, item.category, item.subcategory,
+          item.size, item.fungsi, item.kegunaan, item.brand, item.material,
+          item.specification, item.alternative_parts,
+          ...(item.equivalent_codes || []),
+        ]
+          .filter(Boolean).join(" ").toLowerCase();
+        const buyQ = encodeURIComponent(item.affiliate_query || `${item.part_number} ${item.part_name}`);
+        // Placeholder affiliate: user mengganti tag Amazon/Global Industrial setelah daftar
+        const buyUrl = `https://www.amazon.com/s?k=${buyQ}&tag=partpedia29-20`;
+        const shopeeUrl =
+          (item.slug && shopeeMap[item.slug]) ||
+          `https://shopee.co.id/search?keyword=${buyQ}`;
+        return (
+          <article class="card" data-search={blob} data-category={item.category.toLowerCase()}>
+            <a class="card-media" href={`/sparepart/${item.slug}/`} aria-label={item.part_name}>
+              <img
+                src={imgFor(item)}
+                alt={item.part_name}
+                loading="lazy"
+                onerror={`this.onerror=function(){this.onerror=function(){this.onerror=null;this.src='${categoryImage[item.category] || categoryImage.default}';};this.src='/products/${item.slug}.png';};this.src='/products/${item.slug}.jpeg';`}
+              />
+            </a>
+            <div class="card-body">
+              <div class="card-top">
+                <Badge label={item.category} bg={theme.bg} fg={theme.fg} />
+                {(item.equivalent_codes?.length || 0) > 0 && (
+                  <span class="eq">+{item.equivalent_codes.length} setara</span>
+                )}
+              </div>
+              <a href={`/sparepart/${item.slug}/`}>
+                <span class="code">{item.part_number}</span>
+                <h3>{item.part_name}</h3>
+              </a>
+              {item.size && <p class="size">{item.size}</p>}
+              {item.fungsi && <p class="fungsi">{item.fungsi}</p>}
+              <div class="card-foot">
+                <span class="price">{item.price_range || "Estimasi menyusul"}</span>
+                <div class="buy-links">
+                  <a class="buy" href={buyUrl} target="_blank" rel="noopener sponsored nofollow" data-i18n="buy_amazon">
+                    Cek di Amazon →
+                  </a>
+                  <a class="buy buy-shopee" href={shopeeUrl} target="_blank" rel="noopener sponsored nofollow" data-i18n="buy_shopee">
+                    Beli di Shopee →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+    <p id="empty-state" class="empty" hidden data-i18n="empty">Tidak ada hasil.</p>
+  </section>
+
+
+  <!-- WORLD / DISTRIBUTION VISUAL -->
+  <section class="map-sec" aria-label="Jaringan industri global">
+    <div class="sec-head">
+      <h2>Jaringan manufaktur & distribusi</h2>
+      <p>Ilustrasi aliran supply chain industri global (konseptual)</p>
+    </div>
+    <div class="map-frame">
+      <img
+        src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1400&q=80"
+        alt="Peta dunia — ilustrasi distribusi industri"
+        loading="lazy"
+      />
+      <div class="map-caption">Hub produksi · pelabuhan · pusat MRO — visual inspiratif, bukan peta logistik real-time.</div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS / LONG-FORM -->
+  <section class="insights" id="insights">
+    <div class="sec-head">
+      <h2>Insight industri</h2>
+      <p>Bacaan singkat agar riset part lebih dalam</p>
+    </div>
+    <div class="insight-grid">
+      <a class="insight" href="/knowledge/">
+        <h3>10 merek bearing yang paling sering muncul di plant</h3>
+        <p>SKF, NSK, NTN, FAG, Timken dan pemain aftermarket — kapan pilih OEM vs setara.</p>
+      </a>
+      <a class="insight" href="/knowledge/">
+        <h3>End-use: dari conveyor FMCG sampai heavy duty</h3>
+        <p>Bagaimana satu family bearing dipakai di motor, gearbox, hingga alat berat.</p>
+      </a>
+      <a class="insight" href="/knowledge/">
+        <h3>Sejarah singkat raksasa komponen gerak</h3>
+        <p>Dari bengkel abad ke-20 hingga standar ISO yang menyatukan dimensi global.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FACTORY IMAGES -->
+  <section class="gallery">
+    <div class="sec-head">
+      <h2>Suasana pabrik & maintenance</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=75" alt="Lantai produksi industri" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=75" alt="Mesin pabrik modern" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=75" alt="Teknisi maintenance" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="video-sec">
+    <div class="sec-head">
+      <h2>Video edukasi industri</h2>
+      <p>Embed publik dari YouTube (konten pihak ketiga)</p>
+    </div>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/YqZQ7K1yQbE"
+        title="Industrial manufacturing overview"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      />
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (generic professionals — not fake brand endorsements) -->
+  <section class="testimonials">
+    <div class="sec-head">
+      <h2>Suara praktisi MRO</h2>
+      <p>Kutipan ilustratif dari persona maintenance (bukan endorsement resmi merek)</p>
+    </div>
+    <div class="t-grid">
+      <blockquote>
+        <p>“Cross-reference menghemat waktu saat part OEM lead-time-nya panjang.”</p>
+        <footer>— Andi P., Reliability Tech · Indonesia</footer>
+      </blockquote>
+      <blockquote>
+        <p>“Size dan kode setara di satu halaman mempercepat decision di shift malam.”</p>
+        <footer>— Mira S., Plant Supervisor · Malaysia</footer>
+      </blockquote>
+      <blockquote>
+        <p>“Estimasi harga cukup untuk budgeting awal sebelum RFQ ke vendor.”</p>
+        <footer>— Kenji T., Procurement · Japan</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <p class="aff-note">Partpedia is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate we may earn from qualifying purchases. “Cek harga beli” may open Amazon search results.</p>
+
+  <script>
+    // Hero auto-rotate 2s
+    const slides = Array.from(document.querySelectorAll(".hero-slide"));
+    const dotsWrap = document.getElementById("hero-dots");
+    let idx = 0;
+    slides.forEach((_, i) => {
+      const d = document.createElement("button");
+      d.type = "button";
+      d.className = "dot" + (i === 0 ? " on" : "");
+      d.addEventListener("click", () => { idx = i; paint(); });
+      dotsWrap?.appendChild(d);
+    });
+    function paint() {
+      slides.forEach((s, i) => s.classList.toggle("active", i === idx));
+      dotsWrap?.querySelectorAll(".dot").forEach((d, i) => d.classList.toggle("on", i === idx));
+    }
+    setInterval(() => { idx = (idx + 1) % slides.length; paint(); }, 2000);
+
+    
+    // Wawasan Industri:
+    // - Kartu kiri = artikel terbaru (default saat buka halaman)
+    // - Geser ke kanan tiap 5 detik (artikel lebih lama)
+    // - Maks 10 kartu; setelah kartu terakhir → kembali ke kiri (terbaru)
+    const track = document.getElementById("feat-track");
+    if (track) {
+      let pause = false;
+      let cardIndex = 0;
+      const cards = () => Array.from(track.querySelectorAll(".feat-card"));
+
+      const goTo = (i, smooth = true) => {
+        const list = cards();
+        if (!list.length) return;
+        const n = list.length;
+        // setelah kartu terakhir (paling kanan / paling lama) → kembali ke 0 (terbaru)
+        if (i >= n) {
+          cardIndex = 0;
+          track.scrollTo({ left: 0, behavior: "auto" });
+          return;
+        }
+        if (i < 0) i = 0;
+        cardIndex = i;
+        const target = list[cardIndex];
+        if (!target) return;
+        track.scrollTo({
+          left: Math.max(0, target.offsetLeft - 8),
+          behavior: smooth ? "smooth" : "auto",
+        });
+      };
+
+      // default: ujung kiri = artikel terbaru
+      requestAnimationFrame(() => {
+        track.scrollTo({ left: 0, behavior: "auto" });
+        cardIndex = 0;
+      });
+
+      track.addEventListener("mouseenter", () => { pause = true; });
+      track.addEventListener("mouseleave", () => { pause = false; });
+      track.addEventListener("touchstart", () => { pause = true; }, { passive: true });
+      track.addEventListener("touchend", () => { setTimeout(() => { pause = false; }, 2500); }, { passive: true });
+
+      setInterval(() => {
+        if (pause) return;
+        if (cards().length < 2) return;
+        goTo(cardIndex + 1, true);
+      }, 5000);
+    }
+
+
+
+    
+    
+    // —— Smart Find (natural language + cross-ref / equivalent) ——
+    (function () {
+      const ta = document.getElementById("smart-query");
+      const btn = document.getElementById("smart-submit");
+      const box = document.getElementById("smart-results");
+      const status = document.getElementById("smart-status");
+      const clearBtn = document.getElementById("smart-clear");
+      if (!ta || !btn || !box) return;
+
+      const SYNONYMS = {
+        bearing: ["bearing", "bantalan", "ball bearing", "roller", "bantalan bola"],
+        bantalan: ["bearing", "bantalan", "ball bearing"],
+        dinamo: ["dinamo", "motor listrik", "motor"],
+        pompa: ["pompa", "pump", "pompa air"],
+        seal: ["seal", "oil seal", "packing", "sealing"],
+        belt: ["v-belt", "belt", "sabuk", "fan belt"],
+        "v-belt": ["v-belt", "sabuk", "belt"],
+        gearbox: ["gearbox", "reducer", "gear reducer", "nmrv"],
+        hidrolik: ["hidrolik", "hydraulic", "selang hidrolik"],
+        pneumatik: ["pneumatik", "pneumatic", "silinder"],
+        sensor: ["sensor", "proximity", "photoelectric"],
+        inverter: ["inverter", "vfd", "variable frequency"],
+        mobil: ["mobil", "kendaraan", "otomotif"],
+        motor: ["motor", "sepeda motor", "kendaraan", "motor listrik"],
+        traktor: ["traktor", "pertanian", "alat pertanian"],
+        konveyor: ["konveyor", "conveyor"],
+        kontaktor: ["kontaktor", "contactor"],
+        filter: ["filter", "saringan"],
+        baut: ["baut", "mur", "fastener", "hex", "washer"],
+        suhu: ["suhu", "temperature", "pt100", "rtd", "thermocouple"],
+        tekanan: ["tekanan", "pressure", "gauge"],
+        rantai: ["rantai", "chain", "sprocket"],
+        kopling: ["kopling", "coupling"],
+        valve: ["valve", "katup", "solenoid"],
+        plc: ["plc", "otomasi", "kontrol"],
+        silinder: ["silinder", "cylinder", "pneumatic"],
+        equivalent: ["equivalent", "ekuivalen", "setara", "pengganti", "ganti", "alternatif", "cross", "crossref", "interchange"],
+        beli: ["beli", "membeli", "butuh", "cari", "mau", "ingin", "perlu", "order", "purchase", "buy"],
+        rusak: ["rusak", "aus", "pecah", "macet", "ganti", "replacement", "broken", "worn"],
+        dimensi: ["dimensi", "ukuran", "bore", "od", "tebal", "size", "diameter", "mm", "sama"],
+      };
+
+      const BRANDS = ["skf","nsk","ntn","fag","ina","koyo","nachi","timken","asahi","fyh","nok","gates","optibelt","bando","smc","festo","airtac","schneider","abb","siemens","mitsubishi","omron","wika","hiwin","thk","tsubaki","kana","parker","yuken","delta","inovance"];
+
+      function tokens(text) {
+        return String(text || "")
+          .toLowerCase()
+          .replace(/[^a-z0-9à-ÿ.\-\/\s×x]/gi, " ")
+          .split(/\s+/)
+          .filter((t) => t.length >= 2);
+      }
+
+      function extractCodes(text) {
+        const t = String(text || "").toUpperCase();
+        const found = new Set();
+        // 6205-2RS, 6205, UCP204, LC1D09, NMRV-040, A-42, 40-15T, etc.
+        const patterns = [
+          /\b\d{4}[- ]?(?:2RS1?|2RSR|ZZ|2Z|RS|DDU|LLU|LLB|2NSE)?\b/g,
+          /\bUC[A-Z]{0,2}\d{3,4}\b/g,
+          /\bLC1D\d{2,3}\b/g,
+          /\bNMRV[- ]?\d{2,3}\b/g,
+          /\b(?:RS)?\d{2,3}(?:-\d)?\b/g,
+          /\b\d{2,3}-\d{1,3}T\b/g,
+          /\b[A-Z]{1,3}[-]?\d{2,4}\b/g,
+        ];
+        patterns.forEach((re) => {
+          const m = t.match(re);
+          if (m) m.forEach((x) => found.add(x.replace(/\s+/g, "")));
+        });
+        return [...found].map((x) => x.toLowerCase());
+      }
+
+      function expand(terms) {
+        const out = new Set();
+        terms.forEach((t) => {
+          out.add(t);
+          Object.keys(SYNONYMS).forEach((k) => {
+            if (t.includes(k) || k.includes(t)) {
+              SYNONYMS[k].forEach((s) => out.add(s));
+            }
+          });
+          if (t.length >= 5) out.add(t.slice(0, -1));
+        });
+        return [...out];
+      }
+
+      function detectIntent(q, terms) {
+        const s = q.toLowerCase();
+        return {
+          wantBuy: /beli|membeli|butuh|mau |ingin|perlu|order|purchase|buy|cari/.test(s),
+          wantEquiv: /equivalent|ekuivalen|setara|pengganti|ganti|alternatif|cross|interchange|habis|tidak punya|ga ada|nggak ada|vendor/.test(s),
+          wantDim: /dimensi|ukuran|bore| diameter|od |tebal|size|sama ukuran|dimensi sama/.test(s),
+          brands: BRANDS.filter((b) => s.includes(b)),
+          categoryHint: null,
+        };
+      }
+
+      function eqBlob(item) {
+        const eq = item.equivalent_codes || [];
+        const parts = eq.map((x) => {
+          if (typeof x === "string") return x;
+          return `${x.brand || ""} ${x.code || ""}`;
+        });
+        parts.push(item.alternative_parts || "");
+        return parts.join(" ").toLowerCase();
+      }
+
+      function score(item, expanded, rawTerms, codes, intent) {
+        const blob = (item.search_blob || "").toLowerCase();
+        const tags = (item.application_tags || []).join(" ").toLowerCase();
+        const pn = (item.part_number || "").toLowerCase().replace(/\s+/g, "");
+        const name = (item.part_name || "").toLowerCase();
+        const cat = (item.category || "").toLowerCase();
+        const eq = eqBlob(item);
+        const size = (item.size || item.specification || "").toLowerCase();
+        let s = 0;
+
+        // Direct part-number / code match (highest)
+        codes.forEach((c) => {
+          const c2 = c.replace(/-/g, "");
+          if (pn.includes(c) || pn.replace(/-/g, "").includes(c2)) s += 28;
+          if (eq.includes(c) || eq.replace(/-/g, "").includes(c2)) s += 26;
+          if (name.includes(c)) s += 12;
+          if (blob.includes(c)) s += 8;
+        });
+
+        expanded.forEach((t) => {
+          if (t.length < 2) return;
+          if (blob.includes(t)) s += 2;
+          if (tags.includes(t)) s += 3;
+          if (cat.includes(t)) s += 4;
+          if (pn.includes(t)) s += 6;
+          if (name.includes(t)) s += 4;
+          if (eq.includes(t)) s += 5;
+          if (size.includes(t)) s += 3;
+        });
+
+        let hits = 0;
+        rawTerms.forEach((t) => {
+          if (blob.includes(t) || eq.includes(t) || tags.includes(t)) hits++;
+        });
+        s += hits * 2;
+
+        // Intent boosts
+        if (intent.wantEquiv) {
+          if ((item.equivalent_codes || []).length) s += 6;
+          intent.brands.forEach((b) => {
+            if (eq.includes(b) || (item.brand || "").toLowerCase().includes(b)) s += 8;
+          });
+        }
+        if (intent.wantDim && size) s += 3;
+        if (intent.wantBuy && cat) s += 1;
+
+        // Category keyword soft boost when query is broad ("mau beli bearing")
+        const catMap = {
+          bearing: "bearing",
+          bantalan: "bearing",
+          seal: "seal",
+          "v-belt": "v-belt",
+          sabuk: "v-belt",
+          sprocket: "sprocket",
+          rantai: "rantai",
+          kontaktor: "contactor",
+          contactor: "contactor",
+          inverter: "inverter",
+          vfd: "inverter",
+          sensor: "sensor",
+          filter: "filter",
+          kopling: "kopling",
+          valve: "valve",
+          silinder: "pneumatic",
+          hidrolik: "hidrolik",
+        };
+        Object.keys(catMap).forEach((k) => {
+          if (rawTerms.some((t) => t === k || t.includes(k)) && cat.includes(catMap[k])) s += 10;
+        });
+
+        return s;
+      }
+
+      function autoSize() {
+        ta.style.height = "auto";
+        const h = Math.min(Math.max(ta.scrollHeight, 96), 420);
+        ta.style.height = h + "px";
+      }
+
+      function syncClearBtn() {
+        const has = (ta.value || "").trim().length > 0;
+        if (clearBtn) clearBtn.hidden = !has;
+      }
+
+      function clearResults() {
+        box.hidden = true;
+        box.innerHTML = "";
+        if (status) status.textContent = "";
+      }
+
+      function clearAll() {
+        ta.value = "";
+        autoSize();
+        syncClearBtn();
+        clearResults();
+        ta.focus();
+      }
+
+      let catalog = null;
+      async function loadCatalog() {
+        if (catalog) return catalog;
+        const res = await fetch("/smart-catalog.json", { cache: "no-cache" });
+        catalog = await res.json();
+        return catalog;
+      }
+
+      function escapeHtml(s) {
+        return String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function formatEq(item) {
+        const eq = item.equivalent_codes || [];
+        if (!eq.length) return "";
+        const bits = eq.slice(0, 4).map((x) => {
+          if (typeof x === "string") return x;
+          return `${x.brand || ""} ${x.code || ""}`.trim();
+        });
+        return bits.filter(Boolean).join(" · ");
+      }
+
+      async function run() {
+        const q = (ta.value || "").trim();
+        if (q.length < 3) {
+          box.hidden = false;
+          box.innerHTML = `<p class="smart-empty">Tulis minimal beberapa kata, kode part, atau jenis part (bearing, seal…).</p>`;
+          if (status) status.textContent = "";
+          return;
+        }
+        btn.disabled = true;
+        if (status) status.textContent = "Mencari…";
+        try {
+          const list = await loadCatalog();
+          const rawTerms = tokens(q);
+          const expanded = expand(rawTerms);
+          const codes = extractCodes(q);
+          const intent = detectIntent(q, rawTerms);
+
+          const ranked = list
+            .map((item) => ({ item, s: score(item, expanded, rawTerms, codes, intent) }))
+            .filter((x) => x.s > 0)
+            .sort((a, b) => b.s - a.s);
+
+          if (!ranked.length) {
+            box.hidden = false;
+            box.innerHTML = `<p class="smart-empty">Belum ketemu yang cocok. Coba sebutkan jenis part, kode (mis. 6205-2RS), merek setara, atau dimensi.</p>`;
+            if (status) status.textContent = "0 hasil";
+          } else {
+            const best = ranked[0].s;
+            // equivalent / code queries → tampilkan lebih banyak (sampai 5)
+            const maxN = intent.wantEquiv || codes.length ? 5 : 3;
+            const minScore = Math.max(4, Math.floor(best * 0.55));
+            let picked = ranked.filter((x) => x.s >= minScore).slice(0, maxN);
+            if (!picked.length) picked = ranked.slice(0, 1);
+            if (picked.length > 1 && picked[1].s < best * 0.4) picked = picked.slice(0, 1);
+
+            if (status) status.textContent = `${picked.length} rekomendasi terbaik`;
+            box.hidden = false;
+            box.innerHTML = picked
+              .map(({ item }) => {
+                const tags = (item.application_tags || [])
+                  .filter((t) => t && !/^\d/.test(t) && t.length < 40)
+                  .slice(0, 5)
+                  .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
+                  .join("");
+                const eqLine = formatEq(item);
+                const eqHtml = eqLine
+                  ? `<p class="meta eq-line">Setara: ${escapeHtml(eqLine)}</p>`
+                  : "";
+                return `<a class="smart-card" href="/sparepart/${escapeHtml(item.slug)}/">
+                  <div>
+                    <h3>${escapeHtml(item.part_name || item.part_number)}</h3>
+                    <p class="meta">${escapeHtml(item.part_number || "")} · ${escapeHtml(item.category || "")} · ${escapeHtml(item.brand || "")}</p>
+                    ${eqHtml}
+                    <div class="tags">${tags}</div>
+                  </div>
+                  <div class="price">${escapeHtml(item.price_range || "")}</div>
+                </a>`;
+              })
+              .join("");
+          }
+        } catch (e) {
+          box.hidden = false;
+          box.innerHTML = `<p class="smart-empty">Gagal memuat katalog pencarian. Muat ulang halaman.</p>`;
+          if (status) status.textContent = "";
+        } finally {
+          btn.disabled = false;
+        }
+      }
+
+      btn.addEventListener("click", run);
+      clearBtn?.addEventListener("click", clearAll);
+
+      ta.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          run();
+        }
+      });
+
+      ta.addEventListener("input", () => {
+        autoSize();
+        syncClearBtn();
+        if (!(ta.value || "").trim()) clearResults();
+      });
+
+      autoSize();
+      syncClearBtn();
+    })();
+
+    
+// Search / filter — category chip = exact data-category (bukan text search)
+    const input = document.getElementById("search") as HTMLInputElement | null;
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("#results .card"));
+    const empty = document.getElementById("empty-state");
+    const resetBtn = document.getElementById("reset-filter") as HTMLButtonElement | null;
+    let activeCategory = "";
+    function applyAll() {
+      const qq = (input?.value || "").toLowerCase().trim();
+      let n = 0;
+      cards.forEach((c) => {
+        const catOk = !activeCategory || (c.dataset.category || "") === activeCategory;
+        const textOk = !qq || (c.dataset.search || "").includes(qq);
+        const ok = catOk && textOk;
+        c.style.display = ok ? "" : "none";
+        if (ok) n++;
+      });
+      if (empty) empty.hidden = n !== 0;
+      if (resetBtn) resetBtn.hidden = !(activeCategory || qq);
+    }
+    input?.addEventListener("input", () => applyAll());
+    document.querySelectorAll<HTMLButtonElement>(".chip:not(.chip-reset)").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const cat = (chip.dataset.category || "").toLowerCase();
+        activeCategory = activeCategory === cat ? "" : cat;
+        document.querySelectorAll<HTMLButtonElement>(".chip:not(.chip-reset)").forEach((x) => x.classList.remove("chip-on"));
+        if (activeCategory) chip.classList.add("chip-on");
+        applyAll();
+      });
+    });
+    resetBtn?.addEventListener("click", () => {
+      activeCategory = "";
+      if (input) input.value = "";
+      document.querySelectorAll<HTMLButtonElement>(".chip:not(.chip-reset)").forEach((x) => x.classList.remove("chip-on"));
+      applyAll();
+    });
+  </script>
+
+  
+<style is:global>
+  /* Hero — Smart Tools sebagai CTA spesial */
+  .hero-cta {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.7rem !important;
+    align-items: center !important;
+  }
+  .hero-cta .btn-tools {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.78rem 1.15rem !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    letter-spacing: 0.03em !important;
+    text-decoration: none !important;
+    color: #041016 !important;
+    background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 45%, #14b8a6 100%) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    box-shadow:
+      0 0 0 1px rgba(45,212,191,0.25),
+      0 12px 32px rgba(45,212,191,0.35),
+      0 0 40px rgba(45,212,191,0.15) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+  }
+  .hero-cta .btn-tools:hover {
+    transform: translateY(-2px) !important;
+    box-shadow:
+      0 0 0 1px rgba(45,212,191,0.4),
+      0 16px 40px rgba(45,212,191,0.45),
+      0 0 48px rgba(45,212,191,0.2) !important;
+  }
+  .hero-cta .btn-tools-ico {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
+  .hero-cta .btn-tools-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.2);
+    color: #ecfeff;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  @media (max-width: 560px) {
+    .hero-cta .btn-tools {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .hero-cta .btn-convert {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.78rem 1.15rem !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    letter-spacing: 0.03em !important;
+    text-decoration: none !important;
+    color: #1a0a00 !important;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 45%, #ea580c 100%) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    box-shadow:
+      0 0 0 1px rgba(245,158,11,0.25),
+      0 12px 32px rgba(245,158,11,0.35),
+      0 0 40px rgba(245,158,11,0.15) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+  }
+  .hero-cta .btn-convert:hover {
+    transform: translateY(-2px) !important;
+    box-shadow:
+      0 0 0 1px rgba(245,158,11,0.4),
+      0 16px 40px rgba(245,158,11,0.45),
+      0 0 48px rgba(245,158,11,0.2) !important;
+  }
+  .hero-cta .btn-convert-ico { font-size: 0.95rem; opacity: 0.95; }
+  .hero-cta .btn-convert-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.2);
+    color: #fff7ed;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  @media (max-width: 560px) {
+    .hero-cta .btn-convert {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+</style>
+
   <style>
-  .hub { max-width: 920px; margin: 0 auto; padding: 1.35rem 1rem 3rem; }
-  .hub-head { text-align: center; margin-bottom: 1.5rem; }
-  .kicker { margin:0 0 0.4rem; font-family: var(--font-mono); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color: var(--teal); }
-  .hub-head h1 { margin:0 0 0.45rem; font-family: var(--font-display); font-size: clamp(1.55rem,4vw,2.15rem); letter-spacing:-0.02em; }
-  .hub-head p { margin:0 auto; max-width: 40rem; color: var(--muted); font-size:0.95rem; line-height:1.5; }
-  .app-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.85rem 0.65rem;
-  }
-  @media (min-width: 720px) {
-    .app-grid { grid-template-columns: repeat(3, 1fr); gap: 1.1rem 1rem; }
-  }
-  .app-icon {
-    display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-    text-decoration: none; color: inherit; padding: 0.35rem;
-    transition: transform 0.18s ease;
-  }
-  .app-icon:hover { transform: translateY(-3px); }
-  .app-icon:hover .app-face { transform: scale(1.08); }
-  .app-face {
-    width: 4.25rem; height: 4.25rem; border-radius: 22px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.75rem; box-shadow: 0 10px 28px rgba(0,0,0,0.25);
-    transition: transform 0.2s ease;
-    overflow: hidden; position: relative;
-  }
-  @media (min-width: 720px) {
-    .app-face { width: 5rem; height: 5rem; font-size: 2rem; border-radius: 24px; }
-  }
-  .float-ico {
-    display: inline-block;
-    animation: bob 2.8s ease-in-out infinite;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
-  }
-  .app-icon:nth-child(3n+1) .float-ico { animation-delay: 0s; }
-  .app-icon:nth-child(3n+2) .float-ico { animation-delay: 0.4s; }
-  .app-icon:nth-child(3n+3) .float-ico { animation-delay: 0.8s; }
-  @keyframes bob {
-    0%, 100% { transform: translateY(0) rotate(-4deg); }
-    50% { transform: translateY(-6px) rotate(4deg); }
-  }
-  .app-name { font-size: 0.78rem; font-weight: 700; text-align: center; line-height: 1.25; max-width: 7.5rem; }
-  .app-sub { font-size: 0.68rem; color: var(--muted); text-align: center; line-height: 1.2; max-width: 7.5rem; }
+    .hero { position: relative; margin: 1.25rem 0 1.5rem; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); }
+    .hero-slider { position: relative; min-height: 420px; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 0.6s ease;
+    }
+    .hero-slide.active { opacity: 1; z-index: 1; }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(120deg, rgba(8,12,18,0.92) 0%, rgba(8,12,18,0.55) 55%, rgba(8,12,18,0.25) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 2rem 1.75rem 2.25rem;
+    }
+    .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.5rem; }
+    .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); max-width: 14ch; margin-bottom: 0.4rem; }
+    .hero-sub { color: var(--muted); max-width: 36ch; margin: 0 0 1.1rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .hero-dots { position: absolute; bottom: 0.9rem; right: 1rem; z-index: 3; display: flex; gap: 0.35rem; }
+    .dot { width: 8px; height: 8px; border-radius: 99px; border: none; background: rgba(255,255,255,0.35); cursor: pointer; padding: 0; }
+    .dot.on { background: var(--amber); width: 18px; }
+    .brands { margin: 1.5rem 0 2rem; overflow: hidden; }
+    .brands-label { text-align: center; color: var(--muted); font-size: 0.8rem; margin-bottom: 0.85rem; }
+    .brands-track { display: flex; gap: 0.85rem; align-items: center; width: max-content; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .brand-pill img {
+      max-height: 32px; max-width: 100px; width: auto; height: auto;
+      object-fit: contain; display: block; filter: none;
+    }
+    .brand-fallback {
+      display: none; font-weight: 800; font-size: 0.85rem; color: #111;
+      letter-spacing: 0.04em;
+    }
+    .brand-pill {
+      font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
+      padding: 0.55rem 1rem; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--bg-elevated); color: var(--ink);
+      white-space: nowrap; opacity: 0.85;
+    }
+
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+    .stat {
+      background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1rem; text-align: center;
+    }
+    .stat .v { display: block; font-family: var(--font-mono); font-size: 1.45rem; font-weight: 600; color: var(--amber); }
+    .stat .l { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .sec-head { margin: 2rem 0 1rem; }
+    .sec-head h2 { font-size: 1.45rem; }
+    .sec-head p { color: var(--muted); margin: 0; }
+
+    .insights-all {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.65rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--amber);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .insights-all:hover {
+      color: #ffc56e;
+      border-bottom-color: rgba(240,164,58,0.55);
+    }
+    .feat-track {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 0.35rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .feat-card {
+      flex: 0 0 min(280px, 78vw);
+      scroll-snap-align: start;
+      max-width: 300px;
+    }
+    .feat-card {
+      flex: 0 0 260px; scroll-snap-align: start;
+      background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+      overflow: hidden; color: var(--ink);
+    }
+    .feat-img { height: 120px; background: #0e141c; overflow: hidden; }
+    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .feat-body { padding: 0.9rem 1rem 1.1rem; }
+    .feat-date { font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal); letter-spacing: 0.04em; }
+    .feat-body h3 { font-size: 0.98rem; margin: 0.35rem 0 0.25rem; font-family: var(--font-display); line-height: 1.3; }
+    .feat-body p { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
+    .feat-body .price { font-family: var(--font-mono); font-size: 0.82rem; color: var(--amber); }
+
+    #search {
+      width: 100%; max-width: 520px;
+      padding: 0.85rem 1.1rem; border-radius: 12px;
+      border: 1px solid var(--line); background: var(--bg-elevated); color: var(--ink);
+      font-size: 1rem; margin-bottom: 0.9rem;
+    }
+
+    
+    .cat-rail-wrap { margin: 0.75rem 0 1rem; }
+    .cat-rail {
+      display: flex;
+      gap: 0.55rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0.15rem 0.65rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .cat-rail::-webkit-scrollbar { height: 4px; }
+    .cat-rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+    .cat-item.chip {
+      flex: 0 0 auto;
+      width: 4.6rem;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.25rem 0.4rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elevated);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cat-item.chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--amber);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cat-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(145deg, #1a2330, #0e141c);
+      border: 1px solid rgba(255,255,255,0.06);
+      animation: cat-float 3.2s ease-in-out infinite;
+    }
+    .cat-item:nth-child(2n) .cat-icon { animation-delay: 0.4s; }
+    .cat-item:nth-child(3n) .cat-icon { animation-delay: 0.8s; }
+    @keyframes cat-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    .cat-label {
+      font-size: 0.62rem;
+      line-height: 1.15;
+      text-align: center;
+      max-width: 4.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .chip-on {
+      border-color: var(--amber) !important;
+      box-shadow: 0 0 0 2px rgba(232, 163, 61, 0.35);
+    }
+    .chip-on .cat-label { color: var(--amber); }
+    .chip-reset {
+      margin-top: 0.35rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: var(--ink);
+      color: var(--bg);
+    }
+    @media (min-width: 700px) {
+      .cat-item.chip { width: 5.1rem; }
+      .cat-label { font-size: 0.68rem; max-width: 4.9rem; }
+      .cat-icon { width: 2.85rem; height: 2.85rem; font-size: 1.45rem; }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+    @media (min-width: 640px) {
+      
+    .cat-rail-wrap { margin: 0.75rem 0 1rem; }
+    .cat-rail {
+      display: flex;
+      gap: 0.55rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0.15rem 0.65rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .cat-rail::-webkit-scrollbar { height: 4px; }
+    .cat-rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+    .cat-item.chip {
+      flex: 0 0 auto;
+      width: 4.6rem;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.25rem 0.4rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elevated);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cat-item.chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--amber);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cat-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(145deg, #1a2330, #0e141c);
+      border: 1px solid rgba(255,255,255,0.06);
+      animation: cat-float 3.2s ease-in-out infinite;
+    }
+    .cat-item:nth-child(2n) .cat-icon { animation-delay: 0.4s; }
+    .cat-item:nth-child(3n) .cat-icon { animation-delay: 0.8s; }
+    @keyframes cat-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    .cat-label {
+      font-size: 0.62rem;
+      line-height: 1.15;
+      text-align: center;
+      max-width: 4.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .chip-on {
+      border-color: var(--amber) !important;
+      box-shadow: 0 0 0 2px rgba(232, 163, 61, 0.35);
+    }
+    .chip-on .cat-label { color: var(--amber); }
+    .chip-reset {
+      margin-top: 0.35rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: var(--ink);
+      color: var(--bg);
+    }
+    @media (min-width: 700px) {
+      .cat-item.chip { width: 5.1rem; }
+      .cat-label { font-size: 0.68rem; max-width: 4.9rem; }
+      .cat-icon { width: 2.85rem; height: 2.85rem; font-size: 1.45rem; }
+    }
+
+    .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.85rem; }
+    }
+    @media (min-width: 1024px) {
+      
+    .cat-rail-wrap { margin: 0.75rem 0 1rem; }
+    .cat-rail {
+      display: flex;
+      gap: 0.55rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0.15rem 0.65rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .cat-rail::-webkit-scrollbar { height: 4px; }
+    .cat-rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+    .cat-item.chip {
+      flex: 0 0 auto;
+      width: 4.6rem;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.25rem 0.4rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elevated);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cat-item.chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--amber);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cat-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(145deg, #1a2330, #0e141c);
+      border: 1px solid rgba(255,255,255,0.06);
+      animation: cat-float 3.2s ease-in-out infinite;
+    }
+    .cat-item:nth-child(2n) .cat-icon { animation-delay: 0.4s; }
+    .cat-item:nth-child(3n) .cat-icon { animation-delay: 0.8s; }
+    @keyframes cat-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    .cat-label {
+      font-size: 0.62rem;
+      line-height: 1.15;
+      text-align: center;
+      max-width: 4.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .chip-on {
+      border-color: var(--amber) !important;
+      box-shadow: 0 0 0 2px rgba(232, 163, 61, 0.35);
+    }
+    .chip-on .cat-label { color: var(--amber); }
+    .chip-reset {
+      margin-top: 0.35rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: var(--ink);
+      color: var(--bg);
+    }
+    @media (min-width: 700px) {
+      .cat-item.chip { width: 5.1rem; }
+      .cat-label { font-size: 0.68rem; max-width: 4.9rem; }
+      .cat-icon { width: 2.85rem; height: 2.85rem; font-size: 1.45rem; }
+    }
+
+    .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+    }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .card:hover { border-color: rgba(240,164,58,0.45); transform: translateY(-2px); }
+    .card-media {
+      display: block; height: 120px; overflow: hidden; background: #0e141c;
+    }
+    @media (max-width: 639px) {
+      .card-media { height: 110px; }
+    }
+    .card-media img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .card-body { padding: 0.95rem 1rem 1.1rem; display: flex; flex-direction: column; flex: 1; }
+    @media (max-width: 639px) {
+      .card-body { padding: 0.55rem 0.55rem 0.7rem; }
+      .card h3 { font-size: 0.82rem; line-height: 1.25; margin: 0.15rem 0 0.2rem; }
+      .card .code { font-size: 0.68rem; }
+      .card .price { font-size: 0.78rem; }
+      .card .fungsi, .card .size { font-size: 0.68rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .card .eq { font-size: 0.62rem; }
+      .card-foot { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+      .buy-links { gap: 0.15rem; }
+      .buy-links .buy { font-size: 0.72rem; }
+      .card-top { gap: 0.25rem; }
+    }
+    .card-top { display: flex; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.45rem; }
+    .eq { font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal); }
+    .code { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+    .card h3 { font-size: 1.02rem; margin: 0.2rem 0 0.35rem; color: var(--ink); }
+    .size { margin: 0; font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal); }
+    .fungsi {
+      margin: 0.35rem 0 0; font-size: 0.82rem; color: var(--muted);
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+      flex: 1;
+    }
+    .card-foot {
+      margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px solid var(--line);
+      display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .price { font-family: var(--font-mono); font-weight: 600; font-size: 0.88rem; color: var(--amber); }
+    .buy { font-size: 0.82rem; font-weight: 600; color: var(--blue); }
+    .buy-links { display: flex; flex-direction: column; gap: 0.28rem; margin-top: 0.15rem; }
+    .buy-shopee { color: #ee4d2d !important; font-weight: 700; }
+    .buy-shopee:hover { color: #c23d22 !important; }
+    .buy:hover { color: var(--amber); }
+    .empty { text-align: center; color: var(--muted); padding: 2rem; }
+
+    .map-frame {
+      border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+      position: relative;
+    }
+    .map-frame img { width: 100%; display: block; max-height: 360px; object-fit: cover; filter: grayscale(0.2) contrast(1.05); }
+    .map-caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 0.75rem 1rem; font-size: 0.8rem; color: #dfe7f0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    }
+
+    .insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; }
+    .insight {
+      background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.15rem 1.2rem; color: var(--ink);
+    }
+    .insight h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .insight p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    @media (max-width: 700px) { .gallery-grid { grid-template-columns: 1fr; } }
+    .gallery-grid img {
+      width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      border-radius: var(--radius); border: 1px solid var(--line);
+    }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; }
+    blockquote {
+      margin: 0; background: var(--bg-card); border: 1px solid var(--line);
+      border-left: 3px solid var(--amber); border-radius: var(--radius);
+      padding: 1rem 1.15rem;
+    }
+    blockquote p { margin: 0 0 0.6rem; font-size: 0.95rem; }
+    blockquote footer { color: var(--muted); font-size: 0.8rem; }
+    .aff-note { font-size: 0.75rem; color: var(--muted); margin: 1.5rem 0 0.5rem; max-width: 60ch; }
   </style>
 </Layout>
