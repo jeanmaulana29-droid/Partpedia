@@ -1,0 +1,264 @@
+Mengapa Baja Bisa Retak, Berlubang, Laminasi, dan Cacat Lainnya? Memahami Surface Defect pada Steel Coil
+
+Kenapa defect pada steel coil tidak bisa dilihat hanya dari permukaan?
+
+Pada saat steel coil keluar dari line produksi, permukaannya terlihat seperti lembaran baja yang sederhana. Bagi operator, inspector, dan engineer, permukaan itu sebenarnya menyimpan jejak dari hampir seluruh proses produksi. Sebuah garis dapat berupa scratch, seam, sliver, atau crack. Sebuah cekungan dapat berupa pit, dent, atau jejak roll. Area hitam dapat berupa rolled-in scale. Bahkan cacat yang tampak di permukaan dapat sebenarnya berasal dari inclusion atau discontinuity yang terbentuk ketika baja masih berada pada tahap steelmaking dan casting.
+
+Inilah alasan surface defect harus dianalisis berdasarkan bentuk, arah, lokasi, kedalaman, pola pengulangan, dan riwayat proses. Tempat defect ditemukan tidak selalu sama dengan tempat defect berasal.
+
+Pada hot strip, sumber defect dapat berasal dari liquid steel dan continuous casting, kemudian berkembang selama reheating dan rolling. Literatur teknis mengenai hot strip mencatat inclusions, blowholes, scabs, holes, serta longitudinal, transverse, dan edge cracks sebagai beberapa defect yang dapat berawal sebelum slab masuk rolling mill. Proses rolling selanjutnya dapat menghasilkan atau memperbesar scale, slivers, scratches, roll marks, dan defect lain.
+
+Pada cold rolled coil, permukaan bahkan dapat berubah lagi akibat pickling, cold rolling, annealing, skin pass, oil, roll condition, dan handling.
+
+Apa yang dimaksud surface defect pada steel coil?
+
+Surface defect adalah ketidaksempurnaan pada permukaan baja yang dapat menurunkan kualitas visual, kemampuan forming, coating, welding, corrosion resistance, fatigue performance, atau fungsi akhir material.
+
+Tidak semua defect mempunyai tingkat bahaya yang sama. Ada yang terutama bersifat kosmetik. Ada yang menyebabkan reject karena customer meminta surface finish tertentu. Ada pula defect yang terlihat kecil tetapi terbuka ketika material dibending, stamping, drawing, welding, atau forming.
+
+Karena itu laporan QC sebaiknya tidak hanya menulis “surface defect”. Nama defect perlu dibuat spesifik, misalnya crack, seam, sliver, scratch, pit, rolled-in scale, roll mark, scab, dent, edge crack, lamination, pinhole, atau corrosion. Istilah yang tepat membantu engineer menentukan arah investigasi.
+
+Mengapa baja bisa retak?
+
+Crack merupakan discontinuity yang dapat menjadi serius karena membuka ketika material menerima tegangan. Retak dapat memanjang, melintang, berada di edge, diagonal, atau berada di bawah permukaan.
+
+Akar masalah dapat berada pada continuous casting, reheating, hot rolling, cold rolling, atau handling. Karena itu arah crack hanya merupakan petunjuk awal. Investigasi dapat membutuhkan cross-section, macroetch, metallography, dan pemeriksaan proses.
+
+Casting dapat menghasilkan surface crack, corner crack, inclusion, segregation, atau discontinuity lain. Reheating dapat memperburuk kondisi permukaan. Rolling kemudian dapat memperpanjang discontinuity. Pada tahap downstream, tension dan forming dapat membuka defect yang sebelumnya belum terlihat jelas.
+
+Retak yang muncul pada cold rolled coil tidak otomatis berasal dari cold rolling. Bisa saja proses cold rolling hanya membuat defect dari mother material menjadi lebih terlihat.
+
+Mengapa steel coil bisa berlubang?
+
+Hole bukan satu jenis defect. Lubang dapat berkaitan dengan pinhole, blowhole, open porosity, mechanical damage, deep pit, inclusion pull-out, atau tearing.
+
+Bentuk lubang harus diperiksa. Catat diameter, bentuk, jumlah, distribusi, posisi terhadap width, jarak antar lubang, serta lokasi sepanjang coil. Lubang yang muncul acak mempunyai kemungkinan penyebab berbeda dengan lubang yang muncul berulang pada pitch tertentu.
+
+Blowhole dapat terbentuk ketika gas terperangkap saat baja cair membeku. Sebagian discontinuity dapat tertutup saat rolling, tetapi kondisi tertentu membuatnya tetap terbuka atau berubah menjadi defect memanjang.
+
+Jika hole berasal dari mechanical damage, biasanya investigasi harus diarahkan ke equipment dan handling. Jika berkaitan dengan inclusion, sumbernya dapat berada pada steelmaking atau casting.
+
+Laminasi: ketika baja seperti terbelah di dalam
+
+Laminasi sering disalahpahami sebagai crack biasa. Lamination merupakan discontinuity internal yang umumnya sejajar dengan arah rolling dan dapat berkembang dari porosity, pipe, inclusion stringer, atau discontinuity pada material awal.
+
+Cacat ini tidak selalu terlihat ketika coil datang. Masalah dapat muncul saat bending, forming, flanging, punching, welding, atau machining. IspatGuru menjelaskan bahwa porosity atau cavity pada slab dapat tertutup selama rolling, sedangkan stringer non-metallic inclusions pada kondisi tertentu dapat menghasilkan lamination dan menurunkan kekuatan dalam arah thickness.
+
+Istilah lamination dan delamination juga tidak selalu dipakai identik di semua perusahaan. Untuk dokumen quality, gunakan definisi dan acceptance criteria yang berlaku pada spesifikasi produk atau customer.
+
+Non-metallic inclusion: cacat kecil dengan efek besar
+
+Inclusion adalah material non-logam yang berada di dalam baja. Sumbernya dapat berkaitan dengan deoxidation products, slag, refractory, mold powder, atau material asing lain.
+
+Ketika baja mengalami rolling, inclusion dapat berubah bentuk dan memanjang mengikuti arah deformasi. Inclusion yang berada dekat permukaan dapat berkembang menjadi sliver, peeling, pockmark, dent, scratch, atau hole.
+
+Penelitian pada cold-rolled IF sheet melaporkan bahwa dalam studi tersebut lebih dari separuh surface defect berkaitan dengan non-metallic inclusions dari steelmaking dan casting. Penelitian tersebut juga menghubungkan posisi dan ukuran inclusion dengan berbagai surface defect.
+
+Kesimpulannya sederhana: sebagian defect yang ditemukan di rolling mill sebenarnya merupakan “warisan” dari proses steelmaking.
+
+Apa itu sliver?
+
+Sliver biasanya berupa bagian material tipis memanjang yang sebagian masih menempel pada permukaan. Secara visual dapat menyerupai serpihan yang terangkat.
+
+Sliver dapat berasal dari surface inclusion, scab, torn corner, conditioning gouge, mechanical gouge, atau defect material awal yang ikut tergulung.
+
+Defect seperti ini dapat menjadi masalah ketika coil masuk stamping, coating, welding, atau painting. Bagian yang terangkat dapat terlepas dan menghasilkan reject.
+
+Karena sliver sering menyerupai scratch atau peeling, pemeriksaan cross-section dan metallography dapat diperlukan untuk menentukan asalnya.
+
+Apa itu seam?
+
+Seam merupakan discontinuity memanjang pada permukaan. Seam dapat berkaitan dengan defect pada semi-finished material, folding, inclusion, scale, atau kondisi rolling.
+
+Masalahnya, di lapangan semua garis memanjang kadang disebut seam. Padahal garis tersebut dapat berupa scratch, crack, sliver, roll mark, atau pickling line.
+
+Perhatikan apakah defect terangkat, apakah terdapat material yang menempel, apakah garis berulang, apakah mengikuti arah rolling, apakah terbuka saat bending, serta apakah terdapat scale atau oxide. Bila visual inspection tidak cukup, pemeriksaan metallography menjadi penting.
+
+Rolled-in scale
+
+Hot rolling dilakukan pada temperatur tinggi sehingga terbentuk scale atau lapisan oksida. Scale harus dikendalikan dan dihilangkan sebelum atau selama proses yang sesuai.
+
+Jika descaling tidak efektif, scale dapat masuk ke roll bite dan tertanam pada permukaan baja. Hasilnya dapat berupa noda gelap, area kasar, depresi, atau permukaan tidak seragam.
+
+Rolled-in scale dapat mengganggu proses pickling, coating, painting, dan forming. Penyebabnya perlu ditelusuri ke kondisi reheating, scale formation, descaling pressure, nozzle, coverage, water quality, serta kondisi strip.
+
+Scratch, roll mark, dan chatter
+
+Scratch merupakan furrow atau garis akibat kontak mekanis. Sumbernya bisa guide, roller, conveyor, pinch roll, table, coil handling, slitter, separator, atau roll surface.
+
+Jika scratch berulang pada jarak tertentu, cari komponen berputar yang memiliki hubungan dengan pitch defect. Pola periodik adalah petunjuk penting.
+
+Roll mark terjadi ketika kondisi pada roll atau komponen kontak ditransfer ke strip. Chatter dapat menghasilkan pola berulang akibat vibration pada rolling mill. Parameter yang patut diperiksa meliputi roll condition, bearing, drive system, tension, speed, roll eccentricity, dan vibration.
+
+Jangan menyimpulkan “scratch” hanya dari penampilan. Pola defect sering lebih informatif daripada bentuk satu titik defect.
+
+Pit, pitting, dan oil-pit
+
+Pit adalah cekungan kecil pada permukaan. Pitting tidak selalu berarti corrosion. Sumbernya dapat berupa inclusion pull-out, pickling, oil-pit, corrosion, roughness, scale removal, atau roll surface.
+
+Penelitian pada cold-rolled stainless steel menemukan beberapa micro-defect yang berkaitan dengan roughness mother sheet, oil-pit selama cold rolling, groove akibat intergranular corrosion saat pickling, dan scratch akibat kondisi permukaan roll.
+
+Karena itu pit harus dibaca berdasarkan kapan munculnya. Jika sudah ada sebelum cold rolling, telusuri mother coil. Jika muncul setelah pickling, periksa bath dan rinsing. Jika berpola setelah rolling, periksa roll dan lubrication.
+
+Edge crack dan centerline defect
+
+Edge merupakan area yang sangat penting dalam pemeriksaan strip. Edge crack dapat berkaitan dengan slab edge quality, casting, temperature, reduction, tension, alignment, grade sensitivity, inclusion, atau proses trimming.
+
+Jika crack hanya muncul di edge, jangan langsung menuduh work roll. Bandingkan sisi operator dan drive side, posisi width, temperatur, tension, serta riwayat edge trimming.
+
+Centerline defect memiliki karakter berbeda. Segregation dan discontinuity di bagian center slab dapat berkembang selama rolling. Pada aplikasi kritis, masalah internal seperti ini perlu diperiksa dengan metode yang sesuai karena visual surface inspection tidak cukup.
+
+Scab, dent, dan mechanical damage
+
+Scab dapat berasal dari masalah casting dan kemudian terlihat setelah rolling. Bentuknya dapat berupa patch atau bagian material yang menempel pada permukaan.
+
+Dent lebih sering berupa cekungan akibat tekanan atau benturan lokal. Sumbernya dapat berupa crane, coil car, guide, conveyor, mandrel, packing, storage, atau transport.
+
+Waktu munculnya sangat penting. Jika defect tidak ditemukan saat final rolling tetapi muncul setelah coil dipindahkan, investigasi harus diarahkan ke handling. Jangan membebankan semua defect kepada rolling mill.
+
+Pickling dan annealing defect
+
+Pickling bertujuan menghilangkan scale dan oxide. Kondisi yang tidak tepat dapat menghasilkan under-pickling, over-pickling, pitting, stain, dan uneven surface.
+
+Parameter yang perlu dikontrol antara lain acid concentration, temperature, residence time, line speed, bath condition, iron concentration, dan rinsing.
+
+Pada stainless steel, kondisi pickling juga dapat menghasilkan micro-grooves akibat preferential attack atau intergranular corrosion pada kondisi tertentu.
+
+Annealing juga dapat memengaruhi surface condition melalui atmosfer furnace, temperature, dew point, time, dan scale formation. Karena itu defect setelah annealing harus ditelusuri berdasarkan kondisi furnace dan material sebelumnya.
+
+Bagaimana menentukan defect berasal dari proses mana?
+
+Gunakan lima petunjuk utama: arah, lokasi, frekuensi, waktu kemunculan, dan hubungan dengan equipment.
+
+Defect longitudinal sering mengarahkan investigasi ke rolling direction, guide, seam, scratch, sliver, atau material awal.
+
+Defect periodic mengarahkan perhatian ke roll, rotating component, vibration, atau mechanical system.
+
+Defect random dapat berkaitan dengan contamination, inclusion, sporadic mechanical damage, atau handling.
+
+Defect yang hanya terjadi pada satu heat mengarahkan investigasi ke steelmaking dan casting.
+
+Defect yang baru muncul setelah pickling atau cold rolling perlu dibandingkan dengan mother coil agar diketahui apakah proses tersebut menciptakan defect baru atau hanya memperjelas defect lama.
+
+Cara melakukan root cause analysis
+
+Mulai dengan membuat defect map. Catat coil number, heat number, slab number bila tersedia, grade, width, thickness, speed, process line, shift, posisi top/bottom, operator side/drive side, center atau edge, dan jarak defect dari head.
+
+Kemudian cari pola.
+
+Contoh scratch muncul setiap 500 sampai 700 mm. Cari hubungan dengan circumference roll atau komponen rotating.
+
+Contoh defect hanya muncul pada satu heat. Periksa casting record dan inclusion history.
+
+Contoh pitting meningkat setelah perubahan bath pickling. Bandingkan concentration, temperature, line speed, dan kondisi surface sebelum pickling.
+
+Gunakan 5 Why. Jangan berhenti pada “scratch karena guide”. Tanyakan mengapa guide menggores, mengapa guide aus, mengapa wear tidak terdeteksi, dan mengapa preventive maintenance gagal menemukan kondisi tersebut.
+
+Mengganti guide adalah correction. Mengubah wear limit dan inspection interval adalah corrective action.
+
+Metode inspeksi steel coil
+
+Visual inspection tetap menjadi dasar untuk banyak surface defect. Magnifying glass membantu defect kecil.
+
+Surface roughness measurement dapat digunakan untuk kuantifikasi roughness. Eddy current dapat dipakai untuk mendeteksi discontinuity tertentu sesuai sistem. Ultrasonic testing lebih cocok untuk discontinuity internal tertentu. Magnetic particle inspection dapat membantu pada material ferromagnetic dan defect tertentu.
+
+Metallography sangat berguna untuk membedakan crack, seam, lap, sliver, inclusion, dan lamination. SEM-EDS dapat membantu mengetahui karakter material pada defect.
+
+Modern surface inspection system dapat menggunakan kamera dan sensor untuk mendeteksi posisi, pola, dan klasifikasi defect sepanjang strip. Penelitian juga menunjukkan bahwa analisis profil tiga dimensi dapat digunakan untuk identifikasi pit dan roll mark pada cold-rolled stainless strip.
+
+Namun sensor menemukan pola; engineer tetap harus menentukan root cause.
+
+Mengapa defect harus dipetakan, bukan hanya dicatat?
+
+Steel coil dapat mempunyai panjang sangat besar. Jika QC hanya menulis “scratch ditemukan”, informasi penting hilang.
+
+Dengan defect map, pabrik dapat mengetahui apakah defect berada di head, middle, tail, center, edge, atau seluruh coil. Pola ini membantu menghubungkan defect dengan proses.
+
+Data yang sebaiknya disimpan:
+- Coil number
+- Heat number
+- Grade
+- Width
+- Thickness
+- Length
+- Position
+- Defect type
+- Defect size
+- Frequency
+- Severity
+- Process
+- Equipment
+- Shift
+- Disposition
+
+Setelah data terkumpul, perusahaan dapat menemukan pola yang sebelumnya tidak terlihat.
+
+Mengapa surface defect mahal?
+
+Kerugian surface defect bukan hanya coil reject. Satu defect dapat menyebabkan sorting, rework, recoiling, slitting ulang, grinding, pickling ulang, scrap, downtime, customer complaint, additional inspection, delivery delay, dan penurunan yield.
+
+Lebih buruk lagi jika defect baru diketahui setelah customer melakukan stamping atau forming. Pada tahap tersebut biaya kerusakan jauh lebih besar.
+
+Karena itu defect harus ditemukan sedini mungkin. Semakin dekat defect ditemukan dengan sumbernya, semakin murah tindakan koreksinya.
+
+Hubungan hot rolled coil dan cold rolled coil
+
+Hot rolled coil sering menjadi material awal untuk cold rolling. Jika hot band mempunyai scale, roughness, pit, sliver, inclusion-related defect, crack, atau edge defect, proses berikutnya harus menanganinya.
+
+Pickling dapat menghilangkan scale. Cold rolling dapat mengubah roughness. Annealing mengubah microstructure. Namun tidak semua defect dapat dihilangkan.
+
+Bahkan beberapa proses dapat membuat defect lebih terlihat. Itulah sebabnya kualitas mother coil sangat menentukan kualitas finished cold rolled coil.
+
+Checklist investigasi surface defect
+
+Gunakan checklist berikut ketika defect ditemukan:
+
+[ ] Coil number dicatat
+[ ] Heat number dicatat
+[ ] Grade dicatat
+[ ] Width dan thickness dicatat
+[ ] Posisi defect dicatat
+[ ] Top atau bottom side dicatat
+[ ] Operator side atau drive side dicatat
+[ ] Foto defect diambil
+[ ] Panjang dan kedalaman diukur bila memungkinkan
+[ ] Defect berulang atau random ditentukan
+[ ] Arah rolling dibandingkan
+[ ] Coil sebelumnya diperiksa
+[ ] Parameter proses diperiksa
+[ ] Equipment diperiksa
+[ ] Sample dipotong bila diperlukan
+[ ] Metallography dilakukan bila perlu
+[ ] Root cause ditentukan
+[ ] Correction dilakukan
+[ ] Corrective action dibuat
+[ ] Hasil diverifikasi
+
+Checklist sederhana ini jauh lebih efektif daripada langsung mengganti komponen.
+
+Kesimpulan
+
+Steel coil dapat mengalami crack, hole, lamination, inclusion-related defect, sliver, seam, scratch, rolled-in scale, pit, roll mark, chatter mark, scab, dent, edge crack, pickling defect, oil-pit, dan berbagai defect lain.
+
+Hal terpenting adalah memahami bahwa lokasi penemuan defect bukan selalu lokasi asal defect.
+
+Steelmaking dan casting dapat menghasilkan inclusion, porosity, blowhole, segregation, dan surface discontinuity. Reheating dapat memengaruhi scale dan kondisi permukaan. Rolling dapat memperpanjang defect sekaligus menciptakan defect baru melalui roll, guide, tension, vibration, dan mechanical contact. Pickling, annealing, finishing, recoiling, storage, dan handling juga dapat menghasilkan masalah baru.
+
+Retak harus diperiksa berdasarkan arah, kedalaman, lokasi, dan struktur material. Lubang harus dibedakan dari pinhole, blowhole, porosity, pit, dan mechanical hole. Laminasi perlu dicurigai ketika discontinuity internal berkembang mengikuti arah rolling dan terbuka saat forming. Sliver dan seam dapat menyerupai scratch sehingga pemeriksaan lebih lanjut sering diperlukan. Roll mark dan chatter biasanya memberikan petunjuk berupa pola berulang. Pit tidak selalu berarti corrosion.
+
+Pabrik yang hanya mencatat “defect ditemukan” belum benar-benar melakukan problem solving.
+
+Defect harus diubah menjadi data.
+
+Catat lokasi. Ukur ukuran. Lihat arah. Cari pola. Hubungkan dengan coil dan heat. Periksa equipment. Bandingkan dengan proses sebelumnya. Kemudian tentukan root cause.
+
+Dengan pendekatan tersebut, surface defect bukan hanya alasan untuk melakukan reject. Defect dapat menjadi sumber informasi untuk meningkatkan yield, mengurangi scrap, memperbaiki maintenance, memperkuat quality control, dan mencegah customer complaint.
+
+Rujukan teknis utama:
+- IspatGuru, pembahasan rolling hot strip dan strip defects.
+- IspatGuru, Metallurgical Processes and Defects in Steel Products.
+- IspatGuru, Rolling Process for Steel.
+- Yu et al., Characteristics and Evolution of Inclusion Induced Surface Defects of Cold Rolled IF Sheet, Journal of Iron and Steel Research, International.
+- Kenmochi et al., Effect of Micro-defects on the Surface Brightness of Cold-rolled Stainless-steel Strip, Journal of Materials Processing Technology / The Iron and Steel Institute of Japan.
+- ASTM International, ASTM A506 dan ASTM A902 sebagai rujukan spesifikasi dan terminologi terkait produk baja.
+
