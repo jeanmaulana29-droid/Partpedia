@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node -e \"try{require('child_process').execSync('git fetch --deepen=200',{stdio:'ignore'})}catch(e){}\" && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
