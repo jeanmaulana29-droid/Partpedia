@@ -50,17 +50,14 @@ const heroSlides = [
   {
     title: "Industrial parts intelligence",
     sub: "Katalog spek & kode part · artikel MRO · utilitas hitung cepat di satu platform",
-    img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=80",
   },
   {
     title: "Dari bearing hingga otomasi",
     sub: "Riset part, bandingkan referensi, lalu hitung kebutuhan lapangan dengan Smart Tools",
-    img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80",
   },
   {
     title: "Cari kode part dalam hitungan detik",
     sub: "Cross-reference, knowledge hub, dan alat bantu perhitungan industri — siap pakai di plant & workshop",
-    img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80",
   },
 ];
 const brands = [{"name": "SKF", "src": "/brands/skf.png"}, {"name": "NSK", "src": "/brands/nsk.png"}, {"name": "NTN", "src": "/brands/ntn.png"}, {"name": "FAG", "src": "/brands/fag.svg"}, {"name": "Timken", "src": "/brands/timken.svg"}, {"name": "KOYO", "src": "/brands/koyo.svg"}, {"name": "NACHI", "src": "/brands/nachi.svg"}, {"name": "Gates", "src": "/brands/gates.png"}, {"name": "Optibelt", "src": "/brands/optibelt.svg"}, {"name": "Siemens", "src": "/brands/siemens.svg"}, {"name": "Schneider", "src": "/brands/schneider.png"}, {"name": "ABB", "src": "/brands/abb.svg"}, {"name": "Omron", "src": "/brands/omron.svg"}, {"name": "SMC", "src": "/brands/smc.png"}, {"name": "Festo", "src": "/brands/festo.png"}, {"name": "Yaskawa", "src": "/brands/yaskawa.png"}, {"name": "Bosch", "src": "/brands/bosch.svg"}, {"name": "Parker", "src": "/brands/parker.svg"}, {"name": "Mitsubishi", "src": "/brands/mitsubishi.ico"}, {"name": "Danfoss", "src": "/brands/danfoss.ico"}];
@@ -137,35 +134,48 @@ const catalog = shuffleCatalog(data);
   <!-- HERO SLIDER -->
   <section class="hero" aria-label="Banner utama">
     <div class="hero-slider" id="hero-slider">
-      {heroSlides.map((s, i) => (
-        <div class={`hero-slide ${i === 0 ? "active" : ""}`} style={`background-image:url('${s.img}')`}>
-          <div class="hero-overlay">
-            <p class="eyebrow">{total}+ parts · {categories.length} categories · live catalog</p>
-            <h1>{s.title}</h1>
-            <p class="hero-sub">{s.sub}</p>
-            <div class="hero-cta">
-              <a class="btn btn-primary" href="#catalog" data-i18n="hero_cta1">
-                <span class="btn-cta-ico" aria-hidden="true">📦</span>
-                <span>Jelajahi katalog</span>
-              </a>
-              <a class="btn btn-ghost" href="/knowledge/" data-i18n="hero_cta2">
-                <span class="btn-cta-ico" aria-hidden="true">📚</span>
-                <span>Knowledge hub</span>
-              </a>
-              <a class="btn btn-tools" href="/tools/">
-                <span class="btn-tools-ico" aria-hidden="true">◇</span>
-                <span>Smart Tools</span>
-                <span class="btn-tools-badge">Utilitas</span>
-              </a>
-              <a class="btn btn-convert" href="/convert/">
-                <span class="btn-convert-ico" aria-hidden="true">⇄</span>
-                <span>Convert X</span>
-                <span class="btn-convert-badge">Satuan</span>
-              </a>
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src="/hero/hero-loop.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay">
+        <p class="eyebrow">{total}+ parts · {categories.length} categories · live catalog</p>
+        <div class="hero-copy" id="hero-copy">
+          {heroSlides.map((s, i) => (
+            <div class={`hero-text ${i === 0 ? "active" : ""}`} data-hero-text={i}>
+              <h1>{s.title}</h1>
+              <p class="hero-sub">{s.sub}</p>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#catalog" data-i18n="hero_cta1">
+            <span class="btn-cta-ico" aria-hidden="true">📦</span>
+            <span>Jelajahi katalog</span>
+          </a>
+          <a class="btn btn-ghost" href="/knowledge/" data-i18n="hero_cta2">
+            <span class="btn-cta-ico" aria-hidden="true">📚</span>
+            <span>Knowledge hub</span>
+          </a>
+          <a class="btn btn-tools" href="/tools/">
+            <span class="btn-tools-ico" aria-hidden="true">◇</span>
+            <span>Smart Tools</span>
+            <span class="btn-tools-badge">Utilitas</span>
+          </a>
+          <a class="btn btn-convert" href="/convert/">
+            <span class="btn-convert-ico" aria-hidden="true">⇄</span>
+            <span>Convert X</span>
+            <span class="btn-convert-badge">Satuan</span>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="hero-dots" id="hero-dots" aria-hidden="true"></div>
   </section>
@@ -178,7 +188,7 @@ const catalog = shuffleCatalog(data);
     .hero-slider {
       min-height: 520px !important;
     }
-    .hero-slide {
+    .hero-video {
       min-height: 520px !important;
     }
     .hero-overlay {
@@ -729,22 +739,27 @@ const catalog = shuffleCatalog(data);
   <p class="aff-note">Partpedia is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate we may earn from qualifying purchases. “Cek harga beli” may open Amazon search results.</p>
 
   <script>
-    // Hero auto-rotate 2s
-    const slides = Array.from(document.querySelectorAll(".hero-slide"));
+    // Hero text rotate 5s (video loops independently)
+    const texts = Array.from(document.querySelectorAll(".hero-text"));
     const dotsWrap = document.getElementById("hero-dots");
     let idx = 0;
-    slides.forEach((_, i) => {
+    texts.forEach((_, i) => {
       const d = document.createElement("button");
       d.type = "button";
       d.className = "dot" + (i === 0 ? " on" : "");
+      d.setAttribute("aria-label", "Teks hero " + (i + 1));
       d.addEventListener("click", () => { idx = i; paint(); });
       dotsWrap?.appendChild(d);
     });
     function paint() {
-      slides.forEach((s, i) => s.classList.toggle("active", i === idx));
+      texts.forEach((s, i) => s.classList.toggle("active", i === idx));
       dotsWrap?.querySelectorAll(".dot").forEach((d, i) => d.classList.toggle("on", i === idx));
     }
-    setInterval(() => { idx = (idx + 1) % slides.length; paint(); }, 2000);
+    setInterval(() => {
+      if (!texts.length) return;
+      idx = (idx + 1) % texts.length;
+      paint();
+    }, 5000);
 
     
     // Wawasan Industri:
@@ -1298,13 +1313,24 @@ const catalog = shuffleCatalog(data);
 
   <style>
     .hero { position: relative; margin: 1.25rem 0 1.5rem; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); }
-    .hero-slider { position: relative; min-height: 420px; }
-    .hero-slide {
-      position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      opacity: 0; transition: opacity 0.6s ease;
+    .hero-slider { position: relative; min-height: 420px; overflow: hidden; }
+    .hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      z-index: 0; pointer-events: none;
+      background: #050510;
     }
-    .hero-slide.active { opacity: 1; z-index: 1; }
+    .hero-copy { position: relative; min-height: 6.5rem; margin-bottom: 0.15rem; }
+    .hero-text {
+      position: absolute; left: 0; right: 0; top: 0;
+      opacity: 0; transform: translateY(10px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      pointer-events: none;
+    }
+    .hero-text.active {
+      opacity: 1; transform: translateY(0);
+      pointer-events: auto; position: relative;
+    }
     .hero-overlay {
       position: absolute; inset: 0; z-index: 2;
       background: linear-gradient(120deg, rgba(8,12,18,0.92) 0%, rgba(8,12,18,0.55) 55%, rgba(8,12,18,0.25) 100%);
