@@ -33,8 +33,48 @@ function defaultMid(slug) {
   return `/articles/default-${((hash(slug) + 2) % 4) + 1}.jpg`;
 }
 
+/** Map slug → unix seconds (commit terakhir yang menyentuh file artikel). Dibangun 1x. */
+let _gitTimeMap = null;
+function getGitTimeMap() {
+  if (_gitTimeMap) return _gitTimeMap;
+  _gitTimeMap = new Map();
+  try {
+    const out = execSync(
+      "git log --format='---%ct' --name-only -- site/src/data/articles src/data/articles",
+      {
+        encoding: "utf8",
+        maxBuffer: 20 * 1024 * 1024,
+        stdio: ["ignore", "pipe", "ignore"],
+      }
+    );
+    let currentTs = 0;
+    for (const line of out.split("\n")) {
+      const L = line.trim();
+      if (!L) continue;
+      if (L.startsWith("---")) {
+        currentTs = Number(L.slice(3)) || 0;
+        continue;
+      }
+      if (!currentTs) continue;
+      const p = L.replace(/\\/g, "/");
+      let slug = "";
+      const m1 = p.match(/articles\/([^/]+)\/(?:isi\.txt|1\.(?:jpe?g|png))$/i);
+      const m2 = p.match(/articles\/([^/]+)\.txt$/i);
+      if (m1) slug = m1[1];
+      else if (m2) slug = m2[1];
+      if (!slug) continue;
+      if (!_gitTimeMap.has(slug)) _gitTimeMap.set(slug, currentTs);
+    }
+  } catch {
+    /* shallow clone / no git */
+  }
+  return _gitTimeMap;
+}
+
 /** Unix seconds — semakin besar = semakin baru */
 function gitTimestampForSlug(slug) {
+  const map = getGitTimeMap();
+  if (map.has(slug)) return map.get(slug);
   const candidates = [
     `site/src/data/articles/${slug}/isi.txt`,
     `src/data/articles/${slug}/isi.txt`,
@@ -56,6 +96,7 @@ function gitTimestampForSlug(slug) {
   }
   return 0;
 }
+
 
 function mtimeForSlug(slug) {
   const candidates = [
@@ -90,10 +131,17 @@ export function parseArticleText(raw, slug) {
   while (i < lines.length && lines[i].trim() === "") i++;
 
   let date = "";
-  if (i < lines.length && /^\d{4}-\d{2}-\d{2}$/.test(lines[i].trim())) {
-    date = lines[i].trim();
-    i++;
-    while (i < lines.length && lines[i].trim() === "") i++;
+  if (i < lines.length) {
+    const rawDate = lines[i].trim();
+    // "2026-09-03" atau "date: 2026-09-03" / "2026-09-03 14:30"
+    const mDate =
+      rawDate.match(/^(\d{4}-\d{2}-\d{2})(?:[T\s]\d{2}:\d{2}(?::\d{2})?)?$/) ||
+      rawDate.match(/^date\s*:\s*(\d{4}-\d{2}-\d{2})/i);
+    if (mDate) {
+      date = mDate[1];
+      i++;
+      while (i < lines.length && lines[i].trim() === "") i++;
+    }
   }
 
   // Excerpt eksplisit HANYA jika baris pendek + diikuti baris kosong + ada isi setelahnya
@@ -192,22 +240,28 @@ export function loadAllArticles() {
   }
 
   function attachSortKey(art) {
-    // 1) tanggal eksplisit di file → tengah hari UTC hari itu
+    const gitTs = gitTimestampForSlug(art.slug); // detik
+    const mt = mtimeForSlug(art.slug); // ms
+    const gitMs = gitTs > 0 ? gitTs * 1000 : 0;
+
+    // 1) tanggal eksplisit di file — pakai akhir hari + offset git/mtime di hari yang sama
+    //    supaya dua artikel tanggal sama tetap terurut upload terbaru di atas
     if (art.date && /^\d{4}-\d{2}-\d{2}$/.test(art.date)) {
-      art._sort = Date.parse(art.date + "T12:00:00Z") || 0;
+      const dayMs = Date.parse(art.date + "T00:00:00Z") || 0;
+      const intra = Math.max(gitMs, mt);
+      // jika git/mtime di hari yang sama, pakai itu; else tengah hari
+      if (intra >= dayMs && intra < dayMs + 86400000) {
+        art._sort = intra;
+      } else {
+        art._sort = dayMs + 12 * 3600 * 1000;
+      }
       return art;
     }
-    // 2) waktu commit git (detik) — bedakan upload di hari yang sama
-    const gitTs = gitTimestampForSlug(art.slug);
-    if (gitTs > 0) {
-      art._sort = gitTs * 1000;
-      art.date = art.date || toDateStr(gitTs);
-      return art;
-    }
-    // 3) mtime file saat build
-    const mt = mtimeForSlug(art.slug);
-    art._sort = mt || 0;
-    if (!art.date && mt) art.date = toDateStr(Math.floor(mt / 1000));
+
+    // 2) git commit (paling akurat untuk urutan upload di GitHub)
+    // 3) mtime — ambil yang lebih baru dari keduanya
+    art._sort = Math.max(gitMs, mt) || 0;
+    if (!art.date && art._sort) art.date = toDateStr(Math.floor(art._sort / 1000));
     if (!art.date) art.date = "1970-01-01";
     return art;
   }
