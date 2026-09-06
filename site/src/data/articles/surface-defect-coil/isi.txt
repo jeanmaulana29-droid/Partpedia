@@ -1,0 +1,382 @@
+Mengenal Flatness Defect pada baja gulung: Edge Wave, Centre Buckle, Coil set dan Longbow serta cara mengatasinya
+
+Flatness defect pada baja gulung bukan sekadar masalah strip yang
+terlihat bergelombang. Bentuk seperti edge wave, centre wave, coil set,
+longbow, quarter wave, dan crossbow merupakan manifestasi berbeda dari
+distribusi elongation, strain, dan residual stress yang tidak seimbang
+pada strip.
+
+Bagi QC, kemampuan paling penting bukan hanya mengenali bahwa coil tidak
+flat, tetapi membaca pola defect: berada di edge atau centre, memanjang
+atau melintang, muncul sepanjang body atau hanya head/tail, terlihat
+saat tension masih ada atau setelah tension dilepas, serta berubah atau
+tidak setelah slitting.
+
+APA YANG DIMAKSUD DENGAN FLATNESS?
+
+Flatness menggambarkan kemampuan strip untuk mempertahankan bentuk
+bidang yang rata tanpa gelombang atau curvature yang tidak diinginkan.
+Dalam proses rolling dan finishing, strip mengalami deformasi
+elastis-plastis. Bila bagian tertentu mengalami elongation relatif yang
+berbeda dari bagian lain, residual stress dapat tersimpan.
+
+Ketika strip masih berada di bawah tension, sebagian ketidakseimbangan
+tersebut dapat tertahan sehingga strip tampak lebih flat. Setelah
+tension dilepas, ketidakseimbangan dapat muncul sebagai buckling, wave,
+atau curvature.
+
+Karena itu, “terlihat flat saat line berjalan” tidak selalu berarti
+distribusi stress di dalam material sudah ideal.
+
+MENGAPA FLATNESS DEFECT MUNCUL?
+
+Penyebabnya dapat berasal dari banyak tahap. Pada rolling, non-uniform
+reduction sepanjang lebar strip dapat dipengaruhi oleh roll crown,
+elastic roll deflection, thermal crown, wear, roll bending, friction,
+lubrication, tension, dan kondisi incoming strip. Material yang masuk
+juga membawa sejarah deformasi dari proses sebelumnya.
+
+Mechanical properties ikut menentukan respons material. Thickness,
+width, yield strength, hardness, dan kondisi permukaan dapat membuat dua
+coil dengan ukuran sama membutuhkan kondisi proses yang berbeda.
+
+Perubahan kondisi sepanjang coil juga penting. Head, body, dan tail
+tidak selalu mengalami kondisi transient yang sama. Threading,
+acceleration, deceleration, tension build-up, weld, serta perubahan
+parameter dapat menghasilkan pola defect yang hanya muncul di bagian
+tertentu.
+
+EDGE WAVE
+
+Edge wave adalah gelombang yang dominan di dekat tepi strip, sementara
+bagian tengah relatif lebih tenang. Secara konseptual, kondisi ini dapat
+terjadi ketika elongation relatif di area edge lebih besar daripada
+bagian lain sehingga terjadi ketidakseimbangan panjang.
+
+Jangan menjadikan “edge lebih panjang” sebagai satu-satunya diagnosis.
+Distribusi stress, restraint, tension, dan geometri aktual strip dapat
+membuat mekanismenya lebih kompleks.
+
+CIRI-CIRI EDGE WAVE
+
+Periksa strip pada kondisi yang memungkinkan tension dikurangi dengan
+aman. Amati apakah gelombang berada konsisten di dekat edge, apakah
+muncul di kedua sisi, dan apakah amplitudonya berubah dari head ke body
+lalu tail.
+
+Jika defect hanya ada di head, penyebabnya belum tentu sama dengan edge
+wave yang konsisten sepanjang body.
+
+PENYEBAB EDGE WAVE
+
+Incoming flatness yang sudah tidak ideal dapat diteruskan ke proses
+berikutnya. Pada rolling, profile roll dan distribusi reduction dapat
+menyebabkan differential elongation. Elastic deflection, roll crown,
+thermal condition, wear, bending, friction, dan lubrication dapat ikut
+berperan.
+
+Pada finishing atau levelling, koreksi dilakukan dengan memberikan
+deformasi terkontrol agar perbedaan elongation relatif berkurang. Namun
+koreksi terlalu agresif dapat memunculkan masalah lain seperti perubahan
+curvature atau residual stress baru.
+
+CENTRE WAVE
+
+Centre wave, centre buckle, atau centre fullness adalah kondisi ketika
+gelombang dominan berada di area tengah strip dan edge relatif lebih
+tenang. Dalam banyak kasus, mekanismenya merupakan kebalikan relatif
+dari edge wave: bagian tengah memiliki elongation efektif yang berbeda
+dari edge.
+
+Centre wave tidak boleh langsung dianggap sebagai masalah tension.
+Tension dapat membuat strip terlihat lebih flat ketika ditarik, tetapi
+belum tentu menghilangkan residual stress imbalance.
+
+Pemeriksaan harus dilakukan pada kondisi yang konsisten, termasuk
+membandingkan keadaan di bawah tension dengan keadaan setelah restraint
+berkurang.
+
+COIL SET
+
+Coil set berbeda dari wave melintang. Coil set adalah kecenderungan
+strip mempertahankan curvature pada arah longitudinal setelah keluar
+dari gulungan.
+
+Ketika strip dililitkan pada diameter tertentu, lapisan melalui
+ketebalan mengalami strain yang berbeda. Karena sebagian deformasi dapat
+menjadi plastis, curvature tidak selalu hilang setelah strip dilepas.
+
+Diameter coil, diameter mandrel, tension recoiling, thickness, yield
+strength, dan riwayat bending memengaruhi hasil akhir.
+
+Koreksi dapat dilakukan melalui levelling atau reverse bending
+terkontrol. Targetnya bukan membengkokkan strip sekeras mungkin ke arah
+sebaliknya, melainkan mengurangi curvature residual dengan deformasi
+yang sesuai kemampuan material dan mesin.
+
+LONGBOW
+
+Longbow adalah kelengkungan strip pada arah longitudinal sehingga strip
+cenderung membentuk busur ketika dilihat sepanjang arah travel. Defect
+ini dapat mengganggu tracking dan feeding pada proses downstream.
+
+Longbow dapat berkaitan dengan perbedaan extension antara sisi kiri dan
+kanan strip. Residual stress imbalance juga penting. Studi mengenai
+tension levelling menunjukkan bahwa differential reduction across width
+dapat menghasilkan residual stress yang kemudian membuat strip bowed,
+terutama setelah slitting.
+
+QUARTER WAVE DAN CROSSBOW
+
+Quarter wave muncul pada area intermediate antara edge dan centre. Pola
+ini dapat terjadi ketika distribusi elongation tidak seragam pada
+beberapa zona lebar strip.
+
+Crossbow berbeda karena curvature utamanya berada pada arah transverse
+atau melintang strip. Memisahkan crossbow dari coil set sangat penting
+karena arah deformasinya berbeda dan tindakan koreksinya juga tidak
+sama.
+
+FLATNESS DEFECT BISA BERASAL DARI UPSTREAM
+
+Jangan otomatis menyalahkan proses finishing hanya karena defect
+ditemukan di finishing line.
+
+Strip membawa incoming profile dan residual stress dari proses
+sebelumnya. Jika upstream menghasilkan differential elongation, proses
+berikutnya dapat memperlihatkan defect yang sebelumnya tertahan oleh
+tension.
+
+Konsep defect inheritance sangat penting. Bila pola yang sama muncul
+pada banyak coil dari campaign, supplier, grade, thickness, atau rolling
+condition tertentu, investigasi harus diperluas ke upstream.
+
+HUBUNGAN THICKNESS, WIDTH, DAN MECHANICAL PROPERTIES
+
+Thickness memengaruhi respons bending dan flatness. Strip tipis lebih
+fleksibel dan dapat lebih sensitif terhadap ketidakseimbangan tertentu,
+sedangkan strip lebih tebal membutuhkan kondisi bending yang berbeda.
+
+Width juga memengaruhi distribusi gaya dan deformasi. Perubahan width
+dapat mengubah kondisi roll deflection dan profile.
+
+Yield strength dan hardness juga penting karena correction flatness
+memanfaatkan respons elastoplastik material.
+
+Karena itu recipe sebaiknya tidak hanya dikelompokkan berdasarkan
+thickness. Grade, thickness, width, mechanical properties, dan kondisi
+incoming perlu dipertimbangkan bersama.
+
+BAGAIMANA QC MEMERIKSA FLATNESS?
+
+Metode inspeksi harus repeatable. Jangan hanya mengandalkan satu orang
+yang “sudah biasa melihat wave”.
+
+Tentukan kondisi inspeksi, lokasi sampling, metode pengukuran, dan cara
+mencatat hasil. Bila memungkinkan, ukur amplitude dan wavelength
+menggunakan metode yang konsisten.
+
+Catat lokasi defect terhadap width, misalnya “edge wave dominan pada
+sisi operator sekitar 50–100 mm dari edge”. Catatan seperti ini jauh
+lebih berguna daripada “coil tidak flat”.
+
+HEAD, BODY, DAN TAIL
+
+Head, body, dan tail harus dipisahkan dalam analisis. Kondisi threading,
+acceleration, deceleration, tension build-up, atau area dekat weld dapat
+membuat defect lebih kuat pada bagian tertentu.
+
+Jika body flat tetapi 100–300 meter pertama menunjukkan wave, fokus
+investigasi sebaiknya pada kondisi transient. Sebaliknya, defect
+konsisten sepanjang body lebih mengarah pada kondisi proses yang stabil
+dan berulang.
+
+TROUBLESHOOTING: JANGAN UBAH SEMUA PARAMETER SEKALIGUS
+
+Kesalahan umum adalah mengubah tension, bending, speed, reduction, dan
+setting roll secara bersamaan. Setelah defect membaik, tidak ada bukti
+parameter mana yang sebenarnya berpengaruh.
+
+Lebih baik lakukan controlled trial bila memungkinkan. Ubah satu faktor
+utama, dokumentasikan hasil, lalu bandingkan.
+
+TROUBLESHOOTING: FLAT SAAT BERJALAN, BERGELOMBANG SETELAH DIPOTONG
+
+Jika strip tampak flat di bawah tension tetapi menjadi wave setelah
+dipotong, jangan langsung menyalahkan cutting. Pemotongan menghilangkan
+restraint dan memungkinkan residual stress dilepaskan.
+
+Perubahan bentuk setelah slitting merupakan petunjuk bahwa residual
+stress distribution perlu diperiksa.
+
+ROOT CAUSE ANALYSIS
+
+Mulai dengan bentuk defect.
+
+Apa bentuknya? Di mana lokasinya? Longitudinal atau transverse? Edge,
+centre, quarter, atau seluruh width? Muncul saat tension ada atau
+setelah tension dilepas? Konsisten sepanjang coil atau hanya head/tail?
+Berubah setelah slitting?
+
+Setelah pola diketahui, baru periksa parameter proses dan incoming
+condition.
+
+Pendekatan ini lebih efektif daripada langsung mencari angka setting.
+
+MEMBUAT PARETO FLATNESS DEFECT
+
+Pareto dapat menunjukkan prioritas improvement. Contoh ilustrasi: edge
+wave 42%, centre wave 27%, coil set 15%, longbow 9%, quarter wave 5%,
+dan crossbow 2%.
+
+Angka tersebut hanya contoh, bukan standar industri. Dalam data aktual,
+severity dan dampak customer complaint juga harus diperhitungkan. Defect
+yang jumlahnya sedikit tetapi menyebabkan kerugian besar tetap dapat
+menjadi prioritas utama.
+
+KAPAN DEFECT DIKEMBALIKAN KE UPSTREAM?
+
+Jika incoming coil sudah menunjukkan pola defect, koreksi finishing
+terus-menerus hanya memindahkan beban ke proses berikutnya.
+
+Upstream perlu dilibatkan bila defect konsisten pada campaign tertentu,
+muncul sebelum finishing, kembali setelah slitting, atau membutuhkan
+correction severity yang terlalu tinggi.
+
+Tujuannya bukan mencari siapa yang salah, melainkan menghentikan defect
+dari sumbernya.
+
+HUBUNGANNYA DENGAN CUSTOMER
+
+Flatness memengaruhi feeding, tracking, stacking, blanking, stamping,
+forming, slitting, dan handling. Customer mungkin tidak mengetahui
+apakah sumber masalah berasal dari rolling, levelling, recoiling, atau
+proses sebelumnya. Mereka hanya mengalami material yang sulit diproses.
+
+Karena itu acceptance flatness sebaiknya mempertimbangkan penggunaan
+akhir, bukan hanya tampilan coil di pabrik.
+
+FLAT TIDAK SELALU BERARTI BEBAS RESIDUAL STRESS
+
+Sebuah strip dapat terlihat flat karena tension sedang menahannya.
+Setelah tension dilepas, bentuk berubah. Mother coil juga dapat terlihat
+baik tetapi menghasilkan slit strip yang melengkung.
+
+Ini bukan berarti setiap flat strip pasti memiliki residual stress
+bermasalah. Intinya, visual flatness dan residual stress adalah dua hal
+yang berkaitan tetapi tidak identik.
+
+STANDAR INTERNAL YANG BAIK
+
+Perusahaan sebaiknya memiliki visual standard berisi contoh edge wave,
+centre wave, quarter wave, coil set, crossbow, dan longbow; contoh
+acceptable dan unacceptable; lokasi pengukuran; kondisi tension; metode
+sampling; serta aturan acceptance.
+
+Dengan standar tersebut, komunikasi QC dan production menjadi lebih
+objektif. “Wave-nya lumayan” dapat diganti dengan klasifikasi
+berdasarkan standar internal.
+
+DARI PENGALAMAN OPERATOR MENJADI DATABASE
+
+Operator sering mengetahui pola yang tidak terlihat dalam laporan.
+Pengetahuan tersebut sebaiknya dikonversi menjadi data.
+
+Kolom yang berguna antara lain tanggal, coil ID, grade, thickness,
+width, supplier, incoming flatness, line, setting, defect type, lokasi
+defect, head/body/tail, corrective action, dan hasil.
+
+Setelah ratusan coil terkumpul, pola dapat dianalisis. Misalnya longbow
+meningkat pada width tertentu, edge wave meningkat setelah roll mencapai
+campaign tertentu, atau centre wave lebih sering muncul pada grade
+tertentu.
+
+Dengan begitu troubleshooting berubah dari “feeling” menjadi
+evidence-based improvement.
+
+KERANGKA KOREKSI YANG PRAKTIS
+
+1.  Identifikasi bentuk defect.
+2.  Tentukan arah: longitudinal atau transverse.
+3.  Tentukan lokasi: edge, centre, intermediate, atau seluruh width.
+4.  Periksa incoming condition.
+5.  Bandingkan head, body, dan tail.
+6.  Periksa thickness, width, grade, hardness, dan parameter relevan.
+7.  Lakukan controlled trial bila memungkinkan.
+8.  Evaluasi kembali setelah tension dilepas.
+9.  Jika material akan di-slit, evaluasi slit strip.
+10. Simpan hasil corrective action sebagai data.
+
+MENGAPA FLATNESS ADALAH MASALAH SISTEM?
+
+Flatness jarang memiliki satu penyebab tunggal. Roll profile dapat benar
+tetapi incoming material sudah bermasalah. Incoming material dapat baik
+tetapi tension tidak stabil. Tension dapat stabil tetapi roll wear
+berubah. Semua parameter dapat tampak normal tetapi grade material
+berbeda.
+
+Karena itu rantainya perlu dilihat sebagai satu sistem:
+
+Material → Rolling → Tension → Levelling → Recoiling → Slitting →
+Customer Process.
+
+Jika salah satu tahap menghasilkan ketidakseimbangan elongation atau
+residual stress, gejalanya dapat muncul pada tahap berikutnya.
+
+KESIMPULAN
+
+Flatness defect pada baja gulung harus dibaca sebagai pola mekanis,
+bukan sekadar masalah visual.
+
+Edge wave, centre wave, coil set, longbow, quarter wave, dan crossbow
+memiliki karakteristik yang berbeda. Edge dan centre wave terutama
+menggambarkan ketidakseimbangan relatif elongation sepanjang width. Coil
+set berkaitan dengan curvature longitudinal akibat bending melalui
+thickness ketika strip digulung. Longbow merupakan curvature
+longitudinal yang dapat berkaitan dengan perbedaan kondisi antara sisi
+kiri dan kanan serta residual stress imbalance.
+
+QC yang efektif tidak berhenti pada pertanyaan “flat atau tidak?”.
+Pertanyaan yang lebih berguna adalah: bagian mana yang mengalami
+ketidakseimbangan, kapan defect mulai terbentuk, apakah defect
+diwariskan dari upstream, dan bukti apa yang mendukung root cause?
+
+Jika pertanyaan tersebut menjadi kebiasaan, flatness defect dapat
+berubah dari masalah reaktif menjadi sumber data improvement. Hasil
+akhirnya bukan hanya coil yang terlihat lebih rata, tetapi proses yang
+lebih stabil, hold dan rework yang lebih rendah, serta material yang
+lebih aman digunakan customer.
+
+REFERENSI TEKNIS
+
+1.  Morris, J.W., Hardy, S.J., Thomas, J.T. (2002). Some fundamental
+    considerations for the control of residual flatness in tension
+    levelling. Journal of Materials Processing Technology, 120, 385–396.
+
+2.  Morris, J.W., Hardy, S.J., Thomas, J.T. (2005). Effects of tension
+    levelling process parameters on cold rolled strip characteristics
+    using a designed factorial analysis approach. Ironmaking &
+    Steelmaking, 32(5), 443–448.
+
+3.  Morris, J.W., Hardy, S.J., Thomas, J.T. (2001). Formation of
+    residual stresses owing to tension levelling of cold rolled strip.
+    Ironmaking & Steelmaking, 28(1), 44–52.
+
+4.  Reduction of flatness defects in thin metal sheets by a pure tension
+    leveler. International Journal of Mechanical Sciences, 122 (2017),
+    267–276.
+
+5.  Tran, T., Tardif, N., Limam, A. (2015). Experimental and numerical
+    modeling of flatness defects in strip cold rolling. International
+    Journal of Solids and Structures, 69–70.
+
+6.  Nakhoul, M., Montmitonnet, P., Abdelkhalek, S. (2012). Flatness
+    Defect in Thin Strip Cold Rolling and the Friction Impact on it.
+
+CATATAN TEKNIS
+
+Contoh angka Pareto di atas hanya ilustrasi. Acceptance criteria dan
+setting mesin harus mengikuti spesifikasi produk, kemampuan equipment,
+grade material, customer requirement, serta standar internal perusahaan.
+Tidak ada satu angka setting yang berlaku universal untuk semua mill dan
+semua material.
