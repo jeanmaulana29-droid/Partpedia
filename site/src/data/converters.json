@@ -899,7 +899,7 @@
   {
     "slug": "tensile",
     "name": "Tensile / Yield",
-    "sub": "MPa · ksi · psi",
+    "sub": "MPa · ksi · psi · HRB",
     "emoji": "🏋️",
     "color": "#fbbf24",
     "units": [
@@ -927,7 +927,14 @@
         "id": "psi",
         "label": "psi",
         "toBase": 6894.757293
+      },
+      {
+        "id": "hrb",
+        "label": "Hardness (HRB)",
+        "toBase": 1
       }
-    ]
+    ],
+    "mode": "tensile",
+    "note": "HRB ↔ kekuatan tarik (MPa) memakai korelasi perkiraan baja (tabel ASTM E140). Nilai approximate — untuk QA kritis pakai chart material resmi. Satuan tegangan (MPa, ksi, psi, dll.) tetap konversi eksak SI/NIST."
   }
 ]
