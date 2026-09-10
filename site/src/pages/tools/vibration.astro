@@ -1,0 +1,390 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout
+  title="Pengukur getaran — Partpedia"
+  description="Ukur getaran/percepatan dengan sensor gerak smartphone. Satuan m/s² dan g. Tempelkan HP ke benda yang digetarkan. Referensi cepat, bukan vibration meter industri."
+>
+  <div class="vb-page">
+    <a class="back" href="/">← Beranda</a>
+
+    <header class="vb-hero">
+      <div class="vb-badge">SENSOR GERAK</div>
+      <h1>Pengukur getaran</h1>
+      <p class="vb-lead">
+        Ukur getaran lewat accelerometer HP.
+        Satuan utama: <strong>m/s²</strong>. Pendukung: <strong>g</strong> (1 g ≈ 9,81 m/s²).
+        Tempelkan HP ke permukaan mesin/benda yang digetarkan.
+      </p>
+    </header>
+
+    <div class="perm-card" id="perm-card">
+      <div class="perm-ico" aria-hidden="true">📳</div>
+      <h2 id="perm-title">Siap mengukur getaran</h2>
+      <p id="perm-desc">
+        Fitur ini memakai <strong>sensor gerak (accelerometer)</strong> di perangkat Anda.
+        Data <strong>tidak dikirim</strong> ke server — hanya dianalisis di browser.
+      </p>
+      <p class="perm-warn" id="perm-warn" hidden>
+        Perangkat ini meminta <strong>izin akses sensor gerak</strong>.
+        Saat Anda menekan tombol, akan muncul permintaan izin dari sistem.
+        Pilih <em>Izinkan</em> agar pengukuran berjalan.
+      </p>
+      <p class="perm-tip">
+        Tips: letakkan HP diam di permukaan dulu untuk melihat baseline, lalu tempelkan ke benda yang bergetar.
+        Hasil paling stabil di smartphone (bukan desktop tanpa sensor).
+      </p>
+      <button type="button" class="btn-perm" id="btn-start">Mulai ukur getaran</button>
+      <p class="perm-err" id="perm-err" hidden></p>
+    </div>
+
+    <div class="meter-wrap" id="meter-wrap" hidden>
+      <div class="meter-card">
+        <div class="meter-readout">
+          <div class="meter-main">
+            <span class="meter-value" id="val-ms2">--</span>
+            <span class="meter-unit">m/s² <small>(magnitude)</small></span>
+          </div>
+          <div class="meter-side">
+            <div><span class="side-label">g</span> <span id="val-g">--</span> <small>g</small></div>
+            <div><span class="side-label">Peak</span> <span id="val-peak">--</span> <small>m/s²</small></div>
+            <div><span class="side-label">RMS</span> <span id="val-rms">--</span> <small>m/s²</small></div>
+            <div><span class="side-label">Status</span> <span id="level-label">—</span></div>
+          </div>
+        </div>
+
+        <div class="axes">
+          <div class="axis"><span>X</span><b id="ax-x">--</b> <small>m/s²</small></div>
+          <div class="axis"><span>Y</span><b id="ax-y">--</b> <small>m/s²</small></div>
+          <div class="axis"><span>Z</span><b id="ax-z">--</b> <small>m/s²</small></div>
+        </div>
+
+        <div class="meter-bar-wrap">
+          <div class="meter-bar" id="meter-bar"></div>
+          <div class="meter-marks">
+            <span>0</span><span>2</span><span>5</span><span>10</span><span>15</span><span>20+</span>
+          </div>
+        </div>
+
+        <canvas id="wave" width="640" height="120" aria-label="Grafik getaran"></canvas>
+
+        <div class="ref-table">
+          <p class="ref-title">Referensi kasar (magnitude, tanpa gravitasi)</p>
+          <ul>
+            <li><b>~0–0,3</b> diam / hampir diam</li>
+            <li><b>~0,5–2</b> getaran ringan (mesin idling)</li>
+            <li><b>~2–8</b> getaran sedang</li>
+            <li><b>~8+</b> getaran kuat — hati-hati pada peletakan HP</li>
+          </ul>
+        </div>
+
+        <div class="meter-actions">
+          <button type="button" class="btn-stop" id="btn-stop">Stop</button>
+          <button type="button" class="btn-reset-peak" id="btn-reset-peak">Reset peak</button>
+        </div>
+
+        <p class="warn">
+          <strong>Bukan vibration meter industri.</strong> Sensor HP tidak setara accelerometer kalibrasi pabrik.
+          Gunakan untuk referensi kasar saja. Jangan tempelkan HP ke bagian panas, berputar, atau berbahaya.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+  (function () {
+    const G = 9.80665;
+    const HIST = 120;
+    const history = [];
+    const rmsBuf = [];
+    const RMS_N = 30;
+    let peak = 0;
+    let running = false;
+    let handler = null;
+
+    const elMs2 = document.getElementById("val-ms2");
+    const elG = document.getElementById("val-g");
+    const elPeak = document.getElementById("val-peak");
+    const elRms = document.getElementById("val-rms");
+    const elLabel = document.getElementById("level-label");
+    const elBar = document.getElementById("meter-bar");
+    const elX = document.getElementById("ax-x");
+    const elY = document.getElementById("ax-y");
+    const elZ = document.getElementById("ax-z");
+    const canvas = document.getElementById("wave");
+    const ctx = canvas ? canvas.getContext("2d") : null;
+    const permCard = document.getElementById("perm-card");
+    const meterWrap = document.getElementById("meter-wrap");
+    const permErr = document.getElementById("perm-err");
+    const permWarn = document.getElementById("perm-warn");
+    const permTitle = document.getElementById("perm-title");
+    const permDesc = document.getElementById("perm-desc");
+
+    function needsPermission() {
+      return typeof DeviceMotionEvent !== "undefined"
+        && typeof DeviceMotionEvent.requestPermission === "function";
+    }
+
+    // Show permission notice only if iOS-style permission is required
+    if (needsPermission() && permWarn) {
+      permWarn.hidden = false;
+      if (permTitle) permTitle.textContent = "Izin sensor gerak diperlukan";
+      if (permDesc) {
+        permDesc.innerHTML =
+          "Perangkat ini (biasanya iPhone/iPad) meminta izin sebelum accelerometer bisa dibaca. " +
+          "Data <strong>tidak dikirim</strong> ke server.";
+      }
+    }
+
+    function levelLabel(m) {
+      if (m < 0.3) return "Diam";
+      if (m < 2) return "Ringan";
+      if (m < 8) return "Sedang";
+      if (m < 15) return "Kuat";
+      return "Sangat kuat";
+    }
+    function barColor(m) {
+      if (m < 2) return "linear-gradient(90deg,#22c55e,#84cc16)";
+      if (m < 8) return "linear-gradient(90deg,#eab308,#f59e0b)";
+      return "linear-gradient(90deg,#f97316,#ef4444)";
+    }
+
+    function drawWave() {
+      if (!ctx || !canvas) return;
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "rgba(2,6,23,0.95)";
+      ctx.fillRect(0, 0, w, h);
+      ctx.strokeStyle = "rgba(148,163,184,0.15)";
+      for (let y = 0; y < h; y += h / 4) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+      if (history.length < 2) return;
+      ctx.strokeStyle = "#a78bfa";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      history.forEach((v, i) => {
+        const x = (i / (HIST - 1)) * w;
+        const yv = h - (Math.min(20, Math.max(0, v)) / 20) * h;
+        if (i === 0) ctx.moveTo(x, yv);
+        else ctx.lineTo(x, yv);
+      });
+      ctx.stroke();
+    }
+
+    function onMotion(e) {
+      if (!running) return;
+      // Prefer linear acceleration (gravity removed); fallback to including gravity
+      let ax = 0, ay = 0, az = 0;
+      if (e.acceleration && (e.acceleration.x != null || e.acceleration.y != null || e.acceleration.z != null)) {
+        ax = e.acceleration.x || 0;
+        ay = e.acceleration.y || 0;
+        az = e.acceleration.z || 0;
+      } else if (e.accelerationIncludingGravity) {
+        // Rough gravity removal: magnitude of vector minus ~1g when static is imperfect;
+        // show including-gravity components but magnitude of deviation from 1g
+        const gx = e.accelerationIncludingGravity.x || 0;
+        const gy = e.accelerationIncludingGravity.y || 0;
+        const gz = e.accelerationIncludingGravity.z || 0;
+        ax = gx;
+        ay = gy;
+        az = gz;
+        const magG = Math.sqrt(gx * gx + gy * gy + gz * gz);
+        // Use deviation from gravity as vibration proxy when linear accel unavailable
+        const dev = Math.abs(magG - G);
+        const mag = dev;
+        peak = Math.max(peak, mag);
+        rmsBuf.push(mag * mag);
+        if (rmsBuf.length > RMS_N) rmsBuf.shift();
+        const rms = Math.sqrt(rmsBuf.reduce((a, b) => a + b, 0) / rmsBuf.length);
+        history.push(mag);
+        if (history.length > HIST) history.shift();
+        updateUI(mag, rms, ax, ay, az);
+        return;
+      } else {
+        return;
+      }
+      const mag = Math.sqrt(ax * ax + ay * ay + az * az);
+      peak = Math.max(peak, mag);
+      rmsBuf.push(mag * mag);
+      if (rmsBuf.length > RMS_N) rmsBuf.shift();
+      const rms = Math.sqrt(rmsBuf.reduce((a, b) => a + b, 0) / rmsBuf.length);
+      history.push(mag);
+      if (history.length > HIST) history.shift();
+      updateUI(mag, rms, ax, ay, az);
+    }
+
+    function updateUI(mag, rms, ax, ay, az) {
+      if (elMs2) elMs2.textContent = mag.toFixed(2);
+      if (elG) elG.textContent = (mag / G).toFixed(3);
+      if (elPeak) elPeak.textContent = peak.toFixed(2);
+      if (elRms) elRms.textContent = rms.toFixed(2);
+      if (elLabel) elLabel.textContent = levelLabel(mag);
+      if (elX) elX.textContent = ax.toFixed(2);
+      if (elY) elY.textContent = ay.toFixed(2);
+      if (elZ) elZ.textContent = az.toFixed(2);
+      if (elBar) {
+        const pct = Math.max(0, Math.min(100, (mag / 20) * 100));
+        elBar.style.width = pct + "%";
+        elBar.style.background = barColor(mag);
+      }
+      drawWave();
+    }
+
+    async function start() {
+      if (permErr) {
+        permErr.hidden = true;
+        permErr.textContent = "";
+      }
+      try {
+        if (typeof DeviceMotionEvent === "undefined") {
+          throw new Error("Perangkat/browser ini tidak mendukung sensor gerak (DeviceMotion).");
+        }
+        if (needsPermission()) {
+          const state = await DeviceMotionEvent.requestPermission();
+          if (state !== "granted") {
+            throw Object.assign(new Error("Izin sensor gerak ditolak."), { name: "NotAllowedError" });
+          }
+        }
+        peak = 0;
+        history.length = 0;
+        rmsBuf.length = 0;
+        running = true;
+        handler = onMotion;
+        window.addEventListener("devicemotion", handler);
+        if (permCard) permCard.hidden = true;
+        if (meterWrap) meterWrap.hidden = false;
+        // If no events arrive (desktop), show hint after short wait
+        setTimeout(() => {
+          if (running && history.length === 0 && permErr) {
+            // keep meter visible; show soft note via label
+            if (elLabel) elLabel.textContent = "Menunggu sensor…";
+          }
+        }, 2000);
+      } catch (err) {
+        let msg = "Tidak bisa mengakses sensor gerak.";
+        if (err && err.name === "NotAllowedError") {
+          msg = "Izin sensor ditolak. Izinkan di pengaturan situs/browser, lalu coba lagi.";
+        } else if (err && err.message) {
+          msg = err.message;
+        }
+        if (permErr) {
+          permErr.textContent = msg;
+          permErr.hidden = false;
+        }
+      }
+    }
+
+    function stop() {
+      running = false;
+      if (handler) {
+        window.removeEventListener("devicemotion", handler);
+        handler = null;
+      }
+      if (meterWrap) meterWrap.hidden = true;
+      if (permCard) permCard.hidden = false;
+    }
+
+    document.getElementById("btn-start")?.addEventListener("click", start);
+    document.getElementById("btn-stop")?.addEventListener("click", stop);
+    document.getElementById("btn-reset-peak")?.addEventListener("click", () => {
+      peak = 0;
+      if (elPeak) elPeak.textContent = "--";
+    });
+    window.addEventListener("beforeunload", stop);
+  })();
+  </script>
+
+  <style>
+    .vb-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+    .back { display: inline-flex; margin-bottom: 1rem; color: var(--muted,#94a3b8); text-decoration: none; font-size: .9rem; }
+    .back:hover { color: var(--amber,#fbbf24); }
+    .vb-badge {
+      display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .12em;
+      color: #0f172a; background: linear-gradient(135deg,#a78bfa,#6366f1);
+      padding: .28rem .65rem; border-radius: 999px; margin-bottom: .65rem;
+    }
+    .vb-hero h1 { font-size: clamp(1.5rem,4vw,2rem); margin: 0 0 .4rem; color: var(--ink,#f1f5f9); }
+    .vb-lead { margin: 0; color: var(--muted,#94a3b8); line-height: 1.5; font-size: .92rem; }
+    .vb-lead strong { color: #e2e8f0; }
+
+    .perm-card, .meter-card {
+      margin-top: 1.25rem; border-radius: 20px; padding: 1.35rem 1.2rem;
+      border: 1px solid rgba(167,139,250,.3);
+      background:
+        radial-gradient(100% 80% at 50% 0%, rgba(167,139,250,.12), transparent 55%),
+        var(--bg-card,#0f172a);
+      box-shadow: 0 18px 48px rgba(0,0,0,.3);
+    }
+    .perm-ico { font-size: 2rem; margin-bottom: .5rem; }
+    .perm-card h2 { margin: 0 0 .5rem; font-size: 1.2rem; }
+    .perm-card p { color: var(--muted,#94a3b8); line-height: 1.5; font-size: .9rem; }
+    .perm-warn {
+      background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.3);
+      border-radius: 12px; padding: .75rem .9rem; color: #fde68a !important;
+    }
+    .perm-tip { font-size: .82rem !important; }
+    .btn-perm {
+      appearance: none; border: none; cursor: pointer; margin-top: .9rem;
+      font-weight: 700; padding: .85rem 1.25rem; border-radius: 999px;
+      color: #0f172a; background: linear-gradient(135deg,#c4b5fd,#818cf8);
+      box-shadow: 0 8px 24px rgba(129,140,248,.35);
+    }
+    .btn-perm:hover { filter: brightness(1.05); }
+    .perm-err { margin-top: .75rem; color: #fca5a5; font-size: .88rem; }
+
+    .meter-readout { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: flex-end; margin-bottom: 1rem; }
+    .meter-value { font-family: var(--font-mono, ui-monospace, monospace); font-size: 3rem; font-weight: 700; color: #a78bfa; line-height: 1; }
+    .meter-unit { display: block; color: var(--muted,#94a3b8); font-size: .85rem; margin-top: .25rem; }
+    .meter-side { font-size: .88rem; color: #e2e8f0; display: flex; flex-direction: column; gap: .35rem; }
+    .side-label { color: var(--muted,#94a3b8); display: inline-block; min-width: 3.5rem; }
+
+    .axes {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem;
+      margin-bottom: 1rem;
+    }
+    .axis {
+      text-align: center; padding: .55rem; border-radius: 10px;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      font-size: .8rem; color: var(--muted,#94a3b8);
+    }
+    .axis b { display: block; color: #e2e8f0; font-size: 1rem; margin: .15rem 0; }
+
+    .meter-bar-wrap { margin: .5rem 0 1rem; }
+    .meter-bar {
+      height: 14px; width: 0%; border-radius: 999px;
+      background: linear-gradient(90deg,#22c55e,#84cc16);
+      transition: width .1s linear;
+    }
+    .meter-marks {
+      display: flex; justify-content: space-between; font-size: .65rem; color: var(--muted,#94a3b8); margin-top: .25rem;
+    }
+
+    #wave {
+      width: 100%; height: 120px; border-radius: 12px;
+      background: #020617; border: 1px solid rgba(148,163,184,.2);
+    }
+
+    .ref-table { margin-top: 1rem; font-size: .85rem; color: #cbd5e1; }
+    .ref-title { font-weight: 700; margin: 0 0 .35rem; }
+    .ref-table ul { margin: 0; padding-left: 1.1rem; color: var(--muted,#94a3b8); }
+    .ref-table b { color: #e2e8f0; }
+
+    .meter-actions { display: flex; gap: .6rem; margin-top: 1rem; flex-wrap: wrap; }
+    .btn-stop, .btn-reset-peak {
+      appearance: none; cursor: pointer; font-weight: 600; padding: .65rem 1.1rem;
+      border-radius: 999px; border: 1px solid var(--line, #334155); background: transparent; color: var(--ink,#e2e8f0);
+    }
+    .btn-stop:hover { border-color: #f87171; color: #fca5a5; }
+
+    .warn {
+      margin-top: 1rem; color: #fde68a; font-size: .82rem; line-height: 1.45;
+      background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.25);
+      border-radius: 12px; padding: .75rem .9rem;
+    }
+  </style>
+</Layout>
