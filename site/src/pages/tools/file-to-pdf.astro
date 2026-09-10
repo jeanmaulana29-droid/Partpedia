@@ -1,0 +1,668 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout
+  title="File ke PDF — Partpedia"
+  description="Ubah gambar dan file teks menjadi PDF profesional dalam hitungan detik. Cepat, di browser, tanpa unggah ke server."
+>
+  <div class="ftp-page">
+    <a class="back" href="/">← Beranda</a>
+
+    <header class="ftp-hero">
+      <div class="ftp-badge">UTILITAS PREMIUM</div>
+      <h1>File → PDF</h1>
+      <p class="ftp-lead">Ubah gambar & file teks jadi PDF rapi. Proses di perangkat Anda — cepat, privat, tanpa antri server.</p>
+    </header>
+
+    <div class="ftp-card" id="ftp-card">
+      <div class="drop" id="drop" tabindex="0" role="button" aria-label="Pilih atau seret file">
+        <div class="drop-glow"></div>
+        <div class="drop-ico" aria-hidden="true">📄</div>
+        <p class="drop-title">Seret file ke sini</p>
+        <p class="drop-sub">atau ketuk untuk memilih dari perangkat</p>
+        <div class="drop-tags">
+          <span>JPG</span><span>PNG</span><span>WEBP</span><span>GIF</span><span>TXT</span><span>CSV</span><span>MD</span><span>PDF</span>
+        </div>
+        <input type="file" id="file-input" multiple accept="image/*,.txt,.md,.csv,.json,.pdf,text/plain,text/csv,application/pdf" hidden />
+      </div>
+
+      <ul class="file-list" id="file-list" hidden></ul>
+
+      <div class="ftp-actions">
+        <button type="button" class="btn-convert" id="btn-convert" disabled>
+          <span class="btn-label">Ubah jadi PDF</span>
+          <span class="btn-spin" hidden></span>
+        </button>
+        <button type="button" class="btn-clear" id="btn-clear" hidden>Hapus semua</button>
+      </div>
+
+      <div class="progress" id="progress" hidden>
+        <div class="progress-bar"><i id="progress-fill"></i></div>
+        <p class="progress-text" id="progress-text">Menyiapkan…</p>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <div class="result-ico">✓</div>
+        <p class="result-title">PDF siap</p>
+        <p class="result-sub" id="result-sub"></p>
+        <a class="btn-download" id="btn-download" download="partpedia.pdf">Unduh PDF</a>
+      </div>
+
+      <p class="ftp-note">
+        <strong>Didukung:</strong> gambar (JPG, PNG, WEBP, GIF), teks (TXT, MD, CSV, JSON), dan PDF (digabung).
+        File diproses di browser — tidak dikirim ke server Partpedia.
+        Maks. disarankan ±15 file / ±20 MB total agar tetap cepat.
+      </p>
+    </div>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script is:inline>
+  (function () {
+    const drop = document.getElementById("drop");
+    const input = document.getElementById("file-input");
+    const list = document.getElementById("file-list");
+    const btnConvert = document.getElementById("btn-convert");
+    const btnClear = document.getElementById("btn-clear");
+    const progress = document.getElementById("progress");
+    const progressFill = document.getElementById("progress-fill");
+    const progressText = document.getElementById("progress-text");
+    const result = document.getElementById("result");
+    const resultSub = document.getElementById("result-sub");
+    const btnDownload = document.getElementById("btn-download");
+    const card = document.getElementById("ftp-card");
+
+    /** @type {File[]} */
+    let files = [];
+
+    const OK_EXT = new Set(["jpg","jpeg","png","webp","gif","bmp","txt","md","csv","json","pdf"]);
+    const IMG = new Set(["jpg","jpeg","png","webp","gif","bmp"]);
+
+    function extOf(name) {
+      const i = name.lastIndexOf(".");
+      return i >= 0 ? name.slice(i + 1).toLowerCase() : "";
+    }
+    function fmtSize(n) {
+      if (n < 1024) return n + " B";
+      if (n < 1048576) return (n / 1024).toFixed(1) + " KB";
+      return (n / 1048576).toFixed(1) + " MB";
+    }
+    function isOk(f) {
+      const e = extOf(f.name);
+      if (OK_EXT.has(e)) return true;
+      if (f.type && (f.type.startsWith("image/") || f.type === "application/pdf" || f.type.startsWith("text/"))) return true;
+      return false;
+    }
+
+    function syncUI() {
+      list.innerHTML = "";
+      if (!files.length) {
+        list.hidden = true;
+        btnConvert.disabled = true;
+        btnClear.hidden = true;
+        return;
+      }
+      list.hidden = false;
+      btnClear.hidden = false;
+      btnConvert.disabled = false;
+      files.forEach((f, idx) => {
+        const li = document.createElement("li");
+        li.className = "file-item";
+        li.innerHTML =
+          '<span class="fi-name"></span><span class="fi-meta"></span><button type="button" class="fi-x" aria-label="Hapus">×</button>';
+        li.querySelector(".fi-name").textContent = f.name;
+        li.querySelector(".fi-meta").textContent = fmtSize(f.size) + " · " + (extOf(f.name) || f.type || "file");
+        li.querySelector(".fi-x").addEventListener("click", () => {
+          files.splice(idx, 1);
+          syncUI();
+          hideResult();
+        });
+        list.appendChild(li);
+      });
+    }
+
+    function addFiles(fileList) {
+      const incoming = Array.from(fileList || []);
+      let skipped = 0;
+      for (const f of incoming) {
+        if (!isOk(f)) { skipped++; continue; }
+        if (files.some((x) => x.name === f.name && x.size === f.size)) continue;
+        files.push(f);
+      }
+      if (files.length > 20) files = files.slice(0, 20);
+      syncUI();
+      hideResult();
+      if (skipped) {
+        progress.hidden = false;
+        progressText.textContent = skipped + " file dilewati (format tidak didukung).";
+        progressFill.style.width = "0%";
+        setTimeout(() => { if (!btnConvert.disabled) progress.hidden = true; }, 2200);
+      }
+    }
+
+    function hideResult() {
+      result.hidden = true;
+      if (btnDownload.href && btnDownload.href.startsWith("blob:")) {
+        try { URL.revokeObjectURL(btnDownload.href); } catch (_) {}
+      }
+    }
+
+    drop.addEventListener("click", () => input.click());
+    drop.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.click(); }
+    });
+    input.addEventListener("change", () => {
+      addFiles(input.files);
+      input.value = "";
+    });
+    ["dragenter", "dragover"].forEach((ev) => {
+      drop.addEventListener(ev, (e) => {
+        e.preventDefault();
+        drop.classList.add("is-drag");
+      });
+    });
+    ["dragleave", "drop"].forEach((ev) => {
+      drop.addEventListener(ev, (e) => {
+        e.preventDefault();
+        drop.classList.remove("is-drag");
+      });
+    });
+    drop.addEventListener("drop", (e) => {
+      addFiles(e.dataTransfer?.files);
+    });
+
+    btnClear.addEventListener("click", () => {
+      files = [];
+      syncUI();
+      hideResult();
+      progress.hidden = true;
+    });
+
+    function readAsArrayBuffer(file) {
+      return new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(r.result);
+        r.onerror = () => reject(r.error);
+        r.readAsArrayBuffer(file);
+      });
+    }
+    function readAsText(file) {
+      return new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(String(r.result || ""));
+        r.onerror = () => reject(r.error);
+        r.readAsText(file);
+      });
+    }
+    function loadImage(file) {
+      return new Promise((resolve, reject) => {
+        const url = URL.createObjectURL(file);
+        const img = new Image();
+        img.onload = () => {
+          URL.revokeObjectURL(url);
+          resolve(img);
+        };
+        img.onerror = () => {
+          URL.revokeObjectURL(url);
+          reject(new Error("Gagal memuat gambar"));
+        };
+        img.src = url;
+      });
+    }
+    async function imageToPngBytes(file) {
+      const img = await loadImage(file);
+      const canvas = document.createElement("canvas");
+      const max = 2000;
+      let w = img.naturalWidth || img.width;
+      let h = img.naturalHeight || img.height;
+      if (w > max || h > max) {
+        const s = Math.min(max / w, max / h);
+        w = Math.round(w * s);
+        h = Math.round(h * s);
+      }
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(img, 0, 0, w, h);
+      const blob = await new Promise((res) => canvas.toBlob(res, "image/png"));
+      if (!blob) throw new Error("Canvas gagal");
+      return new Uint8Array(await blob.arrayBuffer());
+    }
+
+    function wrapText(text, maxChars) {
+      const lines = [];
+      const raw = text.replace(/\r\n/g, "\n").split("\n");
+      for (const line of raw) {
+        if (line.length <= maxChars) {
+          lines.push(line);
+          continue;
+        }
+        let rest = line;
+        while (rest.length > maxChars) {
+          let cut = rest.lastIndexOf(" ", maxChars);
+          if (cut < maxChars * 0.5) cut = maxChars;
+          lines.push(rest.slice(0, cut));
+          rest = rest.slice(cut).replace(/^\s+/, "");
+        }
+        if (rest) lines.push(rest);
+      }
+      return lines;
+    }
+
+    async function convert() {
+      if (!files.length || typeof PDFLib === "undefined") {
+        progress.hidden = false;
+        progressText.textContent = "Library PDF belum siap. Muat ulang halaman.";
+        return;
+      }
+      hideResult();
+      btnConvert.disabled = true;
+      btnConvert.classList.add("is-busy");
+      btnConvert.querySelector(".btn-label").hidden = true;
+      btnConvert.querySelector(".btn-spin").hidden = false;
+      progress.hidden = false;
+      progressFill.style.width = "8%";
+      progressText.textContent = "Mengonversi…";
+      card.classList.add("is-working");
+
+      try {
+        const { PDFDocument, StandardFonts, rgb } = PDFLib;
+        const out = await PDFDocument.create();
+        const font = await out.embedFont(StandardFonts.Helvetica);
+        const total = files.length;
+
+        for (let i = 0; i < total; i++) {
+          const f = files[i];
+          const e = extOf(f.name);
+          progressFill.style.width = Math.round(((i + 0.3) / total) * 100) + "%";
+          progressText.textContent = "Memproses " + (i + 1) + " / " + total + " — " + f.name;
+
+          if (e === "pdf" || f.type === "application/pdf") {
+            const bytes = new Uint8Array(await readAsArrayBuffer(f));
+            const src = await PDFDocument.load(bytes, { ignoreEncryption: true });
+            const pages = await out.copyPages(src, src.getPageIndices());
+            pages.forEach((p) => out.addPage(p));
+          } else if (IMG.has(e) || (f.type && f.type.startsWith("image/"))) {
+            const pngBytes = await imageToPngBytes(f);
+            const img = await out.embedPng(pngBytes);
+            const maxW = 595;
+            const maxH = 842;
+            let w = img.width;
+            let h = img.height;
+            const scale = Math.min(maxW / w, maxH / h, 1);
+            w *= scale;
+            h *= scale;
+            const page = out.addPage([maxW, maxH]);
+            page.drawImage(img, {
+              x: (maxW - w) / 2,
+              y: (maxH - h) / 2,
+              width: w,
+              height: h,
+            });
+          } else {
+            const text = await readAsText(f);
+            const margin = 48;
+            const pageW = 595;
+            const pageH = 842;
+            const fontSize = 10;
+            const lineH = 14;
+            const maxChars = 90;
+            const lines = wrapText(text || "(kosong)", maxChars);
+            let page = out.addPage([pageW, pageH]);
+            let y = pageH - margin;
+            page.drawText(f.name, {
+              x: margin,
+              y: y,
+              size: 11,
+              font,
+              color: rgb(0.2, 0.25, 0.35),
+            });
+            y -= lineH * 1.6;
+            for (const line of lines) {
+              if (y < margin) {
+                page = out.addPage([pageW, pageH]);
+                y = pageH - margin;
+              }
+              page.drawText(line.slice(0, 120), {
+                x: margin,
+                y: y,
+                size: fontSize,
+                font,
+                color: rgb(0.1, 0.1, 0.12),
+              });
+              y -= lineH;
+            }
+          }
+          progressFill.style.width = Math.round(((i + 1) / total) * 100) + "%";
+        }
+
+        progressText.textContent = "Menyimpan PDF…";
+        const pdfBytes = await out.save();
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+        btnDownload.href = url;
+        const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
+        btnDownload.download = "partpedia-" + stamp + ".pdf";
+        resultSub.textContent = total + " file · " + fmtSize(blob.size);
+        result.hidden = false;
+        progressText.textContent = "Selesai";
+        progressFill.style.width = "100%";
+        setTimeout(() => { progress.hidden = true; }, 900);
+      } catch (err) {
+        console.error(err);
+        progress.hidden = false;
+        progressFill.style.width = "0%";
+        progressText.textContent = "Gagal: " + (err && err.message ? err.message : "coba format lain / file lebih kecil");
+      } finally {
+        btnConvert.disabled = !files.length;
+        btnConvert.classList.remove("is-busy");
+        btnConvert.querySelector(".btn-label").hidden = false;
+        btnConvert.querySelector(".btn-spin").hidden = true;
+        card.classList.remove("is-working");
+      }
+    }
+
+    btnConvert.addEventListener("click", convert);
+  })();
+  </script>
+
+  <style>
+    .ftp-page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+    .back {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      color: var(--muted, #94a3b8);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back:hover { color: var(--amber, #fbbf24); }
+
+    .ftp-hero { margin-bottom: 1.25rem; }
+    .ftp-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #0f172a;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.65rem;
+    }
+    .ftp-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      margin: 0 0 0.4rem;
+      background: linear-gradient(90deg, #f8fafc, #fbbf24 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .ftp-lead {
+      margin: 0;
+      color: var(--muted, #94a3b8);
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .ftp-card {
+      position: relative;
+      border-radius: 20px;
+      border: 1px solid rgba(251, 191, 36, 0.22);
+      background:
+        radial-gradient(120% 80% at 10% 0%, rgba(251, 191, 36, 0.12), transparent 50%),
+        radial-gradient(90% 60% at 100% 100%, rgba(56, 189, 248, 0.08), transparent 45%),
+        var(--bg-card, #0f172a);
+      padding: 1.25rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      transition: box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .ftp-card.is-working {
+      border-color: rgba(45, 212, 191, 0.45);
+      box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.2), 0 24px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .drop {
+      position: relative;
+      overflow: hidden;
+      border: 1.5px dashed rgba(148, 163, 184, 0.35);
+      border-radius: 16px;
+      padding: 2rem 1.25rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+      background: rgba(15, 23, 42, 0.45);
+    }
+    .drop:hover, .drop:focus-visible {
+      border-color: rgba(251, 191, 36, 0.65);
+      background: rgba(251, 191, 36, 0.06);
+      outline: none;
+    }
+    .drop.is-drag {
+      border-color: #2dd4bf;
+      background: rgba(45, 212, 191, 0.1);
+      transform: scale(1.01);
+    }
+    .drop-glow {
+      pointer-events: none;
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 120deg, transparent, rgba(251, 191, 36, 0.15), transparent 40%);
+      animation: spinGlow 8s linear infinite;
+      opacity: 0.5;
+    }
+    @keyframes spinGlow { to { transform: rotate(360deg); } }
+    .drop-ico { font-size: 2.2rem; position: relative; margin-bottom: 0.35rem; }
+    .drop-title {
+      position: relative;
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ink, #f1f5f9);
+    }
+    .drop-sub {
+      position: relative;
+      margin: 0.35rem 0 0.9rem;
+      font-size: 0.85rem;
+      color: var(--muted, #94a3b8);
+    }
+    .drop-tags {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+    }
+    .drop-tags span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.45rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .file-list {
+      list-style: none;
+      margin: 1rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      max-height: 220px;
+      overflow: auto;
+    }
+    .file-item {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.55rem 0.7rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.82rem;
+    }
+    .fi-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--ink, #f1f5f9);
+      font-weight: 600;
+    }
+    .fi-meta { color: var(--muted, #94a3b8); font-size: 0.75rem; }
+    .fi-x {
+      appearance: none;
+      border: none;
+      background: rgba(248, 113, 113, 0.15);
+      color: #fca5a5;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .fi-x:hover { background: rgba(248, 113, 113, 0.3); }
+
+    .ftp-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.1rem;
+      align-items: center;
+    }
+    .btn-convert {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      color: #0f172a;
+      background: linear-gradient(135deg, #fde68a, #f59e0b 45%, #ea580c);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      min-width: 160px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .btn-convert:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(245, 158, 11, 0.45);
+    }
+    .btn-convert:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .btn-convert.is-busy { pointer-events: none; }
+    .btn-spin {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(15, 23, 42, 0.25);
+      border-top-color: #0f172a;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .btn-clear {
+      appearance: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--muted, #94a3b8);
+    }
+    .btn-clear:hover { border-color: #fca5a5; color: #fecaca; }
+
+    .progress { margin-top: 1rem; }
+    .progress-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+    .progress-bar i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #2dd4bf, #fbbf24);
+      transition: width 0.25s ease;
+    }
+    .progress-text {
+      margin: 0.45rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted, #94a3b8);
+    }
+
+    .result {
+      margin-top: 1.15rem;
+      padding: 1.1rem;
+      border-radius: 14px;
+      text-align: center;
+      background: rgba(45, 212, 191, 0.08);
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      animation: popIn 0.45s ease;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(8px) scale(0.98); }
+      to { opacity: 1; transform: none; }
+    }
+    .result-ico {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 0.5rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(45, 212, 191, 0.2);
+      color: #5eead4;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .result-title { margin: 0; font-weight: 700; color: #5eead4; }
+    .result-sub { margin: 0.25rem 0 0.85rem; font-size: 0.82rem; color: var(--muted, #94a3b8); }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      text-decoration: none;
+      color: #0f172a;
+      background: linear-gradient(135deg, #5eead4, #2dd4bf);
+      padding: 0.75rem 1.3rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(45, 212, 191, 0.3);
+    }
+    .btn-download:hover { filter: brightness(1.05); }
+
+    .ftp-note {
+      margin: 1.15rem 0 0;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: var(--muted, #94a3b8);
+    }
+    .ftp-note strong { color: #cbd5e1; }
+
+    @media (max-width: 480px) {
+      .ftp-card { padding: 1rem; }
+      .drop { padding: 1.5rem 1rem; }
+    }
+  </style>
+</Layout>
