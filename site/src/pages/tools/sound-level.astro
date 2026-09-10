@@ -1,0 +1,366 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout
+  title="Pengukur kekerasan suara — Partpedia"
+  description="Ukur tingkat kebisingan sekitar dengan mikrofon perangkat. Satuan dB SPL (perkiraan) dan dBFS. Referensi cepat, bukan alat kalibrasi resmi."
+>
+  <div class="sm-page">
+    <a class="back" href="/">← Beranda</a>
+
+    <header class="sm-hero">
+      <div class="sm-badge">SENSOR PERANGKAT</div>
+      <h1>Pengukur kekerasan suara</h1>
+      <p class="sm-lead">
+        Ukur tingkat suara lewat mikrofon HP/laptop.
+        Satuan utama: <strong>dB SPL</strong> (perkiraan). Pendukung: <strong>dBFS</strong> (level digital).
+      </p>
+    </header>
+
+    <div class="perm-card" id="perm-card">
+      <div class="perm-ico" aria-hidden="true">🎙️</div>
+      <h2>Izin mikrofon diperlukan</h2>
+      <p>
+        Fitur ini memakai <strong>mikrofon</strong> perangkat Anda untuk membaca tingkat suara secara langsung.
+        Audio <strong>tidak direkam</strong> dan <strong>tidak dikirim</strong> ke server — hanya dianalisis di browser.
+      </p>
+      <p class="perm-warn">
+        Saat Anda menekan tombol di bawah, browser akan menampilkan
+        <strong>pemberitahuan permintaan akses mikrofon</strong>.
+        Pilih <em>Izinkan</em> agar pengukuran berjalan.
+      </p>
+      <button type="button" class="btn-perm" id="btn-start">Izinkan mikrofon &amp; mulai ukur</button>
+      <p class="perm-err" id="perm-err" hidden></p>
+    </div>
+
+    <div class="meter-wrap" id="meter-wrap" hidden>
+      <div class="meter-card">
+        <div class="meter-readout">
+          <div class="meter-main">
+            <span class="meter-value" id="db-spl">--</span>
+            <span class="meter-unit">dB SPL <small>(perkiraan)</small></span>
+          </div>
+          <div class="meter-side">
+            <div><span class="side-label">Peak</span> <span id="db-peak">--</span> <small>dB SPL</small></div>
+            <div><span class="side-label">dBFS</span> <span id="db-fs">--</span> <small>digital</small></div>
+            <div><span class="side-label">Status</span> <span id="level-label">—</span></div>
+          </div>
+        </div>
+
+        <div class="meter-bar-wrap">
+          <div class="meter-bar" id="meter-bar"></div>
+          <div class="meter-marks">
+            <span>30</span><span>50</span><span>70</span><span>85</span><span>100</span><span>120</span>
+          </div>
+        </div>
+
+        <canvas id="wave" width="640" height="120" aria-label="Grafik tingkat suara"></canvas>
+
+        <div class="calib">
+          <label for="calib">Kalibrasi offset (dB)</label>
+          <input type="range" id="calib" min="-15" max="15" step="0.5" value="0" />
+          <span id="calib-val">0 dB</span>
+          <p class="calib-hint">Geser agar mendekati sound level meter kalibrasi. Tersimpan di perangkat ini saja.</p>
+        </div>
+
+        <div class="ref-table">
+          <p class="ref-title">Referensi kasar (dB SPL)</p>
+          <ul>
+            <li><b>~30</b> perpustakaan sepi</li>
+            <li><b>~60</b> percakapan normal</li>
+            <li><b>~85</b> batas paparan kerja berkelanjutan (NIOSH)</li>
+            <li><b>~100+</b> sangat bising / risiko cepat</li>
+          </ul>
+        </div>
+
+        <div class="meter-actions">
+          <button type="button" class="btn-stop" id="btn-stop">Stop</button>
+          <button type="button" class="btn-reset-peak" id="btn-reset-peak">Reset peak</button>
+        </div>
+
+        <p class="warn">
+          <strong>Bukan alat ukur resmi.</strong> Mikrofon HP/laptop tidak terkalibrasi seperti sound level meter Class 1/2.
+          Bacaan ini <strong>perkiraan dB SPL</strong> (bisa ±5–15 dB tergantung perangkat).
+          Untuk audit kebisingan kerja, gunakan SLM terkalibrasi.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+  (function () {
+    const HIST = 120;
+    const history = [];
+    let audioCtx = null;
+    let analyser = null;
+    let stream = null;
+    let raf = 0;
+    let peakSpl = 0;
+    let running = false;
+
+    const elSpl = document.getElementById("db-spl");
+    const elPeak = document.getElementById("db-peak");
+    const elFs = document.getElementById("db-fs");
+    const elLabel = document.getElementById("level-label");
+    const elBar = document.getElementById("meter-bar");
+    const canvas = document.getElementById("wave");
+    const ctx = canvas ? canvas.getContext("2d") : null;
+    const permCard = document.getElementById("perm-card");
+    const meterWrap = document.getElementById("meter-wrap");
+    const permErr = document.getElementById("perm-err");
+    const calib = document.getElementById("calib");
+    const calibVal = document.getElementById("calib-val");
+    const CALIB_KEY = "partpedia_sound_calib_db";
+
+    try {
+      const saved = localStorage.getItem(CALIB_KEY);
+      if (saved != null && calib) {
+        calib.value = saved;
+        if (calibVal) calibVal.textContent = Number(saved).toFixed(1) + " dB";
+      }
+    } catch (_) {}
+
+    calib?.addEventListener("input", () => {
+      const v = Number(calib.value) || 0;
+      if (calibVal) calibVal.textContent = v.toFixed(1) + " dB";
+      try { localStorage.setItem(CALIB_KEY, String(v)); } catch (_) {}
+    });
+
+    function levelLabel(spl) {
+      if (spl < 40) return "Sangat sepi";
+      if (spl < 55) return "Sepi";
+      if (spl < 70) return "Sedang";
+      if (spl < 85) return "Keras";
+      if (spl < 100) return "Sangat keras";
+      return "Berbahaya";
+    }
+    function barColor(spl) {
+      if (spl < 70) return "linear-gradient(90deg,#22c55e,#84cc16)";
+      if (spl < 85) return "linear-gradient(90deg,#eab308,#f59e0b)";
+      return "linear-gradient(90deg,#f97316,#ef4444)";
+    }
+
+    function drawWave() {
+      if (!ctx || !canvas) return;
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "rgba(2,6,23,0.95)";
+      ctx.fillRect(0, 0, w, h);
+      ctx.strokeStyle = "rgba(148,163,184,0.15)";
+      for (let y = 0; y < h; y += h / 4) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+      const y85 = h - ((85 - 30) / 90) * h;
+      ctx.strokeStyle = "rgba(239,68,68,0.55)";
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(0, y85);
+      ctx.lineTo(w, y85);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      if (history.length < 2) return;
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      history.forEach((v, i) => {
+        const x = (i / (HIST - 1)) * w;
+        const yv = h - ((Math.min(120, Math.max(30, v)) - 30) / 90) * h;
+        if (i === 0) ctx.moveTo(x, yv);
+        else ctx.lineTo(x, yv);
+      });
+      ctx.stroke();
+    }
+
+    function tick() {
+      if (!running || !analyser) return;
+      const data = new Uint8Array(analyser.fftSize);
+      analyser.getByteTimeDomainData(data);
+      let sum = 0;
+      for (let i = 0; i < data.length; i++) {
+        const v = (data[i] - 128) / 128;
+        sum += v * v;
+      }
+      const rms = Math.sqrt(sum / data.length);
+      const dbfs = rms > 0 ? 20 * Math.log10(rms) : -100;
+      const offset = Number(calib?.value) || 0;
+      let spl = Math.max(25, Math.min(120, 94 + dbfs + offset));
+      if (dbfs < -55) spl = Math.max(25, 30 + offset + (dbfs + 55) * 0.3);
+
+      peakSpl = Math.max(peakSpl, spl);
+      history.push(spl);
+      if (history.length > HIST) history.shift();
+
+      if (elSpl) elSpl.textContent = spl.toFixed(1);
+      if (elPeak) elPeak.textContent = peakSpl.toFixed(1);
+      if (elFs) elFs.textContent = dbfs.toFixed(1);
+      if (elLabel) elLabel.textContent = levelLabel(spl);
+      if (elBar) {
+        const pct = Math.max(0, Math.min(100, ((spl - 30) / 90) * 100));
+        elBar.style.width = pct + "%";
+        elBar.style.background = barColor(spl);
+      }
+      drawWave();
+      raf = requestAnimationFrame(tick);
+    }
+
+    async function start() {
+      if (permErr) {
+        permErr.hidden = true;
+        permErr.textContent = "";
+      }
+      try {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          throw new Error("Browser ini tidak mendukung akses mikrofon.");
+        }
+        stream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            echoCancellation: false,
+            noiseSuppression: false,
+            autoGainControl: false,
+          },
+        });
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const src = audioCtx.createMediaStreamSource(stream);
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 2048;
+        analyser.smoothingTimeConstant = 0.8;
+        src.connect(analyser);
+        running = true;
+        peakSpl = 0;
+        history.length = 0;
+        if (permCard) permCard.hidden = true;
+        if (meterWrap) meterWrap.hidden = false;
+        tick();
+      } catch (err) {
+        let msg = "Akses mikrofon ditolak atau gagal.";
+        if (err && err.name === "NotAllowedError") {
+          msg = "Anda menolak izin mikrofon. Izinkan mikrofon di pengaturan situs browser, lalu tekan tombol lagi.";
+        } else if (err && err.name === "NotFoundError") {
+          msg = "Mikrofon tidak ditemukan di perangkat ini.";
+        } else if (err && err.message) {
+          msg = err.message;
+        }
+        if (permErr) {
+          permErr.textContent = msg;
+          permErr.hidden = false;
+        }
+      }
+    }
+
+    function stop() {
+      running = false;
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      if (stream) {
+        stream.getTracks().forEach((t) => t.stop());
+        stream = null;
+      }
+      if (audioCtx) {
+        try { audioCtx.close(); } catch (_) {}
+        audioCtx = null;
+      }
+      analyser = null;
+      if (meterWrap) meterWrap.hidden = true;
+      if (permCard) permCard.hidden = false;
+    }
+
+    document.getElementById("btn-start")?.addEventListener("click", start);
+    document.getElementById("btn-stop")?.addEventListener("click", stop);
+    document.getElementById("btn-reset-peak")?.addEventListener("click", () => {
+      peakSpl = 0;
+      if (elPeak) elPeak.textContent = "--";
+    });
+    window.addEventListener("beforeunload", stop);
+  })();
+  </script>
+
+  <style>
+    .sm-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+    .back { display: inline-flex; margin-bottom: 1rem; color: var(--muted,#94a3b8); text-decoration: none; font-size: .9rem; }
+    .back:hover { color: var(--amber,#fbbf24); }
+    .sm-badge {
+      display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .12em;
+      color: #0f172a; background: linear-gradient(135deg,#38bdf8,#818cf8);
+      padding: .28rem .65rem; border-radius: 999px; margin-bottom: .65rem;
+    }
+    .sm-hero h1 { font-size: clamp(1.5rem,4vw,2rem); margin: 0 0 .4rem; color: var(--ink,#f1f5f9); }
+    .sm-lead { margin: 0; color: var(--muted,#94a3b8); line-height: 1.5; font-size: .92rem; }
+    .sm-lead strong { color: #e2e8f0; }
+
+    .perm-card, .meter-card {
+      margin-top: 1.25rem; border-radius: 20px; padding: 1.35rem 1.2rem;
+      border: 1px solid rgba(56,189,248,.28);
+      background:
+        radial-gradient(100% 80% at 50% 0%, rgba(56,189,248,.12), transparent 55%),
+        var(--bg-card,#0f172a);
+      box-shadow: 0 18px 48px rgba(0,0,0,.3);
+    }
+    .perm-ico { font-size: 2rem; margin-bottom: .5rem; }
+    .perm-card h2 { margin: 0 0 .5rem; font-size: 1.2rem; }
+    .perm-card p { color: var(--muted,#94a3b8); line-height: 1.5; font-size: .9rem; }
+    .perm-warn {
+      background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.3);
+      border-radius: 12px; padding: .75rem .9rem; color: #fde68a !important;
+    }
+    .btn-perm {
+      appearance: none; border: none; cursor: pointer; margin-top: .9rem;
+      font-weight: 700; padding: .85rem 1.25rem; border-radius: 999px;
+      color: #0f172a; background: linear-gradient(135deg,#38bdf8,#818cf8);
+      box-shadow: 0 8px 24px rgba(56,189,248,.35);
+    }
+    .btn-perm:hover { filter: brightness(1.05); }
+    .perm-err { margin-top: .75rem; color: #fca5a5; font-size: .88rem; }
+
+    .meter-readout { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: flex-end; margin-bottom: 1rem; }
+    .meter-value { font-family: var(--font-mono, ui-monospace, monospace); font-size: 3rem; font-weight: 700; color: #38bdf8; line-height: 1; }
+    .meter-unit { display: block; color: var(--muted,#94a3b8); font-size: .85rem; margin-top: .25rem; }
+    .meter-unit small { opacity: .8; }
+    .meter-side { font-size: .88rem; color: #e2e8f0; display: flex; flex-direction: column; gap: .35rem; }
+    .side-label { color: var(--muted,#94a3b8); display: inline-block; min-width: 3.5rem; }
+
+    .meter-bar-wrap { margin: .5rem 0 1rem; }
+    .meter-bar {
+      height: 14px; width: 0%; border-radius: 999px;
+      background: linear-gradient(90deg,#22c55e,#84cc16);
+      transition: width .1s linear;
+    }
+    .meter-marks {
+      display: flex; justify-content: space-between; font-size: .65rem; color: var(--muted,#94a3b8); margin-top: .25rem;
+    }
+
+    #wave {
+      width: 100%; height: 120px; border-radius: 12px;
+      background: #020617; border: 1px solid rgba(148,163,184,.2);
+    }
+
+    .calib {
+      margin-top: 1rem; padding: .85rem; border-radius: 12px;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+    }
+    .calib label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; }
+    .calib input[type=range] { width: 70%; vertical-align: middle; }
+    .calib-hint { margin: .4rem 0 0; font-size: .75rem; color: var(--muted,#94a3b8); }
+
+    .ref-table { margin-top: 1rem; font-size: .85rem; color: #cbd5e1; }
+    .ref-title { font-weight: 700; margin: 0 0 .35rem; }
+    .ref-table ul { margin: 0; padding-left: 1.1rem; color: var(--muted,#94a3b8); }
+    .ref-table b { color: #e2e8f0; }
+
+    .meter-actions { display: flex; gap: .6rem; margin-top: 1rem; flex-wrap: wrap; }
+    .btn-stop, .btn-reset-peak {
+      appearance: none; cursor: pointer; font-weight: 600; padding: .65rem 1.1rem;
+      border-radius: 999px; border: 1px solid var(--line, #334155); background: transparent; color: var(--ink,#e2e8f0);
+    }
+    .btn-stop:hover { border-color: #f87171; color: #fca5a5; }
+
+    .warn {
+      margin-top: 1rem; color: #fde68a; font-size: .82rem; line-height: 1.45;
+      background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.25);
+      border-radius: 12px; padding: .75rem .9rem;
+    }
+  </style>
+</Layout>
