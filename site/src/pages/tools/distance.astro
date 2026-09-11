@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 ---
 <Layout
   title="Pengukur jarak pendek — Partpedia"
-  description="Ukur jarak titik A ke B dengan kamera + sensor gerak smartphone (mm). Estimasi konservatif — tidak menambah jarak saat HP diam."
+  description="Ukur jarak titik A ke B dengan kamera + sensor gerak smartphone (mm). Tanpa input manual. Estimasi dari jalur pergerakan HP."
 >
   <div class="ds-page">
     <a class="back" href="/">← Beranda</a>
@@ -12,9 +12,9 @@ import Layout from "../../layouts/Layout.astro";
       <div class="ds-badge">KAMERA + IMU</div>
       <h1>Pengukur jarak pendek</h1>
       <p class="ds-lead">
-        Tandai <strong>titik A</strong>, gerakkan HP ke tujuan (titik B).
-        Jarak dihitung dari sensor gerak, satuan <strong>mm</strong>.
-        Saat HP diam, angka <strong>tidak bertambah sendiri</strong>.
+        Tandai <strong>titik A</strong>, gerakkan HP lurus ke tujuan (titik B).
+        Jarak dihitung dari <strong>sensor gerak</strong> (percepatan + orientasi), ditampilkan dalam <strong>mm</strong>.
+        Tidak ada input angka manual.
       </p>
     </header>
 
@@ -23,10 +23,10 @@ import Layout from "../../layouts/Layout.astro";
       <h2>Siapkan pengukuran</h2>
       <p>
         1. Buka kamera · 2. Arahkan ke titik A · 3. Tekan <strong>Tandai A</strong> ·
-        4. Gerakkan HP menuju B (lurus, stabil) · 5. Berhenti di B — baca hasil.
+        4. Gerakkan HP menuju titik B (sedapat mungkin lurus, kecepatan stabil).
       </p>
       <p class="perm-warn">
-        Akan diminta <strong>izin kamera</strong>. Izin sensor hanya jika perangkat memintanya.
+        Akan diminta <strong>izin kamera</strong>. Izin sensor gerak hanya jika perangkat memintanya.
         Data tidak dikirim ke server.
       </p>
       <button type="button" class="btn-perm" id="btn-open">Buka kamera &amp; mulai</button>
@@ -52,34 +52,31 @@ import Layout from "../../layouts/Layout.astro";
       </div>
 
       <p class="warn">
-        Estimasi sensor HP (bukan laser). Dirancang agar <strong>tidak menambah jarak saat diam</strong>.
-        Gerakan goyang kecil diabaikan. Cocok jarak pendek; hasil tetap perkiraan.
+        <strong>Estimasi sensor HP</strong> — bukan laser meter. Akurasi bergantung pada gerakan stabil;
+        hindari goyangan berlebih. Paling cocok untuk jarak pendek (beberapa puluh cm hingga beberapa meter).
       </p>
     </div>
   </div>
 
   <script is:inline>
   (function () {
+    const G = 9.80665;
     let stream = null;
     let running = false;
     let measuring = false;
     let raf = 0;
     let lastT = 0;
-    let markA = null;
 
-    // Conservative IMU
+    // Visual marker A in normalized screen coords
+    let markA = null; // { sx, sy }
+
+    // IMU state (SI units: m, m/s, m/s²)
     let vx = 0, vy = 0, vz = 0;
+    let px = 0, py = 0, pz = 0;
     let pathM = 0;
-    let displayM = 0;
-    let gx = 0, gy = 0, gz = 9.81;
+    let gx = 0, gy = 0, gz = G;
     let gravReady = false;
     let stillMs = 0;
-    let moveMs = 0;
-    const MAX_SPEED = 2.2;      // m/s — batasi kecepatan tidak masuk akal
-    const MAX_PATH = 12;        // m — batas tool jarak pendek
-    const ACC_DEAD = 0.35;      // m/s² — di bawah ini dianggap noise
-    const STILL_ZUPT = 150;     // ms diam → velocity = 0
-    const MIN_STEP = 0.0008;    // m per frame — abaikan langkah numerik kecil
 
     let orient = { alpha: 0, beta: 90, gamma: 0 };
 
@@ -108,27 +105,26 @@ import Layout from "../../layouts/Layout.astro";
       if (e.gamma != null) orient.gamma = e.gamma;
     }
 
+    /** Rotate device-frame vector to a rough world frame using beta/gamma/alpha */
     function toWorld(ax, ay, az) {
       const a = orient.alpha * Math.PI / 180;
       const b = orient.beta * Math.PI / 180;
       const g = orient.gamma * Math.PI / 180;
+      // Z-X-Y style approximation for phone
       const ca = Math.cos(a), sa = Math.sin(a);
       const cb = Math.cos(b), sb = Math.sin(b);
       const cg = Math.cos(g), sg = Math.sin(g);
+      // R = Rz(alpha) * Rx(beta) * Ry(gamma) applied to column vector
       const x1 = cg * ax + sg * az;
       const y1 = ay;
       const z1 = -sg * ax + cg * az;
       const x2 = x1;
       const y2 = cb * y1 - sb * z1;
       const z2 = sb * y1 + cb * z1;
-      return { x: ca * x2 - sa * y2, y: sa * x2 + ca * y2, z: z2 };
-    }
-
-    function showDist() {
-      const mm = displayM * 1000;
-      if (roVal) {
-        roVal.textContent = mm >= 1000 ? (mm / 1000).toFixed(2) + " m" : Math.round(mm) + " mm";
-      }
+      const x3 = ca * x2 - sa * y2;
+      const y3 = sa * x2 + ca * y2;
+      const z3 = z2;
+      return { x: x3, y: y3, z: z3 };
     }
 
     function onMotion(e) {
@@ -137,9 +133,9 @@ import Layout from "../../layouts/Layout.astro";
       if (!lastT) { lastT = t; return; }
       let dt = (t - lastT) / 1000;
       lastT = t;
-      if (dt <= 0 || dt > 0.08) dt = 0.02;
+      if (dt <= 0 || dt > 0.1) dt = 0.02;
 
-      let ax = 0, ay = 0, az = 0;
+      let ax, ay, az;
       if (e.acceleration && e.acceleration.x != null) {
         ax = e.acceleration.x || 0;
         ay = e.acceleration.y || 0;
@@ -148,15 +144,14 @@ import Layout from "../../layouts/Layout.astro";
         const ix = e.accelerationIncludingGravity.x || 0;
         const iy = e.accelerationIncludingGravity.y || 0;
         const iz = e.accelerationIncludingGravity.z || 0;
+        const alphaG = 0.92;
         if (!gravReady) {
           gx = ix; gy = iy; gz = iz;
           gravReady = true;
         } else {
-          // gravity lambat — jangan ikut getaran tangan
-          const ag = 0.96;
-          gx = ag * gx + (1 - ag) * ix;
-          gy = ag * gy + (1 - ag) * iy;
-          gz = ag * gz + (1 - ag) * iz;
+          gx = alphaG * gx + (1 - alphaG) * ix;
+          gy = alphaG * gy + (1 - alphaG) * iy;
+          gz = alphaG * gz + (1 - alphaG) * iz;
         }
         ax = ix - gx;
         ay = iy - gy;
@@ -165,71 +160,43 @@ import Layout from "../../layouts/Layout.astro";
         return;
       }
 
+      // Noise gate
       const amag = Math.sqrt(ax * ax + ay * ay + az * az);
-
-      // Dead-zone: noise / goyangan kecil tidak dihitung
-      if (amag < ACC_DEAD) {
+      if (amag < 0.12) {
         ax = ay = az = 0;
         stillMs += dt * 1000;
-        moveMs = 0;
       } else {
         stillMs = 0;
-        moveMs += dt * 1000;
       }
-
-      // Saat diam: hentikan kecepatan → jarak tidak “jalan sendiri”
-      if (stillMs > STILL_ZUPT) {
+      // Zero-velocity update when still
+      if (stillMs > 180) {
         vx = vy = vz = 0;
-        if (measuring && roLabel) {
-          roLabel.textContent = pathM > 0.001 ? "Diam — hasil ditahan" : "Titik A · gerakkan HP ke B";
-        }
-        // soft-snap tampilan ke path (tanpa naik)
-        displayM = pathM;
-        showDist();
-        return;
       }
 
       if (!measuring) return;
 
-      // Hanya akumulasi jika gerakan sudah “nyata” sebentar (hindari spike)
       const w = toWorld(ax, ay, az);
-      if (moveMs < 40) {
-        // gerakan terlalu singkat → jangan integrasi penuh
-        return;
-      }
-
       vx += w.x * dt;
       vy += w.y * dt;
       vz += w.z * dt;
 
-      // Batasi kecepatan
-      const sp = Math.sqrt(vx * vx + vy * vy + vz * vz);
-      if (sp > MAX_SPEED) {
-        const s = MAX_SPEED / sp;
-        vx *= s; vy *= s; vz *= s;
-      }
-
-      // Damping kuat saat akselerasi lemah
-      if (amag < ACC_DEAD * 1.5) {
-        const d = Math.pow(0.92, dt * 60);
-        vx *= d; vy *= d; vz *= d;
-      }
+      // Light damping to limit drift
+      const damp = Math.pow(0.99, dt * 60);
+      vx *= damp; vy *= damp; vz *= damp;
 
       const dx = vx * dt;
       const dy = vy * dt;
       const dz = vz * dt;
+      px += dx; py += dy; pz += dz;
       const step = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      // Ignore tiny numerical noise
+      if (step > 0.00015) pathM += step;
 
-      if (step >= MIN_STEP) {
-        pathM = Math.min(MAX_PATH, pathM + step);
+      const mm = pathM * 1000;
+      if (roVal) {
+        roVal.textContent = mm >= 1000 ? (mm / 1000).toFixed(2) + " m" : Math.round(mm) + " mm";
       }
-
-      // Tampilkan dengan sedikit smoothing (tidak loncat liar)
-      displayM = displayM * 0.85 + pathM * 0.15;
-      if (pathM - displayM < 0.002) displayM = pathM;
-
-      showDist();
-      if (roLabel) roLabel.textContent = "Mengukur… teruskan ke B, lalu diamkan";
+      if (roLabel) roLabel.textContent = "Mengukur… gerakkan ke titik B";
     }
 
     function resizeOverlay() {
@@ -249,17 +216,21 @@ import Layout from "../../layouts/Layout.astro";
       const w = canvas.width;
       const h = canvas.height;
       ctx.clearRect(0, 0, w, h);
+
       const bx = w * 0.5;
       const by = h * 0.5;
+
       if (markA) {
         const ax = markA.sx * w;
         const ay = markA.sy * h;
+        // line
         ctx.beginPath();
         ctx.moveTo(ax, ay);
         ctx.lineTo(bx, by);
         ctx.strokeStyle = "rgba(56,189,248,0.95)";
         ctx.lineWidth = 3;
         ctx.stroke();
+        // point A
         ctx.beginPath();
         ctx.arc(ax, ay, 12, 0, Math.PI * 2);
         ctx.fillStyle = "#fbbf24";
@@ -270,6 +241,7 @@ import Layout from "../../layouts/Layout.astro";
         ctx.font = "bold 13px system-ui,sans-serif";
         ctx.fillStyle = "#fbbf24";
         ctx.fillText("A", ax + 16, ay + 5);
+        // B label at center
         ctx.fillStyle = "#5eead4";
         ctx.fillText("B", bx + 14, by - 10);
       }
@@ -280,6 +252,7 @@ import Layout from "../../layouts/Layout.astro";
       if (permErr) { permErr.hidden = true; permErr.textContent = ""; }
       try {
         if (!navigator.mediaDevices?.getUserMedia) throw new Error("Browser tidak mendukung kamera.");
+
         if (needsOrientPerm()) {
           const s = await DeviceOrientationEvent.requestPermission();
           if (s !== "granted") throw Object.assign(new Error("Izin orientasi ditolak."), { name: "NotAllowedError" });
@@ -288,6 +261,7 @@ import Layout from "../../layouts/Layout.astro";
           const s = await DeviceMotionEvent.requestPermission();
           if (s !== "granted") throw Object.assign(new Error("Izin sensor gerak ditolak."), { name: "NotAllowedError" });
         }
+
         window.addEventListener("deviceorientation", onOrient, true);
         window.addEventListener("devicemotion", onMotion, true);
 
@@ -297,13 +271,13 @@ import Layout from "../../layouts/Layout.astro";
         });
         video.srcObject = stream;
         await video.play();
+
         running = true;
         measuring = false;
         markA = null;
-        pathM = displayM = 0;
-        vx = vy = vz = 0;
+        pathM = 0;
+        vx = vy = vz = px = py = pz = 0;
         lastT = 0;
-        gravReady = false;
         if (setupCard) setupCard.hidden = true;
         if (viewWrap) viewWrap.hidden = false;
         if (roLabel) roLabel.textContent = "Tekan Tandai A untuk mulai menghitung";
@@ -320,21 +294,22 @@ import Layout from "../../layouts/Layout.astro";
 
     function markAPoint() {
       markA = { sx: 0.5, sy: 0.5 };
-      pathM = displayM = 0;
+      // reset IMU integration at A
+      pathM = 0;
       vx = vy = vz = 0;
+      px = py = pz = 0;
       stillMs = 0;
-      moveMs = 0;
       lastT = 0;
       measuring = true;
-      if (roLabel) roLabel.textContent = "Titik A · gerakkan HP ke B";
+      if (roLabel) roLabel.textContent = "Titik A ditandai · gerakkan HP ke B";
       if (roVal) roVal.textContent = "0 mm";
     }
 
     function resetAll() {
       measuring = false;
       markA = null;
-      pathM = displayM = 0;
-      vx = vy = vz = 0;
+      pathM = 0;
+      vx = vy = vz = px = py = pz = 0;
       lastT = 0;
       if (roLabel) roLabel.textContent = "Tekan Tandai A untuk mulai menghitung";
       if (roVal) roVal.textContent = "0 mm";
@@ -402,6 +377,7 @@ import Layout from "../../layouts/Layout.astro";
     }
     .perm-err { margin-top: .75rem; color: #fca5a5; font-size: .88rem; }
 
+    /* Stage: only video + overlay + crosshair — no stacked text inside */
     .stage {
       position: relative;
       width: 100%;
@@ -415,51 +391,95 @@ import Layout from "../../layouts/Layout.astro";
       isolation: isolate;
     }
     #video {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: 1; display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      display: block;
     }
     #overlay {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      z-index: 2; pointer-events: none; display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      display: block;
     }
     .crosshair {
-      position: absolute; z-index: 3; left: 50%; top: 50%;
-      width: 28px; height: 28px; transform: translate(-50%, -50%);
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 50%;
+      width: 28px;
+      height: 28px;
+      transform: translate(-50%, -50%);
       pointer-events: none;
-      border: 2px solid rgba(251,191,36,.95); border-radius: 50%;
+      border: 2px solid rgba(251,191,36,.95);
+      border-radius: 50%;
       box-shadow: 0 0 0 1px rgba(0,0,0,.45);
       background:
         linear-gradient(#fbbf24,#fbbf24) center / 100% 2px no-repeat,
         linear-gradient(#fbbf24,#fbbf24) center / 2px 100% no-repeat;
     }
 
+    /* Readout BELOW camera — tidak menumpuk di video */
     .readout-bar {
-      margin-top: 0.75rem; padding: 0.85rem 1rem; border-radius: 14px;
+      margin-top: 0.75rem;
+      padding: 0.85rem 1rem;
+      border-radius: 14px;
       background: rgba(15, 23, 42, 0.95);
       border: 1px solid rgba(45, 212, 191, 0.28);
-      display: flex; flex-direction: column; gap: 0.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
     }
     .ro-label { font-size: 0.8rem; color: #94a3b8; }
     .ro-val {
-      font-size: 1.6rem; font-weight: 700; color: #5eead4;
-      font-family: var(--font-mono, ui-monospace, monospace); line-height: 1.2;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #5eead4;
+      font-family: var(--font-mono, ui-monospace, monospace);
+      line-height: 1.2;
     }
 
-    .controls { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 0.85rem; }
-    .btn-a, .btn-reset, .btn-stop {
-      appearance: none; cursor: pointer; font-weight: 700;
-      padding: 0.7rem 1.1rem; border-radius: 999px; border: none; font-size: 0.9rem;
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.85rem;
     }
-    .btn-a { color: #0f172a; background: linear-gradient(135deg, #fde68a, #f59e0b); }
+    .btn-a, .btn-reset, .btn-stop {
+      appearance: none;
+      cursor: pointer;
+      font-weight: 700;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+    }
+    .btn-a {
+      color: #0f172a;
+      background: linear-gradient(135deg, #fde68a, #f59e0b);
+    }
     .btn-reset, .btn-stop {
-      background: transparent; border: 1px solid rgba(148,163,184,.35); color: #e2e8f0;
+      background: transparent;
+      border: 1px solid rgba(148,163,184,.35);
+      color: #e2e8f0;
     }
     .btn-stop:hover { border-color: #f87171; color: #fca5a5; }
 
     .warn {
-      margin-top: 1rem; color: #fde68a; font-size: 0.82rem; line-height: 1.45;
-      background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.25);
-      border-radius: 12px; padding: 0.75rem 0.9rem;
+      margin-top: 1rem;
+      color: #fde68a;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      background: rgba(251,191,36,.08);
+      border: 1px solid rgba(251,191,36,.25);
+      border-radius: 12px;
+      padding: 0.75rem 0.9rem;
     }
   </style>
 </Layout>
