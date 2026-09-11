@@ -1,0 +1,418 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout
+  title="Kalkulator Toleransi ISO 286 & ISO 2768 — H7/g6, IT Grade | Partpedia"
+  description="Hitung toleransi poros-lubang ISO 286 (H7/g6, H7/h6, H7/p6), grade IT, dan toleransi umum ISO 2768. Batas min/max, clearance & interference — untuk teknisi & industri."
+>
+  <div class="tol-page">
+    <a class="back" href="/">← Beranda</a>
+
+    <header class="tol-hero">
+      <div class="tol-badge">ISO 286 · ISO 2768</div>
+      <h1>Kalkulator Toleransi Industri</h1>
+      <p class="tol-lead">
+        Hitung <strong>limits &amp; fits</strong> poros–lubang (H7/g6, H7/p6, …),
+        lebar grade <strong>IT</strong>, dan toleransi umum <strong>ISO 2768</strong>.
+        Hasil: batas min/max, clearance atau interference.
+      </p>
+    </header>
+
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab active" data-tab="fits" id="tab-fits">ISO 286 · Fits</button>
+      <button type="button" class="tab" data-tab="it" id="tab-it">IT Grade</button>
+      <button type="button" class="tab" data-tab="g2768" id="tab-g2768">ISO 2768</button>
+    </div>
+
+    <!-- TAB FITS -->
+    <section class="panel active" id="panel-fits">
+      <div class="card">
+        <h2>Limits &amp; Fits (poros–lubang)</h2>
+        <p class="hint">Pilih fit populer atau custom hole/shaft. Nominal dalam mm.</p>
+        <div class="grid2">
+          <label>Diameter nominal (mm)
+            <input type="number" id="fit-nom" value="25" min="0.1" max="500" step="0.1" />
+          </label>
+          <label>Fit cepat
+            <select id="fit-preset">
+              <option value="">— pilih —</option>
+            </select>
+          </label>
+          <label>Hole
+            <select id="fit-hole"></select>
+          </label>
+          <label>Shaft
+            <select id="fit-shaft"></select>
+          </label>
+        </div>
+        <button type="button" class="btn-go" id="btn-fit">Hitung</button>
+        <div class="result" id="fit-result" hidden></div>
+      </div>
+      <div class="seo-box">
+        <h3>Fit yang sering dicari teknisi</h3>
+        <ul>
+          <li><strong>H7/g6</strong> — sliding / geser presisi</li>
+          <li><strong>H7/h6</strong> — location clearance</li>
+          <li><strong>H7/k6</strong> — transition (lokasi akurat)</li>
+          <li><strong>H7/p6</strong> — press fit / interference ringan</li>
+          <li><strong>H7/s6</strong> — press berat / shrink</li>
+          <li><strong>H8/f7</strong> — close running</li>
+          <li><strong>H9/d9</strong> — free running</li>
+          <li><strong>H11/c11</strong> — loose running</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB IT -->
+    <section class="panel" id="panel-it">
+      <div class="card">
+        <h2>Lebar toleransi IT (ISO 286)</h2>
+        <p class="hint">Masukkan ukuran nominal → dapatkan IT5–IT12 dalam µm dan mm.</p>
+        <div class="grid2">
+          <label>Ukuran nominal (mm)
+            <input type="number" id="it-nom" value="50" min="0.1" max="500" step="0.1" />
+          </label>
+          <label>Grade
+            <select id="it-grade">
+              <option>IT6</option>
+              <option selected>IT7</option>
+              <option>IT8</option>
+              <option>IT9</option>
+              <option>IT10</option>
+              <option>IT11</option>
+              <option>IT12</option>
+              <option>IT5</option>
+            </select>
+          </label>
+        </div>
+        <button type="button" class="btn-go" id="btn-it">Hitung</button>
+        <div class="result" id="it-result" hidden></div>
+      </div>
+    </section>
+
+    <!-- TAB 2768 -->
+    <section class="panel" id="panel-g2768">
+      <div class="card">
+        <h2>Toleransi umum ISO 2768-1</h2>
+        <p class="hint">Untuk dimensi linear tanpa toleransi individu di gambar.</p>
+        <div class="grid2">
+          <label>Dimensi nominal (mm)
+            <input type="number" id="g-nom" value="80" min="0.5" max="4000" step="0.1" />
+          </label>
+          <label>Kelas
+            <select id="g-class">
+              <option value="f">f — fine</option>
+              <option value="m" selected>m — medium (paling umum)</option>
+              <option value="c">c — coarse</option>
+              <option value="v">v — very coarse</option>
+            </select>
+          </label>
+        </div>
+        <button type="button" class="btn-go" id="btn-g">Hitung</button>
+        <div class="result" id="g-result" hidden></div>
+      </div>
+      <div class="card" style="margin-top:1rem">
+        <h2>ISO 2768-2 · Kerataan / kelurusan</h2>
+        <div class="grid2">
+          <label>Panjang nominal (mm)
+            <input type="number" id="geo-nom" value="100" min="1" max="3000" step="1" />
+          </label>
+          <label>Kelas geo
+            <select id="geo-class">
+              <option>H</option>
+              <option selected>K</option>
+              <option>L</option>
+            </select>
+          </label>
+        </div>
+        <button type="button" class="btn-go" id="btn-geo">Hitung</button>
+        <div class="result" id="geo-result" hidden></div>
+      </div>
+    </section>
+
+    <p class="disc">
+      Acuan: tabel industri ISO 286-1/2 &amp; ISO 2768-1/2. Bukan salinan dokumen resmi berbayar.
+      Untuk aplikasi kritis, verifikasi ke standar ISO / SNI resmi.
+    </p>
+  </div>
+
+  <script is:inline>
+  window.__TOL_SEED__ = {"meta": {"title": "Partpedia Tolerance Seed v2", "version": 2, "disclaimer": "Nilai dari tabel industri yang merujuk ISO 286-1/2 dan ISO 2768-1/2. Bukan salinan dokumen resmi berbayar. Verifikasi ke ISO/SNI untuk aplikasi kritis.", "focus": ["ISO 286 fits (H7/g6 dll)", "ISO 2768 general", "IT grades"]}, "size_bands": [{"over": 0, "to": 3}, {"over": 3, "to": 6}, {"over": 6, "to": 10}, {"over": 10, "to": 18}, {"over": 18, "to": 30}, {"over": 30, "to": 50}, {"over": 50, "to": 80}, {"over": 80, "to": 120}, {"over": 120, "to": 180}, {"over": 180, "to": 250}, {"over": 250, "to": 315}, {"over": 315, "to": 400}, {"over": 400, "to": 500}], "IT": {"IT5": [4, 5, 6, 8, 9, 11, 13, 15, 18, 20, 23, 25, 27], "IT6": [6, 8, 9, 11, 13, 16, 19, 22, 25, 29, 32, 36, 40], "IT7": [10, 12, 15, 18, 21, 25, 30, 35, 40, 46, 52, 57, 63], "IT8": [14, 18, 22, 27, 33, 39, 46, 54, 63, 72, 81, 89, 97], "IT9": [25, 30, 36, 43, 52, 62, 74, 87, 100, 115, 130, 140, 155], "IT10": [40, 48, 58, 70, 84, 100, 120, 140, 160, 185, 210, 230, 250], "IT11": [60, 75, 90, 110, 130, 160, 190, 220, 250, 290, 320, 360, 400], "IT12": [100, 120, 150, 180, 210, 250, 300, 350, 400, 460, 520, 570, 630]}, "holes": {"H6": [{"ES": 6, "EI": 0}, {"ES": 8, "EI": 0}, {"ES": 9, "EI": 0}, {"ES": 11, "EI": 0}, {"ES": 13, "EI": 0}, {"ES": 16, "EI": 0}, {"ES": 19, "EI": 0}, {"ES": 22, "EI": 0}, {"ES": 25, "EI": 0}, {"ES": 29, "EI": 0}, {"ES": 32, "EI": 0}, {"ES": 36, "EI": 0}, {"ES": 40, "EI": 0}], "H7": [{"ES": 10, "EI": 0}, {"ES": 12, "EI": 0}, {"ES": 15, "EI": 0}, {"ES": 18, "EI": 0}, {"ES": 21, "EI": 0}, {"ES": 25, "EI": 0}, {"ES": 30, "EI": 0}, {"ES": 35, "EI": 0}, {"ES": 40, "EI": 0}, {"ES": 46, "EI": 0}, {"ES": 52, "EI": 0}, {"ES": 57, "EI": 0}, {"ES": 63, "EI": 0}], "H8": [{"ES": 14, "EI": 0}, {"ES": 18, "EI": 0}, {"ES": 22, "EI": 0}, {"ES": 27, "EI": 0}, {"ES": 33, "EI": 0}, {"ES": 39, "EI": 0}, {"ES": 46, "EI": 0}, {"ES": 54, "EI": 0}, {"ES": 63, "EI": 0}, {"ES": 72, "EI": 0}, {"ES": 81, "EI": 0}, {"ES": 89, "EI": 0}, {"ES": 97, "EI": 0}], "H9": [{"ES": 25, "EI": 0}, {"ES": 30, "EI": 0}, {"ES": 36, "EI": 0}, {"ES": 43, "EI": 0}, {"ES": 52, "EI": 0}, {"ES": 62, "EI": 0}, {"ES": 74, "EI": 0}, {"ES": 87, "EI": 0}, {"ES": 100, "EI": 0}, {"ES": 115, "EI": 0}, {"ES": 130, "EI": 0}, {"ES": 140, "EI": 0}, {"ES": 155, "EI": 0}], "H11": [{"ES": 60, "EI": 0}, {"ES": 75, "EI": 0}, {"ES": 90, "EI": 0}, {"ES": 110, "EI": 0}, {"ES": 130, "EI": 0}, {"ES": 160, "EI": 0}, {"ES": 190, "EI": 0}, {"ES": 220, "EI": 0}, {"ES": 250, "EI": 0}, {"ES": 290, "EI": 0}, {"ES": 320, "EI": 0}, {"ES": 360, "EI": 0}, {"ES": 400, "EI": 0}]}, "shafts": {"c11": [{"es": -60, "ei": -120}, {"es": -70, "ei": -145}, {"es": -80, "ei": -170}, {"es": -95, "ei": -205}, {"es": -110, "ei": -240}, {"es": -120, "ei": -280}, {"es": -130, "ei": -290}, {"es": -150, "ei": -340}, {"es": -170, "ei": -390}, {"es": -180, "ei": -400}, {"es": -190, "ei": -420}, {"es": -200, "ei": -440}, {"es": -220, "ei": -480}], "d9": [{"es": -20, "ei": -45}, {"es": -30, "ei": -60}, {"es": -40, "ei": -76}, {"es": -50, "ei": -93}, {"es": -65, "ei": -117}, {"es": -80, "ei": -142}, {"es": -100, "ei": -174}, {"es": -120, "ei": -207}, {"es": -145, "ei": -245}, {"es": -170, "ei": -285}, {"es": -190, "ei": -320}, {"es": -210, "ei": -350}, {"es": -230, "ei": -385}], "e8": [{"es": -14, "ei": -28}, {"es": -20, "ei": -38}, {"es": -25, "ei": -47}, {"es": -32, "ei": -59}, {"es": -40, "ei": -73}, {"es": -50, "ei": -89}, {"es": -60, "ei": -106}, {"es": -72, "ei": -126}, {"es": -85, "ei": -148}, {"es": -100, "ei": -172}, {"es": -110, "ei": -191}, {"es": -125, "ei": -214}, {"es": -135, "ei": -232}], "f7": [{"es": -6, "ei": -16}, {"es": -10, "ei": -22}, {"es": -13, "ei": -28}, {"es": -16, "ei": -34}, {"es": -20, "ei": -41}, {"es": -25, "ei": -50}, {"es": -30, "ei": -60}, {"es": -36, "ei": -71}, {"es": -43, "ei": -83}, {"es": -50, "ei": -96}, {"es": -56, "ei": -108}, {"es": -62, "ei": -119}, {"es": -68, "ei": -131}], "g6": [{"es": -2, "ei": -8}, {"es": -4, "ei": -12}, {"es": -5, "ei": -14}, {"es": -6, "ei": -17}, {"es": -7, "ei": -20}, {"es": -9, "ei": -25}, {"es": -10, "ei": -29}, {"es": -12, "ei": -34}, {"es": -14, "ei": -39}, {"es": -15, "ei": -44}, {"es": -17, "ei": -49}, {"es": -18, "ei": -54}, {"es": -20, "ei": -60}], "h6": [{"es": 0, "ei": -6}, {"es": 0, "ei": -8}, {"es": 0, "ei": -9}, {"es": 0, "ei": -11}, {"es": 0, "ei": -13}, {"es": 0, "ei": -16}, {"es": 0, "ei": -19}, {"es": 0, "ei": -22}, {"es": 0, "ei": -25}, {"es": 0, "ei": -29}, {"es": 0, "ei": -32}, {"es": 0, "ei": -36}, {"es": 0, "ei": -40}], "h7": [{"es": 0, "ei": -10}, {"es": 0, "ei": -12}, {"es": 0, "ei": -15}, {"es": 0, "ei": -18}, {"es": 0, "ei": -21}, {"es": 0, "ei": -25}, {"es": 0, "ei": -30}, {"es": 0, "ei": -35}, {"es": 0, "ei": -40}, {"es": 0, "ei": -46}, {"es": 0, "ei": -52}, {"es": 0, "ei": -57}, {"es": 0, "ei": -63}], "js6": [{"es": 3, "ei": -3}, {"es": 4, "ei": -4}, {"es": 4.5, "ei": -4.5}, {"es": 5.5, "ei": -5.5}, {"es": 6.5, "ei": -6.5}, {"es": 8, "ei": -8}, {"es": 9.5, "ei": -9.5}, {"es": 11, "ei": -11}, {"es": 12.5, "ei": -12.5}, {"es": 14.5, "ei": -14.5}, {"es": 16, "ei": -16}, {"es": 18, "ei": -18}, {"es": 20, "ei": -20}], "k6": [{"es": 6, "ei": 0}, {"es": 9, "ei": 1}, {"es": 10, "ei": 1}, {"es": 12, "ei": 1}, {"es": 15, "ei": 2}, {"es": 18, "ei": 2}, {"es": 21, "ei": 2}, {"es": 25, "ei": 3}, {"es": 28, "ei": 3}, {"es": 33, "ei": 4}, {"es": 36, "ei": 4}, {"es": 40, "ei": 4}, {"es": 45, "ei": 5}], "n6": [{"es": 10, "ei": 4}, {"es": 16, "ei": 8}, {"es": 19, "ei": 10}, {"es": 23, "ei": 12}, {"es": 28, "ei": 15}, {"es": 33, "ei": 17}, {"es": 39, "ei": 20}, {"es": 45, "ei": 23}, {"es": 52, "ei": 27}, {"es": 60, "ei": 31}, {"es": 66, "ei": 34}, {"es": 73, "ei": 37}, {"es": 80, "ei": 40}], "p6": [{"es": 12, "ei": 6}, {"es": 20, "ei": 12}, {"es": 24, "ei": 15}, {"es": 29, "ei": 18}, {"es": 35, "ei": 22}, {"es": 42, "ei": 26}, {"es": 51, "ei": 32}, {"es": 59, "ei": 37}, {"es": 68, "ei": 43}, {"es": 79, "ei": 50}, {"es": 88, "ei": 56}, {"es": 98, "ei": 62}, {"es": 108, "ei": 68}], "s6": [{"es": 20, "ei": 14}, {"es": 27, "ei": 19}, {"es": 32, "ei": 23}, {"es": 39, "ei": 28}, {"es": 48, "ei": 35}, {"es": 59, "ei": 43}, {"es": 72, "ei": 53}, {"es": 93, "ei": 71}, {"es": 101, "ei": 76}, {"es": 117, "ei": 88}, {"es": 125, "ei": 93}, {"es": 139, "ei": 103}, {"es": 153, "ei": 113}]}, "preferred_fits": [{"id": "H11/c11", "hole": "H11", "shaft": "c11", "type": "clearance", "name_id": "Longgar (loose running)", "use": "Toleransi kasar, assembly longgar"}, {"id": "H9/d9", "hole": "H9", "shaft": "d9", "type": "clearance", "name_id": "Free running", "use": "Kecepatan tinggi / suhu berubah"}, {"id": "H8/f7", "hole": "H8", "shaft": "f7", "type": "clearance", "name_id": "Close running", "use": "Poros berputar, bearing plain"}, {"id": "H7/g6", "hole": "H7", "shaft": "g6", "type": "clearance", "name_id": "Sliding", "use": "Geser presisi, pin, bushing"}, {"id": "H7/h6", "hole": "H7", "shaft": "h6", "type": "clearance", "name_id": "Location clearance", "use": "Lokasi akurat, mudah dibongkar"}, {"id": "H7/k6", "hole": "H7", "shaft": "k6", "type": "transition", "name_id": "Transition (ringan)", "use": "Lokasi akurat, pukul ringan"}, {"id": "H7/n6", "hole": "H7", "shaft": "n6", "type": "transition", "name_id": "Transition (lebih ketat)", "use": "Lokasi tetap, press ringan"}, {"id": "H7/p6", "hole": "H7", "shaft": "p6", "type": "interference", "name_id": "Press fit", "use": "Bushing, ring bearing permanen"}, {"id": "H7/s6", "hole": "H7", "shaft": "s6", "type": "interference", "name_id": "Heavy press / shrink", "use": "Beban tinggi, shrink fit"}], "iso_2768_1_linear": {"unit": "mm", "classes": ["f", "m", "c", "v"], "ranges": [{"min": 0.5, "max": 3, "f": 0.05, "m": 0.1, "c": 0.2, "v": null}, {"min": 3, "max": 6, "f": 0.05, "m": 0.1, "c": 0.3, "v": 0.5}, {"min": 6, "max": 30, "f": 0.1, "m": 0.2, "c": 0.5, "v": 1.0}, {"min": 30, "max": 120, "f": 0.15, "m": 0.3, "c": 0.8, "v": 1.5}, {"min": 120, "max": 400, "f": 0.2, "m": 0.5, "c": 1.2, "v": 2.5}, {"min": 400, "max": 1000, "f": 0.3, "m": 0.8, "c": 2.0, "v": 4.0}, {"min": 1000, "max": 2000, "f": 0.5, "m": 1.2, "c": 3.0, "v": 6.0}, {"min": 2000, "max": 4000, "f": null, "m": 2.0, "c": 4.0, "v": 8.0}]}, "iso_2768_2": {"straightness_flatness": [{"min": 0, "max": 10, "H": 0.02, "K": 0.05, "L": 0.1}, {"min": 10, "max": 30, "H": 0.05, "K": 0.1, "L": 0.2}, {"min": 30, "max": 100, "H": 0.1, "K": 0.2, "L": 0.4}, {"min": 100, "max": 300, "H": 0.2, "K": 0.4, "L": 0.8}, {"min": 300, "max": 1000, "H": 0.3, "K": 0.6, "L": 1.2}, {"min": 1000, "max": 3000, "H": 0.4, "K": 0.8, "L": 1.6}], "perpendicularity": [{"min": 0, "max": 100, "H": 0.2, "K": 0.4, "L": 0.6}, {"min": 100, "max": 300, "H": 0.3, "K": 0.6, "L": 1.0}, {"min": 300, "max": 1000, "H": 0.4, "K": 0.8, "L": 1.5}, {"min": 1000, "max": 3000, "H": 0.5, "K": 1.0, "L": 2.0}], "runout": {"H": 0.1, "K": 0.2, "L": 0.5}}};
+  </script>
+  <script is:inline>
+  (function () {
+    const S = window.__TOL_SEED__;
+
+    function bandIndex(nom) {
+      const bands = S.size_bands;
+      for (let i = 0; i < bands.length; i++) {
+        if (nom > bands[i].over && nom <= bands[i].to) return i;
+        if (i === 0 && nom > 0 && nom <= bands[i].to) return 0;
+      }
+      if (nom <= 0) return 0;
+      return bands.length - 1;
+    }
+
+    function fmtUm(u) {
+      if (Math.abs(u) >= 1000) return (u / 1000).toFixed(3) + " mm";
+      return (Math.round(u * 10) / 10) + " µm";
+    }
+    function fmtMm(m) {
+      return (Math.round(m * 1000) / 1000).toFixed(3) + " mm";
+    }
+
+    // tabs
+    document.querySelectorAll(".tab").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-" + btn.dataset.tab)?.classList.add("active");
+      });
+    });
+
+    // populate selects
+    const holeSel = document.getElementById("fit-hole");
+    const shaftSel = document.getElementById("fit-shaft");
+    const presetSel = document.getElementById("fit-preset");
+    Object.keys(S.holes).forEach((h) => {
+      const o = document.createElement("option");
+      o.value = h; o.textContent = h;
+      if (h === "H7") o.selected = true;
+      holeSel.appendChild(o);
+    });
+    Object.keys(S.shafts).forEach((s) => {
+      const o = document.createElement("option");
+      o.value = s; o.textContent = s;
+      if (s === "g6") o.selected = true;
+      shaftSel.appendChild(o);
+    });
+    S.preferred_fits.forEach((f) => {
+      const o = document.createElement("option");
+      o.value = f.id;
+      o.textContent = f.id + " — " + f.name_id;
+      presetSel.appendChild(o);
+    });
+    presetSel.addEventListener("change", () => {
+      const f = S.preferred_fits.find((x) => x.id === presetSel.value);
+      if (f) {
+        holeSel.value = f.hole;
+        shaftSel.value = f.shaft;
+      }
+    });
+
+    function calcFit() {
+      const nom = parseFloat(document.getElementById("fit-nom").value);
+      const hole = holeSel.value;
+      const shaft = shaftSel.value;
+      const box = document.getElementById("fit-result");
+      if (!isFinite(nom) || nom <= 0) {
+        box.hidden = false;
+        box.innerHTML = "<p class='err'>Masukkan diameter nominal valid.</p>";
+        return;
+      }
+      const i = bandIndex(nom);
+      const H = S.holes[hole]?.[i];
+      const Sh = S.shafts[shaft]?.[i];
+      if (!H || !Sh) {
+        box.hidden = false;
+        box.innerHTML = "<p class='err'>Kombinasi / ukuran di luar data seed.</p>";
+        return;
+      }
+      const holeMax = nom + H.ES / 1000;
+      const holeMin = nom + H.EI / 1000;
+      const shaftMax = nom + Sh.es / 1000;
+      const shaftMin = nom + Sh.ei / 1000;
+      const maxClear = holeMax - shaftMin;
+      const minClear = holeMin - shaftMax;
+      let fitType, fitLabel;
+      if (minClear > 0) {
+        fitType = "clearance";
+        fitLabel = "Clearance fit (selalu longgar)";
+      } else if (maxClear < 0) {
+        fitType = "interference";
+        fitLabel = "Interference fit (selalu press)";
+      } else {
+        fitType = "transition";
+        fitLabel = "Transition fit (bisa longgar atau press)";
+      }
+      const preset = S.preferred_fits.find((f) => f.hole === hole && f.shaft === shaft);
+      box.hidden = false;
+      box.innerHTML = `
+        <div class="rtype ${fitType}">${fitLabel}</div>
+        ${preset ? `<p class="use"><strong>${preset.id}</strong> — ${preset.use}</p>` : ""}
+        <table class="rt">
+          <tr><th></th><th>Min</th><th>Max</th></tr>
+          <tr><td>Hole ${hole}</td><td>${fmtMm(holeMin)}</td><td>${fmtMm(holeMax)}</td></tr>
+          <tr><td>Shaft ${shaft}</td><td>${fmtMm(shaftMin)}</td><td>${fmtMm(shaftMax)}</td></tr>
+        </table>
+        <table class="rt">
+          <tr><th>Parameter</th><th>Nilai</th></tr>
+          <tr><td>Max clearance / min interference</td><td>${fmtMm(maxClear)}</td></tr>
+          <tr><td>Min clearance / max interference</td><td>${fmtMm(minClear)}</td></tr>
+          <tr><td>Band ukuran ISO</td><td>${S.size_bands[i].over} … ${S.size_bands[i].to} mm</td></tr>
+        </table>
+      `;
+    }
+
+    function calcIT() {
+      const nom = parseFloat(document.getElementById("it-nom").value);
+      const grade = document.getElementById("it-grade").value;
+      const box = document.getElementById("it-result");
+      const i = bandIndex(nom);
+      const um = S.IT[grade]?.[i];
+      if (!isFinite(nom) || um == null) {
+        box.hidden = false;
+        box.innerHTML = "<p class='err'>Data tidak tersedia.</p>";
+        return;
+      }
+      box.hidden = false;
+      box.innerHTML = `
+        <table class="rt">
+          <tr><th>Grade</th><td>${grade}</td></tr>
+          <tr><th>Nominal</th><td>${nom} mm</td></tr>
+          <tr><th>Band</th><td>${S.size_bands[i].over} … ${S.size_bands[i].to} mm</td></tr>
+          <tr><th>Lebar toleransi</th><td><strong>${um} µm</strong> (${fmtMm(um / 1000)})</td></tr>
+        </table>
+        <p class="hint">IT = lebar zona saja. Untuk batas atas/bawah pakai tab Fits (huruf H, g, p, …).</p>
+      `;
+    }
+
+    function calcG() {
+      const nom = parseFloat(document.getElementById("g-nom").value);
+      const cls = document.getElementById("g-class").value;
+      const box = document.getElementById("g-result");
+      const rows = S.iso_2768_1_linear.ranges;
+      let row = null;
+      for (const r of rows) {
+        if (nom > r.min - 1e-9 && nom <= r.max) { row = r; break; }
+        if (r.min === 0.5 && nom >= 0.5 && nom <= r.max) { row = r; break; }
+      }
+      if (nom >= 0.5 && nom <= 3) row = rows[0];
+      const val = row ? row[cls] : null;
+      box.hidden = false;
+      if (val == null) {
+        box.innerHTML = "<p class='err'>Kelas tidak berlaku untuk rentang ukuran ini (atau &lt; 0.5 mm — toleransi individu).</p>";
+        return;
+      }
+      box.innerHTML = `
+        <table class="rt">
+          <tr><th>Kelas</th><td>ISO 2768-${cls}</td></tr>
+          <tr><th>Nominal</th><td>${nom} mm</td></tr>
+          <tr><th>Deviasi ±</th><td><strong>± ${val} mm</strong></td></tr>
+          <tr><th>Batas bawah</th><td>${fmtMm(nom - val)}</td></tr>
+          <tr><th>Batas atas</th><td>${fmtMm(nom + val)}</td></tr>
+        </table>
+      `;
+    }
+
+    function calcGeo() {
+      const nom = parseFloat(document.getElementById("geo-nom").value);
+      const cls = document.getElementById("geo-class").value;
+      const box = document.getElementById("geo-result");
+      const rows = S.iso_2768_2.straightness_flatness;
+      let row = rows.find((r) => nom > r.min - 1e-9 && nom <= r.max) || rows[rows.length - 1];
+      if (nom <= 10) row = rows[0];
+      const val = row[cls];
+      const perpRows = S.iso_2768_2.perpendicularity;
+      let pr = perpRows.find((r) => nom > r.min - 1e-9 && nom <= r.max) || perpRows[perpRows.length - 1];
+      if (nom <= 100) pr = perpRows[0];
+      const run = S.iso_2768_2.runout[cls];
+      box.hidden = false;
+      box.innerHTML = `
+        <table class="rt">
+          <tr><th>Kelas</th><td>${cls}</td></tr>
+          <tr><th>Panjang</th><td>${nom} mm</td></tr>
+          <tr><th>Straightness / Flatness</th><td><strong>${val} mm</strong></td></tr>
+          <tr><th>Perpendicularity (ref.)</th><td>${pr[cls]} mm</td></tr>
+          <tr><th>Circular run-out</th><td>${run} mm</td></tr>
+        </table>
+      `;
+    }
+
+    document.getElementById("btn-fit")?.addEventListener("click", calcFit);
+    document.getElementById("btn-it")?.addEventListener("click", calcIT);
+    document.getElementById("btn-g")?.addEventListener("click", calcG);
+    document.getElementById("btn-geo")?.addEventListener("click", calcGeo);
+    // auto first calc
+    calcFit();
+  })();
+  </script>
+
+  <style>
+    .tol-page { max-width: 820px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+    .back { display: inline-flex; margin-bottom: 1rem; color: var(--muted,#94a3b8); text-decoration: none; font-size: .9rem; }
+    .back:hover { color: var(--amber,#fbbf24); }
+    .tol-badge {
+      display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      color: #0f172a; background: linear-gradient(135deg,#38bdf8,#818cf8);
+      padding: .28rem .65rem; border-radius: 999px; margin-bottom: .65rem;
+    }
+    .tol-hero h1 { font-size: clamp(1.45rem,4vw,1.9rem); margin: 0 0 .4rem; color: var(--ink,#f1f5f9); }
+    .tol-lead { margin: 0; color: var(--muted,#94a3b8); line-height: 1.5; font-size: .92rem; }
+    .tol-lead strong { color: #e2e8f0; }
+
+    .tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1.25rem 0 .75rem; }
+    .tab {
+      appearance: none; cursor: pointer; border: 1px solid rgba(148,163,184,.3);
+      background: transparent; color: #cbd5e1; font-weight: 600; font-size: .85rem;
+      padding: .55rem 1rem; border-radius: 999px;
+    }
+    .tab.active {
+      background: linear-gradient(135deg,#38bdf8,#818cf8); color: #0f172a; border-color: transparent;
+    }
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .card {
+      border-radius: 18px; padding: 1.2rem 1.15rem;
+      border: 1px solid rgba(56,189,248,.25);
+      background: radial-gradient(100% 80% at 50% 0%, rgba(56,189,248,.1), transparent 55%), var(--bg-card,#0f172a);
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+    .card h2 { margin: 0 0 .35rem; font-size: 1.15rem; }
+    .hint { color: #94a3b8; font-size: .86rem; margin: 0 0 .9rem; }
+    .grid2 {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+    }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+    label {
+      display: flex; flex-direction: column; gap: .35rem;
+      font-size: .8rem; color: #94a3b8; font-weight: 600;
+    }
+    input, select {
+      appearance: none; border-radius: 10px; border: 1px solid rgba(148,163,184,.35);
+      background: #020617; color: #f1f5f9; padding: .65rem .75rem; font-size: .95rem;
+    }
+    .btn-go {
+      margin-top: 1rem; appearance: none; border: none; cursor: pointer;
+      font-weight: 700; padding: .75rem 1.3rem; border-radius: 999px;
+      color: #0f172a; background: linear-gradient(135deg,#38bdf8,#818cf8);
+      box-shadow: 0 8px 22px rgba(56,189,248,.3);
+    }
+    .result {
+      margin-top: 1rem; padding: 1rem; border-radius: 14px;
+      background: rgba(2,6,23,.7); border: 1px solid rgba(148,163,184,.2);
+    }
+    .rtype {
+      display: inline-block; font-weight: 700; font-size: .8rem;
+      padding: .3rem .65rem; border-radius: 999px; margin-bottom: .5rem;
+    }
+    .rtype.clearance { background: rgba(52,211,153,.2); color: #6ee7b7; }
+    .rtype.transition { background: rgba(251,191,36,.2); color: #fde68a; }
+    .rtype.interference { background: rgba(248,113,113,.2); color: #fca5a5; }
+    .use { font-size: .88rem; color: #cbd5e1; margin: 0 0 .6rem; }
+    .rt { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: .4rem; }
+    .rt th, .rt td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid rgba(148,163,184,.15); }
+    .rt th { color: #94a3b8; font-weight: 600; }
+    .err { color: #fca5a5; margin: 0; }
+    .seo-box {
+      margin-top: 1rem; padding: 1rem 1.1rem; border-radius: 14px;
+      border: 1px solid rgba(148,163,184,.15); background: rgba(15,23,42,.5);
+    }
+    .seo-box h3 { margin: 0 0 .5rem; font-size: 1rem; }
+    .seo-box ul { margin: 0; padding-left: 1.1rem; color: #94a3b8; font-size: .88rem; line-height: 1.55; }
+    .seo-box strong { color: #e2e8f0; }
+    .disc { margin-top: 1.5rem; font-size: .78rem; color: #64748b; line-height: 1.45; }
+  </style>
+</Layout>
