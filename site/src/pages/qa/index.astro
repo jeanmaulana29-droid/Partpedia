@@ -3,33 +3,82 @@ import Layout from "../../layouts/Layout.astro";
 import { loadAllQa } from "../../data/loadQa.js";
 
 const items = loadAllQa();
+const site = "https://www.klikpartpedia.com";
+
+// FAQPage: up to 40 items for rich-result friendliness (all pages still indexed individually)
+const faqMainEntity = items.slice(0, 40).map((it) => ({
+  "@type": "Question",
+  name: it.question,
+  acceptedAnswer: {
+    "@type": "Answer",
+    text: String(it.answer || "").replace(/\s+/g, " ").trim().slice(0, 5000),
+  },
+}));
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${site}/qa/#page`,
+      url: `${site}/qa/`,
+      name: "Industrial Manufacturing Q&A — Bearings, Pumps, VFD, Hydraulics, OEE | Partpedia",
+      description:
+        "Practical industrial Q&A for plant maintenance and manufacturing: bearing failures, pump cavitation, gearbox pitting, VFD harmonics, hydraulic contamination, OEE, LOTO, and more. Bilingual industrial terminology for global engineers.",
+      inLanguage: ["id", "en"],
+      isPartOf: { "@type": "WebSite", name: "Partpedia", url: site },
+      numberOfItems: items.length,
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+        { "@type": "ListItem", position: 2, name: "Industrial Q&A", item: `${site}/qa/` },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${site}/qa/#faq`,
+      mainEntity: faqMainEntity,
+    },
+  ],
+};
 ---
 <Layout
-  title="Q&A Industri & Manufaktur — Partpedia"
-  description="Pertanyaan dan jawaban praktis seputar bearing, pompa, gearbox, hidrolik, VFD, maintenance, dan operasional pabrik manufaktur."
+  title="Industrial Manufacturing Q&A — Bearings, Pumps, VFD, Hydraulics, OEE | Partpedia"
+  description="Industrial Q&A for maintenance engineers: bearing overheating, pump cavitation, gearbox pitting, VFD harmonics, hydraulic oil contamination, OEE, RCFA, LOTO. Practical answers with ISO/IEEE references — Partpedia."
+  jsonLd={jsonLd}
 >
   <section class="qa-hub">
     <header class="qa-head">
       <div class="qa-brand">
-        <img src="/logo.png" alt="Partpedia" width="40" height="40" />
+        <img src="/logo.png" alt="Partpedia industrial parts and MRO knowledge" width="40" height="40" />
         <span class="qa-brand-name">Part<span>pedia</span></span>
       </div>
-      <p class="kicker">Insight · Q&amp;A</p>
-      <h1>Pertanyaan &amp; jawaban industri</h1>
+      <p class="kicker">Insight · Industrial Q&amp;A</p>
+      <h1>Industrial manufacturing Q&amp;A</h1>
       <p class="lead">
+        Practical questions and answers for plant maintenance, reliability, and manufacturing operations —
+        bearings, pumps, gearboxes, hydraulics, VFD harmonics, OEE, LOTO, and more.
+      </p>
+      <p class="lead-id">
         Kumpulan Q&amp;A praktis untuk maintenance, reliability, dan operasional manufaktur —
         dari bearing dan pompa hingga hidrolik, VFD, OEE, dan K3.
+      </p>
+      <p class="topics" aria-label="Topic keywords">
+        Topics: bearing failure · pump cavitation · gearbox pitting · VFD harmonics · hydraulic contamination ·
+        OEE · RCFA · LOTO · motor overload · belt tracking · ISO 10816 · IEEE 519 · NPSH
       </p>
     </header>
 
     <div class="search-wrap">
-      <label class="sr-only" for="qa-search">Cari Q&amp;A</label>
+      <label class="sr-only" for="qa-search">Search industrial Q&amp;A</label>
       <input
         id="qa-search"
         type="search"
-        placeholder="Cari kata atau kalimat dalam pertanyaan & jawaban…"
+        placeholder="Search keywords in questions & answers (EN / ID)…"
         autocomplete="off"
-        aria-label="Cari Q dan A"
+        aria-label="Search Q and A"
       />
       <p class="search-hint" id="qa-search-hint" hidden></p>
     </div>
@@ -54,7 +103,7 @@ const items = loadAllQa();
         );
       })}
     </div>
-    <p class="qa-empty" id="qa-empty" hidden>Tidak ada topik yang cocok. Coba kata kunci lain.</p>
+    <p class="qa-empty" id="qa-empty" hidden>No matching topics. Try another keyword.</p>
   </section>
 
   <script>
@@ -79,7 +128,7 @@ const items = loadAllQa();
           hint.hidden = true;
         } else {
           hint.hidden = false;
-          hint.textContent = n === 0 ? "0 topik cocok" : `${n} topik cocok`;
+          hint.textContent = n === 0 ? "0 matches" : `${n} matches`;
         }
       }
     }
@@ -130,11 +179,27 @@ const items = loadAllQa();
       line-height: 1.15;
     }
     .lead {
-      margin: 0 auto;
-      max-width: 36rem;
+      margin: 0 auto 0.55rem;
+      max-width: 40rem;
       color: var(--muted);
       font-size: 1.02rem;
       line-height: 1.55;
+    }
+    .lead-id {
+      margin: 0 auto 0.75rem;
+      max-width: 40rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      opacity: 0.92;
+    }
+    .topics {
+      margin: 0 auto;
+      max-width: 42rem;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: #64748b;
+      font-family: var(--font-mono);
     }
 
     .search-wrap { margin: 0 0 1.25rem; }
