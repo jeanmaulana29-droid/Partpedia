@@ -3,18 +3,18 @@ import Layout from "../../layouts/Layout.astro";
 ---
 <Layout
   title="Pengukur jarak pendek — Partpedia"
-  description="Ukur jarak titik A ke B dengan kamera + sensor gerak smartphone (mm). Tanpa input manual. Estimasi dari jalur pergerakan HP."
+  description="Ukur jarak titik A ke B lewat kamera + orientasi (mm). Tanpa input tinggi manual. Estimasi bidang datar ke segala arah dari titik A."
 >
   <div class="ds-page">
     <a class="back" href="/">← Beranda</a>
 
     <header class="ds-hero">
-      <div class="ds-badge">KAMERA + IMU</div>
+      <div class="ds-badge">KAMERA + ORIENTASI</div>
       <h1>Pengukur jarak pendek</h1>
       <p class="ds-lead">
-        Tandai <strong>titik A</strong>, gerakkan HP lurus ke tujuan (titik B).
-        Jarak dihitung dari <strong>sensor gerak</strong> (percepatan + orientasi), ditampilkan dalam <strong>mm</strong>.
-        Tidak ada input angka manual.
+        Tandai <strong>titik A</strong>, geser arah kamera ke segala sisi menuju tujuan.
+        Jarak A→B dihitung realtime dalam <strong>mm</strong> (bidang datar).
+        Tanpa mengisi tinggi kamera manual.
       </p>
     </header>
 
@@ -22,11 +22,11 @@ import Layout from "../../layouts/Layout.astro";
       <div class="setup-ico" aria-hidden="true">📏</div>
       <h2>Siapkan pengukuran</h2>
       <p>
-        1. Buka kamera · 2. Arahkan ke titik A · 3. Tekan <strong>Tandai A</strong> ·
-        4. Gerakkan HP menuju titik B (sedapat mungkin lurus, kecepatan stabil).
+        Berdiri di satu tempat, arahkan kamera ke permukaan (lantai/meja/dinding datar),
+        tandai A, lalu putar/geser arah HP ke titik B. Jarak mengikuti pergerakan arah.
       </p>
       <p class="perm-warn">
-        Akan diminta <strong>izin kamera</strong>. Izin sensor gerak hanya jika perangkat memintanya.
+        Akan diminta <strong>izin kamera</strong>. Izin orientasi hanya jika perangkat memintanya.
         Data tidak dikirim ke server.
       </p>
       <button type="button" class="btn-perm" id="btn-open">Buka kamera &amp; mulai</button>
@@ -41,8 +41,9 @@ import Layout from "../../layouts/Layout.astro";
       </div>
 
       <div class="readout-bar">
-        <span class="ro-label" id="ro-label">Tekan Tandai A untuk mulai menghitung</span>
-        <span class="ro-val" id="ro-val">0 mm</span>
+        <span class="ro-label" id="ro-label">Tekan Tandai A · lalu geser kamera ke B</span>
+        <span class="ro-val" id="ro-val">— mm</span>
+        <span class="ro-meta" id="ro-meta"></span>
       </div>
 
       <div class="controls">
@@ -52,33 +53,24 @@ import Layout from "../../layouts/Layout.astro";
       </div>
 
       <p class="warn">
-        <strong>Estimasi sensor HP</strong> — bukan laser meter. Akurasi bergantung pada gerakan stabil;
-        hindari goyangan berlebih. Paling cocok untuk jarak pendek (beberapa puluh cm hingga beberapa meter).
+        Estimasi geometri + orientasi HP (bukan laser).
+        Paling stabil: berdiri diam, kamera mengarah ke permukaan datar, geser arah ke segala sisi dari A.
+        Fokus-distance kamera dipakai otomatis jika browser/perangkat mendukung; jika tidak, sistem memakai model sudut internal.
       </p>
     </div>
   </div>
 
   <script is:inline>
   (function () {
-    const G = 9.80665;
+    const DEG = Math.PI / 180;
+    const DEFAULT_H_MM = 1350; // hanya internal, tidak ditampilkan / tidak diisi user
     let stream = null;
+    let track = null;
     let running = false;
-    let measuring = false;
     let raf = 0;
-    let lastT = 0;
-
-    // Visual marker A in normalized screen coords
-    let markA = null; // { sx, sy }
-
-    // IMU state (SI units: m, m/s, m/s²)
-    let vx = 0, vy = 0, vz = 0;
-    let px = 0, py = 0, pz = 0;
-    let pathM = 0;
-    let gx = 0, gy = 0, gz = G;
-    let gravReady = false;
-    let stillMs = 0;
-
-    let orient = { alpha: 0, beta: 90, gamma: 0 };
+    let pointA = null; // { x, y } mm di bidang horizontal
+    let orient = { alpha: 0, beta: 55, gamma: 0 };
+    let focusDistM = null; // meter, dari sensor fokus jika ada
 
     const video = document.getElementById("video");
     const canvas = document.getElementById("overlay");
@@ -89,11 +81,8 @@ import Layout from "../../layouts/Layout.astro";
     const permErr = document.getElementById("perm-err");
     const roLabel = document.getElementById("ro-label");
     const roVal = document.getElementById("ro-val");
+    const roMeta = document.getElementById("ro-meta");
 
-    function needsMotionPerm() {
-      return typeof DeviceMotionEvent !== "undefined"
-        && typeof DeviceMotionEvent.requestPermission === "function";
-    }
     function needsOrientPerm() {
       return typeof DeviceOrientationEvent !== "undefined"
         && typeof DeviceOrientationEvent.requestPermission === "function";
@@ -105,102 +94,67 @@ import Layout from "../../layouts/Layout.astro";
       if (e.gamma != null) orient.gamma = e.gamma;
     }
 
-    /** Rotate device-frame vector to a rough world frame using beta/gamma/alpha */
-    function toWorld(ax, ay, az) {
-      const a = orient.alpha * Math.PI / 180;
-      const b = orient.beta * Math.PI / 180;
-      const g = orient.gamma * Math.PI / 180;
-      // Z-X-Y style approximation for phone
-      const ca = Math.cos(a), sa = Math.sin(a);
-      const cb = Math.cos(b), sb = Math.sin(b);
-      const cg = Math.cos(g), sg = Math.sin(g);
-      // R = Rz(alpha) * Rx(beta) * Ry(gamma) applied to column vector
-      const x1 = cg * ax + sg * az;
-      const y1 = ay;
-      const z1 = -sg * ax + cg * az;
-      const x2 = x1;
-      const y2 = cb * y1 - sb * z1;
-      const z2 = sb * y1 + cb * z1;
-      const x3 = ca * x2 - sa * y2;
-      const y3 = sa * x2 + ca * y2;
-      const z3 = z2;
-      return { x: x3, y: y3, z: z3 };
+    /** Coba baca jarak fokus kamera (meter) — tidak semua HP/browser mendukung */
+    function pollFocusDistance() {
+      try {
+        if (!track || typeof track.getSettings !== "function") return;
+        const s = track.getSettings();
+        if (s && typeof s.focusDistance === "number" && s.focusDistance > 0.05 && s.focusDistance < 20) {
+          focusDistM = s.focusDistance;
+        }
+      } catch (_) {}
     }
 
-    function onMotion(e) {
-      if (!running) return;
-      const t = e.timeStamp || performance.now();
-      if (!lastT) { lastT = t; return; }
-      let dt = (t - lastT) / 1000;
-      lastT = t;
-      if (dt <= 0 || dt > 0.1) dt = 0.02;
+    /**
+     * Titik di bidang horizontal di depan kamera (mm), dari sudut + skala.
+     * Skala: fokusocusDistance (jarak sumbu optik) → proyeksi horizontal;
+     * jika tidak ada, pakai tinggi internal DEFAULT_H_MM + sudut miring.
+     */
+    function floorPoint() {
+      const beta = orient.beta; // 0 = terlentang, 90 = tegak
+      // Sudut sumbu kamera terhadap horizontal: beta - 90 (negatif = menunduk)
+      const elev = (beta - 90) * DEG; // elevasi sumbu optik
+      // Sudut ke bidang lantai dari sumbu optik saat menunduk
+      let down = -elev; // positif saat menunduk ke lantai
+      if (down < 8 * DEG) down = 8 * DEG;
+      if (down > 80 * DEG) down = 80 * DEG;
 
-      let ax, ay, az;
-      if (e.acceleration && e.acceleration.x != null) {
-        ax = e.acceleration.x || 0;
-        ay = e.acceleration.y || 0;
-        az = e.acceleration.z || 0;
-      } else if (e.accelerationIncludingGravity) {
-        const ix = e.accelerationIncludingGravity.x || 0;
-        const iy = e.accelerationIncludingGravity.y || 0;
-        const iz = e.accelerationIncludingGravity.z || 0;
-        const alphaG = 0.92;
-        if (!gravReady) {
-          gx = ix; gy = iy; gz = iz;
-          gravReady = true;
-        } else {
-          gx = alphaG * gx + (1 - alphaG) * ix;
-          gy = alphaG * gy + (1 - alphaG) * iy;
-          gz = alphaG * gz + (1 - alphaG) * iz;
-        }
-        ax = ix - gx;
-        ay = iy - gy;
-        az = iz - gz;
+      let horizMm;
+      let mode = "sudut";
+
+      if (focusDistM != null) {
+        // Fokus ≈ jarak sepanjang sumbu optik ke subjek; proyeksi horizontal
+        const dMm = focusDistM * 1000;
+        horizMm = dMm * Math.cos(elev);
+        // Jika hampir mendatar, cos ≈ 1; jika menunduk, horizontal lebih pendek
+        if (horizMm < 80) horizMm = dMm * Math.sin(down);
+        mode = "fokus";
       } else {
-        return;
+        // Model bidang datar: H / tan(down)
+        horizMm = DEFAULT_H_MM / Math.tan(down);
+        mode = "sudut";
       }
 
-      // Noise gate
-      const amag = Math.sqrt(ax * ax + ay * ay + az * az);
-      if (amag < 0.12) {
-        ax = ay = az = 0;
-        stillMs += dt * 1000;
-      } else {
-        stillMs = 0;
-      }
-      // Zero-velocity update when still
-      if (stillMs > 180) {
-        vx = vy = vz = 0;
-      }
+      if (!isFinite(horizMm) || horizMm < 50) return null;
+      if (horizMm > 25000) horizMm = 25000;
 
-      if (!measuring) return;
+      const yaw = orient.alpha * DEG;
+      return {
+        x: horizMm * Math.sin(yaw),
+        y: horizMm * Math.cos(yaw),
+        range: horizMm,
+        mode: mode,
+      };
+    }
 
-      const w = toWorld(ax, ay, az);
-      vx += w.x * dt;
-      vy += w.y * dt;
-      vz += w.z * dt;
-
-      // Light damping to limit drift
-      const damp = Math.pow(0.99, dt * 60);
-      vx *= damp; vy *= damp; vz *= damp;
-
-      const dx = vx * dt;
-      const dy = vy * dt;
-      const dz = vz * dt;
-      px += dx; py += dy; pz += dz;
-      const step = Math.sqrt(dx * dx + dy * dy + dz * dz);
-      // Ignore tiny numerical noise
-      if (step > 0.00015) pathM += step;
-
-      const mm = pathM * 1000;
-      if (roVal) {
-        roVal.textContent = mm >= 1000 ? (mm / 1000).toFixed(2) + " m" : Math.round(mm) + " mm";
-      }
-      if (roLabel) roLabel.textContent = "Mengukur… gerakkan ke titik B";
+    function fmtMm(mm) {
+      if (!isFinite(mm)) return "— mm";
+      if (mm >= 1000) return (mm / 1000).toFixed(2) + " m";
+      return Math.round(mm) + " mm";
     }
 
     function resizeOverlay() {
-      if (!video || !canvas || !stage) return;
+      if (!canvas || !stage) return;
       const w = stage.clientWidth;
       const h = stage.clientHeight;
       if (w < 2 || h < 2) return;
@@ -210,27 +164,30 @@ import Layout from "../../layouts/Layout.astro";
       }
     }
 
-    function drawOverlay() {
+    function draw() {
       if (!running || !ctx || !canvas) return;
+      pollFocusDistance();
       resizeOverlay();
       const w = canvas.width;
       const h = canvas.height;
       ctx.clearRect(0, 0, w, h);
 
+      const cur = floorPoint();
       const bx = w * 0.5;
       const by = h * 0.5;
 
-      if (markA) {
-        const ax = markA.sx * w;
-        const ay = markA.sy * h;
-        // line
+      if (pointA && cur) {
+        // Titik A visual: tetap di posisi relatif saat ditandai (pusat saat mark)
+        const ax = pointA.sx * w;
+        const ay = pointA.sy * h;
+
         ctx.beginPath();
         ctx.moveTo(ax, ay);
         ctx.lineTo(bx, by);
         ctx.strokeStyle = "rgba(56,189,248,0.95)";
         ctx.lineWidth = 3;
         ctx.stroke();
-        // point A
+
         ctx.beginPath();
         ctx.arc(ax, ay, 12, 0, Math.PI * 2);
         ctx.fillStyle = "#fbbf24";
@@ -241,99 +198,124 @@ import Layout from "../../layouts/Layout.astro";
         ctx.font = "bold 13px system-ui,sans-serif";
         ctx.fillStyle = "#fbbf24";
         ctx.fillText("A", ax + 16, ay + 5);
-        // B label at center
         ctx.fillStyle = "#5eead4";
         ctx.fillText("B", bx + 14, by - 10);
+
+        const dx = cur.x - pointA.x;
+        const dy = cur.y - pointA.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (roVal) roVal.textContent = fmtMm(dist);
+        if (roLabel) roLabel.textContent = "Jarak A → B (segala arah)";
+        if (roMeta) {
+          roMeta.textContent = cur.mode === "fokus"
+            ? "Skala: sensor fokusokus kamera"
+            : "Skala: model sudut otomatis";
+        }
+      } else if (cur) {
+        if (roVal) roVal.textContent = "D≈ " + fmtMm(cur.range);
+        if (roLabel) roLabel.textContent = "Jarak ke titik di crosshair · tekan Tandai A";
+        if (roMeta) {
+          roMeta.textContent = cur.mode === "fokus"
+            ? "Skala: sensor fokusokus kamera"
+            : "Skala: model sudut otomatis";
+        }
+      } else {
+        if (roVal) roVal.textContent = "— mm";
+        if (roLabel) roLabel.textContent = "Miringkan kamera ke permukaan datar";
+        if (roMeta) roMeta.textContent = "";
       }
-      raf = requestAnimationFrame(drawOverlay);
+
+      raf = requestAnimationFrame(draw);
     }
 
     async function openCam() {
       if (permErr) { permErr.hidden = true; permErr.textContent = ""; }
       try {
         if (!navigator.mediaDevices?.getUserMedia) throw new Error("Browser tidak mendukung kamera.");
-
         if (needsOrientPerm()) {
           const s = await DeviceOrientationEvent.requestPermission();
           if (s !== "granted") throw Object.assign(new Error("Izin orientasi ditolak."), { name: "NotAllowedError" });
         }
-        if (needsMotionPerm()) {
-          const s = await DeviceMotionEvent.requestPermission();
-          if (s !== "granted") throw Object.assign(new Error("Izin sensor gerak ditolak."), { name: "NotAllowedError" });
-        }
-
         window.addEventListener("deviceorientation", onOrient, true);
-        window.addEventListener("devicemotion", onMotion, true);
 
         stream = await navigator.mediaDevices.getUserMedia({
           audio: false,
-          video: { facingMode: { ideal: "environment" }, width: { ideal: 1280 }, height: { ideal: 720 } },
+          video: {
+            facingMode: { ideal: "environment" },
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
         });
+        track = stream.getVideoTracks()[0] || null;
+        // Coba aktifkan continuous focus jika didukung
+        try {
+          if (track && typeof track.applyConstraints === "function") {
+            await track.applyConstraints({ advanced: [{ focusMode: "continuous" }] });
+          }
+        } catch (_) {}
+        pollFocusDistance();
+
         video.srcObject = stream;
         await video.play();
-
         running = true;
-        measuring = false;
-        markA = null;
-        pathM = 0;
-        vx = vy = vz = px = py = pz = 0;
-        lastT = 0;
+        pointA = null;
         if (setupCard) setupCard.hidden = true;
         if (viewWrap) viewWrap.hidden = false;
-        if (roLabel) roLabel.textContent = "Tekan Tandai A untuk mulai menghitung";
-        if (roVal) roVal.textContent = "0 mm";
+        if (roLabel) roLabel.textContent = "Tekan Tandai A · lalu geser kamera ke B";
+        if (roVal) roVal.textContent = "— mm";
+        if (roMeta) roMeta.textContent = "";
         resizeOverlay();
-        drawOverlay();
+        draw();
       } catch (err) {
         let msg = "Gagal membuka kamera / sensor.";
-        if (err?.name === "NotAllowedError") msg = "Izin ditolak. Izinkan kamera & sensor di pengaturan situs.";
+        if (err?.name === "NotAllowedError") msg = "Izin ditolak. Izinkan kamera & orientasi di pengaturan situs.";
         else if (err?.message) msg = err.message;
         if (permErr) { permErr.textContent = msg; permErr.hidden = false; }
       }
     }
 
-    function markAPoint() {
-      markA = { sx: 0.5, sy: 0.5 };
-      // reset IMU integration at A
-      pathM = 0;
-      vx = vy = vz = 0;
-      px = py = pz = 0;
-      stillMs = 0;
-      lastT = 0;
-      measuring = true;
-      if (roLabel) roLabel.textContent = "Titik A ditandai · gerakkan HP ke B";
-      if (roVal) roVal.textContent = "0 mm";
+    function markA() {
+      const cur = floorPoint();
+      if (!cur) {
+        if (roLabel) roLabel.textContent = "Belum bisa tandai A — miringkan ke permukaan datar";
+        return;
+      }
+      pointA = {
+        x: cur.x,
+        y: cur.y,
+        sx: 0.5,
+        sy: 0.42,
+      };
+      if (roLabel) roLabel.textContent = "Titik A ditandai · geser kamera ke segala arah ke B";
     }
 
     function resetAll() {
-      measuring = false;
-      markA = null;
-      pathM = 0;
-      vx = vy = vz = px = py = pz = 0;
-      lastT = 0;
-      if (roLabel) roLabel.textContent = "Tekan Tandai A untuk mulai menghitung";
-      if (roVal) roVal.textContent = "0 mm";
+      pointA = null;
+      if (roLabel) roLabel.textContent = "Tekan Tandai A · lalu geser kamera ke B";
+      if (roVal) roVal.textContent = "— mm";
+      if (roMeta) roMeta.textContent = "";
     }
 
     function stop() {
       running = false;
-      measuring = false;
       if (raf) cancelAnimationFrame(raf);
       raf = 0;
       window.removeEventListener("deviceorientation", onOrient, true);
-      window.removeEventListener("devicemotion", onMotion, true);
       if (stream) {
         stream.getTracks().forEach((t) => t.stop());
         stream = null;
       }
+      track = null;
+      focusDistM = null;
       if (video) video.srcObject = null;
-      markA = null;
+      pointA = null;
       if (viewWrap) viewWrap.hidden = true;
       if (setupCard) setupCard.hidden = false;
     }
 
     document.getElementById("btn-open")?.addEventListener("click", openCam);
-    document.getElementById("btn-a")?.addEventListener("click", markAPoint);
+    document.getElementById("btn-a")?.addEventListener("click", markA);
     document.getElementById("btn-reset")?.addEventListener("click", resetAll);
     document.getElementById("btn-stop")?.addEventListener("click", stop);
     window.addEventListener("beforeunload", stop);
@@ -351,7 +333,7 @@ import Layout from "../../layouts/Layout.astro";
       padding: .28rem .65rem; border-radius: 999px; margin-bottom: .65rem;
     }
     .ds-hero h1 { font-size: clamp(1.5rem,4vw,2rem); margin: 0 0 .4rem; color: var(--ink,#f1f5f9); }
-    .ds-lead { margin: 0 0 0.5rem; color: var(--muted,#94a3b8); line-height: 1.5; font-size: .92rem; }
+    .ds-lead { margin: 0; color: var(--muted,#94a3b8); line-height: 1.5; font-size: .92rem; }
     .ds-lead strong { color: #e2e8f0; }
 
     .setup-card {
@@ -377,7 +359,6 @@ import Layout from "../../layouts/Layout.astro";
     }
     .perm-err { margin-top: .75rem; color: #fca5a5; font-size: .88rem; }
 
-    /* Stage: only video + overlay + crosshair — no stacked text inside */
     .stage {
       position: relative;
       width: 100%;
@@ -391,41 +372,24 @@ import Layout from "../../layouts/Layout.astro";
       isolation: isolate;
     }
     #video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-      display: block;
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 1; display: block;
     }
     #overlay {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-      display: block;
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      z-index: 2; pointer-events: none; display: block;
     }
     .crosshair {
-      position: absolute;
-      z-index: 3;
-      left: 50%;
-      top: 50%;
-      width: 28px;
-      height: 28px;
-      transform: translate(-50%, -50%);
+      position: absolute; z-index: 3; left: 50%; top: 50%;
+      width: 28px; height: 28px; transform: translate(-50%, -50%);
       pointer-events: none;
-      border: 2px solid rgba(251,191,36,.95);
-      border-radius: 50%;
+      border: 2px solid rgba(251,191,36,.95); border-radius: 50%;
       box-shadow: 0 0 0 1px rgba(0,0,0,.45);
       background:
         linear-gradient(#fbbf24,#fbbf24) center / 100% 2px no-repeat,
         linear-gradient(#fbbf24,#fbbf24) center / 2px 100% no-repeat;
     }
 
-    /* Readout BELOW camera — tidak menumpuk di video */
     .readout-bar {
       margin-top: 0.75rem;
       padding: 0.85rem 1rem;
@@ -434,52 +398,30 @@ import Layout from "../../layouts/Layout.astro";
       border: 1px solid rgba(45, 212, 191, 0.28);
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0.15rem;
     }
     .ro-label { font-size: 0.8rem; color: #94a3b8; }
     .ro-val {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #5eead4;
-      font-family: var(--font-mono, ui-monospace, monospace);
-      line-height: 1.2;
+      font-size: 1.6rem; font-weight: 700; color: #5eead4;
+      font-family: var(--font-mono, ui-monospace, monospace); line-height: 1.2;
     }
+    .ro-meta { font-size: 0.72rem; color: #64748b; }
 
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-top: 0.85rem;
-    }
+    .controls { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 0.85rem; }
     .btn-a, .btn-reset, .btn-stop {
-      appearance: none;
-      cursor: pointer;
-      font-weight: 700;
-      padding: 0.7rem 1.1rem;
-      border-radius: 999px;
-      border: none;
-      font-size: 0.9rem;
+      appearance: none; cursor: pointer; font-weight: 700;
+      padding: 0.7rem 1.1rem; border-radius: 999px; border: none; font-size: 0.9rem;
     }
-    .btn-a {
-      color: #0f172a;
-      background: linear-gradient(135deg, #fde68a, #f59e0b);
-    }
+    .btn-a { color: #0f172a; background: linear-gradient(135deg, #fde68a, #f59e0b); }
     .btn-reset, .btn-stop {
-      background: transparent;
-      border: 1px solid rgba(148,163,184,.35);
-      color: #e2e8f0;
+      background: transparent; border: 1px solid rgba(148,163,184,.35); color: #e2e8f0;
     }
     .btn-stop:hover { border-color: #f87171; color: #fca5a5; }
 
     .warn {
-      margin-top: 1rem;
-      color: #fde68a;
-      font-size: 0.82rem;
-      line-height: 1.45;
-      background: rgba(251,191,36,.08);
-      border: 1px solid rgba(251,191,36,.25);
-      border-radius: 12px;
-      padding: 0.75rem 0.9rem;
+      margin-top: 1rem; color: #fde68a; font-size: 0.82rem; line-height: 1.45;
+      background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.25);
+      border-radius: 12px; padding: 0.75rem 0.9rem;
     }
   </style>
 </Layout>
