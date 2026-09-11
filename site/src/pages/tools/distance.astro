@@ -3,18 +3,18 @@ import Layout from "../../layouts/Layout.astro";
 ---
 <Layout
   title="Pengukur jarak pendek — Partpedia"
-  description="Ukur jarak titik A ke B lewat kamera + orientasi (mm). Tanpa input tinggi manual. Estimasi bidang datar ke segala arah dari titik A."
+  description="Ukur jarak dari titik A (pusat di permukaan) ke titik yang ditunjuk kamera. Putar atau geser HP — jarak naik/turun realtime."
 >
   <div class="ds-page">
     <a class="back" href="/">← Beranda</a>
 
     <header class="ds-hero">
-      <div class="ds-badge">KAMERA + ORIENTASI</div>
+      <div class="ds-badge">A = PUSAT DI LAYAR/PERMUKAAN</div>
       <h1>Pengukur jarak pendek</h1>
       <p class="ds-lead">
-        Tandai <strong>titik A</strong>, geser arah kamera ke segala sisi menuju tujuan.
-        Jarak A→B dihitung realtime dalam <strong>mm</strong> (bidang datar).
-        Tanpa mengisi tinggi kamera manual.
+        <strong>Titik A</strong> = pusat di permukaan saat Anda menandai.
+        Putar HP (hanya arah kamera) atau geser posisi — jarak ke titik di crosshair
+        <strong>naik saat menjauh dari A</strong> dan <strong>turun saat mendekati A</strong>, dari segala arah.
       </p>
     </header>
 
@@ -22,11 +22,11 @@ import Layout from "../../layouts/Layout.astro";
       <div class="setup-ico" aria-hidden="true">📏</div>
       <h2>Siapkan pengukuran</h2>
       <p>
-        Berdiri di satu tempat, arahkan kamera ke permukaan (lantai/meja/dinding datar),
-        tandai A, lalu putar/geser arah HP ke titik B. Jarak mengikuti pergerakan arah.
+        1. Buka kamera · 2. Arahkan ke titik A · 3. <strong>Tandai A</strong> ·
+        4. Putar / geser arah kamera ke sekeliling — angka mengikuti realtime.
       </p>
       <p class="perm-warn">
-        Akan diminta <strong>izin kamera</strong>. Izin orientasi hanya jika perangkat memintanya.
+        Izin kamera wajib. Izin orientasi hanya jika perangkat memintanya.
         Data tidak dikirim ke server.
       </p>
       <button type="button" class="btn-perm" id="btn-open">Buka kamera &amp; mulai</button>
@@ -41,9 +41,9 @@ import Layout from "../../layouts/Layout.astro";
       </div>
 
       <div class="readout-bar">
-        <span class="ro-label" id="ro-label">Tekan Tandai A · lalu geser kamera ke B</span>
+        <span class="ro-label" id="ro-label">Tekan Tandai A (pusat)</span>
         <span class="ro-val" id="ro-val">— mm</span>
-        <span class="ro-meta" id="ro-meta"></span>
+        <span class="ro-meta" id="ro-meta">Putar kamera saja sudah menghitung</span>
       </div>
 
       <div class="controls">
@@ -53,9 +53,8 @@ import Layout from "../../layouts/Layout.astro";
       </div>
 
       <p class="warn">
-        Estimasi geometri + orientasi HP (bukan laser).
-        Paling stabil: berdiri diam, kamera mengarah ke permukaan datar, geser arah ke segala sisi dari A.
-        Fokus-distance kamera dipakai otomatis jika browser/perangkat mendukung; jika tidak, sistem memakai model sudut internal.
+        Estimasi dari <strong>arah kamera + model permukaan</strong> (bukan laser).
+        HP boleh tetap di tempat: yang dihitung adalah jarak di permukaan dari A ke titik yang sedang ditunjuk crosshair.
       </p>
     </div>
   </div>
@@ -63,14 +62,14 @@ import Layout from "../../layouts/Layout.astro";
   <script is:inline>
   (function () {
     const DEG = Math.PI / 180;
-    const DEFAULT_H_MM = 1350; // hanya internal, tidak ditampilkan / tidak diisi user
+    const DEFAULT_H_MM = 1350; // internal saja, tidak ada kolom isian
     let stream = null;
     let track = null;
     let running = false;
     let raf = 0;
-    let pointA = null; // { x, y } mm di bidang horizontal
+    let pointA = null; // { x, y, sx, sy } mm di bidang + posisi visual
     let orient = { alpha: 0, beta: 55, gamma: 0 };
-    let focusDistM = null; // meter, dari sensor fokus jika ada
+    let focusDistM = null;
 
     const video = document.getElementById("video");
     const canvas = document.getElementById("overlay");
@@ -94,8 +93,7 @@ import Layout from "../../layouts/Layout.astro";
       if (e.gamma != null) orient.gamma = e.gamma;
     }
 
-    /** Coba baca jarak fokus kamera (meter) — tidak semua HP/browser mendukung */
-    function pollFocusDistance() {
+    function pollFocus() {
       try {
         if (!track || typeof track.getSettings !== "function") return;
         const s = track.getSettings();
@@ -105,36 +103,23 @@ import Layout from "../../layouts/Layout.astro";
       } catch (_) {}
     }
 
-    /**
-     * Titik di bidang horizontal di depan kamera (mm), dari sudut + skala.
-     * Skala: fokusocusDistance (jarak sumbu optik) → proyeksi horizontal;
-     * jika tidak ada, pakai tinggi internal DEFAULT_H_MM + sudut miring.
-     */
-    function floorPoint() {
-      const beta = orient.beta; // 0 = terlentang, 90 = tegak
-      // Sudut sumbu kamera terhadap horizontal: beta - 90 (negatif = menunduk)
-      const elev = (beta - 90) * DEG; // elevasi sumbu optik
-      // Sudut ke bidang lantai dari sumbu optik saat menunduk
-      let down = -elev; // positif saat menunduk ke lantai
+    /** Titik di permukaan yang sedang ditunjuk crosshair (bidang horizontal, mm) */
+    function aimPoint() {
+      const elev = (orient.beta - 90) * DEG; // negatif = menunduk
+      let down = -elev;
       if (down < 8 * DEG) down = 8 * DEG;
       if (down > 80 * DEG) down = 80 * DEG;
 
       let horizMm;
       let mode = "sudut";
-
       if (focusDistM != null) {
-        // Fokus ≈ jarak sepanjang sumbu optik ke subjek; proyeksi horizontal
         const dMm = focusDistM * 1000;
-        horizMm = dMm * Math.cos(elev);
-        // Jika hampir mendatar, cos ≈ 1; jika menunduk, horizontal lebih pendek
+        horizMm = Math.abs(dMm * Math.cos(elev));
         if (horizMm < 80) horizMm = dMm * Math.sin(down);
         mode = "fokus";
       } else {
-        // Model bidang datar: H / tan(down)
         horizMm = DEFAULT_H_MM / Math.tan(down);
-        mode = "sudut";
       }
-
       if (!isFinite(horizMm) || horizMm < 50) return null;
       if (horizMm > 25000) horizMm = 25000;
 
@@ -166,21 +151,21 @@ import Layout from "../../layouts/Layout.astro";
 
     function draw() {
       if (!running || !ctx || !canvas) return;
-      pollFocusDistance();
+      pollFocus();
       resizeOverlay();
       const w = canvas.width;
       const h = canvas.height;
       ctx.clearRect(0, 0, w, h);
 
-      const cur = floorPoint();
+      const cur = aimPoint();
       const bx = w * 0.5;
       const by = h * 0.5;
 
       if (pointA && cur) {
-        // Titik A visual: tetap di posisi relatif saat ditandai (pusat saat mark)
         const ax = pointA.sx * w;
         const ay = pointA.sy * h;
 
+        // garis A → B (crosshair)
         ctx.beginPath();
         ctx.moveTo(ax, ay);
         ctx.lineTo(bx, by);
@@ -188,6 +173,7 @@ import Layout from "../../layouts/Layout.astro";
         ctx.lineWidth = 3;
         ctx.stroke();
 
+        // titik A
         ctx.beginPath();
         ctx.arc(ax, ay, 12, 0, Math.PI * 2);
         ctx.fillStyle = "#fbbf24";
@@ -201,25 +187,21 @@ import Layout from "../../layouts/Layout.astro";
         ctx.fillStyle = "#5eead4";
         ctx.fillText("B", bx + 14, by - 10);
 
+        // Jarak radial di permukaan dari pusat A ke titik yang ditunjuk
         const dx = cur.x - pointA.x;
         const dy = cur.y - pointA.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (roVal) roVal.textContent = fmtMm(dist);
-        if (roLabel) roLabel.textContent = "Jarak A → B (segala arah)";
+        if (roLabel) roLabel.textContent = "Jarak dari pusat A ke titik di crosshair";
         if (roMeta) {
-          roMeta.textContent = cur.mode === "fokus"
-            ? "Skala: sensor fokusokus kamera"
-            : "Skala: model sudut otomatis";
+          roMeta.textContent = (cur.mode === "fokus" ? "Skala fokusokus · " : "Skala sudut · ")
+            + "putar kamera = angka berubah";
         }
       } else if (cur) {
         if (roVal) roVal.textContent = "D≈ " + fmtMm(cur.range);
-        if (roLabel) roLabel.textContent = "Jarak ke titik di crosshair · tekan Tandai A";
-        if (roMeta) {
-          roMeta.textContent = cur.mode === "fokus"
-            ? "Skala: sensor fokusokus kamera"
-            : "Skala: model sudut otomatis";
-        }
+        if (roLabel) roLabel.textContent = "Arahkan ke titik A · tekan Tandai A";
+        if (roMeta) roMeta.textContent = cur.mode === "fokus" ? "Skala: fokus kamera" : "Skala: model sudut otomatis";
       } else {
         if (roVal) roVal.textContent = "— mm";
         if (roLabel) roLabel.textContent = "Miringkan kamera ke permukaan datar";
@@ -248,13 +230,12 @@ import Layout from "../../layouts/Layout.astro";
           },
         });
         track = stream.getVideoTracks()[0] || null;
-        // Coba aktifkan continuous focus jika didukung
         try {
           if (track && typeof track.applyConstraints === "function") {
             await track.applyConstraints({ advanced: [{ focusMode: "continuous" }] });
           }
         } catch (_) {}
-        pollFocusDistance();
+        pollFocus();
 
         video.srcObject = stream;
         await video.play();
@@ -262,9 +243,9 @@ import Layout from "../../layouts/Layout.astro";
         pointA = null;
         if (setupCard) setupCard.hidden = true;
         if (viewWrap) viewWrap.hidden = false;
-        if (roLabel) roLabel.textContent = "Tekan Tandai A · lalu geser kamera ke B";
+        if (roLabel) roLabel.textContent = "Tekan Tandai A (pusat)";
         if (roVal) roVal.textContent = "— mm";
-        if (roMeta) roMeta.textContent = "";
+        if (roMeta) roMeta.textContent = "Putar kamera saja sudah menghitung";
         resizeOverlay();
         draw();
       } catch (err) {
@@ -276,7 +257,7 @@ import Layout from "../../layouts/Layout.astro";
     }
 
     function markA() {
-      const cur = floorPoint();
+      const cur = aimPoint();
       if (!cur) {
         if (roLabel) roLabel.textContent = "Belum bisa tandai A — miringkan ke permukaan datar";
         return;
@@ -287,14 +268,15 @@ import Layout from "../../layouts/Layout.astro";
         sx: 0.5,
         sy: 0.42,
       };
-      if (roLabel) roLabel.textContent = "Titik A ditandai · geser kamera ke segala arah ke B";
+      if (roLabel) roLabel.textContent = "A ditandai · putar / geser kamera ke sekeliling";
+      if (roMeta) roMeta.textContent = "Menjauh dari A = naik · mendekati A = turun";
     }
 
     function resetAll() {
       pointA = null;
-      if (roLabel) roLabel.textContent = "Tekan Tandai A · lalu geser kamera ke B";
+      if (roLabel) roLabel.textContent = "Tekan Tandai A (pusat)";
       if (roVal) roVal.textContent = "— mm";
-      if (roMeta) roMeta.textContent = "";
+      if (roMeta) roMeta.textContent = "Putar kamera saja sudah menghitung";
     }
 
     function stop() {
@@ -360,16 +342,10 @@ import Layout from "../../layouts/Layout.astro";
     .perm-err { margin-top: .75rem; color: #fca5a5; font-size: .88rem; }
 
     .stage {
-      position: relative;
-      width: 100%;
-      margin-top: 1rem;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #000;
-      aspect-ratio: 3 / 4;
-      max-height: min(62vh, 520px);
-      border: 1px solid rgba(45,212,191,.25);
-      isolation: isolate;
+      position: relative; width: 100%; margin-top: 1rem;
+      border-radius: 16px; overflow: hidden; background: #000;
+      aspect-ratio: 3 / 4; max-height: min(62vh, 520px);
+      border: 1px solid rgba(45,212,191,.25); isolation: isolate;
     }
     #video {
       position: absolute; inset: 0; width: 100%; height: 100%;
@@ -391,14 +367,10 @@ import Layout from "../../layouts/Layout.astro";
     }
 
     .readout-bar {
-      margin-top: 0.75rem;
-      padding: 0.85rem 1rem;
-      border-radius: 14px;
+      margin-top: 0.75rem; padding: 0.85rem 1rem; border-radius: 14px;
       background: rgba(15, 23, 42, 0.95);
       border: 1px solid rgba(45, 212, 191, 0.28);
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
+      display: flex; flex-direction: column; gap: 0.15rem;
     }
     .ro-label { font-size: 0.8rem; color: #94a3b8; }
     .ro-val {
