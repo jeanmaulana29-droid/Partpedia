@@ -1,0 +1,380 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout
+  title="Pengukur jarak pendek — Partpedia"
+  description="Ukur jarak titik A ke B lewat kamera smartphone (mm). Estimasi bidang datar + orientasi sensor. Referensi cepat, bukan laser meter."
+>
+  <div class="ds-page">
+    <a class="back" href="/">← Beranda</a>
+
+    <header class="ds-hero">
+      <div class="ds-badge">KAMERA + SENSOR</div>
+      <h1>Pengukur jarak pendek</h1>
+      <p class="ds-lead">
+        Tandai <strong>titik A</strong>, arahkan ke tujuan, baca jarak ke crosshair (titik B) dalam <strong>mm</strong>.
+        Kalkulasi memakai sudut kamera (trigonometri) + orientasi HP pada <strong>bidang datar</strong> (lantai/meja).
+      </p>
+    </header>
+
+    <div class="setup-card" id="setup-card">
+      <div class="setup-ico" aria-hidden="true">📏</div>
+      <h2>Siapkan pengukuran</h2>
+      <p>
+        Paling akurat jika Anda <strong>berdiri di tempat yang sama</strong>, mengayunkan HP dari titik A ke B
+        (bukan berjalan jauh), dan mengarahkan ke permukaan yang relatif datar.
+      </p>
+      <label class="field-h" for="cam-h">Tinggi kamera dari permukaan (mm)</label>
+      <input id="cam-h" type="number" inputmode="numeric" min="200" max="2500" step="10" value="1200" />
+      <p class="hint">Contoh: HP di tangan setinggi dada ≈ 1200–1400 mm dari lantai.</p>
+      <p class="perm-warn" id="cam-warn">
+        Tombol di bawah akan meminta <strong>izin kamera</strong> (wajib).
+        Izin orientasi sensor diminta hanya jika perangkat memerlukannya (sering di iPhone).
+      </p>
+      <button type="button" class="btn-perm" id="btn-open">Buka kamera &amp; mulai</button>
+      <p class="perm-err" id="perm-err" hidden></p>
+    </div>
+
+    <div class="view-wrap" id="view-wrap" hidden>
+      <div class="stage">
+        <video id="video" playsinline muted autoplay></video>
+        <canvas id="overlay"></canvas>
+        <div class="crosshair" aria-hidden="true"></div>
+        <div class="readout">
+          <span class="ro-label" id="ro-label">Arahkan ke titik A · tekan Tandai A</span>
+          <span class="ro-val" id="ro-val">— mm</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="btn-a" id="btn-a">Tandai titik A</button>
+        <button type="button" class="btn-reset" id="btn-reset">Reset A</button>
+        <button type="button" class="btn-stop" id="btn-stop">Tutup kamera</button>
+      </div>
+
+      <p class="warn">
+        <strong>Bukan laser distance meter.</strong> Estimasi dari FOV kamera + sudut orientasi + tinggi yang Anda isi.
+        Kemiringan, lensa wide-angle, dan pergeseran posisi tubuh bisa menambah error.
+        Untuk akurasi industri, gunakan laser meter kalibrasi.
+      </p>
+    </div>
+  </div>
+
+  <script is:inline>
+  (function () {
+    const DEG = Math.PI / 180;
+    const FOV_V_DEG = 55; // typical vertical FOV estimate for phone rear camera
+    let stream = null;
+    let running = false;
+    let raf = 0;
+    let pointA = null; // { x, y, yaw, pitch, dist }
+    let orient = { alpha: 0, beta: 60, gamma: 0 };
+    let orientOk = false;
+
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("overlay");
+    const ctx = canvas ? canvas.getContext("2d") : null;
+    const setupCard = document.getElementById("setup-card");
+    const viewWrap = document.getElementById("view-wrap");
+    const permErr = document.getElementById("perm-err");
+    const roLabel = document.getElementById("ro-label");
+    const roVal = document.getElementById("ro-val");
+    const camH = document.getElementById("cam-h");
+
+    function needsOrientPermission() {
+      return typeof DeviceOrientationEvent !== "undefined"
+        && typeof DeviceOrientationEvent.requestPermission === "function";
+    }
+
+    function onOrient(e) {
+      if (e.alpha != null) orient.alpha = e.alpha;
+      if (e.beta != null) orient.beta = e.beta;
+      if (e.gamma != null) orient.gamma = e.gamma;
+      orientOk = true;
+    }
+
+    /** Ground distance (mm) from camera nadir to the point under screen center, horizontal plane model */
+    function centerGroundDist(H) {
+      // beta: 0 = flat on back, 90 = upright; when pointing at floor, beta often 20–60
+      // Pitch toward floor: use beta. Optical axis elevation from horizontal ≈ beta - 90
+      const elev = (orient.beta - 90) * DEG; // negative when looking down
+      const angleToFloor = -elev; // positive when looking down
+      if (angleToFloor < 5 * DEG || angleToFloor > 85 * DEG) return null;
+      return H / Math.tan(angleToFloor);
+    }
+
+    /** Map center ray to floor coordinates in horizontal frame relative to yaw */
+    function floorXY(H) {
+      const D = centerGroundDist(H);
+      if (D == null || !isFinite(D) || D < 50 || D > 30000) return null;
+      const yaw = orient.alpha * DEG;
+      // x east, y north-ish relative to compass; relative distance still valid
+      return {
+        x: D * Math.sin(yaw),
+        y: D * Math.cos(yaw),
+        dist: D,
+        yaw: orient.alpha,
+        pitch: orient.beta,
+      };
+    }
+
+    function resize() {
+      if (!video || !canvas) return;
+      const w = video.clientWidth;
+      const h = video.clientHeight;
+      if (w < 2 || h < 2) return;
+      canvas.width = w;
+      canvas.height = h;
+    }
+
+    function draw() {
+      if (!running || !ctx || !canvas) return;
+      resize();
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const H = Math.max(200, Number(camH?.value) || 1200);
+      const cur = floorXY(H);
+
+      // marker A in screen: keep at place where user tapped relative to center store as screen fraction
+      if (pointA) {
+        // Draw A at stored screen position
+        const ax = pointA.sx * w;
+        const ay = pointA.sy * h;
+        ctx.beginPath();
+        ctx.arc(ax, ay, 10, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(251,191,36,0.95)";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#0f172a";
+        ctx.stroke();
+        ctx.font = "bold 12px system-ui,sans-serif";
+        ctx.fillStyle = "#fbbf24";
+        ctx.fillText("A", ax + 14, ay + 4);
+
+        // Line A to center (B)
+        const bx = w / 2;
+        const by = h / 2;
+        ctx.beginPath();
+        ctx.moveTo(ax, ay);
+        ctx.lineTo(bx, by);
+        ctx.strokeStyle = "rgba(56,189,248,0.9)";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([6, 4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Distance label mid-line
+        if (cur) {
+          const dx = cur.x - pointA.x;
+          const dy = cur.y - pointA.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const mx = (ax + bx) / 2;
+          const my = (ay + by) / 2;
+          const label = dist >= 1000 ? (dist / 1000).toFixed(2) + " m" : Math.round(dist) + " mm";
+          ctx.font = "bold 14px system-ui,sans-serif";
+          ctx.fillStyle = "rgba(15,23,42,0.75)";
+          const tw = ctx.measureText(label).width;
+          ctx.fillRect(mx - tw / 2 - 6, my - 16, tw + 12, 22);
+          ctx.fillStyle = "#38bdf8";
+          ctx.fillText(label, mx - tw / 2, my);
+          if (roVal) roVal.textContent = Math.round(dist) + " mm";
+          if (roLabel) roLabel.textContent = "Jarak A → B (estimasi bidang datar)";
+        } else {
+          if (roVal) roVal.textContent = "— mm";
+          if (roLabel) roLabel.textContent = "Sudut kamera kurang ideal — miringkan ke permukaan";
+        }
+      } else {
+        if (cur) {
+          if (roVal) roVal.textContent = "D≈ " + Math.round(cur.dist) + " mm";
+          if (roLabel) roLabel.textContent = "Jarak ke titik di crosshair · tekan Tandai A";
+        } else {
+          if (roVal) roVal.textContent = "— mm";
+          if (roLabel) roLabel.textContent = "Miringkan kamera ke permukaan datar";
+        }
+      }
+      raf = requestAnimationFrame(draw);
+    }
+
+    async function openCam() {
+      if (permErr) { permErr.hidden = true; permErr.textContent = ""; }
+      try {
+        if (!navigator.mediaDevices?.getUserMedia) {
+          throw new Error("Browser tidak mendukung kamera.");
+        }
+        if (needsOrientPermission()) {
+          const st = await DeviceOrientationEvent.requestPermission();
+          if (st !== "granted") throw Object.assign(new Error("Izin orientasi ditolak."), { name: "NotAllowedError" });
+        }
+        window.addEventListener("deviceorientation", onOrient, true);
+
+        stream = await navigator.mediaDevices.getUserMedia({
+          audio: false,
+          video: {
+            facingMode: { ideal: "environment" },
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
+        });
+        video.srcObject = stream;
+        await video.play();
+        running = true;
+        pointA = null;
+        if (setupCard) setupCard.hidden = true;
+        if (viewWrap) viewWrap.hidden = false;
+        resize();
+        draw();
+      } catch (err) {
+        let msg = "Gagal membuka kamera / sensor.";
+        if (err?.name === "NotAllowedError") msg = "Izin kamera atau orientasi ditolak. Izinkan di pengaturan situs, lalu coba lagi.";
+        else if (err?.name === "NotFoundError") msg = "Kamera tidak ditemukan.";
+        else if (err?.message) msg = err.message;
+        if (permErr) { permErr.textContent = msg; permErr.hidden = false; }
+      }
+    }
+
+    function markA() {
+      const H = Math.max(200, Number(camH?.value) || 1200);
+      const cur = floorXY(H);
+      if (!cur) {
+        if (roLabel) roLabel.textContent = "Belum bisa tandai A — miringkan ke permukaan datar";
+        return;
+      }
+      pointA = {
+        x: cur.x,
+        y: cur.y,
+        dist: cur.dist,
+        yaw: cur.yaw,
+        pitch: cur.pitch,
+        sx: 0.5,
+        sy: 0.5,
+      };
+      // Place visual A slightly above center so line is visible
+      pointA.sx = 0.5;
+      pointA.sy = 0.42;
+      if (roLabel) roLabel.textContent = "Titik A ditandai · arahkan ke tujuan";
+    }
+
+    function resetA() {
+      pointA = null;
+      if (roLabel) roLabel.textContent = "Arahkan ke titik A · tekan Tandai A";
+      if (roVal) roVal.textContent = "— mm";
+    }
+
+    function stop() {
+      running = false;
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      window.removeEventListener("deviceorientation", onOrient, true);
+      if (stream) {
+        stream.getTracks().forEach((t) => t.stop());
+        stream = null;
+      }
+      if (video) video.srcObject = null;
+      pointA = null;
+      if (viewWrap) viewWrap.hidden = true;
+      if (setupCard) setupCard.hidden = false;
+    }
+
+    document.getElementById("btn-open")?.addEventListener("click", openCam);
+    document.getElementById("btn-a")?.addEventListener("click", markA);
+    document.getElementById("btn-reset")?.addEventListener("click", resetA);
+    document.getElementById("btn-stop")?.addEventListener("click", stop);
+    window.addEventListener("beforeunload", stop);
+    window.addEventListener("resize", resize);
+  })();
+  </script>
+
+  <style>
+    .ds-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+    .back { display: inline-flex; margin-bottom: 1rem; color: var(--muted,#94a3b8); text-decoration: none; font-size: .9rem; }
+    .back:hover { color: var(--amber,#fbbf24); }
+    .ds-badge {
+      display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .12em;
+      color: #0f172a; background: linear-gradient(135deg,#2dd4bf,#38bdf8);
+      padding: .28rem .65rem; border-radius: 999px; margin-bottom: .65rem;
+    }
+    .ds-hero h1 { font-size: clamp(1.5rem,4vw,2rem); margin: 0 0 .4rem; color: var(--ink,#f1f5f9); }
+    .ds-lead { margin: 0; color: var(--muted,#94a3b8); line-height: 1.5; font-size: .92rem; }
+    .ds-lead strong { color: #e2e8f0; }
+
+    .setup-card {
+      margin-top: 1.25rem; border-radius: 20px; padding: 1.35rem 1.2rem;
+      border: 1px solid rgba(45,212,191,.3);
+      background:
+        radial-gradient(100% 80% at 50% 0%, rgba(45,212,191,.12), transparent 55%),
+        var(--bg-card,#0f172a);
+      box-shadow: 0 18px 48px rgba(0,0,0,.3);
+    }
+    .setup-ico { font-size: 2rem; margin-bottom: .5rem; }
+    .setup-card h2 { margin: 0 0 .5rem; font-size: 1.2rem; }
+    .setup-card p { color: var(--muted,#94a3b8); line-height: 1.5; font-size: .9rem; }
+    .field-h { display: block; font-weight: 600; font-size: .88rem; margin: .8rem 0 .35rem; color: #e2e8f0; }
+    #cam-h {
+      width: 100%; max-width: 200px; padding: .65rem .75rem; border-radius: 10px;
+      border: 1px solid rgba(148,163,184,.35); background: rgba(0,0,0,.25); color: #f1f5f9;
+      font-size: 1rem; font-family: var(--font-mono, ui-monospace, monospace);
+    }
+    .hint { font-size: .78rem !important; margin-top: .35rem !important; }
+    .perm-warn {
+      background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.3);
+      border-radius: 12px; padding: .75rem .9rem; color: #fde68a !important;
+    }
+    .btn-perm {
+      appearance: none; border: none; cursor: pointer; margin-top: .9rem;
+      font-weight: 700; padding: .85rem 1.25rem; border-radius: 999px;
+      color: #0f172a; background: linear-gradient(135deg,#5eead4,#38bdf8);
+      box-shadow: 0 8px 24px rgba(45,212,191,.35);
+    }
+    .perm-err { margin-top: .75rem; color: #fca5a5; font-size: .88rem; }
+
+    .stage {
+      position: relative; margin-top: 1rem; border-radius: 16px; overflow: hidden;
+      background: #000; aspect-ratio: 3/4; max-height: 70vh;
+      border: 1px solid rgba(45,212,191,.25);
+    }
+    #video, #overlay {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    #overlay { z-index: 2; pointer-events: none; }
+    .crosshair {
+      position: absolute; z-index: 3; left: 50%; top: 50%; width: 22px; height: 22px;
+      margin: -11px 0 0 -11px; pointer-events: none;
+      background:
+        linear-gradient(#fbbf24,#fbbf24) center/100% 2px no-repeat,
+        linear-gradient(#fbbf24,#fbbf24) center/2px 100% no-repeat;
+      border: 2px solid rgba(251,191,36,.8); border-radius: 50%;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.4);
+    }
+    .readout {
+      position: absolute; z-index: 4; left: 0; right: 0; bottom: 0;
+      padding: .75rem 1rem; background: linear-gradient(transparent, rgba(15,23,42,.92));
+      display: flex; flex-direction: column; gap: .15rem;
+    }
+    .ro-label { font-size: .78rem; color: #94a3b8; }
+    .ro-val { font-size: 1.45rem; font-weight: 700; color: #5eead4; font-family: var(--font-mono, ui-monospace, monospace); }
+
+    .controls {
+      display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .9rem;
+    }
+    .btn-a, .btn-reset, .btn-stop {
+      appearance: none; cursor: pointer; font-weight: 700; padding: .7rem 1.1rem;
+      border-radius: 999px; border: none;
+    }
+    .btn-a {
+      color: #0f172a; background: linear-gradient(135deg,#fde68a,#f59e0b);
+    }
+    .btn-reset, .btn-stop {
+      background: transparent; border: 1px solid rgba(148,163,184,.35); color: #e2e8f0;
+    }
+    .btn-stop:hover { border-color: #f87171; color: #fca5a5; }
+
+    .warn {
+      margin-top: 1rem; color: #fde68a; font-size: .82rem; line-height: 1.45;
+      background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.25);
+      border-radius: 12px; padding: .75rem .9rem;
+    }
+  </style>
+</Layout>
