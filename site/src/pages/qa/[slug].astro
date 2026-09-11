@@ -15,46 +15,95 @@ const all = loadAllQa();
 const idx = all.findIndex((x) => x.slug === slug);
 const prev = idx > 0 ? all[idx - 1] : null;
 const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null;
+
+const site = "https://www.klikpartpedia.com";
+const pageUrl = `${site}/qa/${item.slug}/`;
+const answerPlain = String(item.answer || "").replace(/\s+/g, " ").trim();
+const desc = answerPlain.slice(0, 155);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "QAPage",
+      "@id": `${pageUrl}#page`,
+      url: pageUrl,
+      name: item.question,
+      inLanguage: "id",
+      isPartOf: { "@type": "WebSite", name: "Partpedia", url: site },
+      mainEntity: {
+        "@type": "Question",
+        "@id": `${pageUrl}#question`,
+        name: item.question,
+        text: item.question,
+        answerCount: 1,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answerPlain.slice(0, 8000),
+          url: pageUrl,
+          ...(item.source
+            ? {
+                citation: {
+                  "@type": "CreativeWork",
+                  name: item.source,
+                },
+              }
+            : {}),
+        },
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+        { "@type": "ListItem", position: 2, name: "Industrial Q&A", item: `${site}/qa/` },
+        { "@type": "ListItem", position: 3, name: item.question, item: pageUrl },
+      ],
+    },
+  ],
+};
+
+const title = `${item.question} | Industrial Q&A Partpedia`;
+const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial maintenance Q&A · Partpedia`;
 ---
-<Layout
-  title={`${item.question} — Q&A Partpedia`}
-  description={item.answer.slice(0, 155).replace(/\s+/g, " ")}
->
-  <article class="qa-detail">
-    <a class="back" href="/qa/">← Semua Q&amp;A</a>
+<Layout title={title} description={description} jsonLd={jsonLd}>
+  <article class="qa-detail" itemscope itemtype="https://schema.org/QAPage">
+    <a class="back" href="/qa/">← All industrial Q&amp;A</a>
     <header class="qa-d-head">
       <div class="qa-brand">
         <img src="/logo.png" alt="Partpedia" width="32" height="32" />
         <span class="qa-brand-name">Part<span>pedia</span></span>
       </div>
-      <p class="kicker">Insight · Q&amp;A</p>
-      <h1>{item.question}</h1>
+      <p class="kicker">Insight · Industrial Q&amp;A</p>
+      <h1 itemprop="name">{item.question}</h1>
     </header>
 
-    <div class="qa-answer card-border">
-      <h2>Jawaban</h2>
-      {item.answer.split(/\n\n+/).map((para) => (
-        <p>{para}</p>
-      ))}
+    <div class="qa-answer card-border" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+      <h2>Answer · Jawaban</h2>
+      <div itemprop="text">
+        {item.answer.split(/\n\n+/).map((para) => (
+          <p>{para}</p>
+        ))}
+      </div>
     </div>
 
     {item.source && (
       <div class="qa-source card-border">
-        <h2>Sumber</h2>
+        <h2>Sources · Sumber</h2>
         <p>{item.source}</p>
       </div>
     )}
 
-    <nav class="qa-pager">
+    <nav class="qa-pager" aria-label="Related Q&A">
       {prev ? (
         <a class="pager-link" href={`/qa/${prev.slug}/`}>
-          <span class="pager-label">Sebelumnya</span>
+          <span class="pager-label">Previous</span>
           <span class="pager-q">{prev.question}</span>
         </a>
       ) : <span />}
       {next ? (
         <a class="pager-link next" href={`/qa/${next.slug}/`}>
-          <span class="pager-label">Berikutnya</span>
+          <span class="pager-label">Next</span>
           <span class="pager-q">{next.question}</span>
         </a>
       ) : <span />}
