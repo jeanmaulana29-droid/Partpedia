@@ -241,17 +241,23 @@ import Layout from "../../../layouts/Layout.astro";
       box.innerHTML = `
         <div class="rtype ${fitType}">${fitLabel}</div>
         ${preset ? `<p class="use"><strong>${preset.id}</strong> — ${preset.use}</p>` : ""}
-        <table class="rt">
-          <tr><th></th><th>Min</th><th>Max</th></tr>
-          <tr><td>Hole ${hole}</td><td>${fmtMm(holeMin)}</td><td>${fmtMm(holeMax)}</td></tr>
-          <tr><td>Shaft ${shaft}</td><td>${fmtMm(shaftMin)}</td><td>${fmtMm(shaftMax)}</td></tr>
-        </table>
-        <table class="rt">
-          <tr><th>Parameter</th><th>Nilai</th></tr>
-          <tr><td>Max clearance / min interference</td><td>${fmtMm(maxClear)}</td></tr>
-          <tr><td>Min clearance / max interference</td><td>${fmtMm(minClear)}</td></tr>
-          <tr><td>Band ukuran ISO</td><td>${S.size_bands[i].over} … ${S.size_bands[i].to} mm</td></tr>
-        </table>
+        <div class="rgrid">
+          <div class="rblock">
+            <div class="rblock-h">Hole ${hole}</div>
+            <div class="rrow"><span>Min</span><b>${fmtMm(holeMin)}</b></div>
+            <div class="rrow"><span>Max</span><b>${fmtMm(holeMax)}</b></div>
+          </div>
+          <div class="rblock">
+            <div class="rblock-h">Shaft ${shaft}</div>
+            <div class="rrow"><span>Min</span><b>${fmtMm(shaftMin)}</b></div>
+            <div class="rrow"><span>Max</span><b>${fmtMm(shaftMax)}</b></div>
+          </div>
+        </div>
+        <div class="rlist">
+          <div class="rrow"><span>Max clearance</span><b>${fmtMm(maxClear)}</b></div>
+          <div class="rrow"><span>Min clearance</span><b>${fmtMm(minClear)}</b></div>
+          <div class="rrow"><span>Band ISO</span><b>${S.size_bands[i].over}–${S.size_bands[i].to} mm</b></div>
+        </div>
       `;
     }
 
@@ -268,13 +274,13 @@ import Layout from "../../../layouts/Layout.astro";
       }
       box.hidden = false;
       box.innerHTML = `
-        <table class="rt">
-          <tr><th>Grade</th><td>${grade}</td></tr>
-          <tr><th>Nominal</th><td>${nom} mm</td></tr>
-          <tr><th>Band</th><td>${S.size_bands[i].over} … ${S.size_bands[i].to} mm</td></tr>
-          <tr><th>Lebar toleransi</th><td><strong>${um} µm</strong> (${fmtMm(um / 1000)})</td></tr>
-        </table>
-        <p class="hint">IT = lebar zona saja. Untuk batas atas/bawah pakai tab Fits (huruf H, g, p, …).</p>
+        <div class="rlist">
+          <div class="rrow"><span>Grade</span><b>${grade}</b></div>
+          <div class="rrow"><span>Nominal</span><b>${nom} mm</b></div>
+          <div class="rrow"><span>Band</span><b>${S.size_bands[i].over}–${S.size_bands[i].to} mm</b></div>
+          <div class="rrow"><span>Lebar IT</span><b>${um} µm (${fmtMm(um / 1000)})</b></div>
+        </div>
+        <p class="hint">IT = lebar zona saja. Batas atas/bawah: tab Fits.</p>
       `;
     }
 
@@ -296,13 +302,13 @@ import Layout from "../../../layouts/Layout.astro";
         return;
       }
       box.innerHTML = `
-        <table class="rt">
-          <tr><th>Kelas</th><td>ISO 2768-${cls}</td></tr>
-          <tr><th>Nominal</th><td>${nom} mm</td></tr>
-          <tr><th>Deviasi ±</th><td><strong>± ${val} mm</strong></td></tr>
-          <tr><th>Batas bawah</th><td>${fmtMm(nom - val)}</td></tr>
-          <tr><th>Batas atas</th><td>${fmtMm(nom + val)}</td></tr>
-        </table>
+        <div class="rlist">
+          <div class="rrow"><span>Kelas</span><b>ISO 2768-${cls}</b></div>
+          <div class="rrow"><span>Nominal</span><b>${nom} mm</b></div>
+          <div class="rrow"><span>Deviasi</span><b>± ${val} mm</b></div>
+          <div class="rrow"><span>Batas bawah</span><b>${fmtMm(nom - val)}</b></div>
+          <div class="rrow"><span>Batas atas</span><b>${fmtMm(nom + val)}</b></div>
+        </div>
       `;
     }
 
@@ -320,13 +326,13 @@ import Layout from "../../../layouts/Layout.astro";
       const run = S.iso_2768_2.runout[cls];
       box.hidden = false;
       box.innerHTML = `
-        <table class="rt">
-          <tr><th>Kelas</th><td>${cls}</td></tr>
-          <tr><th>Panjang</th><td>${nom} mm</td></tr>
-          <tr><th>Straightness / Flatness</th><td><strong>${val} mm</strong></td></tr>
-          <tr><th>Perpendicularity (ref.)</th><td>${pr[cls]} mm</td></tr>
-          <tr><th>Circular run-out</th><td>${run} mm</td></tr>
-        </table>
+        <div class="rlist">
+          <div class="rrow"><span>Kelas</span><b>${cls}</b></div>
+          <div class="rrow"><span>Panjang</span><b>${nom} mm</b></div>
+          <div class="rrow"><span>Straightness / Flatness</span><b>${val} mm</b></div>
+          <div class="rrow"><span>Perpendicularity</span><b>${pr[cls]} mm</b></div>
+          <div class="rrow"><span>Run-out</span><b>${run} mm</b></div>
+        </div>
       `;
     }
 
@@ -391,21 +397,47 @@ import Layout from "../../../layouts/Layout.astro";
       box-shadow: 0 8px 22px rgba(56,189,248,.3);
     }
     .result {
-      margin-top: 1rem; padding: 1rem; border-radius: 14px;
-      background: rgba(2,6,23,.7); border: 1px solid rgba(148,163,184,.2);
+      margin-top: 1rem; padding: .9rem .85rem; border-radius: 14px;
+      background: rgba(2,6,23,.75); border: 1px solid rgba(148,163,184,.22);
     }
     .rtype {
-      display: inline-block; font-weight: 700; font-size: .8rem;
-      padding: .3rem .65rem; border-radius: 999px; margin-bottom: .5rem;
+      display: inline-block; font-weight: 700; font-size: .75rem;
+      padding: .28rem .6rem; border-radius: 999px; margin-bottom: .55rem;
+      line-height: 1.3;
     }
     .rtype.clearance { background: rgba(52,211,153,.2); color: #6ee7b7; }
     .rtype.transition { background: rgba(251,191,36,.2); color: #fde68a; }
     .rtype.interference { background: rgba(248,113,113,.2); color: #fca5a5; }
-    .use { font-size: .88rem; color: #cbd5e1; margin: 0 0 .6rem; }
-    .rt { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: .4rem; }
-    .rt th, .rt td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid rgba(148,163,184,.15); }
-    .rt th { color: #94a3b8; font-weight: 600; }
-    .err { color: #fca5a5; margin: 0; }
+    .use { font-size: .84rem; color: #cbd5e1; margin: 0 0 .75rem; line-height: 1.4; }
+    .rgrid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; margin-bottom: .65rem;
+    }
+    .rblock {
+      border-radius: 12px; padding: .65rem .7rem;
+      background: rgba(15,23,42,.9); border: 1px solid rgba(148,163,184,.18);
+    }
+    .rblock-h {
+      font-size: .78rem; font-weight: 700; color: #e2e8f0;
+      margin-bottom: .45rem; letter-spacing: .02em;
+    }
+    .rlist { display: flex; flex-direction: column; gap: .35rem; }
+    .rrow {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: .5rem; font-size: .86rem; line-height: 1.35;
+    }
+    .rrow span { color: #94a3b8; flex: 1; min-width: 0; }
+    .rrow b { color: #f1f5f9; font-weight: 700; white-space: nowrap; text-align: right; }
+    .err { color: #fca5a5; margin: 0; font-size: .88rem; }
+    @media (max-width: 420px) {
+      .rgrid { grid-template-columns: 1fr; }
+      .tol-page { padding: 1rem .75rem 2.5rem; }
+      .card { padding: 1rem .85rem; border-radius: 14px; }
+      .tol-hero h1 { font-size: 1.28rem; }
+      .tab { font-size: .78rem; padding: .45rem .75rem; }
+      .btn-go { width: 100%; text-align: center; }
+      .seo-box { font-size: .82rem; }
+      .seo-box ul { padding-left: 1rem; }
+    }
     .seo-box {
       margin-top: 1rem; padding: 1rem 1.1rem; border-radius: 14px;
       border: 1px solid rgba(148,163,184,.15); background: rgba(15,23,42,.5);
