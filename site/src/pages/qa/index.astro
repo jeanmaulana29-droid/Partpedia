@@ -4,6 +4,8 @@ import { loadAllQa } from "../../data/loadQa.js";
 
 const items = loadAllQa();
 const site = "https://www.klikpartpedia.com";
+const PAGE_SIZE = 100;
+const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
 
 // FAQPage: up to 40 items for rich-result friendliness (all pages still indexed individually)
 const faqMainEntity = items.slice(0, 40).map((it) => ({
@@ -83,20 +85,25 @@ const jsonLd = {
       <p class="search-hint" id="qa-search-hint" hidden></p>
     </div>
 
+    <p class="page-meta" id="page-meta" data-total={items.length} data-pagesize={PAGE_SIZE}></p>
+
     <div class="qa-list" id="qa-list" role="list">
       {items.map((it, i) => {
         const blob = [it.question, it.answer, it.source, it.slug]
           .filter(Boolean)
           .join(" ")
           .toLowerCase();
+        const num = it.id || i + 1;
         return (
           <a
             class="qa-card"
             href={`/qa/${it.slug}/`}
             role="listitem"
             data-search={blob}
+            data-idx={i}
+            data-num={num}
           >
-            <span class="qa-num">{String(it.id || i + 1).padStart(2, "0")}</span>
+            <span class="qa-num">{String(num).padStart(2, "0")}</span>
             <span class="qa-q">{it.question}</span>
             <span class="qa-go" aria-hidden="true">→</span>
           </a>
@@ -104,35 +111,166 @@ const jsonLd = {
       })}
     </div>
     <p class="qa-empty" id="qa-empty" hidden>No matching topics. Try another keyword.</p>
+
+    {/* Pagination: 1 = kartu 1–100, 2 = 101–200, … otomatis saat total naik */}
+    <nav class="qa-pager" id="qa-pager" aria-label="Halaman Q&amp;A" hidden>
+      <button type="button" class="pager-nav" id="pager-prev" aria-label="Halaman sebelumnya">←</button>
+      <div class="pager-nums" id="pager-nums"></div>
+      <button type="button" class="pager-nav" id="pager-next" aria-label="Halaman berikutnya">→</button>
+    </nav>
   </section>
 
-  <script>
-    const input = document.getElementById("qa-search");
-    const rows = Array.from(document.querySelectorAll("#qa-list .qa-card"));
-    const empty = document.getElementById("qa-empty");
-    const hint = document.getElementById("qa-search-hint");
+  <script is:inline>
+    (function () {
+      const PAGE_SIZE = 100;
+      const input = document.getElementById("qa-search");
+      const rows = Array.from(document.querySelectorAll("#qa-list .qa-card"));
+      const empty = document.getElementById("qa-empty");
+      const hint = document.getElementById("qa-search-hint");
+      const meta = document.getElementById("page-meta");
+      const pager = document.getElementById("qa-pager");
+      const pagerNums = document.getElementById("pager-nums");
+      const btnPrev = document.getElementById("pager-prev");
+      const btnNext = document.getElementById("pager-next");
 
-    function apply() {
-      const q = (input?.value || "").toLowerCase().trim();
-      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
-      let n = 0;
-      rows.forEach((row) => {
-        const hay = row.getAttribute("data-search") || "";
-        const ok = terms.length === 0 || terms.every((t) => hay.includes(t));
-        row.style.display = ok ? "" : "none";
-        if (ok) n++;
-      });
-      if (empty) empty.hidden = n !== 0;
-      if (hint) {
-        if (!q) {
-          hint.hidden = true;
-        } else {
-          hint.hidden = false;
-          hint.textContent = n === 0 ? "0 matches" : `${n} matches`;
+      const total = rows.length;
+      const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+
+      function pageFromUrl() {
+        try {
+          const u = new URL(window.location.href);
+          const p = parseInt(u.searchParams.get("page") || "1", 10);
+          if (Number.isFinite(p) && p >= 1 && p <= totalPages) return p;
+        } catch (_) {}
+        return 1;
+      }
+
+      let currentPage = pageFromUrl();
+
+      function setUrl(page) {
+        try {
+          const u = new URL(window.location.href);
+          if (page <= 1) u.searchParams.delete("page");
+          else u.searchParams.set("page", String(page));
+          history.replaceState(null, "", u.pathname + u.search + u.hash);
+        } catch (_) {}
+      }
+
+      function rangeLabel(page) {
+        const start = (page - 1) * PAGE_SIZE + 1;
+        const end = Math.min(page * PAGE_SIZE, total);
+        return start + "–" + end;
+      }
+
+      function renderPager() {
+        if (!pager || !pagerNums) return;
+        // Sembunyikan pager jika total ≤ 100
+        if (totalPages <= 1) {
+          pager.hidden = true;
+          return;
+        }
+        pager.hidden = false;
+        pagerNums.innerHTML = "";
+        for (let p = 1; p <= totalPages; p++) {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "pager-btn" + (p === currentPage ? " active" : "");
+          b.textContent = String(p);
+          b.setAttribute("aria-label", "Halaman " + p + " (" + rangeLabel(p) + ")");
+          if (p === currentPage) b.setAttribute("aria-current", "page");
+          b.addEventListener("click", () => goPage(p));
+          pagerNums.appendChild(b);
+        }
+        if (btnPrev) btnPrev.disabled = currentPage <= 1;
+        if (btnNext) btnNext.disabled = currentPage >= totalPages;
+      }
+
+      function goPage(p) {
+        if (p < 1 || p > totalPages) return;
+        currentPage = p;
+        setUrl(p);
+        // clear search when switching page via pager (optional: keep search)
+        apply();
+        try {
+          document.getElementById("qa-list")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        } catch (_) {}
+      }
+
+      function apply() {
+        const q = (input?.value || "").toLowerCase().trim();
+        const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+        const searching = terms.length > 0;
+
+        let matchCount = 0;
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const end = start + PAGE_SIZE;
+
+        rows.forEach((row, i) => {
+          const hay = row.getAttribute("data-search") || "";
+          const match = !searching || terms.every((t) => hay.includes(t));
+          if (match) matchCount++;
+
+          let show;
+          if (searching) {
+            // Saat cari: tampilkan semua yang cocok (lintas halaman)
+            show = match;
+          } else {
+            // Mode normal: hanya 100 kartu di halaman aktif
+            show = match && i >= start && i < end;
+          }
+          row.style.display = show ? "" : "none";
+        });
+
+        if (empty) empty.hidden = matchCount !== 0;
+
+        if (meta) {
+          if (searching) {
+            meta.textContent =
+              matchCount === 0
+                ? "0 hasil"
+                : matchCount + " hasil pencarian (semua halaman)";
+          } else {
+            meta.textContent =
+              "Menampilkan " +
+              rangeLabel(currentPage) +
+              " dari " +
+              total +
+              " topik · Halaman " +
+              currentPage +
+              "/" +
+              totalPages;
+          }
+        }
+
+        if (hint) {
+          if (!searching) {
+            hint.hidden = true;
+          } else {
+            hint.hidden = false;
+            hint.textContent = matchCount === 0 ? "0 matches" : matchCount + " matches";
+          }
+        }
+
+        // Pager: sembunyikan saat sedang search
+        if (pager) {
+          if (searching || totalPages <= 1) pager.hidden = true;
+          else {
+            pager.hidden = false;
+            renderPager();
+          }
         }
       }
-    }
-    input?.addEventListener("input", apply);
+
+      btnPrev?.addEventListener("click", () => goPage(currentPage - 1));
+      btnNext?.addEventListener("click", () => goPage(currentPage + 1));
+      input?.addEventListener("input", () => {
+        // search: tampil semua match; reset visual page indicator optional
+        apply();
+      });
+
+      renderPager();
+      apply();
+    })();
   </script>
 
   <style>
@@ -202,7 +340,7 @@ const jsonLd = {
       font-family: var(--font-mono);
     }
 
-    .search-wrap { margin: 0 0 1.25rem; }
+    .search-wrap { margin: 0 0 0.65rem; }
     #qa-search {
       width: 100%;
       box-sizing: border-box;
@@ -225,6 +363,12 @@ const jsonLd = {
       font-size: 0.82rem;
       color: var(--muted);
       text-align: left;
+    }
+    .page-meta {
+      margin: 0 0 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
     }
     .sr-only {
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -286,6 +430,51 @@ const jsonLd = {
       color: var(--muted);
       font-size: 0.95rem;
     }
+
+    /* Pager */
+    .qa-pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      margin-top: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .pager-nums {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+    }
+    .pager-btn, .pager-nav {
+      appearance: none;
+      cursor: pointer;
+      min-width: 2.4rem;
+      height: 2.4rem;
+      padding: 0 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 0.88rem;
+      font-family: var(--font-mono);
+      transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+    .pager-btn:hover, .pager-nav:hover:not(:disabled) {
+      border-color: rgba(45,212,191,0.5);
+      color: var(--teal);
+    }
+    .pager-btn.active {
+      background: linear-gradient(135deg, #2dd4bf, #5b9fd4);
+      color: #0b1f3a;
+      border-color: transparent;
+    }
+    .pager-nav:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
     @media (max-width: 560px) {
       .qa-card {
         grid-template-columns: auto 1fr;
