@@ -21,6 +21,12 @@ const pageUrl = `${site}/qa/${item.slug}/`;
 const answerPlain = String(item.answer || "").replace(/\s+/g, " ").trim();
 const desc = answerPlain.slice(0, 155);
 
+const authorOrg = {
+  "@type": "Organization",
+  name: "Partpedia",
+  url: site,
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -37,10 +43,12 @@ const jsonLd = {
         name: item.question,
         text: item.question,
         answerCount: 1,
+        author: authorOrg,
         acceptedAnswer: {
           "@type": "Answer",
           text: answerPlain.slice(0, 8000),
           url: pageUrl,
+          author: authorOrg,
           ...(item.source
             ? {
                 citation: {
@@ -67,7 +75,10 @@ const title = `${item.question} | Industrial Q&A Partpedia`;
 const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial maintenance Q&A · Partpedia`;
 ---
 <Layout title={title} description={description} jsonLd={jsonLd}>
-  <article class="qa-detail" itemscope itemtype="https://schema.org/QAPage">
+  <!-- Schema hanya via JSON-LD (QAPage.mainEntity = Question).
+       Jangan pakai microdata QAPage di HTML: Google mendeteksi QAPage
+       tanpa mainEntity → error kritis di Search Console. -->
+  <article class="qa-detail">
     <a class="back" href="/qa/">← All industrial Q&amp;A</a>
     <header class="qa-d-head">
       <div class="qa-brand">
@@ -75,12 +86,12 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
         <span class="qa-brand-name">Part<span>pedia</span></span>
       </div>
       <p class="kicker">Insight · Industrial Q&amp;A</p>
-      <h1 itemprop="name">{item.question}</h1>
+      <h1>{item.question}</h1>
     </header>
 
-    <div class="qa-answer card-border" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+    <div class="qa-answer card-border">
       <h2>Answer · Jawaban</h2>
-      <div itemprop="text">
+      <div>
         {item.answer.split(/\n\n+/).map((para) => (
           <p>{para}</p>
         ))}
