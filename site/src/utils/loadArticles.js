@@ -1,16 +1,18 @@
 /**
- * Satu folder = satu artikel (ideal):
+ * Satu folder = satu artikel:
  *   site/src/data/articles/{slug}/isi.txt + 1.jpg|jpeg + 2.jpg|jpeg
  *
- * Masih support file lama:
- *   site/src/data/articles/{slug}.txt
- *   + gambar di folder {slug}/1.jpeg jika ada
+ * Urutan: TERBARU di index 0 (kiri carousel / atas knowledge).
  *
- * Urutan: TERBARU di index 0 (kiri carousel).
- * Prioritas tanggal:
- *   1) baris tanggal YYYY-MM-DD di isi.txt (opsional)
- *   2) waktu commit git file tersebut (%ct) — akurat per-upload
- *   3) mtime file di disk saat build
+ * Prioritas sort (stabil antar-deploy Vercel):
+ *   1) baris tanggal di isi.txt: YYYY-MM-DD atau YYYY-MM-DD HH:mm[:ss]
+ *   2) git: waktu COMMIT PERTAMA yang menambah isi.txt (tidak berubah saat file lain di-edit)
+ *   3) git: commit terakhir (cadangan)
+ *   4) mtime — HANYA jika tidak "semua file sama" (ciri checkout Vercel)
+ *   5) articles-order.json (opsional): daftar slug terbaru→terlama
+ *
+ * Catatan: mtime di Vercel sering identik untuk semua file → dulu membuat urutan
+ * "acak" (fallback alfabet slug). Itu yang diperbaiki di sini.
  */
 import { execSync } from "node:child_process";
 import fs from "node:fs";
@@ -19,6 +21,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const articlesRoot = path.resolve(__dirname, "../data/articles");
+const orderFile = path.resolve(__dirname, "../data/articles-order.json");
 
 function hash(s) {
   let h = 0;
@@ -33,70 +36,105 @@ function defaultMid(slug) {
   return `/articles/default-${((hash(slug) + 2) % 4) + 1}.jpg`;
 }
 
-/** Map slug → unix seconds (commit terakhir yang menyentuh file artikel). Dibangun 1x. */
-let _gitTimeMap = null;
-function getGitTimeMap() {
-  if (_gitTimeMap) return _gitTimeMap;
-  _gitTimeMap = new Map();
+function runGit(cmd) {
   try {
-    const out = execSync(
-      "git log --format='---%ct' --name-only -- site/src/data/articles src/data/articles",
-      {
-        encoding: "utf8",
-        maxBuffer: 20 * 1024 * 1024,
-        stdio: ["ignore", "pipe", "ignore"],
-      }
-    );
-    let currentTs = 0;
-    for (const line of out.split("\n")) {
-      const L = line.trim();
-      if (!L) continue;
-      if (L.startsWith("---")) {
-        currentTs = Number(L.slice(3)) || 0;
-        continue;
-      }
-      if (!currentTs) continue;
-      const p = L.replace(/\\/g, "/");
-      let slug = "";
-      const m1 = p.match(/articles\/([^/]+)\/(?:isi\.txt|1\.(?:jpe?g|png))$/i);
-      const m2 = p.match(/articles\/([^/]+)\.txt$/i);
-      if (m1) slug = m1[1];
-      else if (m2) slug = m2[1];
-      if (!slug) continue;
-      if (!_gitTimeMap.has(slug)) _gitTimeMap.set(slug, currentTs);
-    }
+    return execSync(cmd, {
+      encoding: "utf8",
+      maxBuffer: 40 * 1024 * 1024,
+      stdio: ["ignore", "pipe", "ignore"],
+    });
   } catch {
-    /* shallow clone / no git */
+    return "";
   }
-  return _gitTimeMap;
 }
 
-/** Unix seconds — semakin besar = semakin baru */
+/** Map slug → unix seconds (commit PERTAMA yang menambah artikel). */
+let _gitFirstMap = null;
+function getGitFirstMap() {
+  if (_gitFirstMap) return _gitFirstMap;
+  _gitFirstMap = new Map();
+  // --diff-filter=A = hanya penambahan file → waktu "lahir" artikel stabil
+  const out = runGit(
+    "git log --diff-filter=A --format='---%ct' --name-only -- site/src/data/articles src/data/articles"
+  );
+  let currentTs = 0;
+  for (const line of out.split("\n")) {
+    const L = line.trim();
+    if (!L) continue;
+    if (L.startsWith("---")) {
+      currentTs = Number(L.slice(3)) || 0;
+      continue;
+    }
+    if (!currentTs) continue;
+    const p = L.replace(/\\/g, "/");
+    let slug = "";
+    const m1 = p.match(/articles\/([^/]+)\/(?:isi\.txt|1\.(?:jpe?g|png))$/i);
+    const m2 = p.match(/articles\/([^/]+)\.txt$/i);
+    if (m1) slug = m1[1];
+    else if (m2) slug = m2[1];
+    if (!slug) continue;
+    // log dari baru→lama: set HANYA jika belum ada → nilai = commit pertama (paling lama)
+    // Kita ingin commit pertama = waktu lahir. Karena log baru→lama, jangan overwrite:
+    // commit terakhir di log untuk file yang ditambahkan = yang paling lama = first.
+    // Actually git log default is newest first. First time we SEE a slug is the NEWEST addition commit.
+    // For --diff-filter=A there's usually only one addition commit. First seen = the only one.
+    if (!_gitFirstMap.has(slug)) _gitFirstMap.set(slug, currentTs);
+  }
+  return _gitFirstMap;
+}
+
+/** Map slug → unix seconds (commit TERAKHIR menyentuh artikel). */
+let _gitLastMap = null;
+function getGitLastMap() {
+  if (_gitLastMap) return _gitLastMap;
+  _gitLastMap = new Map();
+  const out = runGit(
+    "git log --format='---%ct' --name-only -- site/src/data/articles src/data/articles"
+  );
+  let currentTs = 0;
+  for (const line of out.split("\n")) {
+    const L = line.trim();
+    if (!L) continue;
+    if (L.startsWith("---")) {
+      currentTs = Number(L.slice(3)) || 0;
+      continue;
+    }
+    if (!currentTs) continue;
+    const p = L.replace(/\\/g, "/");
+    let slug = "";
+    const m1 = p.match(/articles\/([^/]+)\/(?:isi\.txt|1\.(?:jpe?g|png))$/i);
+    const m2 = p.match(/articles\/([^/]+)\.txt$/i);
+    if (m1) slug = m1[1];
+    else if (m2) slug = m2[1];
+    if (!slug) continue;
+    if (!_gitLastMap.has(slug)) _gitLastMap.set(slug, currentTs);
+  }
+  return _gitLastMap;
+}
+
 function gitTimestampForSlug(slug) {
-  const map = getGitTimeMap();
-  if (map.has(slug)) return map.get(slug);
+  const first = getGitFirstMap().get(slug) || 0;
+  const last = getGitLastMap().get(slug) || 0;
+  // Utamakan first (stabil). Jika first kosong, pakai last.
+  if (first > 0) return first;
+  if (last > 0) return last;
+  // Cadangan: satu file
   const candidates = [
     `site/src/data/articles/${slug}/isi.txt`,
     `src/data/articles/${slug}/isi.txt`,
-    `site/src/data/articles/${slug}/1.jpeg`,
-    `site/src/data/articles/${slug}/1.jpg`,
-    `site/src/data/articles/${slug}/1.png`,
     `site/src/data/articles/${slug}.txt`,
     `src/data/articles/${slug}.txt`,
   ];
   for (const rel of candidates) {
-    try {
-      const d = execSync(`git log -1 --format=%ct -- "${rel}"`, {
-        encoding: "utf8",
-        stdio: ["ignore", "pipe", "ignore"],
-      }).trim();
-      const n = Number(d);
-      if (Number.isFinite(n) && n > 0) return n;
-    } catch {}
+    const d = runGit(`git log -1 --diff-filter=A --format=%ct -- "${rel}"`).trim();
+    const n = Number(d);
+    if (Number.isFinite(n) && n > 0) return n;
+    const d2 = runGit(`git log -1 --format=%ct -- "${rel}"`).trim();
+    const n2 = Number(d2);
+    if (Number.isFinite(n2) && n2 > 0) return n2;
   }
   return 0;
 }
-
 
 function mtimeForSlug(slug) {
   const candidates = [
@@ -116,6 +154,16 @@ function mtimeForSlug(slug) {
   return best;
 }
 
+/** true jika hampir semua mtime sama (ciri clone Vercel) → mtime tidak boleh dipakai sort */
+function mtimesAreClustered(mtimes) {
+  const vals = mtimes.filter((x) => x > 0);
+  if (vals.length < 3) return false;
+  const min = Math.min(...vals);
+  const max = Math.max(...vals);
+  // semua dalam rentang 3 menit → cluster
+  return max - min < 3 * 60 * 1000;
+}
+
 function toDateStr(tsSec) {
   if (!tsSec) return "1970-01-01";
   const d = new Date(tsSec * 1000);
@@ -123,29 +171,47 @@ function toDateStr(tsSec) {
   return d.toISOString().slice(0, 10);
 }
 
+function loadManualOrder() {
+  try {
+    const raw = fs.readFileSync(orderFile, "utf8");
+    const data = JSON.parse(raw);
+    if (Array.isArray(data)) return data.map(String);
+    if (Array.isArray(data?.order)) return data.order.map(String);
+  } catch {}
+  return [];
+}
+
 export function parseArticleText(raw, slug) {
   const lines = String(raw || "").replace(/^\uFEFF/, "").split(/\r?\n/);
   const title = (lines[0] || slug).trim();
   let i = 1;
-  // lewati baris kosong setelah judul
   while (i < lines.length && lines[i].trim() === "") i++;
 
   let date = "";
+  let dateMs = 0;
   if (i < lines.length) {
     const rawDate = lines[i].trim();
-    // "2026-09-03" atau "date: 2026-09-03" / "2026-09-03 14:30"
-    const mDate =
-      rawDate.match(/^(\d{4}-\d{2}-\d{2})(?:[T\s]\d{2}:\d{2}(?::\d{2})?)?$/) ||
-      rawDate.match(/^date\s*:\s*(\d{4}-\d{2}-\d{2})/i);
-    if (mDate) {
-      date = mDate[1];
+    // YYYY-MM-DD HH:mm[:ss] atau date: ...
+    const mFull =
+      rawDate.match(
+        /^(\d{4}-\d{2}-\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2}))?)?$/
+      ) ||
+      rawDate.match(
+        /^date\s*:\s*(\d{4}-\d{2}-\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2}))?)?/i
+      );
+    if (mFull) {
+      date = mFull[1];
+      const hh = mFull[2] != null ? Number(mFull[2]) : 12;
+      const mm = mFull[3] != null ? Number(mFull[3]) : 0;
+      const ss = mFull[4] != null ? Number(mFull[4]) : 0;
+      dateMs = Date.parse(
+        `${date}T${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")}:${String(ss).padStart(2, "0")}Z`
+      ) || 0;
       i++;
       while (i < lines.length && lines[i].trim() === "") i++;
     }
   }
 
-  // Excerpt eksplisit HANYA jika baris pendek + diikuti baris kosong + ada isi setelahnya
-  // (supaya paste teks bebas tidak menyalin judul ke bawah)
   let excerpt = "";
   if (i < lines.length) {
     const cand = lines[i].trim();
@@ -164,48 +230,42 @@ export function parseArticleText(raw, slug) {
     }
   }
 
-  let body = lines.slice(i).join("\n").trim();
-
-  // Buang judul yang tidak sengaja ikut di awal body
-  if (body === title) body = "";
-  else if (body.startsWith(title + "\n")) body = body.slice(title.length).replace(/^\n+/, "").trim();
-  const parts = body.split(/\n\n+/);
-  if (parts.length && parts[0].trim() === title) {
-    body = parts.slice(1).join("\n\n").trim();
-  }
-
-  // Untuk kartu/meta: ringkas dari body jika tidak ada excerpt eksplisit — JANGAN pakai ulang judul
-  let cardExcerpt = excerpt;
-  if (!cardExcerpt) {
+  const body = lines.slice(i).join("\n").trim();
+  if (!excerpt) {
     const plain = body.replace(/\s+/g, " ").trim();
-    cardExcerpt = plain.length > 160 ? plain.slice(0, 157) + "…" : plain;
+    excerpt = plain.slice(0, 160) + (plain.length > 160 ? "…" : "");
   }
 
   return {
     slug,
     title,
-    excerpt: cardExcerpt,
-    // true hanya jika penulis memang memberi ringkasan terpisah
-    showDeck: Boolean(excerpt && excerpt !== title),
-    date,
+    excerpt,
     body,
+    date: date || "",
+    _dateMs: dateMs,
   };
 }
 
-function resolveImg(slug, kind, urlMap) {
-  const keys = Object.keys(urlMap);
-  const hit = keys.find((k) => {
-    const n = k.replace(/\\/g, "/");
-    if (!n.includes(`/articles/${slug}/`)) return false;
-    const base = n.split("/").pop() || "";
-    const lower = base.toLowerCase();
-    return (
-      lower === `${kind}.jpg` ||
-      lower === `${kind}.jpeg` ||
-      lower === `${kind}.png`
-    );
-  });
-  return hit ? urlMap[hit] : null;
+function resolveImg(slug, n, imgUrls) {
+  const keys = Object.keys(imgUrls || {});
+  const re = new RegExp(
+    `/articles/${slug}/${n}\\.(jpe?g|png)$`.replace(/\//g, "/"),
+    "i"
+  );
+  for (const k of keys) {
+    const norm = k.replace(/\\/g, "/");
+    if (re.test(norm) || norm.endsWith(`/articles/${slug}/${n}.jpg`) || norm.endsWith(`/articles/${slug}/${n}.jpeg`) || norm.endsWith(`/articles/${slug}/${n}.png`)) {
+      return imgUrls[k];
+    }
+  }
+  // vite keys sometimes relative
+  for (const k of keys) {
+    const norm = k.replace(/\\/g, "/");
+    if (norm.includes(`/articles/${slug}/`) && new RegExp(`/${n}\\.(jpe?g|png)$`, "i").test(norm)) {
+      return imgUrls[k];
+    }
+  }
+  return "";
 }
 
 export function loadAllArticles() {
@@ -226,6 +286,8 @@ export function loadAllArticles() {
   });
 
   const bySlug = new Map();
+  const manualOrder = loadManualOrder();
+  const orderIndex = new Map(manualOrder.map((s, i) => [s, i]));
 
   function attachImages(art) {
     const hero = resolveImg(art.slug, "1", imgUrls);
@@ -239,27 +301,44 @@ export function loadAllArticles() {
     return art;
   }
 
+  // Kumpulkan mtime dulu untuk deteksi cluster
+  const mtimeProbe = [];
+  function collectSlugFromPath(p, isFolder) {
+    const parts = p.replace(/\\/g, "/").split("/");
+    if (isFolder) return parts[parts.length - 2];
+    const base = parts[parts.length - 1] || "";
+    return base.replace(/\.txt$/i, "");
+  }
+  for (const p in folderTexts) {
+    const slug = collectSlugFromPath(p, true);
+    if (slug) mtimeProbe.push(mtimeForSlug(slug));
+  }
+  const ignoreMtime = mtimesAreClustered(mtimeProbe);
+
   function attachSortKey(art) {
     const gitTs = gitTimestampForSlug(art.slug); // detik
-    const mt = mtimeForSlug(art.slug); // ms
+    const mt = ignoreMtime ? 0 : mtimeForSlug(art.slug); // ms
     const gitMs = gitTs > 0 ? gitTs * 1000 : 0;
 
-    // 1) tanggal eksplisit di file — pakai akhir hari + offset git/mtime di hari yang sama
-    //    supaya dua artikel tanggal sama tetap terurut upload terbaru di atas
+    // 1) tanggal eksplisit di file (dengan jam jika ada)
+    if (art._dateMs > 0) {
+      art._sort = art._dateMs;
+      if (!art.date) art.date = toDateStr(Math.floor(art._dateMs / 1000));
+      return art;
+    }
     if (art.date && /^\d{4}-\d{2}-\d{2}$/.test(art.date)) {
-      const dayMs = Date.parse(art.date + "T00:00:00Z") || 0;
-      const intra = Math.max(gitMs, mt);
-      // jika git/mtime di hari yang sama, pakai itu; else tengah hari
-      if (intra >= dayMs && intra < dayMs + 86400000) {
-        art._sort = intra;
+      const dayMs = Date.parse(art.date + "T12:00:00Z") || 0;
+      // gabung dengan git di hari yang sama agar urutan upload sama-hari stabil
+      if (gitMs >= dayMs - 12 * 3600 * 1000 && gitMs <= dayMs + 36 * 3600 * 1000) {
+        art._sort = gitMs;
       } else {
-        art._sort = dayMs + 12 * 3600 * 1000;
+        art._sort = dayMs;
       }
       return art;
     }
 
-    // 2) git commit (paling akurat untuk urutan upload di GitHub)
-    // 3) mtime — ambil yang lebih baru dari keduanya
+    // 2) git (waktu lahir / commit) — stabil di Vercel jika history cukup dalam
+    // 3) mtime hanya jika tidak cluster
     art._sort = Math.max(gitMs, mt) || 0;
     if (!art.date && art._sort) art.date = toDateStr(Math.floor(art._sort / 1000));
     if (!art.date) art.date = "1970-01-01";
@@ -267,8 +346,7 @@ export function loadAllArticles() {
   }
 
   for (const p in folderTexts) {
-    const parts = p.replace(/\\/g, "/").split("/");
-    const slug = parts[parts.length - 2];
+    const slug = collectSlugFromPath(p, true);
     if (!slug || slug === "articles") continue;
     let art = parseArticleText(folderTexts[p], slug);
     art = attachSortKey(attachImages(art));
@@ -276,8 +354,7 @@ export function loadAllArticles() {
   }
 
   for (const p in flatTexts) {
-    const base = p.split("/").pop() || "";
-    const slug = base.replace(/\.txt$/i, "");
+    const slug = collectSlugFromPath(p, false);
     if (!slug || bySlug.has(slug)) continue;
     let art = parseArticleText(flatTexts[p], slug);
     art = attachSortKey(attachImages(art));
@@ -285,11 +362,22 @@ export function loadAllArticles() {
   }
 
   const list = [...bySlug.values()];
-  // Terbaru dulu (kiri carousel). Seri: slug agar stabil.
   list.sort((a, b) => {
+    // Manual order file: index kecil = lebih baru
+    const ia = orderIndex.has(a.slug) ? orderIndex.get(a.slug) : null;
+    const ib = orderIndex.has(b.slug) ? orderIndex.get(b.slug) : null;
+    if (ia != null && ib != null && ia !== ib) return ia - ib;
+    // slug baru (belum di order file) di atas yang sudah di-order jika _sort lebih besar
+    if (ia == null && ib != null) {
+      // bandingkan _sort vs "anggap order item lebih tua"
+      return -1; // tanpa entry di order → anggap kandidat lebih baru (upload baru)
+    }
+    if (ia != null && ib == null) return 1;
+
     const d = (b._sort || 0) - (a._sort || 0);
     if (d !== 0) return d;
-    return String(a.slug).localeCompare(String(b.slug));
+    // stabil: slug terbalik biar tidak terasa "acak abjad A→Z"
+    return String(b.slug).localeCompare(String(a.slug));
   });
   return list;
 }
