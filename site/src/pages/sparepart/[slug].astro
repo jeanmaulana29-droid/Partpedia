@@ -27,13 +27,32 @@ const relatedEntries = data
   .filter((d) => d.category === entry.category && d.slug !== entry.slug)
   .slice(0, 4);
 
+/** Parse "Rp 45.000 - 90.000" → { low, high } for Product schema (GSC requires price). */
+function parseIdrRange(raw) {
+  const nums = String(raw || "")
+    .replace(/\./g, "")
+    .replace(/,/g, "")
+    .match(/\d+/g);
+  if (!nums || !nums.length) return null;
+  const low = nums[0];
+  const high = nums.length > 1 ? nums[1] : nums[0];
+  return { low, high };
+}
+
+const pageUrl = new URL(`/sparepart/${entry.slug}/`, Astro.site).toString();
+const priceParsed = parseIdrRange(entry.price_range);
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: `${entry.part_name} (${entry.part_number})`,
   description: entry.description,
+  sku: entry.part_number,
   category: entry.category,
   brand: { "@type": "Brand", name: entry.brand },
+  ...(entry.image_url
+    ? { image: [new URL(entry.image_url, Astro.site).toString()] }
+    : {}),
   additionalProperty: [
     { "@type": "PropertyValue", name: "Kode Part", value: entry.part_number },
     { "@type": "PropertyValue", name: "Size", value: entry.size || "-" },
@@ -48,12 +67,20 @@ const jsonLd = {
       value,
     })),
   ],
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "IDR",
-    availability: "https://schema.org/InStock",
-    url: new URL(`/sparepart/${entry.slug}/`, Astro.site).toString(),
-  },
+  // GSC kritis: Offer tanpa price tidak valid. Pakai AggregateOffer dari price_range.
+  ...(priceParsed
+    ? {
+        offers: {
+          "@type": "AggregateOffer",
+          lowPrice: priceParsed.low,
+          highPrice: priceParsed.high,
+          priceCurrency: "IDR",
+          availability: "https://schema.org/InStock",
+          url: pageUrl,
+          offerCount: 1,
+        },
+      }
+    : {}),
 };
 ---
 
