@@ -7,6 +7,9 @@ import SpecsTable from "../../components/SpecsTable.astro";
 import data from "../../data/data.json";
 import shopeeLinks from "../../data/shopee-links.json";
 import { getCategoryTheme } from "../../utils/theme.js";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 export async function getStaticPaths() {
   return data.map((entry) => ({
@@ -27,7 +30,7 @@ const relatedEntries = data
   .filter((d) => d.category === entry.category && d.slug !== entry.slug)
   .slice(0, 4);
 
-/** Parse "Rp 45.000 - 90.000" → { low, high }. GSC listingan: wajib kolom price + image. */
+/** Parse "Rp 45.000 - 90.000" → { low, high }. */
 function parseIdrRange(raw) {
   const nums = String(raw || "")
     .replace(/\./g, "")
@@ -39,10 +42,31 @@ function parseIdrRange(raw) {
   return { low, high };
 }
 
+/**
+ * Resolve product image that actually exists in public/products.
+ * Repo uses mix of .png / .jpeg / .jpg — pointing only to .jpg → GSC 404 → "image" invalid.
+ * Fallback: site og-default.png (always 200) so schema never references a dead URL.
+ */
+function resolveProductImagePath(slug) {
+  const productsDir = path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    "../../../public/products"
+  );
+  for (const ext of [".png", ".jpeg", ".jpg", ".webp"]) {
+    const fp = path.join(productsDir, `${slug}${ext}`);
+    if (fs.existsSync(fp)) return `/products/${slug}${ext}`;
+  }
+  return "/og-default.png";
+}
+
 const pageUrl = new URL(`/sparepart/${entry.slug}/`, Astro.site).toString();
 const priceParsed = parseIdrRange(entry.price_range);
-// UI selalu memakai /products/{slug}.jpg — jangan andalkan image_url (kosong di data.json)
-const productImage = new URL(`/products/${entry.slug}.jpg`, Astro.site).toString();
+const productImagePath = resolveProductImagePath(entry.slug);
+const productImage = new URL(productImagePath, Astro.site).toString();
+// Brand: ambil merek pertama jika "FYH/NSK/SKF" agar schema lebih bersih
+const brandName = String(entry.brand || "OEM")
+  .split(/[/|,]/)[0]
+  .trim() || "OEM";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -52,7 +76,7 @@ const jsonLd = {
   sku: entry.part_number,
   mpn: entry.part_number,
   category: entry.category,
-  brand: { "@type": "Brand", name: entry.brand },
+  brand: { "@type": "Brand", name: brandName },
   image: [productImage],
   additionalProperty: [
     { "@type": "PropertyValue", name: "Kode Part", value: entry.part_number },
@@ -68,8 +92,6 @@ const jsonLd = {
       value,
     })),
   ],
-  // GSC "Listingan penjualan": wajib properti "price" (bukan hanya lowPrice).
-  // Offer.price = batas bawah price_range; priceCurrency IDR.
   ...(priceParsed
     ? {
         offers: {
@@ -115,7 +137,7 @@ const jsonLd = {
 
       <div class="product-photo">
         <img
-          src={`/products/${entry.slug}.jpg`}
+          src={productImagePath}
           alt={entry.part_name}
           loading="lazy"
           onerror={`this.onerror=function(){this.onerror=function(){this.onerror=null;this.style.display='none';};this.src='/products/${entry.slug}.png';};this.src='/products/${entry.slug}.jpeg';`}
