@@ -27,7 +27,7 @@ const relatedEntries = data
   .filter((d) => d.category === entry.category && d.slug !== entry.slug)
   .slice(0, 4);
 
-/** Parse "Rp 45.000 - 90.000" → { low, high } for Product schema (GSC requires price). */
+/** Parse "Rp 45.000 - 90.000" → { low, high }. GSC listingan: wajib kolom price + image. */
 function parseIdrRange(raw) {
   const nums = String(raw || "")
     .replace(/\./g, "")
@@ -41,6 +41,8 @@ function parseIdrRange(raw) {
 
 const pageUrl = new URL(`/sparepart/${entry.slug}/`, Astro.site).toString();
 const priceParsed = parseIdrRange(entry.price_range);
+// UI selalu memakai /products/{slug}.jpg — jangan andalkan image_url (kosong di data.json)
+const productImage = new URL(`/products/${entry.slug}.jpg`, Astro.site).toString();
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -48,11 +50,10 @@ const jsonLd = {
   name: `${entry.part_name} (${entry.part_number})`,
   description: entry.description,
   sku: entry.part_number,
+  mpn: entry.part_number,
   category: entry.category,
   brand: { "@type": "Brand", name: entry.brand },
-  ...(entry.image_url
-    ? { image: [new URL(entry.image_url, Astro.site).toString()] }
-    : {}),
+  image: [productImage],
   additionalProperty: [
     { "@type": "PropertyValue", name: "Kode Part", value: entry.part_number },
     { "@type": "PropertyValue", name: "Size", value: entry.size || "-" },
@@ -67,17 +68,17 @@ const jsonLd = {
       value,
     })),
   ],
-  // GSC kritis: Offer tanpa price tidak valid. Pakai AggregateOffer dari price_range.
+  // GSC "Listingan penjualan": wajib properti "price" (bukan hanya lowPrice).
+  // Offer.price = batas bawah price_range; priceCurrency IDR.
   ...(priceParsed
     ? {
         offers: {
-          "@type": "AggregateOffer",
-          lowPrice: priceParsed.low,
-          highPrice: priceParsed.high,
+          "@type": "Offer",
+          price: priceParsed.low,
           priceCurrency: "IDR",
           availability: "https://schema.org/InStock",
           url: pageUrl,
-          offerCount: 1,
+          itemCondition: "https://schema.org/NewCondition",
         },
       }
     : {}),
