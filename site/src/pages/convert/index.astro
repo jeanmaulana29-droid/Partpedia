@@ -1,16 +1,65 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import converters from "../../data/converters.json";
+
+const site = "https://www.klikpartpedia.com";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      name: "Partpedia Convert X",
+      alternateName: [
+        "Industrial unit converter",
+        "Engineering unit conversion tools",
+        "Hardness pressure torque converter",
+      ],
+      url: `${site}/convert/`,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Any",
+      browserRequirements: "Requires JavaScript",
+      inLanguage: ["en", "id"],
+      isAccessibleForFree: true,
+      description:
+        "Free industrial unit converters for manufacturing and MRO: length, pressure, torque, hardness (HRC/HB/HV), electrical, flow rate, viscosity, density, and more. SI / ISO oriented.",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      publisher: {
+        "@type": "Organization",
+        name: "Partpedia",
+        url: `${site}/`,
+      },
+    },
+    {
+      "@type": "ItemList",
+      name: "Industrial unit converters",
+      numberOfItems: converters.length,
+      itemListElement: converters.map((c, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: c.name,
+        url: `${site}/convert/${c.slug}/`,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+        { "@type": "ListItem", position: 2, name: "Convert X", item: `${site}/convert/` },
+      ],
+    },
+  ],
+};
 ---
 <Layout
-  title="Convert X — Unit Converter Industri · Partpedia"
-  description="30 konverter satuan industri: panjang, tekanan, torsi, kekerasan, listrik, aliran, dan lainnya. Akurat untuk manufaktur & MRO."
+  title="Convert X — Industrial Unit Converter (Pressure, Torque, Hardness) | Partpedia"
+  description="Free industrial unit converter for engineers: mm/inch, MPa/psi, N·m/lbf·ft, HRC/HB/HV hardness, flow, viscosity, electrical units. Fast accurate conversion for manufacturing & MRO."
+  jsonLd={jsonLd}
 >
   <section class="hub">
     <header class="hub-head">
       <p class="kicker">Convert X</p>
-      <h1>Konverter satuan industri</h1>
-      <p>Pilih kategori — isi satu nilai, satuan lain terisi otomatis. Faktor konversi mengikuti standar industri (SI, ISO, NIST).</p>
+      <h1>Industrial unit converter</h1>
+      <p>Pick a category — enter one value, related units update instantly. Conversion factors aligned with common industrial practice (SI / ISO).</p>
     </header>
     <div class="app-grid">
       {converters.map((c) => (
