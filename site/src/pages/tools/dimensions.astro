@@ -1,29 +1,32 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 ---
-<Layout title="Panjang · Lebar · Tebal · Density · Massa — Smart Tools · Partpedia" description="Density (ρ) wajib diisi untuk menghubungkan dimensi dengan massa. Kosongkan satu variabel yang dicari.">
+<Layout title="Panjang · Lebar · Tebal · Density · Massa — Smart Tools · Partpedia" description="Density ρ (g/cm³) wajib. Panjang (m), lebar & tebal (mm), massa (kg). Kosongkan satu variabel yang dicari.">
   <div class="tool-page">
     <a class="back" href="/tools/">← Semua Smart Tools</a>
     <div class="tool-card">
       <h1>Panjang · Lebar · Tebal · Density · Massa</h1>
-      <p class="desc">Density (ρ) wajib diisi untuk menghubungkan dimensi dengan massa. Kosongkan satu variabel yang dicari.</p>
-      <div class="formula">m = ρ × (P×L×T)</div>
+      <p class="desc">Density (ρ) wajib diisi. Satuan: ρ = g/cm³, P = m, L = mm, T = mm, m = kg. Kosongkan satu variabel yang dicari.</p>
+      <div class="formula">m = ρ × P × L × T ÷ 1000</div>
       <div class="fields cols-2">
-      <div class="field"><label for="rho">Density ρ <span>(kg/cm³ — wajib)</span></label><input id="rho" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="p">Panjang P <span>(m)</span></label><input id="p" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="l">Lebar L <span>(m)</span></label><input id="l" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="t">Tebal T <span>(m)</span></label><input id="t" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>      <div class="field"><label for="m">Massa m <span>(kg)</span></label><input id="m" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="rho">Density ρ <span>(g/cm³ — wajib)</span></label><input id="rho" type="number" inputmode="decimal" step="any" placeholder="mis. 7.85 baja" autocomplete="off" /></div>
+      <div class="field"><label for="p">Panjang P <span>(m)</span></label><input id="p" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="l">Lebar L <span>(mm)</span></label><input id="l" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="t">Tebal T <span>(mm)</span></label><input id="t" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
+      <div class="field"><label for="m">Massa m <span>(kg)</span></label><input id="m" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" /></div>
       </div>
       <div class="actions">
         <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
         <button type="button" class="btn-reset" id="btn-reset">Reset</button>
         <p class="msg" id="msg" role="status"></p>
       </div>
-      <p class="hint"><strong>Satuan:</strong> gunakan satu sistem satuan yang konsisten pada semua kolom (sesuai label). Isi nilai yang diketahui, kosongkan yang ingin dicari. Kolom hasil akan ditandai warna tosca. Gunakan titik atau koma untuk desimal.</p>
+      <p class="hint"><strong>Rumus:</strong> m (kg) = ρ (g/cm³) × P (m) × L (mm) × T (mm) / 1000. Contoh baja: ρ=7.85, P=1, L=1000, T=10 → m=78.5 kg. Isi ρ + tiga nilai, kosongkan 1 yang dicari. Hasil ditandai warna tosca.</p>
     </div>
   </div>
   <script is:inline>
-
   function parseNum(el) {
     if (!el) return null;
-    let v = String(el.value||"").trim().replace(",", ".");
+    let v = String(el.value || "").trim().replace(",", ".");
     if (v === "") return null;
     const n = Number(v);
     return Number.isFinite(n) ? n : NaN;
@@ -32,78 +35,93 @@ import Layout from "../../layouts/Layout.astro";
     if (!Number.isFinite(x)) return "";
     const a = Math.abs(x);
     if (a !== 0 && (a < 1e-7 || a >= 1e10)) return x.toExponential(8);
-    return x.toFixed(10).replace(/\.?0+$/, "");
+    let s = x.toPrecision(12);
+    if (s.indexOf("e") >= 0 || s.indexOf("E") >= 0) return Number(x).toString();
+    if (s.indexOf(".") >= 0) s = s.replace(/\.?0+$/, "");
+    return s;
   }
   function clearComputed(ids) {
     ids.forEach((id) => {
       const el = document.getElementById(id);
-      const field = el?.closest(".field");
-      field?.classList.remove("is-result");
-      if (el?.dataset.computed === "1") { el.value = ""; delete el.dataset.computed; }
+      if (el) el.classList.remove("is-result");
     });
   }
-  function setResult(id, value) {
+  function setResult(id, val) {
     const el = document.getElementById(id);
     if (!el) return;
-    el.value = fmt(value);
-    el.dataset.computed = "1";
-    el.closest(".field")?.classList.add("is-result");
+    el.value = fmt(val);
+    el.classList.add("is-result");
   }
   function wire(ids, compute) {
+    const btn = document.getElementById("btn-calc");
+    const reset = document.getElementById("btn-reset");
     const msg = document.getElementById("msg");
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      el?.addEventListener("input", () => {
-        if (el.dataset.computed === "1") {
-          delete el.dataset.computed;
-          el.closest(".field")?.classList.remove("is-result");
-        } else {
-          clearComputed(ids);
-        }
-        const filled = ids.filter((i) => { const v = parseNum(document.getElementById(i)); return v !== null && !Number.isNaN(v); }).length;
-        if (filled >= 2) compute();
-        else if (msg) msg.textContent = "";
-      });
-      el?.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); compute(); } });
-    });
-    document.getElementById("btn-calc")?.addEventListener("click", compute);
-    document.getElementById("btn-reset")?.addEventListener("click", () => {
+    if (btn) btn.addEventListener("click", compute);
+    if (reset) reset.addEventListener("click", () => {
       ids.forEach((id) => {
         const el = document.getElementById(id);
-        if (el) { el.value = ""; delete el.dataset.computed; }
-        el?.closest(".field")?.classList.remove("is-result");
+        if (el) { el.value = ""; el.classList.remove("is-result"); }
       });
       if (msg) msg.textContent = "";
     });
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") { e.preventDefault(); compute(); }
+      });
+    });
   }
-
-    (function(){
-      const ids = ["rho", "p", "l", "t", "m"];
-      const msg = document.getElementById("msg");
-      function compute() {
-        clearComputed(ids);
-        
-    const rho=parseNum(document.getElementById("rho"));
-    const p=parseNum(document.getElementById("p"));
-    const l=parseNum(document.getElementById("l"));
-    const t=parseNum(document.getElementById("t"));
-    const m=parseNum(document.getElementById("m"));
-    if (rho===null || Number.isNaN(rho) || rho<=0) { msg.textContent="Density ρ wajib diisi dan > 0"; return; }
-    if ([p,l,t,m].some(x=>x!==null&&(Number.isNaN(x)||x<0))) { msg.textContent="Nilai harus ≥ 0"; return; }
-    const dims=[p,l,t].filter(x=>x!==null).length;
-    if (m===null && p!==null && l!==null && t!==null) { setResult("m", rho*p*l*t); msg.textContent="m = ρ×P×L×T"; return; }
-    if (m!==null && dims===3) { msg.textContent="Kosongkan salah satu dimensi yang dicari"; return; }
-    if (m!==null && p===null && l!==null && t!==null) { setResult("p", m/(rho*l*t)); msg.textContent="P = m/(ρ×L×T)"; return; }
-    if (m!==null && l===null && p!==null && t!==null) { setResult("l", m/(rho*p*t)); msg.textContent="L = m/(ρ×P×T)"; return; }
-    if (m!==null && t===null && p!==null && l!==null) { setResult("t", m/(rho*p*l)); msg.textContent="T = m/(ρ×P×L)"; return; }
-    msg.textContent="Isi ρ + tiga nilai lain, kosongkan 1 yang dicari";
-  
+  (function () {
+    const ids = ["rho", "p", "l", "t", "m"];
+    const msg = document.getElementById("msg");
+    function compute() {
+      clearComputed(ids);
+      const rho = parseNum(document.getElementById("rho"));
+      const p = parseNum(document.getElementById("p"));
+      const l = parseNum(document.getElementById("l"));
+      const t = parseNum(document.getElementById("t"));
+      const m = parseNum(document.getElementById("m"));
+      if (rho === null || Number.isNaN(rho) || rho <= 0) {
+        msg.textContent = "Density ρ wajib diisi dan > 0 (g/cm³, mis. baja 7.85)";
+        return;
       }
-      wire(ids, compute);
-    })();
+      if ([p, l, t, m].some((x) => x !== null && (Number.isNaN(x) || x < 0))) {
+        msg.textContent = "Nilai harus ≥ 0";
+        return;
+      }
+      // m = ρ × P × L × T / 1000  (ρ g/cm³, P m, L mm, T mm, m kg)
+      const dims = [p, l, t].filter((x) => x !== null).length;
+      if (m === null && p !== null && l !== null && t !== null) {
+        setResult("m", (rho * p * l * t) / 1000);
+        msg.textContent = "m = ρ×P×L×T / 1000";
+        return;
+      }
+      if (m !== null && dims === 3) {
+        msg.textContent = "Kosongkan salah satu dimensi yang dicari";
+        return;
+      }
+      if (m !== null && p === null && l !== null && t !== null) {
+        setResult("p", (m * 1000) / (rho * l * t));
+        msg.textContent = "P = m×1000 / (ρ×L×T)";
+        return;
+      }
+      if (m !== null && l === null && p !== null && t !== null) {
+        setResult("l", (m * 1000) / (rho * p * t));
+        msg.textContent = "L = m×1000 / (ρ×P×T)";
+        return;
+      }
+      if (m !== null && t === null && p !== null && l !== null) {
+        setResult("t", (m * 1000) / (rho * p * l));
+        msg.textContent = "T = m×1000 / (ρ×P×L)";
+        return;
+      }
+      msg.textContent = "Isi ρ + tiga nilai lain, kosongkan 1 yang dicari";
+    }
+    wire(ids, compute);
+  })();
   </script>
   <style>
-
   .tool-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 0 3rem; }
   .back { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.88rem; color: var(--muted); text-decoration:none; margin-bottom:0.85rem; }
   .back:hover { color: var(--amber); }
@@ -118,21 +136,25 @@ import Layout from "../../layouts/Layout.astro";
     border:1px solid rgba(240,164,58,0.35); background:rgba(240,164,58,0.08); padding:0.35rem 0.65rem; border-radius:999px; margin-bottom:1rem; }
   .fields { display:grid; gap:0.75rem; }
   @media(min-width:560px){ .fields.cols-2{ grid-template-columns:1fr 1fr;} .fields.cols-3{ grid-template-columns:1fr 1fr 1fr;} }
-  .field { display:flex; flex-direction:column; gap:0.35rem; padding:0.75rem 0.85rem; border-radius:14px;
-    border:1px solid var(--line); background:rgba(0,0,0,0.22); transition: border-color .15s, background .15s, box-shadow .15s; }
-  .field label { font-size:0.8rem; font-weight:600; color: var(--ink); }
-  .field label span { font-weight:500; color: var(--muted); font-size:0.75rem; }
-  .field input { border:none; outline:none; background:transparent; color: var(--ink); font-size:1.25rem; font-weight:700; font-family: var(--font-mono); width:100%; }
-  .field.is-result { border-color: rgba(45,212,191,0.65); background: rgba(45,212,191,0.12); box-shadow:0 0 0 3px rgba(45,212,191,0.12); }
-  .field.is-result label { color: var(--teal); }
-  .actions { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; margin-top:1rem; }
-  .btn-calc { appearance:none; border:none; cursor:pointer; font-weight:800; padding:0.7rem 1.25rem; border-radius:999px;
-    background: linear-gradient(135deg,#2dd4bf,#14b8a6); color:#041016; }
-  .btn-reset { appearance:none; cursor:pointer; font-weight:600; padding:0.65rem 1.1rem; border-radius:999px;
-    background:transparent; border:1px solid var(--line); color: var(--ink); }
-  .msg { margin:0; font-size:0.86rem; color: var(--muted); }
-  .hint { margin-top:1rem; padding:0.75rem 0.9rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);
-    background:rgba(255,255,255,0.03); font-size:0.84rem; color: var(--muted); line-height:1.45; }
-
+  .field label { display:block; font-size:0.8rem; font-weight:600; margin-bottom:0.3rem; color: var(--ink); }
+  .field label span { font-weight:500; color: var(--muted); }
+  .field input {
+    width:100%; box-sizing:border-box; border-radius:12px; border:1px solid var(--line);
+    background: var(--bg-elevated); color: var(--ink); padding:0.65rem 0.75rem; font-size:1rem;
+    font-family: var(--font-mono);
+  }
+  .field input:focus { outline:2px solid rgba(61,207,182,0.45); border-color: transparent; }
+  .field input.is-result { border-color: var(--teal); background: rgba(61,207,182,0.1); }
+  .actions { display:flex; flex-wrap:wrap; align-items:center; gap:0.65rem; margin-top:1.1rem; }
+  .btn-calc {
+    border:0; border-radius:999px; padding:0.65rem 1.25rem; font-weight:700; cursor:pointer;
+    background: linear-gradient(135deg, #3dcfb6, #2dd4bf); color:#0b0f14;
+  }
+  .btn-reset {
+    border:1px solid var(--line); border-radius:999px; padding:0.6rem 1rem; font-weight:600; cursor:pointer;
+    background: transparent; color: var(--muted);
+  }
+  .msg { margin:0; font-size:0.85rem; color: var(--teal); flex:1 1 100%; }
+  .hint { margin:1rem 0 0; font-size:0.8rem; color: var(--muted); line-height:1.45; }
   </style>
 </Layout>
