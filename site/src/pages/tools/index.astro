@@ -1,12 +1,97 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+const toolList = [
+  { name: "Pythagoras / right triangle calculator", path: "/tools/pythagoras/" },
+  { name: "Trigonometry angle & side calculator", path: "/tools/trigonometry/" },
+  { name: "Distance speed time calculator", path: "/tools/distance-speed-time/" },
+  { name: "Circle circumference & diameter calculator", path: "/tools/circle/" },
+  { name: "Cylinder volume calculator", path: "/tools/cylinder/" },
+  { name: "Box / rectangular volume calculator", path: "/tools/box-volume/" },
+  { name: "Mass volume density calculator", path: "/tools/mass-volume-density/" },
+  { name: "Material weight calculator", path: "/tools/material-weight/" },
+  { name: "Length width thickness density mass calculator", path: "/tools/dimensions/" },
+  { name: "Pipe OD ID thickness calculator", path: "/tools/pipe/" },
+  { name: "RPM surface speed calculator", path: "/tools/rpm-speed/" },
+  { name: "Gear ratio calculator", path: "/tools/gear-ratio/" },
+  { name: "Torque RPM power calculator", path: "/tools/torque-power/" },
+  { name: "Force mass acceleration calculator", path: "/tools/force-mass/" },
+  { name: "Pressure force area calculator", path: "/tools/pressure/" },
+  { name: "Flow volume time calculator", path: "/tools/flow/" },
+  { name: "Electrical V A Ω power calculator", path: "/tools/electrical/" },
+  { name: "Cycle time production rate calculator", path: "/tools/cycle-time/" },
+  { name: "Takt time calculator", path: "/tools/takt-time/" },
+  { name: "MTBF MTTR availability calculator", path: "/tools/reliability/" },
+  { name: "OEE overall equipment effectiveness calculator", path: "/tools/oee/" },
+  { name: "Hydraulic cylinder force calculator", path: "/tools/cylinder-force/" },
+  { name: "Hydraulic power calculator", path: "/tools/hydraulic-power/" },
+  { name: "Pulley ratio calculator", path: "/tools/pulley-ratio/" },
+  { name: "Belt length calculator", path: "/tools/belt-length/" },
+  { name: "Yield scrap percentage calculator", path: "/tools/yield-scrap/" },
+  { name: "Energy kWh calculator", path: "/tools/energy-kwh/" },
+  { name: "Motor current calculator", path: "/tools/motor-current/" },
+  { name: "Pump displacement calculator", path: "/tools/pump-displacement/" },
+  { name: "Coil roll weight calculator", path: "/tools/production-rate/" }
+];
+
+const site = "https://www.klikpartpedia.com";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      name: "Partpedia Smart Tools",
+      alternateName: [
+        "Industrial engineering calculators",
+        "MRO calculation tools",
+        "Free online industrial calculators",
+      ],
+      url: `${site}/tools/`,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Any",
+      browserRequirements: "Requires JavaScript",
+      inLanguage: ["en", "id"],
+      isAccessibleForFree: true,
+      description:
+        "Free industrial calculators for engineers and plant maintenance: geometry, materials, mechanics, electrical, hydraulics, OEE, takt time, torque, pressure, gear ratio, and production metrics.",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      publisher: {
+        "@type": "Organization",
+        name: "Partpedia",
+        url: `${site}/`,
+      },
+    },
+    {
+      "@type": "ItemList",
+      name: "Industrial calculation tools",
+      numberOfItems: toolList.length,
+      itemListElement: toolList.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: t.name,
+        url: `${site}${t.path}`,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+        { "@type": "ListItem", position: 2, name: "Smart Tools", item: `${site}/tools/` },
+      ],
+    },
+  ],
+};
 ---
-<Layout title="Smart Tools — Partpedia" description="30 utilitas perhitungan industri: geometri, material, mekanik, listrik, dan produksi.">
+<Layout
+  title="Smart Tools — Free Industrial Calculators (OEE, Torque, Pressure) | Partpedia"
+  description="Free online industrial calculators for engineers & MRO: torque, gear ratio, OEE, pressure, pipe sizing, RPM, electrical power, takt time, hydraulics, belt length. Fast engineering utility tools."
+  jsonLd={jsonLd}
+>
   <section class="hub">
     <header class="hub-head">
       <p class="kicker">Smart Tools</p>
-      <h1>Utilitas perhitungan industri</h1>
-      <p>Pilih alat seperti membuka app — geometri, material, mekanik, listrik, hingga metrik produksi. Isi nilai yang diketahui; sisi lain dihitung otomatis.</p>
+      <h1>Industrial calculation tools</h1>
+      <p>Geometry · materials · mechanics · electrical · production — pick a tool, enter known values, the rest calculates automatically.</p>
     </header>
     <div class="app-grid">
       <a class="app-icon" href="/tools/pythagoras/">
