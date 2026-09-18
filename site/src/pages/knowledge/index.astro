@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { loadAllArticles } from "../../utils/loadArticles.js";
 const sorted = loadAllArticles();
+const PAGE_SIZE = 25;
 ---
 <Layout title="Wawasan Industri — Partpedia" description="Artikel ringkas seputar sparepart dan MRO. Cari artikel berdasarkan kata kunci.">
   <div class="hub">
@@ -20,6 +21,8 @@ const sorted = loadAllArticles();
       />
       <p class="search-hint" id="search-hint" hidden></p>
     </div>
+
+    <p class="page-meta" id="page-meta" data-total={sorted.length} data-pagesize={PAGE_SIZE}></p>
 
     <div class="list" id="article-list">
       {sorted.map((a) => {
@@ -43,37 +46,163 @@ const sorted = loadAllArticles();
       })}
     </div>
     <p class="empty" id="article-empty" hidden>Tidak ada artikel yang cocok. Coba kata kunci lain.</p>
+
+    <nav class="art-pager" id="art-pager" aria-label="Halaman artikel" hidden>
+      <button type="button" class="pager-nav" id="pager-prev" aria-label="Halaman sebelumnya">←</button>
+      <div class="pager-nums" id="pager-nums"></div>
+      <button type="button" class="pager-nav" id="pager-next" aria-label="Halaman berikutnya">→</button>
+    </nav>
+
     <p class="back"><a href="/">← Katalog</a></p>
   </div>
 
-  <script>
-    const input = document.getElementById("article-search");
-    const rows = Array.from(document.querySelectorAll("#article-list .row"));
-    const empty = document.getElementById("article-empty");
-    const hint = document.getElementById("search-hint");
+  <script is:inline>
+    (function () {
+      const PAGE_SIZE = 25;
+      const input = document.getElementById("article-search");
+      const rows = Array.from(document.querySelectorAll("#article-list .row"));
+      const empty = document.getElementById("article-empty");
+      const hint = document.getElementById("search-hint");
+      const meta = document.getElementById("page-meta");
+      const pager = document.getElementById("art-pager");
+      const pagerNums = document.getElementById("pager-nums");
+      const btnPrev = document.getElementById("pager-prev");
+      const btnNext = document.getElementById("pager-next");
 
-    function apply() {
-      const q = (input?.value || "").toLowerCase().trim();
-      // multi-word: semua kata harus ada (semakin lengkap = semakin spesifik)
-      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
-      let n = 0;
-      rows.forEach((row) => {
-        const hay = row.getAttribute("data-search") || "";
-        const ok = terms.length === 0 || terms.every((t) => hay.includes(t));
-        row.style.display = ok ? "" : "none";
-        if (ok) n++;
-      });
-      if (empty) empty.hidden = n !== 0;
-      if (hint) {
-        if (!q) {
-          hint.hidden = true;
-        } else {
-          hint.hidden = false;
-          hint.textContent = n === 0 ? "0 artikel" : `${n} artikel cocok`;
+      const total = rows.length;
+      const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+
+      function pageFromUrl() {
+        try {
+          const u = new URL(window.location.href);
+          const p = parseInt(u.searchParams.get("page") || "1", 10);
+          if (Number.isFinite(p) && p >= 1 && p <= totalPages) return p;
+        } catch (_) {}
+        return 1;
+      }
+
+      let currentPage = pageFromUrl();
+
+      function setUrl(page) {
+        try {
+          const u = new URL(window.location.href);
+          if (page <= 1) u.searchParams.delete("page");
+          else u.searchParams.set("page", String(page));
+          history.replaceState(null, "", u.pathname + u.search + u.hash);
+        } catch (_) {}
+      }
+
+      function rangeLabel(page) {
+        const start = (page - 1) * PAGE_SIZE + 1;
+        const end = Math.min(page * PAGE_SIZE, total);
+        return start + "–" + end;
+      }
+
+      function renderPager() {
+        if (!pager || !pagerNums) return;
+        if (totalPages <= 1) {
+          pager.hidden = true;
+          return;
+        }
+        pager.hidden = false;
+        pagerNums.innerHTML = "";
+        for (let p = 1; p <= totalPages; p++) {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "pager-btn" + (p === currentPage ? " active" : "");
+          b.textContent = String(p);
+          b.setAttribute("aria-label", "Halaman " + p);
+          if (p === currentPage) b.setAttribute("aria-current", "page");
+          b.addEventListener("click", () => goPage(p));
+          pagerNums.appendChild(b);
+        }
+        if (btnPrev) btnPrev.disabled = currentPage <= 1;
+        if (btnNext) btnNext.disabled = currentPage >= totalPages;
+      }
+
+      function goPage(page) {
+        if (page < 1 || page > totalPages) return;
+        currentPage = page;
+        setUrl(page);
+        apply();
+        try {
+          document.getElementById("article-list")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        } catch (_) {}
+      }
+
+      function apply() {
+        const q = (input?.value || "").toLowerCase().trim();
+        const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+        const searching = terms.length > 0;
+
+        let matchCount = 0;
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const end = start + PAGE_SIZE;
+
+        rows.forEach((row, i) => {
+          const hay = row.getAttribute("data-search") || "";
+          const match = !searching || terms.every((t) => hay.includes(t));
+          if (match) matchCount++;
+
+          let show;
+          if (searching) {
+            // Cari: semua artikel cocok (lintas halaman), seperti Q&A
+            show = match;
+          } else {
+            // Normal: 25 kartu per halaman
+            show = match && i >= start && i < end;
+          }
+          row.style.display = show ? "" : "none";
+        });
+
+        if (empty) empty.hidden = matchCount !== 0;
+
+        if (meta) {
+          if (searching) {
+            meta.textContent =
+              matchCount === 0
+                ? "0 hasil"
+                : matchCount + " hasil pencarian (semua halaman)";
+          } else {
+            meta.textContent =
+              "Menampilkan " +
+              rangeLabel(currentPage) +
+              " dari " +
+              total +
+              " artikel · Halaman " +
+              currentPage +
+              "/" +
+              totalPages;
+          }
+        }
+
+        if (hint) {
+          if (!searching) {
+            hint.hidden = true;
+          } else {
+            hint.hidden = false;
+            hint.textContent = matchCount === 0 ? "0 artikel" : matchCount + " artikel cocok";
+          }
+        }
+
+        if (pager) {
+          if (searching || totalPages <= 1) pager.hidden = true;
+          else {
+            pager.hidden = false;
+            renderPager();
+          }
         }
       }
-    }
-    input?.addEventListener("input", apply);
+
+      btnPrev?.addEventListener("click", () => goPage(currentPage - 1));
+      btnNext?.addEventListener("click", () => goPage(currentPage + 1));
+      input?.addEventListener("input", () => {
+        apply();
+      });
+
+      renderPager();
+      apply();
+    })();
   </script>
 
   <style>
@@ -89,7 +218,7 @@ const sorted = loadAllArticles();
     h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.35rem 0 0.5rem; }
     .lead { color: var(--muted); margin: 0 0 1.15rem; }
 
-    .search-wrap { margin: 0 0 1.35rem; }
+    .search-wrap { margin: 0 0 0.65rem; }
     #article-search {
       width: 100%;
       box-sizing: border-box;
@@ -112,6 +241,12 @@ const sorted = loadAllArticles();
       font-size: 0.82rem;
       color: var(--muted);
     }
+    .page-meta {
+      margin: 0 0 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
     .sr-only {
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
       overflow: hidden; clip: rect(0,0,0,0); border: 0;
@@ -130,6 +265,47 @@ const sorted = loadAllArticles();
     .ex { margin: 0; color: var(--muted); font-size: 0.86rem; }
     .empty { color: var(--muted); margin: 1rem 0 0; }
     .back { margin-top: 2rem; }
+
+    .art-pager {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .pager-nums {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+    }
+    .pager-btn, .pager-nav {
+      min-width: 2.25rem;
+      height: 2.25rem;
+      padding: 0 0.55rem;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+    .pager-btn:hover, .pager-nav:hover:not(:disabled) {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+    .pager-btn.active {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: #0b0f14;
+    }
+    .pager-nav:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
     @media (max-width: 560px) {
       .row { grid-template-columns: 1fr; }
       .thumb { height: 150px; }
