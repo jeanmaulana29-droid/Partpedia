@@ -1,0 +1,975 @@
+Mengapa Pabrik Bisa Ramai Pesanan tetapi Tetap Rugi? Ini Penyebab yang Sering Tidak Terlihat
+
+Ada kondisi yang terlihat sangat sehat dari luar: order masuk hampir setiap minggu, mesin terus berjalan, operator sibuk, gudang selalu memiliki material, bahkan lembur mulai sering dilakukan. Pemilik perusahaan merasa bisnis sedang tumbuh.
+
+Namun ketika laporan keuangan dibuka, hasilnya justru membuat bingung.
+
+Omzet naik, tetapi kas terasa semakin sempit.
+
+Pesanan bertambah, tetapi utang kepada supplier ikut menumpuk.
+
+Produksi penuh, tetapi keuntungan tidak sebesar yang dibayangkan.
+
+Kondisi seperti ini bukan sesuatu yang aneh dalam bisnis manufaktur. Justru semakin kompleks sebuah operasi produksi, semakin banyak titik yang dapat menggerus keuntungan tanpa terlihat jelas di harga jual.
+
+Masalahnya sering bukan karena perusahaan tidak mempunyai order. Masalahnya adalah perusahaan menerima order yang salah, menghitung biaya secara tidak lengkap, terlalu banyak menyimpan persediaan, membiarkan mesin kehilangan waktu produktif, menghasilkan terlalu banyak rework, atau tidak menyadari bahwa sebagian pelanggan sebenarnya hanya menghasilkan omzet tanpa memberikan margin yang sehat.
+
+Karena itu, dalam manufaktur ada perbedaan besar antara "pabrik yang sibuk" dan "pabrik yang sehat".
+
+Pabrik yang sibuk bisa saja sedang memproduksi kerugian.
+
+Pabrik yang sehat justru memahami dari mana uang datang, ke mana uang pergi, proses mana yang menghasilkan nilai, dan proses mana yang diam-diam menghabiskan margin.
+
+Pesanan Banyak Tidak Sama dengan Laba Banyak
+
+Kesalahan paling sederhana adalah menganggap omzet sebagai ukuran kesehatan bisnis.
+
+Misalnya sebuah perusahaan menerima order senilai Rp500 juta.
+
+Angka tersebut terlihat besar.
+
+Tetapi dari Rp500 juta itu, perusahaan mungkin harus membeli material Rp280 juta, membayar subcontractor Rp80 juta, tenaga kerja langsung Rp45 juta, listrik dan utilitas Rp20 juta, biaya pengiriman Rp15 juta, tooling Rp10 juta, rework Rp8 juta, serta berbagai overhead lainnya.
+
+Jika seluruh biaya dihitung dengan benar, keuntungan sebenarnya mungkin jauh lebih kecil daripada perkiraan awal.
+
+Masalah akan semakin serius jika quotation dibuat hanya berdasarkan material dan ongkos proses.
+
+Biaya engineering, setup mesin, inspection, packaging, administrasi, maintenance, depresiasi, rejection, financing, dan risiko perubahan desain sering tidak terlihat ketika harga pertama kali ditawarkan.
+
+Akibatnya, perusahaan bisa mendapatkan order dengan harga yang tampaknya menguntungkan tetapi sebenarnya terlalu rendah.
+
+Lebih buruk lagi, setelah purchase order diterima, harga tersebut sulit diubah.
+
+Pekerjaan tetap harus diselesaikan.
+
+Material sudah dibeli.
+
+Operator sudah bekerja.
+
+Supplier sudah dibayar.
+
+Pada akhirnya perusahaan menyadari bahwa order tersebut hanya membuat kapasitas produksi penuh tanpa memberikan keuntungan yang memadai.
+
+Omzet Naik, Cash Flow Justru Tertekan
+
+Dalam bisnis manufaktur, laba dan kas bukan hal yang sama.
+
+Perusahaan dapat mencatat penjualan tetapi belum menerima uang dari pelanggan.
+
+Pada saat yang sama, supplier mungkin harus dibayar dalam waktu 30 hari.
+
+Artinya, perusahaan harus membiayai produksi terlebih dahulu.
+
+Bayangkan sebuah perusahaan mendapatkan order Rp1 miliar dengan pembayaran pelanggan 60 hari setelah barang diterima.
+
+Untuk mengerjakan order tersebut, perusahaan harus membeli material Rp400 juta, membayar proses eksternal Rp150 juta, dan menanggung biaya produksi lainnya.
+
+Jika supplier hanya memberikan tempo 30 hari, perusahaan harus mengeluarkan uang lebih dahulu.
+
+Semakin banyak order, semakin besar kebutuhan modal kerja.
+
+Inilah alasan perusahaan dapat mengalami kondisi yang terlihat aneh: penjualan tumbuh tetapi kas semakin tertekan.
+
+Pertumbuhan bisnis manufaktur membutuhkan modal kerja.
+
+Bukan hanya mesin dan gedung.
+
+Persediaan, piutang, uang muka supplier, pekerjaan dalam proses, dan biaya produksi yang belum tertagih semuanya menyerap kas.
+
+Karena itu, pemilik pabrik tidak cukup bertanya:
+
+"Berapa omzet bulan ini?"
+
+Pertanyaan yang lebih penting adalah:
+
+"Berapa uang yang benar-benar masuk?"
+
+"Berapa uang yang harus keluar sebelum customer membayar?"
+
+"Berapa lama uang tertahan dalam proses produksi?"
+
+"Berapa lama invoice berubah menjadi kas?"
+
+Persediaan yang Terlalu Banyak Bisa Menjadi Uang yang Membeku
+
+Gudang yang penuh sering terlihat seperti tanda bahwa perusahaan siap menerima banyak order.
+
+Namun persediaan juga merupakan uang yang berubah bentuk menjadi material.
+
+Jika material tersebut tidak segera digunakan, modal perusahaan tertahan.
+
+Masalahnya tidak berhenti di sana.
+
+Material dapat rusak, berkarat, berubah spesifikasi, hilang, salah penyimpanan, atau menjadi obsolete ketika produk berubah.
+
+Pada industri dengan banyak variasi part, masalah inventory bahkan bisa jauh lebih rumit.
+
+Sebuah perusahaan mungkin memiliki ratusan jenis baut, seal, bearing, gasket, sheet metal, dan material lain.
+
+Masing-masing tampak murah.
+
+Tetapi jika jumlahnya ribuan item, total nilai persediaannya dapat sangat besar.
+
+Karena itu, inventory harus dilihat berdasarkan fungsi dan pergerakannya.
+
+Material yang sangat sering digunakan tentu berbeda perlakuannya dengan material yang hanya digunakan sekali dalam beberapa bulan.
+
+Perusahaan perlu mengetahui mana fast moving item, slow moving item, dan dead stock.
+
+Dead Stock: Barang yang Diam-diam Menggerogoti Modal
+
+Dead stock adalah persediaan yang tidak atau sangat jarang bergerak.
+
+Penyebabnya bermacam-macam.
+
+Spesifikasi produk berubah.
+
+Customer membatalkan proyek.
+
+Perusahaan salah membeli material.
+
+Minimum order supplier terlalu tinggi.
+
+Forecast terlalu optimistis.
+
+Part dibuat terlalu banyak.
+
+Atau perusahaan sekadar membeli karena takut kehabisan.
+
+Dead stock berbahaya karena sering tidak terasa sebagai kerugian langsung.
+
+Uang sudah dikeluarkan ketika material dibeli.
+
+Tetapi selama barang masih berada di gudang, kerugiannya tidak selalu terlihat dalam aktivitas harian.
+
+Baru ketika material tersebut tidak dapat digunakan atau harus dijual dengan harga diskon, kerugiannya menjadi nyata.
+
+Perusahaan yang sehat harus secara berkala menanyakan:
+
+"Barang apa di gudang yang sebenarnya tidak bergerak?"
+
+"Berapa nilainya?"
+
+"Masih bisa digunakan untuk produk lain?"
+
+"Bisa dikembalikan ke supplier?"
+
+"Bisa dijual?"
+
+"Atau harus dihapus dari inventory?"
+
+Semakin cepat masalah tersebut diketahui, semakin cepat modal dapat dibebaskan.
+
+Mesin Berjalan Bukan Berarti Mesin Produktif
+
+Salah satu kesalahan umum di pabrik adalah menganggap mesin yang menyala berarti produktif.
+
+Padahal mesin dapat menyala tetapi tidak menghasilkan output yang seharusnya.
+
+Contohnya mesin CNC sedang berjalan, tetapi cycle time lebih lambat dari target.
+
+Atau mesin sering berhenti beberapa menit untuk adjustment.
+
+Atau operator menunggu material.
+
+Atau tooling sudah aus.
+
+Atau hasil produksi banyak yang harus di-rework.
+
+Semua itu mengurangi produktivitas.
+
+Dalam pengukuran OEE, efektivitas produksi dilihat melalui tiga faktor utama: Availability, Performance, dan Quality. OEE dihitung dengan mengalikan ketiganya. Availability melihat waktu berhenti, Performance melihat kecepatan proses dibandingkan kondisi ideal, sedangkan Quality memperhitungkan produk yang memenuhi spesifikasi.
+
+Karena itu, dua mesin yang sama-sama bekerja selama delapan jam belum tentu menghasilkan nilai yang sama.
+
+Mesin pertama menghasilkan 800 good parts.
+
+Mesin kedua menghasilkan 600 good parts dan membutuhkan rework untuk sebagian produk.
+
+Secara kasat mata keduanya "bekerja".
+
+Secara ekonomi, hasilnya berbeda.
+
+Downtime Kecil yang Terjadi Setiap Hari Bisa Menjadi Besar
+
+Pabrik sering lebih fokus pada breakdown besar.
+
+Jika mesin rusak selama dua hari, semua orang langsung menyadarinya.
+
+Namun kerugian juga bisa berasal dari ratusan gangguan kecil.
+
+Mesin berhenti lima menit.
+
+Menunggu material tujuh menit.
+
+Mengganti tooling sepuluh menit.
+
+Mencari drawing delapan menit.
+
+Menunggu forklift enam menit.
+
+Menunggu approval QC dua belas menit.
+
+Satu kejadian terlihat kecil.
+
+Tetapi jika terjadi berkali-kali dalam sehari, totalnya menjadi jam.
+
+Stop time, changeover, slow cycles, small stops, defect, dan rework merupakan jenis kehilangan yang dapat dianalisis melalui kerangka OEE.
+
+Inilah alasan pencatatan downtime sederhana sangat berguna.
+
+Tidak perlu langsung memasang sistem digital yang mahal.
+
+Operator dapat mencatat alasan mesin berhenti.
+
+Setelah satu bulan, perusahaan akan memiliki data.
+
+Mungkin ternyata 35 persen downtime berasal dari material.
+
+Atau sebagian besar waktu hilang karena changeover.
+
+Atau masalah utama justru tooling.
+
+Data tersebut jauh lebih berharga daripada sekadar mengatakan, "Mesin ini sering bermasalah."
+
+Setup dan Changeover Bisa Menghabiskan Kapasitas
+
+Pada produksi dengan banyak variasi produk, changeover dapat menjadi sumber kehilangan kapasitas yang besar.
+
+Mesin harus berhenti.
+
+Tooling diganti.
+
+Program diganti.
+
+Material dipindahkan.
+
+Fixture diubah.
+
+First piece diperiksa.
+
+Parameter disesuaikan.
+
+Jika setiap pergantian produk membutuhkan satu jam dan dalam sehari terjadi lima kali pergantian, lima jam kapasitas produksi dapat hilang.
+
+Masalahnya bukan selalu harus menghilangkan changeover.
+
+Yang lebih realistis adalah mengurangi waktunya.
+
+Misalnya persiapan tooling dilakukan sebelum mesin berhenti.
+
+Material berikutnya sudah tersedia.
+
+Program sudah disiapkan.
+
+Fixture menggunakan sistem quick change.
+
+Inspection tools sudah siap.
+
+Dengan perubahan sederhana, waktu setup dapat dipangkas.
+
+Ketika dilakukan setiap hari, penghematan tersebut dapat menjadi kapasitas tambahan tanpa membeli mesin baru.
+
+Reject dan Rework Menghancurkan Margin Secara Diam-diam
+
+Sebuah produk reject bukan hanya kehilangan material.
+
+Ada waktu mesin, tenaga operator, inspection, energi, tooling, dan kesempatan produksi yang ikut hilang.
+
+Misalnya sebuah komponen membutuhkan dua jam machining.
+
+Setelah selesai, ternyata dimensinya salah dan harus dibuat ulang.
+
+Perusahaan bukan hanya kehilangan material.
+
+Perusahaan juga kehilangan dua jam kapasitas mesin.
+
+Jika rework membutuhkan tambahan proses, biaya semakin besar.
+
+Masalah lain adalah produk rework kadang tidak dihitung secara serius karena akhirnya masih bisa dikirim.
+
+Padahal waktu tambahan tersebut tetap mengurangi profit.
+
+Karena itu, perusahaan harus membedakan:
+
+First-pass good product.
+
+Rework.
+
+Scrap.
+
+Return dari customer.
+
+Keempatnya memiliki dampak ekonomi berbeda.
+
+Semakin banyak produk yang langsung benar pada proses pertama, semakin baik penggunaan sumber daya.
+
+Quality Bukan Sekadar Urusan QC
+
+Jika quality hanya dianggap sebagai tanggung jawab bagian QC, perusahaan akan terus menemukan defect di ujung proses.
+
+Padahal QC seharusnya bukan tempat "menangkap kesalahan" yang sudah terjadi.
+
+Pencegahan lebih murah daripada pemeriksaan berulang.
+
+Jika operator salah memasang komponen karena fixture tidak memiliki poka-yoke, masalahnya bukan semata-mata operator.
+
+Jika drawing sulit dibaca, engineering juga mempunyai peran.
+
+Jika material salah karena purchasing tidak memiliki sistem part number yang jelas, masalahnya bukan semata-mata QC.
+
+Jika supplier mengirim material yang tidak sesuai karena spesifikasi purchase order tidak lengkap, akar masalah berada pada sistem.
+
+Karena itu, quality harus dilihat sebagai tanggung jawab lintas fungsi.
+
+Purchasing memengaruhi quality.
+
+Engineering memengaruhi quality.
+
+Production memengaruhi quality.
+
+Maintenance memengaruhi quality.
+
+Warehouse memengaruhi quality.
+
+QC mengukur dan memastikan kesesuaian, tetapi kualitas produk dibentuk oleh seluruh proses.
+
+Harga Material Tidak Selalu Menjadi Biaya Terbesar
+
+Ketika menghitung cost, perusahaan sering terlalu fokus pada harga material.
+
+Misalnya material A lebih murah Rp2.000 per kilogram dibanding material B.
+
+Perusahaan langsung memilih material A.
+
+Namun ternyata material A membutuhkan machining time lebih lama, tool wear lebih tinggi, scrap lebih banyak, dan finishing lebih sulit.
+
+Secara harga beli memang lebih murah.
+
+Secara total cost mungkin justru lebih mahal.
+
+Karena itu, material selection harus mempertimbangkan total manufacturing cost.
+
+Beberapa pertanyaan yang perlu diperiksa:
+
+Apakah material mudah diproses?
+
+Berapa machining time?
+
+Bagaimana tool life?
+
+Berapa scrap rate?
+
+Apakah membutuhkan heat treatment?
+
+Apakah membutuhkan finishing khusus?
+
+Apakah material mudah diperoleh?
+
+Apakah kualitas antar supplier konsisten?
+
+Harga beli hanyalah salah satu bagian dari keputusan.
+
+Supplier Murah Belum Tentu Supplier Termurah
+
+Supplier dengan harga quotation paling rendah tidak selalu memberikan total biaya paling rendah.
+
+Jika supplier murah sering terlambat, perusahaan mungkin harus melakukan ekspedisi khusus.
+
+Jika supplier murah sering reject, perusahaan harus melakukan sorting.
+
+Jika supplier murah tidak konsisten, QC membutuhkan lebih banyak waktu.
+
+Jika supplier murah mengubah material tanpa pemberitahuan, risiko customer complaint meningkat.
+
+Semua itu memiliki biaya.
+
+Karena itu, evaluasi supplier sebaiknya melihat beberapa aspek:
+
+- Harga.
+- Kualitas.
+- Lead time.
+- Konsistensi.
+- Respons komunikasi.
+- Kemampuan memenuhi volume.
+- Kemampuan dokumentasi.
+- Fleksibilitas.
+- Risiko supply.
+
+Harga tetap penting.
+
+Tetapi harga harus ditempatkan dalam total cost dan risiko.
+
+Pabrik Bisa Rugi karena Terlalu Banyak Jenis Produk
+
+Diversifikasi memang dapat membuka pasar.
+
+Tetapi terlalu banyak variasi juga meningkatkan kompleksitas.
+
+Setiap produk membutuhkan drawing, BOM, material, setup, tooling, inspection, packaging, inventory, supplier, dokumen, dan maintenance knowledge.
+
+Bayangkan perusahaan menjual 1.000 jenis part tetapi hanya 100 jenis yang menghasilkan sebagian besar omzet dan profit.
+
+Sisanya mungkin justru membuat sistem semakin rumit.
+
+Karena itu, analisis product profitability sangat penting.
+
+Jangan hanya bertanya:
+
+"Produk mana yang paling banyak terjual?"
+
+Tanyakan:
+
+"Produk mana yang memberikan kontribusi profit terbaik setelah semua biaya diperhitungkan?"
+
+Produk dengan volume besar belum tentu menjadi produk terbaik.
+
+Produk custom dengan volume kecil bisa memiliki margin jauh lebih sehat.
+
+Pelanggan Besar Tidak Selalu Menjadi Pelanggan Terbaik
+
+Ada anggapan bahwa semakin besar customer, semakin bagus bisnisnya.
+
+Tidak selalu.
+
+Customer besar dapat memberikan volume tinggi, tetapi mungkin memiliki payment term panjang, proses approval rumit, banyak persyaratan, dan tekanan harga tinggi.
+
+Customer menengah mungkin memberikan order lebih kecil tetapi membayar lebih cepat, repeat order tinggi, dan membutuhkan lebih sedikit administrasi.
+
+Perusahaan harus menghitung customer profitability.
+
+Lihat bukan hanya nilai PO.
+
+Perhatikan:
+
+Total omzet.
+
+Margin.
+
+Biaya pelayanan.
+
+Payment term.
+
+Biaya khusus.
+
+Frekuensi perubahan.
+
+Jumlah complaint.
+
+Biaya logistik.
+
+Kebutuhan engineering.
+
+Beban administrasi.
+
+Setelah dihitung, perusahaan mungkin menemukan sesuatu yang mengejutkan.
+
+Customer dengan omzet terbesar belum tentu memberikan keuntungan terbesar.
+
+Quotation Harus Dibuat Berdasarkan Proses Nyata
+
+Quotation manufaktur sebaiknya tidak dibuat hanya dengan cara:
+
+Material + ongkos mesin + margin.
+
+Model tersebut terlalu sederhana untuk pekerjaan kompleks.
+
+Costing yang lebih matang perlu mempertimbangkan:
+
+Material cost.
+
+Direct labor.
+
+Machine cost.
+
+Setup.
+
+Tooling.
+
+Consumable.
+
+Subcontract process.
+
+Inspection.
+
+Packaging.
+
+Transportation.
+
+Engineering.
+
+Overhead.
+
+Reject allowance.
+
+Financing cost.
+
+Profit margin.
+
+Untuk pekerjaan custom, engineering time juga harus dihargai.
+
+Membuat drawing, melakukan revisi, berdiskusi dengan customer, mencari material, membuat prototype, dan menyelesaikan masalah bukan pekerjaan gratis.
+
+Jika semua itu tidak dimasukkan ke quotation, perusahaan sebenarnya mensubsidi pelanggan.
+
+Mesin Mahal Dapat Menjadi Beban Jika Utilisasinya Rendah
+
+Pembelian mesin sering dianggap sebagai investasi otomatis.
+
+Padahal mesin baru menjadi investasi yang baik jika menghasilkan manfaat ekonomi.
+
+Mesin memiliki depresiasi.
+
+Mesin membutuhkan maintenance.
+
+Mesin membutuhkan operator.
+
+Mesin membutuhkan tooling.
+
+Mesin membutuhkan ruang.
+
+Mesin membutuhkan listrik.
+
+Mesin membutuhkan spare part.
+
+Jika utilisasi rendah, fixed cost per unit menjadi tinggi.
+
+Karena itu, sebelum membeli mesin, perusahaan harus membuat simulasi.
+
+Contohnya:
+
+Harga mesin: Rp1,2 miliar.
+
+Biaya instalasi dan pendukung: Rp150 juta.
+
+Total investasi: Rp1,35 miliar.
+
+Kemudian hitung berapa contribution margin tambahan yang dapat dihasilkan per bulan.
+
+Jika mesin hanya menghasilkan tambahan margin Rp15 juta per bulan, payback akan jauh lebih lama dibandingkan jika mesin menghasilkan Rp50 juta per bulan.
+
+Namun jangan hanya menggunakan payback period.
+
+Pertimbangkan pula umur mesin, maintenance, kapasitas, risiko permintaan, nilai residu, dan alternatif outsourcing.
+
+Kadang outsourcing tetap lebih masuk akal.
+
+Kadang membeli mesin justru menjadi keputusan yang tepat.
+
+Yang penting keputusan dibuat berdasarkan angka.
+
+OEE Tinggi Tidak Otomatis Berarti Profit Tinggi
+
+OEE merupakan indikator penting untuk produktivitas mesin, tetapi OEE bukan laporan laba rugi.
+
+Sebuah mesin dapat memiliki OEE tinggi tetapi menghasilkan produk dengan margin rendah.
+
+Sebaliknya, produk dengan OEE lebih rendah bisa saja memberikan contribution margin yang lebih besar.
+
+Karena itu, KPI produksi harus dihubungkan dengan KPI bisnis.
+
+Jangan hanya melihat:
+
+OEE.
+
+Output.
+
+Downtime.
+
+Reject rate.
+
+Tambahkan:
+
+Cost per good part.
+
+Contribution margin.
+
+Scrap cost.
+
+Energy cost.
+
+Labor cost.
+
+On-time delivery.
+
+Inventory.
+
+Working capital.
+
+Dengan demikian, tim produksi memahami bahwa peningkatan produktivitas harus menghasilkan dampak ekonomi.
+
+OEE terutama berguna untuk memahami kehilangan pada Availability, Performance, dan Quality, bukan untuk menggantikan seluruh ukuran kinerja bisnis.
+
+Pabrik Harus Mencari "Hidden Factory"
+
+Hidden factory adalah kapasitas yang sebenarnya sudah dimiliki perusahaan tetapi hilang karena berbagai pemborosan.
+
+Contohnya:
+
+Mesin tersedia tetapi sering menunggu.
+
+Operator tersedia tetapi menunggu material.
+
+Material tersedia tetapi drawing belum disetujui.
+
+Mesin siap tetapi tooling belum dipersiapkan.
+
+Produk selesai tetapi menunggu inspection.
+
+Barang sudah diinspeksi tetapi menunggu packaging.
+
+Barang sudah dikemas tetapi menunggu pengiriman.
+
+Tidak ada mesin baru yang dibutuhkan untuk memperbaiki semua itu.
+
+Yang dibutuhkan adalah perbaikan aliran.
+
+TEEP memperluas pandangan OEE dengan memasukkan utilization, sehingga perusahaan dapat melihat seberapa besar kapasitas waktu yang benar-benar produktif dibandingkan seluruh waktu yang tersedia.
+
+Bagi pabrik dengan investasi mesin besar, menemukan kapasitas tersembunyi seperti ini bisa jauh lebih murah daripada membeli mesin tambahan.
+
+Jangan Menambah Mesin untuk Menyelesaikan Masalah Sistem
+
+Ketika produksi terlambat, reaksi yang umum adalah menambah mesin.
+
+Tetapi jika akar masalah sebenarnya adalah scheduling, material shortage, setup lama, atau kualitas buruk, mesin baru tidak akan menyelesaikan masalah.
+
+Justru masalah bisa semakin besar.
+
+Kini perusahaan mempunyai lebih banyak mesin yang harus dijadwalkan.
+
+Lebih banyak maintenance.
+
+Lebih banyak operator.
+
+Lebih banyak tooling.
+
+Lebih banyak investasi.
+
+Sebelum membeli mesin, cari bottleneck sebenarnya.
+
+Bisa jadi bottleneck ada pada satu proses tertentu.
+
+Bisa jadi bottleneck ada pada supplier.
+
+Bisa jadi bottleneck ada pada inspection.
+
+Bisa jadi bottleneck ada pada engineering approval.
+
+Atau mungkin bottleneck adalah keputusan manajemen yang terlalu lambat.
+
+Identifikasi masalah dahulu.
+
+Investasi kemudian.
+
+Maintenance yang Buruk Bisa Mengubah Profit Menjadi Biaya
+
+Maintenance sering dilihat sebagai biaya.
+
+Padahal maintenance adalah cara mempertahankan kemampuan produksi.
+
+Jika mesin breakdown, biaya bukan hanya spare part.
+
+Ada kehilangan produksi.
+
+Ada overtime.
+
+Ada kemungkinan keterlambatan delivery.
+
+Ada potensi penalty.
+
+Ada customer complaint.
+
+Ada biaya ekspedisi.
+
+Ada kemungkinan kehilangan order berikutnya.
+
+Karena itu, preventive maintenance harus disesuaikan dengan risiko mesin.
+
+Mesin yang menjadi bottleneck produksi memiliki konsekuensi downtime lebih besar daripada mesin yang memiliki banyak alternatif.
+
+Data downtime juga dapat digunakan untuk menentukan prioritas maintenance.
+
+Tidak semua mesin harus mendapatkan perlakuan sama.
+
+Fokuskan sumber daya pada aset yang paling memengaruhi operasi.
+
+Jangan Mengejar Utilisasi dengan Memproduksi Barang yang Belum Dibutuhkan
+
+Ada jebakan lain.
+
+Perusahaan ingin meningkatkan utilisasi mesin, lalu memproduksi barang untuk stok meskipun demand belum ada.
+
+Secara produksi terlihat bagus.
+
+Mesin berjalan.
+
+Output naik.
+
+Utilisasi meningkat.
+
+Tetapi inventory juga meningkat.
+
+Jika barang tidak segera terjual, perusahaan hanya mengubah kapasitas mesin menjadi persediaan.
+
+Karena itu, utilisasi harus dibaca bersama demand dan inventory.
+
+Mesin produktif bukan berarti harus selalu membuat barang.
+
+Mesin produktif berarti digunakan untuk menghasilkan nilai yang dibutuhkan bisnis.
+
+Ini penting terutama pada perusahaan yang menggunakan sistem make-to-stock.
+
+Jangan sampai KPI produksi mendorong perilaku yang merugikan perusahaan secara keseluruhan.
+
+Lembur Bukan Solusi Permanen
+
+Lembur dapat menjadi alat untuk mengejar kebutuhan sementara.
+
+Tetapi jika lembur menjadi kebiasaan, perusahaan harus mencari akar masalah.
+
+Mengapa produksi selalu terlambat?
+
+Apakah kapasitas memang kurang?
+
+Apakah scheduling buruk?
+
+Apakah changeover terlalu lama?
+
+Apakah downtime tinggi?
+
+Apakah terlalu banyak rework?
+
+Apakah material datang terlambat?
+
+Apakah target penjualan terlalu agresif?
+
+Lembur memiliki biaya langsung dan tidak langsung.
+
+Biaya tenaga kerja meningkat.
+
+Fatigue dapat meningkat.
+
+Risiko kesalahan dapat meningkat.
+
+Maintenance mungkin tertunda.
+
+Produktivitas shift berikutnya dapat terpengaruh.
+
+Karena itu, lembur sebaiknya dipandang sebagai instrumen kapasitas sementara, bukan pengganti perbaikan sistem.
+
+Cara Sederhana Mengetahui Bagian Mana yang Membuat Pabrik Rugi
+
+Tidak perlu langsung membuat sistem analitik yang rumit.
+
+Mulai dengan lima laporan sederhana.
+
+Pertama, laporan profit per produk.
+
+Kedua, laporan profit per customer.
+
+Ketiga, laporan downtime mesin.
+
+Keempat, laporan reject dan rework.
+
+Kelima, laporan inventory yang tidak bergerak.
+
+Jika lima laporan ini sudah tersedia, banyak masalah akan mulai terlihat.
+
+Kemudian tambahkan data:
+
+Lead time.
+
+On-time delivery.
+
+Machine utilization.
+
+Energy consumption.
+
+Labor productivity.
+
+Purchase price variance.
+
+Supplier performance.
+
+Semakin matang data, semakin mudah manajemen mengambil keputusan.
+
+Manajemen Pabrik Harus Bisa Membaca Angka dan Lantai Produksi
+
+Ada dua ekstrem yang sama-sama berbahaya.
+
+Manajemen yang hanya melihat laporan keuangan.
+
+Dan manajemen yang hanya melihat kondisi lantai produksi.
+
+Jika hanya melihat laporan keuangan, masalah operasional mungkin terlambat terlihat.
+
+Jika hanya melihat produksi, perusahaan bisa sangat produktif tetapi tidak menguntungkan.
+
+Manajemen manufaktur yang kuat harus menghubungkan keduanya.
+
+Misalnya:
+
+Downtime naik → kapasitas turun → delivery terlambat → ekspedisi meningkat → margin turun.
+
+Reject naik → material terbuang → jam mesin bertambah → delivery tertekan → biaya naik.
+
+Inventory naik → cash tertahan → kemampuan membeli material baru turun → produksi berikutnya terganggu.
+
+Semua masalah tersebut saling terhubung.
+
+Inilah sebabnya manufaktur bukan hanya urusan mesin.
+
+Manufaktur adalah sistem ekonomi yang menggunakan mesin, manusia, material, informasi, energi, dan waktu untuk menciptakan produk.
+
+Pabrik yang Sehat Harus Mengerti Waktu
+
+Waktu adalah salah satu aset yang paling mudah disia-siakan.
+
+Material yang mahal dapat dihitung.
+
+Mesin yang mahal dapat dicatat.
+
+Tetapi waktu yang hilang sering tidak terlihat.
+
+Lima menit menunggu tidak terasa.
+
+Sepuluh menit mencari drawing tidak terasa.
+
+Lima belas menit menunggu forklift tidak terasa.
+
+Namun jika dikalikan dengan jumlah operator, shift, mesin, dan hari kerja, nilainya menjadi besar.
+
+Karena itu, banyak improvement manufacturing sebenarnya bukan tentang membuat proses menjadi jauh lebih cepat.
+
+Kadang cukup menghilangkan waktu menunggu.
+
+Itulah mengapa value stream, time study, takt time, setup reduction, dan loss analysis menjadi penting.
+
+Waktu harus diperlakukan sebagai biaya.
+
+Apa yang Harus Dilakukan Jika Pabrik Sudah Terlanjur Ramai tetapi Margin Kecil?
+
+Jangan langsung menambah order.
+
+Pertama, hentikan kebiasaan menerima semua pekerjaan tanpa analisis.
+
+Kemudian lakukan audit terhadap order yang sudah berjalan.
+
+Kelompokkan berdasarkan margin.
+
+Cari produk yang:
+
+- margin tinggi,
+- margin sedang,
+- margin rendah,
+- dan merugi.
+
+Kemudian cari penyebabnya.
+
+Jika produk merugi karena harga terlalu rendah, perbaiki pricing pada quotation berikutnya.
+
+Jika karena reject, perbaiki proses.
+
+Jika karena setup terlalu lama, lakukan setup reduction.
+
+Jika karena material terlalu mahal, cari alternatif supplier atau material yang sesuai.
+
+Jika karena customer sering mengubah desain, buat aturan engineering change.
+
+Jika karena payment term terlalu panjang, negosiasikan struktur pembayaran.
+
+Jika karena volume terlalu kecil, pertimbangkan minimum order quantity atau biaya setup.
+
+Jangan memperbaiki semuanya sekaligus.
+
+Pilih tiga sumber kerugian terbesar.
+
+Fokuskan energi di sana.
+
+Strategi ini lebih realistis daripada membuat puluhan program improvement yang akhirnya tidak selesai.
+
+Dari Pabrik Sibuk Menjadi Pabrik Sehat
+
+Tujuan akhir bukan membuat mesin bekerja 24 jam tanpa henti.
+
+Tujuan akhirnya adalah menciptakan output yang dibutuhkan pelanggan dengan biaya yang terkendali dan kualitas yang konsisten.
+
+Pabrik yang sehat mempunyai hubungan yang jelas antara:
+
+Order.
+
+Planning.
+
+Material.
+
+Produksi.
+
+Quality.
+
+Inventory.
+
+Delivery.
+
+Invoice.
+
+Cash.
+
+Jika salah satu bagian terganggu, efeknya dapat menjalar ke bagian lain.
+
+Karena itu, peningkatan manufaktur tidak boleh hanya mengejar output.
+
+Output harus menjadi good output.
+
+Good output harus menghasilkan revenue.
+
+Revenue harus menghasilkan margin.
+
+Margin harus berubah menjadi cash.
+
+Cash harus cukup untuk membiayai operasi dan pertumbuhan.
+
+Inilah rantai yang harus dipahami manajemen.
+
+Kesimpulan
+
+Pabrik bisa ramai pesanan tetapi tetap rugi karena banyaknya order hanya menunjukkan adanya aktivitas bisnis, bukan kualitas ekonominya.
+
+Kerugian dapat muncul dari quotation yang terlalu rendah, biaya produksi yang tidak dihitung lengkap, inventory yang terlalu besar, mesin yang banyak kehilangan waktu produktif, reject dan rework, supplier yang tidak konsisten, customer dengan margin rendah, payment term yang terlalu panjang, hingga investasi mesin yang tidak sesuai kebutuhan.
+
+Karena itu, perusahaan manufaktur tidak cukup hanya bertanya, "Berapa banyak yang kita produksi?"
+
+Pertanyaan yang lebih penting adalah:
+
+"Berapa banyak good product yang kita hasilkan?"
+
+"Berapa biaya sebenarnya untuk menghasilkan satu produk?"
+
+"Produk mana yang menghasilkan margin?"
+
+"Customer mana yang sehat?"
+
+"Berapa kapasitas yang sebenarnya hilang?"
+
+"Berapa uang yang tertahan di inventory dan piutang?"
+
+Dan yang paling penting:
+
+"Apakah aktivitas produksi kita benar-benar menghasilkan nilai ekonomi?"
+
+OEE dapat membantu perusahaan memahami kehilangan pada Availability, Performance, dan Quality, tetapi angka tersebut harus dibaca bersama indikator biaya, margin, inventory, dan cash flow. Pengukuran OEE dirancang untuk menunjukkan produktivitas waktu produksi dan membantu mengidentifikasi sumber kehilangan, bukan menggantikan seluruh ukuran kinerja bisnis.
+
+Pada akhirnya, pabrik yang hebat bukan hanya pabrik yang penuh aktivitas.
+
+Pabrik yang hebat adalah pabrik yang tahu aktivitas mana yang menghasilkan uang, aktivitas mana yang menciptakan kualitas, dan aktivitas mana yang harus dihentikan karena hanya menghabiskan sumber daya.
+
+Itulah perbedaan antara pabrik yang sekadar sibuk dan pabrik yang benar-benar sehat.
+
+Sumber referensi:
+
+1. Vorne/OEE.com, What Is OEE?
+2. Vorne/OEE.com, OEE Factors: Availability, Performance, and Quality.
+3. Vorne/OEE.com, Calculate OEE.
+4. Vorne/OEE.com, Practical OEE.
+5. Vorne/OEE.com, Calculate TEEP.
+6. Vorne/OEE.com, OEE FAQ.
