@@ -1,0 +1,1144 @@
+Seperti Apa Struktur Manajemen yang Tepat untuk Sebuah Perusahaan?
+Membangun Organisasi yang Jelas, Cepat, dan Tidak Bergantung pada Satu
+Orang
+
+Banyak perusahaan menganggap struktur manajemen selesai ketika mereka
+sudah mempunyai bagan organisasi. Ada Direktur di atas, beberapa General
+Manager di bawahnya, lalu Manager, Supervisor, dan Staff. Garis komando
+dibuat, jabatan diberi nama, lalu organisasi dianggap siap bekerja.
+
+Padahal, bagan organisasi hanya menggambarkan siapa berada di mana. Ia
+belum menjawab pertanyaan yang jauh lebih penting: siapa sebenarnya yang
+boleh mengambil keputusan, siapa yang bertanggung jawab atas hasil,
+bagaimana masalah bergerak dari lapangan ke manajemen, siapa yang berhak
+menghentikan proses ketika ada risiko, dan apa yang terjadi ketika dua
+departemen memiliki kepentingan yang berbeda.
+
+Inilah alasan mengapa perusahaan dengan struktur yang terlihat rapi di
+atas kertas masih bisa berjalan lambat, penuh rapat, saling lempar
+tanggung jawab, dan sangat bergantung pada keputusan satu atau dua
+orang.
+
+Struktur manajemen yang tepat bukan struktur yang paling banyak jabatan
+atau paling sedikit level. Struktur yang tepat adalah struktur yang
+membuat pekerjaan, keputusan, tanggung jawab, informasi, dan sumber daya
+bergerak dengan jelas menuju tujuan perusahaan.
+
+McKinsey menekankan bahwa tidak ada satu angka universal untuk jumlah
+bawahan yang ideal bagi seorang manajer. Span of control perlu
+disesuaikan dengan jenis pekerjaan, kompleksitas, dan peran manajernya.
+Deloitte menempatkan kejelasan decision rights, akuntabilitas,
+distribusi kewenangan, dan koordinasi lintas fungsi sebagai bagian
+penting dari desain organisasi. ISO juga mendefinisikan sistem manajemen
+sebagai kumpulan elemen yang saling berinteraksi, termasuk struktur,
+peran, tanggung jawab, perencanaan, dan operasi.
+
+Artinya, pertanyaan yang benar bukan sekadar “bagaimana bentuk struktur
+organisasinya?”, tetapi “bagaimana perusahaan ini harus diatur agar
+keputusan yang tepat dibuat oleh orang yang tepat, pada tingkat yang
+tepat, dengan informasi yang tepat?”
+
+Struktur Organisasi Bukan Tujuan Akhir
+
+Ada perusahaan yang sibuk memperbaiki kotak-kotak di organizational
+chart setiap kali terjadi masalah. Manager dipindahkan, departemen
+digabung, jabatan baru dibuat, kemudian semua orang berharap kinerja
+membaik.
+
+Masalahnya, gangguan organisasi sering bukan berasal dari posisi
+kotaknya.
+
+Jika produksi terlambat karena keputusan pembelian menunggu tanda tangan
+terlalu banyak level, memindahkan posisi Manager Produksi tidak otomatis
+menyelesaikan masalah.
+
+Jika pelanggan menerima produk bermasalah karena QC tidak mempunyai
+kewenangan menahan barang, menambah satu Supervisor QC juga belum tentu
+menyelesaikannya.
+
+Jika maintenance selalu terlambat karena produksi merasa mesin harus
+terus berjalan sementara engineering membutuhkan waktu untuk perbaikan,
+masalahnya adalah konflik prioritas dan kewenangan, bukan sekadar jumlah
+personel.
+
+McKinsey dalam riset operating model yang diperbarui pada 2025
+menekankan bahwa struktur hanyalah salah satu bagian dari sistem. Menata
+ulang organigram tanpa mengubah proses dan cara kerja dapat membuat
+biaya serta masalah lama kembali muncul.
+
+Karena itu, desain organisasi sebaiknya dimulai dari pekerjaan dan
+keputusan yang benar-benar harus terjadi, bukan dari keinginan membuat
+jabatan baru.
+
+Empat Lapisan yang Perlu Dibedakan
+
+Salah satu sumber kekacauan manajemen adalah mencampur empat hal yang
+sebenarnya berbeda: struktur, proses, kewenangan, dan akuntabilitas.
+
+Struktur menjawab siapa melapor kepada siapa.
+
+Proses menjawab bagaimana pekerjaan bergerak dari awal sampai akhir.
+
+Kewenangan menjawab siapa yang boleh memutuskan.
+
+Akuntabilitas menjawab siapa yang harus mempertanggungjawabkan hasil.
+
+Keempatnya harus saling mengunci.
+
+Misalnya perusahaan memiliki proses penanganan keluhan pelanggan.
+Struktur mungkin menempatkan Customer Service di bawah Sales. Namun
+kewenangan untuk menyetujui replacement bisa berada di Quality atau
+Operations. Akuntabilitas terhadap biaya klaim mungkin berada pada
+Business Unit Manager.
+
+Kalau ketiganya tidak jelas, masalah mudah berubah menjadi debat: Sales
+merasa QC yang harus bertanggung jawab, QC merasa Sales yang menjanjikan
+sesuatu kepada pelanggan, sementara Finance menolak biaya yang tidak
+mempunyai dasar.
+
+Struktur yang baik mencegah konflik seperti ini sebelum terjadi.
+
+Direktur Tidak Seharusnya Menjadi “Mesin Keputusan” Perusahaan
+
+Salah satu tanda organisasi yang belum matang adalah terlalu banyak
+keputusan naik ke puncak.
+
+Pembelian kecil menunggu Direktur.
+
+Persetujuan trial menunggu Direktur.
+
+Perubahan jadwal produksi menunggu Direktur.
+
+Keluhan pelanggan menunggu Direktur.
+
+Rekrutmen posisi operasional menunggu Direktur.
+
+Bahkan masalah teknis sehari-hari pun harus ditanyakan kepada Direktur.
+
+Pada awal perusahaan, kondisi ini mungkin masuk akal. Pemilik biasanya
+mengetahui hampir semua detail bisnis. Namun ketika perusahaan tumbuh,
+pola tersebut berubah menjadi bottleneck.
+
+Direktur akhirnya bukan lagi memimpin perusahaan, tetapi menjadi pusat
+approval.
+
+Padahal pekerjaan manajemen puncak seharusnya semakin banyak bergeser ke
+arah strategi, alokasi modal, risiko besar, kepemimpinan, budaya,
+pengembangan bisnis, dan keputusan yang memang berdampak lintas
+perusahaan.
+
+Deloitte menjelaskan konsep decision rights dengan pertanyaan sederhana:
+siapa yang berwenang membuat keputusan, keputusan apa yang harus dibuat,
+dan bagaimana proses pengambilan keputusan tersebut berjalan. Kejelasan
+ini membantu mencegah keputusan penting menjadi kabur di antara banyak
+pihak.
+
+Perusahaan yang sehat bukan perusahaan yang semua keputusan dibuat oleh
+Direktur. Perusahaan yang sehat adalah perusahaan yang Direktur tahu
+keputusan mana yang harus ia ambil sendiri dan keputusan mana yang harus
+didelegasikan.
+
+Middle Management Bukan Sekadar “Perantara”
+
+Manager dan Supervisor sering diperlakukan seolah-olah tugas mereka
+hanya meneruskan instruksi dari atas ke bawah.
+
+Padahal middle management adalah salah satu bagian paling penting dalam
+organisasi.
+
+Top management melihat perusahaan dari sudut strategi dan hasil bisnis.
+
+Frontline melihat kenyataan operasional.
+
+Middle management seharusnya menjadi penghubung antara keduanya.
+
+Mereka menerjemahkan target bisnis menjadi sistem kerja, mengalokasikan
+sumber daya, menghilangkan hambatan, mengendalikan performa, dan membawa
+informasi lapangan ke atas.
+
+Jika middle management hanya menjadi penyampai perintah, organisasi akan
+kehilangan salah satu fungsi pentingnya: menerjemahkan strategi menjadi
+eksekusi.
+
+Namun middle management juga bisa terlalu banyak. Ketika setiap
+keputusan harus melewati Manager A, Senior Manager B, General Manager C,
+Director D, dan akhirnya Owner, organisasi kehilangan kecepatan.
+
+McKinsey menunjukkan bahwa span of control tidak mempunyai angka ideal
+universal. Jumlah bawahan yang tepat bergantung pada kompleksitas
+pekerjaan dan tipe peran manajerial. Karena itu, meniru struktur
+perusahaan lain secara mentah bisa menghasilkan organisasi yang tidak
+cocok dengan kondisi sendiri.
+
+Berapa Banyak Level Manajemen yang Dibutuhkan?
+
+Tidak ada angka sakral.
+
+Perusahaan kecil mungkin cukup dengan Owner/Director, Manager, dan
+Supervisor/Staff.
+
+Perusahaan menengah dapat membutuhkan Director, General Manager,
+Manager, Supervisor, dan Staff.
+
+Perusahaan besar atau multi-site bisa membutuhkan lebih banyak lapisan.
+
+Namun setiap lapisan seharusnya memiliki alasan.
+
+Pertanyaan yang perlu diajukan bukan “apakah kita membutuhkan General
+Manager?” tetapi:
+
+Keputusan apa yang membutuhkan posisi ini?
+
+Masalah apa yang akan menjadi lebih cepat diselesaikan?
+
+Tim seperti apa yang harus dikoordinasikan?
+
+Apa tanggung jawab yang tidak dapat dijalankan dengan baik tanpa posisi
+tersebut?
+
+Bagaimana kinerja posisi tersebut diukur?
+
+Jika jawabannya tidak jelas, jabatan tersebut berpotensi hanya menambah
+birokrasi.
+
+Sebaliknya, terlalu sedikit level juga bisa menjadi masalah. Seorang
+Manager yang memiliki terlalu banyak bawahan, terlalu banyak fungsi, dan
+terlalu banyak keputusan dapat menjadi bottleneck baru.
+
+Jadi tujuan bukan sekadar membuat organisasi flat. Tujuannya adalah
+menemukan jumlah lapisan dan rentang kendali yang sesuai dengan
+kompleksitas pekerjaan.
+
+Struktur Fungsional Masih Sangat Berguna
+
+Untuk banyak perusahaan industri, struktur fungsional masih menjadi
+fondasi yang sangat masuk akal.
+
+Contohnya:
+
+Direktur ├── Operations │ ├── Production │ ├── Maintenance │ ├──
+Engineering │ └── Warehouse/Logistics ├── Quality ├── Sales & Marketing
+├── Finance & Accounting ├── Procurement/Supply Chain ├── Human
+Resources └── HSE
+
+Struktur ini memberikan spesialisasi.
+
+Production fokus pada output.
+
+Quality fokus pada conformity dan kualitas.
+
+Maintenance fokus pada reliability aset.
+
+Procurement fokus pada supply dan commercial terms.
+
+Finance menjaga kesehatan keuangan.
+
+HR mengelola manusia dan sistem ketenagakerjaan.
+
+HSE menjaga aspek keselamatan dan lingkungan.
+
+Masalah muncul ketika fungsi berubah menjadi silo.
+
+Production mengejar output.
+
+Quality mengejar conformity.
+
+Maintenance mengejar reliability.
+
+Finance mengejar cash.
+
+Sales mengejar customer.
+
+Semua benar dari sudut masing-masing. Tetapi perusahaan tidak bisa
+dijalankan hanya dengan memenangkan target masing-masing departemen.
+
+Karena itu, struktur fungsional perlu dilengkapi mekanisme koordinasi
+lintas fungsi.
+
+Jangan Membuat KPI yang Saling Bertabrakan
+
+Bayangkan Production diberi KPI output sebanyak mungkin.
+
+Quality diberi KPI defect serendah mungkin.
+
+Maintenance diberi KPI downtime serendah mungkin.
+
+Procurement diberi KPI harga pembelian serendah mungkin.
+
+Finance diberi KPI inventory serendah mungkin.
+
+Sales diberi KPI penjualan setinggi mungkin.
+
+Jika KPI tersebut berdiri sendiri tanpa target bersama, konflik hampir
+pasti muncul.
+
+Production mungkin ingin menjalankan mesin lebih lama untuk mengejar
+tonase.
+
+Maintenance ingin menghentikan mesin untuk preventive maintenance.
+
+Quality ingin menahan material yang tidak sesuai.
+
+Finance ingin mengurangi persediaan.
+
+Procurement memilih pemasok dengan harga rendah.
+
+Sales menjanjikan lead time cepat kepada pelanggan.
+
+Tidak ada fungsi yang otomatis salah. Sistem KPI-nya yang mungkin tidak
+menyatukan mereka.
+
+Karena itu, selain KPI departemen, perusahaan perlu memiliki beberapa
+shared metrics.
+
+Dalam perusahaan industri, contohnya bisa berupa:
+
+On-time delivery.
+
+Customer complaint rate.
+
+First pass yield.
+
+Overall equipment effectiveness.
+
+Cost of poor quality.
+
+Inventory days.
+
+Working capital.
+
+Safety performance.
+
+Customer retention.
+
+Operating profit.
+
+Dengan demikian setiap fungsi tetap memiliki KPI spesifik, tetapi semua
+orang juga memiliki ukuran keberhasilan perusahaan secara bersama.
+
+Siapa yang Memiliki Hak Menghentikan Produksi?
+
+Ini contoh sederhana tetapi sangat penting.
+
+Bayangkan ditemukan defect serius yang berpotensi mengirim produk tidak
+sesuai ke pelanggan.
+
+Siapa yang boleh menghentikan line?
+
+Jika jawabannya “tergantung approval Manager”, perusahaan mungkin sedang
+menciptakan risiko.
+
+Untuk beberapa kondisi tertentu, fungsi yang bertanggung jawab terhadap
+quality atau safety perlu memiliki kewenangan yang jelas untuk melakukan
+hold atau stop sesuai prosedur dan kriteria yang telah ditentukan.
+
+Tetapi kewenangan tersebut juga harus mempunyai batas dan proses
+eskalasi.
+
+Misalnya:
+
+QC menemukan defect kritis → material/produk di-hold → produksi dan
+atasan terkait menerima notifikasi → investigasi dilakukan → disposition
+ditentukan oleh pihak yang berwenang → tindakan korektif → release
+setelah persyaratan terpenuhi.
+
+Dengan sistem seperti ini, perusahaan tidak bergantung pada keberanian
+personal seorang QC.
+
+Struktur manajemen yang baik mengubah “orang yang berani” menjadi
+“sistem yang benar”.
+
+RACI Berguna, tetapi Jangan Dijadikan Ritual
+
+Salah satu alat yang umum digunakan untuk memperjelas peran adalah RACI:
+
+Responsible — siapa yang menjalankan pekerjaan.
+
+Accountable — siapa pemilik akhir hasil.
+
+Consulted — siapa yang perlu dimintai masukan.
+
+Informed — siapa yang perlu diberi informasi.
+
+Deloitte menggunakan pendekatan RACI sebagai salah satu alat untuk
+memperjelas decision rights dan governance. Namun Harvard Business
+Review juga menekankan bahwa alat seperti RACI tidak otomatis
+menyelesaikan masalah jika keputusan itu sendiri belum didefinisikan
+dengan jelas.
+
+Ini penting.
+
+Perusahaan kadang membuat tabel RACI berisi ratusan aktivitas. Semua
+orang diberi huruf. Dokumen selesai, tetapi ketika masalah nyata muncul,
+semua orang tetap bertanya kepada siapa harus meminta keputusan.
+
+RACI seharusnya digunakan untuk keputusan dan aktivitas yang memang
+kritis.
+
+Contohnya:
+
+Siapa yang boleh approve supplier baru?
+
+Siapa yang menentukan material boleh dipakai?
+
+Siapa yang menyetujui perubahan spesifikasi?
+
+Siapa yang boleh mengubah jadwal produksi?
+
+Siapa yang menyetujui overtime besar?
+
+Siapa yang berwenang memberikan kompensasi kepada pelanggan?
+
+Siapa yang memutuskan investasi mesin?
+
+Semakin besar dampak keputusan, semakin penting kejelasan hak keputusan
+tersebut.
+
+Delegasi Bukan Melepas Tanggung Jawab
+
+Ada kesalahpahaman bahwa ketika Direktur mendelegasikan kewenangan,
+Direktur berarti tidak lagi bertanggung jawab.
+
+Bukan begitu.
+
+Delegasi berarti memberikan kewenangan mengambil keputusan sekaligus
+menetapkan batas, target, informasi yang diperlukan, dan mekanisme
+kontrol.
+
+Contohnya seorang Plant Manager diberi kewenangan mengatur operasi
+pabrik dalam batas tertentu.
+
+Direktur tidak perlu menyetujui setiap jadwal maintenance.
+
+Tetapi Direktur tetap perlu melihat indikator seperti:
+
+output,
+
+quality,
+
+downtime,
+
+safety,
+
+cost,
+
+inventory,
+
+delivery,
+
+dan profit.
+
+Dengan demikian kontrol tetap ada tanpa mikro-manajemen.
+
+Manajemen yang matang bukan “semua dikontrol dari atas”, tetapi “kontrol
+dilakukan melalui sistem dan indikator yang tepat”.
+
+Informasi Harus Bergerak Lebih Cepat daripada Masalah
+
+Struktur organisasi yang bagus tetapi sistem informasinya buruk tetap
+akan lambat.
+
+Bayangkan defect ditemukan pada shift malam.
+
+Supervisor tahu.
+
+Manager baru tahu pagi hari.
+
+General Manager tahu dua hari kemudian.
+
+Direktur tahu setelah customer complaint.
+
+Pada saat informasi sampai ke atas, masalah sudah menjadi mahal.
+
+Perusahaan membutuhkan jalur informasi yang jelas.
+
+Tidak semua informasi harus naik ke Direktur. Tetapi informasi kritis
+harus memiliki trigger eskalasi.
+
+Contohnya:
+
+Safety incident → eskalasi segera.
+
+Quality defect kritis → eskalasi segera.
+
+Customer complaint besar → eskalasi sesuai severity.
+
+Potential production stop → eskalasi.
+
+Cash-flow problem → eskalasi.
+
+Major supplier failure → eskalasi.
+
+Sementara masalah rutin seharusnya selesai di level operasional.
+
+Ini menciptakan prinsip penting:
+
+Masalah harus diselesaikan sedekat mungkin dengan sumber masalah, tetapi
+masalah dengan dampak lintas organisasi harus naik ke level yang tepat.
+
+Jangan Membuat Semua Masalah Menjadi Masalah Direktur
+
+Kebalikan dari organisasi yang terlalu sentralistik adalah organisasi
+yang terlalu permisif.
+
+Setiap departemen membuat keputusan sendiri.
+
+Sales mengubah spesifikasi tanpa koordinasi.
+
+Production mengganti parameter proses tanpa validasi.
+
+Procurement mengganti supplier tanpa quality approval.
+
+Finance mengubah payment policy tanpa mempertimbangkan customer
+relationship.
+
+IT membeli sistem tanpa mempertimbangkan integrasi.
+
+Ini juga berbahaya.
+
+Desentralisasi hanya bekerja jika ada batas.
+
+Perusahaan membutuhkan governance: aturan mengenai keputusan apa yang
+boleh dibuat lokal dan keputusan apa yang membutuhkan persetujuan lintas
+fungsi atau pusat.
+
+Dalam praktiknya, ada tiga kelompok keputusan.
+
+Keputusan rutin: didelegasikan ke level operasional.
+
+Keputusan lintas fungsi: membutuhkan koordinasi beberapa fungsi.
+
+Keputusan strategis atau berisiko tinggi: naik ke senior management.
+
+Pembagian ini jauh lebih berguna daripada sekadar berkata “kita harus
+agile”.
+
+Customer Harus Menjadi Titik Temu Antar-Fungsi
+
+Departemen bisa mempunyai tujuan berbeda, tetapi pelanggan membeli hasil
+perusahaan, bukan departemen.
+
+Pelanggan tidak peduli apakah keterlambatan disebabkan Production, QC,
+Procurement, Logistics, atau Sales.
+
+Mereka hanya menerima konsekuensinya.
+
+Karena itu, proses penting sebaiknya dilihat end-to-end.
+
+Misalnya order-to-delivery:
+
+Customer order → Sales → Planning → Procurement → Production → Quality →
+Warehouse → Logistics → Customer.
+
+Jika setiap fungsi hanya mengoptimalkan bagiannya, total lead time bisa
+tetap buruk.
+
+McKinsey menekankan pentingnya proses end-to-end dalam operating model
+karena value tidak tercipta hanya dari struktur, tetapi dari bagaimana
+pekerjaan benar-benar mengalir melewati fungsi-fungsi yang berbeda.
+
+Perusahaan yang matang bertanya:
+
+Di mana pekerjaan menunggu?
+
+Di mana terjadi handoff?
+
+Siapa yang mengulang input data?
+
+Di mana approval paling lambat?
+
+Di mana informasi hilang?
+
+Di mana keputusan bolak-balik?
+
+Di mana customer value benar-benar tercipta?
+
+Dari sini struktur organisasi bisa disesuaikan berdasarkan kebutuhan
+nyata.
+
+Struktur Manajemen Perusahaan Industri Tidak Bisa Sama dengan Perusahaan
+Jasa
+
+Ini bagian yang sering dilupakan.
+
+Pabrik memiliki mesin, material, inventory, quality risk, maintenance,
+safety risk, production planning, logistics, dan kapasitas fisik.
+
+Karena itu struktur manajemennya harus mampu menangani kompleksitas
+tersebut.
+
+Contoh sederhana struktur untuk perusahaan manufaktur menengah:
+
+Direktur/CEO
+
+1.  Plant/Operations
+
+-   Production
+-   Production Planning & Control
+-   Maintenance
+-   Engineering
+-   Warehouse/Logistics
+
+2.  Quality
+
+-   Incoming Quality
+-   Process Quality
+-   Final/Outgoing Quality
+-   Laboratory/Metrology jika diperlukan
+-   Customer Quality
+
+3.  Commercial
+
+-   Sales
+-   Marketing
+-   Customer Service
+
+4.  Supply Chain
+
+-   Procurement
+-   Supplier Management
+-   Logistics
+-   Inventory Control
+
+5.  Finance
+
+-   Accounting
+-   Finance
+-   Cost Control
+
+6.  People & Corporate Support
+
+-   HR
+-   IT
+-   Legal
+-   General Affairs
+
+7.  HSE
+
+-   Safety
+-   Environmental management
+
+Tidak berarti semua perusahaan harus menggunakan struktur ini.
+Perusahaan kecil mungkin menggabungkan beberapa fungsi. Perusahaan besar
+mungkin memecahnya menjadi beberapa business unit.
+
+Yang penting adalah fungsi kritis tetap mempunyai pemilik yang jelas.
+
+Quality Sebaiknya Tidak Kehilangan Independensi Fungsional
+
+Dalam industri yang kualitas produknya menentukan risiko bisnis, fungsi
+quality perlu memiliki posisi yang memungkinkan mereka menyampaikan
+masalah secara objektif.
+
+Jika QC sepenuhnya tunduk pada target output Production tanpa jalur
+eskalasi yang memadai, muncul konflik kepentingan.
+
+Production bertanya: “Bisa jalan atau tidak?”
+
+Quality bertanya: “Sesuai atau tidak?”
+
+Keduanya diperlukan.
+
+Karena itu, perusahaan dapat menggunakan struktur di mana Quality
+bekerja dekat dengan operasi secara sehari-hari, tetapi memiliki jalur
+eskalasi yang cukup kuat kepada level manajemen yang mampu menjaga
+independensi keputusan kualitas.
+
+Ini bukan berarti Quality harus selalu memenangkan konflik.
+
+Justru sebaliknya: keputusan harus dibuat berdasarkan spesifikasi,
+risiko, data, customer requirement, regulasi, dan aturan perusahaan.
+
+Tujuannya bukan memberikan kekuasaan absolut kepada QC, melainkan
+memastikan fungsi quality tidak dapat dengan mudah ditekan untuk
+mengabaikan risiko yang sudah teridentifikasi.
+
+HSE Juga Tidak Boleh Sekadar Menjadi Departemen Administrasi
+
+Keselamatan sering gagal bukan karena perusahaan tidak mempunyai
+prosedur.
+
+Masalahnya adalah prosedur tidak terhubung dengan kewenangan.
+
+Jika HSE menemukan kondisi berbahaya tetapi tidak mempunyai mekanisme
+stop-work yang jelas, fungsi tersebut menjadi administratif.
+
+Struktur yang baik membuat kewenangan keselamatan dapat berjalan sampai
+ke lapangan.
+
+Operator harus tahu kapan wajib berhenti.
+
+Supervisor harus tahu kapan harus mengisolasi risiko.
+
+Manager harus tahu kapan masalah harus dieskalasikan.
+
+Top management harus menerima informasi mengenai risiko besar, bukan
+hanya jumlah training yang dilakukan.
+
+Dengan begitu HSE menjadi bagian dari operating system, bukan sekadar
+fungsi pelaporan.
+
+Finance Harus Dekat dengan Operasi
+
+Finance sering diposisikan sebagai departemen yang hanya memeriksa
+angka.
+
+Padahal dalam perusahaan industri, keputusan operasional hampir selalu
+memiliki konsekuensi finansial.
+
+Membeli mesin berarti capital expenditure.
+
+Menyimpan inventory berarti working capital.
+
+Scrap berarti kehilangan material.
+
+Rework berarti biaya.
+
+Downtime berarti kehilangan kapasitas.
+
+Customer claim berarti biaya dan potensi kehilangan pelanggan.
+
+Supplier dengan harga murah tetapi defect tinggi bisa menghasilkan total
+cost yang lebih mahal.
+
+Karena itu Finance dan Operations harus saling memahami.
+
+Cost control yang baik bukan sekadar memangkas pengeluaran. Ia harus
+membantu perusahaan memahami biaya sebenarnya dari setiap keputusan.
+
+HR Tidak Cukup Mengurus Administrasi Orang
+
+HR yang hanya mengurus absensi, payroll, kontrak, dan rekrutmen memang
+menjalankan fungsi penting.
+
+Tetapi ketika perusahaan bertumbuh, HR perlu terlibat dalam desain
+organisasi, kompetensi, succession planning, performance management, dan
+pengembangan pemimpin.
+
+Perusahaan bisa mempunyai mesin bagus tetapi kekurangan orang yang mampu
+menjalankannya.
+
+Bisa mempunyai sistem ERP tetapi tidak mempunyai orang yang memahami
+proses.
+
+Bisa mempunyai SOP lengkap tetapi tidak mempunyai supervisor yang mampu
+membangun disiplin eksekusi.
+
+Karena itu, struktur manajemen juga harus memikirkan pertanyaan:
+
+Siapa pengganti posisi kritis jika orang tersebut keluar?
+
+Berapa lama seseorang membutuhkan waktu untuk siap memegang posisi?
+
+Kompetensi apa yang hilang jika satu Manager resign?
+
+Apakah pengetahuan berada di sistem atau hanya di kepala seseorang?
+
+Jika jawabannya selalu “orang itu tahu”, perusahaan sedang mempunyai
+key-person risk.
+
+Perusahaan Tidak Boleh Bergantung pada Satu Orang
+
+Ini salah satu indikator organisasi yang sering tidak terlihat.
+
+Ada perusahaan yang secara formal memiliki sepuluh manager, tetapi semua
+orang tetap menunggu satu orang senior.
+
+Orang itu tahu supplier.
+
+Orang itu tahu customer.
+
+Orang itu tahu parameter mesin.
+
+Orang itu tahu sejarah masalah.
+
+Orang itu tahu siapa yang harus dihubungi.
+
+Ketika orang tersebut cuti, semua pekerjaan melambat.
+
+Ini bukan tanda bahwa orang tersebut hebat semata. Ini juga tanda bahwa
+pengetahuan organisasi belum terdistribusi.
+
+Solusinya bukan mengganti orang tersebut.
+
+Solusinya adalah membuat sistem:
+
+SOP.
+
+Work instruction.
+
+Database.
+
+Approval matrix.
+
+Training.
+
+Cross-training.
+
+Succession plan.
+
+Lesson learned.
+
+Problem-solving records.
+
+Supplier/customer history.
+
+Dengan demikian organisasi berubah dari “bergantung pada orang” menjadi
+“didukung oleh sistem dan orang”.
+
+Tetapi Jangan Membuat Sistem Terlalu Rumit
+
+Ada bahaya lain setelah perusahaan sadar pentingnya sistem: semua
+masalah diselesaikan dengan membuat form baru.
+
+Ada form approval.
+
+Form evaluasi.
+
+Form meeting.
+
+Form monitoring.
+
+Form escalation.
+
+Form corrective action.
+
+Form review.
+
+Akhirnya orang menghabiskan waktu mengisi sistem daripada menjalankan
+pekerjaan.
+
+Sistem yang baik harus mengurangi beban koordinasi, bukan menambahnya.
+
+McKinsey dalam kajiannya mengenai produktivitas menekankan bahwa
+perusahaan perlu melihat bagaimana pekerjaan benar-benar dilakukan
+end-to-end dan menyederhanakan proses yang tidak menciptakan nilai.
+
+Pertanyaan sederhana sangat berguna:
+
+Jika form ini dihapus, risiko apa yang benar-benar muncul?
+
+Jika meeting ini dihentikan, keputusan apa yang akan terlambat?
+
+Jika approval ini dilewati, kontrol apa yang hilang?
+
+Jika jawabannya tidak jelas, proses tersebut layak ditinjau ulang.
+
+Meeting Bukan Bukti Bahwa Manajemen Bekerja
+
+Jumlah meeting sering menjadi indikator yang menipu.
+
+Perusahaan bisa meeting setiap hari dan tetap lambat.
+
+Yang penting bukan berapa banyak meeting, tetapi keputusan apa yang
+dihasilkan.
+
+Meeting operasional seharusnya memiliki:
+
+agenda,
+
+data,
+
+pemilik keputusan,
+
+batas waktu,
+
+action owner,
+
+dan follow-up.
+
+Kalau meeting hanya menjadi tempat membaca ulang laporan yang sudah bisa
+dibaca sendiri, waktu banyak orang terbuang.
+
+Dalam organisasi yang sehat, informasi seharusnya tersedia sebelum
+meeting sehingga meeting digunakan untuk membahas gap, trade-off,
+risiko, dan keputusan.
+
+Struktur yang Tepat Harus Mengikuti Strategi
+
+Perusahaan yang mengejar biaya rendah membutuhkan struktur dan proses
+yang berbeda dari perusahaan yang menjual produk premium dengan custom
+engineering.
+
+Perusahaan yang hanya mempunyai satu pabrik berbeda dari perusahaan yang
+memiliki sepuluh pabrik.
+
+Perusahaan B2B industrial berbeda dari perusahaan consumer retail.
+
+Perusahaan yang sedang ekspansi berbeda dari perusahaan yang sedang
+melakukan turnaround.
+
+Karena itu tidak ada satu struktur organisasi yang otomatis paling baik
+untuk semua perusahaan.
+
+McKinsey secara eksplisit menyebut bahwa span of control dan struktur
+harus disesuaikan dengan konteks dan strategi, bukan sekadar meniru
+benchmark perusahaan lain.
+
+Struktur adalah alat untuk menjalankan strategi.
+
+Jika strateginya berubah, struktur mungkin perlu berubah.
+
+Bagaimana Menentukan Struktur yang Tepat dari Nol?
+
+Langkah pertama bukan menggambar kotak.
+
+Mulai dengan tujuan bisnis.
+
+Apa yang sebenarnya ingin dicapai perusahaan dalam tiga sampai lima
+tahun?
+
+Pertumbuhan penjualan?
+
+Efisiensi biaya?
+
+Ekspansi pabrik?
+
+Kualitas premium?
+
+Kecepatan delivery?
+
+Produk baru?
+
+Ekspansi geografis?
+
+Diversifikasi?
+
+Setelah itu identifikasi kapabilitas yang diperlukan.
+
+Kemudian identifikasi proses utama.
+
+Setelah itu identifikasi keputusan kritis.
+
+Baru kemudian tentukan fungsi, jabatan, dan garis pelaporan.
+
+Urutannya:
+
+Strategi → kapabilitas → proses → keputusan → peran → struktur.
+
+Bukan:
+
+Struktur → jabatan → orang → baru mencari pekerjaan untuk mereka.
+
+Urutan kedua sering menghasilkan organisasi yang penuh jabatan tetapi
+miskin kejelasan.
+
+Uji Struktur dengan Lima Pertanyaan
+
+Setelah struktur dibuat, jangan langsung menganggapnya selesai.
+
+Uji dengan lima pertanyaan.
+
+Pertama: siapa yang bertanggung jawab terhadap setiap hasil utama?
+
+Kedua: siapa yang boleh membuat keputusan yang dibutuhkan untuk mencapai
+hasil tersebut?
+
+Ketiga: apakah informasi yang diperlukan sampai kepada pengambil
+keputusan tepat waktu?
+
+Keempat: apakah ada konflik kewenangan antara dua fungsi?
+
+Kelima: jika seorang manager tidak masuk selama satu bulan, apakah
+sistem tetap berjalan?
+
+Pertanyaan kelima sangat menarik.
+
+Jika organisasi berhenti karena satu orang tidak ada, berarti organisasi
+belum cukup kuat.
+
+Struktur yang matang harus mampu bertahan dari cuti, mutasi, resign,
+ekspansi, bahkan perubahan kepemimpinan.
+
+Jangan Hanya Mengukur Struktur, Ukur Efeknya
+
+Perubahan struktur harus menghasilkan perubahan yang dapat diamati.
+
+Misalnya:
+
+waktu approval turun,
+
+lead time turun,
+
+complaint response lebih cepat,
+
+downtime turun,
+
+quality problem lebih cepat ditutup,
+
+inventory lebih terkendali,
+
+meeting berkurang,
+
+keputusan lebih dekat dengan sumber masalah,
+
+customer response meningkat,
+
+atau biaya manajemen turun.
+
+Kalau organigram baru terlihat lebih cantik tetapi indikator bisnis
+tidak berubah, mungkin perusahaan hanya melakukan reorganisasi kosmetik.
+
+Struktur yang baik seharusnya terlihat dari perilaku organisasi
+sehari-hari.
+
+Saat masalah muncul, orang tahu siapa yang harus bertindak.
+
+Saat keputusan dibutuhkan, orang tahu siapa yang berwenang.
+
+Saat risiko muncul, orang tahu kapan harus eskalasi.
+
+Saat hasil buruk terjadi, orang tahu siapa pemilik masalahnya.
+
+Itulah bukti bahwa struktur bekerja.
+
+Model Sederhana untuk Perusahaan Industri Menengah
+
+Untuk perusahaan manufaktur dengan ukuran menengah, model berikut bisa
+menjadi titik awal diskusi:
+
+Direktur Utama │ ├── Operations Director / Plant Director │ ├──
+Production │ ├── PPC │ ├── Maintenance │ ├── Engineering │ └── Warehouse
+& Logistics │ ├── Quality Manager │ ├── Incoming QC │ ├── Process QC │
+├── Final QC │ └── Customer Quality │ ├── Supply Chain / Procurement
+Manager │ ├── Purchasing │ ├── Supplier Management │ └── Inventory
+Control │ ├── Commercial Manager │ ├── Sales │ ├── Customer Service │
+└── Marketing │ ├── Finance Manager │ ├── Accounting │ ├── Finance │ └──
+Cost Control │ ├── HR & GA Manager │ ├── HR │ ├── Training │ └── General
+Affairs │ └── HSE Manager
+
+Tetapi diagram tersebut bukan resep universal.
+
+Untuk perusahaan yang lebih kecil, PPC mungkin berada di Operations,
+Procurement bisa digabung dengan Supply Chain, HR dan GA bisa satu
+fungsi, dan Quality dapat memiliki tim yang lebih kecil.
+
+Untuk perusahaan besar, masing-masing fungsi dapat berkembang menjadi
+direktorat atau business unit.
+
+Yang lebih penting daripada nama jabatan adalah tiga hal:
+
+siapa pemilik hasil,
+
+siapa pemegang keputusan,
+
+dan siapa yang memiliki jalur eskalasi.
+
+Struktur yang Baik Harus Membuat Organisasi Semakin Mandiri
+
+Pada akhirnya, tujuan manajemen bukan membuat atasan semakin sibuk.
+
+Tujuan manajemen adalah membuat organisasi mampu menghasilkan keputusan
+dan hasil tanpa semua hal harus ditarik ke atas.
+
+Direktur yang bagus bukan Direktur yang mengetahui semua masalah kecil.
+
+Manager yang bagus bukan Manager yang harus menyetujui semua hal.
+
+Supervisor yang bagus bukan Supervisor yang menjadi satu-satunya orang
+yang bisa menjalankan pekerjaan.
+
+Organisasi yang matang justru membuat semakin banyak keputusan dapat
+diselesaikan di level yang paling dekat dengan pekerjaan, selama orang
+tersebut memiliki kompetensi, data, kewenangan, dan batas yang jelas.
+
+Deloitte dan McKinsey sama-sama menempatkan kejelasan keputusan,
+akuntabilitas, struktur yang sesuai konteks, dan koordinasi lintas
+fungsi sebagai elemen penting dalam desain organisasi.
+
+Karena itu, struktur manajemen yang tepat bukanlah piramida yang semakin
+tinggi.
+
+Ia adalah sistem yang membuat perusahaan mampu bergerak tanpa
+terus-menerus menunggu seseorang di puncak.
+
+Kesimpulan: Struktur yang Tepat Bukan yang Paling Rapi, tetapi yang
+Paling Jelas
+
+Perusahaan sering mencari struktur organisasi yang “ideal”.
+
+Padahal tidak ada satu bentuk yang berlaku untuk semua.
+
+Yang ada adalah struktur yang cocok dengan strategi, ukuran, proses,
+risiko, teknologi, dan kompleksitas perusahaan.
+
+Struktur yang sehat memiliki beberapa karakter utama:
+
+Peran jelas.
+
+Tanggung jawab jelas.
+
+Kewenangan jelas.
+
+Jalur eskalasi jelas.
+
+KPI tidak saling menghancurkan.
+
+Informasi mengalir cepat.
+
+Keputusan dibuat di level yang tepat.
+
+Fungsi penting tetap memiliki independensi yang diperlukan.
+
+Middle management benar-benar mengelola, bukan sekadar meneruskan
+perintah.
+
+Top management fokus pada keputusan strategis.
+
+Proses lintas departemen dikelola end-to-end.
+
+Dan yang paling penting, perusahaan tidak bergantung secara berlebihan
+pada satu orang.
+
+Jika sebuah perusahaan sedang mengalami masalah seperti keputusan
+lambat, terlalu banyak approval, konflik antar-departemen, meeting
+berlebihan, customer complaint yang berulang, atau semua masalah selalu
+berakhir di meja Direktur, jangan buru-buru menambah jabatan.
+
+Pertama-tama periksa sistemnya.
+
+Siapa yang mengambil keputusan?
+
+Siapa yang memiliki hasil?
+
+Siapa yang memiliki kewenangan?
+
+Informasi apa yang dibutuhkan?
+
+Di mana pekerjaan berhenti?
+
+Di mana terjadi handoff?
+
+Dan mengapa masalah yang sama harus naik ke level yang lebih tinggi
+berulang kali?
+
+Sering kali, masalah manajemen bukan karena perusahaan kekurangan orang
+pintar.
+
+Masalahnya adalah orang-orang yang ada belum ditempatkan dalam sistem
+yang membuat mereka dapat mengambil keputusan dengan jelas.
+
+Pada titik itulah desain organisasi menjadi penting.
+
+Karena perusahaan yang kuat bukan perusahaan yang semua keputusan berada
+di tangan orang paling tinggi.
+
+Perusahaan yang kuat adalah perusahaan yang keputusan penting dibuat
+oleh orang yang tepat, berdasarkan informasi yang tepat, dengan tanggung
+jawab yang jelas, dan dapat dipertanggungjawabkan hasilnya.
+
+Sumber riset: - ISO 9001, konsep top management dan management system:
+struktur, peran, tanggung jawab, perencanaan, dan operasi. - McKinsey,
+“How to identify the right spans of control for your organization”
+(2017), mengenai span of control dan pentingnya menyesuaikan struktur
+dengan jenis pekerjaan. - McKinsey, “Want to break the productivity
+ceiling: rethink the way work gets done” (2025), mengenai pentingnya
+proses end-to-end dan keterbatasan perubahan organigram semata. -
+McKinsey, “A new operating model for a new world” (2025), mengenai
+operating model, clarity, speed, skills, dan commitment. - Deloitte,
+“Getting organizational decision making right”, mengenai decision
+rights, accountability, distributed authority, dan RACI. - Harvard
+Business Review, “The Right Way to Handle Decision Rights” (2026) dan
+“What Companies Get Wrong About Decision Rights” (2026), mengenai
+keterbatasan penggunaan RACI jika keputusan belum didefinisikan dengan
+jelas.
