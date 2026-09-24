@@ -1,0 +1,223 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+<Layout
+  title="TCT ↔ BMT Galvanis — Smart Tools · Partpedia"
+  description="Hitung rentang TCT galvalum dari BMT dan coating Z (zinc), atau sebaliknya. Isi nilai yang diketahui, kosongkan yang dicari."
+>
+  <div class="tool-page">
+    <a class="back" href="/tools/">← Semua Smart Tools</a>
+    <div class="tool-card">
+      <h1>TCT ↔ BMT Galvanis</h1>
+      <p class="desc">
+        Hitung rentang ketebalan total (TCT minimum &amp; maksimum) dari tebal dasar logam (BMT) dan coating Z,
+        atau cari BMT dari nilai TCT. Isi kolom yang diketahui, kosongkan yang ingin dicari.
+      </p>
+      <div class="fields cols-2">
+        <div class="field">
+          <label for="z">Coating Z <span>(g/m²)</span></label>
+          <input id="z" type="number" inputmode="decimal" step="any" placeholder="contoh: 275" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="bmt">BMT <span>(mm)</span></label>
+          <input id="bmt" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="tct-min">TCT minimum <span>(mm)</span></label>
+          <input id="tct-min" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="tct-max">TCT maksimum <span>(mm)</span></label>
+          <input id="tct-max" type="number" inputmode="decimal" step="any" placeholder="—" autocomplete="off" />
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn-calc" id="btn-calc">Hitung</button>
+        <button type="button" class="btn-reset" id="btn-reset">Reset</button>
+        <p class="msg" id="msg" role="status"></p>
+      </div>
+      <p class="hint">
+        <strong>Cara pakai:</strong>
+        (1) Isi <strong>Coating Z</strong> dan <strong>BMT</strong>, kosongkan kedua TCT → hasil TCT minimum &amp; maksimum.
+        (2) Isi <strong>Coating Z</strong> dan salah satu / kedua nilai TCT, kosongkan BMT → hasil BMT.
+        Kolom hasil ditandai warna tosca. Satuan BMT &amp; TCT dalam <strong>mm</strong>, coating Z dalam <strong>g/m²</strong>.
+        Toleransi ketebalan dasar ±2% sudah diperhitungkan pada rentang TCT.
+      </p>
+    </div>
+  </div>
+  <script is:inline>
+  (function () {
+    function parseNum(el) {
+      if (!el) return null;
+      let v = String(el.value || "").trim().replace(",", ".");
+      if (v === "") return null;
+      const n = Number(v);
+      return Number.isFinite(n) ? n : NaN;
+    }
+    function fmt(x) {
+      if (!Number.isFinite(x)) return "";
+      const a = Math.abs(x);
+      if (a !== 0 && (a < 1e-7 || a >= 1e10)) return x.toExponential(8);
+      return x.toFixed(10).replace(/\.?0+$/, "");
+    }
+    const ids = ["z", "bmt", "tct-min", "tct-max"];
+    function clearComputed(list) {
+      list.forEach((id) => {
+        const el = document.getElementById(id);
+        const field = el?.closest(".field");
+        field?.classList.remove("is-result");
+        if (el?.dataset.computed === "1") {
+          el.value = "";
+          delete el.dataset.computed;
+        }
+      });
+    }
+    function setResult(id, value) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.value = fmt(value);
+      el.dataset.computed = "1";
+      el.closest(".field")?.classList.add("is-result");
+    }
+    function coatingMm(zCoat) {
+      return zCoat / 7.1 / 1000;
+    }
+    function compute() {
+      const msg = document.getElementById("msg");
+      clearComputed(ids);
+      const zCoat = parseNum(document.getElementById("z"));
+      const bmt = parseNum(document.getElementById("bmt"));
+      const tmin = parseNum(document.getElementById("tct-min"));
+      const tmax = parseNum(document.getElementById("tct-max"));
+
+      if ([zCoat, bmt, tmin, tmax].some((v) => v !== null && Number.isNaN(v))) {
+        msg.textContent = "Nilai tidak valid.";
+        return;
+      }
+      if ([zCoat, bmt, tmin, tmax].some((v) => v !== null && v < 0)) {
+        msg.textContent = "Nilai harus ≥ 0.";
+        return;
+      }
+      if (zCoat === null || Number.isNaN(zCoat) || zCoat <= 0) {
+        msg.textContent = "Isi Coating Z (g/m²) terlebih dahulu.";
+        return;
+      }
+
+      const c = coatingMm(zCoat);
+      const hasBmt = bmt !== null;
+      const hasTmin = tmin !== null;
+      const hasTmax = tmax !== null;
+
+      try {
+        if (hasBmt && !hasTmin && !hasTmax) {
+          if (bmt <= 0) throw new Error("BMT harus > 0.");
+          setResult("tct-min", c + bmt * 0.98);
+          setResult("tct-max", c + bmt * 1.02);
+          msg.textContent = "TCT minimum & maksimum dihitung dari BMT.";
+          return;
+        }
+        if (!hasBmt && (hasTmin || hasTmax)) {
+          let b = null;
+          if (hasTmin && hasTmax) {
+            const mid = (tmin + tmax) / 2;
+            b = mid - c;
+            if (b <= 0) throw new Error("Kombinasi TCT / AZ menghasilkan BMT tidak valid.");
+          } else if (hasTmin) {
+            b = (tmin - c) / 0.98;
+            if (b <= 0) throw new Error("TCT minimum terlalu kecil dibanding coating.");
+          } else {
+            b = (tmax - c) / 1.02;
+            if (b <= 0) throw new Error("TCT maksimum terlalu kecil dibanding coating.");
+          }
+          setResult("bmt", b);
+          if (!hasTmin) setResult("tct-min", c + b * 0.98);
+          if (!hasTmax) setResult("tct-max", c + b * 1.02);
+          msg.textContent = "BMT dihitung dari TCT.";
+          return;
+        }
+        if (hasBmt && (hasTmin || hasTmax)) {
+          msg.textContent = "Kosongkan TCT untuk hitung dari BMT, atau kosongkan BMT untuk hitung dari TCT.";
+          return;
+        }
+        msg.textContent = "Isi AZ + BMT, atau AZ + TCT (min dan/atau max).";
+      } catch (e) {
+        msg.textContent = e.message || "Tidak valid";
+      }
+    }
+    function wire() {
+      const msg = document.getElementById("msg");
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        el?.addEventListener("input", () => {
+          if (el.dataset.computed === "1") {
+            delete el.dataset.computed;
+            el.closest(".field")?.classList.remove("is-result");
+          } else {
+            clearComputed(ids.filter((i) => i !== "z"));
+          }
+          const zCoat = parseNum(document.getElementById("z"));
+          const bmt = parseNum(document.getElementById("bmt"));
+          const tmin = parseNum(document.getElementById("tct-min"));
+          const tmax = parseNum(document.getElementById("tct-max"));
+          const ready =
+            zCoat !== null &&
+            !Number.isNaN(zCoat) &&
+            zCoat > 0 &&
+            ((bmt !== null && tmin === null && tmax === null) ||
+              (bmt === null && (tmin !== null || tmax !== null)));
+          if (ready) compute();
+          else if (msg) msg.textContent = "";
+        });
+        el?.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            compute();
+          }
+        });
+      });
+      document.getElementById("btn-calc")?.addEventListener("click", compute);
+      document.getElementById("btn-reset")?.addEventListener("click", () => {
+        ids.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.value = "";
+            delete el.dataset.computed;
+            el.closest(".field")?.classList.remove("is-result");
+          }
+        });
+        if (msg) msg.textContent = "";
+      });
+    }
+    wire();
+  })();
+  </script>
+  <style>
+  .tool-page { max-width: 720px; margin: 0 auto; padding: 1.25rem 0 3rem; }
+  .back { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.88rem; color: var(--muted); text-decoration:none; margin-bottom:0.85rem; }
+  .back:hover { color: var(--amber); }
+  .tool-card {
+    border:1px solid var(--line); border-radius:22px; padding:1.25rem;
+    background: radial-gradient(120% 80% at 0% 0%, rgba(45,212,191,0.08), transparent 50%), var(--bg-card);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.2);
+  }
+  .tool-card h1 { margin:0 0 0.35rem; font-family: var(--font-display); font-size:1.45rem; }
+  .tool-card .desc { margin:0 0 1rem; color: var(--muted); font-size:0.92rem; line-height:1.5; }
+  .fields { display:grid; gap:0.75rem; }
+  @media(min-width:560px){ .fields.cols-2{ grid-template-columns:1fr 1fr;} }
+  .field { display:flex; flex-direction:column; gap:0.35rem; padding:0.75rem 0.85rem; border-radius:14px;
+    border:1px solid var(--line); background:rgba(0,0,0,0.22); transition: border-color .15s, background .15s, box-shadow .15s; }
+  .field label { font-size:0.8rem; font-weight:600; color: var(--ink); }
+  .field label span { font-weight:500; color: var(--muted); font-size:0.75rem; }
+  .field input { border:none; outline:none; background:transparent; color: var(--ink); font-size:1.25rem; font-weight:700; font-family: var(--font-mono); width:100%; }
+  .field.is-result { border-color: rgba(45,212,191,0.65); background: rgba(45,212,191,0.12); box-shadow:0 0 0 3px rgba(45,212,191,0.12); }
+  .field.is-result label { color: var(--teal); }
+  .actions { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; margin-top:1rem; }
+  .btn-calc { appearance:none; border:none; cursor:pointer; font-weight:800; padding:0.7rem 1.25rem; border-radius:999px;
+    background: linear-gradient(135deg,#2dd4bf,#14b8a6); color:#041016; }
+  .btn-reset { appearance:none; cursor:pointer; font-weight:600; padding:0.65rem 1.1rem; border-radius:999px;
+    background:transparent; border:1px solid var(--line); color: var(--ink); }
+  .msg { margin:0; font-size:0.86rem; color: var(--muted); }
+  .hint { margin-top:1rem; padding:0.75rem 0.9rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.03); font-size:0.84rem; color: var(--muted); line-height:1.45; }
+  </style>
+</Layout>
