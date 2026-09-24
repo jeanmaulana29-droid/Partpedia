@@ -54,8 +54,9 @@ const jsonLd = {
   <section class="qa-hub">
     <header class="qa-head">
       <div class="qa-brand">
-        <img src="/logo.png" alt="Partpedia industrial parts and MRO knowledge" width="40" height="40" />
-        <span class="brand-text" aria-label="Partpedia"><span class="brand-part">Part</span><span class="brand-pedia">pedia</span></span>
+        <a href="/" class="qa-brand-link" title="Partpedia — Beranda" aria-label="Partpedia beranda">
+          <img src="/logo.png" alt="Partpedia" width="240" height="90" class="qa-brand-logo" decoding="async" />
+        </a>
       </div>
       <p class="kicker">Insight · Industrial Q&amp;A</p>
       <h1>Industrial manufacturing Q&amp;A</h1>
@@ -290,9 +291,9 @@ const jsonLd = {
       margin-bottom: 0.85rem;
       text-decoration: none;
     }
-    .qa-brand img {
-      border-radius: 8px;
-    }
+    .qa-brand-link { display:inline-block; line-height:0; text-decoration:none; }
+    .qa-brand-logo { height: 56px; width: auto; max-width: min(260px, 80vw); object-fit: contain; border-radius: 0; }
+    .qa-brand img { height: 56px; width: auto; object-fit: contain;
     /* brand text: pakai .brand-text dari Layout (Cinzel) */
     .kicker {
       margin: 0 0 0.4rem;

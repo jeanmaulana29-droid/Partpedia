@@ -82,8 +82,9 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
     <a class="back" href="/qa/">← All industrial Q&amp;A</a>
     <header class="qa-d-head">
       <div class="qa-brand">
-        <img src="/logo.png" alt="Partpedia" width="32" height="32" />
-        <span class="brand-text" aria-label="Partpedia"><span class="brand-part">Part</span><span class="brand-pedia">pedia</span></span>
+        <a href="/" class="qa-brand-link" title="Partpedia — Beranda" aria-label="Partpedia beranda">
+          <img src="/logo.png" alt="Partpedia" width="240" height="90" class="qa-brand-logo" decoding="async" />
+        </a>
       </div>
       <p class="kicker">Insight · Industrial Q&amp;A</p>
       <h1>{item.question}</h1>
@@ -141,7 +142,9 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
       gap: 0.45rem;
       margin-bottom: 0.65rem;
     }
-    .qa-brand img { border-radius: 7px; }
+    .qa-brand-link { display:inline-block; line-height:0; text-decoration:none; }
+    .qa-brand-logo { height: 56px; width: auto; max-width: min(260px, 80vw); object-fit: contain; border-radius: 0; }
+    .qa-brand img { height: 56px; width: auto; object-fit: contain;
     /* brand: Layout .brand-text */
     .kicker {
       margin: 0 0 0.35rem;
