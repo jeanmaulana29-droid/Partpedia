@@ -169,38 +169,20 @@ const showHomeHreflang = isHomeId || isHomeEn;
 .brand {
         display: inline-flex;
         align-items: center;
-        gap: 0.55rem;
         text-decoration: none;
-        color: inherit;
+        line-height: 0;
       }
       .brand:hover { opacity: 0.92; }
-      .brand-logo { border-radius: 6px; display: block; }
+      .brand-logo {
+        display: block;
+        height: 42px;
+        width: auto;
+        max-width: min(220px, 52vw);
+        object-fit: contain;
+        border-radius: 0;
+      }
       img, svg, picture { forced-color-adjust: none; }
       html { color-scheme: dark; }
-      .brand-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        line-height: 1;
-        gap: 0.05rem;
-      }
-      .brand-text .brand-part {
-        font-family: "Cinzel", Georgia, serif;
-        font-weight: 1200;
-        font-size: 1.5rem;
-        letter-spacing: 0.06em;
-        color: #7b2cbf;
-        line-height: 1;
-      }
-      .brand-text .brand-pedia {
-        font-family: "Sniglet", system-ui, sans-serif;
-        font-weight: 400;
-        font-size: 1.5rem;
-        letter-spacing: 0.08em;
-        color: #ffffff;
-        line-height: 1;
-      }
 
       /* Opsi B: tanpa belah warna Part/pedia */
       .nav {
@@ -319,9 +301,8 @@ const showHomeHreflang = isHomeId || isHomeEn;
     <header class="site-header">
       <div class="wrap">
         <div class="header-row">
-          <a class="brand" href="/">
-            <img src="/logo.png" alt="Partpedia" width="28" height="28" class="brand-logo" />
-            <span class="brand-text" aria-label="Partpedia"><span class="brand-part">Part</span><span class="brand-pedia">pedia</span></span>
+          <a class="brand" href="/" title="Partpedia — Beranda" aria-label="Partpedia beranda">
+            <img src="/logo.png" alt="Partpedia" width="220" height="80" class="brand-logo" decoding="async" />
           </a>
           <a class="lang-btn" id="lang-toggle" href={lang === "id" ? "/en/" : "/"} aria-label="Language">{lang === "id" ? "EN" : "ID"}</a>
         </div>
