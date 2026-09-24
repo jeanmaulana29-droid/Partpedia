@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 const toolList = [
+  { name: "TCT BMT Galvalum thickness calculator", path: "/tools/tct-bmt-galvalum/" },
   { name: "Pythagoras / right triangle calculator", path: "/tools/pythagoras/" },
   { name: "Trigonometry angle & side calculator", path: "/tools/trigonometry/" },
   { name: "Distance speed time calculator", path: "/tools/distance-speed-time/" },
@@ -94,6 +95,11 @@ const jsonLd = {
       <p>Geometry · materials · mechanics · electrical · production — pick a tool, enter known values, the rest calculates automatically.</p>
     </header>
     <div class="app-grid">
+      <a class="app-icon" href="/tools/tct-bmt-galvalum/">
+        <div class="app-face" style="background: linear-gradient(145deg, #a78bfacc, #7c3aed66);">⬡</div>
+        <span class="app-name">TCT · BMT Galvalum</span>
+        <span class="app-sub">AZ · min–max</span>
+      </a>
       <a class="app-icon" href="/tools/pythagoras/">
         <div class="app-face" style="background: linear-gradient(145deg, #f59e0bcc, #f59e0b66);">△</div>
         <span class="app-name">Pythagoras</span>
