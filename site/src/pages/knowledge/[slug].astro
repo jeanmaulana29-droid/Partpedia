@@ -26,9 +26,8 @@ const midAt = Math.max(1, Math.floor(blocks.length / 2));
 <Layout title={`${article.title} — Partpedia`} description={article.excerpt}>
   <div class="mag">
     <header class="mag-top">
-      <a class="mag-brand" href="/">
-        <img src="/logo.png" alt="Partpedia" width="36" height="36" onerror="this.style.display='none'" />
-        <span>Part<span class="accent">pedia</span></span>
+      <a class="mag-brand" href="/" title="Partpedia — Beranda" aria-label="Partpedia beranda">
+        <img src="/logo.png" alt="Partpedia" width="220" height="80" class="mag-brand-logo" decoding="async" onerror="this.style.display='none'" />
       </a>
       <nav class="mag-nav">
         <a href="/knowledge/">Wawasan</a>
@@ -96,12 +95,21 @@ const midAt = Math.max(1, Math.floor(blocks.length / 2));
       margin-bottom: 1.75rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--line);
     }
     .mag-brand {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
-      color: var(--ink); text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      line-height: 0;
     }
-    .mag-brand img { border-radius: 8px; }
-    .mag-brand .accent { color: var(--amber); }
+    .mag-brand-logo,
+    .mag-brand img {
+      display: block;
+      height: 42px;
+      width: auto;
+      max-width: min(220px, 55vw);
+      object-fit: contain;
+      border-radius: 0;
+    }
+
     .mag-nav { display: flex; gap: 1rem; font-size: 0.88rem; }
     .mag-nav a { color: var(--muted); }
     .mag-kicker {
