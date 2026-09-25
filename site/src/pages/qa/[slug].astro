@@ -144,8 +144,15 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
     }
     .qa-brand-link { display:inline-block; line-height:0; text-decoration:none; }
     .qa-brand-logo { height: 56px; width: auto; max-width: min(260px, 80vw); object-fit: contain; border-radius: 0; }
-    .qa-brand img { height: 56px; width: auto; object-fit: contain;
-    /* brand: Layout .brand-text */
+    .qa-brand-logo,
+    .qa-brand img {
+      display: block;
+      height: 48px;
+      width: auto;
+      max-width: min(220px, 70vw);
+      object-fit: contain;
+      border-radius: 0;
+    }
     .kicker {
       margin: 0 0 0.35rem;
       font-family: var(--font-mono);
