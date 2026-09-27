@@ -1,0 +1,364 @@
+Apa Perbedaan Proses Produksi Galvanis dan Galvalum? Ini Perbedaan Line, Komposisi Coating, dan Hasil Akhirnya
+
+Artikel teknis ini membahas perbedaan continuous hot-dip galvanizing dan 55% aluminum-zinc alloy coating dari sisi alur produksi, bath chemistry, surface preparation, annealing, air knife, cooling, microstructure, corrosion protection, coating mass, quality control, forming, dan aplikasi.
+
+Galvanis menggunakan bath berbasis molten zinc. Pada continuous galvanizing, sejumlah kecil aluminium ditambahkan terutama untuk mengendalikan reaksi steel-zinc dan membentuk thin inhibition layer pada interface. Coating akhirnya didominasi zinc dan mekanisme perlindungan utamanya adalah sacrificial protection.
+
+Galvalum, dalam penggunaan istilah pasar di Indonesia, umumnya merujuk pada 55% aluminum-zinc alloy-coated steel. Pada sistem yang dijelaskan ArcelorMittal dan BlueScope, alloy coating menggunakan sekitar 55% aluminium, sekitar 43–44% zinc, dan sekitar 1,5–1,6% silicon. Aluminium merupakan komponen utama coating dan membentuk aluminium-rich phase, sedangkan zinc-rich phase tetap memberikan sacrificial protection.
+
+Keduanya dapat diproduksi pada continuous hot-dip coating line dengan tahapan umum: coil handling, joining, cleaning, annealing/heating, molten-metal bath, gas wiping atau air knife, cooling, skin pass/finishing, inspection, surface treatment, dan recoiling. Namun bath chemistry, metallurgy, solidification, dan process window berbeda.
+
+1. Apa yang Dimaksud Galvanis dan Galvalum?
+
+Galvanis merujuk pada continuous hot-dip galvanized steel sheet, yaitu steel strip yang dilapisi metallic coating berbasis zinc melalui proses hot-dip.
+
+Galvalum digunakan sebagai istilah pasar untuk steel sheet dengan aluminium-zinc alloy coating, terutama sistem 55% Al-Zn. Galvalume® dan ZINCALUME® merupakan nama dagang; untuk spesifikasi teknis harus digunakan standard, coating designation, dan datasheet.
+
+ASTM A653/A653M mencakup steel sheet zinc-coated atau galvanized melalui hot-dip process. ASTM A792/A792M mencakup steel sheet 55% aluminum-zinc alloy-coated melalui hot-dip process.
+
+2. Kesamaan Dasar Proses Produksi
+
+Kedua proses menggunakan konsep continuous strip coating. Coil baja dibuka, disambungkan dengan coil berikutnya, dibersihkan, dipanaskan atau dianil sesuai desain, kemudian dilewatkan melalui molten-metal bath.
+
+Setelah keluar dari bath, excess molten metal dikontrol menggunakan gas wiping atau air knife. Strip kemudian didinginkan, dapat menjalani skin pass dan tension levelling, diperiksa, diberi surface treatment sesuai kebutuhan, lalu direcoiling.
+
+Jadi galvanizing line dan galvalume line tidak selalu merupakan dua jenis mesin yang sama sekali berbeda. Banyak equipment dasarnya serupa. Pembeda utamanya adalah metallurgy dan process control pada coating system.
+
+3. Perbedaan Paling Mendasar: Isi Bath
+
+Pada galvanizing, coating bath terutama terdiri dari molten zinc dengan tambahan aluminium dalam jumlah kecil.
+
+Pada 55% Al-Zn, bath merupakan alloy aluminium-zinc dengan aluminium sebagai komponen utama. Pada produk yang dirujuk ArcelorMittal, komposisinya sekitar 55% aluminium, 43,4% zinc, dan 1,6% silicon. BlueScope memberikan komposisi sekitar 55% aluminium, 43,5% zinc, dan 1,5% silicon untuk sistem ZINCALUME® tertentu.
+
+Perbedaan ini sangat penting karena aluminium pada galvanizing berfungsi terutama sebagai inhibitor reaksi steel-zinc, sedangkan pada 55% Al-Zn aluminium menjadi bagian utama microstructure coating.
+
+4. Tahap Coil Handling
+
+Kedua proses dimulai dari steel coil. Pay-off reel mengendalikan pelepasan strip dengan tension yang sesuai. Coil berikutnya disambungkan ketika coil sebelumnya hampir habis sehingga process section dapat terus berjalan.
+
+Coil traceability penting. Informasi seperti coil number, steel grade, heat number, thickness, width, supplier, dan production history dapat digunakan ketika terjadi masalah kualitas.
+
+5. Cleaning
+
+Cleaning menghilangkan oil, rolling residue, dirt, iron fines, dan kontaminan lain.
+
+Metodenya dapat meliputi alkaline cleaning, brushing, rinsing, electrocleaning, atau kombinasi. Tujuannya adalah menyediakan surface condition yang memungkinkan wetting dan reaksi coating berlangsung dengan benar.
+
+Surface yang tidak bersih dapat menyebabkan poor wetting, adhesion problems, coating defects, dan masalah dross.
+
+6. Annealing dan Atmosphere Control
+
+Pada banyak continuous hot-dip coating lines, strip menjalani annealing setelah cleaning. Furnace mengatur thermal cycle dan mechanical properties sesuai grade, sekaligus mempertahankan atmosphere yang mencegah re-oxidation sebelum strip masuk bath.
+
+Furnace recipe tidak universal. Steel grade, thickness, line speed, coating system, dan target mechanical properties menentukan parameter aktual.
+
+7. Masuk ke Coating Bath
+
+Pada galvanizing, strip masuk molten zinc bath.
+
+Pada galvalum, strip masuk molten aluminium-zinc alloy bath.
+
+Strip biasanya dibelokkan atau diarahkan melalui sink roll dan kemudian ditarik keluar dari bath. Equipment bath harus tahan temperatur dan molten metal serta dirancang untuk meminimalkan dross dan surface defects.
+
+8. Apa yang Terjadi pada Interface Galvanis?
+
+Zinc tidak hanya menempel secara mekanis pada steel. Terjadi reaksi pada interface yang menghasilkan thin interfacial alloy/inhibition layer.
+
+Aluminium dalam bath galvanizing membantu membatasi pertumbuhan intermetallic Fe-Zn yang terlalu cepat dan mendukung adhesion serta formability coating.
+
+Karena itu bath galvanizing harus mengendalikan aluminium level, iron level, temperature, dross, strip temperature, dan kondisi wiping.
+
+9. Apa yang Terjadi pada Interface Galvalum?
+
+Pada 55% Al-Zn, terbentuk struktur coating yang berbeda. ArcelorMittal menjelaskan coating Aluzinc® sebagai struktur dengan aluminium-rich dendrites dan zinc-rich interdendritic zones serta silicon-containing phases. Interface steel-coating memiliki intermetallic layer yang berkaitan dengan sistem Al-Zn-Fe-Si.
+
+Microstructure ini menjadi dasar kombinasi barrier protection dan sacrificial protection.
+
+10. Fungsi Aluminium pada Galvanis Berbeda dengan Galvalum
+
+Ini merupakan perbedaan yang paling sering disalahpahami.
+
+Pada galvanis, aluminium ditambahkan dalam jumlah kecil untuk mengendalikan reaksi steel-zinc dan membentuk inhibition layer.
+
+Pada galvalum 55% Al-Zn, aluminium merupakan komponen utama alloy coating dan membentuk aluminium-rich phase.
+
+Jadi fakta bahwa kedua bath sama-sama mengandung aluminium tidak berarti kedua coating sama.
+
+11. Bagaimana Coating Mass Dikontrol?
+
+Setelah strip keluar dari bath, excess molten metal harus dikurangi. Air knife atau gas wiping meniup gas pada permukaan strip sehingga coating yang berlebih terdorong kembali.
+
+Coating mass dipengaruhi oleh line speed, knife pressure, knife-to-strip distance, angle, bath condition, surface tension, dan parameter lain.
+
+Karena itu ketebalan coating tidak sekadar ditentukan oleh lama pencelupan.
+
+12. Struktur Coating Galvanis
+
+Galvanized coating didominasi zinc dan memiliki thin interfacial alloy layer pada sisi steel.
+
+Zinc memberikan sacrificial/cathodic protection. Jika steel terekspos pada area kecil, zinc dapat mengalami korosi lebih dahulu dan membantu melindungi steel.
+
+Produk korosi zinc juga dapat membentuk lapisan yang memperlambat korosi lebih lanjut dalam kondisi atmosfer tertentu.
+
+13. Struktur Coating Galvalum
+
+Pada 55% Al-Zn, aluminium-rich dan zinc-rich phases bekerja bersama.
+
+Aluminium membentuk protective oxide/barrier yang membantu menghambat penetrasi lingkungan. Zinc-rich regions menyediakan sacrificial protection.
+
+Kombinasi tersebut merupakan alasan penting mengapa 55% Al-Zn memiliki corrosion performance atmosferik yang sangat baik pada banyak kondisi.
+
+14. Mengapa Galvanis Tidak Otomatis Kalah dari Galvalum?
+
+Pemilihan material tidak boleh hanya berdasarkan corrosion life.
+
+Galvanized steel memiliki sacrificial zinc protection yang sangat dikenal, termasuk pada area kerusakan lokal tertentu. Produk galvanis juga tersedia dalam banyak grade dan coating designation serta memiliki supply chain yang luas.
+
+Galvalum memiliki keunggulan tertentu pada atmospheric corrosion, reflectivity, dan elevated-temperature performance, tetapi bukan berarti cocok untuk setiap aplikasi.
+
+Material harus dipilih berdasarkan environment, forming, joining, coating specification, dan standard.
+
+15. Cut Edge
+
+Ketika sheet dipotong, steel substrate terekspos pada edge.
+
+Pada galvanized steel, zinc dapat memberikan sacrificial protection di sekitar area steel yang terekspos.
+
+Pada 55% Al-Zn, perilaku cut edge berbeda karena coating memiliki aluminium-rich barrier dan zinc-rich sacrificial regions. Karena itu performa flat surface tidak boleh langsung disamakan dengan cut edge.
+
+16. Mengapa Galvalum Banyak Digunakan untuk Roofing?
+
+55% Al-Zn banyak digunakan untuk roofing dan walling karena kombinasi corrosion resistance, appearance, reflectivity, dan durability.
+
+Namun pemilihan material harus memperhatikan coating designation, coating mass, steel grade, thickness, environment, roof geometry, drainage, fastener compatibility, forming operation, surface treatment, dan warranty conditions.
+
+17. Perbedaan Setelah Coating Bath
+
+Setelah coating dan cooling, kedua material dapat menjalani proses finishing yang serupa: skin pass mill, tension leveller, inspection, passivation, oiling, resin coating, dan recoiling.
+
+Tidak semua line memiliki seluruh equipment tersebut. Konfigurasi bergantung pada produk dan kebutuhan customer.
+
+18. Skin Pass dan Tension Levelling
+
+Skin pass dapat membantu mengontrol surface appearance, flatness, dan karakter mekanis tertentu.
+
+Tension levelling membantu meningkatkan flatness sebelum coil menjadi finished product.
+
+Kebutuhan proses berbeda menurut aplikasi. Roofing dan cladding mempunyai requirement yang berbeda dari automotive exposed panels.
+
+19. Mengapa Microstructure Galvalum Sangat Penting?
+
+Microstructure 55% Al-Zn merupakan bagian dari performa coating.
+
+Komposisi bath, cooling, strip temperature, line speed, coating mass, dan solidification condition dapat memengaruhi aluminium-rich dan zinc-rich phases.
+
+Karena itu galvalum tidak dibuat hanya dengan mencampur aluminium dan zinc lalu mencelupkan steel. Alloy chemistry dan solidification harus dikontrol.
+
+20. Mengapa Bath Galvanis Juga Sulit Dikendalikan?
+
+Continuous galvanizing bath merupakan sistem metalurgi yang sensitif. Steel-zinc reaction memengaruhi adhesion, formability, uniformity, appearance, dan potensi dross.
+
+Operator dan process engineer perlu mengendalikan bath temperature, aluminium, iron, dross, strip temperature, coating wiping, dan kondisi equipment.
+
+21. Apakah Temperatur Produksi Sama?
+
+Tidak boleh diasumsikan sama.
+
+Continuous galvanizing zinc bath umumnya berada di kisaran sekitar 450–470°C, tergantung desain dan kondisi proses.
+
+Galvalum memiliki alloy bath dengan chemistry dan process window berbeda. Karena itu exact bath temperature harus mengikuti equipment, alloy specification, strip condition, line speed, dan product recipe.
+
+Tidak ada satu set point universal untuk semua line.
+
+22. Perbedaan Coating Mass: Z275 dan AZ150
+
+Designation seperti Z275 pada galvanized steel dan AZ150 pada 55% Al-Zn bukan dua angka yang boleh dibandingkan secara langsung.
+
+Z275 dan AZ150 merujuk pada coating mass designation dari sistem coating berbeda. Massa coating bukan satu-satunya penentu corrosion performance.
+
+Karena coating composition berbeda, perbandingan harus melihat standard, coating mass, environment, application, dan expected performance.
+
+23. Galvanis dan Galvalum dalam Roll Forming
+
+Kedua material dapat digunakan untuk roll forming, tetapi coating harus memiliki formability yang sesuai.
+
+Pada galvanized steel, inhibition layer berperan dalam adhesion selama forming.
+
+Pada 55% Al-Zn, forming radius dan product specification harus diperhatikan untuk menghindari coating damage atau microcracking yang tidak dapat diterima.
+
+Untuk roofing coil, pembeli sebaiknya memastikan material memang memenuhi requirement profile dan forming process yang akan digunakan.
+
+24. Galvanis dan Galvalum sebagai Substrate Prepainted Steel
+
+Keduanya dapat menjadi substrate untuk organic coating.
+
+Galvanized coil → surface treatment → primer → top coat → prepainted galvanized steel.
+
+55% Al-Zn coil → surface treatment → primer → top coat → prepainted Al-Zn steel.
+
+Dalam sistem prepainted, metallic coating memberikan perlindungan dasar dan organic coating memberikan warna serta perlindungan tambahan. Compatibility antara substrate, pretreatment, primer, dan top coat sangat penting.
+
+25. Defect yang Dapat Terjadi di Line
+
+Masalah proses dapat menghasilkan dross marks, coating variation, poor adhesion, scratches, uneven appearance, surface contamination, pinholes, dan masalah lainnya.
+
+Root cause tidak selalu berasal dari bath. Penyebab dapat berasal dari upstream steel, cleaning, furnace, bath chemistry, wiping, cooling, rolls, handling, atau surface treatment.
+
+Karena itu defect harus dianalisis berdasarkan data proses dan bukan hanya berdasarkan tampilan.
+
+26. Air Knife Sangat Penting
+
+Air knife atau gas wiping system merupakan salah satu equipment utama continuous hot-dip coating.
+
+Ia mengontrol excess molten metal setelah strip keluar bath dan membantu menentukan coating mass serta uniformity across width.
+
+Parameter knife harus disesuaikan dengan line speed, coating target, strip width, bath condition, dan equipment geometry.
+
+27. Cooling dan Solidification
+
+Setelah keluar dari bath, coating harus mengalami solidification.
+
+Pada galvanis, solidification menghasilkan zinc-based coating.
+
+Pada galvalum, solidification menghasilkan Al-Zn microstructure yang lebih kompleks.
+
+Cooling rate, strip temperature, line speed, dan alloy chemistry dapat memengaruhi hasil solidification.
+
+28. Quality Control
+
+Quality control tidak cukup hanya melihat warna atau kilap.
+
+Pengujian dapat mencakup coating mass, coating thickness, bend test, adhesion, surface inspection, mechanical properties, chemical analysis, dan corrosion testing sesuai requirement.
+
+ASTM A653/A653M dan ASTM A792/A792M memberikan persyaratan dan metode pengujian untuk masing-masing jenis produk.
+
+29. Cara Membedakan Produk Galvanis dan Galvalum
+
+Jangan hanya mengandalkan tampilan.
+
+Periksa:
+1. Coil tag.
+2. Mill certificate.
+3. Coating designation.
+4. Standard.
+5. Coating mass.
+6. Product datasheet.
+7. Jika perlu, lakukan laboratory chemical analysis.
+
+Galvanized steel dapat mengacu pada ASTM A653/A653M atau standard setara. 55% Al-Zn dapat mengacu pada ASTM A792/A792M atau standard setara.
+
+30. Faktor yang Menentukan Umur Pakai
+
+Jenis coating hanyalah satu faktor.
+
+Umur layanan juga dipengaruhi oleh coating mass, steel thickness, environment, humidity, salt exposure, industrial pollutants, drainage, dissimilar-metal contact, cut edges, scratches, forming damage, fastener condition, maintenance, dan design detail.
+
+Karena itu tidak tepat memberikan angka umur pakai universal hanya berdasarkan kata galvanis atau galvalum.
+
+31. Bagaimana Pabrik Memilih?
+
+Pemilihan dimulai dari application.
+
+Galvanized steel dapat dipilih ketika kebutuhan sacrificial protection, forming, joining, painting compatibility, grade availability, atau standard tertentu menjadi prioritas.
+
+55% Al-Zn dapat dipertimbangkan ketika kombinasi barrier protection, atmospheric corrosion resistance, reflectivity, dan application requirements sesuai.
+
+Pada roofing, keputusan harus melihat substrate, coating, forming, fastener, roof geometry, drainage, dan environment secara bersamaan.
+
+32. Mengapa Standard Sangat Penting?
+
+Istilah pasar tidak selalu cukup presisi.
+
+ASTM A653/A653M digunakan untuk zinc-coated dan zinc-iron alloy-coated steel sheet melalui hot-dip process.
+
+ASTM A792/A792M digunakan untuk 55% aluminum-zinc alloy-coated steel sheet melalui hot-dip process.
+
+ASTM A924/A924M memberikan general requirements untuk steel sheet metallic-coated by the hot-dip process.
+
+Standard membantu menetapkan coating designation, coating mass, mechanical requirements, test methods, bend requirements, dan acceptance criteria.
+
+33. Galvanis dan Galvalum Bukan Sekadar "Murah vs Mahal"
+
+Total cost harus mempertimbangkan harga coil, coating mass, product life, maintenance, installation, fabrication loss, weight, availability, warranty, replacement cost, dan environment.
+
+Material dengan harga awal lebih tinggi tidak otomatis lebih mahal sepanjang umur produk. Sebaliknya, material dengan performa tinggi belum tentu ekonomis bila digunakan pada aplikasi yang tidak membutuhkannya.
+
+34. Alur Produksi yang Paling Mudah Dipahami
+
+Galvanis:
+
+Steel coil
+→ cleaning
+→ annealing
+→ molten zinc bath
+→ air knife
+→ cooling
+→ finishing
+→ inspection
+→ surface treatment
+→ recoiling
+→ galvanized coil
+
+Galvalum:
+
+Steel coil
+→ cleaning
+→ annealing
+→ molten 55% Al-Zn alloy bath
+→ air knife
+→ cooling / solidification
+→ finishing
+→ inspection
+→ surface treatment
+→ recoiling
+→ 55% Al-Zn coated coil
+
+Perbedaannya terutama mulai terlihat jelas pada bath, interface reaction, solidification, dan microstructure coating.
+
+Kesimpulan
+
+Galvanis dan galvalum sama-sama dapat dibuat melalui continuous hot-dip coating, tetapi keduanya berbeda secara mendasar pada coating alloy dan metallurgy.
+
+Pada galvanis, strip baja masuk ke bath berbasis molten zinc. Aluminium dalam jumlah kecil terutama digunakan untuk mengontrol reaksi steel-zinc dan membentuk thin inhibition layer yang mendukung adhesion. Coating akhirnya dominan zinc dan memberikan sacrificial protection.
+
+Pada galvalum 55% Al-Zn, strip masuk ke bath alloy yang aluminium-nya merupakan komponen utama. Sistem yang dirujuk oleh ArcelorMittal dan BlueScope menggunakan sekitar 55% aluminium, sekitar 43–44% zinc, dan sekitar 1,5–1,6% silicon. Struktur coating membentuk aluminium-rich dan zinc-rich phases. Aluminium memberikan barrier protection, sedangkan zinc memberikan sacrificial protection.
+
+Dengan demikian:
+
+Galvanis:
+Steel → molten zinc-based bath → zinc-rich coating → dominan sacrificial protection.
+
+Galvalum:
+Steel → molten 55% Al-Zn-based alloy bath → Al-Zn microstructure → barrier protection + sacrificial protection.
+
+Namun kualitas produk tidak ditentukan oleh bath saja. Cleaning, annealing, atmosphere control, bath chemistry, air knife, cooling, finishing, surface treatment, inspection, dan recoiling semuanya menentukan hasil akhir.
+
+Memilih antara galvanis dan galvalum juga tidak cukup berdasarkan warna atau coating mass saja. Gunakan standard, coating designation, datasheet, kondisi lingkungan, forming process, fastener compatibility, dan kebutuhan umur layanan sebagai dasar engineering.
+
+Sumber dan Referensi Teknis
+
+1. ASTM International — ASTM A653/A653M, Steel Sheet, Zinc-Coated (Galvanized) or Zinc-Iron Alloy-Coated by the Hot-Dip Process.
+https://store.astm.org/a0653_a0653m.html
+
+2. ASTM International — ASTM A792/A792M-25, Steel Sheet, 55% Aluminum-Zinc Alloy-Coated by the Hot-Dip Process.
+https://store.astm.org/a0792_a0792m-25.html
+
+3. ASTM International — ASTM A924/A924M-25, General Requirements for Steel Sheet, Metallic-Coated by the Hot-Dip Process.
+https://store.astm.org/a0924_a924m-25.html
+
+4. ArcelorMittal — Metallic Coated Steel User Manual / Aluzinc®.
+https://constructalia.arcelormittal.com/files/Metalliccoated_usermanual_EN--e4a6071d0d8990dce720159d6a75a7f5.pdf
+
+5. GalvInfo Center / International Zinc Association — Continuous Hot-Dip Coating Process.
+https://www.galvinfo.com/galvinfonotes/
+
+6. GalvInfo Center / International Zinc Association — The Role of Aluminum in Continuous Hot-Dip Galvanizing.
+https://www.galvinfo.com/wp-content/uploads/sites/8/2017/05/GalvInfoNote_2_4.pdf
+
+7. NS BlueScope Indonesia — ZINCALUME® Steel.
+https://www.nsbluescope.com/id/id/our-brands/zincalume
+
+8. BlueScope — ZINCALUME® Steel Technical Guide.
+https://www.nsbluescope.com/asean/wp-content/uploads/sites/2/2019/05/Zincalume%C2%AE-Steel-Technical-Guide-Malaysia.pdf
+
+Catatan istilah: "galvanis" dalam artikel ini berarti continuous hot-dip galvanized steel. "Galvalum" digunakan sebagai istilah pasar untuk aluminium-zinc alloy coated steel, terutama 55% Al-Zn. Galvalume® dan ZINCALUME® adalah nama dagang. Untuk pembelian dan engineering specification, gunakan standard dan datasheet produk aktual.
