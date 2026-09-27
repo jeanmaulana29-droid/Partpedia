@@ -19,11 +19,12 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="dl-logo-wrap">
         <img
-          src="/partpedia-app-logo.png"
-          alt="Logo Partpedia"
+          src="/icon-512.png"
+          alt="Partpedia"
           width="220"
           height="220"
           class="dl-logo"
+          decoding="async"
         />
       </div>
 
@@ -179,6 +180,15 @@ import Layout from "../layouts/Layout.astro";
       margin: 0.5rem 0 1.5rem;
     }
     .dl-logo {
+      display: block;
+      width: min(220px, 70vw);
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 28px;
+      background: rgba(0,0,0,0.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+
       width: min(220px, 56vw);
       height: auto;
       border-radius: 28px;
