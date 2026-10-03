@@ -12,38 +12,9 @@ import Layout from "../layouts/Layout.astro";
     <p class="meta">Kami membaca pesan terkait katalog, koreksi data, dan penawaran kerja sama.</p>
 
     <p>
-      Untuk pertanyaan umum, usulan perbaikan data part, atau informasi kerja sama, Anda dapat menghubungi
-      Partpedia melalui saluran berikut atau mengisi formulir di bawah.
+      Untuk penawaran kerja sama, koreksi data, atau pertanyaan bisnis, isi formulir di bawah.
+      Anda juga dapat menghubungi kami lewat telepon, email, atau alamat berikut.
     </p>
-
-    <div class="card">
-      <p style="margin:0 0 0.5rem"><strong>Telepon</strong></p>
-      <p style="margin:0;font-size:1.25rem;color:var(--ink)">
-        <a href="tel:+622648330329">(0264) 8330329</a>
-      </p>
-    </div>
-
-    <div class="card">
-      <p style="margin:0 0 0.5rem"><strong>Email</strong></p>
-      <p style="margin:0;font-size:1.25rem;color:var(--ink)">
-        <a href="mailto:qca9299@gmail.com">qca9299@gmail.com</a>
-      </p>
-    </div>
-
-    <div class="card card-address">
-      <p style="margin:0 0 0.5rem"><strong>Alamat</strong></p>
-      <div class="address-row">
-        <span class="pin" aria-hidden="true">📍</span>
-        <p class="address-text">
-          Babakan Sari, Kecamatan Kiaracondong<br />
-          Bandung, Jawa Barat 40281<br />
-          Indonesia
-        </p>
-      </div>
-      <p style="margin:0.85rem 0 0;font-size:0.9rem;color:var(--muted)">
-        Jam respons biasanya pada hari kerja. Mohon siapkan kode part atau tautan halaman terkait bila melapor koreksi data.
-      </p>
-    </div>
 
     <!-- Formulir kerja sama / kontak profesional -->
     <section class="form-section" id="formulir" aria-labelledby="form-title">
@@ -62,7 +33,7 @@ import Layout from "../layouts/Layout.astro";
         <input type="hidden" name="_subject" value="Partpedia — Pesan dari formulir kontak" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="true" />
-        <input type="hidden" name="_next" value="https://partpedia.vercel.app/contact/?sent=1" />
+        <input type="hidden" name="_next" value="https://www.klikpartpedia.com/contact/?sent=1" />
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="grid">
@@ -124,6 +95,37 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </section>
 
+    <h2 class="channels-title">Saluran langsung</h2>
+
+    <div class="card">
+      <p style="margin:0 0 0.5rem"><strong>Telepon</strong></p>
+      <p style="margin:0;font-size:1.25rem;color:var(--ink)">
+        <a href="tel:+622648330329">(0264) 8330329</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <p style="margin:0 0 0.5rem"><strong>Email</strong></p>
+      <p style="margin:0;font-size:1.25rem;color:var(--ink)">
+        <a href="mailto:qca9299@gmail.com">qca9299@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="card card-address">
+      <p style="margin:0 0 0.5rem"><strong>Alamat</strong></p>
+      <div class="address-row">
+        <span class="pin" aria-hidden="true">📍</span>
+        <p class="address-text">
+          Babakan Sari, Kecamatan Kiaracondong<br />
+          Bandung, Jawa Barat 40281<br />
+          Indonesia
+        </p>
+      </div>
+      <p style="margin:0.85rem 0 0;font-size:0.9rem;color:var(--muted)">
+        Jam respons biasanya pada hari kerja. Mohon siapkan kode part atau tautan halaman terkait bila melapor koreksi data.
+      </p>
+    </div>
+
     <h2>Hal yang bisa kami bantu</h2>
     <ul>
       <li>Koreksi spek, size, atau nama part di katalog</li>
@@ -180,6 +182,12 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1.15;
     margin: 0 0 1.25rem;
     letter-spacing: -0.02em;
+  }
+  .channels-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
   }
   .legal h2 {
     font-family: var(--font-display);
