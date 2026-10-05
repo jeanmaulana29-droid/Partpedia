@@ -234,7 +234,7 @@ const jsonLd = {
           {entry.price_range || "Belum tersedia"}
           {entry.unit && entry.price_range ? ` / ${entry.unit}` : ""}
         </span>
-        <span class="price-disclaimer">⚠️ {entry.price_note}</span>
+        <span class="price-disclaimer">{entry.price_note}</span>
       </div>
             <div class="buy-links-detail">
         <a class="buy buy-amazon" href={buyUrl} target="_blank" rel="noopener sponsored nofollow">
