@@ -175,7 +175,6 @@ const catalog = shuffleCatalog(data);
         </div>
       </div>
     </div>
-    <div class="hero-dots" id="hero-dots" aria-hidden="true"></div>
   </section>
 
 
@@ -759,19 +758,9 @@ const catalog = shuffleCatalog(data);
   <script>
     // Hero text rotate 5s (video loops independently)
     const texts = Array.from(document.querySelectorAll(".hero-text"));
-    const dotsWrap = document.getElementById("hero-dots");
     let idx = 0;
-    texts.forEach((_, i) => {
-      const d = document.createElement("button");
-      d.type = "button";
-      d.className = "dot" + (i === 0 ? " on" : "");
-      d.setAttribute("aria-label", "Teks hero " + (i + 1));
-      d.addEventListener("click", () => { idx = i; paint(); });
-      dotsWrap?.appendChild(d);
-    });
     function paint() {
       texts.forEach((s, i) => s.classList.toggle("active", i === idx));
-      dotsWrap?.querySelectorAll(".dot").forEach((d, i) => d.classList.toggle("on", i === idx));
     }
     setInterval(() => {
       if (!texts.length) return;
@@ -1378,9 +1367,6 @@ const catalog = shuffleCatalog(data);
     .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); max-width: 14ch; margin-bottom: 0.4rem; }
     .hero-sub { color: var(--muted); max-width: 36ch; margin: 0 0 1.1rem; }
     .hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .hero-dots { position: absolute; bottom: 0.9rem; right: 1rem; z-index: 3; display: flex; gap: 0.35rem; }
-    .dot { width: 8px; height: 8px; border-radius: 99px; border: none; background: rgba(255,255,255,0.35); cursor: pointer; padding: 0; }
-    .dot.on { background: var(--amber); width: 18px; }
     .brands { margin: 1.5rem 0 2rem; overflow: hidden; }
     .brands-label { text-align: center; color: var(--muted); font-size: 0.8rem; margin-bottom: 0.85rem; }
     .brands-track { display: flex; gap: 0.85rem; align-items: center; width: max-content; animation: marquee 40s linear infinite; }
