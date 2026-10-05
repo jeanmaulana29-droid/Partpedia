@@ -1,0 +1,760 @@
+Apa Itu PPIC? Pengertian, Tugas, Fungsi, dan Peran PPIC di Industri Manufaktur
+
+PPIC adalah salah satu fungsi paling penting dalam perusahaan manufaktur
+karena bagian ini menghubungkan permintaan pasar dengan kemampuan nyata
+pabrik untuk menghasilkan produk. PPIC bukan sekadar bagian yang membuat
+jadwal produksi, bukan pula sekadar bagian yang menghitung stok. PPIC
+bekerja untuk memastikan produk yang dibutuhkan dapat diproduksi pada
+waktu yang tepat, dalam jumlah yang tepat, dengan material dan kapasitas
+yang tersedia, sementara persediaan tetap dikendalikan.
+
+Dalam praktik industri, PPIC merupakan singkatan dari Production
+Planning and Inventory Control. Secara sederhana, Production Planning
+berarti merencanakan apa yang akan diproduksi, berapa jumlahnya, kapan
+diproduksi, dan bagaimana kapasitas produksi digunakan. Inventory
+Control berarti mengendalikan persediaan agar material, barang setengah
+jadi, dan produk jadi tersedia sesuai kebutuhan tanpa menciptakan
+persediaan berlebihan.
+
+Definisi tersebut sejalan dengan kompetensi kerja di Indonesia. Dokumen
+SKKNI yang diterbitkan Kementerian Ketenagakerjaan memasukkan kegiatan
+PPIC sebagai fungsi untuk melakukan perencanaan produksi dan
+pengendalian persediaan, termasuk menghitung kebutuhan waktu produksi
+serta kebutuhan dan persediaan material. Dalam praktik sistem manufaktur
+modern, fungsi tersebut berkembang menjadi proses yang terintegrasi
+dengan demand, material requirement planning, kapasitas, production
+order, purchasing, warehouse, dan production control.
+
+SAP, salah satu sistem ERP yang banyak digunakan industri, menempatkan
+production planning dalam rangkaian proses yang mencakup Sales and
+Operations Planning, Material Requirements Planning, serta pengendalian
+produksi. Microsoft juga menjelaskan supply planning sebagai proses
+menyeimbangkan demand dan supply untuk barang yang dibeli, dirakit,
+diproduksi, atau dipindahkan antar lokasi.
+
+Jadi, jika pertanyaannya adalah “apa itu PPIC?”, jawaban paling tepat
+adalah: PPIC adalah fungsi yang merencanakan kebutuhan produksi dan
+mengendalikan persediaan berdasarkan permintaan, kapasitas, material,
+waktu, dan kondisi aktual pabrik agar target produksi dan delivery dapat
+tercapai secara realistis.
+
+Mengapa PPIC Sangat Penting di Pabrik?
+
+Pabrik tidak dapat bekerja hanya berdasarkan pesanan pelanggan. Pesanan
+harus diterjemahkan menjadi kebutuhan material, kebutuhan kapasitas,
+urutan produksi, waktu proses, kebutuhan tenaga kerja, serta jadwal
+pengiriman.
+
+Bayangkan sebuah perusahaan menerima pesanan 10.000 unit produk dengan
+permintaan pengiriman dalam 14 hari. Sales mungkin hanya melihat jumlah
+dan tanggal pengiriman. Produksi perlu mengetahui berapa kapasitas mesin
+yang tersedia. Warehouse perlu mengetahui apakah bahan baku cukup.
+Purchasing harus mengetahui material apa yang harus dibeli dan kapan
+harus datang. QC harus mengetahui kapan produk perlu diperiksa.
+Logistics harus mengetahui kapan barang selesai dan siap dikirim.
+
+PPIC berada di tengah aliran tersebut.
+
+Jika PPIC salah menghitung kebutuhan, dampaknya dapat menyebar ke
+seluruh organisasi. Material bisa datang terlambat, mesin menunggu
+material, produksi mengubah jadwal berkali-kali, warehouse mengalami
+kelebihan stok tertentu, sementara material lain justru habis. Pada
+akhirnya customer menerima keterlambatan.
+
+Sebaliknya, PPIC yang baik membuat kebutuhan menjadi terlihat lebih
+awal. Kekurangan material dapat diketahui sebelum tanggal produksi.
+Kapasitas yang berpotensi penuh dapat dianalisis sebelum order
+dijanjikan. Jadwal dapat disusun berdasarkan prioritas yang jelas.
+Perubahan dapat dikendalikan berdasarkan dampaknya terhadap order lain.
+
+Inilah alasan PPIC bukan fungsi administratif biasa. PPIC merupakan
+fungsi pengendalian aliran sumber daya produksi.
+
+Tugas Utama PPIC di Industri Manufaktur
+
+Tugas PPIC dapat berbeda antar perusahaan karena struktur organisasi,
+jenis produksi, dan sistem ERP yang digunakan tidak selalu sama. Namun
+secara umum, pekerjaan PPIC dapat dikelompokkan menjadi perencanaan
+produksi, perencanaan kebutuhan material, pengendalian persediaan,
+penjadwalan, monitoring pelaksanaan, dan pengendalian perubahan.
+
+Perencanaan Produksi
+
+Tugas pertama PPIC adalah menentukan rencana produksi berdasarkan
+kebutuhan perusahaan. Sumber kebutuhan dapat berasal dari sales order,
+forecast, master production schedule, kebutuhan stok, atau kombinasi
+beberapa sumber tersebut.
+
+PPIC harus menentukan produk apa yang harus dibuat, berapa jumlahnya,
+kapan harus diproduksi, dan proses mana yang harus digunakan.
+
+Perencanaan tidak boleh hanya melihat jumlah order. Kapasitas mesin,
+waktu setup, waktu proses, material yang tersedia, maintenance,
+manpower, dan prioritas customer harus dipertimbangkan.
+
+Contohnya, jika mesin A mampu menghasilkan 1.000 unit per hari dan
+terdapat order 5.000 unit, secara sederhana kebutuhan waktu adalah lima
+hari. Tetapi perhitungan nyata dapat berbeda jika mesin tersebut harus
+melakukan setup, mengalami planned maintenance, atau memiliki order lain
+yang sudah lebih dahulu masuk.
+
+Karena itu, production plan harus menunjukkan kondisi yang benar-benar
+dapat dieksekusi, bukan sekadar target yang terlihat bagus di
+spreadsheet.
+
+Menyusun Jadwal Produksi
+
+Setelah rencana produksi ditentukan, PPIC menerjemahkannya menjadi
+jadwal yang lebih operasional.
+
+Jadwal dapat dibuat dalam horizon bulanan, mingguan, harian, bahkan per
+shift tergantung karakteristik industri. Pada produksi make-to-order,
+jadwal biasanya sangat dipengaruhi customer due date. Pada
+make-to-stock, jadwal lebih banyak dipengaruhi forecast, inventory
+target, dan pola konsumsi.
+
+Dalam industri dengan banyak jenis produk, sequencing juga menjadi
+penting. Dua produk mungkin menggunakan mesin yang sama tetapi
+membutuhkan setup berbeda. Jika urutannya tidak direncanakan dengan
+baik, waktu produktif dapat hilang karena terlalu banyak pergantian.
+
+Dalam manufaktur volume tinggi, penjadwalan dapat mempertimbangkan
+delivery date, available capacity, restriction, dan urutan proses.
+Sistem production planning modern bahkan dapat menggunakan algoritma
+atau heuristik untuk menghasilkan urutan produksi.
+
+Dengan kata lain, PPIC tidak hanya menentukan “produksi minggu depan”,
+tetapi juga menentukan bagaimana kapasitas digunakan agar target
+tersebut tercapai.
+
+Menghitung Kebutuhan Material
+
+Salah satu tugas paling penting PPIC adalah memastikan material tersedia
+ketika dibutuhkan.
+
+Untuk menghitung kebutuhan material, PPIC dapat menggunakan Material
+Requirements Planning atau MRP. MRP menghitung kebutuhan berdasarkan
+demand, struktur produk atau Bill of Materials, stok yang tersedia,
+planned receipts, lead time, dan parameter perencanaan lainnya.
+
+SAP menjelaskan bahwa MRP digunakan untuk menyesuaikan kebutuhan
+kuantitas dengan supply dan kapasitas pada waktu yang diperlukan. Dalam
+sistem tersebut, material requirement dapat menghasilkan proposal
+seperti planned order atau purchase requisition.
+
+Microsoft Business Central juga menjelaskan bahwa supply planning dapat
+menjalankan MPS dan MRP untuk menghasilkan usulan purchase, transfer,
+assembly, atau production order.
+
+Konsep dasarnya sederhana. Jika perusahaan harus membuat 1.000 unit
+produk dan setiap unit membutuhkan 2 kg material A, kebutuhan kotor
+material A adalah 2.000 kg. Namun PPIC tidak langsung menyimpulkan bahwa
+perusahaan harus membeli 2.000 kg.
+
+Stok yang tersedia, material yang sudah dipesan, safety stock, scrap
+factor, dan kebutuhan order lain harus diperhitungkan. Jika tersedia 800
+kg yang benar-benar dapat digunakan dan terdapat 500 kg yang sudah
+confirmed datang sebelum produksi dimulai, maka kebutuhan pembelian
+dapat berbeda jauh dari kebutuhan kotor.
+
+Karena itu, PPIC harus membedakan gross requirement dan net requirement.
+
+Mengendalikan Persediaan
+
+Inventory control adalah bagian kedua dari nama PPIC dan sama pentingnya
+dengan production planning.
+
+Persediaan yang terlalu sedikit dapat menghentikan produksi. Persediaan
+yang terlalu banyak mengikat modal, menggunakan ruang warehouse,
+meningkatkan risiko kerusakan atau obsolescence, dan dapat
+menyembunyikan masalah perencanaan.
+
+PPIC harus menjaga keseimbangan tersebut.
+
+Tidak semua material harus diperlakukan dengan parameter yang sama.
+Material dengan lead time panjang, nilai tinggi, risiko supply tinggi,
+atau pemakaian sangat kritis membutuhkan pendekatan yang berbeda
+dibanding material murah dengan lead time pendek.
+
+PPIC juga harus mengetahui status inventory. Available stock tidak sama
+dengan stock yang sedang quality hold. Material yang sudah dialokasikan
+untuk order tertentu juga tidak selalu dapat digunakan untuk order lain.
+
+Karena itu, angka “stok 500 unit” belum cukup sebagai informasi. PPIC
+perlu mengetahui 500 unit tersebut adalah material apa, spesifikasinya
+apa, berada di lokasi mana, statusnya apa, dan untuk kebutuhan apa.
+
+Monitoring Ketersediaan Material
+
+PPIC tidak berhenti setelah membuat material requirement. Kebutuhan
+harus ditindaklanjuti sampai material benar-benar tersedia.
+
+Jika material dibeli melalui Purchasing, PPIC perlu memonitor status
+purchase order dan tanggal kedatangannya. Jika supplier mengubah
+delivery date, perubahan tersebut dapat memengaruhi production schedule.
+
+Misalnya produksi dijadwalkan mulai 20 Oktober dan material dibutuhkan
+pada 19 Oktober. Supplier kemudian menginformasikan material baru tiba
+23 Oktober. PPIC harus menghitung dampaknya.
+
+Pilihan yang tersedia mungkin berupa mengubah sequence, menggunakan
+material alternatif yang telah disetujui, memajukan order lain,
+mempercepat supply, atau menggeser production schedule.
+
+Yang tidak boleh dilakukan adalah membiarkan jadwal tetap menggunakan
+asumsi lama seolah material masih datang pada tanggal semula.
+
+Monitoring seperti ini membuat PPIC berfungsi sebagai early warning
+system bagi produksi.
+
+Memastikan Kapasitas Produksi Memadai
+
+Material tersedia tidak berarti produksi otomatis dapat dilakukan. Mesin
+dan kapasitas juga harus tersedia.
+
+PPIC perlu memahami kapasitas efektif, bukan hanya kapasitas teoritis.
+Mesin mungkin secara teknis mampu beroperasi 24 jam, tetapi kapasitas
+efektifnya dipengaruhi planned maintenance, setup, changeover, downtime,
+speed loss, manpower, dan kondisi proses.
+
+SAP menyediakan fungsi production planning dan capacity planning untuk
+membantu mengidentifikasi masalah kapasitas sejak tahap perencanaan.
+Prinsipnya jelas: masalah kapasitas sebaiknya diketahui sebelum order
+masuk ke titik eksekusi.
+
+Misalnya sebuah line mempunyai kapasitas teoritis 100 ton per hari. Jika
+setelah memperhitungkan setup, maintenance, dan downtime kapasitas
+efektif hanya 82 ton, maka menggunakan angka 100 ton sebagai basis
+commitment akan menghasilkan jadwal yang terlalu optimistis.
+
+PPIC harus menggunakan kapasitas yang realistis.
+
+Melakukan Monitoring Realisasi Produksi
+
+Setelah produksi dimulai, PPIC harus membandingkan plan dengan actual.
+
+Misalnya rencana hari Senin adalah 50 ton, tetapi aktual hanya 35 ton.
+Selisih 15 ton harus diketahui penyebabnya.
+
+Apakah material terlambat? Mesin breakdown? Kecepatan line turun? Setup
+terlalu lama? Ada masalah kualitas? Tenaga kerja kurang? Prioritas
+berubah? Atau production order tidak dijalankan sesuai sequence?
+
+PPIC tidak harus mengambil alih tugas Production untuk menyelesaikan
+semua penyebab tersebut. Tetapi PPIC harus mengetahui dampaknya terhadap
+jadwal berikutnya.
+
+Jika kekurangan 15 ton tersebut membuat order customer terlambat dua
+hari, maka jadwal harus diperbarui dan pihak terkait harus diberi
+informasi.
+
+Inilah perbedaan antara planning dan control. Planning membuat rencana.
+Control memastikan rencana dibandingkan dengan kenyataan dan dikoreksi
+ketika terjadi deviasi.
+
+Mengendalikan Perubahan Jadwal
+
+Dalam industri nyata, jadwal produksi hampir tidak pernah benar-benar
+statis.
+
+Customer dapat mengubah quantity. Supplier dapat terlambat. Mesin dapat
+breakdown. Produk dapat masuk HOLD. Forecast dapat berubah. Order
+prioritas dapat muncul.
+
+PPIC harus mengendalikan perubahan tersebut.
+
+Kesalahan yang sering terjadi adalah setiap perubahan langsung
+dimasukkan ke jadwal tanpa menghitung dampaknya. Akibatnya satu
+perubahan kecil dapat menggeser banyak order.
+
+PPIC yang baik melakukan impact analysis. Jika order A dipercepat dua
+hari, order B mungkin mundur. Jika material X digunakan untuk order
+baru, order lama mungkin kekurangan material. Jika mesin tertentu
+dipakai untuk produk prioritas, produk lain harus menunggu.
+
+Karena itu, perubahan jadwal harus dilihat sebagai perubahan sistem,
+bukan perubahan satu baris spreadsheet.
+
+Berkoordinasi dengan Purchasing
+
+PPIC dan Purchasing memiliki hubungan yang sangat erat tetapi bukan
+fungsi yang sama.
+
+PPIC menentukan kebutuhan material berdasarkan production plan dan
+inventory requirement. Purchasing menjalankan proses pengadaan sesuai
+kebijakan perusahaan.
+
+PPIC perlu memberikan informasi kebutuhan dengan jelas: material apa,
+quantity berapa, kapan dibutuhkan, dan tingkat urgensinya.
+
+Sebaliknya, Purchasing perlu memberikan informasi aktual mengenai
+supplier, purchase order, confirmation, delivery date, dan risiko
+keterlambatan.
+
+Jika PPIC menganggap material pasti datang sesuai tanggal PO sementara
+Purchasing sudah mengetahui supplier terlambat, maka planning menjadi
+tidak valid.
+
+Karena itu, koordinasi keduanya harus berbasis tanggal kebutuhan dan
+tanggal kedatangan aktual.
+
+Berkoordinasi dengan Warehouse
+
+Warehouse menyediakan informasi penting mengenai kondisi inventory. PPIC
+menggunakan informasi tersebut sebagai dasar perencanaan.
+
+Namun stok sistem harus konsisten dengan stok fisik.
+
+Jika sistem mencatat 1.000 unit tetapi 200 unit ternyata sudah rusak,
+hilang, atau berstatus hold, maka available stock sebenarnya tidak 1.000
+unit.
+
+Perbedaan kecil yang terus dibiarkan dapat menghasilkan planning yang
+semakin jauh dari kondisi nyata.
+
+PPIC karena itu membutuhkan inventory accuracy yang baik. Stock opname,
+cycle count, transaksi material, status hold, dan reservation harus
+dikendalikan.
+
+Berkoordinasi dengan Production
+
+PPIC membuat rencana, tetapi Production yang mengeksekusi proses
+manufaktur.
+
+Hubungan keduanya harus berbasis data. PPIC harus mengetahui kemampuan
+aktual production line, sedangkan Production harus mengetahui prioritas
+dan target yang telah ditetapkan.
+
+Jika produksi tidak mampu mencapai plan karena masalah teknis, informasi
+tersebut harus segera kembali ke PPIC. PPIC kemudian menghitung
+dampaknya terhadap order lain.
+
+PPIC tidak boleh membuat jadwal tanpa memahami proses produksi.
+Sebaliknya, Production juga tidak seharusnya menjalankan pekerjaan
+secara terpisah dari prioritas perusahaan.
+
+Berkoordinasi dengan QC
+
+Quality Control juga memengaruhi availability produk.
+
+Produk yang secara fisik telah selesai diproduksi belum tentu dapat
+dianggap available untuk delivery jika masih menunggu inspeksi atau
+berstatus HOLD.
+
+Misalnya production report menunjukkan 100 ton selesai. QC kemudian
+menahan 20 ton karena penyimpangan kualitas. Maka secara planning, hanya
+80 ton yang dapat dianggap available untuk kebutuhan pengiriman sampai
+status 20 ton tersebut diputuskan.
+
+PPIC harus memasukkan kondisi tersebut ke dalam perhitungan supply.
+
+Berkoordinasi dengan Sales atau Customer Service
+
+Sales membawa kebutuhan pasar dan customer ke dalam perusahaan. PPIC
+menerjemahkan kebutuhan tersebut menjadi feasibility produksi.
+
+Jika customer meminta delivery 10 hari sementara kapasitas dan material
+hanya memungkinkan 15 hari, PPIC harus memberikan informasi berdasarkan
+perhitungan nyata.
+
+PPIC yang baik tidak sekadar mengatakan “tidak bisa”. PPIC harus dapat
+menjelaskan pilihan: delivery penuh pada hari ke-15, partial delivery
+pada hari ke-10, overtime, perubahan sequence, atau opsi lain jika
+tersedia.
+
+Namun keputusan komersial tetap berada pada pihak yang memiliki
+kewenangan. PPIC bertugas menyediakan fakta kapasitas dan supply agar
+keputusan tersebut tidak dibuat berdasarkan asumsi.
+
+PPIC Harus Menguasai Data Produksi
+
+Kemampuan menggunakan spreadsheet atau ERP memang penting, tetapi
+kemampuan PPIC tidak berhenti pada software.
+
+PPIC harus memahami data apa yang masuk ke sistem dan apakah data
+tersebut masuk akal.
+
+Master data yang penting dapat mencakup material master, BOM, routing,
+work center, production time, lead time, lot size, safety stock,
+planning calendar, dan parameter lainnya. SAP sendiri menempatkan
+material master, BOM, work center, routing, planning calendar,
+production lot, serta parameter safety time sebagai bagian dari master
+data yang menjadi dasar MRP.
+
+Jika master data salah, hasil MRP juga dapat salah.
+
+Contohnya, waktu proses aktual suatu produk adalah 8 jam tetapi sistem
+mencatat 5 jam. Jika PPIC menggunakan data sistem tanpa memeriksa
+kondisi aktual, kapasitas yang dihitung akan terlalu besar.
+
+Karena itu, PPIC yang kuat harus memiliki kemampuan analisis data
+sekaligus pemahaman proses manufaktur.
+
+PPIC dan ERP: Apakah Harus Menggunakan SAP?
+
+Tidak.
+
+ERP membantu PPIC mengintegrasikan data dan mengotomatisasi banyak
+proses, tetapi ERP bukan definisi PPIC.
+
+Perusahaan kecil dapat menggunakan spreadsheet. Perusahaan menengah
+mungkin menggunakan ERP sederhana. Perusahaan besar dapat menggunakan
+SAP, Oracle, Microsoft Dynamics, atau sistem manufaktur terintegrasi
+dengan MES.
+
+Perbedaannya terutama pada skala, integrasi, otomasi, traceability, dan
+kompleksitas.
+
+Yang paling penting adalah logika planning dan kualitas data. Sistem
+mahal tidak akan menyelamatkan master data yang salah atau transaksi
+yang tidak disiplin.
+
+Dalam sistem yang terintegrasi, planned order dapat dibuat melalui
+proses MRP dan kemudian diteruskan ke proses produksi atau MES.
+Production control juga dapat digunakan untuk memonitor progres produksi
+dan menangani masalah yang muncul.
+
+Dengan demikian, teknologi memperkuat fungsi PPIC, tetapi tidak
+menggantikan kemampuan manusia untuk menentukan prioritas, mengevaluasi
+risiko, dan mengambil keputusan.
+
+Apa Bedanya PPIC dengan Purchasing?
+
+PPIC dan Purchasing sering dianggap sama karena keduanya berhubungan
+dengan material. Padahal tanggung jawabnya berbeda.
+
+PPIC menjawab pertanyaan: material apa yang dibutuhkan, berapa
+jumlahnya, dan kapan material tersebut dibutuhkan?
+
+Purchasing menjawab pertanyaan: material tersebut dibeli dari siapa,
+dengan proses pengadaan seperti apa, harga dan syarat pembeliannya
+bagaimana, serta bagaimana PO dikelola sesuai kebijakan perusahaan?
+
+Dalam beberapa perusahaan, PPIC dapat memiliki kewenangan membuat atau
+memicu purchase requisition. Namun proses sourcing, negosiasi, dan
+purchase order tetap mengikuti struktur organisasi perusahaan.
+
+Kesalahan pembagian tugas dapat membuat PPIC terlalu banyak melakukan
+pekerjaan Purchasing atau sebaliknya.
+
+Apa Bedanya PPIC dengan Warehouse?
+
+Warehouse mengelola penerimaan, penyimpanan, pergerakan, dan pengeluaran
+material atau produk sesuai sistem perusahaan. PPIC menggunakan
+informasi inventory tersebut untuk melakukan planning dan control.
+
+Warehouse bertanggung jawab terhadap kondisi dan pencatatan fisik sesuai
+kewenangannya. PPIC bertanggung jawab menggunakan informasi tersebut
+untuk menjawab kebutuhan produksi dan inventory planning.
+
+Keduanya harus terhubung tetapi tidak identik.
+
+Apa Bedanya PPIC dengan Production?
+
+Production menjalankan proses produksi. PPIC merencanakan dan
+mengendalikan kebutuhan produksinya.
+
+Production bertanggung jawab terhadap pelaksanaan proses, produktivitas,
+kualitas proses sesuai tanggung jawabnya, manpower, dan penggunaan mesin
+di area produksi. PPIC bertanggung jawab memastikan pekerjaan yang harus
+dilakukan, jumlah, prioritas, dan waktunya sesuai rencana perusahaan.
+
+Jika produksi mengalami breakdown, PPIC tidak memperbaiki mesin. PPIC
+menghitung dampaknya terhadap schedule dan melakukan replanning bila
+diperlukan.
+
+Apa Bedanya PPIC dengan QC?
+
+QC memastikan produk memenuhi persyaratan kualitas sesuai sistem dan
+spesifikasi yang berlaku. PPIC memastikan kebutuhan produksi dan supply
+direncanakan serta dikendalikan.
+
+Jika produk ditahan QC, PPIC harus memasukkan status tersebut ke dalam
+planning. Tetapi keputusan apakah produk memenuhi persyaratan kualitas
+tetap merupakan ranah quality.
+
+Batas tanggung jawab ini penting agar koordinasi berjalan tanpa
+mencampurkan kewenangan.
+
+Contoh Sederhana Cara Kerja PPIC
+
+Misalkan sebuah pabrik menerima order 5.000 unit produk yang harus
+dikirim dalam 10 hari.
+
+PPIC pertama-tama memeriksa demand dan due date. Setelah itu PPIC
+memeriksa stok finished goods. Ternyata tersedia 1.000 unit yang sudah
+approved dan dapat dikirim.
+
+Berarti kebutuhan produksi tambahan adalah 4.000 unit.
+
+PPIC kemudian memeriksa kapasitas produksi. Kapasitas efektif adalah 500
+unit per hari. Secara teoritis dibutuhkan delapan hari produksi.
+
+Berikutnya material diperiksa. Ternyata material utama hanya tersedia
+untuk 3.000 unit, sedangkan material untuk 1.000 unit tambahan baru
+diperkirakan datang pada hari ke-6.
+
+Sekarang PPIC memiliki masalah yang jelas. Kapasitas sebenarnya cukup,
+tetapi material tidak tersedia sejak awal.
+
+PPIC dapat menyusun produksi 3.000 unit lebih dahulu, kemudian
+melanjutkan 1.000 unit setelah material datang. Jika terdapat produk
+lain yang membutuhkan line yang sama, sequence harus dihitung ulang.
+
+Selanjutnya PPIC memonitor kedatangan material, output harian, status
+QC, dan kesiapan delivery.
+
+Jika pada hari ke-4 produksi hanya menghasilkan 1.600 unit dari target
+2.000 unit, PPIC harus menghitung ulang apakah kekurangan 400 unit
+tersebut masih dapat dikejar atau perlu perubahan delivery.
+
+Itulah PPIC dalam bentuk paling sederhana: menghubungkan demand, stock,
+material, capacity, production, quality, dan delivery menjadi satu
+rencana yang dapat dikendalikan.
+
+KPI yang Relevan untuk Mengukur PPIC
+
+Kinerja PPIC tidak seharusnya dinilai hanya dari apakah jadwal sudah
+dibuat.
+
+Beberapa indikator yang relevan adalah schedule adherence, schedule
+attainment, on-time delivery, inventory accuracy, material availability,
+stockout, excess inventory, inventory turnover, dan pencapaian kebutuhan
+material.
+
+Schedule adherence mengukur seberapa konsisten realisasi mengikuti
+rencana. On-time delivery mengukur kemampuan perusahaan memenuhi waktu
+pengiriman. Inventory accuracy menunjukkan seberapa dapat dipercaya data
+persediaan.
+
+Namun KPI tersebut harus dibaca bersama. Menurunkan inventory sampai
+sangat rendah bukan keberhasilan jika akibatnya produksi sering berhenti
+karena material kosong.
+
+Sebaliknya, menjaga inventory sangat tinggi juga bukan keberhasilan jika
+modal perusahaan terlalu banyak tertahan.
+
+Tujuan PPIC adalah mencapai keseimbangan antara service level,
+inventory, kapasitas, dan stabilitas produksi.
+
+Kesalahan Umum dalam Pekerjaan PPIC
+
+Kesalahan pertama adalah membuat jadwal berdasarkan kapasitas teoritis.
+Kapasitas efektif harus mempertimbangkan downtime, setup, maintenance,
+speed loss, manpower, dan kondisi aktual.
+
+Kesalahan kedua adalah menganggap semua stok sebagai available stock.
+Material hold, reject, reserved stock, dan material yang tidak sesuai
+spesifikasi tidak boleh diperlakukan sama dengan material yang siap
+digunakan.
+
+Kesalahan ketiga adalah hanya melihat quantity tanpa melihat due date.
+Dua order dengan quantity sama dapat memiliki prioritas yang berbeda
+karena customer requirement dan delivery date berbeda.
+
+Kesalahan keempat adalah mengubah jadwal tanpa melihat dampaknya.
+Perubahan satu order dapat menggeser banyak order lain.
+
+Kesalahan kelima adalah terlalu bergantung pada sistem. ERP dapat
+menghitung dengan cepat, tetapi hasilnya tetap bergantung pada master
+data dan transaksi yang benar.
+
+Kesalahan keenam adalah tidak melakukan follow-up terhadap rencana.
+Planning yang tidak dipantau hanya menjadi dokumen.
+
+PPIC yang Baik Harus Mampu Mengatakan “Tidak Bisa”
+
+Ini bagian yang sering tidak dipahami.
+
+PPIC bukan bagian yang harus selalu mengatakan “bisa” kepada Sales atau
+manajemen.
+
+Jika material tidak tersedia, kapasitas tidak cukup, dan due date tidak
+realistis, PPIC harus mengatakan bahwa permintaan tersebut tidak
+feasible berdasarkan kondisi saat ini.
+
+Namun jawabannya harus berbasis data.
+
+Misalnya bukan sekadar “tidak bisa”. Jawaban yang profesional adalah:
+kapasitas efektif tersedia 600 unit per hari, kebutuhan 5.000 unit,
+material hanya cukup untuk 3.000 unit sampai tanggal tertentu, sehingga
+delivery penuh pada tanggal X tidak feasible. Pilihan yang tersedia
+adalah partial delivery, tambahan shift, percepatan material, atau
+perubahan prioritas order lain.
+
+Inilah nilai PPIC yang sebenarnya.
+
+PPIC bukan penghambat produksi. PPIC adalah fungsi yang membuat
+keputusan produksi dapat dipertanggungjawabkan.
+
+PPIC pada Industri dengan Produk Kompleks
+
+Semakin kompleks produk dan proses manufaktur, semakin penting fungsi
+PPIC.
+
+Pada industri baja, misalnya, planning tidak cukup berdasarkan tonase.
+Grade, thickness, width, coil size, surface condition, mechanical
+properties, customer specification, dan kemampuan proses downstream
+dapat menentukan apakah material tertentu benar-benar dapat digunakan.
+
+Pada industri otomotif, sequencing dapat mempertimbangkan banyak varian
+produk dan batasan line. Pada industri makanan, shelf life dan batch
+menjadi penting. Pada industri kimia, formula, batch size, cleaning, dan
+campaign production dapat memengaruhi urutan. Pada industri elektronik,
+availability komponen dan lead time supplier dapat menjadi faktor
+kritis.
+
+Jadi prinsip PPIC sama, tetapi parameter planning mengikuti
+karakteristik industrinya.
+
+PPIC dan Forecast Tidak Sama
+
+Forecast adalah perkiraan kebutuhan. PPIC menggunakan forecast sebagai
+salah satu input, bukan sebagai kebenaran mutlak.
+
+Forecast dapat berubah karena demand aktual berbeda dari perkiraan.
+Karena itu, PPIC harus membandingkan forecast dengan actual demand dan
+menyesuaikan planning.
+
+Untuk perusahaan make-to-stock, forecast dapat menjadi input penting
+bagi production plan. Untuk make-to-order, customer order mungkin
+menjadi input yang lebih dominan.
+
+Yang penting adalah PPIC memahami sumber demand yang digunakan dan
+horizon waktunya.
+
+PPIC Harus Memahami Lead Time
+
+Lead time adalah waktu yang dibutuhkan sejak suatu kebutuhan dipicu
+sampai material atau produk tersedia sesuai proses yang ditetapkan.
+
+Jika supplier membutuhkan 30 hari, material tersebut tidak dapat
+diperlakukan seperti material yang dapat dibeli besok.
+
+Lead time juga bukan hanya waktu supplier. Production lead time,
+inspection time, warehouse handling, transport, setup, dan approval
+dapat menjadi bagian dari total elapsed time.
+
+PPIC harus melihat keseluruhan aliran tersebut.
+
+Jika customer membutuhkan produk pada tanggal 30 dan proses internal
+membutuhkan 10 hari, material harus tersedia lebih awal. Jika material
+membutuhkan 30 hari pengadaan, keputusan procurement tidak dapat
+menunggu sampai mendekati tanggal produksi.
+
+Di sinilah perencanaan memberikan nilai: masalah yang diketahui lebih
+awal jauh lebih mudah dikendalikan.
+
+PPIC Harus Mengendalikan Prioritas
+
+Tidak semua order memiliki prioritas sama.
+
+Prioritas dapat ditentukan oleh due date, customer commitment, material
+availability, production sequence, contractual requirement, atau
+kebijakan perusahaan.
+
+Tetapi prioritas harus dikendalikan. Jika semua order diberi status
+urgent, maka sebenarnya tidak ada prioritas.
+
+PPIC harus dapat membuat urutan yang dapat dijelaskan. Jika satu order
+dipercepat, harus jelas order mana yang terdampak dan mengapa.
+
+Pendekatan ini membuat keputusan planning lebih transparan dan
+mengurangi konflik antar departemen.
+
+Apakah PPIC Hanya Dibutuhkan oleh Pabrik Besar?
+
+Tidak.
+
+Setiap perusahaan yang memiliki aktivitas produksi dan persediaan
+membutuhkan prinsip PPIC, walaupun nama departemennya berbeda.
+
+Pada perusahaan kecil, satu orang dapat merangkap production planner,
+inventory controller, dan purchasing coordinator. Pada perusahaan besar,
+fungsi tersebut dapat dibagi menjadi beberapa planner, material
+controller, scheduler, demand planner, dan manager.
+
+Perbedaannya adalah tingkat kompleksitas, bukan kebutuhan dasarnya.
+
+Semakin banyak produk, material, supplier, customer, mesin, dan proses,
+semakin besar kebutuhan terhadap sistem PPIC yang terstruktur.
+
+Skill yang Dibutuhkan Seorang PPIC
+
+PPIC membutuhkan kombinasi kemampuan analitis dan pemahaman operasional.
+
+Kemampuan pertama adalah memahami proses produksi. PPIC yang tidak
+memahami bagaimana produk dibuat akan kesulitan menentukan waktu proses,
+kapasitas, sequence, dan risiko.
+
+Kemampuan kedua adalah analisis data. Spreadsheet, ERP, MRP, dashboard,
+dan laporan produksi merupakan alat kerja sehari-hari.
+
+Kemampuan ketiga adalah inventory management. PPIC harus memahami stock
+level, safety stock, lead time, demand, consumption, dan material
+availability.
+
+Kemampuan keempat adalah komunikasi. PPIC bekerja dengan Sales,
+Purchasing, Warehouse, Production, QC, Engineering, Logistics, dan
+management.
+
+Kemampuan kelima adalah problem solving. Ketika material terlambat atau
+produksi tertinggal, PPIC harus dapat menghitung dampak dan menyusun
+alternatif.
+
+Kemampuan keenam adalah disiplin follow-up. Planning tanpa monitoring
+tidak menghasilkan control.
+
+Kesimpulan
+
+PPIC atau Production Planning and Inventory Control adalah fungsi yang
+memastikan kebutuhan produksi dan persediaan direncanakan, dijadwalkan,
+dipantau, dan dikendalikan agar perusahaan dapat memenuhi permintaan
+secara realistis.
+
+Tugas PPIC mencakup perencanaan produksi, penyusunan jadwal, perhitungan
+kebutuhan material, pengendalian persediaan, pemantauan kapasitas,
+monitoring realisasi produksi, pengendalian perubahan jadwal, serta
+koordinasi dengan Purchasing, Warehouse, Production, QC, Sales, dan
+Logistics.
+
+PPIC bukan Purchasing. PPIC bukan Warehouse. PPIC bukan Production dan
+bukan QC. PPIC berada di titik penghubung di antara fungsi-fungsi
+tersebut untuk memastikan kebutuhan produksi dapat diterjemahkan menjadi
+rencana yang bisa dijalankan.
+
+Ukuran keberhasilan PPIC juga bukan sekadar banyaknya jadwal yang
+dibuat. PPIC yang baik menghasilkan rencana yang realistis, material
+tersedia ketika dibutuhkan, kapasitas digunakan secara efektif,
+inventory tetap terkendali, perubahan dapat dikelola, dan delivery dapat
+dicapai sesuai komitmen.
+
+Jika harus diringkas dalam satu kalimat, PPIC adalah fungsi yang
+menjawab empat pertanyaan utama manufaktur: apa yang harus diproduksi,
+berapa jumlahnya, kapan harus diproduksi, dan apakah material serta
+kapasitas yang dibutuhkan benar-benar tersedia.
+
+Selama perusahaan masih harus mengubah bahan, material, komponen, atau
+input menjadi produk dan harus mengelola persediaan untuk memenuhi
+kebutuhan pelanggan, fungsi PPIC tetap menjadi bagian penting dari
+operasi manufaktur.
+
+Sumber Rujukan
+
+Kementerian Ketenagakerjaan Republik Indonesia — SKKNI yang memuat
+fungsi Production Planning and Inventory Control dan kompetensi
+perencanaan produksi serta pengendalian persediaan.
+
+SAP Help Portal — Production Planning and Control, Material Requirements
+Planning, master data MRP, production control, capacity planning, dan
+planned order.
+
+Microsoft Learn — Supply Planning pada Dynamics 365 Business Central,
+termasuk MPS, MRP, dan perencanaan supply untuk purchase, transfer,
+assembly, dan production order.
+
+Catatan: istilah, proses, dan contoh dalam artikel disusun untuk
+menjelaskan praktik PPIC manufaktur secara umum. Struktur organisasi dan
+pembagian kewenangan dapat berbeda antar perusahaan, tetapi prinsip
+dasarnya tetap sama: menyeimbangkan demand, material, kapasitas,
+inventory, production schedule, dan delivery.
