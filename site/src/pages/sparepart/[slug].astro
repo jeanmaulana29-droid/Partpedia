@@ -108,8 +108,8 @@ const jsonLd = {
 ---
 
 <Layout
-  title={`${entry.part_name} (${entry.part_number}) — Spek, Size, Harga & Kode Pengganti`}
-  description={entry.description}
+  title={`${entry.part_name} (${entry.part_number}) — Dimensions, Specs, Equivalent & Cross Reference`}
+  description={`${entry.part_name} (${entry.part_number}): dimensions, specifications, equivalent codes, cross reference & applications. ${entry.description || ""}`.slice(0, 160)}
   jsonLd={jsonLd}
 >
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -151,10 +151,22 @@ const jsonLd = {
       </p>
       <p class="lead-desc">{entry.description}</p>
 
+      <p class="seo-en-keywords" lang="en" aria-label="Product information categories">
+        <span>Dimensions</span>
+        <span class="kw-dot" aria-hidden="true">·</span>
+        <span>Specifications</span>
+        <span class="kw-dot" aria-hidden="true">·</span>
+        <span>Equivalent</span>
+        <span class="kw-dot" aria-hidden="true">·</span>
+        <span>Cross Reference</span>
+        <span class="kw-dot" aria-hidden="true">·</span>
+        <span>Applications</span>
+      </p>
+
       <div class="fact-grid">
         {entry.size && (
           <div class="fact">
-            <span class="fact-label">Size / Dimensi</span>
+            <span class="fact-label">Size / Dimensions</span>
             <span class="fact-value">{entry.size}</span>
           </div>
         )}
@@ -186,7 +198,7 @@ const jsonLd = {
         )}
         {(entry.kegunaan || entry.compatible_equipment) && (
           <article class="info-card">
-            <h2>Kegunaan / Aplikasi</h2>
+            <h2>Kegunaan / Aplikasi <span class="en-sub" lang="en">Applications</span></h2>
             <p>{entry.kegunaan || entry.compatible_equipment}</p>
           </article>
         )}
@@ -198,13 +210,13 @@ const jsonLd = {
         )}
       </div>
 
-      <h2 class="section-title">Spesifikasi Teknis</h2>
+      <h2 class="section-title">Spesifikasi Teknis <span class="en-sub" lang="en">Specifications</span></h2>
       <SpecsTable specs={entry.specs_table} />
       {entry.specification && (
         <p class="spec-raw muted">Ringkasan: {entry.specification}</p>
       )}
 
-      <h2 class="section-title">Kode Pengganti / Cross-Reference</h2>
+      <h2 class="section-title">Kode Pengganti <span class="en-sub" lang="en">Equivalent · Cross Reference</span></h2>
       {
         entry.equivalent_codes && entry.equivalent_codes.length > 0 ? (
           <EquivalentCodes codes={entry.equivalent_codes} />
@@ -344,6 +356,48 @@ const jsonLd = {
       text-decoration: underline;
     }
 
-</style>
+
+  .seo-en-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.35rem;
+    margin: 0.35rem 0 1rem;
+    padding: 0.45rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    background: rgba(15, 23, 42, 0.35);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    line-height: 1.35;
+  }
+  .seo-en-keywords .kw-dot {
+    color: #64748b;
+    font-weight: 500;
+    opacity: 0.85;
+  }
+  .section-title .en-sub,
+  .info-card h2 .en-sub {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #64748b;
+    text-transform: none;
+  }
+  @media (max-width: 640px) {
+    .seo-en-keywords {
+      font-size: 0.65rem;
+      gap: 0.15rem 0.28rem;
+      padding: 0.4rem 0.55rem;
+      border-radius: 12px;
+    }
+  }
+
+  </style>
 
 </Layout>
