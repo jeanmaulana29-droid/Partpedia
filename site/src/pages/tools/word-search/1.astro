@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 ---
 <Layout
   title="Word Search Level 1 — Cari Kata Industri | Industrial Word Search | Partpedia"
-  description="Level 1: temukan 10 istilah industri internasional dalam grid 25×25. Word search for engineers. Play free on Partpedia."
+  description="Level 1: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal. Play free on Partpedia."
 >
   <div class="ws-page">
     <a class="ws-back" href="/">← Beranda / Home</a>
@@ -11,9 +11,9 @@ import Layout from "../../../layouts/Layout.astro";
       <div class="ws-badge">GAME · WORD SEARCH</div>
       <h1>Cari Kata Industri <span>Level 1</span></h1>
       <p class="ws-lead">
-        <strong>Industrial Word Search</strong> — temukan 10 istilah teknis internasional
-        (nama yang sama di banyak negara) mendatar, menurun, atau miring.
-        Klik huruf satu per satu. Tidak wajib selesai untuk lanjut level.
+        <strong>Industrial Word Search</strong> — temukan 10 istilah teknis internasional.
+        Arah hanya <strong>kiri ke kanan</strong> dan <strong>atas ke bawah</strong> (tanpa miring).
+        Klik atau sentuh huruf satu per satu.
       </p>
       <div class="ws-meta">
         <span class="ws-chip" id="ws-progress">0 / 10 kata</span>
@@ -48,17 +48,17 @@ import Layout from "../../../layouts/Layout.astro";
 .ws-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.75rem 0 0}
 .ws-chip{font-size:0.75rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.3rem 0.55rem;border-radius:8px}
 .ws-board{background:rgba(15,23,42,0.88);border:1px solid rgba(56,189,248,0.25);border-radius:16px;padding:0.65rem;box-shadow:0 0 0 1px rgba(251,191,36,0.08),0 12px 40px rgba(0,0,0,0.35)}
-.ws-grid{display:grid;grid-template-columns:repeat(25,1fr);gap:2px;width:100%;max-width:100%}
-.ws-cell{appearance:none;border:none;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;padding:0;line-height:1;min-width:0}
-.ws-cell.sel{background:rgba(56,189,248,0.55);color:#fff;box-shadow:inset 0 0 0 1px #38bdf8}
-.ws-cell.found{background:rgba(34,197,94,0.4);color:#bbf7d0}
+.ws-grid{display:grid;grid-template-columns:repeat(25,1fr);gap:2px;width:100%}
+.ws-cell{appearance:none;border:none;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;padding:0;line-height:1;min-width:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.ws-cell.sel{background:#0ea5e9;color:#0f172a;box-shadow:inset 0 0 0 1px #38bdf8}
+.ws-cell.found{background:rgba(14,165,233,0.35);color:#7dd3fc}
 .ws-sel{margin:0.55rem 0 0;font-size:0.8rem;color:#64748b;min-height:1.2em}
 .ws-words-wrap{margin-top:1rem}
 .ws-words-wrap h2{margin:0 0 0.5rem;font-size:0.95rem;color:#f1f5f9}
 .ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.35rem}
 @media(min-width:480px){.ws-words{grid-template-columns:repeat(5,1fr)}}
 .ws-words li{font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;padding:0.4rem 0.35rem;text-align:center}
-.ws-words li.got{color:#86efac;background:rgba(22,101,52,0.35);text-decoration:line-through}
+.ws-words li.got{color:#fff;background:#2563eb;text-decoration:none}
 .ws-nav{display:flex;gap:0.6rem;margin-top:1.1rem}
 .ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.9rem;padding:0.7rem 0.5rem;border-radius:12px}
 .ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
@@ -67,28 +67,27 @@ import Layout from "../../../layouts/Layout.astro";
 
   </style>
   <script is:inline>
-    window.__WS__ = { level: 1, words: ["BEARING", "SHAFT", "SEAL", "GEAR", "VALVE", "PUMP", "MOTOR", "FILTER", "BOLT", "TORQUE"], maxLevel: 5 };
+    window.__WS__ = {"level":1,"words":["BEARING","SHAFT","SEAL","GEAR","VALVE","PUMP","MOTOR","FILTER","BOLT","TORQUE"],"grid":[["U","I","N","O","L","N","D","Y","H","N","M","D","D","W","E","L","Y","Q","B","T","A","H","C","I","P"],["W","A","A","J","I","T","R","O","V","Q","C","J","M","B","Q","Q","X","S","S","T","T","O","J","Q","I"],["I","P","G","H","N","M","P","S","A","G","I","K","M","D","M","E","T","P","B","C","K","G","D","U","D"],["A","C","C","J","G","D","J","C","L","M","M","K","F","T","G","O","M","Q","W","G","F","O","O","C","M"],["J","O","P","I","C","R","W","I","V","Q","F","H","H","J","H","Q","M","C","O","W","J","H","N","V","M"],["N","N","F","M","K","R","J","K","E","Y","Z","J","Z","K","S","Q","O","B","L","W","S","X","H","Y","F"],["N","S","W","D","O","M","Y","E","P","P","U","P","P","I","Z","B","R","H","J","N","Z","V","U","G","H"],["V","P","T","R","U","S","M","J","T","O","R","Q","U","E","I","B","R","S","F","W","O","X","G","B","Q"],["Q","J","M","J","T","I","X","U","L","A","I","B","R","K","G","B","D","A","C","H","K","I","O","S","C"],["U","D","R","P","V","H","J","F","E","E","B","E","Q","A","Q","Z","G","U","Q","J","X","D","A","M","R"],["N","B","F","B","I","A","Q","X","S","O","Q","A","S","E","Q","A","E","O","N","O","K","Y","G","B","W"],["J","S","R","G","O","T","P","T","I","H","G","R","T","D","T","F","A","H","R","N","Z","I","D","J","U"],["Z","Q","X","R","S","E","A","L","G","E","S","I","B","L","X","W","R","S","B","L","W","R","D","C","X"],["L","E","K","E","E","W","X","F","B","L","R","N","U","T","A","K","D","H","I","J","Q","Z","A","R","L"],["X","P","H","X","C","L","F","X","K","G","V","G","P","D","U","D","A","A","L","Y","D","B","W","F","F"],["O","U","A","I","D","K","S","O","W","E","Y","P","P","V","C","F","W","F","O","R","A","O","A","G","F"],["D","M","I","A","V","G","C","C","X","M","Z","Y","D","L","S","R","S","T","Y","M","I","M","V","J","B"],["L","P","E","M","S","M","A","M","H","K","X","Z","V","D","D","B","O","L","T","F","O","G","Y","K","U"],["S","B","U","H","X","G","A","C","D","S","G","L","I","W","N","J","L","V","L","A","J","K","Q","Q","W"],["M","G","C","L","D","W","B","L","I","D","M","L","G","G","A","K","X","J","L","Q","H","V","Q","V","M"],["K","Q","K","O","N","C","H","L","Z","P","X","Z","W","D","M","L","J","Q","F","I","L","T","E","R","A"],["W","A","L","D","S","S","B","J","P","M","F","V","D","Z","O","S","Q","S","Z","K","S","Q","V","B","C"],["H","R","J","F","Q","S","D","U","L","E","Z","P","Y","F","F","A","W","R","E","W","F","B","S","L","Y"],["J","M","S","Y","K","P","G","S","A","R","I","E","W","K","N","E","A","G","F","M","O","T","O","R","G"],["X","M","Q","L","S","Z","U","T","R","O","A","Y","Q","F","Y","L","Y","V","M","P","Q","F","L","R","H"]],"placed":[{"word":"TORQUE","cells":[[7,8],[7,9],[7,10],[7,11],[7,12],[7,13]]},{"word":"SHAFT","cells":[[12,17],[13,17],[14,17],[15,17],[16,17]]},{"word":"PUMP","cells":[[14,1],[15,1],[16,1],[17,1]]},{"word":"VALVE","cells":[[1,8],[2,8],[3,8],[4,8],[5,8]]},{"word":"SEAL","cells":[[12,4],[12,5],[12,6],[12,7]]},{"word":"BEARING","cells":[[8,11],[9,11],[10,11],[11,11],[12,11],[13,11],[14,11]]},{"word":"BOLT","cells":[[17,15],[17,16],[17,17],[17,18]]},{"word":"GEAR","cells":[[9,16],[10,16],[11,16],[12,16]]},{"word":"MOTOR","cells":[[23,19],[23,20],[23,21],[23,22],[23,23]]},{"word":"FILTER","cells":[[20,18],[20,19],[20,20],[20,21],[20,22],[20,23]]}]};
   </script>
   <script is:inline>
 
 (function(){
-  const SIZE = 25;
-  const DIRS = [[0,1],[1,0],[1,1],[0,-1],[-1,0],[-1,-1],[1,-1],[-1,1]];
-  const cfg = window.__WS__;
-  const level = cfg.level;
-  const words = cfg.words.slice();
-  const POINTS = 2;
+  var cfg = window.__WS__;
+  var SIZE = 25;
+  var level = cfg.level;
+  var grid = cfg.grid;
+  var placed = cfg.placed;
+  var words = cfg.words;
+  var POINTS = 2;
 
-  const gridEl = document.getElementById("ws-grid");
-  const wordsEl = document.getElementById("ws-words");
-  const progressEl = document.getElementById("ws-progress");
-  const scoreEl = document.getElementById("ws-score");
-  const selInfo = document.getElementById("ws-sel");
+  var gridEl = document.getElementById("ws-grid");
+  var wordsEl = document.getElementById("ws-words");
+  var progressEl = document.getElementById("ws-progress");
+  var scoreEl = document.getElementById("ws-score");
+  var selInfo = document.getElementById("ws-sel");
 
-  let grid = [];
-  let placed = [];
-  let found = new Set();
-  let selected = [];
+  var found = {};
+  var selected = [];
 
   function storageKey(){ return "partpedia_ws_batch1"; }
   function loadState(){
@@ -103,145 +102,138 @@ import Layout from "../../../layouts/Layout.astro";
     if (!st.found) st.found = {};
     return st;
   }
-  function rand(n){ return Math.floor(Math.random()*n); }
-  function canPlace(g, word, r, c, dr, dc){
-    for (var i=0;i<word.length;i++){
-      var rr=r+dr*i, cc=c+dc*i;
-      if (rr<0||cc<0||rr>=SIZE||cc>=SIZE) return false;
-      if (g[rr][cc] && g[rr][cc] !== word[i]) return false;
+  function key(r,c){ return r+","+c; }
+
+  function foundCells(){
+    var s = {};
+    for (var i=0;i<placed.length;i++){
+      var p = placed[i];
+      if (!found[p.word]) continue;
+      for (var j=0;j<p.cells.length;j++){
+        s[key(p.cells[j][0], p.cells[j][1])] = 1;
+      }
+    }
+    return s;
+  }
+
+  function selectionValidDirection(){
+    if (selected.length < 2) return true;
+    var r0 = selected[0].r, c0 = selected[0].c;
+    var r1 = selected[1].r, c1 = selected[1].c;
+    var dr = r1 - r0, dc = c1 - c0;
+    // only right (0,1) or down (1,0)
+    if (!((dr===0 && dc===1) || (dr===1 && dc===0))) return false;
+    for (var i=1;i<selected.length;i++){
+      if (selected[i].r !== r0 + dr*i || selected[i].c !== c0 + dc*i) return false;
     }
     return true;
   }
-  function placeWord(g, word){
-    for (var t=0;t<150;t++){
-      var d=DIRS[rand(DIRS.length)];
-      var dr=d[0], dc=d[1];
-      var r=rand(SIZE), c=rand(SIZE);
-      if (!canPlace(g,word,r,c,dr,dc)) continue;
-      var cells=[];
-      for (var i=0;i<word.length;i++){
-        var rr=r+dr*i, cc=c+dc*i;
-        g[rr][cc]=word[i];
-        cells.push([rr,cc]);
-      }
-      return cells;
-    }
-    return null;
-  }
-  function buildGrid(){
-    var g=[];
-    for (var r=0;r<SIZE;r++){ g[r]=[]; for (var c=0;c<SIZE;c++) g[r][c]=null; }
-    placed = [];
-    var order = words.slice().sort(function(){ return Math.random()-0.5; });
-    for (var wi=0; wi<order.length; wi++){
-      var cells = placeWord(g, order[wi]);
-      if (cells) placed.push({ word: order[wi], cells: cells });
-    }
-    if (placed.length < words.length - 1) return buildGrid();
-    var L="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (r=0;r<SIZE;r++) for (c=0;c<SIZE;c++) if (!g[r][c]) g[r][c]=L[rand(26)];
-    grid = g;
-  }
-  function key(r,c){ return r+","+c; }
-  function isAdj(a,b){
-    var dr=Math.abs(a[0]-b[0]), dc=Math.abs(a[1]-b[1]);
-    return Math.max(dr,dc)===1 && (dr===0||dc===0||dr===dc);
-  }
-  function foundCells(){
-    var s={};
-    placed.forEach(function(p){
-      if (found.has(p.word)) p.cells.forEach(function(rc){ s[key(rc[0],rc[1])]=1; });
-    });
-    return s;
-  }
+
   function tryMatch(){
     if (selected.length < 2) return;
+    if (!selectionValidDirection()) { selected = []; render(); return; }
     var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    var rev = selected.map(function(s){ return grid[s.r][s.c]; }).reverse().join("");
     for (var i=0;i<placed.length;i++){
-      var p=placed[i];
-      if (found.has(p.word)) continue;
-      if (p.word===fwd || p.word===rev){
-        found.add(p.word);
-        var st=ensureRun();
-        st.found[level]=Array.from(found);
-        st.scores[level]=found.size*POINTS;
+      var p = placed[i];
+      if (found[p.word]) continue;
+      if (p.word === fwd){
+        found[p.word] = true;
+        var st = ensureRun();
+        st.found[level] = Object.keys(found).filter(function(k){ return found[k]; });
+        st.scores[level] = st.found[level].length * POINTS;
         saveState(st);
-        selected=[];
+        selected = [];
         render();
         return;
       }
     }
-    selected=[];
+    selected = [];
     render();
   }
+
   function maybeAutoMatch(){
     var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    var rev = selected.map(function(s){ return grid[s.r][s.c]; }).reverse().join("");
     for (var i=0;i<placed.length;i++){
-      var p=placed[i];
-      if (found.has(p.word)) continue;
-      if (p.word===fwd || p.word===rev){ tryMatch(); return; }
+      if (!found[placed[i].word] && placed[i].word === fwd){ tryMatch(); return; }
     }
-    var maxLen=0;
-    placed.forEach(function(p){ if (!found.has(p.word) && p.word.length>maxLen) maxLen=p.word.length; });
-    if (selected.length >= maxLen && maxLen>0) tryMatch();
+    var maxLen = 0;
+    for (i=0;i<placed.length;i++){
+      if (!found[placed[i].word] && placed[i].word.length > maxLen) maxLen = placed[i].word.length;
+    }
+    if (selected.length >= maxLen && maxLen > 0) tryMatch();
   }
+
   function onCellClick(r,c){
+    // toggle off last cell
     if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
       selected.pop(); render(); return;
     }
-    if (selected.length===0){ selected=[{r:r,c:c}]; render(); return; }
-    var last=selected[selected.length-1];
-    if (selected.length===1){
-      if (!isAdj([last.r,last.c],[r,c])){ selected=[{r:r,c:c}]; render(); return; }
-      selected.push({r:r,c:c}); render(); maybeAutoMatch(); return;
+    if (selected.length === 0){
+      selected = [{r:r,c:c}]; render(); return;
     }
-    var r0=selected[0].r, c0=selected[0].c;
-    var r1=selected[1].r, c1=selected[1].c;
-    var dr=Math.sign(r1-r0), dc=Math.sign(c1-c0);
-    var er=r0+dr*selected.length, ec=c0+dc*selected.length;
-    if (r===er && c===ec){ selected.push({r:r,c:c}); render(); maybeAutoMatch(); }
-    else { selected=[{r:r,c:c}]; render(); }
+    var last = selected[selected.length-1];
+    if (selected.length === 1){
+      var dr = r - last.r, dc = c - last.c;
+      // only one step right or down
+      if ((dr===0 && dc===1) || (dr===1 && dc===0)){
+        selected.push({r:r,c:c}); render(); maybeAutoMatch();
+      } else {
+        selected = [{r:r,c:c}]; render();
+      }
+      return;
+    }
+    var r0 = selected[0].r, c0 = selected[0].c;
+    var r1 = selected[1].r, c1 = selected[1].c;
+    var ddr = r1 - r0, ddc = c1 - c0;
+    var er = r0 + ddr * selected.length, ec = c0 + ddc * selected.length;
+    if (r===er && c===ec){
+      selected.push({r:r,c:c}); render(); maybeAutoMatch();
+    } else {
+      selected = [{r:r,c:c}]; render();
+    }
   }
+
   function render(){
     ensureRun();
-    var fc=foundCells();
-    var selSet={};
-    selected.forEach(function(s){ selSet[key(s.r,s.c)]=1; });
-    gridEl.innerHTML="";
+    var fc = foundCells();
+    var selSet = {};
+    for (var i=0;i<selected.length;i++) selSet[key(selected[i].r,selected[i].c)] = 1;
+    gridEl.innerHTML = "";
     for (var r=0;r<SIZE;r++){
       for (var c=0;c<SIZE;c++){
-        var d=document.createElement("button");
-        d.type="button";
-        d.className="ws-cell";
-        d.textContent=grid[r][c];
-        var k=key(r,c);
+        var d = document.createElement("button");
+        d.type = "button";
+        d.className = "ws-cell";
+        d.textContent = grid[r][c];
+        var k = key(r,c);
         if (fc[k]) d.classList.add("found");
         if (selSet[k]) d.classList.add("sel");
         (function(rr,cc){ d.addEventListener("click", function(){ onCellClick(rr,cc); }); })(r,c);
         gridEl.appendChild(d);
       }
     }
-    wordsEl.innerHTML="";
-    words.slice().sort().forEach(function(w){
-      var li=document.createElement("li");
-      li.textContent=w;
-      if (found.has(w)) li.classList.add("got");
+    wordsEl.innerHTML = "";
+    var sorted = words.slice().sort();
+    for (i=0;i<sorted.length;i++){
+      var li = document.createElement("li");
+      li.textContent = sorted[i];
+      if (found[sorted[i]]) li.classList.add("got");
       wordsEl.appendChild(li);
-    });
-    progressEl.textContent = found.size + " / " + words.length + " kata";
-    scoreEl.textContent = (found.size * POINTS) + " poin level ini";
+    }
+    var n = Object.keys(found).filter(function(k){ return found[k]; }).length;
+    progressEl.textContent = n + " / " + words.length + " kata";
+    scoreEl.textContent = (n * POINTS) + " poin level ini";
     if (selInfo){
       selInfo.textContent = selected.length
         ? ("Pilihan: " + selected.map(function(s){ return grid[s.r][s.c]; }).join(""))
-        : "Klik huruf satu per satu (lurus: mendatar / menurun / miring).";
+        : "Klik huruf satu per satu — hanya kanan atau bawah (tidak miring).";
     }
   }
 
-  var st0=ensureRun();
-  if (Array.isArray(st0.found[level])) st0.found[level].forEach(function(w){ found.add(w); });
-  buildGrid();
+  var st0 = ensureRun();
+  if (Array.isArray(st0.found[level])) {
+    for (var fi=0; fi<st0.found[level].length; fi++) found[st0.found[level][fi]] = true;
+  }
   render();
   window.__WS_API__ = { clearSelection: function(){ selected=[]; render(); } };
 })();
