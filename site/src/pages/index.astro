@@ -545,11 +545,11 @@ const catalog = shuffleCatalog(data);
       <span class="util-sub">Grafik dB SPL realtime</span>
       <span class="util-cta">Buka →</span>
     </a>
-    <a class="util-card util-live" href="/tools/vibration/">
-      <span class="util-ico" aria-hidden="true">📳</span>
-      <span class="util-title">Pengukur getaran</span>
-      <span class="util-sub">m/s² · tempelkan ke benda</span>
-      <span class="util-cta">Buka →</span>
+    <a class="util-card util-live util-game" href="/tools/word-search/">
+      <span class="util-ico" aria-hidden="true">🎮</span>
+      <span class="util-title">Word Search</span>
+      <span class="util-sub">Game · Cari kata industri</span>
+      <span class="util-cta">Main sekarang →</span>
     </a>
     <a class="util-card util-live" href="/tools/tolerance/">
       <span class="util-ico" aria-hidden="true">📏</span>
@@ -1457,6 +1457,34 @@ const catalog = shuffleCatalog(data);
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+    
+    .util-card.util-game {
+      background: linear-gradient(145deg, rgba(245, 158, 11, 0.2), rgba(14, 165, 233, 0.12));
+      border: 1px solid rgba(251, 191, 36, 0.6);
+      box-shadow: 0 0 28px rgba(245, 158, 11, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .util-card.util-game::after {
+      content: "GAME";
+      position: absolute;
+      top: 0.45rem;
+      right: 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #0f172a;
+      background: #fbbf24;
+      padding: 0.12rem 0.4rem;
+      border-radius: 4px;
+    }
+    .util-card.util-game:hover,
+    .util-card.util-game:active {
+      border-color: #fbbf24;
+      box-shadow: 0 0 36px rgba(245, 158, 11, 0.3);
+      transform: translateY(-2px);
+    }
+
     .util-cta {
       margin-top: 0.4rem;
       font-size: 0.72rem;
