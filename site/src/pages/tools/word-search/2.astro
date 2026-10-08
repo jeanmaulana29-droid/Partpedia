@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 ---
 <Layout
   title="Word Search Level 2 — Cari Kata Industri | Industrial Word Search | Partpedia"
-  description="Level 2: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal."
+  description="Level 2: temukan 10 istilah industri dalam grid 20×20. Hanya horizontal dan vertikal. 3 menit lalu bisa menyerah."
 >
   <div class="ws-page">
     <a class="ws-back" href="/">← Beranda / Home</a>
@@ -11,20 +11,24 @@ import Layout from "../../../layouts/Layout.astro";
       <div class="ws-badge">GAME · WORD SEARCH</div>
       <h1>Cari Kata Industri <span>Level 2</span></h1>
       <p class="ws-lead">
-        <strong>Industrial Word Search</strong> — temukan 10 istilah teknis internasional.
-        Arah hanya <strong>kiri ke kanan</strong> dan <strong>atas ke bawah</strong> (tanpa miring).
-        Klik atau sentuh huruf satu per satu.
+        <strong>Industrial Word Search</strong> — 10 istilah teknis internasional.
+        Arah: <strong>kiri → kanan</strong> dan <strong>atas → bawah</strong> saja.
+        Setelah 3 menit muncul tombol <strong>Menyerah</strong>.
       </p>
       <div class="ws-meta">
         <span class="ws-chip" id="ws-progress">0 / 10 kata</span>
         <span class="ws-chip" id="ws-score">0 poin level ini</span>
-        <span class="ws-chip">Grid 25×25</span>
+        <span class="ws-chip" id="ws-timer">Sisa 3:00</span>
+        <span class="ws-chip">Grid 20×20</span>
       </div>
     </header>
     <div class="ws-board">
-      <div class="ws-grid" id="ws-grid" role="grid" aria-label="Word search 25 by 25"></div>
+      <div class="ws-grid" id="ws-grid" role="grid" aria-label="Word search 20 by 20"></div>
       <p class="ws-sel" id="ws-sel"></p>
       <button type="button" class="ws-clear" id="ws-clear">Hapus pilihan huruf</button>
+      <div class="ws-surrender-wrap" id="ws-surrender-wrap">
+        <button type="button" class="ws-surrender" id="ws-surrender">Menyerah — tampilkan sisa kata</button>
+      </div>
     </div>
     <div class="ws-words-wrap">
       <h2>Daftar kata / Word list</h2>
@@ -37,25 +41,33 @@ import Layout from "../../../layouts/Layout.astro";
   </div>
   <style is:global>
 
-.ws-page{max-width:720px;margin:0 auto;padding:1rem 0.75rem 2.5rem}
-.ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.9rem;margin-bottom:0.85rem}
+.ws-page{max-width:560px;margin:0 auto;padding:0.85rem 0.65rem 2.5rem;box-sizing:border-box}
+.ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.88rem;margin-bottom:0.7rem}
 .ws-back:hover{color:#e2e8f0}
-.ws-hero{margin-bottom:1rem}
-.ws-badge{display:inline-block;font-size:0.68rem;font-weight:800;letter-spacing:0.1em;color:#fbbf24;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.45);padding:0.28rem 0.6rem;border-radius:999px;margin-bottom:0.55rem}
-.ws-hero h1{margin:0 0 0.4rem;font-size:1.45rem;color:#f8fafc;line-height:1.25}
+.ws-hero{margin-bottom:0.85rem}
+.ws-badge{display:inline-block;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;color:#fbbf24;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.45);padding:0.25rem 0.55rem;border-radius:999px;margin-bottom:0.45rem}
+.ws-hero h1{margin:0 0 0.35rem;font-size:clamp(1.15rem,4.5vw,1.4rem);color:#f8fafc;line-height:1.25}
 .ws-hero h1 span{color:#38bdf8;font-weight:700}
-.ws-lead{margin:0;color:#94a3b8;font-size:0.92rem;line-height:1.55}
-.ws-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.75rem 0 0}
-.ws-chip{font-size:0.75rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.3rem 0.55rem;border-radius:8px}
-.ws-board{background:rgba(15,23,42,0.88);border:1px solid rgba(56,189,248,0.25);border-radius:16px;padding:0.65rem;box-shadow:0 0 0 1px rgba(251,191,36,0.08),0 12px 40px rgba(0,0,0,0.35)}
-.ws-grid{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:2px;width:100%}
+.ws-lead{margin:0;color:#94a3b8;font-size:0.88rem;line-height:1.5}
+.ws-meta{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.65rem 0 0}
+.ws-chip{font-size:0.72rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.28rem 0.5rem;border-radius:8px}
+.ws-chip.warn{border-color:rgba(251,191,36,0.5);color:#fde68a}
+.ws-board{background:rgba(15,23,42,0.92);border:1px solid rgba(56,189,248,0.28);border-radius:14px;padding:0.55rem;box-shadow:0 8px 28px rgba(0,0,0,0.35)}
+.ws-grid{
+  display:grid;
+  grid-template-columns:repeat(20,minmax(0,1fr));
+  gap:1px;
+  width:100%;
+  max-width:100%;
+}
 button.ws-cell{
   appearance:none;-webkit-appearance:none;border:none;aspect-ratio:1;
   display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);
-  color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;
+  font-weight:800;
+  font-size:clamp(0.55rem,2.8vw,0.85rem);
+  color:#e2e8f0;background:#1e293b;border-radius:2px;cursor:pointer;
   padding:0;line-height:1;min-width:0;touch-action:manipulation;
-  -webkit-tap-highlight-color:transparent;
+  -webkit-tap-highlight-color:transparent;user-select:none;
 }
 button.ws-cell.sel{
   background:#0ea5e9 !important;color:#0f172a !important;
@@ -64,51 +76,74 @@ button.ws-cell.sel{
 button.ws-cell.found{
   background:#1d4ed8 !important;color:#eff6ff !important;
 }
-.ws-sel{margin:0.55rem 0 0;font-size:0.8rem;color:#64748b;min-height:1.2em}
-.ws-words-wrap{margin-top:1rem}
-.ws-words-wrap h2{margin:0 0 0.5rem;font-size:0.95rem;color:#f1f5f9}
-.ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.35rem}
-@media(min-width:480px){.ws-words{grid-template-columns:repeat(5,1fr)}}
+button.ws-cell.reveal{
+  background:#2563eb !important;color:#fff !important;
+}
+.ws-sel{margin:0.5rem 0 0;font-size:0.78rem;color:#64748b;min-height:1.15em}
+.ws-surrender-wrap{margin-top:0.65rem;display:none}
+.ws-surrender-wrap.show{display:block}
+.ws-surrender{
+  width:100%;border:none;cursor:pointer;font-weight:800;font-size:0.9rem;
+  padding:0.75rem;border-radius:12px;
+  background:linear-gradient(135deg,#64748b,#475569);color:#f8fafc;
+}
+.ws-surrender:hover{filter:brightness(1.08)}
+.ws-surrender:disabled{opacity:0.55;cursor:not-allowed}
+.ws-words-wrap{margin-top:0.95rem}
+.ws-words-wrap h2{margin:0 0 0.45rem;font-size:0.92rem;color:#f1f5f9}
+.ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.32rem}
+@media(min-width:420px){.ws-words{grid-template-columns:repeat(5,1fr)}}
 .ws-words li{
-  font-size:0.72rem;font-weight:800;letter-spacing:0.03em;
+  font-size:0.7rem;font-weight:800;letter-spacing:0.02em;
   color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;
-  padding:0.4rem 0.35rem;text-align:center;
+  padding:0.38rem 0.3rem;text-align:center;
 }
 .ws-words li.got{
-  color:#ffffff !important;background:#2563eb !important;text-decoration:none;
+  color:#ffffff !important;background:#2563eb !important;
 }
-.ws-nav{display:flex;gap:0.6rem;margin-top:1.1rem}
-.ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.9rem;padding:0.7rem 0.5rem;border-radius:12px}
+.ws-words li.revealed{
+  color:#ffffff !important;background:#3b82f6 !important;opacity:0.9;
+}
+.ws-nav{display:flex;gap:0.55rem;margin-top:1rem}
+.ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.88rem;padding:0.68rem 0.45rem;border-radius:12px}
 .ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
 .ws-btn-next{background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a}
-.ws-clear{margin-top:0.5rem;width:100%;background:transparent;border:1px dashed rgba(148,163,184,0.35);color:#94a3b8;border-radius:10px;padding:0.45rem;cursor:pointer;font-size:0.8rem}
+.ws-clear{margin-top:0.45rem;width:100%;background:transparent;border:1px dashed rgba(148,163,184,0.35);color:#94a3b8;border-radius:10px;padding:0.42rem;cursor:pointer;font-size:0.78rem}
 
   </style>
   <script is:inline>
-    window.__WS__ = {"level":2,"words":["SPROCKET","COUPLING","BUSHING","WASHER","SPRING","PULLEY","CLUTCH","BRAKE","ROLLER","SLEEVE"],"grid":[["M","Y","D","U","A","Y","A","E","X","W","H","T","Z","Z","Y","X","B","E","T","G","O","Q","W","D","F"],["Z","R","F","M","I","I","K","S","N","D","T","U","A","F","E","S","F","D","U","A","Y","E","F","H","F"],["C","Q","X","K","N","K","W","G","L","K","D","Q","K","R","P","H","Q","C","L","U","T","C","H","N","Y"],["Q","P","D","C","X","M","U","T","W","G","Q","M","M","W","T","U","S","Z","E","U","B","T","C","G","I"],["F","Q","E","I","I","I","V","V","G","H","U","D","U","A","A","R","W","P","U","L","L","E","Y","I","M"],["T","B","N","Q","L","M","K","R","A","V","P","Z","X","S","Y","K","O","A","M","S","Q","A","F","Q","Q"],["V","M","X","Z","I","P","T","L","V","U","H","Q","I","H","O","J","L","L","X","Z","X","F","S","Z","K"],["L","E","Z","X","C","O","J","Q","R","A","D","N","Y","E","I","S","R","T","O","X","F","Y","I","Y","M"],["H","Q","D","Z","O","J","V","G","X","M","C","W","Q","R","Y","A","G","Z","H","W","B","G","B","I","H"],["W","D","K","O","U","I","G","Q","V","T","J","L","W","N","I","A","V","Y","K","O","X","H","U","Q","L"],["R","H","J","Z","P","V","R","S","I","J","U","E","M","K","C","T","S","M","A","I","N","Q","S","D","Y"],["O","B","K","B","L","R","Z","I","I","C","X","S","H","T","N","M","H","K","G","Z","M","K","H","Z","S"],["L","I","S","D","I","Q","R","D","Z","I","N","N","Z","C","T","H","Z","J","R","E","B","Y","I","V","N"],["L","W","J","H","N","J","X","T","Y","W","P","O","F","B","E","B","J","V","Z","S","R","N","N","K","W"],["E","D","Q","F","G","Z","K","Z","P","D","E","G","U","V","D","S","N","Z","K","L","B","L","G","E","Z"],["R","G","Y","W","D","I","N","Y","Q","O","P","I","M","K","I","P","Q","V","P","E","H","N","A","C","Z"],["Q","Z","F","T","P","C","O","J","D","K","S","Z","C","I","A","R","I","E","J","E","W","B","J","O","W"],["M","H","N","J","S","X","A","R","R","W","H","C","M","I","S","I","C","X","X","V","Q","B","G","G","K"],["L","Q","P","V","P","Y","S","F","K","O","V","B","K","K","V","N","C","G","F","E","H","Q","V","K","Z"],["U","I","F","G","R","A","P","B","M","R","O","R","Y","C","N","G","H","G","Q","Z","F","G","K","X","G"],["K","U","N","I","O","I","N","L","M","D","K","B","V","N","J","U","M","L","S","M","M","X","S","G","H"],["W","D","X","X","C","V","N","R","S","R","X","H","Y","S","J","I","L","G","L","Q","R","B","F","J","J"],["Y","I","M","H","K","D","F","Z","N","U","P","Y","Z","Z","W","C","B","T","T","C","B","K","J","D","O"],["H","N","P","B","E","U","T","D","I","A","Z","I","C","C","B","R","T","F","T","J","V","J","Y","K","V"],["U","A","S","I","T","I","O","Z","P","X","X","B","R","A","K","E","V","U","D","E","W","H","X","B","K"]],"placed":[{"word":"SLEEVE","cells":[[13,19],[14,19],[15,19],[16,19],[17,19],[18,19]]},{"word":"COUPLING","cells":[[7,4],[8,4],[9,4],[10,4],[11,4],[12,4],[13,4],[14,4]]},{"word":"ROLLER","cells":[[10,0],[11,0],[12,0],[13,0],[14,0],[15,0]]},{"word":"SPROCKET","cells":[[17,4],[18,4],[19,4],[20,4],[21,4],[22,4],[23,4],[24,4]]},{"word":"WASHER","cells":[[3,13],[4,13],[5,13],[6,13],[7,13],[8,13]]},{"word":"SPRING","cells":[[14,15],[15,15],[16,15],[17,15],[18,15],[19,15]]},{"word":"CLUTCH","cells":[[2,17],[2,18],[2,19],[2,20],[2,21],[2,22]]},{"word":"BUSHING","cells":[[8,22],[9,22],[10,22],[11,22],[12,22],[13,22],[14,22]]},{"word":"BRAKE","cells":[[24,11],[24,12],[24,13],[24,14],[24,15]]},{"word":"PULLEY","cells":[[4,17],[4,18],[4,19],[4,20],[4,21],[4,22]]}]};
+    window.__WS__ = {"level":2,"words":["SPROCKET","COUPLING","BUSHING","WASHER","SPRING","PULLEY","CLUTCH","BRAKE","ROLLER","SLEEVE"],"grid":[["C","Z","O","V","A","D","J","B","D","W","F","R","B","G","Q","F","Q","O","K","I"],["W","F","R","S","A","C","O","B","M","M","X","Q","T","V","R","K","L","B","L","K"],["R","P","B","F","F","E","H","C","J","N","X","T","H","W","A","S","H","E","R","L"],["Q","O","R","C","S","C","K","E","S","Q","U","V","P","W","W","O","D","H","B","S"],["Y","B","A","O","F","L","U","X","C","V","Q","X","J","Q","G","Y","A","U","N","V"],["R","Q","K","U","H","U","Y","Y","M","R","D","Y","M","K","L","T","W","Z","A","Y"],["T","G","E","P","K","T","Z","E","M","N","I","K","W","E","F","V","G","W","T","M"],["S","O","M","L","Y","C","S","F","Z","Z","M","L","N","Y","T","U","F","M","B","A"],["Y","Z","M","I","U","H","G","G","W","R","C","X","I","P","W","N","U","T","O","A"],["E","W","I","N","R","H","J","E","D","M","L","B","E","U","C","F","O","J","J","P"],["W","Q","H","G","O","I","I","C","V","A","K","N","C","L","X","U","K","W","E","B"],["Q","Q","Q","F","L","A","Z","S","A","B","I","O","F","L","I","E","C","X","S","L"],["E","D","I","O","L","Z","R","C","V","H","N","O","A","E","J","M","P","A","P","I"],["A","F","V","S","E","B","E","S","L","E","E","V","E","Y","G","G","L","M","R","F"],["K","I","L","Z","R","U","R","M","G","S","I","Z","T","J","F","G","A","V","O","I"],["J","L","R","J","X","S","C","A","P","P","X","Q","M","N","A","V","I","T","C","P"],["W","W","S","I","S","H","J","G","A","R","S","N","V","K","G","A","B","Z","K","S"],["G","F","B","U","L","I","H","P","M","I","B","M","Z","F","M","T","Q","B","E","E"],["H","F","A","T","C","N","S","S","T","N","S","K","F","V","V","J","X","F","T","X"],["A","X","H","H","M","G","T","H","K","G","L","U","D","W","B","H","J","I","W","A"]],"placed":[{"word":"WASHER","cells":[[2,13],[2,14],[2,15],[2,16],[2,17],[2,18]]},{"word":"COUPLING","cells":[[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3]]},{"word":"SPRING","cells":[[14,9],[15,9],[16,9],[17,9],[18,9],[19,9]]},{"word":"BUSHING","cells":[[13,5],[14,5],[15,5],[16,5],[17,5],[18,5],[19,5]]},{"word":"PULLEY","cells":[[8,13],[9,13],[10,13],[11,13],[12,13],[13,13]]},{"word":"CLUTCH","cells":[[3,5],[4,5],[5,5],[6,5],[7,5],[8,5]]},{"word":"BRAKE","cells":[[2,2],[3,2],[4,2],[5,2],[6,2]]},{"word":"ROLLER","cells":[[9,4],[10,4],[11,4],[12,4],[13,4],[14,4]]},{"word":"SLEEVE","cells":[[13,7],[13,8],[13,9],[13,10],[13,11],[13,12]]},{"word":"SPROCKET","cells":[[11,18],[12,18],[13,18],[14,18],[15,18],[16,18],[17,18],[18,18]]}]};
   </script>
   <script is:inline>
 
 (function(){
   var cfg = window.__WS__;
   if (!cfg) { console.error("WS: no config"); return; }
-  var SIZE = 25;
+  var SIZE = 20;
   var level = cfg.level;
   var grid = cfg.grid;
   var placed = cfg.placed;
   var words = cfg.words;
   var POINTS = 2;
+  var SURRENDER_MS = 3 * 60 * 1000;
 
   var gridEl = document.getElementById("ws-grid");
   var wordsEl = document.getElementById("ws-words");
   var progressEl = document.getElementById("ws-progress");
   var scoreEl = document.getElementById("ws-score");
+  var timerEl = document.getElementById("ws-timer");
   var selInfo = document.getElementById("ws-sel");
-  if (!gridEl || !wordsEl) { console.error("WS: missing DOM"); return; }
+  var surrWrap = document.getElementById("ws-surrender-wrap");
+  var surrBtn = document.getElementById("ws-surrender");
+  if (!gridEl || !wordsEl) return;
 
   var found = {};
+  var revealed = false;
+  var locked = false;
   var selected = [];
   var cellNodes = {};
+  var startedAt = Date.now();
+  var surrShown = false;
 
   function storageKey(){ return "partpedia_ws_batch1"; }
   function loadState(){
@@ -125,12 +160,40 @@ button.ws-cell.found{
   }
   function key(r,c){ return r+","+c; }
 
+  function foundCount(){
+    var n = 0;
+    for (var k in found) if (found[k]) n++;
+    return n;
+  }
+
+  function saveScore(){
+    var st = ensureRun();
+    var keys = [];
+    for (var k in found) if (found[k]) keys.push(k);
+    st.found[level] = keys;
+    st.scores[level] = keys.length * POINTS;
+    saveState(st);
+  }
+
   function foundCells(){
     var s = {};
     for (var i=0;i<placed.length;i++){
       var p = placed[i];
-      if (!found[p.word]) continue;
-      for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = 1;
+      if (!found[p.word] && !(revealed && !found[p.word])) continue;
+      if (found[p.word] || revealed) {
+        for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = found[p.word] ? "found" : "reveal";
+      }
+    }
+    // after reveal, mark all placed cells
+    if (revealed) {
+      for (i=0;i<placed.length;i++){
+        p = placed[i];
+        for (j=0;j<p.cells.length;j++) {
+          var kk = key(p.cells[j][0], p.cells[j][1]);
+          if (found[p.word]) s[kk] = "found";
+          else s[kk] = "reveal";
+        }
+      }
     }
     return s;
   }
@@ -148,7 +211,7 @@ button.ws-cell.found{
   }
 
   function tryMatch(){
-    if (selected.length < 2) return;
+    if (locked || selected.length < 2) return;
     if (!selectionValidDirection()) { selected = []; paint(); return; }
     var fwd = "";
     for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
@@ -157,14 +220,13 @@ button.ws-cell.found{
       if (found[p.word]) continue;
       if (p.word === fwd){
         found[p.word] = true;
-        var st = ensureRun();
-        var keys = [];
-        for (var k in found) if (found[k]) keys.push(k);
-        st.found[level] = keys;
-        st.scores[level] = keys.length * POINTS;
-        saveState(st);
+        saveScore();
         selected = [];
         paint();
+        if (foundCount() >= words.length) {
+          locked = true;
+          if (surrWrap) surrWrap.classList.remove("show");
+        }
         return;
       }
     }
@@ -173,6 +235,7 @@ button.ws-cell.found{
   }
 
   function maybeAutoMatch(){
+    if (locked) return;
     var fwd = "";
     for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
     for (i=0;i<placed.length;i++){
@@ -186,6 +249,7 @@ button.ws-cell.found{
   }
 
   function onCellClick(r,c){
+    if (locked) return;
     if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
       selected.pop(); paint(); return;
     }
@@ -213,6 +277,19 @@ button.ws-cell.found{
     }
   }
 
+  function doSurrender(){
+    if (locked) return;
+    locked = true;
+    revealed = true;
+    selected = [];
+    saveScore(); // only words found before surrender
+    if (surrBtn) {
+      surrBtn.disabled = true;
+      surrBtn.textContent = "Menyerah — kata tersisa ditampilkan";
+    }
+    paint();
+  }
+
   function paint(){
     ensureRun();
     var fc = foundCells();
@@ -227,12 +304,16 @@ button.ws-cell.found{
         d.className = "ws-cell";
         d.style.background = "";
         d.style.color = "";
-        if (fc[k]) {
+        if (fc[k] === "found") {
           d.classList.add("found");
           d.style.background = "#1d4ed8";
           d.style.color = "#eff6ff";
+        } else if (fc[k] === "reveal") {
+          d.classList.add("reveal");
+          d.style.background = "#2563eb";
+          d.style.color = "#ffffff";
         }
-        if (selSet[k]) {
+        if (selSet[k] && !locked) {
           d.classList.add("sel");
           d.style.background = "#0ea5e9";
           d.style.color = "#0f172a";
@@ -246,21 +327,29 @@ button.ws-cell.found{
       var w = li.getAttribute("data-word");
       if (found[w]) {
         li.classList.add("got");
+        li.classList.remove("revealed");
         li.style.background = "#2563eb";
+        li.style.color = "#ffffff";
+      } else if (revealed) {
+        li.classList.add("revealed");
+        li.classList.remove("got");
+        li.style.background = "#3b82f6";
         li.style.color = "#ffffff";
       } else {
         li.classList.remove("got");
+        li.classList.remove("revealed");
         li.style.background = "";
         li.style.color = "";
       }
     }
 
-    var n = 0;
-    for (var kk in found) if (found[kk]) n++;
+    var n = foundCount();
     if (progressEl) progressEl.textContent = n + " / " + words.length + " kata";
     if (scoreEl) scoreEl.textContent = (n * POINTS) + " poin level ini";
     if (selInfo){
-      if (selected.length) {
+      if (locked && revealed) {
+        selInfo.textContent = "Menyerah. Skor level: " + (n * POINTS) + " poin. Lanjut ke level berikutnya.";
+      } else if (selected.length) {
         var t = "";
         for (i=0;i<selected.length;i++) t += grid[selected[i].r][selected[i].c];
         selInfo.textContent = "Pilihan: " + t;
@@ -279,17 +368,15 @@ button.ws-cell.found{
         d.type = "button";
         d.className = "ws-cell";
         d.textContent = grid[r][c];
-        d.setAttribute("data-r", r);
-        d.setAttribute("data-c", c);
+        d.setAttribute("data-r", String(r));
+        d.setAttribute("data-c", String(c));
         cellNodes[key(r,c)] = d;
         gridEl.appendChild(d);
       }
     }
-    // event delegation
     gridEl.onclick = function(ev){
       var t = ev.target;
-      if (!t || !t.getAttribute) return;
-      if (t.getAttribute("data-r") == null) return;
+      if (!t || !t.getAttribute || t.getAttribute("data-r") == null) return;
       onCellClick(parseInt(t.getAttribute("data-r"),10), parseInt(t.getAttribute("data-c"),10));
     };
 
@@ -303,15 +390,40 @@ button.ws-cell.found{
     }
   }
 
+  function tickTimer(){
+    if (locked) return;
+    var elapsed = Date.now() - startedAt;
+    var left = Math.max(0, SURRENDER_MS - elapsed);
+    var sec = Math.ceil(left / 1000);
+    var mm = Math.floor(sec / 60);
+    var ss = sec % 60;
+    if (timerEl) {
+      timerEl.textContent = "Sisa " + mm + ":" + (ss < 10 ? "0" : "") + ss;
+    }
+    if (left <= 0 && !surrShown) {
+      surrShown = true;
+      if (surrWrap) surrWrap.classList.add("show");
+      if (timerEl) {
+        timerEl.textContent = "Waktu 3 menit — bisa menyerah";
+        timerEl.classList.add("warn");
+      }
+    }
+    if (!locked) requestAnimationFrame(function(){ /* throttle */ });
+  }
+
   var st0 = ensureRun();
   if (Array.isArray(st0.found[level])) {
     for (var fi=0; fi<st0.found[level].length; fi++) found[st0.found[level][fi]] = true;
   }
   buildUI();
   paint();
-  window.__WS_API__ = { clearSelection: function(){ selected=[]; paint(); } };
+
+  if (surrBtn) surrBtn.onclick = doSurrender;
   var clr = document.getElementById("ws-clear");
-  if (clr) clr.onclick = function(){ selected=[]; paint(); };
+  if (clr) clr.onclick = function(){ if (!locked) { selected=[]; paint(); } };
+
+  setInterval(tickTimer, 500);
+  tickTimer();
 })();
 
   </script>

@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 ---
 <Layout
   title="Word Search Level 1 — Cari Kata Industri | Industrial Word Search | Partpedia"
-  description="Level 1: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal."
+  description="Level 1: temukan 10 istilah industri dalam grid 20×20. Hanya horizontal dan vertikal. 3 menit lalu bisa menyerah."
 >
   <div class="ws-page">
     <a class="ws-back" href="/">← Beranda / Home</a>
@@ -11,20 +11,24 @@ import Layout from "../../../layouts/Layout.astro";
       <div class="ws-badge">GAME · WORD SEARCH</div>
       <h1>Cari Kata Industri <span>Level 1</span></h1>
       <p class="ws-lead">
-        <strong>Industrial Word Search</strong> — temukan 10 istilah teknis internasional.
-        Arah hanya <strong>kiri ke kanan</strong> dan <strong>atas ke bawah</strong> (tanpa miring).
-        Klik atau sentuh huruf satu per satu.
+        <strong>Industrial Word Search</strong> — 10 istilah teknis internasional.
+        Arah: <strong>kiri → kanan</strong> dan <strong>atas → bawah</strong> saja.
+        Setelah 3 menit muncul tombol <strong>Menyerah</strong>.
       </p>
       <div class="ws-meta">
         <span class="ws-chip" id="ws-progress">0 / 10 kata</span>
         <span class="ws-chip" id="ws-score">0 poin level ini</span>
-        <span class="ws-chip">Grid 25×25</span>
+        <span class="ws-chip" id="ws-timer">Sisa 3:00</span>
+        <span class="ws-chip">Grid 20×20</span>
       </div>
     </header>
     <div class="ws-board">
-      <div class="ws-grid" id="ws-grid" role="grid" aria-label="Word search 25 by 25"></div>
+      <div class="ws-grid" id="ws-grid" role="grid" aria-label="Word search 20 by 20"></div>
       <p class="ws-sel" id="ws-sel"></p>
       <button type="button" class="ws-clear" id="ws-clear">Hapus pilihan huruf</button>
+      <div class="ws-surrender-wrap" id="ws-surrender-wrap">
+        <button type="button" class="ws-surrender" id="ws-surrender">Menyerah — tampilkan sisa kata</button>
+      </div>
     </div>
     <div class="ws-words-wrap">
       <h2>Daftar kata / Word list</h2>
@@ -37,25 +41,33 @@ import Layout from "../../../layouts/Layout.astro";
   </div>
   <style is:global>
 
-.ws-page{max-width:720px;margin:0 auto;padding:1rem 0.75rem 2.5rem}
-.ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.9rem;margin-bottom:0.85rem}
+.ws-page{max-width:560px;margin:0 auto;padding:0.85rem 0.65rem 2.5rem;box-sizing:border-box}
+.ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.88rem;margin-bottom:0.7rem}
 .ws-back:hover{color:#e2e8f0}
-.ws-hero{margin-bottom:1rem}
-.ws-badge{display:inline-block;font-size:0.68rem;font-weight:800;letter-spacing:0.1em;color:#fbbf24;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.45);padding:0.28rem 0.6rem;border-radius:999px;margin-bottom:0.55rem}
-.ws-hero h1{margin:0 0 0.4rem;font-size:1.45rem;color:#f8fafc;line-height:1.25}
+.ws-hero{margin-bottom:0.85rem}
+.ws-badge{display:inline-block;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;color:#fbbf24;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.45);padding:0.25rem 0.55rem;border-radius:999px;margin-bottom:0.45rem}
+.ws-hero h1{margin:0 0 0.35rem;font-size:clamp(1.15rem,4.5vw,1.4rem);color:#f8fafc;line-height:1.25}
 .ws-hero h1 span{color:#38bdf8;font-weight:700}
-.ws-lead{margin:0;color:#94a3b8;font-size:0.92rem;line-height:1.55}
-.ws-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.75rem 0 0}
-.ws-chip{font-size:0.75rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.3rem 0.55rem;border-radius:8px}
-.ws-board{background:rgba(15,23,42,0.88);border:1px solid rgba(56,189,248,0.25);border-radius:16px;padding:0.65rem;box-shadow:0 0 0 1px rgba(251,191,36,0.08),0 12px 40px rgba(0,0,0,0.35)}
-.ws-grid{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:2px;width:100%}
+.ws-lead{margin:0;color:#94a3b8;font-size:0.88rem;line-height:1.5}
+.ws-meta{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.65rem 0 0}
+.ws-chip{font-size:0.72rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.28rem 0.5rem;border-radius:8px}
+.ws-chip.warn{border-color:rgba(251,191,36,0.5);color:#fde68a}
+.ws-board{background:rgba(15,23,42,0.92);border:1px solid rgba(56,189,248,0.28);border-radius:14px;padding:0.55rem;box-shadow:0 8px 28px rgba(0,0,0,0.35)}
+.ws-grid{
+  display:grid;
+  grid-template-columns:repeat(20,minmax(0,1fr));
+  gap:1px;
+  width:100%;
+  max-width:100%;
+}
 button.ws-cell{
   appearance:none;-webkit-appearance:none;border:none;aspect-ratio:1;
   display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);
-  color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;
+  font-weight:800;
+  font-size:clamp(0.55rem,2.8vw,0.85rem);
+  color:#e2e8f0;background:#1e293b;border-radius:2px;cursor:pointer;
   padding:0;line-height:1;min-width:0;touch-action:manipulation;
-  -webkit-tap-highlight-color:transparent;
+  -webkit-tap-highlight-color:transparent;user-select:none;
 }
 button.ws-cell.sel{
   background:#0ea5e9 !important;color:#0f172a !important;
@@ -64,51 +76,74 @@ button.ws-cell.sel{
 button.ws-cell.found{
   background:#1d4ed8 !important;color:#eff6ff !important;
 }
-.ws-sel{margin:0.55rem 0 0;font-size:0.8rem;color:#64748b;min-height:1.2em}
-.ws-words-wrap{margin-top:1rem}
-.ws-words-wrap h2{margin:0 0 0.5rem;font-size:0.95rem;color:#f1f5f9}
-.ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.35rem}
-@media(min-width:480px){.ws-words{grid-template-columns:repeat(5,1fr)}}
+button.ws-cell.reveal{
+  background:#2563eb !important;color:#fff !important;
+}
+.ws-sel{margin:0.5rem 0 0;font-size:0.78rem;color:#64748b;min-height:1.15em}
+.ws-surrender-wrap{margin-top:0.65rem;display:none}
+.ws-surrender-wrap.show{display:block}
+.ws-surrender{
+  width:100%;border:none;cursor:pointer;font-weight:800;font-size:0.9rem;
+  padding:0.75rem;border-radius:12px;
+  background:linear-gradient(135deg,#64748b,#475569);color:#f8fafc;
+}
+.ws-surrender:hover{filter:brightness(1.08)}
+.ws-surrender:disabled{opacity:0.55;cursor:not-allowed}
+.ws-words-wrap{margin-top:0.95rem}
+.ws-words-wrap h2{margin:0 0 0.45rem;font-size:0.92rem;color:#f1f5f9}
+.ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.32rem}
+@media(min-width:420px){.ws-words{grid-template-columns:repeat(5,1fr)}}
 .ws-words li{
-  font-size:0.72rem;font-weight:800;letter-spacing:0.03em;
+  font-size:0.7rem;font-weight:800;letter-spacing:0.02em;
   color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;
-  padding:0.4rem 0.35rem;text-align:center;
+  padding:0.38rem 0.3rem;text-align:center;
 }
 .ws-words li.got{
-  color:#ffffff !important;background:#2563eb !important;text-decoration:none;
+  color:#ffffff !important;background:#2563eb !important;
 }
-.ws-nav{display:flex;gap:0.6rem;margin-top:1.1rem}
-.ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.9rem;padding:0.7rem 0.5rem;border-radius:12px}
+.ws-words li.revealed{
+  color:#ffffff !important;background:#3b82f6 !important;opacity:0.9;
+}
+.ws-nav{display:flex;gap:0.55rem;margin-top:1rem}
+.ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.88rem;padding:0.68rem 0.45rem;border-radius:12px}
 .ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
 .ws-btn-next{background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a}
-.ws-clear{margin-top:0.5rem;width:100%;background:transparent;border:1px dashed rgba(148,163,184,0.35);color:#94a3b8;border-radius:10px;padding:0.45rem;cursor:pointer;font-size:0.8rem}
+.ws-clear{margin-top:0.45rem;width:100%;background:transparent;border:1px dashed rgba(148,163,184,0.35);color:#94a3b8;border-radius:10px;padding:0.42rem;cursor:pointer;font-size:0.78rem}
 
   </style>
   <script is:inline>
-    window.__WS__ = {"level":1,"words":["BEARING","SHAFT","SEAL","GEAR","VALVE","PUMP","MOTOR","FILTER","BOLT","TORQUE"],"grid":[["A","I","L","E","M","O","R","A","B","E","D","S","G","R","W","O","R","L","B","L","U","A","E","H","I"],["U","Y","L","H","I","G","X","C","E","G","N","A","A","G","N","R","D","P","M","D","E","W","I","B","Q"],["L","T","I","P","S","S","G","U","A","Y","G","M","Y","F","C","C","D","U","O","T","X","O","R","J","Y"],["V","A","L","V","E","I","L","K","R","W","E","Q","A","B","O","Z","J","C","F","I","F","E","W","X","N"],["E","R","A","U","F","X","F","E","I","H","A","U","K","L","F","D","U","B","S","W","L","R","N","O","P"],["H","T","S","Y","F","I","Q","D","N","Z","R","A","D","X","U","C","Q","L","B","T","P","K","D","X","V"],["Z","U","F","U","I","C","Q","U","G","A","V","M","C","I","G","R","S","W","O","O","Y","F","W","E","R"],["A","W","Z","E","L","G","D","Q","W","T","P","S","Z","N","Z","A","U","K","P","R","P","E","B","C","A"],["F","N","Q","D","T","R","W","F","J","E","U","E","I","R","D","R","L","P","J","Q","C","E","F","D","Y"],["P","O","U","X","E","K","K","B","T","Z","A","A","M","L","E","S","F","T","V","U","A","Z","W","P","M"],["Q","F","C","R","R","X","X","H","Y","Y","Z","L","V","V","H","F","U","F","O","E","D","T","Y","B","A"],["F","Y","W","F","E","G","Q","P","E","G","I","G","S","U","U","Z","Z","J","T","U","M","S","A","B","U"],["R","C","S","A","Y","R","S","H","J","I","U","T","H","Y","P","K","M","P","C","H","P","Z","L","K","M"],["D","D","G","F","C","S","K","P","X","A","U","K","A","V","X","G","I","V","H","B","T","B","R","G","M"],["O","Q","F","X","H","J","Y","U","Q","U","A","V","F","Y","V","X","P","L","G","H","T","Q","Z","P","P"],["G","T","D","O","I","V","P","M","M","J","B","E","T","B","E","V","O","T","H","D","C","J","B","F","W"],["E","O","S","B","B","D","X","P","Y","I","U","E","D","W","L","A","W","D","O","L","H","T","V","T","C"],["R","I","U","R","O","M","G","P","H","W","Z","Y","A","D","I","H","M","H","V","E","R","V","F","E","T"],["Y","S","H","A","L","C","Y","Q","R","H","S","U","M","O","U","S","O","K","Y","D","T","H","N","R","E"],["E","P","A","H","T","G","R","K","I","I","X","V","R","M","S","O","T","W","C","Z","I","J","A","N","W"],["Z","J","J","J","R","L","E","B","G","F","K","E","Y","E","L","O","O","N","J","D","K","D","N","M","M"],["O","S","F","I","P","V","N","G","C","B","J","L","O","Q","B","R","R","L","C","H","X","B","P","H","Y"],["O","K","C","N","B","R","H","F","O","Y","B","D","W","I","U","P","O","S","K","L","M","V","K","D","Y"],["E","Z","N","B","I","U","X","B","V","F","K","Q","A","H","X","G","R","F","P","U","D","Z","K","P","U"],["A","Z","Y","L","M","R","F","H","T","Y","S","G","O","F","X","C","Y","Y","R","R","F","M","Z","N","U"]],"placed":[{"word":"SHAFT","cells":[[11,12],[12,12],[13,12],[14,12],[15,12]]},{"word":"BEARING","cells":[[0,8],[1,8],[2,8],[3,8],[4,8],[5,8],[6,8]]},{"word":"FILTER","cells":[[5,4],[6,4],[7,4],[8,4],[9,4],[10,4]]},{"word":"VALVE","cells":[[3,0],[3,1],[3,2],[3,3],[3,4]]},{"word":"GEAR","cells":[[2,10],[3,10],[4,10],[5,10]]},{"word":"TORQUE","cells":[[5,19],[6,19],[7,19],[8,19],[9,19],[10,19]]},{"word":"MOTOR","cells":[[17,16],[18,16],[19,16],[20,16],[21,16]]},{"word":"BOLT","cells":[[16,4],[17,4],[18,4],[19,4]]},{"word":"PUMP","cells":[[13,7],[14,7],[15,7],[16,7]]},{"word":"SEAL","cells":[[7,11],[8,11],[9,11],[10,11]]}]};
+    window.__WS__ = {"level":1,"words":["BEARING","SHAFT","SEAL","GEAR","VALVE","PUMP","MOTOR","FILTER","BOLT","TORQUE"],"grid":[["V","V","L","W","U","C","I","D","Q","K","Z","Y","C","W","Y","B","R","G","Q","M"],["P","T","L","Q","O","D","G","I","N","W","R","M","C","R","S","K","F","L","D","A"],["T","S","E","A","L","R","F","I","L","T","E","R","J","J","J","K","H","R","G","Y"],["O","J","L","I","H","B","X","L","W","M","P","P","R","R","J","P","N","M","K","K"],["R","Z","M","O","G","D","Y","Z","O","R","H","V","B","H","F","U","B","B","A","C"],["Q","R","Z","A","R","A","B","J","O","N","Z","S","J","D","G","N","I","E","E","L"],["U","D","C","U","B","H","G","E","A","R","C","Z","F","E","S","D","M","J","J","R"],["E","Q","D","L","E","N","J","N","W","S","Q","X","W","Z","H","Y","Q","N","W","Z"],["G","X","P","M","Y","L","K","V","U","G","R","Z","C","T","A","X","Y","M","I","F"],["C","W","N","B","O","X","Y","R","E","R","U","U","J","N","F","J","P","J","U","N"],["Y","C","I","U","P","U","M","P","F","N","J","M","R","B","T","M","O","Z","M","V"],["G","B","L","H","K","I","U","I","K","Z","W","N","H","G","O","J","Z","M","E","V"],["S","E","H","O","N","Z","A","P","Y","D","Z","R","G","M","B","W","C","M","A","N"],["X","A","T","M","E","J","K","G","G","S","J","P","Y","X","O","D","K","O","X","G"],["R","R","V","B","T","B","X","P","X","M","H","M","I","S","L","M","Y","T","G","B"],["A","I","D","K","P","D","Q","B","W","J","L","C","Y","A","T","J","L","O","U","O"],["Q","N","K","A","P","Y","H","V","K","N","L","C","O","O","Z","N","V","R","R","T"],["H","G","R","N","V","B","G","Y","A","Q","K","T","R","U","I","S","H","Q","K","N"],["Q","P","X","T","L","Z","D","P","T","T","N","X","D","L","O","B","O","G","I","H"],["M","G","J","L","N","S","B","A","L","V","V","A","L","V","E","R","Y","N","F","G"]],"placed":[{"word":"SEAL","cells":[[2,1],[2,2],[2,3],[2,4]]},{"word":"SHAFT","cells":[[6,14],[7,14],[8,14],[9,14],[10,14]]},{"word":"GEAR","cells":[[6,6],[6,7],[6,8],[6,9]]},{"word":"FILTER","cells":[[2,6],[2,7],[2,8],[2,9],[2,10],[2,11]]},{"word":"BOLT","cells":[[12,14],[13,14],[14,14],[15,14]]},{"word":"VALVE","cells":[[19,10],[19,11],[19,12],[19,13],[19,14]]},{"word":"PUMP","cells":[[10,4],[10,5],[10,6],[10,7]]},{"word":"MOTOR","cells":[[12,17],[13,17],[14,17],[15,17],[16,17]]},{"word":"TORQUE","cells":[[2,0],[3,0],[4,0],[5,0],[6,0],[7,0]]},{"word":"BEARING","cells":[[11,1],[12,1],[13,1],[14,1],[15,1],[16,1],[17,1]]}]};
   </script>
   <script is:inline>
 
 (function(){
   var cfg = window.__WS__;
   if (!cfg) { console.error("WS: no config"); return; }
-  var SIZE = 25;
+  var SIZE = 20;
   var level = cfg.level;
   var grid = cfg.grid;
   var placed = cfg.placed;
   var words = cfg.words;
   var POINTS = 2;
+  var SURRENDER_MS = 3 * 60 * 1000;
 
   var gridEl = document.getElementById("ws-grid");
   var wordsEl = document.getElementById("ws-words");
   var progressEl = document.getElementById("ws-progress");
   var scoreEl = document.getElementById("ws-score");
+  var timerEl = document.getElementById("ws-timer");
   var selInfo = document.getElementById("ws-sel");
-  if (!gridEl || !wordsEl) { console.error("WS: missing DOM"); return; }
+  var surrWrap = document.getElementById("ws-surrender-wrap");
+  var surrBtn = document.getElementById("ws-surrender");
+  if (!gridEl || !wordsEl) return;
 
   var found = {};
+  var revealed = false;
+  var locked = false;
   var selected = [];
   var cellNodes = {};
+  var startedAt = Date.now();
+  var surrShown = false;
 
   function storageKey(){ return "partpedia_ws_batch1"; }
   function loadState(){
@@ -125,12 +160,40 @@ button.ws-cell.found{
   }
   function key(r,c){ return r+","+c; }
 
+  function foundCount(){
+    var n = 0;
+    for (var k in found) if (found[k]) n++;
+    return n;
+  }
+
+  function saveScore(){
+    var st = ensureRun();
+    var keys = [];
+    for (var k in found) if (found[k]) keys.push(k);
+    st.found[level] = keys;
+    st.scores[level] = keys.length * POINTS;
+    saveState(st);
+  }
+
   function foundCells(){
     var s = {};
     for (var i=0;i<placed.length;i++){
       var p = placed[i];
-      if (!found[p.word]) continue;
-      for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = 1;
+      if (!found[p.word] && !(revealed && !found[p.word])) continue;
+      if (found[p.word] || revealed) {
+        for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = found[p.word] ? "found" : "reveal";
+      }
+    }
+    // after reveal, mark all placed cells
+    if (revealed) {
+      for (i=0;i<placed.length;i++){
+        p = placed[i];
+        for (j=0;j<p.cells.length;j++) {
+          var kk = key(p.cells[j][0], p.cells[j][1]);
+          if (found[p.word]) s[kk] = "found";
+          else s[kk] = "reveal";
+        }
+      }
     }
     return s;
   }
@@ -148,7 +211,7 @@ button.ws-cell.found{
   }
 
   function tryMatch(){
-    if (selected.length < 2) return;
+    if (locked || selected.length < 2) return;
     if (!selectionValidDirection()) { selected = []; paint(); return; }
     var fwd = "";
     for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
@@ -157,14 +220,13 @@ button.ws-cell.found{
       if (found[p.word]) continue;
       if (p.word === fwd){
         found[p.word] = true;
-        var st = ensureRun();
-        var keys = [];
-        for (var k in found) if (found[k]) keys.push(k);
-        st.found[level] = keys;
-        st.scores[level] = keys.length * POINTS;
-        saveState(st);
+        saveScore();
         selected = [];
         paint();
+        if (foundCount() >= words.length) {
+          locked = true;
+          if (surrWrap) surrWrap.classList.remove("show");
+        }
         return;
       }
     }
@@ -173,6 +235,7 @@ button.ws-cell.found{
   }
 
   function maybeAutoMatch(){
+    if (locked) return;
     var fwd = "";
     for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
     for (i=0;i<placed.length;i++){
@@ -186,6 +249,7 @@ button.ws-cell.found{
   }
 
   function onCellClick(r,c){
+    if (locked) return;
     if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
       selected.pop(); paint(); return;
     }
@@ -213,6 +277,19 @@ button.ws-cell.found{
     }
   }
 
+  function doSurrender(){
+    if (locked) return;
+    locked = true;
+    revealed = true;
+    selected = [];
+    saveScore(); // only words found before surrender
+    if (surrBtn) {
+      surrBtn.disabled = true;
+      surrBtn.textContent = "Menyerah — kata tersisa ditampilkan";
+    }
+    paint();
+  }
+
   function paint(){
     ensureRun();
     var fc = foundCells();
@@ -227,12 +304,16 @@ button.ws-cell.found{
         d.className = "ws-cell";
         d.style.background = "";
         d.style.color = "";
-        if (fc[k]) {
+        if (fc[k] === "found") {
           d.classList.add("found");
           d.style.background = "#1d4ed8";
           d.style.color = "#eff6ff";
+        } else if (fc[k] === "reveal") {
+          d.classList.add("reveal");
+          d.style.background = "#2563eb";
+          d.style.color = "#ffffff";
         }
-        if (selSet[k]) {
+        if (selSet[k] && !locked) {
           d.classList.add("sel");
           d.style.background = "#0ea5e9";
           d.style.color = "#0f172a";
@@ -246,21 +327,29 @@ button.ws-cell.found{
       var w = li.getAttribute("data-word");
       if (found[w]) {
         li.classList.add("got");
+        li.classList.remove("revealed");
         li.style.background = "#2563eb";
+        li.style.color = "#ffffff";
+      } else if (revealed) {
+        li.classList.add("revealed");
+        li.classList.remove("got");
+        li.style.background = "#3b82f6";
         li.style.color = "#ffffff";
       } else {
         li.classList.remove("got");
+        li.classList.remove("revealed");
         li.style.background = "";
         li.style.color = "";
       }
     }
 
-    var n = 0;
-    for (var kk in found) if (found[kk]) n++;
+    var n = foundCount();
     if (progressEl) progressEl.textContent = n + " / " + words.length + " kata";
     if (scoreEl) scoreEl.textContent = (n * POINTS) + " poin level ini";
     if (selInfo){
-      if (selected.length) {
+      if (locked && revealed) {
+        selInfo.textContent = "Menyerah. Skor level: " + (n * POINTS) + " poin. Lanjut ke level berikutnya.";
+      } else if (selected.length) {
         var t = "";
         for (i=0;i<selected.length;i++) t += grid[selected[i].r][selected[i].c];
         selInfo.textContent = "Pilihan: " + t;
@@ -279,17 +368,15 @@ button.ws-cell.found{
         d.type = "button";
         d.className = "ws-cell";
         d.textContent = grid[r][c];
-        d.setAttribute("data-r", r);
-        d.setAttribute("data-c", c);
+        d.setAttribute("data-r", String(r));
+        d.setAttribute("data-c", String(c));
         cellNodes[key(r,c)] = d;
         gridEl.appendChild(d);
       }
     }
-    // event delegation
     gridEl.onclick = function(ev){
       var t = ev.target;
-      if (!t || !t.getAttribute) return;
-      if (t.getAttribute("data-r") == null) return;
+      if (!t || !t.getAttribute || t.getAttribute("data-r") == null) return;
       onCellClick(parseInt(t.getAttribute("data-r"),10), parseInt(t.getAttribute("data-c"),10));
     };
 
@@ -303,15 +390,40 @@ button.ws-cell.found{
     }
   }
 
+  function tickTimer(){
+    if (locked) return;
+    var elapsed = Date.now() - startedAt;
+    var left = Math.max(0, SURRENDER_MS - elapsed);
+    var sec = Math.ceil(left / 1000);
+    var mm = Math.floor(sec / 60);
+    var ss = sec % 60;
+    if (timerEl) {
+      timerEl.textContent = "Sisa " + mm + ":" + (ss < 10 ? "0" : "") + ss;
+    }
+    if (left <= 0 && !surrShown) {
+      surrShown = true;
+      if (surrWrap) surrWrap.classList.add("show");
+      if (timerEl) {
+        timerEl.textContent = "Waktu 3 menit — bisa menyerah";
+        timerEl.classList.add("warn");
+      }
+    }
+    if (!locked) requestAnimationFrame(function(){ /* throttle */ });
+  }
+
   var st0 = ensureRun();
   if (Array.isArray(st0.found[level])) {
     for (var fi=0; fi<st0.found[level].length; fi++) found[st0.found[level][fi]] = true;
   }
   buildUI();
   paint();
-  window.__WS_API__ = { clearSelection: function(){ selected=[]; paint(); } };
+
+  if (surrBtn) surrBtn.onclick = doSurrender;
   var clr = document.getElementById("ws-clear");
-  if (clr) clr.onclick = function(){ selected=[]; paint(); };
+  if (clr) clr.onclick = function(){ if (!locked) { selected=[]; paint(); } };
+
+  setInterval(tickTimer, 500);
+  tickTimer();
 })();
 
   </script>
