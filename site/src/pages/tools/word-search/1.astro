@@ -1,0 +1,253 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+---
+<Layout
+  title="Word Search Level 1 — Cari Kata Industri | Industrial Word Search | Partpedia"
+  description="Level 1: temukan 10 istilah industri internasional dalam grid 25×25. Word search for engineers. Play free on Partpedia."
+>
+  <div class="ws-page">
+    <a class="ws-back" href="/">← Beranda / Home</a>
+    <header class="ws-hero">
+      <div class="ws-badge">GAME · WORD SEARCH</div>
+      <h1>Cari Kata Industri <span>Level 1</span></h1>
+      <p class="ws-lead">
+        <strong>Industrial Word Search</strong> — temukan 10 istilah teknis internasional
+        (nama yang sama di banyak negara) mendatar, menurun, atau miring.
+        Klik huruf satu per satu. Tidak wajib selesai untuk lanjut level.
+      </p>
+      <div class="ws-meta">
+        <span class="ws-chip" id="ws-progress">0 / 10 kata</span>
+        <span class="ws-chip" id="ws-score">0 poin level ini</span>
+        <span class="ws-chip">Grid 25×25</span>
+      </div>
+    </header>
+    <div class="ws-board">
+      <div class="ws-grid" id="ws-grid" role="grid" aria-label="Word search 25 by 25"></div>
+      <p class="ws-sel" id="ws-sel"></p>
+      <button type="button" class="ws-clear" id="ws-clear">Hapus pilihan huruf</button>
+    </div>
+    <div class="ws-words-wrap">
+      <h2>Daftar kata / Word list</h2>
+      <ul class="ws-words" id="ws-words"></ul>
+    </div>
+    <div class="ws-nav">
+      <a class="ws-btn-back" href="/">← Beranda</a>
+      <a class="ws-btn-next" href="/tools/word-search/2/">Lanjutkan / Next →</a>
+    </div>
+  </div>
+  <style>
+
+.ws-page{max-width:720px;margin:0 auto;padding:1rem 0.75rem 2.5rem}
+.ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.9rem;margin-bottom:0.85rem}
+.ws-back:hover{color:#e2e8f0}
+.ws-hero{margin-bottom:1rem}
+.ws-badge{display:inline-block;font-size:0.68rem;font-weight:800;letter-spacing:0.1em;color:#fbbf24;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.45);padding:0.28rem 0.6rem;border-radius:999px;margin-bottom:0.55rem}
+.ws-hero h1{margin:0 0 0.4rem;font-size:1.45rem;color:#f8fafc;line-height:1.25}
+.ws-hero h1 span{color:#38bdf8;font-weight:700}
+.ws-lead{margin:0;color:#94a3b8;font-size:0.92rem;line-height:1.55}
+.ws-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.75rem 0 0}
+.ws-chip{font-size:0.75rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.3rem 0.55rem;border-radius:8px}
+.ws-board{background:rgba(15,23,42,0.88);border:1px solid rgba(56,189,248,0.25);border-radius:16px;padding:0.65rem;box-shadow:0 0 0 1px rgba(251,191,36,0.08),0 12px 40px rgba(0,0,0,0.35)}
+.ws-grid{display:grid;grid-template-columns:repeat(25,1fr);gap:2px;width:100%;max-width:100%}
+.ws-cell{appearance:none;border:none;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;padding:0;line-height:1;min-width:0}
+.ws-cell.sel{background:rgba(56,189,248,0.55);color:#fff;box-shadow:inset 0 0 0 1px #38bdf8}
+.ws-cell.found{background:rgba(34,197,94,0.4);color:#bbf7d0}
+.ws-sel{margin:0.55rem 0 0;font-size:0.8rem;color:#64748b;min-height:1.2em}
+.ws-words-wrap{margin-top:1rem}
+.ws-words-wrap h2{margin:0 0 0.5rem;font-size:0.95rem;color:#f1f5f9}
+.ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.35rem}
+@media(min-width:480px){.ws-words{grid-template-columns:repeat(5,1fr)}}
+.ws-words li{font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;padding:0.4rem 0.35rem;text-align:center}
+.ws-words li.got{color:#86efac;background:rgba(22,101,52,0.35);text-decoration:line-through}
+.ws-nav{display:flex;gap:0.6rem;margin-top:1.1rem}
+.ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.9rem;padding:0.7rem 0.5rem;border-radius:12px}
+.ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
+.ws-btn-next{background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a}
+.ws-clear{margin-top:0.5rem;width:100%;background:transparent;border:1px dashed rgba(148,163,184,0.35);color:#94a3b8;border-radius:10px;padding:0.45rem;cursor:pointer;font-size:0.8rem}
+
+  </style>
+  <script is:inline>
+    window.__WS__ = { level: 1, words: ["BEARING", "SHAFT", "SEAL", "GEAR", "VALVE", "PUMP", "MOTOR", "FILTER", "BOLT", "TORQUE"], maxLevel: 5 };
+  </script>
+  <script is:inline>
+
+(function(){
+  const SIZE = 25;
+  const DIRS = [[0,1],[1,0],[1,1],[0,-1],[-1,0],[-1,-1],[1,-1],[-1,1]];
+  const cfg = window.__WS__;
+  const level = cfg.level;
+  const words = cfg.words.slice();
+  const POINTS = 2;
+
+  const gridEl = document.getElementById("ws-grid");
+  const wordsEl = document.getElementById("ws-words");
+  const progressEl = document.getElementById("ws-progress");
+  const scoreEl = document.getElementById("ws-score");
+  const selInfo = document.getElementById("ws-sel");
+
+  let grid = [];
+  let placed = [];
+  let found = new Set();
+  let selected = [];
+
+  function storageKey(){ return "partpedia_ws_batch1"; }
+  function loadState(){
+    try { return JSON.parse(sessionStorage.getItem(storageKey())||"{}"); }
+    catch(e){ return {}; }
+  }
+  function saveState(st){ sessionStorage.setItem(storageKey(), JSON.stringify(st)); }
+  function ensureRun(){
+    var st = loadState();
+    if (!st.runId) { st = { runId: Date.now(), scores: {}, found: {} }; saveState(st); }
+    if (!st.scores) st.scores = {};
+    if (!st.found) st.found = {};
+    return st;
+  }
+  function rand(n){ return Math.floor(Math.random()*n); }
+  function canPlace(g, word, r, c, dr, dc){
+    for (var i=0;i<word.length;i++){
+      var rr=r+dr*i, cc=c+dc*i;
+      if (rr<0||cc<0||rr>=SIZE||cc>=SIZE) return false;
+      if (g[rr][cc] && g[rr][cc] !== word[i]) return false;
+    }
+    return true;
+  }
+  function placeWord(g, word){
+    for (var t=0;t<150;t++){
+      var d=DIRS[rand(DIRS.length)];
+      var dr=d[0], dc=d[1];
+      var r=rand(SIZE), c=rand(SIZE);
+      if (!canPlace(g,word,r,c,dr,dc)) continue;
+      var cells=[];
+      for (var i=0;i<word.length;i++){
+        var rr=r+dr*i, cc=c+dc*i;
+        g[rr][cc]=word[i];
+        cells.push([rr,cc]);
+      }
+      return cells;
+    }
+    return null;
+  }
+  function buildGrid(){
+    var g=[];
+    for (var r=0;r<SIZE;r++){ g[r]=[]; for (var c=0;c<SIZE;c++) g[r][c]=null; }
+    placed = [];
+    var order = words.slice().sort(function(){ return Math.random()-0.5; });
+    for (var wi=0; wi<order.length; wi++){
+      var cells = placeWord(g, order[wi]);
+      if (cells) placed.push({ word: order[wi], cells: cells });
+    }
+    if (placed.length < words.length - 1) return buildGrid();
+    var L="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (r=0;r<SIZE;r++) for (c=0;c<SIZE;c++) if (!g[r][c]) g[r][c]=L[rand(26)];
+    grid = g;
+  }
+  function key(r,c){ return r+","+c; }
+  function isAdj(a,b){
+    var dr=Math.abs(a[0]-b[0]), dc=Math.abs(a[1]-b[1]);
+    return Math.max(dr,dc)===1 && (dr===0||dc===0||dr===dc);
+  }
+  function foundCells(){
+    var s={};
+    placed.forEach(function(p){
+      if (found.has(p.word)) p.cells.forEach(function(rc){ s[key(rc[0],rc[1])]=1; });
+    });
+    return s;
+  }
+  function tryMatch(){
+    if (selected.length < 2) return;
+    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
+    var rev = selected.map(function(s){ return grid[s.r][s.c]; }).reverse().join("");
+    for (var i=0;i<placed.length;i++){
+      var p=placed[i];
+      if (found.has(p.word)) continue;
+      if (p.word===fwd || p.word===rev){
+        found.add(p.word);
+        var st=ensureRun();
+        st.found[level]=Array.from(found);
+        st.scores[level]=found.size*POINTS;
+        saveState(st);
+        selected=[];
+        render();
+        return;
+      }
+    }
+    selected=[];
+    render();
+  }
+  function maybeAutoMatch(){
+    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
+    var rev = selected.map(function(s){ return grid[s.r][s.c]; }).reverse().join("");
+    for (var i=0;i<placed.length;i++){
+      var p=placed[i];
+      if (found.has(p.word)) continue;
+      if (p.word===fwd || p.word===rev){ tryMatch(); return; }
+    }
+    var maxLen=0;
+    placed.forEach(function(p){ if (!found.has(p.word) && p.word.length>maxLen) maxLen=p.word.length; });
+    if (selected.length >= maxLen && maxLen>0) tryMatch();
+  }
+  function onCellClick(r,c){
+    if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
+      selected.pop(); render(); return;
+    }
+    if (selected.length===0){ selected=[{r:r,c:c}]; render(); return; }
+    var last=selected[selected.length-1];
+    if (selected.length===1){
+      if (!isAdj([last.r,last.c],[r,c])){ selected=[{r:r,c:c}]; render(); return; }
+      selected.push({r:r,c:c}); render(); maybeAutoMatch(); return;
+    }
+    var r0=selected[0].r, c0=selected[0].c;
+    var r1=selected[1].r, c1=selected[1].c;
+    var dr=Math.sign(r1-r0), dc=Math.sign(c1-c0);
+    var er=r0+dr*selected.length, ec=c0+dc*selected.length;
+    if (r===er && c===ec){ selected.push({r:r,c:c}); render(); maybeAutoMatch(); }
+    else { selected=[{r:r,c:c}]; render(); }
+  }
+  function render(){
+    ensureRun();
+    var fc=foundCells();
+    var selSet={};
+    selected.forEach(function(s){ selSet[key(s.r,s.c)]=1; });
+    gridEl.innerHTML="";
+    for (var r=0;r<SIZE;r++){
+      for (var c=0;c<SIZE;c++){
+        var d=document.createElement("button");
+        d.type="button";
+        d.className="ws-cell";
+        d.textContent=grid[r][c];
+        var k=key(r,c);
+        if (fc[k]) d.classList.add("found");
+        if (selSet[k]) d.classList.add("sel");
+        (function(rr,cc){ d.addEventListener("click", function(){ onCellClick(rr,cc); }); })(r,c);
+        gridEl.appendChild(d);
+      }
+    }
+    wordsEl.innerHTML="";
+    words.slice().sort().forEach(function(w){
+      var li=document.createElement("li");
+      li.textContent=w;
+      if (found.has(w)) li.classList.add("got");
+      wordsEl.appendChild(li);
+    });
+    progressEl.textContent = found.size + " / " + words.length + " kata";
+    scoreEl.textContent = (found.size * POINTS) + " poin level ini";
+    if (selInfo){
+      selInfo.textContent = selected.length
+        ? ("Pilihan: " + selected.map(function(s){ return grid[s.r][s.c]; }).join(""))
+        : "Klik huruf satu per satu (lurus: mendatar / menurun / miring).";
+    }
+  }
+
+  var st0=ensureRun();
+  if (Array.isArray(st0.found[level])) st0.found[level].forEach(function(w){ found.add(w); });
+  buildGrid();
+  render();
+  window.__WS_API__ = { clearSelection: function(){ selected=[]; render(); } };
+})();
+
+    document.getElementById("ws-clear") && document.getElementById("ws-clear").addEventListener("click", function () {
+      window.__WS_API__ && window.__WS_API__.clearSelection();
+    });
+  </script>
+</Layout>

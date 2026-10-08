@@ -1,0 +1,41 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+---
+<Layout
+  title="Word Search Industri — Industrial Word Search Game | Partpedia"
+  description="Main word search istilah industri internasional. 5 level, grid 25×25, skor hingga 100. Gratis di Partpedia."
+>
+  <div class="hub">
+    <a class="back" href="/">← Beranda / Home</a>
+    <div class="card">
+      <div class="badge">GAME</div>
+      <h1>Cari Kata Industri</h1>
+      <p class="en">Industrial Word Search</p>
+      <p class="lead">
+        Temukan istilah teknis internasional dalam kotak huruf.
+        5 level · 10 kata per level · 2 poin per kata · skor maksimal 100.
+      </p>
+      <ul class="rules">
+        <li>Grid <strong>25×25</strong></li>
+        <li>Klik huruf <strong>satu per satu</strong> (lurus)</li>
+        <li>Boleh <strong>Next</strong> tanpa menyelesaikan semua kata</li>
+        <li>Skor dihitung di akhir 5 level</li>
+      </ul>
+      <a class="go" href="/tools/word-search/1/">Mulai Level 1 →</a>
+    </div>
+  </div>
+  <style>
+    .hub{max-width:480px;margin:0 auto;padding:1.5rem 1rem 3rem}
+    .back{color:#94a3b8;text-decoration:none;font-size:0.9rem}
+    .card{margin-top:1rem;padding:1.35rem;border-radius:20px;background:linear-gradient(160deg,#0f172a,#1e293b);border:1px solid rgba(251,191,36,0.35);box-shadow:0 0 40px rgba(245,158,11,0.12)}
+    .badge{display:inline-block;font-size:0.7rem;font-weight:900;letter-spacing:0.12em;color:#0f172a;background:#fbbf24;padding:0.25rem 0.55rem;border-radius:6px}
+    h1{margin:0.75rem 0 0.15rem;color:#f8fafc;font-size:1.6rem}
+    .en{margin:0;color:#38bdf8;font-weight:700;font-size:0.95rem}
+    .lead{color:#94a3b8;line-height:1.5;font-size:0.92rem}
+    .rules{color:#cbd5e1;font-size:0.88rem;padding-left:1.1rem}
+    .go{display:block;text-align:center;margin-top:1.25rem;padding:0.85rem;border-radius:14px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-weight:900;text-decoration:none}
+  </style>
+  <script is:inline>
+    sessionStorage.setItem("partpedia_ws_batch1", JSON.stringify({ runId: Date.now(), scores: {}, found: {} }));
+  </script>
+</Layout>

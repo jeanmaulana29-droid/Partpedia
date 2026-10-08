@@ -1,0 +1,54 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+---
+<Layout
+  title="Congratulations — Word Search Result | Partpedia"
+  description="Hasil skor Industrial Word Search Partpedia. Maksimal 100 poin dari 5 level."
+>
+  <div class="res">
+    <a class="back" href="/">← Beranda / Home</a>
+    <div class="panel">
+      <div class="conf">Congratulations</div>
+      <h1>Selesai 5 Level</h1>
+      <p class="sub">Industrial Word Search · Batch 1</p>
+      <div class="score-big" id="total">—</div>
+      <p class="hint">Maksimal 100 poin (10 kata × 2 × 5 level)</p>
+      <ul class="breakdown" id="break"></ul>
+      <div class="actions">
+        <a class="btn-main" href="/tools/word-search/">Main lagi / Play again</a>
+        <a class="btn-ghost" href="/">Kembali ke beranda</a>
+      </div>
+    </div>
+  </div>
+  <style>
+    .res{max-width:440px;margin:0 auto;padding:1.5rem 1rem 3rem}
+    .back{color:#94a3b8;text-decoration:none;font-size:0.9rem}
+    .panel{margin-top:1rem;text-align:center;padding:1.5rem 1.2rem;border-radius:20px;background:linear-gradient(165deg,#0f172a 0%,#14532d 120%);border:1px solid rgba(74,222,128,0.35)}
+    .conf{font-size:0.75rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:#86efac}
+    h1{margin:0.4rem 0;color:#f0fdf4;font-size:1.5rem}
+    .sub{color:#86efac;margin:0;font-size:0.9rem}
+    .score-big{font-size:3rem;font-weight:900;color:#fbbf24;margin:0.75rem 0 0.25rem}
+    .hint{color:#94a3b8;font-size:0.8rem;margin:0 0 1rem}
+    .breakdown{list-style:none;padding:0;margin:0 0 1.25rem;text-align:left}
+    .breakdown li{display:flex;justify-content:space-between;padding:0.4rem 0.5rem;border-bottom:1px solid rgba(148,163,184,0.15);color:#e2e8f0;font-size:0.9rem}
+    .btn-main{display:block;padding:0.8rem;border-radius:12px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-weight:900;text-decoration:none;margin-bottom:0.5rem}
+    .btn-ghost{display:block;padding:0.65rem;color:#94a3b8;text-decoration:none;font-size:0.9rem}
+  </style>
+  <script is:inline>
+    (function(){
+      var st = {};
+      try { st = JSON.parse(sessionStorage.getItem("partpedia_ws_batch1")||"{}"); } catch(e){}
+      var scores = st.scores || {};
+      var total = 0;
+      var ul = document.getElementById("break");
+      for (var i=1;i<=5;i++){
+        var s = Number(scores[i]||0);
+        total += s;
+        var li = document.createElement("li");
+        li.innerHTML = "<span>Level "+i+"</span><span>"+s+" poin</span>";
+        ul.appendChild(li);
+      }
+      document.getElementById("total").textContent = total + " / 100";
+    })();
+  </script>
+</Layout>
