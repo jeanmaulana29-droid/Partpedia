@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 ---
 <Layout
   title="Word Search Level 4 — Cari Kata Industri | Industrial Word Search | Partpedia"
-  description="Level 4: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal. Play free on Partpedia."
+  description="Level 4: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal."
 >
   <div class="ws-page">
     <a class="ws-back" href="/">← Beranda / Home</a>
@@ -35,7 +35,7 @@ import Layout from "../../../layouts/Layout.astro";
       <a class="ws-btn-next" href="/tools/word-search/5/">Lanjutkan / Next →</a>
     </div>
   </div>
-  <style>
+  <style is:global>
 
 .ws-page{max-width:720px;margin:0 auto;padding:1rem 0.75rem 2.5rem}
 .ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.9rem;margin-bottom:0.85rem}
@@ -48,17 +48,35 @@ import Layout from "../../../layouts/Layout.astro";
 .ws-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.75rem 0 0}
 .ws-chip{font-size:0.75rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.3rem 0.55rem;border-radius:8px}
 .ws-board{background:rgba(15,23,42,0.88);border:1px solid rgba(56,189,248,0.25);border-radius:16px;padding:0.65rem;box-shadow:0 0 0 1px rgba(251,191,36,0.08),0 12px 40px rgba(0,0,0,0.35)}
-.ws-grid{display:grid;grid-template-columns:repeat(25,1fr);gap:2px;width:100%}
-.ws-cell{appearance:none;border:none;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;padding:0;line-height:1;min-width:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.ws-cell.sel{background:#0ea5e9;color:#0f172a;box-shadow:inset 0 0 0 1px #38bdf8}
-.ws-cell.found{background:rgba(14,165,233,0.35);color:#7dd3fc}
+.ws-grid{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:2px;width:100%}
+button.ws-cell{
+  appearance:none;-webkit-appearance:none;border:none;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);
+  color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;
+  padding:0;line-height:1;min-width:0;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+button.ws-cell.sel{
+  background:#0ea5e9 !important;color:#0f172a !important;
+  box-shadow:inset 0 0 0 2px #38bdf8;
+}
+button.ws-cell.found{
+  background:#1d4ed8 !important;color:#eff6ff !important;
+}
 .ws-sel{margin:0.55rem 0 0;font-size:0.8rem;color:#64748b;min-height:1.2em}
 .ws-words-wrap{margin-top:1rem}
 .ws-words-wrap h2{margin:0 0 0.5rem;font-size:0.95rem;color:#f1f5f9}
 .ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.35rem}
 @media(min-width:480px){.ws-words{grid-template-columns:repeat(5,1fr)}}
-.ws-words li{font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;padding:0.4rem 0.35rem;text-align:center}
-.ws-words li.got{color:#fff;background:#2563eb;text-decoration:none}
+.ws-words li{
+  font-size:0.72rem;font-weight:800;letter-spacing:0.03em;
+  color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;
+  padding:0.4rem 0.35rem;text-align:center;
+}
+.ws-words li.got{
+  color:#ffffff !important;background:#2563eb !important;text-decoration:none;
+}
 .ws-nav{display:flex;gap:0.6rem;margin-top:1.1rem}
 .ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.9rem;padding:0.7rem 0.5rem;border-radius:12px}
 .ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
@@ -67,12 +85,13 @@ import Layout from "../../../layouts/Layout.astro";
 
   </style>
   <script is:inline>
-    window.__WS__ = {"level":4,"words":["HYDRAULIC","PNEUMATIC","CYLINDER","ACTUATOR","MANIFOLD","ORIFICE","NOZZLE","GASKET","FLANGE","NIPPLE"],"grid":[["E","N","R","O","O","G","L","N","B","N","X","Z","M","C","K","Y","Y","U","C","H","G","S","I","N","O"],["F","O","W","G","X","Q","N","D","H","O","Z","W","A","U","O","K","I","D","P","Y","Y","D","X","F","J"],["W","C","E","D","B","P","O","S","K","Z","M","T","N","M","E","D","C","D","H","D","I","W","N","K","B"],["Q","A","H","T","L","N","B","E","B","Z","Z","D","I","T","Y","U","I","T","S","R","N","T","G","W","I"],["G","C","K","G","A","E","C","O","G","L","U","E","F","C","M","J","A","H","C","A","O","C","B","V","M"],["A","E","J","Y","L","U","V","A","G","E","S","E","O","F","O","Q","O","Y","S","U","U","J","C","N","A"],["S","L","H","O","J","M","A","T","D","D","Z","W","L","I","W","A","K","E","V","L","X","P","Z","V","J"],["K","O","N","I","V","A","X","M","Z","J","D","T","D","C","F","U","D","E","I","I","V","R","T","M","D"],["E","A","O","Q","F","T","I","L","A","T","X","Y","D","S","R","Q","P","I","W","C","T","Z","J","Q","K"],["T","U","Y","H","O","I","I","D","R","O","R","X","E","B","V","S","C","U","X","B","K","X","D","I","E"],["G","B","K","X","H","C","N","X","A","R","R","U","I","M","Y","U","X","N","W","L","G","W","D","L","C"],["W","F","R","N","M","J","Z","U","O","I","B","K","S","K","S","K","X","R","Y","T","M","G","H","K","W"],["S","V","S","B","F","E","Q","P","L","F","M","Y","Y","I","M","O","N","D","E","T","L","C","O","L","Y"],["F","H","V","A","N","M","J","R","P","I","T","C","A","O","O","B","A","S","S","J","P","J","C","F","J"],["O","Z","J","W","O","J","R","M","K","C","H","S","D","K","K","Z","J","B","H","U","F","T","Y","R","I"],["T","J","Y","N","F","Z","S","S","A","E","D","D","D","U","H","P","C","U","B","U","J","M","L","Z","L"],["N","V","A","N","E","E","J","X","V","C","N","X","J","F","T","K","R","K","T","N","Z","N","I","E","I"],["N","W","Z","R","B","C","K","S","P","A","J","A","C","T","U","A","T","O","R","I","K","V","N","M","P"],["E","Q","P","L","K","Q","N","Z","M","J","U","X","U","V","R","V","Y","C","H","P","Z","O","D","X","S"],["N","H","P","V","D","A","H","X","C","F","B","W","M","U","C","H","C","Q","A","P","Z","Z","E","T","A"],["V","V","H","D","R","C","V","P","G","L","F","Y","H","A","H","C","R","R","O","L","E","B","R","P","D"],["O","I","O","B","F","Q","B","Y","V","A","G","H","W","O","S","U","X","L","A","E","Z","P","E","T","I"],["P","S","T","T","T","D","G","L","R","N","K","G","E","G","H","U","X","B","W","Q","C","X","O","P","V"],["L","Z","W","H","X","T","Y","I","O","G","K","A","D","X","E","M","K","K","B","Z","C","W","R","F","T"],["Y","X","O","N","Y","W","M","O","X","E","X","D","C","H","M","E","A","B","Z","B","Q","H","G","S","U"]],"placed":[{"word":"PNEUMATIC","cells":[[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5]]},{"word":"HYDRAULIC","cells":[[0,19],[1,19],[2,19],[3,19],[4,19],[5,19],[6,19],[7,19],[8,19]]},{"word":"ORIFICE","cells":[[9,9],[10,9],[11,9],[12,9],[13,9],[14,9],[15,9]]},{"word":"NIPPLE","cells":[[16,19],[17,19],[18,19],[19,19],[20,19],[21,19]]},{"word":"CYLINDER","cells":[[13,22],[14,22],[15,22],[16,22],[17,22],[18,22],[19,22],[20,22]]},{"word":"MANIFOLD","cells":[[0,12],[1,12],[2,12],[3,12],[4,12],[5,12],[6,12],[7,12]]},{"word":"FLANGE","cells":[[19,9],[20,9],[21,9],[22,9],[23,9],[24,9]]},{"word":"ACTUATOR","cells":[[17,11],[17,12],[17,13],[17,14],[17,15],[17,16],[17,17],[17,18]]},{"word":"GASKET","cells":[[4,0],[5,0],[6,0],[7,0],[8,0],[9,0]]},{"word":"NOZZLE","cells":[[0,9],[1,9],[2,9],[3,9],[4,9],[5,9]]}]};
+    window.__WS__ = {"level":4,"words":["HYDRAULIC","PNEUMATIC","CYLINDER","ACTUATOR","MANIFOLD","ORIFICE","NOZZLE","GASKET","FLANGE","NIPPLE"],"grid":[["U","V","D","Y","E","T","C","S","H","W","N","I","Y","T","M","W","Q","L","M","X","L","F","O","I","P"],["F","F","D","X","C","D","L","Y","I","D","Y","Y","I","B","O","M","W","J","B","B","L","X","Z","L","T"],["X","M","V","U","M","Y","Q","O","M","O","N","Y","R","G","I","Z","J","I","F","L","F","S","N","X","W"],["R","W","M","N","U","A","C","J","M","V","N","F","M","W","Y","S","F","V","O","E","R","C","R","U","R"],["U","E","H","G","Z","D","F","Q","G","I","L","O","P","X","S","G","C","I","R","D","J","D","Z","N","S"],["Z","W","A","A","I","T","L","G","A","S","K","E","T","Q","R","E","T","S","L","Q","R","I","M","O","P"],["Z","Z","W","B","W","E","A","Q","G","A","W","D","X","M","Q","G","B","H","A","R","A","Y","W","Z","J"],["X","E","H","N","K","U","N","O","E","Q","Y","O","R","C","O","T","D","P","O","I","X","L","Q","Z","J"],["Z","T","L","L","A","Y","G","E","S","F","L","J","I","F","D","B","A","U","M","M","J","Q","W","L","E"],["Q","U","S","G","Q","M","E","R","G","G","H","L","P","Z","J","Y","S","E","C","Y","E","F","C","E","Y"],["H","C","B","Q","B","Y","T","O","Y","D","Z","Z","E","N","G","T","U","I","P","S","M","C","F","R","L"],["W","B","L","X","U","S","Q","Y","Y","M","H","Y","D","T","A","C","W","J","R","Y","W","V","S","E","O"],["U","F","G","J","M","V","M","Y","H","P","R","Q","R","D","F","B","C","Y","L","I","N","D","E","R","N"],["W","P","O","G","G","O","P","F","Z","L","Z","S","V","N","Q","Z","F","E","R","T","X","H","F","U","C"],["H","C","W","T","M","A","N","I","F","O","L","D","J","F","V","S","K","A","C","T","U","A","T","O","R"],["E","R","R","W","R","P","V","E","D","X","N","O","U","J","P","E","E","A","L","P","Q","R","A","D","Y"],["S","O","D","Y","Y","Z","U","O","B","P","P","R","W","H","O","Y","T","D","P","O","R","D","H","I","M"],["T","K","B","O","H","Y","D","R","A","U","L","I","C","V","B","U","F","O","P","G","G","K","A","C","N"],["A","H","L","U","K","I","L","M","H","Q","U","F","N","D","V","E","W","W","O","S","M","Y","C","B","N"],["U","N","S","Y","F","N","F","S","L","D","X","I","A","W","B","V","F","C","P","M","I","G","P","L","M"],["S","O","Y","B","N","M","L","O","V","W","R","C","V","J","H","W","D","A","B","M","P","S","U","Z","W"],["R","G","V","M","C","K","M","O","Q","P","L","E","R","Z","J","U","R","G","S","E","N","M","Y","A","A"],["E","N","I","P","P","L","E","T","Z","U","H","J","M","V","Z","E","T","V","O","T","G","M","Y","A","G"],["X","T","C","W","R","Q","B","P","N","E","U","M","A","T","I","C","E","B","H","J","M","Z","F","C","V"],["K","J","F","W","Z","E","X","M","J","R","C","M","P","X","E","I","G","R","X","T","K","F","J","Q","F"]],"placed":[{"word":"MANIFOLD","cells":[[14,4],[14,5],[14,6],[14,7],[14,8],[14,9],[14,10],[14,11]]},{"word":"NOZZLE","cells":[[4,23],[5,23],[6,23],[7,23],[8,23],[9,23]]},{"word":"ORIFICE","cells":[[15,11],[16,11],[17,11],[18,11],[19,11],[20,11],[21,11]]},{"word":"FLANGE","cells":[[4,6],[5,6],[6,6],[7,6],[8,6],[9,6]]},{"word":"ACTUATOR","cells":[[14,17],[14,18],[14,19],[14,20],[14,21],[14,22],[14,23],[14,24]]},{"word":"PNEUMATIC","cells":[[23,7],[23,8],[23,9],[23,10],[23,11],[23,12],[23,13],[23,14],[23,15]]},{"word":"GASKET","cells":[[5,7],[5,8],[5,9],[5,10],[5,11],[5,12]]},{"word":"CYLINDER","cells":[[12,16],[12,17],[12,18],[12,19],[12,20],[12,21],[12,22],[12,23]]},{"word":"NIPPLE","cells":[[22,1],[22,2],[22,3],[22,4],[22,5],[22,6]]},{"word":"HYDRAULIC","cells":[[17,4],[17,5],[17,6],[17,7],[17,8],[17,9],[17,10],[17,11],[17,12]]}]};
   </script>
   <script is:inline>
 
 (function(){
   var cfg = window.__WS__;
+  if (!cfg) { console.error("WS: no config"); return; }
   var SIZE = 25;
   var level = cfg.level;
   var grid = cfg.grid;
@@ -85,9 +104,11 @@ import Layout from "../../../layouts/Layout.astro";
   var progressEl = document.getElementById("ws-progress");
   var scoreEl = document.getElementById("ws-score");
   var selInfo = document.getElementById("ws-sel");
+  if (!gridEl || !wordsEl) { console.error("WS: missing DOM"); return; }
 
   var found = {};
   var selected = [];
+  var cellNodes = {};
 
   function storageKey(){ return "partpedia_ws_batch1"; }
   function loadState(){
@@ -109,9 +130,7 @@ import Layout from "../../../layouts/Layout.astro";
     for (var i=0;i<placed.length;i++){
       var p = placed[i];
       if (!found[p.word]) continue;
-      for (var j=0;j<p.cells.length;j++){
-        s[key(p.cells[j][0], p.cells[j][1])] = 1;
-      }
+      for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = 1;
     }
     return s;
   }
@@ -121,7 +140,6 @@ import Layout from "../../../layouts/Layout.astro";
     var r0 = selected[0].r, c0 = selected[0].c;
     var r1 = selected[1].r, c1 = selected[1].c;
     var dr = r1 - r0, dc = c1 - c0;
-    // only right (0,1) or down (1,0)
     if (!((dr===0 && dc===1) || (dr===1 && dc===0))) return false;
     for (var i=1;i<selected.length;i++){
       if (selected[i].r !== r0 + dr*i || selected[i].c !== c0 + dc*i) return false;
@@ -131,29 +149,33 @@ import Layout from "../../../layouts/Layout.astro";
 
   function tryMatch(){
     if (selected.length < 2) return;
-    if (!selectionValidDirection()) { selected = []; render(); return; }
-    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    for (var i=0;i<placed.length;i++){
+    if (!selectionValidDirection()) { selected = []; paint(); return; }
+    var fwd = "";
+    for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
+    for (i=0;i<placed.length;i++){
       var p = placed[i];
       if (found[p.word]) continue;
       if (p.word === fwd){
         found[p.word] = true;
         var st = ensureRun();
-        st.found[level] = Object.keys(found).filter(function(k){ return found[k]; });
-        st.scores[level] = st.found[level].length * POINTS;
+        var keys = [];
+        for (var k in found) if (found[k]) keys.push(k);
+        st.found[level] = keys;
+        st.scores[level] = keys.length * POINTS;
         saveState(st);
         selected = [];
-        render();
+        paint();
         return;
       }
     }
     selected = [];
-    render();
+    paint();
   }
 
   function maybeAutoMatch(){
-    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    for (var i=0;i<placed.length;i++){
+    var fwd = "";
+    for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
+    for (i=0;i<placed.length;i++){
       if (!found[placed[i].word] && placed[i].word === fwd){ tryMatch(); return; }
     }
     var maxLen = 0;
@@ -164,21 +186,19 @@ import Layout from "../../../layouts/Layout.astro";
   }
 
   function onCellClick(r,c){
-    // toggle off last cell
     if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
-      selected.pop(); render(); return;
+      selected.pop(); paint(); return;
     }
     if (selected.length === 0){
-      selected = [{r:r,c:c}]; render(); return;
+      selected = [{r:r,c:c}]; paint(); return;
     }
     var last = selected[selected.length-1];
     if (selected.length === 1){
       var dr = r - last.r, dc = c - last.c;
-      // only one step right or down
       if ((dr===0 && dc===1) || (dr===1 && dc===0)){
-        selected.push({r:r,c:c}); render(); maybeAutoMatch();
+        selected.push({r:r,c:c}); paint(); maybeAutoMatch();
       } else {
-        selected = [{r:r,c:c}]; render();
+        selected = [{r:r,c:c}]; paint();
       }
       return;
     }
@@ -187,46 +207,99 @@ import Layout from "../../../layouts/Layout.astro";
     var ddr = r1 - r0, ddc = c1 - c0;
     var er = r0 + ddr * selected.length, ec = c0 + ddc * selected.length;
     if (r===er && c===ec){
-      selected.push({r:r,c:c}); render(); maybeAutoMatch();
+      selected.push({r:r,c:c}); paint(); maybeAutoMatch();
     } else {
-      selected = [{r:r,c:c}]; render();
+      selected = [{r:r,c:c}]; paint();
     }
   }
 
-  function render(){
+  function paint(){
     ensureRun();
     var fc = foundCells();
     var selSet = {};
     for (var i=0;i<selected.length;i++) selSet[key(selected[i].r,selected[i].c)] = 1;
+
+    for (var r=0;r<SIZE;r++){
+      for (var c=0;c<SIZE;c++){
+        var k = key(r,c);
+        var d = cellNodes[k];
+        if (!d) continue;
+        d.className = "ws-cell";
+        d.style.background = "";
+        d.style.color = "";
+        if (fc[k]) {
+          d.classList.add("found");
+          d.style.background = "#1d4ed8";
+          d.style.color = "#eff6ff";
+        }
+        if (selSet[k]) {
+          d.classList.add("sel");
+          d.style.background = "#0ea5e9";
+          d.style.color = "#0f172a";
+        }
+      }
+    }
+
+    var children = wordsEl.children;
+    for (i=0;i<children.length;i++){
+      var li = children[i];
+      var w = li.getAttribute("data-word");
+      if (found[w]) {
+        li.classList.add("got");
+        li.style.background = "#2563eb";
+        li.style.color = "#ffffff";
+      } else {
+        li.classList.remove("got");
+        li.style.background = "";
+        li.style.color = "";
+      }
+    }
+
+    var n = 0;
+    for (var kk in found) if (found[kk]) n++;
+    if (progressEl) progressEl.textContent = n + " / " + words.length + " kata";
+    if (scoreEl) scoreEl.textContent = (n * POINTS) + " poin level ini";
+    if (selInfo){
+      if (selected.length) {
+        var t = "";
+        for (i=0;i<selected.length;i++) t += grid[selected[i].r][selected[i].c];
+        selInfo.textContent = "Pilihan: " + t;
+      } else {
+        selInfo.textContent = "Klik/sentuh huruf satu per satu — hanya kanan atau bawah.";
+      }
+    }
+  }
+
+  function buildUI(){
     gridEl.innerHTML = "";
+    cellNodes = {};
     for (var r=0;r<SIZE;r++){
       for (var c=0;c<SIZE;c++){
         var d = document.createElement("button");
         d.type = "button";
         d.className = "ws-cell";
         d.textContent = grid[r][c];
-        var k = key(r,c);
-        if (fc[k]) d.classList.add("found");
-        if (selSet[k]) d.classList.add("sel");
-        (function(rr,cc){ d.addEventListener("click", function(){ onCellClick(rr,cc); }); })(r,c);
+        d.setAttribute("data-r", r);
+        d.setAttribute("data-c", c);
+        cellNodes[key(r,c)] = d;
         gridEl.appendChild(d);
       }
     }
+    // event delegation
+    gridEl.onclick = function(ev){
+      var t = ev.target;
+      if (!t || !t.getAttribute) return;
+      if (t.getAttribute("data-r") == null) return;
+      onCellClick(parseInt(t.getAttribute("data-r"),10), parseInt(t.getAttribute("data-c"),10));
+    };
+
     wordsEl.innerHTML = "";
     var sorted = words.slice().sort();
-    for (i=0;i<sorted.length;i++){
+    for (var i=0;i<sorted.length;i++){
       var li = document.createElement("li");
       li.textContent = sorted[i];
-      if (found[sorted[i]]) li.classList.add("got");
+      li.setAttribute("data-word", sorted[i]);
       wordsEl.appendChild(li);
-    }
-    var n = Object.keys(found).filter(function(k){ return found[k]; }).length;
-    progressEl.textContent = n + " / " + words.length + " kata";
-    scoreEl.textContent = (n * POINTS) + " poin level ini";
-    if (selInfo){
-      selInfo.textContent = selected.length
-        ? ("Pilihan: " + selected.map(function(s){ return grid[s.r][s.c]; }).join(""))
-        : "Klik huruf satu per satu — hanya kanan atau bawah (tidak miring).";
     }
   }
 
@@ -234,12 +307,12 @@ import Layout from "../../../layouts/Layout.astro";
   if (Array.isArray(st0.found[level])) {
     for (var fi=0; fi<st0.found[level].length; fi++) found[st0.found[level][fi]] = true;
   }
-  render();
-  window.__WS_API__ = { clearSelection: function(){ selected=[]; render(); } };
+  buildUI();
+  paint();
+  window.__WS_API__ = { clearSelection: function(){ selected=[]; paint(); } };
+  var clr = document.getElementById("ws-clear");
+  if (clr) clr.onclick = function(){ selected=[]; paint(); };
 })();
 
-    document.getElementById("ws-clear") && document.getElementById("ws-clear").addEventListener("click", function () {
-      window.__WS_API__ && window.__WS_API__.clearSelection();
-    });
   </script>
 </Layout>

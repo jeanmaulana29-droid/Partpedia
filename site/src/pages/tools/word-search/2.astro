@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 ---
 <Layout
   title="Word Search Level 2 — Cari Kata Industri | Industrial Word Search | Partpedia"
-  description="Level 2: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal. Play free on Partpedia."
+  description="Level 2: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal."
 >
   <div class="ws-page">
     <a class="ws-back" href="/">← Beranda / Home</a>
@@ -35,7 +35,7 @@ import Layout from "../../../layouts/Layout.astro";
       <a class="ws-btn-next" href="/tools/word-search/3/">Lanjutkan / Next →</a>
     </div>
   </div>
-  <style>
+  <style is:global>
 
 .ws-page{max-width:720px;margin:0 auto;padding:1rem 0.75rem 2.5rem}
 .ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.9rem;margin-bottom:0.85rem}
@@ -48,17 +48,35 @@ import Layout from "../../../layouts/Layout.astro";
 .ws-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.75rem 0 0}
 .ws-chip{font-size:0.75rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.3rem 0.55rem;border-radius:8px}
 .ws-board{background:rgba(15,23,42,0.88);border:1px solid rgba(56,189,248,0.25);border-radius:16px;padding:0.65rem;box-shadow:0 0 0 1px rgba(251,191,36,0.08),0 12px 40px rgba(0,0,0,0.35)}
-.ws-grid{display:grid;grid-template-columns:repeat(25,1fr);gap:2px;width:100%}
-.ws-cell{appearance:none;border:none;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;padding:0;line-height:1;min-width:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.ws-cell.sel{background:#0ea5e9;color:#0f172a;box-shadow:inset 0 0 0 1px #38bdf8}
-.ws-cell.found{background:rgba(14,165,233,0.35);color:#7dd3fc}
+.ws-grid{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:2px;width:100%}
+button.ws-cell{
+  appearance:none;-webkit-appearance:none;border:none;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);
+  color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;
+  padding:0;line-height:1;min-width:0;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+button.ws-cell.sel{
+  background:#0ea5e9 !important;color:#0f172a !important;
+  box-shadow:inset 0 0 0 2px #38bdf8;
+}
+button.ws-cell.found{
+  background:#1d4ed8 !important;color:#eff6ff !important;
+}
 .ws-sel{margin:0.55rem 0 0;font-size:0.8rem;color:#64748b;min-height:1.2em}
 .ws-words-wrap{margin-top:1rem}
 .ws-words-wrap h2{margin:0 0 0.5rem;font-size:0.95rem;color:#f1f5f9}
 .ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.35rem}
 @media(min-width:480px){.ws-words{grid-template-columns:repeat(5,1fr)}}
-.ws-words li{font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;padding:0.4rem 0.35rem;text-align:center}
-.ws-words li.got{color:#fff;background:#2563eb;text-decoration:none}
+.ws-words li{
+  font-size:0.72rem;font-weight:800;letter-spacing:0.03em;
+  color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;
+  padding:0.4rem 0.35rem;text-align:center;
+}
+.ws-words li.got{
+  color:#ffffff !important;background:#2563eb !important;text-decoration:none;
+}
 .ws-nav{display:flex;gap:0.6rem;margin-top:1.1rem}
 .ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.9rem;padding:0.7rem 0.5rem;border-radius:12px}
 .ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
@@ -67,12 +85,13 @@ import Layout from "../../../layouts/Layout.astro";
 
   </style>
   <script is:inline>
-    window.__WS__ = {"level":2,"words":["SPROCKET","COUPLING","BUSHING","WASHER","SPRING","PULLEY","CLUTCH","BRAKE","ROLLER","SLEEVE"],"grid":[["K","U","T","C","B","Z","J","Y","O","O","U","I","M","V","I","B","M","P","V","R","M","V","U","U","I"],["K","Z","W","A","U","S","F","O","R","H","N","P","A","N","A","C","I","K","J","L","R","W","D","E","E"],["L","B","Y","W","S","K","W","K","W","C","U","C","O","U","P","L","I","N","G","C","G","X","P","D","Q"],["R","H","G","G","H","T","D","H","Y","W","P","Z","P","H","E","F","O","K","R","E","N","Q","W","I","B"],["N","H","X","K","I","A","Y","N","K","D","S","U","O","Q","E","E","Y","U","E","I","S","V","O","Z","E"],["V","Z","V","T","N","N","U","O","I","T","Z","C","Q","H","H","O","F","S","S","J","E","M","C","S","V"],["F","I","M","M","G","C","U","F","G","W","S","Y","H","C","Y","Q","N","F","G","N","T","S","H","R","D"],["W","K","L","R","F","P","Q","O","J","V","W","Z","K","F","H","Q","F","S","E","Y","I","I","E","N","O"],["H","D","C","J","T","W","M","K","G","E","E","X","Q","Z","R","W","N","P","G","F","O","R","G","D","L"],["Z","L","J","S","B","U","A","B","V","U","A","N","U","E","E","O","C","R","N","Y","L","R","Z","Z","M"],["I","X","J","D","O","B","Z","Z","N","G","A","M","O","J","I","O","Q","O","N","V","G","R","Y","A","K"],["R","T","V","N","Q","X","Z","Y","U","H","K","U","V","U","O","I","P","C","K","M","J","D","W","P","G"],["O","K","M","H","D","G","O","W","G","V","V","Y","Q","I","P","H","U","K","X","M","S","H","M","Z","G"],["L","Z","R","O","G","U","I","G","G","S","M","N","E","X","T","J","L","E","S","P","C","C","W","F","E"],["L","F","T","B","W","C","K","D","N","M","J","S","U","W","K","D","L","T","B","U","M","B","Z","G","S"],["E","Y","J","Y","F","V","R","K","H","Q","S","U","C","N","Z","C","E","Z","S","H","V","Y","J","V","V"],["R","I","C","S","V","J","U","J","O","W","U","I","L","Z","Z","A","Y","D","A","M","R","R","T","Z","O"],["R","O","T","L","J","O","P","M","V","F","C","L","U","T","C","H","Y","G","F","B","N","H","O","A","O"],["Q","D","A","E","J","L","W","V","U","I","F","O","D","W","N","B","H","N","D","G","Q","O","Z","K","H"],["U","S","E","E","G","N","A","K","V","R","T","A","J","U","D","V","I","C","R","B","V","H","C","Y","G"],["T","Q","V","V","M","U","S","L","T","U","M","K","S","S","F","A","C","O","Y","G","W","I","S","I","U"],["C","J","X","E","D","W","H","M","Q","D","P","U","C","U","P","T","B","R","A","K","E","I","F","H","L"],["C","F","I","Y","M","Y","E","H","A","S","Z","V","I","N","Z","A","V","E","Z","F","S","G","V","N","J"],["C","H","A","P","Q","P","R","T","E","R","M","H","C","I","W","B","X","W","S","P","R","I","N","G","E"],["X","E","A","F","G","J","I","R","P","T","R","E","V","N","J","S","A","X","T","W","Q","A","T","U","L"]],"placed":[{"word":"BUSHING","cells":[[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4]]},{"word":"SPRING","cells":[[23,18],[23,19],[23,20],[23,21],[23,22],[23,23]]},{"word":"PULLEY","cells":[[11,16],[12,16],[13,16],[14,16],[15,16],[16,16]]},{"word":"BRAKE","cells":[[21,16],[21,17],[21,18],[21,19],[21,20]]},{"word":"CLUTCH","cells":[[17,10],[17,11],[17,12],[17,13],[17,14],[17,15]]},{"word":"WASHER","cells":[[18,6],[19,6],[20,6],[21,6],[22,6],[23,6]]},{"word":"SLEEVE","cells":[[16,3],[17,3],[18,3],[19,3],[20,3],[21,3]]},{"word":"ROLLER","cells":[[11,0],[12,0],[13,0],[14,0],[15,0],[16,0]]},{"word":"COUPLING","cells":[[2,11],[2,12],[2,13],[2,14],[2,15],[2,16],[2,17],[2,18]]},{"word":"SPROCKET","cells":[[7,17],[8,17],[9,17],[10,17],[11,17],[12,17],[13,17],[14,17]]}]};
+    window.__WS__ = {"level":2,"words":["SPROCKET","COUPLING","BUSHING","WASHER","SPRING","PULLEY","CLUTCH","BRAKE","ROLLER","SLEEVE"],"grid":[["M","Y","D","U","A","Y","A","E","X","W","H","T","Z","Z","Y","X","B","E","T","G","O","Q","W","D","F"],["Z","R","F","M","I","I","K","S","N","D","T","U","A","F","E","S","F","D","U","A","Y","E","F","H","F"],["C","Q","X","K","N","K","W","G","L","K","D","Q","K","R","P","H","Q","C","L","U","T","C","H","N","Y"],["Q","P","D","C","X","M","U","T","W","G","Q","M","M","W","T","U","S","Z","E","U","B","T","C","G","I"],["F","Q","E","I","I","I","V","V","G","H","U","D","U","A","A","R","W","P","U","L","L","E","Y","I","M"],["T","B","N","Q","L","M","K","R","A","V","P","Z","X","S","Y","K","O","A","M","S","Q","A","F","Q","Q"],["V","M","X","Z","I","P","T","L","V","U","H","Q","I","H","O","J","L","L","X","Z","X","F","S","Z","K"],["L","E","Z","X","C","O","J","Q","R","A","D","N","Y","E","I","S","R","T","O","X","F","Y","I","Y","M"],["H","Q","D","Z","O","J","V","G","X","M","C","W","Q","R","Y","A","G","Z","H","W","B","G","B","I","H"],["W","D","K","O","U","I","G","Q","V","T","J","L","W","N","I","A","V","Y","K","O","X","H","U","Q","L"],["R","H","J","Z","P","V","R","S","I","J","U","E","M","K","C","T","S","M","A","I","N","Q","S","D","Y"],["O","B","K","B","L","R","Z","I","I","C","X","S","H","T","N","M","H","K","G","Z","M","K","H","Z","S"],["L","I","S","D","I","Q","R","D","Z","I","N","N","Z","C","T","H","Z","J","R","E","B","Y","I","V","N"],["L","W","J","H","N","J","X","T","Y","W","P","O","F","B","E","B","J","V","Z","S","R","N","N","K","W"],["E","D","Q","F","G","Z","K","Z","P","D","E","G","U","V","D","S","N","Z","K","L","B","L","G","E","Z"],["R","G","Y","W","D","I","N","Y","Q","O","P","I","M","K","I","P","Q","V","P","E","H","N","A","C","Z"],["Q","Z","F","T","P","C","O","J","D","K","S","Z","C","I","A","R","I","E","J","E","W","B","J","O","W"],["M","H","N","J","S","X","A","R","R","W","H","C","M","I","S","I","C","X","X","V","Q","B","G","G","K"],["L","Q","P","V","P","Y","S","F","K","O","V","B","K","K","V","N","C","G","F","E","H","Q","V","K","Z"],["U","I","F","G","R","A","P","B","M","R","O","R","Y","C","N","G","H","G","Q","Z","F","G","K","X","G"],["K","U","N","I","O","I","N","L","M","D","K","B","V","N","J","U","M","L","S","M","M","X","S","G","H"],["W","D","X","X","C","V","N","R","S","R","X","H","Y","S","J","I","L","G","L","Q","R","B","F","J","J"],["Y","I","M","H","K","D","F","Z","N","U","P","Y","Z","Z","W","C","B","T","T","C","B","K","J","D","O"],["H","N","P","B","E","U","T","D","I","A","Z","I","C","C","B","R","T","F","T","J","V","J","Y","K","V"],["U","A","S","I","T","I","O","Z","P","X","X","B","R","A","K","E","V","U","D","E","W","H","X","B","K"]],"placed":[{"word":"SLEEVE","cells":[[13,19],[14,19],[15,19],[16,19],[17,19],[18,19]]},{"word":"COUPLING","cells":[[7,4],[8,4],[9,4],[10,4],[11,4],[12,4],[13,4],[14,4]]},{"word":"ROLLER","cells":[[10,0],[11,0],[12,0],[13,0],[14,0],[15,0]]},{"word":"SPROCKET","cells":[[17,4],[18,4],[19,4],[20,4],[21,4],[22,4],[23,4],[24,4]]},{"word":"WASHER","cells":[[3,13],[4,13],[5,13],[6,13],[7,13],[8,13]]},{"word":"SPRING","cells":[[14,15],[15,15],[16,15],[17,15],[18,15],[19,15]]},{"word":"CLUTCH","cells":[[2,17],[2,18],[2,19],[2,20],[2,21],[2,22]]},{"word":"BUSHING","cells":[[8,22],[9,22],[10,22],[11,22],[12,22],[13,22],[14,22]]},{"word":"BRAKE","cells":[[24,11],[24,12],[24,13],[24,14],[24,15]]},{"word":"PULLEY","cells":[[4,17],[4,18],[4,19],[4,20],[4,21],[4,22]]}]};
   </script>
   <script is:inline>
 
 (function(){
   var cfg = window.__WS__;
+  if (!cfg) { console.error("WS: no config"); return; }
   var SIZE = 25;
   var level = cfg.level;
   var grid = cfg.grid;
@@ -85,9 +104,11 @@ import Layout from "../../../layouts/Layout.astro";
   var progressEl = document.getElementById("ws-progress");
   var scoreEl = document.getElementById("ws-score");
   var selInfo = document.getElementById("ws-sel");
+  if (!gridEl || !wordsEl) { console.error("WS: missing DOM"); return; }
 
   var found = {};
   var selected = [];
+  var cellNodes = {};
 
   function storageKey(){ return "partpedia_ws_batch1"; }
   function loadState(){
@@ -109,9 +130,7 @@ import Layout from "../../../layouts/Layout.astro";
     for (var i=0;i<placed.length;i++){
       var p = placed[i];
       if (!found[p.word]) continue;
-      for (var j=0;j<p.cells.length;j++){
-        s[key(p.cells[j][0], p.cells[j][1])] = 1;
-      }
+      for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = 1;
     }
     return s;
   }
@@ -121,7 +140,6 @@ import Layout from "../../../layouts/Layout.astro";
     var r0 = selected[0].r, c0 = selected[0].c;
     var r1 = selected[1].r, c1 = selected[1].c;
     var dr = r1 - r0, dc = c1 - c0;
-    // only right (0,1) or down (1,0)
     if (!((dr===0 && dc===1) || (dr===1 && dc===0))) return false;
     for (var i=1;i<selected.length;i++){
       if (selected[i].r !== r0 + dr*i || selected[i].c !== c0 + dc*i) return false;
@@ -131,29 +149,33 @@ import Layout from "../../../layouts/Layout.astro";
 
   function tryMatch(){
     if (selected.length < 2) return;
-    if (!selectionValidDirection()) { selected = []; render(); return; }
-    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    for (var i=0;i<placed.length;i++){
+    if (!selectionValidDirection()) { selected = []; paint(); return; }
+    var fwd = "";
+    for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
+    for (i=0;i<placed.length;i++){
       var p = placed[i];
       if (found[p.word]) continue;
       if (p.word === fwd){
         found[p.word] = true;
         var st = ensureRun();
-        st.found[level] = Object.keys(found).filter(function(k){ return found[k]; });
-        st.scores[level] = st.found[level].length * POINTS;
+        var keys = [];
+        for (var k in found) if (found[k]) keys.push(k);
+        st.found[level] = keys;
+        st.scores[level] = keys.length * POINTS;
         saveState(st);
         selected = [];
-        render();
+        paint();
         return;
       }
     }
     selected = [];
-    render();
+    paint();
   }
 
   function maybeAutoMatch(){
-    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    for (var i=0;i<placed.length;i++){
+    var fwd = "";
+    for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
+    for (i=0;i<placed.length;i++){
       if (!found[placed[i].word] && placed[i].word === fwd){ tryMatch(); return; }
     }
     var maxLen = 0;
@@ -164,21 +186,19 @@ import Layout from "../../../layouts/Layout.astro";
   }
 
   function onCellClick(r,c){
-    // toggle off last cell
     if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
-      selected.pop(); render(); return;
+      selected.pop(); paint(); return;
     }
     if (selected.length === 0){
-      selected = [{r:r,c:c}]; render(); return;
+      selected = [{r:r,c:c}]; paint(); return;
     }
     var last = selected[selected.length-1];
     if (selected.length === 1){
       var dr = r - last.r, dc = c - last.c;
-      // only one step right or down
       if ((dr===0 && dc===1) || (dr===1 && dc===0)){
-        selected.push({r:r,c:c}); render(); maybeAutoMatch();
+        selected.push({r:r,c:c}); paint(); maybeAutoMatch();
       } else {
-        selected = [{r:r,c:c}]; render();
+        selected = [{r:r,c:c}]; paint();
       }
       return;
     }
@@ -187,46 +207,99 @@ import Layout from "../../../layouts/Layout.astro";
     var ddr = r1 - r0, ddc = c1 - c0;
     var er = r0 + ddr * selected.length, ec = c0 + ddc * selected.length;
     if (r===er && c===ec){
-      selected.push({r:r,c:c}); render(); maybeAutoMatch();
+      selected.push({r:r,c:c}); paint(); maybeAutoMatch();
     } else {
-      selected = [{r:r,c:c}]; render();
+      selected = [{r:r,c:c}]; paint();
     }
   }
 
-  function render(){
+  function paint(){
     ensureRun();
     var fc = foundCells();
     var selSet = {};
     for (var i=0;i<selected.length;i++) selSet[key(selected[i].r,selected[i].c)] = 1;
+
+    for (var r=0;r<SIZE;r++){
+      for (var c=0;c<SIZE;c++){
+        var k = key(r,c);
+        var d = cellNodes[k];
+        if (!d) continue;
+        d.className = "ws-cell";
+        d.style.background = "";
+        d.style.color = "";
+        if (fc[k]) {
+          d.classList.add("found");
+          d.style.background = "#1d4ed8";
+          d.style.color = "#eff6ff";
+        }
+        if (selSet[k]) {
+          d.classList.add("sel");
+          d.style.background = "#0ea5e9";
+          d.style.color = "#0f172a";
+        }
+      }
+    }
+
+    var children = wordsEl.children;
+    for (i=0;i<children.length;i++){
+      var li = children[i];
+      var w = li.getAttribute("data-word");
+      if (found[w]) {
+        li.classList.add("got");
+        li.style.background = "#2563eb";
+        li.style.color = "#ffffff";
+      } else {
+        li.classList.remove("got");
+        li.style.background = "";
+        li.style.color = "";
+      }
+    }
+
+    var n = 0;
+    for (var kk in found) if (found[kk]) n++;
+    if (progressEl) progressEl.textContent = n + " / " + words.length + " kata";
+    if (scoreEl) scoreEl.textContent = (n * POINTS) + " poin level ini";
+    if (selInfo){
+      if (selected.length) {
+        var t = "";
+        for (i=0;i<selected.length;i++) t += grid[selected[i].r][selected[i].c];
+        selInfo.textContent = "Pilihan: " + t;
+      } else {
+        selInfo.textContent = "Klik/sentuh huruf satu per satu — hanya kanan atau bawah.";
+      }
+    }
+  }
+
+  function buildUI(){
     gridEl.innerHTML = "";
+    cellNodes = {};
     for (var r=0;r<SIZE;r++){
       for (var c=0;c<SIZE;c++){
         var d = document.createElement("button");
         d.type = "button";
         d.className = "ws-cell";
         d.textContent = grid[r][c];
-        var k = key(r,c);
-        if (fc[k]) d.classList.add("found");
-        if (selSet[k]) d.classList.add("sel");
-        (function(rr,cc){ d.addEventListener("click", function(){ onCellClick(rr,cc); }); })(r,c);
+        d.setAttribute("data-r", r);
+        d.setAttribute("data-c", c);
+        cellNodes[key(r,c)] = d;
         gridEl.appendChild(d);
       }
     }
+    // event delegation
+    gridEl.onclick = function(ev){
+      var t = ev.target;
+      if (!t || !t.getAttribute) return;
+      if (t.getAttribute("data-r") == null) return;
+      onCellClick(parseInt(t.getAttribute("data-r"),10), parseInt(t.getAttribute("data-c"),10));
+    };
+
     wordsEl.innerHTML = "";
     var sorted = words.slice().sort();
-    for (i=0;i<sorted.length;i++){
+    for (var i=0;i<sorted.length;i++){
       var li = document.createElement("li");
       li.textContent = sorted[i];
-      if (found[sorted[i]]) li.classList.add("got");
+      li.setAttribute("data-word", sorted[i]);
       wordsEl.appendChild(li);
-    }
-    var n = Object.keys(found).filter(function(k){ return found[k]; }).length;
-    progressEl.textContent = n + " / " + words.length + " kata";
-    scoreEl.textContent = (n * POINTS) + " poin level ini";
-    if (selInfo){
-      selInfo.textContent = selected.length
-        ? ("Pilihan: " + selected.map(function(s){ return grid[s.r][s.c]; }).join(""))
-        : "Klik huruf satu per satu — hanya kanan atau bawah (tidak miring).";
     }
   }
 
@@ -234,12 +307,12 @@ import Layout from "../../../layouts/Layout.astro";
   if (Array.isArray(st0.found[level])) {
     for (var fi=0; fi<st0.found[level].length; fi++) found[st0.found[level][fi]] = true;
   }
-  render();
-  window.__WS_API__ = { clearSelection: function(){ selected=[]; render(); } };
+  buildUI();
+  paint();
+  window.__WS_API__ = { clearSelection: function(){ selected=[]; paint(); } };
+  var clr = document.getElementById("ws-clear");
+  if (clr) clr.onclick = function(){ selected=[]; paint(); };
 })();
 
-    document.getElementById("ws-clear") && document.getElementById("ws-clear").addEventListener("click", function () {
-      window.__WS_API__ && window.__WS_API__.clearSelection();
-    });
   </script>
 </Layout>

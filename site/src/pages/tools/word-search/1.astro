@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 ---
 <Layout
   title="Word Search Level 1 — Cari Kata Industri | Industrial Word Search | Partpedia"
-  description="Level 1: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal. Play free on Partpedia."
+  description="Level 1: temukan 10 istilah industri internasional dalam grid 25×25. Hanya horizontal dan vertikal."
 >
   <div class="ws-page">
     <a class="ws-back" href="/">← Beranda / Home</a>
@@ -35,7 +35,7 @@ import Layout from "../../../layouts/Layout.astro";
       <a class="ws-btn-next" href="/tools/word-search/2/">Lanjutkan / Next →</a>
     </div>
   </div>
-  <style>
+  <style is:global>
 
 .ws-page{max-width:720px;margin:0 auto;padding:1rem 0.75rem 2.5rem}
 .ws-back{display:inline-flex;align-items:center;gap:0.35rem;color:#94a3b8;text-decoration:none;font-size:0.9rem;margin-bottom:0.85rem}
@@ -48,17 +48,35 @@ import Layout from "../../../layouts/Layout.astro";
 .ws-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.75rem 0 0}
 .ws-chip{font-size:0.75rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.3rem 0.55rem;border-radius:8px}
 .ws-board{background:rgba(15,23,42,0.88);border:1px solid rgba(56,189,248,0.25);border-radius:16px;padding:0.65rem;box-shadow:0 0 0 1px rgba(251,191,36,0.08),0 12px 40px rgba(0,0,0,0.35)}
-.ws-grid{display:grid;grid-template-columns:repeat(25,1fr);gap:2px;width:100%}
-.ws-cell{appearance:none;border:none;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;padding:0;line-height:1;min-width:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.ws-cell.sel{background:#0ea5e9;color:#0f172a;box-shadow:inset 0 0 0 1px #38bdf8}
-.ws-cell.found{background:rgba(14,165,233,0.35);color:#7dd3fc}
+.ws-grid{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:2px;width:100%}
+button.ws-cell{
+  appearance:none;-webkit-appearance:none;border:none;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:clamp(0.45rem,2.1vw,0.72rem);
+  color:#e2e8f0;background:#1e293b;border-radius:3px;cursor:pointer;
+  padding:0;line-height:1;min-width:0;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+button.ws-cell.sel{
+  background:#0ea5e9 !important;color:#0f172a !important;
+  box-shadow:inset 0 0 0 2px #38bdf8;
+}
+button.ws-cell.found{
+  background:#1d4ed8 !important;color:#eff6ff !important;
+}
 .ws-sel{margin:0.55rem 0 0;font-size:0.8rem;color:#64748b;min-height:1.2em}
 .ws-words-wrap{margin-top:1rem}
 .ws-words-wrap h2{margin:0 0 0.5rem;font-size:0.95rem;color:#f1f5f9}
 .ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.35rem}
 @media(min-width:480px){.ws-words{grid-template-columns:repeat(5,1fr)}}
-.ws-words li{font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;padding:0.4rem 0.35rem;text-align:center}
-.ws-words li.got{color:#fff;background:#2563eb;text-decoration:none}
+.ws-words li{
+  font-size:0.72rem;font-weight:800;letter-spacing:0.03em;
+  color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;
+  padding:0.4rem 0.35rem;text-align:center;
+}
+.ws-words li.got{
+  color:#ffffff !important;background:#2563eb !important;text-decoration:none;
+}
 .ws-nav{display:flex;gap:0.6rem;margin-top:1.1rem}
 .ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.9rem;padding:0.7rem 0.5rem;border-radius:12px}
 .ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
@@ -67,12 +85,13 @@ import Layout from "../../../layouts/Layout.astro";
 
   </style>
   <script is:inline>
-    window.__WS__ = {"level":1,"words":["BEARING","SHAFT","SEAL","GEAR","VALVE","PUMP","MOTOR","FILTER","BOLT","TORQUE"],"grid":[["U","I","N","O","L","N","D","Y","H","N","M","D","D","W","E","L","Y","Q","B","T","A","H","C","I","P"],["W","A","A","J","I","T","R","O","V","Q","C","J","M","B","Q","Q","X","S","S","T","T","O","J","Q","I"],["I","P","G","H","N","M","P","S","A","G","I","K","M","D","M","E","T","P","B","C","K","G","D","U","D"],["A","C","C","J","G","D","J","C","L","M","M","K","F","T","G","O","M","Q","W","G","F","O","O","C","M"],["J","O","P","I","C","R","W","I","V","Q","F","H","H","J","H","Q","M","C","O","W","J","H","N","V","M"],["N","N","F","M","K","R","J","K","E","Y","Z","J","Z","K","S","Q","O","B","L","W","S","X","H","Y","F"],["N","S","W","D","O","M","Y","E","P","P","U","P","P","I","Z","B","R","H","J","N","Z","V","U","G","H"],["V","P","T","R","U","S","M","J","T","O","R","Q","U","E","I","B","R","S","F","W","O","X","G","B","Q"],["Q","J","M","J","T","I","X","U","L","A","I","B","R","K","G","B","D","A","C","H","K","I","O","S","C"],["U","D","R","P","V","H","J","F","E","E","B","E","Q","A","Q","Z","G","U","Q","J","X","D","A","M","R"],["N","B","F","B","I","A","Q","X","S","O","Q","A","S","E","Q","A","E","O","N","O","K","Y","G","B","W"],["J","S","R","G","O","T","P","T","I","H","G","R","T","D","T","F","A","H","R","N","Z","I","D","J","U"],["Z","Q","X","R","S","E","A","L","G","E","S","I","B","L","X","W","R","S","B","L","W","R","D","C","X"],["L","E","K","E","E","W","X","F","B","L","R","N","U","T","A","K","D","H","I","J","Q","Z","A","R","L"],["X","P","H","X","C","L","F","X","K","G","V","G","P","D","U","D","A","A","L","Y","D","B","W","F","F"],["O","U","A","I","D","K","S","O","W","E","Y","P","P","V","C","F","W","F","O","R","A","O","A","G","F"],["D","M","I","A","V","G","C","C","X","M","Z","Y","D","L","S","R","S","T","Y","M","I","M","V","J","B"],["L","P","E","M","S","M","A","M","H","K","X","Z","V","D","D","B","O","L","T","F","O","G","Y","K","U"],["S","B","U","H","X","G","A","C","D","S","G","L","I","W","N","J","L","V","L","A","J","K","Q","Q","W"],["M","G","C","L","D","W","B","L","I","D","M","L","G","G","A","K","X","J","L","Q","H","V","Q","V","M"],["K","Q","K","O","N","C","H","L","Z","P","X","Z","W","D","M","L","J","Q","F","I","L","T","E","R","A"],["W","A","L","D","S","S","B","J","P","M","F","V","D","Z","O","S","Q","S","Z","K","S","Q","V","B","C"],["H","R","J","F","Q","S","D","U","L","E","Z","P","Y","F","F","A","W","R","E","W","F","B","S","L","Y"],["J","M","S","Y","K","P","G","S","A","R","I","E","W","K","N","E","A","G","F","M","O","T","O","R","G"],["X","M","Q","L","S","Z","U","T","R","O","A","Y","Q","F","Y","L","Y","V","M","P","Q","F","L","R","H"]],"placed":[{"word":"TORQUE","cells":[[7,8],[7,9],[7,10],[7,11],[7,12],[7,13]]},{"word":"SHAFT","cells":[[12,17],[13,17],[14,17],[15,17],[16,17]]},{"word":"PUMP","cells":[[14,1],[15,1],[16,1],[17,1]]},{"word":"VALVE","cells":[[1,8],[2,8],[3,8],[4,8],[5,8]]},{"word":"SEAL","cells":[[12,4],[12,5],[12,6],[12,7]]},{"word":"BEARING","cells":[[8,11],[9,11],[10,11],[11,11],[12,11],[13,11],[14,11]]},{"word":"BOLT","cells":[[17,15],[17,16],[17,17],[17,18]]},{"word":"GEAR","cells":[[9,16],[10,16],[11,16],[12,16]]},{"word":"MOTOR","cells":[[23,19],[23,20],[23,21],[23,22],[23,23]]},{"word":"FILTER","cells":[[20,18],[20,19],[20,20],[20,21],[20,22],[20,23]]}]};
+    window.__WS__ = {"level":1,"words":["BEARING","SHAFT","SEAL","GEAR","VALVE","PUMP","MOTOR","FILTER","BOLT","TORQUE"],"grid":[["A","I","L","E","M","O","R","A","B","E","D","S","G","R","W","O","R","L","B","L","U","A","E","H","I"],["U","Y","L","H","I","G","X","C","E","G","N","A","A","G","N","R","D","P","M","D","E","W","I","B","Q"],["L","T","I","P","S","S","G","U","A","Y","G","M","Y","F","C","C","D","U","O","T","X","O","R","J","Y"],["V","A","L","V","E","I","L","K","R","W","E","Q","A","B","O","Z","J","C","F","I","F","E","W","X","N"],["E","R","A","U","F","X","F","E","I","H","A","U","K","L","F","D","U","B","S","W","L","R","N","O","P"],["H","T","S","Y","F","I","Q","D","N","Z","R","A","D","X","U","C","Q","L","B","T","P","K","D","X","V"],["Z","U","F","U","I","C","Q","U","G","A","V","M","C","I","G","R","S","W","O","O","Y","F","W","E","R"],["A","W","Z","E","L","G","D","Q","W","T","P","S","Z","N","Z","A","U","K","P","R","P","E","B","C","A"],["F","N","Q","D","T","R","W","F","J","E","U","E","I","R","D","R","L","P","J","Q","C","E","F","D","Y"],["P","O","U","X","E","K","K","B","T","Z","A","A","M","L","E","S","F","T","V","U","A","Z","W","P","M"],["Q","F","C","R","R","X","X","H","Y","Y","Z","L","V","V","H","F","U","F","O","E","D","T","Y","B","A"],["F","Y","W","F","E","G","Q","P","E","G","I","G","S","U","U","Z","Z","J","T","U","M","S","A","B","U"],["R","C","S","A","Y","R","S","H","J","I","U","T","H","Y","P","K","M","P","C","H","P","Z","L","K","M"],["D","D","G","F","C","S","K","P","X","A","U","K","A","V","X","G","I","V","H","B","T","B","R","G","M"],["O","Q","F","X","H","J","Y","U","Q","U","A","V","F","Y","V","X","P","L","G","H","T","Q","Z","P","P"],["G","T","D","O","I","V","P","M","M","J","B","E","T","B","E","V","O","T","H","D","C","J","B","F","W"],["E","O","S","B","B","D","X","P","Y","I","U","E","D","W","L","A","W","D","O","L","H","T","V","T","C"],["R","I","U","R","O","M","G","P","H","W","Z","Y","A","D","I","H","M","H","V","E","R","V","F","E","T"],["Y","S","H","A","L","C","Y","Q","R","H","S","U","M","O","U","S","O","K","Y","D","T","H","N","R","E"],["E","P","A","H","T","G","R","K","I","I","X","V","R","M","S","O","T","W","C","Z","I","J","A","N","W"],["Z","J","J","J","R","L","E","B","G","F","K","E","Y","E","L","O","O","N","J","D","K","D","N","M","M"],["O","S","F","I","P","V","N","G","C","B","J","L","O","Q","B","R","R","L","C","H","X","B","P","H","Y"],["O","K","C","N","B","R","H","F","O","Y","B","D","W","I","U","P","O","S","K","L","M","V","K","D","Y"],["E","Z","N","B","I","U","X","B","V","F","K","Q","A","H","X","G","R","F","P","U","D","Z","K","P","U"],["A","Z","Y","L","M","R","F","H","T","Y","S","G","O","F","X","C","Y","Y","R","R","F","M","Z","N","U"]],"placed":[{"word":"SHAFT","cells":[[11,12],[12,12],[13,12],[14,12],[15,12]]},{"word":"BEARING","cells":[[0,8],[1,8],[2,8],[3,8],[4,8],[5,8],[6,8]]},{"word":"FILTER","cells":[[5,4],[6,4],[7,4],[8,4],[9,4],[10,4]]},{"word":"VALVE","cells":[[3,0],[3,1],[3,2],[3,3],[3,4]]},{"word":"GEAR","cells":[[2,10],[3,10],[4,10],[5,10]]},{"word":"TORQUE","cells":[[5,19],[6,19],[7,19],[8,19],[9,19],[10,19]]},{"word":"MOTOR","cells":[[17,16],[18,16],[19,16],[20,16],[21,16]]},{"word":"BOLT","cells":[[16,4],[17,4],[18,4],[19,4]]},{"word":"PUMP","cells":[[13,7],[14,7],[15,7],[16,7]]},{"word":"SEAL","cells":[[7,11],[8,11],[9,11],[10,11]]}]};
   </script>
   <script is:inline>
 
 (function(){
   var cfg = window.__WS__;
+  if (!cfg) { console.error("WS: no config"); return; }
   var SIZE = 25;
   var level = cfg.level;
   var grid = cfg.grid;
@@ -85,9 +104,11 @@ import Layout from "../../../layouts/Layout.astro";
   var progressEl = document.getElementById("ws-progress");
   var scoreEl = document.getElementById("ws-score");
   var selInfo = document.getElementById("ws-sel");
+  if (!gridEl || !wordsEl) { console.error("WS: missing DOM"); return; }
 
   var found = {};
   var selected = [];
+  var cellNodes = {};
 
   function storageKey(){ return "partpedia_ws_batch1"; }
   function loadState(){
@@ -109,9 +130,7 @@ import Layout from "../../../layouts/Layout.astro";
     for (var i=0;i<placed.length;i++){
       var p = placed[i];
       if (!found[p.word]) continue;
-      for (var j=0;j<p.cells.length;j++){
-        s[key(p.cells[j][0], p.cells[j][1])] = 1;
-      }
+      for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = 1;
     }
     return s;
   }
@@ -121,7 +140,6 @@ import Layout from "../../../layouts/Layout.astro";
     var r0 = selected[0].r, c0 = selected[0].c;
     var r1 = selected[1].r, c1 = selected[1].c;
     var dr = r1 - r0, dc = c1 - c0;
-    // only right (0,1) or down (1,0)
     if (!((dr===0 && dc===1) || (dr===1 && dc===0))) return false;
     for (var i=1;i<selected.length;i++){
       if (selected[i].r !== r0 + dr*i || selected[i].c !== c0 + dc*i) return false;
@@ -131,29 +149,33 @@ import Layout from "../../../layouts/Layout.astro";
 
   function tryMatch(){
     if (selected.length < 2) return;
-    if (!selectionValidDirection()) { selected = []; render(); return; }
-    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    for (var i=0;i<placed.length;i++){
+    if (!selectionValidDirection()) { selected = []; paint(); return; }
+    var fwd = "";
+    for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
+    for (i=0;i<placed.length;i++){
       var p = placed[i];
       if (found[p.word]) continue;
       if (p.word === fwd){
         found[p.word] = true;
         var st = ensureRun();
-        st.found[level] = Object.keys(found).filter(function(k){ return found[k]; });
-        st.scores[level] = st.found[level].length * POINTS;
+        var keys = [];
+        for (var k in found) if (found[k]) keys.push(k);
+        st.found[level] = keys;
+        st.scores[level] = keys.length * POINTS;
         saveState(st);
         selected = [];
-        render();
+        paint();
         return;
       }
     }
     selected = [];
-    render();
+    paint();
   }
 
   function maybeAutoMatch(){
-    var fwd = selected.map(function(s){ return grid[s.r][s.c]; }).join("");
-    for (var i=0;i<placed.length;i++){
+    var fwd = "";
+    for (var i=0;i<selected.length;i++) fwd += grid[selected[i].r][selected[i].c];
+    for (i=0;i<placed.length;i++){
       if (!found[placed[i].word] && placed[i].word === fwd){ tryMatch(); return; }
     }
     var maxLen = 0;
@@ -164,21 +186,19 @@ import Layout from "../../../layouts/Layout.astro";
   }
 
   function onCellClick(r,c){
-    // toggle off last cell
     if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
-      selected.pop(); render(); return;
+      selected.pop(); paint(); return;
     }
     if (selected.length === 0){
-      selected = [{r:r,c:c}]; render(); return;
+      selected = [{r:r,c:c}]; paint(); return;
     }
     var last = selected[selected.length-1];
     if (selected.length === 1){
       var dr = r - last.r, dc = c - last.c;
-      // only one step right or down
       if ((dr===0 && dc===1) || (dr===1 && dc===0)){
-        selected.push({r:r,c:c}); render(); maybeAutoMatch();
+        selected.push({r:r,c:c}); paint(); maybeAutoMatch();
       } else {
-        selected = [{r:r,c:c}]; render();
+        selected = [{r:r,c:c}]; paint();
       }
       return;
     }
@@ -187,46 +207,99 @@ import Layout from "../../../layouts/Layout.astro";
     var ddr = r1 - r0, ddc = c1 - c0;
     var er = r0 + ddr * selected.length, ec = c0 + ddc * selected.length;
     if (r===er && c===ec){
-      selected.push({r:r,c:c}); render(); maybeAutoMatch();
+      selected.push({r:r,c:c}); paint(); maybeAutoMatch();
     } else {
-      selected = [{r:r,c:c}]; render();
+      selected = [{r:r,c:c}]; paint();
     }
   }
 
-  function render(){
+  function paint(){
     ensureRun();
     var fc = foundCells();
     var selSet = {};
     for (var i=0;i<selected.length;i++) selSet[key(selected[i].r,selected[i].c)] = 1;
+
+    for (var r=0;r<SIZE;r++){
+      for (var c=0;c<SIZE;c++){
+        var k = key(r,c);
+        var d = cellNodes[k];
+        if (!d) continue;
+        d.className = "ws-cell";
+        d.style.background = "";
+        d.style.color = "";
+        if (fc[k]) {
+          d.classList.add("found");
+          d.style.background = "#1d4ed8";
+          d.style.color = "#eff6ff";
+        }
+        if (selSet[k]) {
+          d.classList.add("sel");
+          d.style.background = "#0ea5e9";
+          d.style.color = "#0f172a";
+        }
+      }
+    }
+
+    var children = wordsEl.children;
+    for (i=0;i<children.length;i++){
+      var li = children[i];
+      var w = li.getAttribute("data-word");
+      if (found[w]) {
+        li.classList.add("got");
+        li.style.background = "#2563eb";
+        li.style.color = "#ffffff";
+      } else {
+        li.classList.remove("got");
+        li.style.background = "";
+        li.style.color = "";
+      }
+    }
+
+    var n = 0;
+    for (var kk in found) if (found[kk]) n++;
+    if (progressEl) progressEl.textContent = n + " / " + words.length + " kata";
+    if (scoreEl) scoreEl.textContent = (n * POINTS) + " poin level ini";
+    if (selInfo){
+      if (selected.length) {
+        var t = "";
+        for (i=0;i<selected.length;i++) t += grid[selected[i].r][selected[i].c];
+        selInfo.textContent = "Pilihan: " + t;
+      } else {
+        selInfo.textContent = "Klik/sentuh huruf satu per satu — hanya kanan atau bawah.";
+      }
+    }
+  }
+
+  function buildUI(){
     gridEl.innerHTML = "";
+    cellNodes = {};
     for (var r=0;r<SIZE;r++){
       for (var c=0;c<SIZE;c++){
         var d = document.createElement("button");
         d.type = "button";
         d.className = "ws-cell";
         d.textContent = grid[r][c];
-        var k = key(r,c);
-        if (fc[k]) d.classList.add("found");
-        if (selSet[k]) d.classList.add("sel");
-        (function(rr,cc){ d.addEventListener("click", function(){ onCellClick(rr,cc); }); })(r,c);
+        d.setAttribute("data-r", r);
+        d.setAttribute("data-c", c);
+        cellNodes[key(r,c)] = d;
         gridEl.appendChild(d);
       }
     }
+    // event delegation
+    gridEl.onclick = function(ev){
+      var t = ev.target;
+      if (!t || !t.getAttribute) return;
+      if (t.getAttribute("data-r") == null) return;
+      onCellClick(parseInt(t.getAttribute("data-r"),10), parseInt(t.getAttribute("data-c"),10));
+    };
+
     wordsEl.innerHTML = "";
     var sorted = words.slice().sort();
-    for (i=0;i<sorted.length;i++){
+    for (var i=0;i<sorted.length;i++){
       var li = document.createElement("li");
       li.textContent = sorted[i];
-      if (found[sorted[i]]) li.classList.add("got");
+      li.setAttribute("data-word", sorted[i]);
       wordsEl.appendChild(li);
-    }
-    var n = Object.keys(found).filter(function(k){ return found[k]; }).length;
-    progressEl.textContent = n + " / " + words.length + " kata";
-    scoreEl.textContent = (n * POINTS) + " poin level ini";
-    if (selInfo){
-      selInfo.textContent = selected.length
-        ? ("Pilihan: " + selected.map(function(s){ return grid[s.r][s.c]; }).join(""))
-        : "Klik huruf satu per satu — hanya kanan atau bawah (tidak miring).";
     }
   }
 
@@ -234,12 +307,12 @@ import Layout from "../../../layouts/Layout.astro";
   if (Array.isArray(st0.found[level])) {
     for (var fi=0; fi<st0.found[level].length; fi++) found[st0.found[level][fi]] = true;
   }
-  render();
-  window.__WS_API__ = { clearSelection: function(){ selected=[]; render(); } };
+  buildUI();
+  paint();
+  window.__WS_API__ = { clearSelection: function(){ selected=[]; paint(); } };
+  var clr = document.getElementById("ws-clear");
+  if (clr) clr.onclick = function(){ selected=[]; paint(); };
 })();
 
-    document.getElementById("ws-clear") && document.getElementById("ws-clear").addEventListener("click", function () {
-      window.__WS_API__ && window.__WS_API__.clearSelection();
-    });
   </script>
 </Layout>
