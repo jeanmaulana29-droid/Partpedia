@@ -14,14 +14,15 @@ import Layout from "../../../layouts/Layout.astro";
       <p class="lead">
         Temukan istilah teknis internasional dalam kotak huruf.
         5 level · 10 kata per level · 2 poin per kata · skor maksimal 100.
+        Setiap kali mulai, urutan level diacak.
       </p>
       <ul class="rules">
         <li>Grid <strong>20×20</strong></li>
-        <li>Klik huruf <strong>satu per satu</strong> (lurus)</li>
-        <li>Boleh <strong>Next</strong> tanpa menyelesaikan semua kata</li>
+        <li>Klik huruf <strong>satu per satu</strong> (lurus kanan / bawah)</li>
+        <li>Setelah 3 menit bisa <strong>Menyerah</strong></li>
         <li>Skor dihitung di akhir 5 level</li>
       </ul>
-      <a class="go" href="/tools/word-search/1/">Mulai Level 1 →</a>
+      <a class="go" id="btn-start" href="/tools/word-search/1/">Mulai Level 1 →</a>
     </div>
   </div>
   <style>
@@ -36,6 +37,7 @@ import Layout from "../../../layouts/Layout.astro";
     .go{display:block;text-align:center;margin-top:1.25rem;padding:0.85rem;border-radius:14px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-weight:900;text-decoration:none}
   </style>
   <script is:inline>
-    sessionStorage.setItem("partpedia_ws_batch1", JSON.stringify({ runId: Date.now(), scores: {}, found: {} }));
+    // Setiap masuk dari hub = run baru (urutan puzzle diacak di halaman level 1)
+    sessionStorage.removeItem("partpedia_ws_batch1");
   </script>
 </Layout>

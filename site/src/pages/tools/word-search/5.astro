@@ -9,7 +9,7 @@ import Layout from "../../../layouts/Layout.astro";
     <a class="ws-back" href="/">← Beranda / Home</a>
     <header class="ws-hero">
       <div class="ws-badge">GAME · WORD SEARCH</div>
-      <h1>Cari Kata Industri <span>Level 5</span></h1>
+      <h1>Cari Kata Industri <span>Level <span id="ws-title-step">5</span></span></h1>
       <p class="ws-lead">
         <strong>Industrial Word Search</strong> — 10 istilah teknis internasional.
         Arah: <strong>kiri → kanan</strong> dan <strong>atas → bawah</strong> saja.
@@ -35,8 +35,8 @@ import Layout from "../../../layouts/Layout.astro";
       <ul class="ws-words" id="ws-words"></ul>
     </div>
     <div class="ws-nav">
-      <a class="ws-btn-back" href="/tools/word-search/4/">← Back</a>
-      <a class="ws-btn-next" href="/tools/word-search/result/">Selesai / Result →</a>
+      <a class="ws-btn-back" id="ws-back-level" href="/tools/word-search/4/">← Back</a>
+      <a class="ws-btn-next" id="ws-next" href="/tools/word-search/result/">Selesai / Result →</a>
     </div>
   </div>
   <style is:global>
@@ -53,57 +53,23 @@ import Layout from "../../../layouts/Layout.astro";
 .ws-chip{font-size:0.72rem;font-weight:700;color:#e2e8f0;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.25);padding:0.28rem 0.5rem;border-radius:8px}
 .ws-chip.warn{border-color:rgba(251,191,36,0.5);color:#fde68a}
 .ws-board{background:rgba(15,23,42,0.92);border:1px solid rgba(56,189,248,0.28);border-radius:14px;padding:0.55rem;box-shadow:0 8px 28px rgba(0,0,0,0.35)}
-.ws-grid{
-  display:grid;
-  grid-template-columns:repeat(20,minmax(0,1fr));
-  gap:1px;
-  width:100%;
-  max-width:100%;
-}
-button.ws-cell{
-  appearance:none;-webkit-appearance:none;border:none;aspect-ratio:1;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:800;
-  font-size:clamp(0.55rem,2.8vw,0.85rem);
-  color:#e2e8f0;background:#1e293b;border-radius:2px;cursor:pointer;
-  padding:0;line-height:1;min-width:0;touch-action:manipulation;
-  -webkit-tap-highlight-color:transparent;user-select:none;
-}
-button.ws-cell.sel{
-  background:#0ea5e9 !important;color:#0f172a !important;
-  box-shadow:inset 0 0 0 2px #38bdf8;
-}
-button.ws-cell.found{
-  background:#1d4ed8 !important;color:#eff6ff !important;
-}
-button.ws-cell.reveal{
-  background:#2563eb !important;color:#fff !important;
-}
+.ws-grid{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:1px;width:100%;max-width:100%}
+button.ws-cell{appearance:none;-webkit-appearance:none;border:none;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(0.55rem,2.8vw,0.85rem);color:#e2e8f0;background:#1e293b;border-radius:2px;cursor:pointer;padding:0;line-height:1;min-width:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
+button.ws-cell.sel{background:#0ea5e9 !important;color:#0f172a !important;box-shadow:inset 0 0 0 2px #38bdf8}
+button.ws-cell.found{background:#1d4ed8 !important;color:#eff6ff !important}
+button.ws-cell.reveal{background:#2563eb !important;color:#fff !important}
 .ws-sel{margin:0.5rem 0 0;font-size:0.78rem;color:#64748b;min-height:1.15em}
 .ws-surrender-wrap{margin-top:0.65rem;display:none}
 .ws-surrender-wrap.show{display:block}
-.ws-surrender{
-  width:100%;border:none;cursor:pointer;font-weight:800;font-size:0.9rem;
-  padding:0.75rem;border-radius:12px;
-  background:linear-gradient(135deg,#64748b,#475569);color:#f8fafc;
-}
-.ws-surrender:hover{filter:brightness(1.08)}
+.ws-surrender{width:100%;border:none;cursor:pointer;font-weight:800;font-size:0.9rem;padding:0.75rem;border-radius:12px;background:linear-gradient(135deg,#64748b,#475569);color:#f8fafc}
 .ws-surrender:disabled{opacity:0.55;cursor:not-allowed}
 .ws-words-wrap{margin-top:0.95rem}
 .ws-words-wrap h2{margin:0 0 0.45rem;font-size:0.92rem;color:#f1f5f9}
 .ws-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0.32rem}
 @media(min-width:420px){.ws-words{grid-template-columns:repeat(5,1fr)}}
-.ws-words li{
-  font-size:0.7rem;font-weight:800;letter-spacing:0.02em;
-  color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;
-  padding:0.38rem 0.3rem;text-align:center;
-}
-.ws-words li.got{
-  color:#ffffff !important;background:#2563eb !important;
-}
-.ws-words li.revealed{
-  color:#ffffff !important;background:#3b82f6 !important;opacity:0.9;
-}
+.ws-words li{font-size:0.7rem;font-weight:800;letter-spacing:0.02em;color:#cbd5e1;background:rgba(30,41,59,0.85);border-radius:8px;padding:0.38rem 0.3rem;text-align:center}
+.ws-words li.got{color:#ffffff !important;background:#2563eb !important}
+.ws-words li.revealed{color:#ffffff !important;background:#3b82f6 !important;opacity:0.9}
 .ws-nav{display:flex;gap:0.55rem;margin-top:1rem}
 .ws-nav a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:0.88rem;padding:0.68rem 0.45rem;border-radius:12px}
 .ws-btn-back{background:rgba(51,65,85,0.95);color:#e2e8f0;border:1px solid rgba(148,163,184,0.3)}
@@ -112,20 +78,63 @@ button.ws-cell.reveal{
 
   </style>
   <script is:inline>
-    window.__WS__ = {"level":5,"words":["CONVEYOR","SPINDLE","CHUCK","COLLET","REAMER","DRILL","TAPER","KEYWAY","SPLINE","BUSH"],"grid":[["M","T","K","H","D","Y","D","P","B","K","N","U","X","B","U","B","U","S","H","Z"],["G","D","F","D","J","H","A","W","X","C","F","F","E","C","L","W","L","H","E","R"],["J","F","Y","W","G","Q","M","U","D","H","P","V","P","G","P","K","W","N","M","E"],["K","H","C","E","N","O","H","R","D","Y","R","W","M","B","D","E","W","C","L","A"],["Z","F","T","A","V","X","F","D","L","V","X","P","B","Y","M","Y","R","P","P","M"],["Q","C","H","U","C","K","S","G","E","A","B","O","J","O","Y","W","G","J","J","E"],["H","K","E","Q","I","O","P","W","G","E","H","T","I","H","G","A","I","J","M","R"],["C","I","Y","K","W","Y","F","F","M","P","W","X","H","E","B","Y","I","H","L","W"],["K","S","C","U","F","K","E","W","A","Y","D","G","V","P","B","A","T","W","B","U"],["X","I","Q","Z","A","J","W","W","M","I","V","X","D","F","F","H","Y","Z","W","Z"],["L","W","I","N","S","B","S","W","Y","G","N","O","U","A","W","D","L","G","F","U"],["V","N","B","P","S","M","D","X","U","M","C","M","W","J","X","S","E","Q","I","D"],["C","B","A","D","D","X","K","R","P","N","O","R","E","S","S","T","A","V","D","R"],["F","H","R","L","B","H","V","T","J","B","L","D","V","I","O","B","I","Z","L","I"],["X","F","C","O","N","V","E","Y","O","R","L","P","V","O","A","Z","O","L","R","L"],["J","C","D","F","T","A","P","E","R","I","E","E","B","B","T","H","D","P","X","L"],["P","Y","X","B","R","U","R","N","V","M","T","M","V","V","G","P","I","B","K","C"],["T","O","H","I","L","R","I","M","S","U","P","J","S","P","I","N","D","L","E","R"],["I","P","B","G","O","S","P","L","I","N","E","B","K","E","W","P","I","A","L","K"],["A","H","I","S","Z","Q","H","D","I","V","G","N","X","Q","P","F","J","Y","Y","F"]],"placed":[{"word":"SPINDLE","cells":[[17,12],[17,13],[17,14],[17,15],[17,16],[17,17],[17,18]]},{"word":"CONVEYOR","cells":[[14,2],[14,3],[14,4],[14,5],[14,6],[14,7],[14,8],[14,9]]},{"word":"DRILL","cells":[[11,19],[12,19],[13,19],[14,19],[15,19]]},{"word":"KEYWAY","cells":[[2,15],[3,15],[4,15],[5,15],[6,15],[7,15]]},{"word":"COLLET","cells":[[11,10],[12,10],[13,10],[14,10],[15,10],[16,10]]},{"word":"CHUCK","cells":[[5,1],[5,2],[5,3],[5,4],[5,5]]},{"word":"BUSH","cells":[[0,15],[0,16],[0,17],[0,18]]},{"word":"SPLINE","cells":[[18,5],[18,6],[18,7],[18,8],[18,9],[18,10]]},{"word":"REAMER","cells":[[1,19],[2,19],[3,19],[4,19],[5,19],[6,19]]},{"word":"TAPER","cells":[[15,4],[15,5],[15,6],[15,7],[15,8]]}]};
+    window.__WS_STEP__ = 5;
+    window.__WS_ALL__ = {"1":{"id":1,"words":["BEARING","SHAFT","SEAL","GEAR","VALVE","PUMP","MOTOR","FILTER","BOLT","TORQUE"],"grid":[["S","J","X","M","G","E","W","F","F","F","C","E","S","H","U","O","O","O","K","Y"],["E","N","H","H","E","K","R","I","Y","Q","I","T","H","K","X","O","Z","S","X","K"],["Y","O","N","T","W","L","B","L","Q","W","S","O","A","L","B","T","E","U","F","L"],["K","Y","Z","W","X","Y","U","T","U","I","R","Q","F","P","X","T","T","E","J","N"],["W","Y","O","L","H","E","Y","E","R","P","B","S","T","Z","A","Z","Z","C","Y","W"],["T","R","J","C","Y","P","G","R","X","Z","I","R","T","K","W","B","Q","Y","T","W"],["A","N","O","X","W","M","E","X","L","F","V","N","K","P","G","O","H","J","E","X"],["D","D","F","S","I","K","L","U","J","A","C","T","Z","F","P","L","P","B","Z","B"],["T","Y","O","G","Z","D","X","L","D","T","D","E","G","E","H","T","O","A","W","Q"],["A","C","W","M","E","D","O","S","Z","O","E","X","N","E","V","K","S","Q","Z","M"],["E","V","D","O","R","K","N","M","L","R","U","Q","P","K","G","D","S","A","V","X"],["A","U","Q","U","R","A","K","A","U","Q","K","Q","N","P","H","G","W","F","H","A"],["D","Z","U","D","I","M","O","V","F","U","H","L","F","G","O","M","Z","L","B","S"],["P","L","G","Q","J","O","R","Y","A","E","B","J","N","S","J","G","J","N","P","I"],["T","G","E","A","R","T","H","N","L","D","E","E","F","V","R","M","M","M","V","Q"],["X","I","W","M","X","O","K","A","D","J","A","H","J","Q","U","I","Y","P","A","H"],["E","E","H","K","T","R","A","B","H","L","R","C","J","P","P","A","A","P","L","C"],["T","F","Z","N","P","P","G","B","C","U","I","Q","G","U","L","F","R","E","V","W"],["X","F","G","J","E","G","H","R","L","G","N","N","V","M","J","E","V","G","E","Z"],["K","F","R","E","G","J","K","I","L","O","G","V","R","P","S","S","E","A","L","E"]],"placed":[{"word":"TORQUE","cells":[[8,9],[9,9],[10,9],[11,9],[12,9],[13,9]]},{"word":"VALVE","cells":[[14,18],[15,18],[16,18],[17,18],[18,18]]},{"word":"BOLT","cells":[[5,15],[6,15],[7,15],[8,15]]},{"word":"SHAFT","cells":[[0,12],[1,12],[2,12],[3,12],[4,12]]},{"word":"PUMP","cells":[[16,13],[17,13],[18,13],[19,13]]},{"word":"FILTER","cells":[[0,7],[1,7],[2,7],[3,7],[4,7],[5,7]]},{"word":"SEAL","cells":[[19,15],[19,16],[19,17],[19,18]]},{"word":"GEAR","cells":[[14,1],[14,2],[14,3],[14,4]]},{"word":"MOTOR","cells":[[12,5],[13,5],[14,5],[15,5],[16,5]]},{"word":"BEARING","cells":[[13,10],[14,10],[15,10],[16,10],[17,10],[18,10],[19,10]]}]},"2":{"id":2,"words":["SPROCKET","COUPLING","BUSHING","WASHER","SPRING","PULLEY","CLUTCH","BRAKE","ROLLER","SLEEVE"],"grid":[["R","B","Y","K","D","I","O","K","L","N","N","P","Y","X","B","E","N","H","W","C"],["M","N","B","T","O","S","L","S","H","K","S","P","R","O","C","K","E","T","F","O"],["X","L","X","T","R","C","O","U","P","L","I","N","G","E","H","S","T","L","A","K"],["X","O","E","N","L","G","T","X","S","L","E","E","V","E","L","T","D","B","Z","X"],["Z","B","V","W","Y","F","Q","R","I","K","M","U","I","K","S","P","I","W","D","D"],["F","U","U","C","L","U","T","C","H","F","I","B","N","K","D","B","X","D","B","P"],["U","S","D","B","J","I","Q","M","Y","U","E","H","R","L","O","Q","Q","D","W","V"],["J","H","Y","K","Y","H","B","I","V","F","O","Y","K","L","X","E","H","F","Y","F"],["T","I","P","H","C","H","G","T","F","S","T","M","O","K","O","L","C","L","L","S"],["H","N","O","X","C","Q","B","R","A","K","E","J","N","A","G","Y","D","N","Y","Z"],["S","G","G","P","E","N","D","X","C","D","A","F","D","W","U","B","M","H","U","P"],["B","W","S","P","R","I","N","G","E","O","E","U","G","Q","T","Y","V","C","F","E"],["W","V","V","M","K","W","X","S","P","P","E","A","J","Y","W","R","S","Q","J","J"],["A","P","Y","W","I","V","M","L","T","L","T","S","I","W","U","O","H","O","S","T"],["F","E","D","A","A","G","X","I","W","X","F","Y","S","Z","C","L","P","I","V","G"],["R","Z","B","S","B","Z","Y","M","T","Z","U","E","L","E","D","L","U","Z","L","O"],["X","J","V","H","Y","J","Q","W","R","W","Q","K","M","Z","H","E","L","U","F","P"],["S","W","Y","E","F","A","O","T","Q","F","B","V","Z","S","W","R","L","H","V","F"],["N","H","W","R","F","V","P","M","O","Z","Y","T","Q","R","M","Z","E","K","O","L"],["J","Q","S","B","A","F","H","O","I","T","B","C","N","P","U","Z","Y","B","U","Q"]],"placed":[{"word":"SPROCKET","cells":[[1,10],[1,11],[1,12],[1,13],[1,14],[1,15],[1,16],[1,17]]},{"word":"ROLLER","cells":[[12,15],[13,15],[14,15],[15,15],[16,15],[17,15]]},{"word":"SPRING","cells":[[11,2],[11,3],[11,4],[11,5],[11,6],[11,7]]},{"word":"SLEEVE","cells":[[3,8],[3,9],[3,10],[3,11],[3,12],[3,13]]},{"word":"WASHER","cells":[[13,3],[14,3],[15,3],[16,3],[17,3],[18,3]]},{"word":"BUSHING","cells":[[4,1],[5,1],[6,1],[7,1],[8,1],[9,1],[10,1]]},{"word":"CLUTCH","cells":[[5,3],[5,4],[5,5],[5,6],[5,7],[5,8]]},{"word":"COUPLING","cells":[[2,5],[2,6],[2,7],[2,8],[2,9],[2,10],[2,11],[2,12]]},{"word":"BRAKE","cells":[[9,6],[9,7],[9,8],[9,9],[9,10]]},{"word":"PULLEY","cells":[[14,16],[15,16],[16,16],[17,16],[18,16],[19,16]]}]},"3":{"id":3,"words":["INVERTER","SENSOR","RELAY","FUSE","CONTACTOR","BREAKER","CABLE","TERMINAL","SWITCH","ENCODER"],"grid":[["I","N","U","K","I","P","D","O","A","J","P","V","S","A","S","V","U","M","A","R"],["M","L","A","B","A","F","M","N","O","U","P","K","O","F","B","B","L","T","U","G"],["D","I","C","K","I","R","G","O","Z","Q","E","Y","Z","Z","O","Z","Y","C","E","L"],["K","Z","W","O","K","H","U","D","V","C","L","C","D","U","K","N","B","T","S","J"],["B","I","R","B","H","B","J","K","L","Z","T","Q","N","K","B","Z","I","P","X","O"],["T","U","U","O","Q","I","Q","X","J","U","S","Q","V","F","O","Q","O","D","P","N"],["F","K","F","F","R","K","U","K","G","B","T","E","R","M","I","N","A","L","D","Q"],["H","T","Y","D","G","C","R","E","B","Z","S","B","K","B","D","Z","Z","K","W","O"],["E","O","R","S","E","R","I","S","L","V","B","P","B","R","E","A","K","E","R","O"],["V","O","M","X","C","A","P","G","M","J","U","C","L","Q","D","X","E","E","F","G"],["Q","D","C","I","U","V","N","B","Q","O","W","A","R","I","H","K","Z","N","Q","I"],["E","H","L","C","G","O","G","W","N","M","C","B","S","F","R","Y","C","C","M","Z"],["W","Z","O","I","N","V","E","R","T","E","R","L","Y","S","W","G","O","O","M","G"],["I","P","J","R","O","Q","K","V","Z","C","L","E","V","V","R","A","F","D","S","N"],["Z","M","N","Q","T","G","I","Q","N","E","D","A","J","O","R","L","U","E","E","J"],["N","T","S","Y","B","B","B","A","A","H","E","Q","Z","X","G","P","S","R","N","W"],["V","O","I","A","S","W","I","T","C","H","P","H","I","T","W","T","E","O","S","D"],["G","C","O","N","T","A","C","T","O","R","G","Z","O","S","D","E","L","K","O","F"],["V","Z","Y","V","W","S","R","E","L","A","Y","T","H","L","G","O","D","B","R","B"],["V","V","B","U","I","Z","W","N","W","O","Q","L","X","Y","V","Z","B","I","C","R"]],"placed":[{"word":"ENCODER","cells":[[9,17],[10,17],[11,17],[12,17],[13,17],[14,17],[15,17]]},{"word":"BREAKER","cells":[[8,12],[8,13],[8,14],[8,15],[8,16],[8,17],[8,18]]},{"word":"SWITCH","cells":[[16,4],[16,5],[16,6],[16,7],[16,8],[16,9]]},{"word":"INVERTER","cells":[[12,3],[12,4],[12,5],[12,6],[12,7],[12,8],[12,9],[12,10]]},{"word":"SENSOR","cells":[[13,18],[14,18],[15,18],[16,18],[17,18],[18,18]]},{"word":"RELAY","cells":[[18,6],[18,7],[18,8],[18,9],[18,10]]},{"word":"FUSE","cells":[[13,16],[14,16],[15,16],[16,16]]},{"word":"CABLE","cells":[[9,11],[10,11],[11,11],[12,11],[13,11]]},{"word":"CONTACTOR","cells":[[17,1],[17,2],[17,3],[17,4],[17,5],[17,6],[17,7],[17,8],[17,9]]},{"word":"TERMINAL","cells":[[6,10],[6,11],[6,12],[6,13],[6,14],[6,15],[6,16],[6,17]]}]},"4":{"id":4,"words":["HYDRAULIC","PNEUMATIC","CYLINDER","ACTUATOR","MANIFOLD","ORIFICE","NOZZLE","GASKET","FLANGE","NIPPLE"],"grid":[["O","C","N","B","D","O","O","A","Z","H","R","I","S","C","T","F","Y","G","U","J"],["M","A","N","I","F","O","L","D","R","D","P","T","L","G","Q","H","R","Y","O","J"],["X","T","B","M","U","G","Q","B","S","I","T","L","V","P","V","S","O","L","X","P"],["U","V","P","K","X","T","U","H","M","U","V","I","X","N","Q","H","X","Y","G","C"],["H","C","P","J","C","Y","X","D","M","Z","M","F","M","E","E","L","B","X","G","R"],["Y","W","F","F","R","E","P","O","H","A","E","M","M","U","C","R","X","S","A","C"],["D","S","R","V","G","T","V","U","H","R","E","N","C","M","M","H","K","F","S","T"],["R","U","G","C","T","G","E","T","Y","U","T","I","A","A","T","V","K","U","K","J"],["A","O","C","R","X","Z","C","B","A","R","Z","R","E","T","H","H","R","W","E","A"],["U","R","Z","V","H","W","F","B","Y","O","O","N","J","I","F","G","X","F","T","X"],["L","I","Y","E","N","Q","K","A","C","K","K","O","C","C","K","T","P","L","A","U"],["I","F","L","U","I","W","C","Z","J","L","A","S","T","L","R","X","E","F","Q","Q"],["C","I","P","T","P","W","X","S","E","H","H","G","R","Y","D","U","E","L","R","N"],["W","C","S","A","P","T","M","W","U","C","H","G","Z","L","H","I","Y","A","X","B"],["Z","E","C","E","L","C","Y","L","I","N","D","E","R","I","W","S","Y","N","T","J"],["P","N","H","O","E","Z","F","V","L","P","Q","I","M","R","H","X","L","G","Q","O"],["Z","Y","Y","Y","O","D","B","T","J","L","E","O","B","S","U","Y","N","E","C","P"],["A","C","T","U","A","T","O","R","U","Z","E","S","R","R","B","J","I","Z","W","U"],["K","C","Y","D","B","J","O","P","T","N","F","S","Q","H","W","T","N","K","G","I"],["Z","R","Y","T","N","W","T","X","M","N","O","Z","Z","L","E","L","G","J","R","A"]],"placed":[{"word":"PNEUMATIC","cells":[[2,13],[3,13],[4,13],[5,13],[6,13],[7,13],[8,13],[9,13],[10,13]]},{"word":"MANIFOLD","cells":[[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7]]},{"word":"CYLINDER","cells":[[14,5],[14,6],[14,7],[14,8],[14,9],[14,10],[14,11],[14,12]]},{"word":"FLANGE","cells":[[11,17],[12,17],[13,17],[14,17],[15,17],[16,17]]},{"word":"ACTUATOR","cells":[[17,0],[17,1],[17,2],[17,3],[17,4],[17,5],[17,6],[17,7]]},{"word":"NIPPLE","cells":[[10,4],[11,4],[12,4],[13,4],[14,4],[15,4]]},{"word":"ORIFICE","cells":[[8,1],[9,1],[10,1],[11,1],[12,1],[13,1],[14,1]]},{"word":"HYDRAULIC","cells":[[4,0],[5,0],[6,0],[7,0],[8,0],[9,0],[10,0],[11,0],[12,0]]},{"word":"GASKET","cells":[[4,18],[5,18],[6,18],[7,18],[8,18],[9,18]]},{"word":"NOZZLE","cells":[[19,9],[19,10],[19,11],[19,12],[19,13],[19,14]]}]},"5":{"id":5,"words":["CONVEYOR","SPINDLE","CHUCK","COLLET","REAMER","DRILL","TAPER","KEYWAY","SPLINE","BUSH"],"grid":[["I","Y","N","D","L","H","Y","S","P","I","N","D","L","E","Y","Z","I","P","U","O"],["M","U","R","L","H","Q","J","G","I","F","Z","F","N","C","Y","O","E","N","U","L"],["N","K","V","L","J","S","U","K","T","X","L","E","B","U","Y","K","R","E","T","R"],["F","X","U","U","J","L","B","U","S","H","C","A","M","J","H","Q","C","J","H","T"],["V","P","D","V","E","A","Q","E","X","C","O","W","Z","U","S","D","R","V","C","W"],["E","X","B","C","E","L","N","P","J","H","N","J","K","Z","B","R","M","E","V","Z"],["Y","Z","K","A","J","O","W","X","V","I","V","Q","W","P","S","W","N","V","K","X"],["S","I","K","F","E","E","M","D","P","J","E","H","G","T","F","R","L","Q","L","D"],["P","X","E","C","J","O","S","V","J","A","Y","I","V","B","S","Z","Q","X","U","O"],["J","D","V","C","O","L","L","E","T","O","O","R","O","I","T","L","N","Y","K","R"],["Q","G","C","O","L","T","D","A","O","Q","R","T","C","B","N","U","W","D","N","C"],["A","I","M","T","T","R","R","Q","Y","O","Z","M","M","R","V","E","S","D","Z","L"],["S","Z","B","R","U","E","I","P","T","A","P","E","R","J","K","U","S","O","M","V"],["H","V","B","U","Y","A","L","K","Q","K","Z","I","H","C","L","L","P","F","U","Z"],["B","L","U","D","R","M","L","I","B","U","M","Y","G","W","W","O","L","P","C","S"],["W","M","X","H","J","E","W","I","R","Z","M","F","H","V","Y","M","I","O","T","P"],["X","L","Z","L","U","R","V","V","E","F","Z","C","H","U","C","K","N","P","D","C"],["Y","B","G","J","G","S","T","O","E","V","O","S","P","W","A","L","E","L","K","D"],["K","E","Y","W","A","Y","R","I","K","F","V","F","K","N","H","S","H","I","V","P"],["F","Z","B","I","H","I","T","U","T","B","B","Y","E","H","Z","F","M","C","O","M"]],"placed":[{"word":"DRILL","cells":[[10,6],[11,6],[12,6],[13,6],[14,6]]},{"word":"CHUCK","cells":[[16,11],[16,12],[16,13],[16,14],[16,15]]},{"word":"REAMER","cells":[[11,5],[12,5],[13,5],[14,5],[15,5],[16,5]]},{"word":"COLLET","cells":[[9,3],[9,4],[9,5],[9,6],[9,7],[9,8]]},{"word":"TAPER","cells":[[12,8],[12,9],[12,10],[12,11],[12,12]]},{"word":"CONVEYOR","cells":[[3,10],[4,10],[5,10],[6,10],[7,10],[8,10],[9,10],[10,10]]},{"word":"SPINDLE","cells":[[0,7],[0,8],[0,9],[0,10],[0,11],[0,12],[0,13]]},{"word":"KEYWAY","cells":[[18,0],[18,1],[18,2],[18,3],[18,4],[18,5]]},{"word":"SPLINE","cells":[[12,16],[13,16],[14,16],[15,16],[16,16],[17,16]]},{"word":"BUSH","cells":[[3,6],[3,7],[3,8],[3,9]]}]}};
   </script>
   <script is:inline>
 
 (function(){
-  var cfg = window.__WS__;
-  if (!cfg) { console.error("WS: no config"); return; }
+  var STEP = window.__WS_STEP__;
+  var ALL = window.__WS_ALL__;
+  var MAX = 5;
   var SIZE = 20;
-  var level = cfg.level;
-  var grid = cfg.grid;
-  var placed = cfg.placed;
-  var words = cfg.words;
   var POINTS = 2;
   var SURRENDER_MS = 3 * 60 * 1000;
+  var SK = "partpedia_ws_batch1";
+
+  function load(){ try { return JSON.parse(sessionStorage.getItem(SK)||"{}"); } catch(e){ return {}; } }
+  function save(st){ sessionStorage.setItem(SK, JSON.stringify(st)); }
+
+  function shuffleOrder(){
+    var a = [1,2,3,4,5];
+    for (var i=a.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var t=a[i]; a[i]=a[j]; a[j]=t;
+    }
+    return a;
+  }
+
+  function newRun(){
+    return { runId: Date.now(), order: shuffleOrder(), scores: {}, found: {}, navFromGame: false };
+  }
+
+  // Entry control: internal nav keeps order; any other entry = new random run → step 1
+  var st = load();
+  if (st.navFromGame) {
+    st.navFromGame = false;
+    save(st);
+  } else {
+    st = newRun();
+    save(st);
+    if (STEP !== 1) {
+      location.replace("/tools/word-search/1/");
+      return;
+    }
+  }
+
+  if (!st.order || st.order.length !== MAX) {
+    st = newRun();
+    save(st);
+  }
+
+  var puzzleId = st.order[STEP - 1];
+  var puzzle = ALL[String(puzzleId)];
+  if (!puzzle) { console.error("WS missing puzzle", puzzleId); return; }
+
+  var level = STEP; // session step for score keys
+  var grid = puzzle.grid;
+  var placed = puzzle.placed;
+  var words = puzzle.words;
 
   var gridEl = document.getElementById("ws-grid");
   var wordsEl = document.getElementById("ws-words");
@@ -135,6 +144,8 @@ button.ws-cell.reveal{
   var selInfo = document.getElementById("ws-sel");
   var surrWrap = document.getElementById("ws-surrender-wrap");
   var surrBtn = document.getElementById("ws-surrender");
+  var titleStep = document.getElementById("ws-title-step");
+  if (titleStep) titleStep.textContent = String(STEP);
   if (!gridEl || !wordsEl) return;
 
   var found = {};
@@ -145,54 +156,32 @@ button.ws-cell.reveal{
   var startedAt = Date.now();
   var surrShown = false;
 
-  function storageKey(){ return "partpedia_ws_batch1"; }
-  function loadState(){
-    try { return JSON.parse(sessionStorage.getItem(storageKey())||"{}"); }
-    catch(e){ return {}; }
+  // restore found for this session step
+  if (Array.isArray(st.found[level])) {
+    for (var fi=0; fi<st.found[level].length; fi++) found[st.found[level][fi]] = true;
   }
-  function saveState(st){ sessionStorage.setItem(storageKey(), JSON.stringify(st)); }
-  function ensureRun(){
-    var st = loadState();
-    if (!st.runId) { st = { runId: Date.now(), scores: {}, found: {} }; saveState(st); }
+
+  function key(r,c){ return r+","+c; }
+  function foundCount(){ var n=0; for (var k in found) if (found[k]) n++; return n; }
+  function saveScore(){
+    st = load();
     if (!st.scores) st.scores = {};
     if (!st.found) st.found = {};
-    return st;
-  }
-  function key(r,c){ return r+","+c; }
-
-  function foundCount(){
-    var n = 0;
-    for (var k in found) if (found[k]) n++;
-    return n;
-  }
-
-  function saveScore(){
-    var st = ensureRun();
     var keys = [];
     for (var k in found) if (found[k]) keys.push(k);
     st.found[level] = keys;
     st.scores[level] = keys.length * POINTS;
-    saveState(st);
+    save(st);
   }
 
   function foundCells(){
     var s = {};
     for (var i=0;i<placed.length;i++){
       var p = placed[i];
-      if (!found[p.word] && !(revealed && !found[p.word])) continue;
-      if (found[p.word] || revealed) {
-        for (var j=0;j<p.cells.length;j++) s[key(p.cells[j][0], p.cells[j][1])] = found[p.word] ? "found" : "reveal";
-      }
-    }
-    // after reveal, mark all placed cells
-    if (revealed) {
-      for (i=0;i<placed.length;i++){
-        p = placed[i];
-        for (j=0;j<p.cells.length;j++) {
-          var kk = key(p.cells[j][0], p.cells[j][1]);
-          if (found[p.word]) s[kk] = "found";
-          else s[kk] = "reveal";
-        }
+      for (var j=0;j<p.cells.length;j++){
+        var kk = key(p.cells[j][0], p.cells[j][1]);
+        if (found[p.word]) s[kk] = "found";
+        else if (revealed) s[kk] = "reveal";
       }
     }
     return s;
@@ -253,28 +242,21 @@ button.ws-cell.reveal{
     if (selected.length && selected[selected.length-1].r===r && selected[selected.length-1].c===c){
       selected.pop(); paint(); return;
     }
-    if (selected.length === 0){
-      selected = [{r:r,c:c}]; paint(); return;
-    }
+    if (selected.length === 0){ selected = [{r:r,c:c}]; paint(); return; }
     var last = selected[selected.length-1];
     if (selected.length === 1){
       var dr = r - last.r, dc = c - last.c;
       if ((dr===0 && dc===1) || (dr===1 && dc===0)){
         selected.push({r:r,c:c}); paint(); maybeAutoMatch();
-      } else {
-        selected = [{r:r,c:c}]; paint();
-      }
+      } else { selected = [{r:r,c:c}]; paint(); }
       return;
     }
     var r0 = selected[0].r, c0 = selected[0].c;
     var r1 = selected[1].r, c1 = selected[1].c;
     var ddr = r1 - r0, ddc = c1 - c0;
     var er = r0 + ddr * selected.length, ec = c0 + ddc * selected.length;
-    if (r===er && c===ec){
-      selected.push({r:r,c:c}); paint(); maybeAutoMatch();
-    } else {
-      selected = [{r:r,c:c}]; paint();
-    }
+    if (r===er && c===ec){ selected.push({r:r,c:c}); paint(); maybeAutoMatch(); }
+    else { selected = [{r:r,c:c}]; paint(); }
   }
 
   function doSurrender(){
@@ -282,7 +264,7 @@ button.ws-cell.reveal{
     locked = true;
     revealed = true;
     selected = [];
-    saveScore(); // only words found before surrender
+    saveScore();
     if (surrBtn) {
       surrBtn.disabled = true;
       surrBtn.textContent = "Menyerah — kata tersisa ditampilkan";
@@ -291,11 +273,9 @@ button.ws-cell.reveal{
   }
 
   function paint(){
-    ensureRun();
     var fc = foundCells();
     var selSet = {};
     for (var i=0;i<selected.length;i++) selSet[key(selected[i].r,selected[i].c)] = 1;
-
     for (var r=0;r<SIZE;r++){
       for (var c=0;c<SIZE;c++){
         var k = key(r,c);
@@ -320,42 +300,31 @@ button.ws-cell.reveal{
         }
       }
     }
-
     var children = wordsEl.children;
     for (i=0;i<children.length;i++){
       var li = children[i];
       var w = li.getAttribute("data-word");
       if (found[w]) {
-        li.classList.add("got");
-        li.classList.remove("revealed");
-        li.style.background = "#2563eb";
-        li.style.color = "#ffffff";
+        li.classList.add("got"); li.classList.remove("revealed");
+        li.style.background = "#2563eb"; li.style.color = "#ffffff";
       } else if (revealed) {
-        li.classList.add("revealed");
-        li.classList.remove("got");
-        li.style.background = "#3b82f6";
-        li.style.color = "#ffffff";
+        li.classList.add("revealed"); li.classList.remove("got");
+        li.style.background = "#3b82f6"; li.style.color = "#ffffff";
       } else {
-        li.classList.remove("got");
-        li.classList.remove("revealed");
-        li.style.background = "";
-        li.style.color = "";
+        li.classList.remove("got"); li.classList.remove("revealed");
+        li.style.background = ""; li.style.color = "";
       }
     }
-
     var n = foundCount();
     if (progressEl) progressEl.textContent = n + " / " + words.length + " kata";
     if (scoreEl) scoreEl.textContent = (n * POINTS) + " poin level ini";
     if (selInfo){
-      if (locked && revealed) {
-        selInfo.textContent = "Menyerah. Skor level: " + (n * POINTS) + " poin. Lanjut ke level berikutnya.";
-      } else if (selected.length) {
+      if (locked && revealed) selInfo.textContent = "Menyerah. Skor level: " + (n * POINTS) + " poin. Lanjut ke level berikutnya.";
+      else if (selected.length) {
         var t = "";
         for (i=0;i<selected.length;i++) t += grid[selected[i].r][selected[i].c];
         selInfo.textContent = "Pilihan: " + t;
-      } else {
-        selInfo.textContent = "Klik/sentuh huruf satu per satu — hanya kanan atau bawah.";
-      }
+      } else selInfo.textContent = "Klik/sentuh huruf satu per satu — hanya kanan atau bawah.";
     }
   }
 
@@ -379,7 +348,6 @@ button.ws-cell.reveal{
       if (!t || !t.getAttribute || t.getAttribute("data-r") == null) return;
       onCellClick(parseInt(t.getAttribute("data-r"),10), parseInt(t.getAttribute("data-c"),10));
     };
-
     wordsEl.innerHTML = "";
     var sorted = words.slice().sort();
     for (var i=0;i<sorted.length;i++){
@@ -397,31 +365,30 @@ button.ws-cell.reveal{
     var sec = Math.ceil(left / 1000);
     var mm = Math.floor(sec / 60);
     var ss = sec % 60;
-    if (timerEl) {
-      timerEl.textContent = "Sisa " + mm + ":" + (ss < 10 ? "0" : "") + ss;
-    }
+    if (timerEl) timerEl.textContent = "Sisa " + mm + ":" + (ss < 10 ? "0" : "") + ss;
     if (left <= 0 && !surrShown) {
       surrShown = true;
       if (surrWrap) surrWrap.classList.add("show");
-      if (timerEl) {
-        timerEl.textContent = "Waktu 3 menit — bisa menyerah";
-        timerEl.classList.add("warn");
-      }
+      if (timerEl) { timerEl.textContent = "Waktu 3 menit — bisa menyerah"; timerEl.classList.add("warn"); }
     }
-    if (!locked) requestAnimationFrame(function(){ /* throttle */ });
   }
 
-  var st0 = ensureRun();
-  if (Array.isArray(st0.found[level])) {
-    for (var fi=0; fi<st0.found[level].length; fi++) found[st0.found[level][fi]] = true;
+  // Next / Back: mark internal navigation so order is kept
+  function markNav(){
+    var s = load();
+    s.navFromGame = true;
+    save(s);
   }
+  var nextA = document.getElementById("ws-next");
+  var backA = document.getElementById("ws-back-level");
+  if (nextA) nextA.addEventListener("click", markNav);
+  if (backA) backA.addEventListener("click", markNav);
+
   buildUI();
   paint();
-
   if (surrBtn) surrBtn.onclick = doSurrender;
   var clr = document.getElementById("ws-clear");
   if (clr) clr.onclick = function(){ if (!locked) { selected=[]; paint(); } };
-
   setInterval(tickTimer, 500);
   tickTimer();
 })();
