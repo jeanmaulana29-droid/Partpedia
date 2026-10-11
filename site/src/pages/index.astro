@@ -1574,8 +1574,8 @@ const catalog = shuffleCatalog(data);
       background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
       overflow: hidden; color: var(--ink);
     }
-    .feat-img { height: 120px; background: #0e141c; overflow: hidden; }
-    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .feat-img { height: 120px; background: #0e141c; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .feat-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .feat-body { padding: 0.9rem 1rem 1.1rem; }
     .feat-date { font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal); letter-spacing: 0.04em; }
     .feat-body h3 { font-size: 0.98rem; margin: 0.35rem 0 0.25rem; font-family: var(--font-display); line-height: 1.3; }
