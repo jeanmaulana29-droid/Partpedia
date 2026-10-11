@@ -1,0 +1,250 @@
+Bagaimana cara Mendirikan PT di Indonesia: Syarat, Biaya, dan Langkah Pendaftaran dari Awal hingga Legal
+
+Mendirikan Perseroan Terbatas (PT) bukan sekadar membuat nama perusahaan atau mencetak stempel. Pendirian PT adalah proses membentuk badan hukum,
+menetapkan pemegang saham dan pengurus, mengesahkan anggaran dasar, lalu mengurus legalitas usaha yang sesuai dengan kegiatan bisnis. Jika dilakukan dengan urutan yang benar, pemilik usaha memiliki struktur hukum yang lebih jelas untuk bertransaksi, merekrut pekerja, bekerja sama dengan perusahaan lain, mengakses pendanaan, dan mengembangkan skala bisnis.
+
+Jawaban langsungnya: untuk mendirikan PT biasa, tentukan kegiatan usaha, pendiri, saham, modal, alamat dan pengurus; gunakan notaris untuk membuat akta dan mengajukan pengesahan badan hukum melalui AHU; setelah disahkan, urus NIB dan perizinan yang dibutuhkan melalui OSS. Jika bisnis dimiliki satu orang dan memenuhi kriteria usaha mikro atau kecil, Perseroan Perorangan dapat menjadi alternatif dengan prosedur berbeda.
+
+Ada dua urusan yang harus dibedakan.
+Pertama, status badan hukum PT, yang berkaitan dengan akta pendirian dan pengesahan oleh Menteri melalui sistem Administrasi Hukum Umum (AHU).
+Kedua, legalitas menjalankan kegiatan usaha, yang berkaitan dengan Nomor Induk Berusaha (NIB), sertifikat standar, izin, persyaratan dasar, dan perizinan sektoral melalui OSS. Akta PT tidak otomatis berarti semua kegiatan usaha sudah boleh dijalankan.
+
+Artikel ini merangkum tahapan praktis berdasarkan informasi resmi AHU, OSS, dan peraturan pemerintah. Karena prosedur elektronik dan ketentuan perizinan dapat berubah, periksa kembali persyaratan pada portal resmi saat mengajukan pendaftaran.
+
+Apa itu PT dan kapan bisnis membutuhkannya?
+
+Perseroan Terbatas adalah badan hukum yang modalnya terbagi dalam saham. PT memiliki identitas hukum sendiri, terpisah dari pemegang sahamnya. Dalam kondisi normal, tanggung jawab pemegang saham terbatas pada saham yang dimiliki. Namun, perlindungan ini bukan izin untuk menyalahgunakan badan hukum; tanggung jawab pribadi dapat muncul pada keadaan tertentu yang diatur hukum, termasuk penyalahgunaan perseroan atau perbuatan melawan hukum.
+
+PT berguna ketika bisnis membutuhkan pemisahan lebih tertib antara aset pribadi dan aset perusahaan, kontrak atas nama badan usaha, kepemilikan saham yang dapat dibagi, hubungan dengan investor, atau tata kelola yang lebih formal. Pelanggan korporat dan lembaga pembiayaan juga dapat mensyaratkan dokumen legal tertentu sebelum menjalin kerja sama.
+
+Namun, PT tidak otomatis menjadi pilihan terbaik bagi setiap usaha. Pendirian dan pengelolaannya menimbulkan kewajiban administratif, pembukuan, pelaporan pajak, kepatuhan perizinan, dan biaya pemeliharaan. Pemilik harus menilai apakah manfaat badan hukum sepadan dengan kewajiban yang muncul.
+
+Pilih bentuk yang tepat: PT biasa atau Perseroan Perorangan
+
+PT biasa dengan dua orang atau lebih
+
+PT biasa umumnya didirikan oleh dua orang atau lebih yang mengambil bagian saham pada saat pendirian, kecuali kategori tertentu yang mendapat pengecualian menurut ketentuan berlaku. Para pendiri menentukan nama, kedudukan, maksud dan tujuan, kegiatan usaha, modal, komposisi saham, direksi, dan komisaris.
+
+Pendirian PT biasa dilakukan dengan akta notaris dalam bahasa Indonesia. Notaris mengajukan pengesahan badan hukum melalui Sistem Administrasi Badan Hukum (SABH) pada AHU Online. Jalur ini lazim untuk perusahaan dengan beberapa pemegang saham atau yang membutuhkan struktur kepemilikan formal.
+
+Perseroan Perorangan untuk usaha mikro dan kecil
+
+Perseroan Perorangan disediakan bagi usaha yang memenuhi kriteria usaha mikro dan kecil, dengan satu orang pendiri yang menjadi pemegang saham sekaligus direktur sesuai ketentuan. Pendaftarannya dilakukan secara elektronik melalui sistem pemerintah dan prosedurnya berbeda dari PT biasa yang menggunakan akta notaris.
+
+Perseroan Perorangan bukan sekadar nama lain untuk usaha perseorangan biasa. Bentuk ini merupakan badan hukum dengan kriteria, prosedur pendaftaran, dan kewajiban tersendiri. Jika pemegang saham menjadi lebih dari satu orang atau usaha tidak lagi memenuhi kriteria, perseroan harus menyesuaikan bentuknya sesuai prosedur hukum.
+
+Rujukan utama mengenai modal dan Perseroan Perorangan adalah PP Nomor 8 Tahun 2021, yang tercatat pada JDIH BPK sebagai peraturan berlaku.
+
+Tahap pertama: tentukan kegiatan usaha dan KBLI
+
+Jangan mulai dengan memilih nama perusahaan.
+Pastikan dahulu kegiatan yang benar-benar akan dijalankan: perdagangan, jasa, manufaktur, distribusi, teknologi, makanan, konsultasi, atau kegiatan lain. Pilihan ini menentukan kode Klasifikasi Baku Lapangan Usaha Indonesia (KBLI), persyaratan perizinan, dan kemungkinan kebutuhan izin sektoral.
+
+Kesalahan memilih KBLI dapat menimbulkan masalah.
+Kode yang terlalu sempit mungkin tidak mencakup aktivitas aktual, sedangkan kode yang tidak sesuai dapat menyebabkan ketidakcocokan antara izin dan kegiatan nyata. Jangan memilih kode hanya karena namanya terdengar mirip. Baca uraian dan cakupan KBLI yang berlaku, lalu cocokkan dengan proses bisnis sebenarnya.
+
+Buat daftar kegiatan yang akan dilakukan dalam waktu dekat dan kegiatan tambahan yang realistis.
+Hindari mencantumkan banyak kegiatan tanpa alasan. Setiap kegiatan dapat memiliki konsekuensi perizinan, termasuk sertifikat standar, izin khusus, persyaratan lokasi, atau persetujuan teknis.
+
+Portal OSS menyediakan pencarian kegiatan usaha dan informasi perizinan berbasis risiko.
+
+Tahap kedua: tentukan pendiri dan komposisi saham
+
+Para pendiri harus menyepakati siapa pemilik perusahaan dan berapa bagian saham masing-masing. Persentase saham memengaruhi kepemilikan ekonomi serta hak suara sesuai anggaran dasar dan hukum.
+
+Jangan menentukan saham hanya berdasarkan siapa yang memiliki ide atau siapa yang akan bekerja paling keras.
+Pertimbangkan kontribusi modal, aset yang diserahkan, peran operasional, risiko yang ditanggung, dan kesepakatan jika suatu saat ada pemegang saham keluar. Kesepakatan tertulis mengenai hubungan para pemegang saham dapat mengurangi konflik, terutama ketika kontribusi dan peran berbeda.
+
+Siapkan identitas pendiri sesuai persyaratan notaris.
+Jika pendiri berupa badan hukum, siapkan dokumen badan hukum dan bukti kewenangan pihak yang mewakilinya. Persyaratan rinci dapat berbeda menurut kondisi
+pendiri, kewarganegaraan, struktur kepemilikan, dan bentuk perseroan.
+
+Untuk PT biasa, jangan menganggap satu orang dapat mendirikannya sendiri tanpa memeriksa ketentuan pengecualian yang berlaku. Jika bisnis hanya memiliki satu pemilik dan memenuhi kriteria usaha mikro atau kecil, evaluasi Perseroan Perorangan.
+
+Tahap ketiga: pilih nama PT
+
+Siapkan beberapa alternatif nama sebelum notaris mengajukan pemesanan nama. Nama PT harus memenuhi ketentuan penamaan yang berlaku, termasuk aturan mengenai bahasa, susunan kata, keunikan, dan larangan penggunaan nama tertentu. Notaris dapat memeriksa dan mengajukan pemesanan melalui AHU.
+
+Jangan mencetak papan nama, kemasan, atau materi promosi dalam jumlah besar sebelum nama badan hukum dipastikan dapat digunakan. Nama PT juga berbeda dari merek dagang. Persetujuan nama PT tidak otomatis memberikan perlindungan merek. Jika nama akan menjadi merek utama produk atau jasa, lakukan pencarian dan pertimbangkan pendaftaran merek melalui Direktorat Jenderal Kekayaan Intelektual.
+
+Situs AHU menjelaskan proses pendirian PT melalui notaris, termasuk pemesanan nama, pengisian data perseroan, pengunggahan akta, dan penerbitan keputusan pengesahan: https://ahu.go.id/perseroan-terbatas.
+
+Tahap keempat: tentukan alamat dan kedudukan PT
+
+PT harus memiliki tempat kedudukan yang jelas. Alamat ini tercantum dalam dokumen perusahaan dan berkaitan dengan data perizinan. Pastikan alamat benar, dapat dibuktikan, dan sesuai dengan ketentuan pemanfaatan ruang serta penggunaan bangunan.
+
+Alamat korespondensi, alamat kedudukan, dan lokasi operasional bisa memiliki fungsi berbeda. Perusahaan dengan kantor administrasi dan pabrik di lokasi lain perlu memastikan data lokasi usaha pada sistem perizinan mencerminkan kegiatan sebenarnya. Jangan memilih alamat hanya karena murah tanpa memeriksa apakah alamat itu dapat digunakan untuk kegiatan yang direncanakan.
+
+Untuk usaha yang membutuhkan gudang, bengkel, restoran, pabrik, klinik, atau fasilitas khusus, lokasi dapat memengaruhi persyaratan dasar dan izin sektoral. OSS memiliki bagian persyaratan dasar, termasuk kesesuaian kegiatan pemanfaatan ruang dan persetujuan lingkungan sesuai kebutuhan kegiatan.
+
+Tahap kelima: tetapkan modal dasar, ditempatkan, dan disetor
+
+Tiga istilah ini sering tertukar. Modal dasar adalah jumlah modal yang ditetapkan dalam struktur perseroan. Modal ditempatkan adalah bagian modal yang diambil oleh pemegang saham. Modal disetor adalah bagian yang benar-benar disetorkan sesuai ketentuan.
+
+Berdasarkan PP Nomor 8 Tahun 2021, besaran modal dasar pada prinsipnya ditentukan berdasarkan keputusan pendiri, dengan tetap memperhatikan persyaratan khusus untuk bidang usaha tertentu. Peraturan tersebut juga mengatur bahwa paling sedikit 25 persen dari modal dasar harus ditempatkan dan disetor penuh, dengan bukti penyetoran yang disampaikan secara elektronik dalam jangka waktu yang ditentukan. Ketentuan ini tidak menghapus kemungkinan adanya persyaratan modal minimum khusus bagi kegiatan usaha tertentu.
+
+Karena itu, tidak tepat mengatakan bahwa semua PT di Indonesia wajib memiliki modal dasar Rp50 juta. Besaran modal harus ditetapkan berdasarkan bentuk perseroan dan bidang usaha. Sejumlah sektor atau kegiatan dapat memiliki persyaratan modal atau investasi tersendiri.
+
+Tetapkan modal berdasarkan kebutuhan nyata: stok, peralatan, sewa tempat, gaji, biaya awal, dan dana cadangan. Jangan menentukan angka hanya agar terlihat besar atau sekecil mungkin. Konsultasikan dengan notaris dan, bila diperlukan, penasihat pajak atau perizinan.
+
+Tahap keenam: tentukan direksi dan komisaris
+
+PT biasa memiliki organ perseroan sesuai hukum, termasuk Rapat Umum Pemegang Saham (RUPS), Direksi, dan Dewan Komisaris. Direksi mengurus dan mewakili perusahaan sesuai kewenangan. Komisaris menjalankan fungsi pengawasan dan memberi nasihat sesuai ketentuan. Pemegang saham menggunakan haknya melalui RUPS.
+
+Pada perusahaan kecil, pendiri bisnis dapat menjadi pemegang saham sekaligus direktur. Namun, jabatan dan kewenangannya harus dicatat dengan benar. Jangan menempatkan seseorang sebagai direktur atau komisaris hanya sebagai formalitas tanpa memahami tanggung jawab hukumnya.
+
+Sebelum akta dibuat, sepakati siapa yang berwenang menandatangani kontrak, membuka rekening, melakukan transaksi, merekrut pekerja, dan mengambil keputusan besar. Kewenangan dapat diatur dalam anggaran dasar atau keputusan organ perseroan sesuai hukum. Struktur yang jelas mengurangi risiko ketika pemilik berbeda pendapat atau perusahaan mulai memiliki banyak transaksi.
+
+Tahap ketujuh: buat akta pendirian melalui notaris
+
+Untuk PT biasa, akta pendirian dibuat oleh notaris dalam bahasa Indonesia. Akta memuat anggaran dasar dan keterangan pendirian, termasuk data pendiri, susunan saham, modal, maksud dan tujuan, kegiatan usaha, serta organ perseroan sesuai ketentuan.
+
+Sebelum menandatangani akta, baca drafnya. Periksa ejaan nama, alamat, data pendiri, komposisi saham, nilai nominal saham, modal dasar, modal ditempatkan dan disetor, KBLI, direksi dan komisaris, serta aturan pengambilan keputusan. Memperbaiki kesalahan sebelum pengajuan lebih sederhana daripada mengubah dokumen setelah pengesahan.
+
+Minta notaris menjelaskan bagian yang belum dipahami, khususnya kewenangan direksi, pengalihan saham, pengambilan keputusan, dan ketentuan ketika pemegang saham ingin keluar. Jangan hanya fokus pada harga paket pendirian dan mengabaikan isi anggaran dasar. Akta menjadi fondasi hubungan hukum perusahaan.
+
+Jika bisnis sebelumnya dijalankan sebagai usaha pribadi atau CV, jangan menganggap seluruh kontrak, utang, aset, dan izin otomatis berpindah ke
+PT baru. Peralihan aset dan kontrak perlu ditangani secara benar. Periksa kebutuhan persetujuan pihak ketiga, pengalihan kontrak, pencatatan aset, kewajiban pajak, dan ketentuan hukum yang relevan.
+
+Tahap kedelapan: ajukan pengesahan badan hukum melalui AHU
+
+Setelah akta siap, notaris mengajukan pendirian melalui SABH pada AHU Online. Menurut penjelasan resmi AHU, alur mencakup pemesanan nama, pengisian data perseroan, pratinjau, pengunggahan akta, dan penerbitan keputusan pengesahan sesuai prosedur.
+
+Pengesahan badan hukum adalah tahap penting. Simpan akta dan keputusan pengesahan dengan rapi dalam bentuk digital dan fisik. Periksa apakah nama, alamat, modal, pengurus, dan informasi pokok sudah sesuai. Dokumen tersebut akan digunakan untuk keperluan perbankan, pajak, kontrak, dan perizinan.
+
+Jangan menyamakan bukti pengajuan dengan keputusan pengesahan. Pastikan dokumen final diterbitkan dan data perusahaan benar.
+
+Biaya Penerimaan Negara Bukan Pajak (PNBP) dapat berubah mengikuti ketentuan layanan. Jangan mengandalkan angka dari artikel lama atau promosi penyedia jasa. Konfirmasikan biaya pemesanan nama dan pengesahan kepada notaris berdasarkan tarif resmi yang berlaku, lalu pisahkan biaya pemerintah dari honorarium notaris dan layanan tambahan.
+
+Tahap kesembilan: urus administrasi perpajakan
+
+Setelah perseroan terbentuk, pastikan administrasi perpajakan badan sesuai dengan status dan data perusahaan. Periksa NPWP badan dan akses layanan perpajakan resmi, serta pastikan data identitas, alamat, kegiatan, dan penanggung jawab konsisten. Alur teknis dan integrasi data dapat berubah; ikuti petunjuk Direktorat Jenderal Pajak yang berlaku saat pendaftaran.
+
+PT memiliki kewajiban pembukuan dan pelaporan sesuai ketentuan pajak. Meski omzet masih kecil atau transaksi belum banyak, catatan pendapatan, biaya, aset, utang, modal, dan transaksi pemegang saham harus dibedakan dengan jelas. Uang perusahaan tidak boleh dicampur sembarangan dengan uang pribadi.
+
+Jangan berasumsi bahwa memiliki NPWP berarti seluruh kewajiban pajak selesai. Kewajiban pembayaran dan pelaporan bergantung pada status, jenis transaksi, kegiatan, serta peraturan yang berlaku. Tentukan sejak awal siapa yang mengelola pembukuan dan siapa yang memastikan pelaporan tepat waktu.
+
+Tahap kesepuluh: urus NIB melalui OSS
+
+Setelah badan hukum terbentuk, perusahaan mengurus legalitas berusaha melalui Online Single Submission (OSS) sesuai kegiatan yang dijalankan. NIB adalah identitas pelaku usaha dalam sistem perizinan. NIB diterbitkan melalui OSS, tetapi izin tambahan yang diperlukan bergantung pada klasifikasi kegiatan dan tingkat risikonya.
+
+Siapkan data badan usaha, alamat, KBLI, lokasi kegiatan, rencana operasional, dan data lain yang diminta. pilih alur untuk badan usaha yang sesuai, lalu lengkapi data berdasarkan dokumen legal PT.
+
+Periksa seluruh data sebelum mengirim. Kesalahan KBLI, lokasi, atau informasi badan usaha dapat membuat data perizinan tidak sesuai dengan aktivitas nyata. Simpan NIB dan dokumen izin yang diterbitkan serta catat persyaratan yang belum dipenuhi.
+
+OSS menjelaskan bahwa NIB merupakan identitas resmi untuk memulai atau menjalankan usaha di Indonesia dan sistem perizinan berbasis risiko mengelompokkan kegiatan ke dalam empat tingkat risiko yang menentukan izin serta kewajiban usaha.
+
+Tahap kesebelas: penuhi izin berdasarkan risiko usaha
+
+NIB tidak berarti setiap kegiatan otomatis boleh dijalankan tanpa persyaratan tambahan. Sistem perizinan berbasis risiko membedakan kegiatan menurut tingkat risikonya. Secara umum, kegiatan berisiko rendah memiliki proses lebih sederhana; kegiatan berisiko menengah dapat memerlukan sertifikat standar; dan kegiatan berisiko tinggi dapat membutuhkan izin serta pemenuhan persyaratan sebelum operasi.
+
+Rincian harus dilihat di OSS berdasarkan KBLI dan lokasi. Ringkasan umum bukan pengganti pemeriksaan persyaratan spesifik. Kegiatan tertentu juga membutuhkan persyaratan dasar seperti kesesuaian pemanfaatan ruang, persetujuan lingkungan, atau persetujuan bangunan sesuai keadaan fasilitas. Perizinan sektoral dapat berlaku untuk bidang tertentu.
+
+Untuk manufaktur, persyaratan dapat berbeda menurut produk, proses, skala, lokasi, penggunaan bahan, dan dampak lingkungan. Usaha makanan, kosmetik, kesehatan, konstruksi, transportasi, atau jasa keuangan juga dapat memiliki aturan sektoral. Periksa persyaratan sebelum menyewa lokasi jangka panjang atau membeli mesin mahal.
+
+OSS juga menyediakan panduan pengajuan untuk risiko rendah/menengah rendah serta menengah tinggi/tinggi.
+
+Tahap kedua belas: buka rekening dan siapkan administrasi operasional
+
+Setelah dokumen badan hukum dan legalitas dasar tersedia, perusahaan dapat mengajukan rekening bank atas nama PT sesuai persyaratan bank. Bank biasanya memeriksa identitas, dokumen perseroan, kewenangan pengurus, dan informasi pemilik manfaat. Daftar dokumen dapat berbeda menurut bank dan profil usaha.
+
+Pisahkan rekening perusahaan dari rekening pribadi. Penerimaan dan pembayaran bisnis sebaiknya dicatat melalui pembukuan yang dapat ditelusuri. Pemisahan ini membantu pemilik memahami laba, arus kas, utang, modal kerja, dan posisi keuangan yang sebenarnya.
+
+Siapkan administrasi sesuai kebutuhan, seperti format penawaran dan faktur, kontrak pelanggan, surat pesanan, kebijakan pengeluaran, dokumen pembelian, daftar aset, penggajian, serta arsip pajak dan perizinan. Dokumen legal lengkap tetapi transaksi tidak tertib tetap berisiko ketika terjadi audit, sengketa, atau pemeriksaan pajak.
+
+Tahap ketiga belas: penuhi kewajiban setelah PT berdiri
+
+Pendirian bukan akhir proses. Perusahaan harus menjaga data badan hukum dan perizinan tetap akurat, menjalankan kewajiban pajak, menyelenggarakan pembukuan, memenuhi kewajiban ketenagakerjaan bila memiliki pekerja, dan memperbarui izin saat kegiatan, lokasi, atau informasi berubah.
+
+PT juga perlu menjalankan tata kelola sesuai hukum dan anggaran dasar. Keputusan penting harus dibuat melalui mekanisme yang tepat dan didokumentasikan. Perubahan pemegang saham, direksi, komisaris, alamat, modal, atau anggaran dasar dapat memerlukan akta dan/atau pemberitahuan atau persetujuan melalui AHU, tergantung jenis perubahan.
+
+Perusahaan yang memiliki kewajiban lingkungan, standar produk, sertifikasi, atau izin sektoral harus terus memenuhi persyaratannya. Dokumen yang pernah terbit bukan alasan untuk mengabaikan masa berlaku, pelaporan, atau kondisi operasi yang menjadi dasar penerbitannya.
+
+Berapa biaya mendirikan PT?
+
+Tidak ada satu angka biaya total untuk semua pendirian PT. Total dapat terdiri atas biaya resmi pemesanan nama dan pengesahan, honorarium notaris, biaya konsultasi atau jasa tambahan, dokumen pendukung, serta biaya perizinan atau pemenuhan teknis sesuai bidang usaha.
+
+Honorarium notaris dapat berbeda berdasarkan kompleksitas akta, jumlah pendiri dan pemegang saham, lokasi, cakupan layanan, dan dokumen
+tambahan. Pengurusan izin usaha juga dapat menimbulkan biaya operasional, seperti pemeriksaan teknis, pengujian, sertifikasi, atau pemenuhan fasilitas. Jangan menganggap semua izin selalu berbayar, tetapi jangan pula menganggap seluruh proses selesai tanpa biaya hanya karena NIB diterbitkan melalui OSS.
+
+Minta rincian tertulis sebelum menyetujui paket. Pisahkan biaya pemerintah, honorarium notaris, jasa pihak ketiga, dan biaya kepatuhan
+setelah perusahaan berdiri. Tanyakan apakah paket mencakup akta, pengesahan AHU, administrasi pajak, NIB, serta izin lain. Pastikan pula apa yang tidak termasuk.
+
+Berapa lama proses pendirian PT?
+
+Durasi tidak dapat dijamin dengan satu angka untuk semua kasus. Waktu dipengaruhi kesiapan data, ketersediaan nama, ketepatan dokumen, respons notaris, kelancaran sistem elektronik, dan kebutuhan izin tambahan. Pendirian dengan data lengkap dapat berjalan lebih cepat dibandingkan pengajuan yang berkali-kali perlu diperbaiki.
+
+Jangan menghitung waktu hanya sampai akta atau keputusan pengesahan. Jika tujuan akhirnya menjalankan pabrik, restoran, atau kegiatan yang
+memerlukan izin tambahan, waktu untuk memenuhi persyaratan lokasi, lingkungan, standar, dan izin sektoral juga harus diperhitungkan.
+
+Cara paling efektif mempercepat proses adalah menyiapkan data lengkap, menyepakati struktur saham sebelum akta dibuat, memilih KBLI yang tepat,
+menggunakan alamat yang sesuai, dan merespons permintaan perbaikan dengan cepat. Memaksakan proses cepat ketika dokumen dasar salah hanya akan menambah pekerjaan koreksi.
+
+Checklist sebelum menghubungi notaris
+
+Siapkan hal-hal berikut agar konsultasi lebih efisien:
+
+-   Beberapa alternatif nama PT.
+-   Alamat kedudukan dan rencana lokasi operasional.
+-   Uraian kegiatan usaha yang benar-benar akan dilakukan.
+-   Kandidat kode KBLI yang sudah diteliti.
+-   Identitas dan data para pendiri atau pemegang saham.
+-   Persentase saham dan kontribusi masing-masing pihak.
+-   Rencana modal dasar, modal ditempatkan, dan modal disetor.
+-   Nama calon direksi dan komisaris.
+-   Gambaran sumber dana dan kebutuhan modal awal.
+-   Informasi apakah bisnis sebelumnya berjalan sebagai usaha pribadi,
+    CV, atau badan usaha lain.
+-   Informasi kebutuhan izin sektoral, lokasi, lingkungan, atau standar
+    produk.
+
+Daftar ini bukan berarti semua dokumen tambahan wajib dalam setiap kasus. Notaris menentukan dokumen formal yang dibutuhkan berdasarkan bentuk perseroan dan kondisi pendiri. Tujuannya memastikan keputusan bisnis utama telah dibahas sebelum akta dibuat.
+
+Kesalahan yang sering memperlambat atau merugikan pendiri
+
+Mengira akta PT sama dengan izin operasional
+
+Akta dan pengesahan membentuk badan hukum. NIB dan izin lain mengatur legalitas kegiatan usaha. Keduanya harus ditangani sesuai urutan dan
+kebutuhan. Perusahaan yang hanya memiliki akta belum tentu memenuhi syarat untuk menjalankan kegiatan berisiko menengah atau tinggi.
+
+Memilih KBLI tanpa memahami cakupannya
+
+Kode yang salah dapat membuat kegiatan nyata tidak sesuai dengan data perizinan. Pilih berdasarkan aktivitas sebenarnya, bukan sekadar nama yang terdengar paling mirip.
+
+Menentukan saham hanya berdasarkan janji lisan
+
+Perselisihan kepemilikan dapat menghentikan keputusan perusahaan. Persentase saham, setoran, kewenangan, dan mekanisme keluar harus disepakati serta dicatat dalam dokumen yang tepat.
+
+Menggunakan alamat yang tidak sesuai
+
+Alamat yang tidak mendukung kegiatan atau tidak memenuhi ketentuan lokasi dapat memicu masalah perizinan. Periksa kesesuaian lokasi sebelum menyewa jangka panjang atau berinvestasi besar.
+
+Mencampur uang perusahaan dan uang pribadi
+
+Campuran rekening membuat laporan keuangan sulit dipercaya dan menyulitkan pemilik menilai kinerja. Pisahkan transaksi sejak awal dan
+dokumentasikan setoran modal, pinjaman pemegang saham, pengeluaran, serta penarikan dana.
+
+Menganggap izin berlaku otomatis selamanya
+
+Sebagian kegiatan memiliki kewajiban tambahan, pemenuhan standar, pelaporan, atau pembaruan data. Setelah izin terbit, perusahaan tetap harus memenuhi syarat yang melekat padanya.
+
+Sumber resmi yang perlu dijadikan rujukan
+
+-   Direktorat Jenderal Administrasi Hukum Umum (AHU), layanan Perseroan
+    Terbatas: https://ahu.go.id/perseroan-terbatas
+-   AHU, FAQ layanan pendirian PT:
+    https://portal.ahu.go.id/page/faq/faq-wasiat
+-   Online Single Submission (OSS), portal perizinan berusaha:
+    https://oss.go.id/id
+-   OSS, panduan perizinan berusaha: https://oss.go.id/id/panduan
+-   OSS, persyaratan dasar: https://oss.go.id/id/persyaratan-dasar
+-   JDIH Badan Pemeriksa Keuangan, PP Nomor 8 Tahun 2021:
+    https://peraturan.bpk.go.id/Details/161838/pp-no-8-tahun-2021
+
+Kesimpulan: urutan yang benar untuk menjadikan bisnis sebagai PT
+
+Untuk PT biasa, urutannya jelas: tentukan kegiatan dan KBLI; sepakati pendiri, saham, modal, alamat, direksi, dan komisaris; siapkan serta pesan nama; buat akta pendirian melalui notaris; ajukan pengesahan badan hukum melalui AHU; kemudian urus administrasi pajak dan perizinan melalui OSS, termasuk NIB serta izin atau pemenuhan standar yang diwajibkan. Setelah itu, pisahkan keuangan perusahaan, simpan dokumen, dan penuhi kewajiban operasional serta pelaporan.
+
+Jika bisnis hanya dimiliki satu orang dan memenuhi kriteria usaha mikro atau kecil, periksa apakah Perseroan Perorangan lebih sesuai. Jangan memaksakan PT biasa apabila kebutuhan usaha dapat dipenuhi oleh bentuk tersebut.
+
+Prinsip paling penting: jangan berhenti setelah mendapatkan akta atau NIB. Pastikan badan hukum telah disahkan, kegiatan usaha tercakup oleh KBLI yang tepat, dan persyaratan perizinan untuk bidang serta lokasi usaha telah dipenuhi. Itulah perbedaan antara sekadar memiliki dokumen perusahaan dan menyiapkan bisnis untuk beroperasi secara legal.
