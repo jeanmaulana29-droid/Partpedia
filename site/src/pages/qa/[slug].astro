@@ -16,6 +16,11 @@ const idx = all.findIndex((x) => x.slug === slug);
 const prev = idx > 0 ? all[idx - 1] : null;
 const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null;
 
+/* Kembali ke halaman list yang sama (100 kartu/halaman), bukan selalu page 1 */
+const PAGE_SIZE = 100;
+const listPage = idx >= 0 ? Math.floor(idx / PAGE_SIZE) + 1 : 1;
+const listHref = listPage > 1 ? `/qa/?page=${listPage}` : `/qa/`;
+
 const site = "https://www.klikpartpedia.com";
 const pageUrl = `${site}/qa/${item.slug}/`;
 const answerPlain = String(item.answer || "").replace(/\s+/g, " ").trim();
@@ -79,7 +84,7 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
        Jangan pakai microdata QAPage di HTML: Google mendeteksi QAPage
        tanpa mainEntity → error kritis di Search Console. -->
   <article class="qa-detail">
-    <a class="back" href="/qa/">← All industrial Q&amp;A</a>
+    <a class="back" href={listHref}>← All industrial Q&amp;A</a>
     <header class="qa-d-head">
       <div class="qa-brand">
         <a href="/" class="qa-brand-link" title="Partpedia — Beranda" aria-label="Partpedia beranda">
