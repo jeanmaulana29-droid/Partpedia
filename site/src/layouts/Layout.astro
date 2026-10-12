@@ -307,6 +307,7 @@ const showHomeHreflang = isHomeId || isHomeEn;
           <a class="lang-btn" id="lang-toggle" href={lang === "id" ? "/en/" : "/"} aria-label="Language">{lang === "id" ? "EN" : "ID"}</a>
         </div>
         <nav class="nav" aria-label="Main menu">
+          <a href={lang === "en" ? "/en/" : "/"} data-i18n="nav_home">Beranda</a>
           <a href="/#catalog" data-i18n="nav_catalog">Katalog</a>
           <a href="/knowledge/" data-i18n="nav_knowledge">Knowledge</a>
           <a href="/tools/" data-i18n="nav_tools">Smart Tools</a>
@@ -340,6 +341,7 @@ const showHomeHreflang = isHomeId || isHomeEn;
       
       const dict = {
         en: {
+          nav_home: "Home",
           nav_catalog: "Catalog",
           nav_knowledge: "Knowledge",
           nav_tools: "Smart Tools",
@@ -371,6 +373,7 @@ const showHomeHreflang = isHomeId || isHomeEn;
           insights_read: "Read article →",
         },
         id: {
+          nav_home: "Beranda",
           nav_catalog: "Katalog",
           nav_knowledge: "Knowledge",
           nav_tools: "Smart Tools",
