@@ -21,11 +21,11 @@ const PAGE_SIZE = 100;
 const listPage = idx >= 0 ? Math.floor(idx / PAGE_SIZE) + 1 : 1;
 const listHref = listPage > 1 ? `/qa/?page=${listPage}` : `/qa/`;
 
-/* questionEn aktif: pakai EN bila ada, fallback ke question (ID) */
-const displayTitle = (item.questionEn && String(item.questionEn).trim())
-  ? String(item.questionEn).trim()
-  : item.question;
+/* Dua bahasa: question (ID) selalu tampil; questionEn (EN) tambahan bila ada */
 const hasEn = !!(item.questionEn && String(item.questionEn).trim());
+const questionEn = hasEn ? String(item.questionEn).trim() : "";
+/* Schema/title SEO: EN jika ada (global search), visual H1 tetap ID */
+const seoTitle = questionEn || item.question;
 
 const site = "https://www.klikpartpedia.com";
 const pageUrl = `${site}/qa/${item.slug}/`;
@@ -45,14 +45,14 @@ const jsonLd = {
       "@type": "QAPage",
       "@id": `${pageUrl}#page`,
       url: pageUrl,
-      name: displayTitle,
+      name: seoTitle,
       inLanguage: hasEn ? ["en", "id"] : "id",
       isPartOf: { "@type": "WebSite", name: "Partpedia", url: site },
       mainEntity: {
         "@type": "Question",
         "@id": `${pageUrl}#question`,
-        name: displayTitle,
-        text: displayTitle,
+        name: seoTitle,
+        text: seoTitle,
         answerCount: 1,
         author: authorOrg,
         acceptedAnswer: {
@@ -76,13 +76,13 @@ const jsonLd = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
         { "@type": "ListItem", position: 2, name: "Industrial Q&A", item: `${site}/qa/` },
-        { "@type": "ListItem", position: 3, name: displayTitle, item: pageUrl },
+        { "@type": "ListItem", position: 3, name: item.question, item: pageUrl },
       ],
     },
   ],
 };
 
-const title = `${displayTitle} | Industrial Q&A Partpedia`;
+const title = `${seoTitle} | Industrial Q&A Partpedia`;
 const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial maintenance Q&A · Partpedia`;
 ---
 <Layout title={title} description={description} jsonLd={jsonLd}>
@@ -98,7 +98,8 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
         </a>
       </div>
       <p class="kicker">Insight · Industrial Q&amp;A</p>
-      <h1>{displayTitle}</h1>
+      <h1>{item.question}</h1>
+      {hasEn ? <p class="qa-q-en">{questionEn}</p> : null}
     </header>
 
     <div class="qa-answer card-border">
@@ -121,13 +122,13 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
       {prev ? (
         <a class="pager-link" href={`/qa/${prev.slug}/`}>
           <span class="pager-label">Previous</span>
-          <span class="pager-q">{(prev.questionEn && String(prev.questionEn).trim()) ? prev.questionEn : prev.question}</span>
+          <span class="pager-q">{prev.question}</span>
         </a>
       ) : <span />}
       {next ? (
         <a class="pager-link next" href={`/qa/${next.slug}/`}>
           <span class="pager-label">Next</span>
-          <span class="pager-q">{(next.questionEn && String(next.questionEn).trim()) ? next.questionEn : next.question}</span>
+          <span class="pager-q">{next.question}</span>
         </a>
       ) : <span />}
     </nav>
@@ -171,6 +172,13 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--teal);
+    }
+    .qa-q-en {
+      margin: 0.5rem 0 0;
+      font-size: 1.05rem;
+      line-height: 1.45;
+      font-weight: 500;
+      color: #93c5fd;
     }
     .qa-d-head h1 {
       margin: 0 0 1.25rem;

@@ -91,7 +91,6 @@ const jsonLd = {
     <div class="qa-list" id="qa-list" role="list">
       {items.map((it, i) => {
         const qEn = (it.questionEn && String(it.questionEn).trim()) ? String(it.questionEn).trim() : "";
-        const displayQ = qEn || it.question;
         const blob = [it.question, qEn, it.answer, it.source, it.slug]
           .filter(Boolean)
           .join(" ")
@@ -107,7 +106,10 @@ const jsonLd = {
             data-num={num}
           >
             <span class="qa-num">{String(num).padStart(2, "0")}</span>
-            <span class="qa-q">{displayQ}</span>
+            <span class="qa-q-wrap">
+              <span class="qa-q">{it.question}</span>
+              {qEn ? <span class="qa-q-en">{qEn}</span> : null}
+            </span>
             <span class="qa-go" aria-hidden="true">→</span>
           </a>
         );
@@ -421,6 +423,22 @@ const jsonLd = {
       line-height: 1.4;
       color: var(--ink);
     }
+    .qa-q-wrap {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .qa-q-en {
+      display: block;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      font-weight: 500;
+      color: #93c5fd;
+      opacity: 0.95;
+    }
+
     .qa-go {
       font-size: 1.15rem;
       color: var(--amber);
