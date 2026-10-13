@@ -33,6 +33,7 @@ export function loadAllQa() {
       id: Number(it.id) || 0,
       slug: String(it.slug),
       question: String(it.question).trim(),
+      questionEn: String(it.questionEn || "").trim(),
       answer: String(it.answer || "").trim(),
       source: String(it.source || "").trim(),
     });
@@ -55,6 +56,7 @@ export function loadAllQa() {
         id: prev?.id || 0,
         slug,
         question: parsed.question,
+        questionEn: prev?.questionEn || "",
         answer: parsed.answer,
         source: parsed.source || prev?.source || "",
       });
