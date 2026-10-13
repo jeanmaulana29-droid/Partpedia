@@ -10,7 +10,7 @@ const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
 // FAQPage: up to 40 items for rich-result friendliness (all pages still indexed individually)
 const faqMainEntity = items.slice(0, 40).map((it) => ({
   "@type": "Question",
-  name: it.question,
+  name: (it.questionEn && String(it.questionEn).trim()) ? String(it.questionEn).trim() : it.question,
   acceptedAnswer: {
     "@type": "Answer",
     text: String(it.answer || "").replace(/\s+/g, " ").trim().slice(0, 5000),
@@ -90,7 +90,9 @@ const jsonLd = {
 
     <div class="qa-list" id="qa-list" role="list">
       {items.map((it, i) => {
-        const blob = [it.question, it.answer, it.source, it.slug]
+        const qEn = (it.questionEn && String(it.questionEn).trim()) ? String(it.questionEn).trim() : "";
+        const displayQ = qEn || it.question;
+        const blob = [it.question, qEn, it.answer, it.source, it.slug]
           .filter(Boolean)
           .join(" ")
           .toLowerCase();
@@ -105,7 +107,7 @@ const jsonLd = {
             data-num={num}
           >
             <span class="qa-num">{String(num).padStart(2, "0")}</span>
-            <span class="qa-q">{it.question}</span>
+            <span class="qa-q">{displayQ}</span>
             <span class="qa-go" aria-hidden="true">→</span>
           </a>
         );

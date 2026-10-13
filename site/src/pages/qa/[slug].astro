@@ -21,6 +21,12 @@ const PAGE_SIZE = 100;
 const listPage = idx >= 0 ? Math.floor(idx / PAGE_SIZE) + 1 : 1;
 const listHref = listPage > 1 ? `/qa/?page=${listPage}` : `/qa/`;
 
+/* questionEn aktif: pakai EN bila ada, fallback ke question (ID) */
+const displayTitle = (item.questionEn && String(item.questionEn).trim())
+  ? String(item.questionEn).trim()
+  : item.question;
+const hasEn = !!(item.questionEn && String(item.questionEn).trim());
+
 const site = "https://www.klikpartpedia.com";
 const pageUrl = `${site}/qa/${item.slug}/`;
 const answerPlain = String(item.answer || "").replace(/\s+/g, " ").trim();
@@ -39,14 +45,14 @@ const jsonLd = {
       "@type": "QAPage",
       "@id": `${pageUrl}#page`,
       url: pageUrl,
-      name: item.question,
-      inLanguage: "id",
+      name: displayTitle,
+      inLanguage: hasEn ? ["en", "id"] : "id",
       isPartOf: { "@type": "WebSite", name: "Partpedia", url: site },
       mainEntity: {
         "@type": "Question",
         "@id": `${pageUrl}#question`,
-        name: item.question,
-        text: item.question,
+        name: displayTitle,
+        text: displayTitle,
         answerCount: 1,
         author: authorOrg,
         acceptedAnswer: {
@@ -70,13 +76,13 @@ const jsonLd = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
         { "@type": "ListItem", position: 2, name: "Industrial Q&A", item: `${site}/qa/` },
-        { "@type": "ListItem", position: 3, name: item.question, item: pageUrl },
+        { "@type": "ListItem", position: 3, name: displayTitle, item: pageUrl },
       ],
     },
   ],
 };
 
-const title = `${item.question} | Industrial Q&A Partpedia`;
+const title = `${displayTitle} | Industrial Q&A Partpedia`;
 const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial maintenance Q&A · Partpedia`;
 ---
 <Layout title={title} description={description} jsonLd={jsonLd}>
@@ -92,7 +98,7 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
         </a>
       </div>
       <p class="kicker">Insight · Industrial Q&amp;A</p>
-      <h1>{item.question}</h1>
+      <h1>{displayTitle}</h1>
     </header>
 
     <div class="qa-answer card-border">
@@ -115,13 +121,13 @@ const description = `${desc}${desc.length >= 155 ? "…" : ""} — Industrial ma
       {prev ? (
         <a class="pager-link" href={`/qa/${prev.slug}/`}>
           <span class="pager-label">Previous</span>
-          <span class="pager-q">{prev.question}</span>
+          <span class="pager-q">{(prev.questionEn && String(prev.questionEn).trim()) ? prev.questionEn : prev.question}</span>
         </a>
       ) : <span />}
       {next ? (
         <a class="pager-link next" href={`/qa/${next.slug}/`}>
           <span class="pager-label">Next</span>
-          <span class="pager-q">{next.question}</span>
+          <span class="pager-q">{(next.questionEn && String(next.questionEn).trim()) ? next.questionEn : next.question}</span>
         </a>
       ) : <span />}
     </nav>
