@@ -1,3 +1,9 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/convert/convert-index", "destination": "/convert/", "permanent": true },
+    { "source": "/convert/convert-index/", "destination": "/convert/", "permanent": true },
+    { "source": "/tools/tools-index", "destination": "/tools/", "permanent": true },
+    { "source": "/tools/tools-index/", "destination": "/tools/", "permanent": true }
+  ]
 }
