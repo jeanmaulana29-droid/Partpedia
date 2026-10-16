@@ -1,12 +1,14 @@
 ---
 interface Props {
   title: string;
+  /** true = noindex,nofollow (halaman sesi/hasil) */
+  noindex?: boolean;
   description: string;
   jsonLd?: Record<string, unknown>;
   /** Page language for <html lang> and hreflang pairing (phase 1: id | en) */
   lang?: "id" | "en";
 }
-const { title, description, jsonLd, lang = "id" } = Astro.props;
+const { title, description, jsonLd, lang = "id", noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const siteOrigin = Astro.site ? new URL(Astro.site).origin : "https://www.klikpartpedia.com";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
@@ -53,7 +55,7 @@ const showHomeHreflang = isHomeId || isHomeEn;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL("/og-default.png", Astro.site).toString()} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
