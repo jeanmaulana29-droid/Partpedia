@@ -1,0 +1,287 @@
+Alur Proses Manufaktur: Dari PO Customer, TDC dan Sales Order hingga Produksi dan Pengiriman
+
+Di perusahaan manufaktur, pesanan pelanggan tidak boleh langsung diterjemahkan menjadi instruksi produksi hanya karena Purchase Order (PO) sudah diterima Marketing. PO merupakan dokumen permintaan komersial customer. Sebelum pabrik menjalankan produksi, perusahaan harus memastikan apa yang dipesan, standar teknis yang berlaku, kemampuan memenuhi kuantitas dan tanggal kirim, ketersediaan material, kapasitas mesin, serta persyaratan inspeksi dan pengiriman.
+
+Alur yang baik menghubungkan Marketing/Sales, Technical atau Engineering, Quality Control (QC), Production Planning and Inventory Control (PPIC), Purchasing, Gudang, Produksi, Quality Assurance (QA), serta Gudang Barang Jadi dan Logistik. Nama departemen bisa berbeda, tetapi titik kendalinya sama: persyaratan order harus ditinjau, spesifikasi harus jelas, rencana harus realistis, proses harus dikendalikan, produk harus dinyatakan memenuhi syarat, dan pengiriman harus dapat ditelusuri.
+
+Istilah TDC dalam artikel ini berarti Technical Data Confirmation, yaitu konfirmasi data teknis sebagaimana digunakan oleh sebagian perusahaan. TDC bukan nama dokumen universal yang wajib digunakan semua industri. Perusahaan lain bisa memakai technical specification sheet, persetujuan drawing, customer specification approval, atau formulir order technical review. Yang wajib dijaga bukan nama formulirnya, melainkan bukti bahwa persyaratan teknis telah diperiksa dan disepakati sebelum produksi.
+
+Gambaran Besar Alur Order hingga Pengiriman
+
+Alur umum manufaktur berbasis pesanan adalah:
+
+1.  Marketing menerima inquiry atau permintaan penawaran.
+2.  Kebutuhan customer dikumpulkan dan diklarifikasi.
+3.  Perusahaan menerbitkan quotation atau penawaran.
+4.  PO customer diterima dan diperiksa terhadap quotation serta
+kesepakatan.
+5.  Order review dilakukan untuk menilai kelayakan teknis, komersial,
+material, kapasitas, mutu, dan tanggal kirim.
+6.  Persyaratan teknis dikonfirmasi melalui TDC atau dokumen teknis yang
+berlaku.
+7.  Sales Order (SO) dibuat atau dikonfirmasi di sistem internal.
+8.  PPIC memeriksa stok, kebutuhan material, kapasitas, lead time, dan
+prioritas order.
+9.  Production Schedule disusun dan kebutuhan material yang belum
+tersedia diteruskan ke Purchasing.
+10. Gudang menyiapkan material dengan identitas dan status yang benar.
+11. Production Order atau Work Order dilepas ke lantai produksi.
+12. Produksi dijalankan dengan pengendalian proses dan pencatatan hasil.
+13. QC memeriksa produk berdasarkan standar dan kriteria penerimaan.
+14. Produk yang lulus dilepas ke gudang barang jadi; produk tidak sesuai
+dikendalikan.
+15. Gudang dan Logistik menyiapkan packing, label, dokumen, kendaraan,
+serta pengiriman.
+16. Barang dikirim, bukti serah terima disimpan, dan status order
+diperbarui.
+17. Administrasi penagihan, tindak lanjut penerimaan, dan penutupan
+order dilakukan sesuai prosedur.
+
+Urutan ini adalah model umum, bukan urutan kaku untuk semua pabrik. Produk standar yang sudah tersedia di gudang bisa dipenuhi tanpa produksi baru. Pada sistem make-to-stock, pabrik membuat barang berdasarkan forecast dan kebijakan stok; PO customer dipenuhi dari persediaan yang sesuai. Pada sistem make-to-order, produksi umumnya direncanakan setelah order dikonfirmasi. Produk baru atau custom mungkin membutuhkan kajian engineering, sampel, uji coba, dan persetujuan customer sebelum produksi rutin.
+
+Marketing Menerima Inquiry dan Mengidentifikasi Kebutuhan
+
+Sebelum PO diterbitkan, Marketing atau Sales biasanya menerima inquiry, permintaan harga, forecast, atau pertanyaan tentang ketersediaan. Tahap ini menentukan apakah perusahaan memahami kebutuhan customer secara benar. Kesalahan data pada awal proses dapat merambat ke quotation, SO, jadwal, produksi, dan pengiriman.
+
+Informasi yang perlu dikumpulkan mencakup identitas customer, kode dan nama produk, material atau grade, dimensi, toleransi, kuantitas, satuan, persyaratan kualitas, kemasan, label, alamat pengiriman, tanggal dibutuhkan, cara pengiriman, ketentuan pembayaran, dan dokumen yang diwajibkan. Untuk produk industri, persyaratan dapat mencakup standar material, sertifikat, hasil inspeksi, traceability, batasan cacat, atau ketentuan proses khusus.
+
+Marketing tidak boleh mengisi data teknis berdasarkan tebakan. Jika kode, istilah, toleransi, atau revisi gambar tidak jelas, minta klarifikasi. Bila spesifikasi customer telah disimpan, pastikan revisi yang digunakan masih berlaku. Menyalin order lama tanpa memeriksa perubahan dokumen merupakan sumber kesalahan yang dapat dicegah.
+
+Permintaan juga perlu diklasifikasikan: produk standar, produk modifikasi, atau produk baru. Produk standar dapat diperiksa terhadap katalog dan stok. Produk modifikasi memerlukan kajian dampak perubahan. Produk baru dapat memerlukan kajian engineering, persetujuan drawing, sampel awal, trial, atau validasi proses sebelum produksi massal.
+
+Quotation dan Komitmen Komersial
+
+Setelah kebutuhan dipahami, perusahaan menyiapkan quotation. Penawaran yang baik tidak hanya memuat harga per unit, tetapi juga kode produk, spesifikasi yang ditawarkan, jumlah, mata uang, pajak, masa berlaku harga, lead time, lokasi penyerahan, biaya pengiriman, ketentuan pembayaran, kemasan, dan asumsi atau pengecualian yang relevan.
+
+Tanggal kirim yang ditawarkan harus mempertimbangkan kondisi operasional. PPIC atau fungsi terkait perlu dilibatkan jika pesanan membutuhkan produksi baru, material impor, tooling khusus, atau kapasitas mesin yang terbatas. Marketing tidak seharusnya menjanjikan tanggal kirim hanya karena customer memintanya. Komitmen yang tidak didukung material dan kapasitas akan menjadi keterlambatan di kemudian hari.
+
+Jika penawaran berbeda dari permintaan awal, perbedaannya harus dijelaskan dan diterima customer secara tertulis. Kesepakatan lisan tidak cukup untuk aspek yang menentukan fungsi dan mutu produk. Quotation dan klarifikasi yang disetujui nantinya menjadi acuan ketika PO ditinjau.
+
+PO Customer Diterima dan Diperiksa
+
+Ketika PO diterima, Marketing atau Sales Order Administration memeriksa apakah isinya sesuai dengan quotation, hasil negosiasi, dan persyaratan yang disepakati. PO bukan otomatis berarti semua hal sudah benar dan order siap diproduksi.
+
+Pemeriksaan minimum mencakup nomor dan tanggal PO, identitas customer, alamat tagihan dan pengiriman, kode produk, spesifikasi, kuantitas, harga, mata uang, pajak, tanggal kirim, syarat pembayaran, kemasan, dokumen yang diminta, serta ketentuan khusus. Pastikan pula bahwa PO mengacu pada quotation dan revisi spesifikasi yang benar.
+
+Jika ada perbedaan—misalnya harga tidak sesuai, dimensi berbeda, kuantitas berubah, atau tanggal kirim tidak realistis—order harus diklarifikasi sebelum dilepas. Perubahan dicatat melalui revisi PO, konfirmasi tertulis, atau mekanisme perubahan order yang berlaku. Jangan menganggap perbedaan kecil boleh diabaikan karena data PO menjadi dasar transaksi, penjadwalan, dan penanganan klaim.
+
+Perusahaan juga perlu memeriksa status kredit, uang muka, batas kredit, atau persetujuan komersial khusus jika diwajibkan oleh kebijakan dan kontrak. Setelah PO diperiksa, order masuk ke tahap order review.
+
+Order Review sebagai Gerbang Sebelum Produksi
+
+Order review adalah peninjauan untuk memastikan perusahaan mampu memenuhi persyaratan sebelum mengambil komitmen operasional. Pada perusahaan kecil, peninjauan mungkin dilakukan oleh beberapa orang yang merangkap fungsi. Pada pabrik besar, proses ini dapat melibatkan Marketing, Engineering, QC/QA, PPIC, Purchasing, Produksi, Finance, dan
+Logistik.
+
+Pertanyaan yang harus dijawab: - Apakah persyaratan customer lengkap dan tidak saling bertentangan? - Apakah produk dan proses yang diminta berada dalam kemampuan teknis perusahaan? - Apakah material tersedia atau dapat diperoleh tepat waktu? - Apakah mesin, tooling, tenaga kerja, dan kapasitas tersedia? - Apakah standar inspeksi dan bukti mutu sudah jelas? - Apakah tanggal kirim realistis? - Apakah syarat komersial telah memenuhi kebijakan perusahaan? - Apakah ada risiko khusus yang memerlukan persetujuan manajemen?
+
+Hasil review harus jelas: order diterima, diterima dengan syarat atau klarifikasi, atau belum dapat diterima sampai masalah diselesaikan. Catatan harus menunjukkan siapa yang meninjau dan dokumen apa yang menjadi acuan. Order review bukan rapat formalitas; fungsinya mencegah perusahaan menjanjikan sesuatu yang tidak mampu dibuat atau dikirim.
+
+TDC dan Konfirmasi Standar Produk
+
+TDC atau Technical Data Confirmation, jika digunakan perusahaan, memastikan data teknis yang menjadi dasar produksi sudah benar dan disetujui. Isinya dapat mencakup kode produk, material atau grade, ketebalan, lebar, panjang, toleransi, kondisi permukaan, sifat mekanis, standar rujukan, kebutuhan proses lanjutan, metode pengujian, kriteria penerimaan, penandaan, kemasan, serta persyaratan khusus customer.
+
+TDC sangat penting untuk produk custom, produk baru, produk dengan banyak varian, atau produk yang spesifikasinya sering berubah. Untuk produk katalog yang stabil, konfirmasi dapat mengacu pada spesifikasi induk yang telah disahkan selama PO tidak menetapkan persyaratan berbeda. Perusahaan tidak wajib menggunakan nama TDC, tetapi harus memiliki cara terkendali untuk menetapkan persyaratan produk.
+
+Ada tiga sumber persyaratan yang perlu dibedakan. Pertama, persyaratan customer dalam PO, gambar, spesifikasi, atau kontrak. Kedua, standar eksternal yang disebutkan, misalnya standar material atau pengujian. Ketiga, standar internal perusahaan seperti control plan, parameter proses, dan batas penerimaan. Jika ketiganya bertentangan, konflik harus diselesaikan oleh pihak berwenang sebelum produksi. Operator tidak boleh memilih sendiri standar mana yang akan diikuti.
+
+Dokumen teknis harus memiliki identitas dan nomor revisi. Jika customer mengubah spesifikasi, perusahaan perlu menilai dampaknya terhadap material yang telah dibeli, produk yang sedang diproses, jadwal, biaya, dan barang yang telah jadi. Versi lama harus dicegah dari penggunaan tidak sengaja. Perubahan yang memengaruhi fungsi atau mutu dapat membutuhkan persetujuan ulang, sampel, atau uji coba.
+
+Menetapkan Standar dan Dokumen Acuan Produksi
+
+Setelah persyaratan dikonfirmasi, semua fungsi harus memakai standar yang sama. Dokumen acuan dapat berupa spesifikasi produk, drawing, Bill of Materials (BOM), routing proses, work instruction, control plan, inspection standard, dan packing standard. Tidak semua produk memerlukan seluruh dokumen tersebut, tetapi dokumen yang relevan harus tersedia sebelum proses terkait dimulai.
+
+BOM mencatat bahan dan komponen yang dibutuhkan. Routing menjelaskan urutan operasi atau pusat kerja. Work instruction menerangkan cara kerja. Control plan menetapkan karakteristik yang dikendalikan, metode pemeriksaan, frekuensi, dan respons jika hasil tidak sesuai. Dokumen-dokumen ini menghubungkan persyaratan customer dengan kegiatan nyata di lantai produksi.
+
+Spesifikasi produk perlu dibedakan dari parameter proses. Spesifikasi menjelaskan hasil yang harus dicapai, misalnya dimensi atau sifat material. Parameter proses menjelaskan kondisi yang digunakan untuk menghasilkan hasil tersebut, seperti kecepatan, tekanan, temperatur, atau setting mesin. Parameter proses harus didasarkan pada pengetahuan proses dan pengendalian yang disahkan; parameter tidak menggantikan kriteria penerimaan produk.
+
+Jika produk membutuhkan desain atau pengembangan baru, engineering dapat melakukan review, verifikasi, validasi, uji coba, dan persetujuan customer sesuai kebutuhan. Jika perusahaan hanya memproduksi sesuai gambar customer, tanggung jawab desain perlu dibedakan dari tanggung jawab proses manufaktur.
+
+Sales Order Dibuat dan Dilepas
+
+Sales Order (SO) adalah catatan internal perusahaan atas pesanan customer. SO biasanya dibuat setelah PO ditinjau, walaupun urutan administratif dapat berbeda menurut sistem ERP dan prosedur perusahaan. SO menerjemahkan permintaan customer menjadi data yang bisa diproses fungsi internal.
+
+SO umumnya memuat nomor SO, nomor PO customer, identitas customer, kode dan deskripsi produk, kuantitas, harga, tanggal order, tanggal kirim yang disepakati, alamat pengiriman, syarat pembayaran, dan referensi dokumen teknis. SO harus terhubung dengan revisi spesifikasi yang benar. Jika perusahaan menggunakan ERP, data sebaiknya dimasukkan sekali dan digunakan lintas fungsi daripada diketik ulang di banyak formulir.
+
+SO harus dibedakan dari Production Order atau Work Order. SO mencatat kewajiban komersial terhadap customer. Production Order/Work Order menginstruksikan pembuatan produk dengan routing, material, jumlah, dan target tertentu. SO tidak selalu berarti produksi langsung dimulai: order bisa dipenuhi dari stok barang jadi, dijadwalkan untuk produksi, atau menunggu material dan persetujuan teknis.
+
+Sebelum SO diteruskan ke PPIC, status order harus jelas dan perubahan terakhir telah dicatat. Jika PO direvisi setelah SO dibuat, perubahan tidak boleh hanya disampaikan lewat pesan informal tanpa memperbarui dokumen dan sistem resmi.
+
+PPIC Memeriksa Stok, Material, Kapasitas, dan Lead Time
+
+PPIC menghubungkan permintaan penjualan dengan kemampuan produksi dan persediaan. PPIC tidak sekadar memasukkan order ke kalender. PPIC harus menentukan apa yang perlu dibuat, berapa jumlahnya, kapan dibutuhkan, material apa yang tersedia, serta apakah kapasitas mesin dan tenaga kerja mencukupi.
+
+Pertama, PPIC memeriksa stok barang jadi yang memenuhi spesifikasi. Barang yang namanya mirip belum tentu dapat digunakan jika grade, dimensi, kondisi permukaan, revisi, atau status mutunya berbeda. Status stok juga perlu diperiksa: tersedia, dialokasikan untuk order lain, karantina, atau belum dilepas QC.
+
+Jika stok tidak cukup, PPIC menghitung kebutuhan produksi. Perhitungan dapat menggunakan BOM, kebutuhan bersih material, stok yang dapat dipakai, pesanan pembelian yang masih berjalan, yield atau scrap yang wajar, dan ukuran lot. Sistem Material Requirements Planning (MRP) membantu menghitung kebutuhan material serta waktu pemesanan berdasarkan permintaan, BOM, stok, dan lead time. Namun, hasil MRP harus diperiksa terhadap akurasi data dan kondisi aktual.
+
+PPIC juga memeriksa kapasitas: jam mesin, waktu setup, kecepatan proses, bottleneck, tenaga kerja, tooling, waktu perawatan, dan pekerjaan lain yang sudah terjadwal. Jadwal berdasarkan jumlah ton atau unit saja tanpa memperhitungkan bottleneck mungkin terlihat bagus di spreadsheet tetapi gagal di lantai produksi.
+
+Production Schedule Disusun dan Disepakati
+
+Production Schedule menentukan order mana yang dikerjakan, di mesin atau lini mana, dalam urutan apa, berapa jumlahnya, dan kapan mulai serta selesai. Banyak perusahaan membuat jadwal harian atau mingguan, dengan rencana jangka lebih panjang sebagai dasar perencanaan kapasitas dan material.
+
+PPIC mempertimbangkan tanggal kirim, ketersediaan material, waktu proses, waktu setup, kapasitas work center, ukuran batch, prioritas order, waktu inspeksi, serta waktu packing dan pengiriman. Urutan produksi dapat dipengaruhi efisiensi changeover, jenis material, dimensi, warna atau coating, dan risiko kontaminasi. Efisiensi urutan tidak boleh mengalahkan persyaratan keselamatan dan mutu.
+
+Tanggal selesai produksi harus dibedakan dari tanggal kirim customer. Produk yang selesai diproses mungkin masih membutuhkan inspeksi akhir, pelepasan QC, pengemasan, dokumen, pemesanan kendaraan, dan waktu perjalanan. Semua aktivitas itu harus diperhitungkan dalam rencana, bukan dianggap bisa selesai seketika.
+
+Jadwal harus realistis dan dikomunikasikan. Produksi perlu mengetahui prioritas; Gudang kapan material harus tersedia; Purchasing kapan material harus tiba; QC kapan inspeksi diperlukan; dan Logistik kapan barang siap dimuat. Jika ada gangguan mesin, material terlambat, hasil tidak sesuai, atau order mendesak, perubahan jadwal harus dikendalikan. PPIC menilai dampaknya terhadap order lain dan mengomunikasikan revisi, bukan membiarkan setiap departemen mengubah urutan sendiri.
+
+Dalam sistem perencanaan, Master Production Schedule (MPS) menetapkan produk akhir dan kuantitas pada horizon tertentu, sedangkan MRP menghitung kebutuhan material. Perencanaan kapasitas membantu menguji kelayakan beban kerja. Pabrik kecil mungkin tidak memakai semua istilah ini secara formal, tetapi tetap harus menyesuaikan permintaan, material, kapasitas, dan waktu.
+
+Purchasing dan Kesiapan Material
+
+Jika material tidak tersedia, Purchasing melakukan pengadaan berdasarkan kebutuhan yang telah diverifikasi. Dokumen dapat mencakup purchase requisition, permintaan penawaran ke pemasok, PO pemasok, dan konfirmasi tanggal kedatangan. Spesifikasi pembelian harus sesuai dengan kebutuhan produksi; deskripsi terlalu umum dapat membuat material yang datang tidak cocok.
+
+Purchasing dan PPIC memantau tanggal kedatangan, bukan sekadar tanggal PO diterbitkan. Untuk material kritis, perusahaan dapat meminta konfirmasi pemasok, memantau kapasitas pemasok, atau menyiapkan alternatif yang sudah disetujui. Mengganti grade, sumber material, atau ukuran tanpa persetujuan teknis dapat merusak kesesuaian produk dan melanggar persyaratan customer.
+
+Saat material tiba, Gudang melakukan penerimaan administratif dan fisik. Pemeriksaan dapat meliputi identitas, jumlah, label, kondisi kemasan, kerusakan, sertifikat material, dan dokumen yang diwajibkan. QC atau fungsi berwenang menentukan apakah material perlu inspeksi dan boleh digunakan. Material yang belum lolos harus dipisahkan atau diberi status yang mencegah pemakaian tidak sengaja.
+
+Akurasi stok adalah syarat jadwal yang dapat dipercaya. Material yang tercatat tersedia tetapi secara fisik tidak ada, salah lokasi, rusak, atau sudah dialokasikan akan membuat rencana gagal. Transaksi keluar-masuk, pemakaian, sisa material, dan identitas lot perlu dicatat sesuai sistem.
+
+Production Order dan Persiapan Lantai Produksi
+
+Setelah jadwal disetujui dan material siap, fungsi perencanaan menerbitkan Production Order atau Work Order. Dokumen ini harus menjelaskan produk yang dibuat, jumlah, material, urutan proses, target waktu, dan standar yang berlaku.
+
+Paket dokumen dapat mencakup referensi SO, drawing dan revisi, BOM, routing, work instruction, parameter proses yang disahkan, inspection plan, serta instruksi khusus. Operator harus dapat mengidentifikasi material dan memastikan dokumen di tempat kerja adalah versi terkini. Jika instruksi, label material, dan data sistem tidak cocok, pekerjaan harus dihentikan pada titik aman dan diklarifikasi.
+
+Sebelum mesin dijalankan, supervisor atau personel yang ditunjuk memeriksa kesiapan mesin, tooling, alat ukur, material, kompetensi operator, kondisi keselamatan, dan dokumen. Untuk produk atau proses baru, first-piece inspection, trial, atau persetujuan sampel dapat diperlukan sebelum produksi massal diteruskan. Kebutuhan ini harus ditentukan oleh risiko dan prosedur, bukan dilakukan asal-asalan.
+
+Produksi Berjalan dan Hasil Dipantau
+
+Operator menjalankan proses sesuai instruksi dan parameter yang ditetapkan. Supervisor memantau output, waktu, downtime, scrap, rework, pemakaian material, dan kendala. Hasil aktual dicatat agar PPIC dapat membandingkan realisasi dengan jadwal dan mengambil keputusan berbasis data.
+
+QC proses atau personel yang ditugaskan memeriksa karakteristik sesuai control plan. Frekuensi pemeriksaan dapat berupa pemeriksaan awal, berkala, setiap lot, atau 100 persen untuk karakteristik tertentu, bergantung pada persyaratan dan risiko. Catatan harus menyebutkan hasil aktual dan status penerimaan, bukan hanya tanda centang tanpa bukti yang diperlukan.
+
+Jika ditemukan produk tidak sesuai, produk harus diidentifikasi dan dikendalikan agar tidak tercampur dengan produk baik. Pihak berwenang menentukan disposisi sesuai prosedur: rework, repair bila diperbolehkan, penggunaan melalui konsesi yang disetujui, downgrade, scrap, atau pemeriksaan tambahan. Penyebab masalah perlu ditelusuri terutama bila masalah berulang atau berpotensi memengaruhi banyak produk.
+
+Perubahan kondisi mesin atau proses juga perlu dinilai. Gangguan listrik, pergantian tooling, pergantian lot material, perubahan setting, atau perawatan dapat menjadi pemicu pemeriksaan ulang sesuai risiko. Tujuannya bukan menambah formulir tanpa manfaat, melainkan mencegah produk setelah perubahan proses lolos tanpa verifikasi yang memadai.
+
+Inspeksi Akhir dan Pelepasan Produk oleh QC
+
+Setelah produksi selesai, produk diperiksa berdasarkan persyaratan yang ditetapkan. Pemeriksaan dapat mencakup dimensi, penampilan permukaan, fungsi, sifat mekanis, berat, jumlah, identitas, label, atau dokumen uji. Metode sampling dan kriteria penerimaan harus mengikuti spesifikasi customer, standar yang berlaku, dan prosedur inspeksi yang disetujui.
+
+QC tidak boleh mengubah kriteria penerimaan hanya agar target pengiriman tercapai. Jika hasil tidak memenuhi syarat, status produk ditahan sampai ada keputusan yang sah. Produk yang memenuhi persyaratan dan dokumentasinya lengkap dapat dilepas oleh personel yang berwenang. Gudang tidak boleh mengirim produk hanya karena mendapat informasi lisan bahwa produksi sudah selesai.
+
+Untuk produk yang membutuhkan traceability, catatan harus menghubungkan produk jadi dengan order, lot atau batch, material, proses, hasil pemeriksaan, dan dokumen relevan. Tingkat ketertelusuran mengikuti kebutuhan industri, persyaratan customer, peraturan, dan sistem perusahaan. Jika muncul komplain, data ini membantu menentukan produk mana yang terdampak.
+
+QC dan QA juga perlu dibedakan. QC melakukan atau mengelola pemeriksaan produk dan proses sesuai pembagian tugas. QA memastikan sistem, prosedur, audit, pengendalian dokumen, dan efektivitas proses mutu. Struktur perusahaan bisa berbeda, tetapi kewenangan pelepasan harus jelas.
+
+Gudang Barang Jadi, Packing, dan Persiapan Pengiriman
+
+Setelah produk dilepas, barang dipindahkan ke gudang barang jadi dan dicatat dalam sistem. Gudang menjaga identitas order, kuantitas, lokasi, status QC, dan aturan penyimpanan. Produk untuk order tertentu perlu dialokasikan agar tidak tertukar dengan order lain atau diambil melebihi jumlah yang diizinkan.
+
+Packing harus sesuai dengan karakteristik produk, cara angkut, penyimpanan, dan persyaratan customer. Periksa perlindungan terhadap benturan, kelembapan, korosi, goresan, pergeseran, atau kontaminasi jika relevan. Label dapat mencantumkan kode produk, kuantitas, nomor order, lot, berat, tujuan, instruksi penanganan, dan informasi traceability. Label harus konsisten dengan produk dan dokumen.
+
+Sebelum muat, Gudang dan Logistik memverifikasi jumlah, identitas, kondisi kemasan, kendaraan, pengamanan muatan, dan dokumen. Untuk produk berat, coil, sheet, bar, komponen besar, atau barang sensitif, cara penempatan dan pengikatan harus sesuai aturan keselamatan dan karakteristik barang. Target pengiriman cepat tidak membenarkan pemuatan yang tidak aman.
+
+Dokumen pengiriman dapat mencakup surat jalan, packing list, delivery order, dokumen transportasi, faktur atau dokumen pajak sesuai proses perusahaan, sertifikat material atau hasil inspeksi, serta dokumen khusus customer. Data jumlah dan identitas harus konsisten di semua dokumen.
+
+Pengiriman dan Penutupan Order
+
+Setelah pemeriksaan muat selesai, barang dikirim ke alamat dan jadwal yang disepakati. Logistik memantau keberangkatan dan status perjalanan sesuai kebutuhan. Ketika barang diterima customer, perusahaan menyimpan bukti serah terima atau proof of delivery, termasuk catatan kekurangan, kerusakan, penolakan, atau catatan lainnya.
+
+Status pengiriman diperbarui agar Marketing, Customer Service, Finance, dan customer memiliki informasi yang sama. Jika pengiriman parsial, kuantitas yang sudah dikirim dan saldo yang masih harus dipenuhi harus tercatat. Jangan menutup order hanya karena satu kendaraan telah berangkat jika kewajiban pada SO belum seluruhnya dipenuhi.
+
+Administrasi setelah pengiriman dapat mencakup penerbitan faktur, pengiriman dokumen, pemantauan pembayaran, dan tindak lanjut penerimaan customer. Keluhan yang muncul kemudian harus ditangani dengan merujuk pada order, spesifikasi, inspeksi, identitas lot, dan bukti pengiriman. Catatan yang baik membantu membedakan masalah produksi, penyimpanan, transportasi, atau penanganan setelah barang diterima.
+
+Peran dan Tanggung Jawab Setiap Departemen
+
+Pembagian tanggung jawab berikut merupakan model umum. Struktur dan kewenangan persetujuan harus ditetapkan oleh perusahaan.
+
+-----------------------------------------------------------------------
+Fungsi                              Tanggung jawab utama
+----------------------------------- -----------------------------------
+Marketing/Sales                     Mengumpulkan kebutuhan customer, membuat quotation, memeriksa PO, mengelola komunikasi dan perubahan order
+
+Engineering/Technical               Mengklarifikasi spesifikasi, drawing, kelayakan teknis, revisi, dan kebutuhan trial
+
+QC/QA                               Mengelola pengendalian mutu, inspeksi, produk tidak sesuai, serta pelepasan sesuai kewenangan
+
+PPIC                                Memeriksa stok dan kapasitas, merencanakan kebutuhan, menyusun jadwal, memantau progres dan perubahan
+
+Purchasing                          Mengadakan material sesuai spesifikasi dan memantau pemasok serta kedatangan
+
+Gudang bahan baku                   Menerima, mengidentifikasi, menyimpan, dan mengeluarkan material sesuai status
+
+Produksi                            Menjalankan work order, mengendalikan proses, mencatat hasil, dan melaporkan kendala
+
+Gudang barang jadi/Logistik         Menyimpan barang yang telah dilepas, menyiapkan packing, memverifikasi muatan, dokumen, dan pengiriman
+
+Finance/Administrasi                Memeriksa ketentuan kredit, pembayaran, penagihan, dan dokumen komersial
+-----------------------------------------------------------------------
+
+Satu orang dapat menjalankan beberapa fungsi di perusahaan kecil. Namun, tanggung jawab dan titik persetujuan penting tidak boleh hilang. Orang yang menjadwalkan produksi tidak otomatis berwenang menyatakan produk memenuhi standar. Gudang tidak boleh mengubah status produk yang ditahan QC tanpa persetujuan yang sah.
+
+Titik Kendali Paling Penting
+
+Ada lima titik kendali yang sangat menentukan keberhasilan order.
+
+Pertama, kesesuaian PO dengan penawaran dan spesifikasi. Kesalahan kode, dimensi, kuantitas, atau tanggal kirim dapat menghasilkan produk yang salah meskipun proses pabrik berjalan sesuai instruksi.
+
+Kedua, persetujuan teknis sebelum produksi. TDC, drawing, atau spesifikasi yang belum final membuat operator dan QC tidak memiliki acuan pasti. Perubahan harus memiliki revisi dan persetujuan, bukan sekadar pesan informal.
+
+Ketiga, validasi jadwal terhadap material dan kapasitas. Jadwal bukan daftar keinginan. Ia harus mempertimbangkan stok nyata, tanggal kedatangan, waktu setup, bottleneck, inspeksi, packing, dan transportasi. Jika ada konflik, PPIC perlu menilai dampaknya dan mengomunikasikan perubahan.
+
+Keempat, pengendalian produk tidak sesuai dan pelepasan QC. Produk yang belum dinyatakan memenuhi syarat tidak boleh bercampur dengan produk siap kirim. Penyimpangan harus disetujui pihak berwenang dan, jika menyangkut persyaratan customer, customer perlu memberikan persetujuan sesuai ketentuan.
+
+Kelima, ketertelusuran dari PO hingga bukti pengiriman. Nomor order, revisi spesifikasi, lot material, hasil inspeksi, dan dokumen pengiriman perlu saling terhubung. Tanpa hubungan ini, investigasi komplain dan pembuktian pemenuhan order akan lambat dan rawan salah sasaran.
+
+KPI untuk Mengukur Efektivitas Alur
+
+Perusahaan dapat memantau alur order-to-delivery melalui indikator berikut: - On-Time Delivery (OTD): persentase pengiriman yang tiba sesuai tanggal komitmen. - Order Fulfillment: persentase kuantitas atau order yang terpenuhi sesuai permintaan. - Schedule Adherence: tingkat kesesuaian realisasi produksi terhadap jadwal. - First Pass Yield: persentase produk yang lulus pada proses pertama tanpa rework. - Scrap and Rework Rate: proporsi hasil yang menjadi scrap atau membutuhkan pengerjaan ulang. - Supplier On-Time Delivery: ketepatan waktu pemasok memenuhi kebutuhan material. - Order Lead Time: waktu dari penerimaan order yang disepakati sampai pengiriman atau penerimaan; titik awal dan akhir harus didefinisikan konsisten. - Customer Complaint Rate: frekuensi komplain berdasarkan satuan yang jelas, misalnya per jumlah order atau volume pengiriman.
+
+KPI tidak boleh dibaca terpisah. OTD yang tinggi tetapi dicapai dengan mengirim produk tanpa pelepasan QC bukan keberhasilan. Output tinggi dengan scrap besar juga tidak otomatis efisien. Definisi, sumber data, periode, dan penanggung jawab setiap KPI harus konsisten.
+
+Contoh Praktis dari Satu Order
+
+Misalnya customer memesan 20 ton produk dengan spesifikasi dan tanggal kirim tertentu. Marketing menerima PO dan menemukan bahwa tanggalnya lebih cepat daripada lead time normal. Marketing tidak langsung menjanjikan order pasti selesai. PO dibandingkan dengan quotation, lalu PPIC memeriksa stok barang jadi, material, kapasitas lini, dan antrean order lain. Technical memastikan spesifikasi dan revisinya sesuai. QC memastikan kriteria pemeriksaan dan dokumen yang diperlukan sudah diketahui.
+
+Jika stok barang jadi yang sesuai tersedia, perusahaan memeriksa status QC dan alokasi stok lalu menyiapkan pengiriman. Jika stok tidak cukup, PPIC menghitung kebutuhan produksi dan menguji jadwal yang memungkinkan. Purchasing memastikan material yang belum ada dapat tiba sebelum tanggal kebutuhan. Setelah tanggal kirim realistis disepakati, SO dikonfirmasi dan work order dilepas sesuai aturan internal.
+
+Produksi menjalankan proses dan mencatat hasil. QC memeriksa produk berdasarkan kriteria yang disetujui. Produk yang lulus masuk gudang barang jadi, dikemas, diberi label, dan diverifikasi sebelum muat. Logistik mengirim barang dengan dokumen yang cocok dengan jumlah dan identitas produk. Bukti serah terima dicatat dan status order diperbarui. Jika tanggal awal tidak mungkin dipenuhi, tindakan yang benar adalah mengomunikasikan tanggal realistis dan memperoleh kesepakatan, bukan menyembunyikan risiko sampai hari pengiriman.
+
+Contoh ini menunjukkan setiap departemen menghasilkan informasi yang dibutuhkan tahap berikutnya. Marketing memberikan data order yang benar; Technical menetapkan acuan teknis; PPIC membuat rencana yang layak; Purchasing dan Gudang memastikan material; Produksi membuat produk sesuai instruksi; QC memutuskan kesesuaian; dan Logistik memastikan produk yang tepat sampai ke tujuan yang benar.
+
+Dokumen Minimum yang Perlu Dikendalikan
+
+Tidak semua perusahaan memakai formulir yang sama, tetapi alur order-to-delivery umumnya membutuhkan dokumen atau rekaman berikut sesuai relevansinya: - Inquiry dan quotation. - PO customer serta catatan klarifikasi atau revisi. - Order review atau bukti peninjauan persyaratan. - TDC, spesifikasi produk, drawing, dan nomor revisi. - Sales Order. - BOM, routing, work instruction, dan control plan jika berlaku. - Catatan stok, kebutuhan material, purchase requisition, dan PO pemasok. - Production Schedule dan Production Order/Work Order. - Catatan penerimaan material dan status inspeksi. - Catatan produksi, inspeksi proses, hasil QC akhir, serta disposisi produk tidak sesuai. - Catatan pelepasan barang jadi, packing list, surat jalan, dokumen transportasi, dan bukti serah terima.
+
+Dokumen harus terkendali: jelas siapa yang membuat, memeriksa, menyetujui, mengubah, dan menyimpan; revisi mana yang berlaku; serta bagaimana dokumen lama dicegah dari penggunaan salah. ERP membantu menyatukan data, tetapi perangkat lunak tidak otomatis memperbaiki proses yang tidak jelas. Data salah di sistem tetap menghasilkan keputusan salah.
+
+Kesalahan Alur yang Harus Dihindari
+
+Kesalahan pertama adalah menganggap PO sama dengan izin mulai produksi. PO merupakan input penting, tetapi order tetap harus ditinjau dan diterjemahkan menjadi data internal yang benar.
+
+Kesalahan kedua adalah membuat SO sebelum perbedaan penting dalam PO diselesaikan. Kecepatan administrasi tidak menggantikan konfirmasi spesifikasi, harga, dan tanggal kirim.
+
+Kesalahan ketiga adalah memperlakukan TDC sebagai formalitas tanda tangan. Konfirmasi teknis harus memastikan data yang benar, revisi yang berlaku, dan kriteria penerimaan yang dapat diperiksa.
+
+Kesalahan keempat adalah membuat production schedule tanpa validasi material dan kapasitas. Jadwal seperti ini hanya memindahkan masalah ke lantai produksi dan akhirnya ke customer.
+
+Kesalahan kelima adalah menyamakan produk selesai diproses dengan produk siap dikirim. Produk siap dikirim setelah pemeriksaan yang diwajibkan selesai, status dilepas, jumlah dan identitas benar, serta dokumen dan packing siap.
+
+Kesalahan keenam adalah membiarkan perubahan order tersebar melalui pesan informal tanpa memperbarui catatan resmi. Pesan cepat berguna untuk koordinasi, tetapi perubahan yang memengaruhi persyaratan harus tercermin pada dokumen atau sistem acuan.
+
+Kesimpulan: Hubungkan Permintaan, Kemampuan, dan Bukti
+
+Alur manufaktur yang efektif bukan sekadar rangkaian formulir PO, TDC, SO, dan jadwal produksi. Intinya adalah memastikan setiap tahap menghasilkan informasi dan persetujuan yang diperlukan tahap berikutnya. PO harus ditinjau; spesifikasi harus dikonfirmasi; SO harus mencatat kewajiban komersial; PPIC harus menguji kebutuhan material dan kapasitas; jadwal harus realistis; work order harus mengarahkan pelaksanaan; QC harus mengendalikan kesesuaian; dan Logistik harus mengirim produk yang tepat dengan dokumen yang benar.
+
+Urutan operasional yang mudah diterapkan adalah: PO diterima dan ditinjau → klarifikasi teknis/TDC dan standar produk disahkan → SO dibuat atau dikonfirmasi → PPIC memeriksa stok, material, kapasitas, dan lead time → jadwal produksi disahkan → material disiapkan → work order dilepas → produksi dan inspeksi proses berjalan → QC memeriksa dan melepas produk → Gudang menyiapkan packing serta dokumen → pengiriman dan bukti serah terima dicatat.
+
+Urutan rinci dapat menyesuaikan model bisnis, ERP, dan karakteristik produk. Namun prinsipnya tidak berubah: jangan menjanjikan sebelum kemampuan diverifikasi, jangan memproduksi dengan spesifikasi yang belum jelas, jangan mengirim produk yang belum dilepas, dan jangan menutup order tanpa bukti pemenuhan. Dengan begitu, Marketing, PPIC, Produksi, QC, Gudang, dan Logistik bekerja sebagai satu sistem, bukan departemen yang masing-masing mengejar target sendiri.
+
+Sumber dan Rujukan
+
+1.  ASCM (Association for Supply Chain Management) — materi perencanaan
+rantai pasok yang menghubungkan demand planning, S&OP, MPS, MRP, kapasitas, purchasing, eksekusi produksi, dan distribusi. https://www.ascm.org/planning-certificate-program/
+
+2.  ASCM Monterrey — Master Production Schedule — rujukan pembelajaran
+mengenai peran master scheduling dalam perencanaan produksi. https://www.mty.ascm.org/mps
+
+3.  ASCM Wisconsin Chapter — Three Tips for Master Production Scheduling
+— pembahasan tujuan MPS, termasuk menyeimbangkan permintaan dan pasokan, menggunakan sumber daya, menetapkan prioritas, dan mendukung MRP. https://wisconsin.ascm.org/articles/Three_Tips_for_Master_Production_Scheduling
+
+4.  International Organization for Standardization (ISO) — ISO 9001 —
+kerangka sistem manajemen mutu untuk mengendalikan proses, memenuhi persyaratan pelanggan, dan melakukan perbaikan berkelanjutan. https://www.iso.org/standard/9001.html
+
+Catatan: TDC, SO, Production Order, dan nama formulir lain dapat memiliki definisi internal yang berbeda antarperusahaan. Gunakan istilah dan kewenangan yang ditetapkan dalam prosedur perusahaan, tetapi pertahankan fungsi pengendalian yang dijelaskan dalam artikel ini.
