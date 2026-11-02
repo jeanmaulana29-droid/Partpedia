@@ -2,7 +2,6 @@ Engineer: apa saja tugas dan Jobdesknya di tiap-tiap Departemen
 
 Kalau melihat sebuah pabrik dari luar, pekerjaan engineer sering terlihat seperti satu pekerjaan besar: menjaga mesin tetap berjalan dan memastikan produksi tidak berhenti.
 
-Anggapan itu keliru.
 
 Di dalam pabrik modern, engineer terbagi ke dalam banyak fungsi. Ada engineer yang merancang produk, ada yang mengatur proses produksi, ada yang menjaga mesin, ada yang mengurusi listrik dan kontrol, ada yang memastikan kualitas, ada yang menghitung efisiensi, ada yang menangani proyek pembangunan fasilitas, sampai engineer yang fokus pada keselamatan, lingkungan, energi, dan keandalan aset.
 
