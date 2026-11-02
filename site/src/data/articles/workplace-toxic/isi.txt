@@ -1,0 +1,241 @@
+Manajemen Saling Lempar Tanggung Jawab: Dampak Toxic Workplace terhadap Integritas Rantai Pasok
+
+Dalam perusahaan manufaktur, masalah rantai pasok jarang berhenti pada satu departemen. Keterlambatan material dapat mengganggu jadwal produksi; spesifikasi yang tidak jelas dapat memicu salah proses; perubahan order yang tidak diteruskan dapat menghasilkan produk yang keliru; dan produk yang belum dinyatakan memenuhi syarat dapat terlanjur dikirim. Karena itu, integritas rantai pasok tidak hanya ditentukan oleh pemasok, mesin, sistem ERP, atau prosedur inspeksi. Integritas juga bergantung pada perilaku manajemen dalam menetapkan tanggung jawab, menyampaikan informasi, mengambil keputusan, dan menyelesaikan masalah.
+
+Salah satu pola organisasi yang paling merusak adalah budaya saling melempar tanggung jawab. Ketika terjadi masalah, setiap departemen lebih sibuk membuktikan bahwa kesalahan bukan berasal dari bagiannya daripada memastikan masalah diselesaikan. Marketing menyalahkan PPIC karena jadwal tidak realistis; PPIC menyalahkan Purchasing karena material terlambat; Purchasing menyalahkan pemasok; Produksi menyalahkan kualitas material; QC disalahkan karena dianggap menghambat pengiriman; sementara manajemen hanya meminta laporan siapa yang bersalah. Masalah operasional berubah menjadi konflik internal, sedangkan risiko terhadap pelanggan tetap berjalan.
+
+Perilaku tersebut sering tumbuh dalam lingkungan kerja toksik atau toxic workplace, terutama ketika kekuasaan digunakan untuk menghindari akuntabilitas, informasi ditahan, kesalahan dihukum secara tidak proporsional, dan karyawan yang mengangkat masalah justru dipersalahkan. Dalam situasi seperti itu, organisasi mungkin masih memiliki SOP, KPI, rapat koordinasi, audit, dan sertifikat sistem manajemen. Namun, dokumen formal tidak otomatis menghasilkan tanggung jawab nyata. Jika orang-orang di dalamnya takut menyampaikan fakta dan lebih memilih melindungi posisi masing-masing, sistem pengendalian akan kehilangan fungsi praktisnya.
+
+Artikel ini membahas bagaimana budaya saling lempar tanggung jawab muncul, mengapa perilaku tersebut merusak rantai pasok, bagaimana membedakan akuntabilitas dari budaya mencari kambing hitam, serta bagaimana manajemen dapat membangun sistem tanggung jawab yang jelas dari pemasok hingga pengiriman produk.
+
+Apa yang Dimaksud dengan Manajemen Saling Lempar Tanggung Jawab?
+
+Manajemen saling lempar tanggung jawab adalah pola pengelolaan organisasi ketika pemegang fungsi, atasan, atau departemen menghindari kepemilikan atas keputusan dan hasil yang berada dalam lingkup kewenangannya, lalu mengalihkan kesalahan kepada pihak lain. Fokus utamanya bukan menyelesaikan penyebab masalah, melainkan mengurangi risiko pribadi atau departemen agar tidak dianggap bertanggung jawab.
+
+Pola ini berbeda dari pembagian tugas yang sehat. Dalam organisasi yang tertata, pekerjaan memang dibagi kepada beberapa fungsi. Marketing bertanggung jawab atas komunikasi kebutuhan pelanggan; Engineering atau Technical memastikan persyaratan teknis; PPIC merencanakan material dan kapasitas; Purchasing mengelola pengadaan; Produksi menjalankan proses; QC memverifikasi kesesuaian; Gudang dan Logistik mengelola penyimpanan serta pengiriman. Pembagian tersebut diperlukan karena tidak ada satu departemen yang menguasai seluruh proses.
+
+Masalah muncul ketika batas fungsi dipakai sebagai alasan untuk tidak membantu menyelesaikan persoalan lintas departemen. Kalimat seperti “itu bukan pekerjaan saya”, “saya hanya menjalankan instruksi”, atau “departemen kami sudah melakukan bagian kami” menjadi bentuk penghindaran tanggung jawab apabila orang tersebut memiliki kewenangan atau kewajiban untuk mengeskalasi risiko tetapi memilih diam.
+
+Dalam praktik, tanggung jawab harus dibedakan menjadi tiga hal. Pertama, responsibility atau tanggung jawab pelaksanaan: siapa yang wajib melakukan pekerjaan tertentu. Kedua, authority atau kewenangan: siapa yang berhak memutuskan, menyetujui, menghentikan, atau mengubah sesuatu. Ketiga, accountability atau akuntabilitas: siapa yang wajib menjelaskan hasil, keputusan, dan tindak lanjutnya. Ketiganya saling berkaitan, tetapi tidak selalu berada pada orang yang sama.
+
+Mengapa Budaya Saling Menyalahkan Bisa Terbentuk?
+
+Budaya ini biasanya terbentuk ketika sistem organisasi memberi insentif untuk menghindari kesalahan, sementara perilaku menyelesaikan masalah tidak dihargai secara memadai.
+
+KPI departemen yang saling bertentangan
+
+Marketing dapat dinilai berdasarkan jumlah order dan kecepatan memperoleh pelanggan. PPIC dinilai berdasarkan pencapaian jadwal. Purchasing dinilai berdasarkan harga beli dan ketepatan pengadaan. Produksi dinilai berdasarkan output. QC dinilai berdasarkan kepatuhan mutu dan jumlah produk yang ditahan. Logistik dinilai berdasarkan ketepatan pengiriman. Jika target tersebut tidak diselaraskan, konflik hampir tidak terhindarkan.
+
+Marketing dapat menjanjikan tanggal kirim tanpa validasi kapasitas. PPIC dapat membuat jadwal untuk memenuhi target meskipun material belum pasti. Purchasing dapat memilih pemasok termurah tanpa memperhitungkan kestabilan kualitas dan lead time. Produksi dapat mengejar output dengan mengabaikan sinyal proses. QC kemudian menjadi pihak yang terlihat menghambat pengiriman karena menahan produk yang tidak sesuai. Setiap departemen mungkin dapat menunjukkan KPI lokalnya tercapai, tetapi perusahaan tetap gagal memenuhi order pelanggan. Ini adalah optimasi lokal: satu bagian terlihat berhasil, tetapi kinerja keseluruhan sistem memburuk.
+
+Struktur kewenangan yang kabur
+
+Tanggung jawab mudah diperdebatkan ketika organisasi tidak menjelaskan siapa yang memiliki keputusan akhir. Siapa yang boleh menyetujui perubahan spesifikasi? Siapa yang berwenang mengubah prioritas produksi? Siapa yang dapat menerima material dengan penyimpangan? Siapa yang boleh melepas produk yang ditahan? Jika jawabannya tidak ditetapkan, keputusan berpindah mengikuti siapa yang sedang hadir, siapa yang paling senior, atau siapa yang paling kuat secara politik. Ketika hasilnya buruk, setiap orang dapat mengklaim bahwa keputusan berada di tangan pihak lain.
+
+Manajemen yang menuntut hasil tetapi tidak memberi keputusan
+
+Atasan dapat meminta target dicapai tanpa menetapkan prioritas ketika sumber daya terbatas. Mereka meminta pengiriman tepat waktu, tetapi tidak menyelesaikan konflik antara jadwal, material, dan kapasitas. Mereka meminta kualitas terjaga, tetapi menolak menghentikan proses ketika kondisi mesin atau material bermasalah. Ketika kegagalan terjadi, pimpinan meminta setiap departemen membuat klarifikasi. Ini bukan pengendalian manajemen; ini pemindahan risiko keputusan ke tingkat bawah tanpa memberikan kewenangan yang sepadan.
+
+Ketakutan terhadap hukuman dan pembalasan
+
+Jika karyawan yang menyampaikan masalah selalu dimarahi, dipermalukan, dinilai tidak kooperatif, atau kehilangan kesempatan karier, mereka akan belajar menyembunyikan informasi. Masalah kecil tidak dilaporkan sampai menjadi masalah besar. Penyimpangan proses ditutup dengan alasan sementara. Karyawan memilih mengikuti instruksi meskipun mengetahui risikonya karena menolak instruksi dianggap lebih berbahaya daripada membiarkan risiko berjalan.
+
+ILO menjelaskan bahwa pencegahan kekerasan dan pelecehan di tempat kerja memerlukan kebijakan, penilaian risiko, langkah pencegahan, serta mekanisme respons. Cara kerja dirancang dan dikelola, hubungan atasan-bawahan, serta penyalahgunaan relasi kuasa dapat menjadi faktor risiko psikososial. Jadi, perilaku toksik bukan sekadar persoalan perasaan individu; cara organisasi mengelola pekerjaan juga dapat menciptakan atau memperbesar risikonya.
+
+Budaya senioritas dan perlindungan kelompok
+
+Dalam lingkungan yang sangat politis, kedekatan dengan pimpinan dapat lebih menentukan daripada kualitas keputusan. Kesalahan orang yang memiliki hubungan kuat dapat ditutupi, sedangkan kesalahan orang yang tidak memiliki perlindungan dibesar-besarkan. Standar akuntabilitas menjadi tidak konsisten. Rapat penyelesaian masalah berubah menjadi arena mempertahankan posisi; data dipilih sesuai kepentingan, kronologi dipotong, dan komunikasi dilakukan untuk membangun pembelaan, bukan menemukan penyebab.
+
+Tidak adanya sistem tindak lanjut yang kuat
+
+Organisasi tanpa mekanisme corrective action yang jelas akan mengulang konflik yang sama. Masalah dibahas dalam rapat, dibuat notulen, lalu selesai secara administratif tanpa verifikasi efektivitas. Tanpa pemilik tindakan, tenggat waktu, bukti penyelesaian, dan pemeriksaan efektivitas, rapat hanya menjadi ritual.
+
+Dampak Budaya Saling Lempar Tanggung Jawab terhadap Rantai Pasok
+
+Rantai pasok merupakan jaringan proses dan organisasi yang saling bergantung. Kinerja pemasok, pembelian, perencanaan, produksi, inspeksi, pergudangan, transportasi, dan layanan pelanggan saling memengaruhi. Karena itu, budaya saling menyalahkan bukan hanya konflik personal; ia mengganggu aliran material, informasi, keputusan, dan produk.
+
+Informasi penting terlambat atau sengaja ditahan
+
+Rantai pasok bergantung pada informasi akurat dan tepat waktu. Perubahan spesifikasi, keterlambatan pemasok, hasil inspeksi, perubahan forecast, kondisi stok, dan gangguan mesin harus diteruskan kepada fungsi yang terdampak. Dalam budaya defensif, informasi ditahan karena pihak yang menyampaikan khawatir dianggap sebagai penyebab masalah.
+
+Misalnya, Purchasing mengetahui pemasok terlambat mengirim material, tetapi tidak segera memberi tahu PPIC karena berharap pengiriman dapat dipercepat. PPIC baru mengetahui keterlambatan ketika jadwal produksi mendekat. Produksi kehilangan waktu, Marketing tidak dapat memberi informasi benar kepada pelanggan, dan Logistik menghadapi perubahan jadwal mendadak. Masalah awal sebenarnya dapat dikelola lebih dini, tetapi budaya defensif memperbesar dampaknya.
+
+Keputusan operasional menjadi lambat
+
+Ketika setiap departemen takut mengambil keputusan, masalah sederhana membutuhkan banyak persetujuan. Orang memilih mengirim email berantai, menunggu instruksi atasan, atau meminta pihak lain menyatakan persetujuan tertulis agar risiko pribadi berpindah. Keputusan yang seharusnya dapat diambil dalam satu jam berubah menjadi berhari-hari.
+
+Kualitas produk dan keselamatan proses melemah
+
+Budaya menyalahkan mendorong orang menyembunyikan penyimpangan. Operator mungkin tidak melaporkan parameter proses yang menyimpang. Supervisor dapat menunda eskalasi karena tidak ingin target produksi terganggu. QC dapat ditekan untuk melepas produk meskipun bukti kesesuaian belum lengkap. Jika organisasi lebih menghargai tidak adanya laporan masalah daripada kemampuan menemukan dan menyelesaikannya, data kualitas menjadi tidak jujur. Angka reject yang rendah belum tentu berarti proses membaik; bisa jadi cacat tidak dicatat dengan benar.
+
+Biaya tersembunyi meningkat
+
+Saling lempar tanggung jawab memperbesar biaya yang tidak selalu terlihat pada laporan produksi: inspeksi ulang, sorting, rework, scrap, pengiriman ulang, overtime, perubahan jadwal, pembelian material darurat, biaya penyimpanan, klaim pelanggan, dan waktu manajer yang habis untuk konflik internal. Biaya lain adalah hilangnya peluang perbaikan. Jika penyebab masalah tidak diakui secara terbuka, masalah yang sama terus berulang.
+
+Hubungan dengan pemasok dan pelanggan memburuk
+
+Pemasok membutuhkan spesifikasi jelas, forecast masuk akal, komunikasi perubahan, proses klaim yang adil, serta pembayaran sesuai kesepakatan. Jika perusahaan mengubah permintaan secara mendadak lalu menyalahkan pemasok atas setiap keterlambatan, hubungan menjadi tidak sehat. Pelanggan juga tidak berkepentingan mengetahui konflik internal perusahaan. Mereka menilai kesesuaian produk, jumlah, dokumen, dan ketepatan pengiriman.
+
+Ketertelusuran dan integritas data terganggu
+
+Dalam manufaktur, keputusan harus dapat ditelusuri melalui catatan order, revisi spesifikasi, lot material, parameter proses, hasil inspeksi, status produk, dan dokumen pengiriman. Budaya defensif dapat mendorong catatan dibuat sekadar melindungi pihak tertentu. Ketika pelanggan mengajukan komplain, investigasi menjadi lambat karena perusahaan sulit membuktikan material mana yang digunakan, proses apa yang dijalankan, siapa yang menyetujui penyimpangan, dan produk mana yang terdampak.
+
+Bagaimana Saling Lempar Tanggung Jawab Terjadi di Setiap Tahap Rantai Pasok?
+
+Penerimaan order oleh Marketing
+
+Marketing menerima PO dengan spesifikasi, kuantitas, harga, dan tanggal kirim tertentu. Jika order langsung dijanjikan tanpa konfirmasi kemampuan teknis dan kapasitas, risiko muncul sejak awal. Ketika perusahaan tidak mampu memenuhi komitmen, Marketing dapat menyalahkan PPIC karena jadwal tidak tersedia, sementara PPIC menyalahkan Marketing karena menjanjikan tanggal tanpa konsultasi. Persoalan utamanya adalah tidak adanya order review yang mengikat.
+
+Pengendalian yang benar adalah meninjau persyaratan order sebelum komitmen final. Perubahan yang memengaruhi spesifikasi, kuantitas, harga, atau tanggal kirim harus dikomunikasikan dan dicatat.
+
+Technical review dan konfirmasi spesifikasi
+
+Jika spesifikasi tidak jelas, Engineering atau Technical perlu mengklarifikasi persyaratan. QC harus memahami kriteria penerimaan. Bila tidak ada dokumen acuan yang disahkan, Produksi dapat menggunakan standar lama atau interpretasi sendiri. Pencegahannya adalah pengendalian dokumen dan revisi: satu versi spesifikasi ditetapkan sebagai acuan, perubahan disetujui, dan fungsi terkait menerima pembaruan.
+
+Perencanaan material dan jadwal oleh PPIC
+
+PPIC menghubungkan permintaan pelanggan dengan stok, kebutuhan material, kapasitas, waktu proses, dan prioritas produksi. PPIC bertanggung jawab atas kualitas perencanaan berdasarkan informasi yang tersedia. Purchasing bertanggung jawab atas status pengadaan dan risiko pemasok. Manajemen bertanggung jawab menyelesaikan konflik prioritas dan menyediakan keputusan bisnis yang diperlukan. Tanggung jawab harus mengikuti kendali nyata, bukan sekadar posisi dalam bagan organisasi.
+
+Purchasing dan pengelolaan pemasok
+
+Purchasing tidak boleh hanya dinilai dari harga pembelian. Evaluasi pemasok perlu mempertimbangkan kualitas, ketepatan pengiriman, kemampuan teknis, kapasitas, kepatuhan, respons klaim, dan risiko kontinuitas pasokan. Perusahaan harus menetapkan siapa yang menyetujui pemasok, mengevaluasi kinerja, menangani klaim, dan berwenang menangguhkan pemasok.
+
+Penerimaan material dan gudang
+
+Gudang menerima material berdasarkan dokumen, identitas, jumlah, dan status yang ditentukan. Material yang tidak sesuai harus dipisahkan dan dikomunikasikan. Gudang tidak boleh mengubah status material menjadi dapat digunakan tanpa otorisasi. Namun, fungsi penerimaan juga tidak boleh menjadi satu-satunya pihak yang disalahkan apabila standar pemeriksaan atau keputusan teknis tidak tersedia.
+
+Produksi dan pengendalian proses
+
+Produksi bertanggung jawab menjalankan proses sesuai work order, parameter, instruksi, dan kompetensi. Jika operator menyimpang dari instruksi tanpa alasan sah, tindakan tersebut perlu diperiksa. Namun, jika instruksi tidak jelas, mesin tidak layak, material bermasalah, atau jadwal tidak realistis, investigasi harus menilai faktor sistem dan keputusan atasan.
+
+QC dan pelepasan produk
+
+QC bertanggung jawab melakukan verifikasi berdasarkan spesifikasi dan metode pemeriksaan. QC tidak seharusnya dipaksa melepas produk hanya karena jadwal pengiriman terlambat. Jika produk belum memenuhi kriteria, status harus ditahan sesuai prosedur. Menyalahkan QC karena menahan produk yang tidak sesuai adalah salah arah akuntabilitas. QC mengungkap kondisi yang harus ditangani sebelum produk sampai ke pelanggan.
+
+Gudang barang jadi dan pengiriman
+
+Produk selesai diproses belum otomatis siap dikirim. Status pelepasan, jumlah, identitas, packing, label, dokumen, dan instruksi pengiriman harus benar. Jika Logistik menerima instruksi yang berubah-ubah atau produk belum dilepas, keterlambatan tidak dapat dibebankan hanya kepada Logistik. Sebaliknya, jika produk siap dan instruksi lengkap tetapi pengiriman tidak dijalankan, tanggung jawab Logistik perlu dievaluasi.
+
+Perbedaan Akuntabilitas dan Budaya Mencari Kambing Hitam
+
+Perusahaan tetap harus meminta pertanggungjawaban. Budaya tanpa akuntabilitas juga berbahaya karena kesalahan dapat diulang tanpa konsekuensi. Namun, akuntabilitas yang sehat berbeda dari kebiasaan mencari kambing hitam.
+
+Akuntabilitas bertanya: apa yang seharusnya terjadi, apa yang benar-benar terjadi, bukti apa yang tersedia, faktor apa yang menyebabkan perbedaan, siapa memiliki kewenangan atas faktor tersebut, tindakan apa yang diperlukan, dan bagaimana efektivitasnya diperiksa. Pencarian kambing hitam bertanya: siapa yang bisa disalahkan agar masalah cepat ditutup?
+
+Akuntabilitas menilai tindakan berdasarkan peran, kewenangan, informasi yang tersedia pada saat keputusan dibuat, kompetensi, dan kepatuhan terhadap prosedur. Budaya menyalahkan cenderung menilai keputusan masa lalu seolah-olah semua orang sudah mengetahui akibatnya sejak awal. Ini merupakan bias melihat ke belakang.
+
+Perusahaan perlu membedakan empat situasi. Pertama, kesalahan manusia yang tidak disengaja ketika seseorang bekerja dalam sistem wajar dan mengikuti prosedur; respons utamanya memperbaiki proses, pelatihan, alat, atau kejelasan instruksi. Kedua, kesalahan yang dipengaruhi kondisi kerja buruk, beban berlebihan, gangguan, atau desain proses membingungkan; organisasi perlu memperbaiki kondisi tersebut. Ketiga, perilaku berisiko atau kelalaian meskipun aturan dan risiko telah dipahami; ini memerlukan pembinaan atau tindakan disiplin proporsional. Keempat, pelanggaran disengaja seperti manipulasi data, penyembunyian cacat, pemalsuan catatan, atau pengabaian kontrol keselamatan; tindakan ini memerlukan investigasi formal dan konsekuensi sesuai aturan.
+
+Tidak semua kegagalan adalah kesalahan individu. Tetapi tidak semua kegagalan juga dapat dibenarkan sebagai kesalahan sistem. Manajemen harus membedakan keduanya melalui bukti dan konteks.
+
+Mengapa Toksisitas Kerja Mengancam Integritas Rantai Pasok?
+
+Toxic workplace bukan sekadar tempat kerja dengan orang yang tidak ramah. Dalam konteks organisasi, toksisitas terlihat dari pola perilaku berulang yang merusak: intimidasi, penghinaan, manipulasi informasi, pembalasan terhadap pelapor, penyalahgunaan kewenangan, perlakuan tidak adil, dan tekanan yang membuat orang takut menjalankan tanggung jawab profesional.
+
+Dampaknya terjadi melalui beberapa jalur. Pertama, toksisitas menurunkan kualitas informasi karena orang menyampaikan kabar yang aman bagi dirinya, bukan selalu kabar paling akurat. Kedua, toksisitas merusak eskalasi karena karyawan tidak yakin apakah melapor akan menghasilkan perbaikan atau pembalasan. Ketiga, toksisitas mengubah keputusan menjadi politik internal. Keempat, toksisitas mengikis pembelajaran karena investigasi diarahkan untuk mencari pihak yang salah, bukan memahami mekanisme kegagalan. Kelima, toksisitas dapat membuat kontrol kualitas dan keselamatan kehilangan independensi.
+
+ILO Convention No. 190 menempatkan kekerasan dan pelecehan sebagai persoalan dunia kerja yang perlu dicegah melalui kebijakan, pengelolaan risiko, dan perlindungan yang sesuai. Rekomendasi ILO No. 206 juga menyoroti faktor psikososial yang berasal dari pengaturan kerja, organisasi pekerjaan, manajemen sumber daya manusia, hubungan kuasa, serta perlindungan dari pembalasan. Pencegahan toksisitas karena itu tidak cukup diserahkan pada kemampuan individu untuk beradaptasi; perusahaan perlu mengendalikan risiko pada tingkat organisasi.
+
+Prinsip ISO 9001: Proses Harus Memiliki Pemilik dan Akuntabilitas
+
+ISO 9001 menggunakan pendekatan proses. Organisasi perlu memahami urutan dan interaksi proses, menentukan input dan output, mengelola risiko pada hubungan antarproses, serta menetapkan tanggung jawab dan kewenangan. Panduan ISO mengenai pendekatan proses menekankan perlunya menentukan pemilik proses dan akuntabilitas serta memastikan peran, tanggung jawab, kewenangan, dan kompetensi ditetapkan.
+
+Prinsip ini relevan langsung dengan masalah saling lempar tanggung jawab. Jika pemenuhan order melibatkan Marketing, Engineering, PPIC, Purchasing, Produksi, QC, Gudang, dan Logistik, perusahaan harus menetapkan pemilik setiap proses dan bagaimana serah terima antarproses dilakukan. Tidak cukup menulis bahwa semua departemen harus berkoordinasi. Koordinasi tanpa pemilik keputusan hanya menghasilkan rapat tanpa kepastian.
+
+ISO 9001 bukan sertifikat yang otomatis menghapus perilaku toksik. Standar sistem manajemen mutu tidak menggantikan kepemimpinan sehat atau penegakan etika. Namun, prinsip penetapan proses, peran, kewenangan, risiko, evaluasi, dan perbaikan menyediakan kerangka operasional untuk mengurangi ruang saling melempar tanggung jawab.
+
+OECD: Due Diligence Tidak Berhenti pada Pemasok Langsung
+
+Integritas rantai pasok juga berkaitan dengan tanggung jawab perusahaan terhadap dampak yang muncul dalam operasi dan hubungan bisnisnya. OECD mendorong perusahaan melakukan risk-based due diligence untuk mengidentifikasi, mencegah, mengurangi, dan menangani dampak negatif yang berkaitan dengan operasi, rantai pasok, serta hubungan bisnis.
+
+Kerangka OECD menekankan penanaman responsible business conduct ke dalam kebijakan dan sistem manajemen; identifikasi serta penilaian dampak; penghentian, pencegahan, atau pengurangan dampak; pemantauan implementasi dan hasil; komunikasi penanganan; serta pemulihan ketika perusahaan menyebabkan atau berkontribusi terhadap dampak.
+
+Implikasinya jelas: perusahaan tidak dapat selalu melepaskan diri dengan mengatakan masalah terjadi pada pemasok atau kontraktor. Hubungan bisnis perlu dikelola berdasarkan tingkat keterlibatan, pengaruh, dan risiko. Jika perusahaan mengetahui pemasok melakukan pelanggaran serius, respons yang bertanggung jawab bukan sekadar memindahkan kesalahan ke pemasok. Perusahaan perlu menilai dampak, menggunakan pengaruhnya untuk mencegah atau mengurangi masalah, memantau tindakan, dan melakukan pemulihan sesuai perannya.
+
+Sistem Praktis untuk Menghentikan Saling Lempar Tanggung Jawab
+
+Membangun akuntabilitas tidak cukup dengan meminta semua orang “lebih bertanggung jawab”. Perusahaan perlu menerjemahkan prinsip tersebut menjadi struktur kerja, dokumen, hak keputusan, indikator, dan mekanisme penyelesaian masalah.
+
+Tetapkan process owner untuk setiap proses utama
+
+Setiap proses penting harus memiliki pemilik yang bertanggung jawab atas kinerja dan perbaikannya. Pemilik proses tidak harus mengerjakan semua aktivitas, tetapi harus memastikan interaksi antarbagian terkendali dan masalah lintas fungsi tidak dibiarkan tanpa pemilik.
+
+Tetapkan RACI untuk keputusan lintas departemen
+
+Matriks RACI membedakan Responsible, Accountable, Consulted, dan Informed. Responsible adalah pihak yang melakukan pekerjaan. Accountable adalah pihak yang memiliki akuntabilitas akhir atas hasil atau keputusan. Consulted adalah pihak yang dimintai masukan sebelum keputusan. Informed adalah pihak yang perlu menerima informasi.
+
+Untuk perubahan spesifikasi, misalnya, Engineering menilai aspek teknis; QC dikonsultasikan mengenai kriteria inspeksi; Marketing menyampaikan dan mengonfirmasi persyaratan pelanggan; pejabat yang ditetapkan menyetujui perubahan. RACI harus disesuaikan dengan struktur dan kewenangan perusahaan. Satu keputusan tidak boleh memiliki banyak pemilik akhir yang saling menghindar.
+
+Tentukan aturan eskalasi dan batas waktu keputusan
+
+Masalah harus memiliki jalur eskalasi jelas. Jika material kritis belum dikonfirmasi pada batas waktu tertentu, Purchasing wajib mengeskalasi ke PPIC dan atasan terkait. Jika konflik kapasitas membuat tanggal kirim tidak realistis, PPIC mengajukan opsi keputusan kepada manajemen. Jika produk tidak sesuai, QC menetapkan status berdasarkan prosedur dan meminta keputusan dari otoritas yang berwenang.
+
+Eskalasi harus memiliki pemicu, penerima, batas waktu respons, informasi minimum, dan catatan keputusan. Tujuannya bukan memperbanyak birokrasi, tetapi memastikan masalah sampai kepada orang yang dapat mengambil keputusan sebelum dampaknya membesar.
+
+Gunakan corrective action berbasis bukti
+
+Setiap masalah penting harus dicatat dengan fakta: apa yang terjadi, kapan, di mana, lot atau order yang terdampak, persyaratan yang tidak terpenuhi, dan tindakan containment. Tim kemudian menganalisis penyebab, menetapkan tindakan korektif, menunjuk pemilik, menentukan tenggat, dan memverifikasi efektivitas.
+
+Metode seperti 5 Why dan fishbone membantu menyusun hipotesis penyebab, tetapi hasilnya harus diuji dengan bukti. Jangan berhenti pada kalimat “kurang komunikasi”, “operator kurang teliti”, atau “supplier tidak konsisten”. Pernyataan tersebut belum menjelaskan mekanisme kegagalan dan kontrol yang harus diperbaiki.
+
+Pisahkan containment, correction, corrective action, dan prevention
+
+Containment adalah tindakan segera untuk membatasi dampak, misalnya menahan lot yang dicurigai. Correction memperbaiki ketidaksesuaian yang sudah terjadi, misalnya sorting atau rework yang disetujui. Corrective action menghilangkan penyebab agar masalah tidak berulang. Pencegahan yang lebih luas mengurangi risiko pada proses atau produk lain yang memiliki pola serupa.
+
+Pemisahan ini penting karena organisasi sering menganggap masalah selesai setelah produk diperbaiki. Padahal, jika penyebab sistemik tidak dihilangkan, produk berikutnya dapat mengalami masalah yang sama.
+
+Lindungi pelapor dan bangun mekanisme keluhan
+
+Karyawan harus memiliki jalur untuk melaporkan risiko kualitas, keselamatan, etika, dan penyalahgunaan kewenangan tanpa takut pembalasan. Saluran dapat berupa atasan alternatif, fungsi kepatuhan, HR, komite keselamatan, kanal pengaduan independen, atau mekanisme pihak ketiga. Kerahasiaan perlu dijaga sesuai aturan, dan setiap laporan harus ditangani objektif.
+
+Perlindungan pelapor bukan berarti setiap tuduhan otomatis dianggap benar. Laporan tetap perlu diverifikasi. Namun, pelapor tidak boleh dihukum hanya karena menyampaikan masalah dengan itikad baik. Organisasi yang menghukum pembawa kabar buruk akan kehilangan informasi penting untuk mengendalikan risiko.
+
+Selaraskan KPI departemen dengan hasil perusahaan
+
+KPI departemen perlu dilengkapi ukuran lintas fungsi seperti: - On-Time In-Full (OTIF): pesanan dikirim tepat waktu dan lengkap. - Supplier On-Time Delivery: ketepatan pemasok memenuhi jadwal. - Supplier Quality Performance: tingkat kesesuaian material pemasok. - First Pass Yield: proporsi produk yang memenuhi persyaratan tanpa rework. - Cost of Poor Quality: biaya yang timbul dari ketidaksesuaian. - Corrective Action Effectiveness: efektivitas tindakan korektif. - Order Lead Time: waktu dari konfirmasi order sampai pemenuhan. - Schedule Adherence: kesesuaian pelaksanaan terhadap jadwal yang disahkan. - Escalation Response Time: waktu respons terhadap isu yang membutuhkan keputusan lintas fungsi.
+
+Indikator harus memiliki definisi, sumber data, pemilik, frekuensi, dan aturan perhitungan konsisten. Jangan menjadikan jumlah laporan cacat sebagai satu-satunya ukuran kinerja QC, karena hal itu dapat mendorong penurunan pelaporan. Lebih tepat mengukur ketepatan deteksi, efektivitas containment, pengurangan cacat berulang, dan kontribusi perbaikan proses.
+
+Lakukan review lintas fungsi berdasarkan masalah nyata
+
+Rapat koordinasi harus berangkat dari data order, material, kapasitas, kualitas, dan pengiriman. Agenda utamanya adalah keputusan yang dibutuhkan, risiko yang belum terkendali, tindakan yang terlambat, dan hambatan yang harus diangkat ke manajemen. Setiap tindakan memiliki satu pemilik, tenggat, dan bukti penutupan.
+
+Rapat tidak boleh menjadi forum mempermalukan orang. Namun, rapat juga tidak boleh menjadi ruang menghindari fakta. Jika seseorang tidak menjalankan tugas yang jelas dan memiliki sumber daya serta kewenangan memadai, hal tersebut harus dicatat dan ditangani profesional.
+
+Pastikan manajemen puncak mengambil tanggung jawab sistem
+
+Manajemen puncak harus menetapkan arah, sumber daya, struktur kewenangan, prioritas, dan mekanisme pengawasan. Jika dua departemen memiliki target yang saling bertentangan, pimpinan harus menyelesaikan konflik tersebut. Jika kapasitas tidak cukup untuk memenuhi semua komitmen, pimpinan harus menentukan prioritas bisnis dan menerima konsekuensi keputusannya. Jika fungsi kontrol ditekan untuk mengabaikan persyaratan, pimpinan harus memulihkan independensi kontrol tersebut.
+
+Manajemen tidak dapat menyerahkan seluruh tanggung jawab sistem kepada karyawan lini depan. Mereka bertanggung jawab atas tindakan yang berada dalam kendalinya, tetapi desain organisasi, alokasi sumber daya, kebijakan, dan konflik prioritas merupakan wilayah tanggung jawab pimpinan.
+
+Contoh Kasus: Keterlambatan Material yang Berubah Menjadi Konflik Departemen
+
+Sebuah pabrik menerima order customer dengan tanggal pengiriman ketat. Marketing mengonfirmasi tanggal tersebut sebelum memperoleh konfirmasi kapasitas dan material dari PPIC. PPIC membuat jadwal berdasarkan asumsi bahwa material akan datang sesuai rencana. Purchasing menerima informasi bahwa pemasok mengalami keterlambatan, tetapi tidak segera memperbarui status karena berharap pengiriman dapat dipercepat.
+
+Ketika tanggal produksi mendekat, material belum tersedia. Produksi menyatakan jadwal tidak mungkin dijalankan. Marketing menyalahkan PPIC karena tidak menyiapkan produksi. PPIC menyalahkan Purchasing. Purchasing menyalahkan pemasok. Manajemen meminta setiap departemen membuat kronologi dan mencari pihak yang paling bertanggung jawab. Selama beberapa hari, tidak ada keputusan apakah material alternatif dapat digunakan, apakah jadwal perlu diubah, atau apakah pelanggan harus diberi tahu.
+
+Dalam pendekatan akuntabilitas, langkah pertama bukan menentukan siapa yang paling bersalah. Perusahaan harus mengamankan order dan membatasi dampak. PPIC memperbarui rencana berdasarkan status material aktual. Purchasing memperoleh konfirmasi dari pemasok dan mengevaluasi alternatif. Engineering dan QC menilai apakah material alternatif memenuhi persyaratan. Marketing menyiapkan komunikasi pelanggan berdasarkan keputusan internal yang telah disahkan. Manajemen menetapkan prioritas jika terdapat konflik kapasitas atau biaya.
+
+Setelah containment, investigasi menilai mengapa tanggal dikonfirmasi tanpa validasi, mengapa status pemasok tidak dieskalasi, mengapa PPIC tidak memiliki sinyal risiko yang cukup, apakah batas waktu eskalasi tersedia, dan apakah KPI mendorong fungsi menyembunyikan kabar buruk. Tindakan korektif dapat mencakup kewajiban order review sebelum komitmen tanggal, sistem peringatan keterlambatan pemasok, batas waktu pembaruan status, dan jalur keputusan material alternatif.
+
+Beberapa individu mungkin memang melakukan kesalahan. Namun, perusahaan juga harus memperbaiki mekanisme yang memungkinkan kesalahan tersebut tidak terdeteksi sampai terlambat. Jika hanya Purchasing yang dihukum dan proses order review tetap tidak diperbaiki, kejadian serupa dapat terulang dengan nama departemen yang berbeda.
+
+Bagaimana Mengukur Apakah Budaya Akuntabilitas Benar-Benar Membaik?
+
+Perubahan budaya tidak cukup diukur melalui survei kepuasan atau jumlah pelatihan. Perusahaan perlu melihat perubahan perilaku dan hasil operasional. Indikator yang dapat digunakan antara lain: - Kecepatan eskalasi: waktu sejak risiko diketahui hingga dilaporkan kepada pihak berwenang. - Waktu pengambilan keputusan: berapa lama isu lintas fungsi menunggu keputusan. - Tingkat pengulangan masalah: apakah penyebab yang sama muncul kembali setelah tindakan korektif. - Ketepatan penutupan corrective action: apakah tindakan selesai sesuai tenggat dan terbukti efektif. - Kelengkapan traceability: apakah order, material, proses, inspeksi, dan pengiriman dapat ditelusuri. - Kualitas pelaporan near miss dan penyimpangan: apakah masalah muncul lebih awal, bukan hanya setelah menjadi komplain. - OTIF dan kualitas produk: apakah hasil akhir rantai pasok membaik secara konsisten. - Persepsi perlindungan pelapor: apakah pekerja percaya laporan dengan itikad baik akan ditangani tanpa pembalasan.
+
+Kenaikan jumlah laporan masalah pada tahap awal tidak selalu berarti kondisi memburuk. Bisa jadi karyawan mulai berani melaporkan penyimpangan yang sebelumnya disembunyikan. Karena itu, angka laporan harus dibaca bersama tingkat keparahan, waktu deteksi, penyelesaian, dan tren pengulangan. Tujuannya bukan membuat organisasi terlihat bebas masalah, melainkan membuat masalah diketahui lebih cepat dan diselesaikan lebih efektif.
+
+Kesimpulan: Rantai Pasok yang Kuat Membutuhkan Akuntabilitas, Bukan Budaya Saling Menyalahkan
+
+Manajemen saling lempar tanggung jawab adalah masalah organisasi yang berdampak langsung pada integritas rantai pasok. Ketika departemen lebih sibuk melindungi posisi daripada menyelesaikan masalah, informasi menjadi terlambat, keputusan melambat, kualitas dan keselamatan terancam, biaya tersembunyi meningkat, serta kepercayaan pemasok dan pelanggan menurun. Toxic workplace memperparah kondisi tersebut karena membuat karyawan takut melaporkan risiko dan mendorong keputusan berdasarkan kekuasaan, bukan fakta.
+
+Solusinya bukan menghilangkan tanggung jawab individu atau membiarkan kesalahan tanpa konsekuensi. Solusinya adalah menetapkan tanggung jawab, kewenangan, dan akuntabilitas secara jelas; memastikan proses lintas fungsi memiliki pemilik; menyelaraskan KPI; membangun eskalasi yang tegas; melindungi pelapor; serta menjalankan corrective action berdasarkan bukti dan pemeriksaan efektivitas.
+
+Prinsip dasarnya sederhana: setiap orang harus bertanggung jawab atas tindakan dan keputusan yang berada dalam kendalinya, sedangkan manajemen harus bertanggung jawab atas sistem, sumber daya, dan struktur kewenangan yang mereka tetapkan. Pemasok harus bertanggung jawab atas kewajiban yang disepakati, tetapi perusahaan pembeli juga harus mengelola risiko hubungan bisnisnya secara bertanggung jawab. QC harus berani menyatakan hasil pemeriksaan, Produksi harus mengendalikan proses, PPIC harus membuat rencana berbasis data, Purchasing harus mengelola risiko pemasok, dan pimpinan harus menyelesaikan konflik prioritas.
+
+Organisasi yang sehat bukan organisasi yang tidak pernah mengalami masalah. Organisasi yang sehat adalah organisasi yang tidak menyembunyikan masalah, tidak menghukum orang hanya karena menyampaikan fakta, tidak membiarkan kewenangan kabur, dan tidak mengulang kegagalan yang sama tanpa pembelajaran. Dalam rantai pasok, integritas tidak dibuktikan oleh banyaknya SOP atau rapat koordinasi, melainkan oleh konsistensi tindakan ketika terjadi masalah: fakta dibuka, risiko dikendalikan, keputusan diambil oleh pihak berwenang, dan penyebab diperbaiki sampai efektivitasnya terbukti.
+
+Referensi dan sumber rujukan
+
+1.  International Labour Organization (ILO), Violence and Harassment Convention, 2019 (No. 190), serta Recommendation No. 206. https://www.ilo.org/ 2.  International Labour Organization (ILO), materi dan panduan mengenai violence and harassment in the world of work serta psychosocial risks. https://www.ilo.org/ 3.  International Organization for Standardization (ISO), ISO 9001 Quality Management Systems dan panduan process approach. https://www.iso.org/ 4.  OECD, OECD Due Diligence Guidance for Responsible Business Conduct. https://mneguidelines.oecd.org/ 5.  OECD, OECD Guidelines for Multinational Enterprises on Responsible Business Conduct. https://mneguidelines.oecd.org/ 6.  ASCM (Association for Supply Chain Management), materi praktik supply chain management, planning, dan pengukuran kinerja rantai pasok. https://www.ascm.org/ 7.  HSE (UK Health and Safety Executive), Management Standards for work-related stress. https://www.hse.gov.uk/stress/standards/
