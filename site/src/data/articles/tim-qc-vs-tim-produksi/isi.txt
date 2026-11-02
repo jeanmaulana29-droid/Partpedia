@@ -1,0 +1,302 @@
+Konflik Operator Produksi dan QC di Pabrik: Cara Menyeimbangkan Target Output, Standar Kualitas, dan SOP
+
+Di banyak pabrik, ketegangan antara operator produksi dan Quality Control (QC) muncul ketika target output harus tercapai sementara hasil pemeriksaan menunjukkan adanya penyimpangan. Operator merasa sudah bekerja sesuai kondisi lapangan dan dikejar jadwal. QC merasa tidak boleh meloloskan produk yang belum memenuhi spesifikasi. Jika persoalan ini tidak ditangani dengan sistem yang jelas, konflik yang awalnya hanya terjadi di lantai produksi dapat berkembang menjadi saling menyalahkan, manipulasi catatan, produk tertahan, pengerjaan ulang, keterlambatan pengiriman, hingga keluhan pelanggan.
+
+Prinsip yang harus dipegang sederhana: target kuantitas tidak boleh menjadi alasan untuk melepas produk yang tidak memenuhi persyaratan. Pada saat yang sama, QC juga tidak boleh menahan produk hanya berdasarkan dugaan, selera pribadi, atau kriteria yang tidak tercantum dalam dokumen yang berlaku. Keputusan harus didasarkan pada spesifikasi yang disetujui, metode pemeriksaan yang benar, bukti objektif, serta kewenangan yang ditetapkan perusahaan.
+
+Konflik ini bukan persoalan siapa yang lebih penting. Operator dan QC memiliki tanggung jawab berbeda tetapi saling bergantung. Operator menjaga proses agar menghasilkan produk sesuai standar. QC memeriksa dan memberikan bukti apakah karakteristik produk memenuhi kriteria penerimaan. Manajemen bertanggung jawab memastikan target, kapasitas, standar, dan sumber daya tidak saling bertentangan.
+
+Mengapa Operator Produksi dan QC Sering Berkonflik?
+
+Target kerja yang berbeda
+
+Operator biasanya berhadapan langsung dengan target jumlah produksi, waktu siklus, efisiensi mesin, dan penyelesaian pesanan. Kinerja mereka sering dinilai dari pencapaian rencana produksi, output per jam, downtime, serta kepatuhan terhadap instruksi kerja. Ketika target belum tercapai, setiap produk yang tertahan dapat terasa seperti ancaman terhadap pencapaian shift.
+
+QC memiliki ukuran kerja yang berbeda. Tim ini harus memastikan pemeriksaan dilakukan sesuai rencana, hasil dicatat, produk yang tidak sesuai dikendalikan, dan produk yang memenuhi persyaratan dapat dilepas sesuai kewenangan. QC tidak seharusnya dinilai dari sedikitnya temuan cacat. Jika QC diberi target agar jumlah produk reject rendah, ada risiko temuan justru ditekan atau diabaikan.
+
+Masalah muncul ketika perusahaan mengukur kedua fungsi secara terpisah tanpa indikator bersama. Produksi mengejar jumlah, sedangkan QC mengejar kepatuhan pemeriksaan. Keduanya dapat terlihat berhasil menurut angka departemennya masing-masing, tetapi perusahaan tetap rugi karena produk terlambat, banyak rework, atau cacat lolos ke pelanggan.
+
+Standar penerimaan tidak jelas
+
+Sumber konflik yang sangat sering terjadi adalah perbedaan pemahaman terhadap standar. Operator mungkin menganggap goresan tertentu masih dapat diterima karena selama ini produk serupa tetap dikirim. QC mungkin menolak karena gambar teknik, standar visual, atau sampel batas yang berlaku menyatakan sebaliknya.
+
+Kalimat seperti “kelihatannya masih bagus”, “biasanya tidak masalah”, atau “dulu QC sebelumnya meloloskan” bukan dasar penerimaan yang kuat. Sebaliknya, pernyataan “menurut saya ini jelek” juga bukan dasar penolakan yang memadai. Perusahaan perlu menyediakan kriteria yang dapat diperiksa dan dipahami bersama, seperti toleransi dimensi, batas visual, metode sampling, frekuensi pemeriksaan, dan contoh kondisi yang diterima maupun ditolak.
+
+Dokumen yang digunakan harus terkendali. Gambar teknik, spesifikasi pelanggan, control plan, SOP, instruksi kerja, dan standar inspeksi perlu memiliki nomor revisi yang jelas. Jika operator menggunakan revisi lama sementara QC menggunakan revisi baru, konflik bukan lagi masalah sikap, melainkan kegagalan pengendalian dokumen.
+
+Tekanan jadwal dan inspeksi yang menumpuk
+
+Produk sering menumpuk menjelang akhir shift atau mendekati jadwal pengiriman. Jika kapasitas inspeksi tidak dihitung sejak perencanaan produksi, QC dapat menjadi titik antrean. Operator lalu merasa proses produksi sudah selesai tetapi barang tidak dapat dipindahkan ke tahap berikutnya.
+
+Situasi ini tidak selalu berarti QC lambat. Bisa jadi perusahaan tidak menetapkan waktu respons inspeksi, tidak mengatur prioritas lot, tidak menyediakan personel pada jam sibuk, atau baru meminta pemeriksaan ketika seluruh produk sudah menumpuk. Pemeriksaan yang seharusnya dilakukan pada tahap awal proses akhirnya terkonsentrasi di akhir.
+
+QC dianggap mencari kesalahan
+
+Jika komunikasi hanya terjadi saat produk ditolak, operator dapat memandang QC sebagai pihak yang menghambat pekerjaan. QC kemudian diposisikan sebagai polisi kualitas, bukan mitra pengendalian proses. Pola ini membuat operator enggan melaporkan gejala awal karena takut disalahkan.
+
+Padahal, tujuan pemeriksaan bukan mencari siapa yang salah. Tujuannya menemukan penyimpangan sebelum produk diteruskan atau dikirim. Temuan yang disampaikan lebih awal biasanya lebih murah ditangani daripada cacat yang baru ditemukan setelah proses lanjutan atau setelah diterima pelanggan.
+
+Pengalaman lapangan dianggap cukup
+
+Pengalaman operator sangat penting. Operator yang telah bertahun-tahun menjalankan mesin sering mengenali suara, getaran, perubahan warna, atau perilaku material yang tidak biasa. Namun pengalaman tidak menggantikan spesifikasi resmi. Pengalaman harus digunakan untuk mendeteksi gejala dan memperbaiki proses melalui jalur yang benar, bukan untuk mengabaikan persyaratan.
+
+QC juga tidak boleh menganggap pengalaman inspeksi sebagai pengganti metode ukur. Pemeriksa harus mengikuti metode, alat, kondisi pengukuran, dan kriteria yang telah ditetapkan. Jika hasil ukur diperdebatkan, solusinya adalah memeriksa metode dan alat, bukan adu senioritas.
+
+Batas Tanggung Jawab Operator Produksi
+
+Operator bertanggung jawab menjalankan proses sesuai SOP dan instruksi kerja yang berlaku. Tanggung jawab ini mencakup memastikan material, tooling, parameter, program, dan kondisi mesin sesuai ketentuan sebelum produksi berjalan. Operator juga perlu melakukan pemeriksaan mandiri pada titik yang diwajibkan, mencatat hasil secara jujur, dan melaporkan kondisi abnormal.
+
+Operator bukan sekadar orang yang menghasilkan sebanyak mungkin unit. Operator merupakan pengendali pertama proses. Jika menemukan ukuran mulai bergeser, permukaan berubah, mesin bergetar tidak normal, atau material berbeda dari biasanya, operator harus mengikuti prosedur penghentian atau eskalasi yang telah ditentukan.
+
+Ketika ada indikasi produk tidak sesuai, operator harus memisahkan atau memberi identitas pada produk yang dicurigai sesuai prosedur perusahaan. Produk tersebut tidak boleh dicampur dengan produk baik atau dipindahkan seolah-olah sudah lolos. Jika batas produk terdampak belum diketahui, perusahaan perlu menentukan rentang pemeriksaan berdasarkan waktu terakhir hasil dinyatakan baik, catatan proses, pergantian material, perubahan parameter, atau bukti relevan lainnya.
+
+Operator tidak berwenang mengubah spesifikasi pelanggan atau memutuskan sendiri bahwa penyimpangan boleh diterima. Jika standar dinilai tidak realistis atau sulit dicapai, masukan harus disampaikan kepada atasan, Engineering, QA, atau pihak yang memiliki kewenangan mengubah dokumen.
+
+Batas Tanggung Jawab QC
+
+QC bertanggung jawab melakukan pemeriksaan berdasarkan persyaratan yang disetujui dan metode yang ditetapkan. Pemeriksaan dapat mencakup dimensi, visual, fungsi, kekuatan, karakteristik material, atau parameter lain sesuai jenis produk dan rencana pengendalian.
+
+QC harus memastikan alat ukur sesuai kebutuhan, status kalibrasi atau verifikasinya berlaku, metode pengukuran dipahami, dan hasil dicatat secara tertelusur. Jika hasil tidak memenuhi kriteria, QC harus mengidentifikasi status produk dan menjalankan mekanisme pengendalian produk tidak sesuai. Penolakan harus disertai bukti yang dapat ditinjau, bukan sekadar komentar lisan.
+
+QC juga harus memahami batas kewenangannya. QC dapat menyatakan hasil pemeriksaan tidak memenuhi kriteria, mengidentifikasi produk, dan merekomendasikan atau menjalankan penahanan sesuai prosedur. Namun keputusan seperti penggunaan dengan konsesi, perubahan spesifikasi, atau penyimpangan dari persyaratan pelanggan hanya boleh dilakukan oleh pihak yang berwenang dan, bila diperlukan, dengan persetujuan pelanggan.
+
+QC bukan pemilik tunggal kualitas. Kualitas dibentuk oleh desain, material, metode, mesin, lingkungan, kompetensi, dan pengendalian proses. QC memberi verifikasi dan informasi, tetapi tidak dapat memperbaiki proses sendirian.
+
+Perbedaan QA dan QC yang Perlu Dipahami
+
+QC berfokus pada pemeriksaan dan pengendalian karakteristik produk atau proses untuk memastikan persyaratan terpenuhi. QA berfokus pada sistem yang dirancang agar proses secara konsisten mampu menghasilkan keluaran sesuai persyaratan. Dalam praktik perusahaan, pembagian tugas dapat berbeda sesuai struktur organisasi, tetapi fungsi keduanya tidak boleh dicampuradukkan.
+
+Jika cacat yang sama berulang setiap minggu, menambah jumlah pemeriksaan saja bukan solusi jangka panjang. QA bersama Produksi dan Engineering perlu menilai apakah SOP, control plan, kompetensi, metode, atau sistem perubahan proses sudah memadai. Pemeriksaan akhir dapat menemukan masalah, tetapi pencegahan harus dibangun ke dalam proses.
+
+Mana yang Harus Didahulukan, Kuantitas atau Kualitas?
+
+Jika produk terbukti tidak memenuhi persyaratan, produk tersebut tidak boleh dilepas hanya demi mengejar target output. Ini bukan pilihan antara kualitas dan kuantitas. Produk yang tidak sesuai bukan output baik yang dapat dihitung sebagai keberhasilan pengiriman. Mengirim produk cacat dapat memunculkan biaya sortir, retur, klaim, penggantian, rework, kehilangan kepercayaan, bahkan risiko keselamatan bergantung pada jenis produk.
+
+Namun, kualitas juga tidak boleh dijadikan alasan untuk menghentikan produksi tanpa dasar. Jika QC menemukan masalah, perusahaan harus memastikan bahwa temuan tersebut sesuai standar, metode pemeriksaannya benar, dan produk yang ditahan memang berada dalam lingkup risiko. Penahanan harus proporsional dan ditinjau segera.
+
+Cara yang benar adalah mengendalikan proses agar produk sesuai sejak awal. Produksi tidak boleh hanya mengejar jumlah, dan QC tidak boleh hanya mengandalkan inspeksi akhir. Keduanya harus bekerja berdasarkan standar yang sama dan data yang sama.
+
+Apa yang Harus Dilakukan Ketika QC Menemukan Produk Tidak Sesuai?
+
+Hentikan atau kendalikan proses sesuai tingkat risiko
+
+Jika temuan menunjukkan proses sedang menghasilkan produk tidak sesuai, proses perlu dihentikan atau dikendalikan sesuai prosedur dan tingkat risikonya. Untuk karakteristik kritis atau potensi bahaya, tindakan harus segera dilakukan. Untuk temuan yang belum terbukti atau masih memerlukan verifikasi, perusahaan dapat menerapkan penahanan sementara pada lot terkait sambil melakukan pemeriksaan ulang.
+
+Keputusan menghentikan mesin atau menahan lot harus mengikuti matriks kewenangan yang jelas. Operator perlu mengetahui kapan harus menghentikan proses sendiri, kapan menghubungi leader, dan siapa yang dapat mengizinkan proses berjalan kembali.
+
+Identifikasi dan pisahkan produk terdampak
+
+Produk yang dicurigai tidak sesuai harus diberi identitas status yang mudah dikenali, misalnya label hold atau area karantina yang ditetapkan. Sistem identifikasi dapat berupa label fisik, status pada sistem ERP, kartu lot, atau kombinasi beberapa metode. Tujuannya mencegah produk tercampur, diproses lebih lanjut, atau terkirim tanpa keputusan.
+
+Tentukan batas lot yang terdampak. Jangan otomatis menahan seluruh produksi jika bukti menunjukkan masalah hanya terjadi pada rentang tertentu. Sebaliknya, jangan membatasi penahanan terlalu sempit jika titik awal penyimpangan belum dapat dipastikan.
+
+Verifikasi metode dan alat ukur
+
+Sebelum menyimpulkan produk tidak sesuai, periksa apakah alat ukur tepat untuk karakteristik yang diukur, status kalibrasi atau verifikasinya berlaku, resolusinya memadai, dan teknik pengukuran dilakukan dengan benar. Periksa juga kondisi benda kerja, kebersihan permukaan, suhu, posisi ukur, gaya ukur, serta metode sampling jika faktor tersebut berpengaruh.
+
+Jika terdapat perbedaan hasil antara operator dan QC, lakukan pengukuran ulang dengan metode yang disepakati. Untuk kasus yang penting, gunakan alat pembanding atau personel metrologi yang kompeten. Jangan memilih hasil ukur yang paling menguntungkan salah satu departemen.
+
+Pastikan dokumen dan revisi benar
+
+Bandingkan hasil dengan dokumen yang berlaku pada saat produksi dilakukan. Pastikan gambar teknik, spesifikasi pelanggan, instruksi kerja, control plan, dan standar inspeksi menggunakan revisi yang benar. Jika ada perubahan, periksa tanggal efektif dan bukti bahwa perubahan telah dikomunikasikan kepada bagian terkait.
+
+Tentukan keputusan terhadap produk
+
+Setelah status dan cakupan masalah jelas, produk dapat diputuskan untuk diperbaiki, dikerjakan ulang, disortir, dikembalikan ke pemasok, dibuang, atau digunakan berdasarkan konsesi jika mekanisme tersebut diizinkan. Istilah dan pilihan yang tersedia harus mengikuti sistem mutu perusahaan serta persyaratan pelanggan.
+
+Rework berarti mengerjakan ulang agar produk kembali memenuhi persyaratan. Setelah rework, produk harus diverifikasi kembali sesuai ketentuan. Repair atau perbaikan yang membuat produk tetap dapat digunakan meskipun tidak sepenuhnya memenuhi persyaratan asli memerlukan aturan dan persetujuan khusus. Konsesi bukan keputusan sepihak operator atau QC.
+
+Pastikan hasil tindakan diverifikasi
+
+Setelah tindakan dilakukan, pemeriksaan ulang harus membuktikan bahwa produk telah memenuhi persyaratan atau bahwa keputusan penggunaannya telah disetujui oleh pihak berwenang. Catatan harus menunjukkan identitas lot, jenis ketidaksesuaian, jumlah terdampak, keputusan, tindakan, hasil verifikasi, dan pihak yang memberikan persetujuan.
+
+Contoh Konflik Nyata di Lantai Produksi
+
+Perbedaan ukuran produk
+
+Operator memproduksi komponen dengan target tertentu. Pada pemeriksaan, QC menemukan sebagian ukuran berada di luar toleransi. Operator merasa alat ukur di area produksi menunjukkan hasil yang masih aman. Dalam kondisi ini, keduanya tidak boleh langsung berdebat mengenai siapa yang lebih berpengalaman.
+
+Langkah yang benar adalah menyamakan titik ukur, metode, alat, kondisi pengukuran, dan revisi gambar. Jika hasil tetap berbeda, lakukan pemeriksaan menggunakan alat yang sesuai dan personel kompeten. Sementara itu, produk dalam rentang yang berpotensi terdampak dikendalikan. Setelah penyebab diketahui, perusahaan menentukan apakah masalah berasal dari proses, alat ukur, metode, atau pemahaman standar.
+
+Perbedaan penilaian cacat visual
+
+Operator menilai goresan pada permukaan tidak mengganggu fungsi. QC menolak karena standar visual menetapkan batas tertentu. Untuk kasus seperti ini, perusahaan perlu memiliki standar visual berupa foto contoh, master sample, batas ukuran atau lokasi cacat, serta kondisi pencahayaan dan jarak pengamatan jika relevan.
+
+Jika standar belum cukup jelas, masalah harus dieskalasikan kepada QA, Engineering, atau pihak yang mengendalikan spesifikasi. QC tidak boleh membuat batas baru sendiri saat inspeksi berlangsung. Operator juga tidak boleh meloloskan produk berdasarkan anggapan bahwa cacat tidak terlihat setelah dirakit.
+
+Antrean pemeriksaan di akhir shift
+
+Produksi menyelesaikan lot besar beberapa menit sebelum pergantian shift. QC belum sempat memeriksa seluruh produk. Operator meminta barang langsung dipindahkan agar target tercatat selesai. QC menolak karena pemeriksaan wajib belum dilakukan.
+
+Dalam situasi ini, produk belum boleh diberi status lulus jika persyaratan pelepasan belum terpenuhi. Namun akar masalahnya perlu diperbaiki melalui penjadwalan inspeksi, pemeriksaan bertahap, penambahan kapasitas pada periode sibuk, atau pengaturan prioritas berdasarkan risiko dan jadwal pengiriman. Mengulang situasi yang sama setiap hari berarti masalahnya berada pada perencanaan sistem, bukan semata-mata sikap operator atau QC.
+
+Operator menemukan gejala sebelum QC
+
+Operator mendengar suara mesin berubah dan melihat permukaan produk mulai tidak normal. Ia menghentikan proses dan melapor. QC kemudian memeriksa sampel dan menemukan penyimpangan. Ini contoh kerja sama yang benar: operator mendeteksi perubahan proses, QC membantu memverifikasi hasil, dan Engineering atau Maintenance menelusuri penyebab teknis.
+
+Perusahaan seharusnya menghargai pelaporan dini, bukan menghukum operator karena menghentikan proses sesuai prosedur. Jika setiap penghentian dianggap kegagalan target, pekerja akan terdorong menyembunyikan gejala sampai masalah menjadi lebih besar.
+
+QC menahan produk tanpa bukti yang cukup
+
+QC menyatakan produk tidak dapat diterima tetapi tidak dapat menunjukkan kriteria yang dilanggar, metode ukur, atau catatan hasil. Produksi meminta dasar penolakan. QC perlu membuka data pemeriksaan dan mengacu pada dokumen terkendali. Jika tidak ada kriteria yang jelas, status produk dapat ditahan sementara sesuai risiko sambil meminta keputusan pihak yang berwenang, tetapi perusahaan harus segera memperjelas standar.
+
+Menahan produk tanpa dasar yang dapat diverifikasi akan merusak kredibilitas fungsi QC. Namun, ketiadaan bukti pada saat itu juga bukan alasan untuk langsung melepas produk. Yang diperlukan adalah verifikasi cepat dan keputusan terdokumentasi.
+
+Cara Mencegah Konflik Operator dan QC
+
+Gunakan satu standar yang sama
+
+Pastikan Produksi, QC, QA, Engineering, dan PPIC mengakses dokumen terkendali yang sama. Hindari instruksi lisan yang berbeda antarshift. Setiap perubahan spesifikasi atau metode harus memiliki proses persetujuan, revisi, tanggal efektif, dan bukti sosialisasi.
+
+Buat kriteria penerimaan yang dapat diamati
+
+Kriteria harus cukup jelas untuk diterapkan oleh orang yang berbeda dan menghasilkan keputusan yang konsisten. Untuk dimensi, cantumkan nilai nominal dan toleransi. Untuk visual, gunakan contoh foto atau sampel batas. Untuk fungsi, jelaskan metode dan kondisi pengujian. Jika karakteristik sulit dinilai, libatkan pelanggan atau Engineering dalam penetapan standar.
+
+Libatkan QC sejak awal
+
+QC sebaiknya dilibatkan saat produk baru, perubahan material, perubahan tooling, perubahan parameter, atau perubahan proses direncanakan. Pemeriksaan tidak efektif jika QC baru mengetahui perubahan setelah produk selesai dibuat. Tinjauan awal dapat memastikan karakteristik penting, metode ukur, frekuensi pemeriksaan, dan kemampuan proses sudah dipertimbangkan.
+
+Terapkan first piece approval
+
+Pada proses yang memerlukan persetujuan awal, hasil pertama atau sampel awal diperiksa sebelum produksi massal dilanjutkan. Persetujuan awal membantu mendeteksi kesalahan setup, tooling, program, material, atau interpretasi gambar sebelum jumlah produk terdampak menjadi besar. Kriteria dan siapa yang berwenang menyetujui harus tertulis.
+
+Tetapkan aturan stop-and-call
+
+Buat aturan sederhana yang menjelaskan kondisi kapan operator harus menghentikan mesin, menahan produk, dan memanggil leader atau QC. Aturan ini harus mempertimbangkan risiko karakteristik, keselamatan, serta potensi jumlah produk terdampak. Jangan membebankan keputusan rumit kepada operator tanpa panduan.
+
+Lakukan analisis akar masalah bersama
+
+Ketika cacat terjadi, Produksi dan QC perlu memeriksa fakta bersama. Gunakan data proses, catatan mesin, material, parameter, hasil inspeksi, pergantian shift, dan riwayat perawatan. Metode seperti 5 Why dan diagram sebab-akibat dapat membantu menyusun kemungkinan penyebab, tetapi kesimpulan harus didukung bukti.
+
+Jangan berhenti pada tindakan koreksi sesaat. Mengganti satu komponen atau menyetel ulang mesin mungkin mengatasi gejala, tetapi perusahaan perlu memastikan penyebab utama ditangani dan tindakan efektif mencegah pengulangan.
+
+Bangun komunikasi di area produksi
+
+Adakan komunikasi singkat dan teratur antara leader produksi dan QC. Bahas temuan kualitas, status lot hold, prioritas pemeriksaan, masalah berulang, dan perubahan proses. Informasi harus disampaikan dengan data, bukan sindiran atau tuduhan. Untuk masalah yang membutuhkan keputusan lintas fungsi, tetapkan jalur eskalasi dan batas waktu respons.
+
+Ukur Kinerja dengan KPI yang Seimbang
+
+KPI bersama
+
+Perusahaan perlu memiliki indikator yang mendorong Produksi dan QC menuju hasil yang sama. Indikator yang dapat digunakan antara lain First Pass Yield (FPY), tingkat cacat internal, scrap, rework, keluhan pelanggan, defect escape, ketepatan pengiriman, dan Cost of Poor Quality (COPQ). Definisi, rumus, periode, dan sumber data setiap KPI harus konsisten.
+
+FPY menunjukkan proporsi unit yang lolos proses tanpa rework pada tahap yang ditentukan. Scrap dan rework memperlihatkan pemborosan akibat ketidaksesuaian. Keluhan pelanggan dan defect escape menunjukkan masalah yang berhasil melewati pengendalian internal. Ketepatan pengiriman perlu dibaca bersama kualitas, bukan sebagai angka tunggal yang mendorong pengiriman produk bermasalah.
+
+KPI Produksi
+
+Produksi dapat dinilai melalui pencapaian rencana, produktivitas, downtime, kepatuhan parameter proses, hasil pemeriksaan mandiri, dan ketepatan pelaporan abnormalitas. Output tetap penting, tetapi tidak boleh dihitung sebagai keberhasilan jika produk tidak memenuhi persyaratan atau catatan proses tidak dapat dipercaya.
+
+KPI QC
+
+QC dapat dinilai melalui ketepatan dan konsistensi pemeriksaan, ketertelusuran catatan, ketepatan waktu respons, penyelesaian inspeksi sesuai rencana, akurasi keputusan, serta efektivitas verifikasi tindakan korektif. Jangan menjadikan sedikitnya produk reject sebagai ukuran utama keberhasilan QC. Temuan yang akurat justru membantu perusahaan mencegah kerugian lebih besar.
+
+Hindari KPI yang saling bertabrakan
+
+Jika produksi mendapat penghargaan hanya karena output tinggi, sementara QC mendapat teguran setiap kali menahan produk, perusahaan sedang membangun insentif yang salah. Karyawan akan terdorong mengutamakan angka departemen daripada kepentingan pelanggan. KPI harus mengakui bahwa output yang bernilai adalah produk yang sesuai spesifikasi, aman, tertelusur, dan dikirim sesuai komitmen.
+
+Peran Manajemen dalam Menyelesaikan Konflik
+
+Supervisor Produksi
+
+Supervisor memastikan target diterjemahkan menjadi rencana kerja yang realistis, operator memahami SOP, parameter proses terkendali, dan masalah kualitas ditangani tanpa menekan pekerja untuk menyembunyikan temuan. Supervisor juga harus menyediakan waktu untuk pemeriksaan yang diwajibkan.
+
+Supervisor QC
+
+Supervisor QC memastikan metode pemeriksaan konsisten, personel kompeten, alat ukur sesuai, kriteria penerimaan jelas, dan status produk tidak sesuai dikendalikan. Ia juga perlu mengatur kapasitas inspeksi dan menyampaikan risiko secara cepat kepada Produksi.
+
+QA dan Engineering
+
+QA menjaga konsistensi sistem, dokumen, audit, analisis tren, dan tindak lanjut ketidaksesuaian. Engineering membantu memastikan desain, proses, tooling, parameter, dan kemampuan teknis mendukung persyaratan produk. Keduanya perlu terlibat ketika masalah tidak dapat diselesaikan hanya melalui pemeriksaan rutin.
+
+PPIC
+
+PPIC perlu memasukkan waktu inspeksi, kapasitas produksi, ketersediaan material, dan risiko proses ke dalam perencanaan. Jadwal yang hanya menghitung waktu mesin tanpa memperhitungkan pemeriksaan dan kemungkinan rework akan menciptakan tekanan yang tidak realistis.
+
+Plant Manager atau Manajer Operasional
+
+Pimpinan pabrik harus menetapkan bahwa kualitas merupakan tanggung jawab lintas fungsi. Ia perlu menyelesaikan konflik KPI, menyediakan sumber daya, menetapkan kewenangan penahanan dan pelepasan produk, serta memastikan keputusan tidak berubah hanya karena tekanan pengiriman.
+
+Cara Menyelesaikan Perbedaan Pendapat Secara Objektif
+
+Ketika operator dan QC tidak sepakat, gunakan urutan berikut:
+
+1. Tunjukkan persyaratan yang berlaku dan nomor revisinya.
+2. Tunjukkan hasil pemeriksaan, alat, metode, titik ukur, dan kondisi pengukuran.
+3. Pastikan kedua pihak mengukur karakteristik yang sama dengan cara yang benar.
+4. Lakukan pengukuran ulang atau pemeriksaan pembanding jika ada alasan teknis.
+5. Kendalikan sementara produk yang berisiko selama verifikasi berlangsung.
+6. Libatkan QA, Engineering, metrologi, atau atasan sesuai jenis masalah.
+7. Catat keputusan, dasar teknis, jumlah produk terdampak, dan pihak yang menyetujui.
+8. Ubah dokumen melalui proses resmi jika standar memang perlu diperbaiki.
+
+Jangan menyelesaikan perselisihan dengan voting, adu jabatan, atau kebiasaan masa lalu. Standar yang disetujui dan bukti objektif harus menjadi dasar keputusan. Jika spesifikasi pelanggan perlu diubah, perubahan harus mendapat persetujuan sesuai kontrak dan prosedur.
+
+Rencana Perbaikan 30 Hari
+
+Minggu pertama: petakan konflik dan data
+
+Kumpulkan data produk hold, reject, rework, scrap, keterlambatan inspeksi, keluhan pelanggan, dan masalah yang berulang. Wawancarai operator, leader, QC, QA, Engineering, dan PPIC. Fokus pada fakta proses, bukan mencari individu untuk disalahkan.
+
+Minggu kedua: rapikan standar dan kewenangan
+
+Tinjau dokumen yang paling sering menimbulkan perbedaan tafsir. Perjelas kriteria penerimaan, metode inspeksi, titik pemeriksaan, status produk, kewenangan hold, serta persetujuan pelepasan. Pastikan revisi terbaru tersedia di tempat kerja.
+
+Minggu ketiga: uji coba alur komunikasi
+
+Terapkan aturan stop-and-call, jadwal inspeksi bertahap, komunikasi singkat antarshift, dan jalur eskalasi. Uji coba pada satu lini atau keluarga produk terlebih dahulu. Catat waktu respons dan hambatan yang muncul.
+
+Minggu keempat: evaluasi hasil
+
+Bandingkan data sebelum dan sesudah perbaikan. Periksa apakah antrean inspeksi turun, cacat berulang berkurang, keputusan hold lebih konsisten, dan pengiriman membaik tanpa meningkatkan defect escape. Jika hasil belum sesuai, perbaiki sistem berdasarkan bukti.
+
+Kesalahan yang Harus Dihindari
+
+Memaksa QC meloloskan produk demi target
+
+Tekanan atasan tidak mengubah produk yang tidak sesuai menjadi produk sesuai. Pelepasan harus mengikuti kriteria dan kewenangan yang berlaku. Jika ada kebutuhan penggunaan dengan konsesi, proses persetujuannya harus jelas dan terdokumentasi.
+
+QC menolak tanpa menunjukkan dasar
+
+Penolakan harus dapat ditelusuri ke persyaratan dan bukti pemeriksaan. Jika kriteria tidak jelas, lakukan eskalasi dan perbaiki dokumen, bukan membuat keputusan berdasarkan selera.
+
+Menyalahkan operator untuk setiap cacat
+
+Cacat dapat dipengaruhi oleh desain, material, metode, mesin, pengukuran, lingkungan, pelatihan, dan sistem kerja. Operator perlu bertanggung jawab atas tindakan yang berada dalam kendalinya, tetapi analisis harus memeriksa seluruh faktor yang relevan.
+
+Menganggap inspeksi akhir dapat menggantikan pengendalian proses
+
+Inspeksi akhir hanya memeriksa hasil yang sudah dibuat. Jika proses tidak stabil, pemeriksaan lebih banyak dapat menambah biaya tanpa menghilangkan penyebab cacat. Pencegahan harus dilakukan di sumber proses.
+
+Mengubah standar secara lisan
+
+Instruksi lisan yang tidak dikendalikan membuat tiap shift memiliki aturan sendiri. Perubahan harus melalui persetujuan, revisi dokumen, dan komunikasi resmi.
+
+Menutup temuan agar angka terlihat baik
+
+Menyembunyikan cacat, mengubah catatan, atau mencampur produk hold dengan produk baik membuat data tidak dapat dipercaya dan memperbesar risiko pelanggan. Sistem harus mendorong pelaporan dini dan tindak lanjut yang adil.
+
+Hubungan dengan ISO 9001 dan Cost of Quality
+
+ISO 9001:2015 menekankan pengendalian keluaran yang tidak sesuai agar tidak digunakan atau dikirim tanpa sengaja. Organisasi perlu mengidentifikasi dan mengendalikan keluaran tersebut, menentukan tindakan yang sesuai, memverifikasi kesesuaian setelah koreksi, serta menyimpan informasi terdokumentasi yang diperlukan. Penerapan rinci harus mengacu pada salinan standar resmi dan sistem manajemen mutu perusahaan.
+
+Prinsip ini berarti produk yang belum memenuhi persyaratan tidak boleh dilepas hanya karena jadwal mendesak. Perusahaan juga perlu menentukan tanggung jawab dan kewenangan untuk menangani produk tidak sesuai. Operator, QC, QA, dan manajemen harus mengetahui siapa yang dapat menahan, memutuskan disposisi, menyetujui konsesi, dan melepas produk.
+
+Konsep Cost of Quality dari ASQ membantu menjelaskan mengapa pencegahan dan pemeriksaan bukan sekadar biaya tambahan. Biaya kualitas mencakup biaya pencegahan, biaya penilaian atau appraisal, serta biaya kegagalan internal dan eksternal. Scrap, rework, sortir ulang, retur, klaim, dan garansi merupakan contoh biaya kegagalan. Mengurangi pemeriksaan tanpa memperbaiki proses dapat membuat biaya kegagalan meningkat.
+
+Perusahaan sebaiknya tidak hanya menghitung biaya inspeksi. Hitung juga waktu mesin yang terbuang, material scrap, jam kerja rework, biaya pengiriman ulang, waktu penanganan komplain, dan dampak keterlambatan. Data tersebut membantu manajemen menentukan investasi pencegahan yang paling masuk akal.
+
+Kesimpulan: Target Produksi dan Kualitas Harus Berjalan dalam Satu Sistem
+
+Konflik operator dan QC akan terus berulang jika perusahaan membiarkan target produksi dan standar kualitas berjalan sendiri-sendiri. Operator tidak boleh menggunakan tekanan output sebagai alasan untuk mengabaikan SOP atau melepas produk yang belum memenuhi persyaratan. QC juga tidak boleh menahan produk tanpa kriteria, metode, dan bukti yang dapat dipertanggungjawabkan.
+
+Solusinya bukan meminta salah satu pihak mengalah. Perusahaan harus menyatukan standar, memperjelas kewenangan, menyediakan kapasitas inspeksi, membangun komunikasi lintas fungsi, dan menggunakan KPI yang mengukur hasil bersama. Operator menjaga proses tetap terkendali. QC memverifikasi kesesuaian secara objektif. QA, Engineering, PPIC, dan manajemen memastikan sistem mendukung keduanya.
+
+Pada akhirnya, keberhasilan pabrik bukan sekadar menghasilkan unit sebanyak mungkin atau menemukan sebanyak mungkin cacat. Keberhasilan adalah menghasilkan produk yang memenuhi spesifikasi, aman digunakan, tertelusur, dan dikirim sesuai komitmen kepada pelanggan.
+
+Sumber dan Referensi
+
+- ISO. ISO 9001:2015 — Quality management systems — Requirements. Informasi standar: https://www.iso.org/standard/62085.html
+- ISO/IAF Auditing Practices Group. Guidance papers on control of nonconforming outputs and quality management system auditing: https://www.iso.org/committee/54998.html
+- ASQ. Cost of Quality (COQ): https://asq.org/quality-resources/cost-of-quality
+- ASQ. Quality Resources — Quality management and improvement resources: https://asq.org/quality-resources
+- International Civil Aviation Organization (ICAO). Quality management guidance and manuals: https://www.icao.int/
