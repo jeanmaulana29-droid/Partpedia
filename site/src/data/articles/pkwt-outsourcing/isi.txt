@@ -1,0 +1,72 @@
+PKWT dan Outsourcing di Pabrik: Kenapa Kontrak Bisa Diperpanjang Berkali-kali tapi Masa Depan Tetap Tidak Pasti
+
+Banyak operator, teknisi, dan staf di pabrik menjalani pola yang sama: kontrak satu atau dua tahun, diperpanjang, lalu diperpanjang lagi. Statusnya tetap “kontrak”. Setiap menjelang habis masa, muncul pertanyaan yang sama—apakah diperpanjang, diganti orang lain, atau cukup sampai di sini. Kecemasan itu nyata, bukan bayangan.
+
+Artikel ini menjelaskan apa yang sebenarnya diatur hukum untuk PKWT dan outsourcing di sektor manufaktur, hak yang wajib ada, di mana celah ketidakpastian masih terbuka, dan apa yang bisa dicek pekerja sebelum menandatangani atau memperpanjang kontrak.
+
+## PKWT dan PKWTT: bedanya bukan sekadar nama
+
+Di Indonesia, hubungan kerja formal pada dasarnya terbagi dua.
+
+PKWTT (Perjanjian Kerja Waktu Tidak Tertentu) adalah hubungan kerja tetap. Tidak ada batas waktu berakhir di dalam perjanjian, kecuali PHK, pengunduran diri, atau pensiun sesuai aturan.
+
+PKWT (Perjanjian Kerja Waktu Tertentu) adalah hubungan kerja berbatas waktu. Boleh dipakai hanya untuk pekerjaan yang memang sementara atau yang penyelesaiannya bisa diperkirakan—misalnya proyek, pekerjaan musiman, produk baru yang belum stabil, atau pekerjaan yang selesai dalam waktu tertentu. Pekerjaan yang sifatnya tetap dan terus-menerus pada prinsipnya memakai PKWTT, bukan PKWT yang diganti-ganti tanpa alasan yang sah.
+
+PP Nomor 35 Tahun 2021 mengatur teknis PKWT setelah UU Cipta Kerja. Untuk PKWT berdasarkan jangka waktu, total masa termasuk perpanjangan paling lama lima tahun. Tidak ada masa percobaan (probation) pada PKWT. Kalau perusahaan memasang “training 3 bulan” di dalam PKWT, itu menyalahi ketentuan.
+
+## Uang kompensasi: hak yang sering tidak dibicarakan di lantai pabrik
+
+Salah satu perubahan penting setelah aturan turunan Cipta Kerja: saat PKWT berakhir karena habis waktu, pekerja yang sudah bekerja paling sedikit satu bulan secara terus-menerus berhak atas uang kompensasi.
+
+Ini bukan “pesangon PHK” dalam arti klasik PKWTT, tetapi kewajiban yang jelas. Dibayar setiap kali kontrak berakhir. Kalau kontrak satu tahun habis lalu diperpanjang lagi, kompensasi untuk periode yang baru saja selesai tetap harus dihitung dan dibayar sesuai ketentuan, bukan ditunda sampai “nanti kalau tidak diperpanjang sama sekali”.
+
+Kalau perusahaan memutus PKWT sebelum waktunya berakhir tanpa alasan yang dibenarkan hukum, pekerja dapat menuntut ganti rugi atas sisa waktu kontrak yang belum dijalani, di samping hak lain yang berlaku. Ini bukan area abu-abu: dasar aturannya ada di ketentuan berakhirnya PKWT dan Pasal terkait kompensasi dalam kerangka UU Cipta Kerja beserta PP 35/2021.
+
+## Outsourcing: majikannya bukan pabrik tempat Anda berdiri
+
+Outsourcing (alih daya) berbeda dari PKWT biasa.
+
+Pada PKWT biasa, perjanjian kerja ada antara pekerja dan perusahaan pabrik. Pada outsourcing, perjanjian kerja ada antara pekerja dan perusahaan alih daya (vendor). Pabrik adalah pengguna jasa. Gaji, BPJS, cuti, dan hak berakhirnya hubungan kerja menjadi tanggung jawab vendor, dengan standar perlindungan minimal yang diatur peraturan.
+
+PP 35/2021 mensyaratkan perjanjian tertulis. Untuk pekerja outsourcing berstatus PKWT, perjanjian harus memuat klausul pengalihan perlindungan hak jika vendor berganti, selama objek pekerjaannya masih ada di perusahaan pengguna. Tujuannya agar ganti vendor tidak otomatis memutus masa kerja dan hak yang sudah berjalan.
+
+Dalam praktik manufaktur, masalah muncul ketika:
+
+- pekerjaan inti produksi dikemas sebagai “pendukung” agar bisa dialihkan ke vendor,
+- upah dan tunjangan outsourcing lebih rendah dari pekerja langsung untuk kerja yang sama di line yang sama,
+- pergantian vendor membuat pekerja merasa mulai dari nol meski sudah bertahun-tahun di pabrik yang sama.
+
+Peraturan terus diperketat. Batas jenis pekerjaan yang boleh dialihkan semakin diarahkan ke pekerjaan pendukung (kebersihan, keamanan, katering, transportasi pekerja, dan sejenisnya), bukan ke proses produksi inti. Pekerja dan HR perlu membaca perjanjian alih daya dan perjanjian kerja masing-masing, bukan hanya “sudah biasa di pabrik ini”.
+
+## Dari mana kecemasan itu berasal—meski aturan sudah ada
+
+Hukum memberi batas waktu, kompensasi, dan larangan probation pada PKWT. Di lantai pabrik, kecemasan tetap muncul karena beberapa fakta operasional:
+
+1. Perpanjangan berulang membuat orang merasa “hampir tetap”, sementara secara hukum statusnya masih sementara. Rencana kredit, sekolah anak, atau pindah kota jadi sulit dipastikan.
+2. Keputusan perpanjang atau tidak sering dekat dengan siklus order, audit, atau efisiensi, bukan hanya kinerja individu.
+3. Outsourcing memisahkan identitas kerja: setiap hari di pabrik A, di ID card tertulis vendor B. Saat vendor diganti, rasa kehilangan kepastian lebih besar daripada sekadar ganti nama perusahaan di slip gaji.
+4. Banyak pekerja baru tahu soal uang kompensasi setelah kontrak habis, bukan saat menandatangani.
+
+Ketidakpastian ini bukan “salah merasa”. Itu akibat desain hubungan kerja berbatas waktu yang memang memberi fleksibilitas ke perusahaan dan menempatkan risiko waktu di sisi pekerja.
+
+## Apa yang wajib dicek sebelum tanda tangan atau perpanjang
+
+Sebelum menandatangani PKWT atau kontrak outsourcing, pastikan poin ini tertulis jelas:
+
+- Jenis dan uraian pekerjaan—apakah masuk alasan PKWT yang sah atau pekerjaan tetap yang seharusnya PKWTT.
+- Tanggal mulai dan berakhir; untuk perpanjangan, total masa tidak melebihi batas yang berlaku.
+- Upah, komponen tunjangan, dan waktu pembayaran.
+- BPJS Kesehatan dan Ketenagakerjaan atas nama siapa, dan kapan aktif.
+- Hak cuti dan THR.
+- Klausul berakhirnya hubungan kerja dan perhitungan uang kompensasi / hak lain.
+- Untuk outsourcing: nama perusahaan alih daya sebagai pemberi kerja, plus klausul pengalihan hak jika vendor berganti.
+
+Simpan salinan perjanjian. Jangan hanya foto halaman tanda tangan. Jika isi kontrak tidak sesuai praktik di lapangan (misalnya probation di PKWT, atau upah di bawah minimum tanpa dasar yang sah), itu sinyal untuk diklarifikasi sebelum, bukan sesudah, bermasalah.
+
+## Penutup: kepastian tidak datang dari rasa “sudah lama di sini”
+
+Lama bekerja di satu pabrik tidak otomatis mengubah PKWT menjadi tetap. Yang mengubah status adalah bentuk perjanjian dan pemenuhan syarat hukumnya. Perpanjangan berulang tanpa kejelasan arah hanya menunda pertanyaan yang sama ke tahun berikutnya.
+
+Untuk sektor manufaktur—di mana order naik-turun dan line bisa dihentikan atau digeser—PKWT dan outsourcing akan tetap dipakai. Yang bisa dikurangi bukan fleksibilitas perusahaan, melainkan ketidaktahuan pekerja soal batas waktu, kompensasi, dan siapa majikan hukumnya.
+
+Baca kontrak sampai akhir. Tanyakan kompensasi saat perpanjangan, bukan hanya saat pemutusan. Bedakan dengan jelas: Anda dipekerjakan pabrik secara langsung, atau oleh vendor alih daya. Dari situ, bayang-bayang kecemasan setidaknya bisa diganti dengan angka dan pasal yang bisa dicek, bukan sekadar menunggu kabar dari HRD di minggu terakhir kontrak.
